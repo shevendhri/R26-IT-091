@@ -1,0 +1,101 @@
+Mat_ID,Building Element,Material Name,Material Category,Specification,Unit,BSR Rate 2024 (LKR / Unit),BSR Rate (LKR/m³ equiv.),Compressive Strength (N/mm²),Tensile Strength (N/mm²),Density (kg/m³),Young's Modulus (GPa),Fire Rating (hrs),Embodied Energy (MJ/kg),Embodied Carbon (kgCO2e/kg),Service Life (years),SL Availability (1–5)
+F-001,Foundation / Substructure,Plain Concrete Gr. 15 (1:2:4) – Blinding,Concrete,OPC 33 Grade; 75 mm blinding layer,m³,28500,28500.0,15.0,1.5,2400,22.0,0.5,0.95,0.13,50,5
+F-002,Foundation / Substructure,Plain Concrete Gr. 20 (1:1.5:3) – Strip Footing,Concrete,OPC 43 Grade; in-situ; strip/pad footing,m³,34200,34200.0,20.0,2.0,2400,25.0,1.0,1.05,0.145,60,5
+F-003,Foundation / Substructure,Reinforced Concrete Gr. 25 – Raft Foundation,Reinforced Concrete,OPC 43; 12 mm bars; raft slab,m³,52000,52000.0,25.0,2.5,2450,26.0,2.0,1.55,0.215,75,5
+F-004,Foundation / Substructure,Reinforced Concrete Gr. 30 – Pile Cap,Reinforced Concrete,OPC 53; 16 mm bars; deep foundation,m³,61000,61000.0,30.0,3.0,2450,27.0,2.0,1.65,0.225,75,5
+F-005,Foundation / Substructure,Mass Concrete Gr. 20 (Low Heat Cement) – Dam/Retaining,Concrete,Low Heat PC (LHC); mass concreting,m³,36000,36000.0,20.0,2.0,2400,25.0,1.5,0.98,0.14,80,4
+F-006,Foundation / Substructure,Lean Concrete Gr. 10 (1:3:6) – Under-slab fill,Concrete,OPC 33; mass fill below structural slab,m³,18200,18200.0,10.0,1.0,2300,20.0,0.5,0.8,0.11,50,5
+F-007,Foundation / Substructure,Stabilised Soil-Cement (5% OPC) – Raft Sub-base,Stabilised Earth,In-situ soil + 5% OPC; CBR improvement,m³,8500,8500.0,5.0,0.5,1800,1.2,0.25,0.42,0.058,30,5
+F-008,Foundation / Substructure,Precast Concrete Pile Gr. 35 – Bored Pile,Precast Concrete,OPC 53; factory cast; crane installation,m,14500,58000.0,35.0,3.5,2500,30.0,2.0,1.8,0.25,75,3
+S-001,Floor Slab / Podium,Reinforced Concrete Gr. 25 – Ground Floor Slab,Reinforced Concrete,OPC 43; 150 mm thick; mesh reinforcement,m³,52000,52000.0,25.0,2.5,2450,26.0,2.0,1.55,0.215,60,5
+S-002,Floor Slab / Podium,Reinforced Concrete Gr. 30 – Suspended Slab,Reinforced Concrete,OPC 53; 200 mm; high-rise floors,m³,61000,61000.0,30.0,3.0,2450,27.0,2.0,1.65,0.225,60,5
+S-003,Floor Slab / Podium,Post-Tensioned Concrete Gr. 35 – Long-Span Slab,Reinforced Concrete,OPC 53; PT cables; 250–300 mm spans >8 m,m³,78000,78000.0,35.0,3.5,2500,30.0,2.0,1.9,0.26,70,3
+S-004,Floor Slab / Podium,Precast Hollow-Core Slab (200 mm),Precast Concrete,Factory-produced; 200 mm depth; fast erect,m²,7200,36000.0,35.0,3.5,1300,32.0,2.0,1.75,0.24,60,3
+S-005,Floor Slab / Podium,Composite Steel Deck Floor (75 mm deck + Gr.25 topping),Composite,Steel deck + 125 mm Gr. 25 RC; commercial,m²,9800,49000.0,25.0,2.5,2800,28.0,1.0,2.2,0.31,50,3
+S-006,Floor Slab / Podium,Timber Floor – Jak (Artocarpus) 50 mm T&G boards,Timber,Sustainably harvested Jak; traditional floor,m²,4200,21000.0,7.5,10.0,600,8.0,0.5,5.0,0.3,40,4
+EW-001,External Wall,Brick Wall 200 mm – 1:4 CM (First Class),Brick / Masonry,190×90×90 mm kiln-burnt; cement mortar 1:4,m²,7200,36000.0,3.5,0.35,2600,10.0,1.0,3.5,0.24,75,5
+EW-002,External Wall,Brick Wall 300 mm – 1:3 CM (Exposed/Coastal),Brick / Masonry,300 mm; 1:3 mortar for water-logged areas,m²,10600,35333.0,3.5,0.35,2600,10.0,1.5,3.5,0.24,75,5
+EW-003,External Wall,Solid Concrete Block 200 mm – 7 N/mm² (SLS 855),Concrete Block,440×215×200 mm dense block; SLS 855,m²,5900,29500.0,7.0,0.7,2200,20.0,1.5,0.67,0.093,60,5
+EW-004,External Wall,Hollow Concrete Block 150 mm – 5 N/mm² (SLS 855),Concrete Block,Hollow; cavity wall outer leaf; SLS 855,m²,3900,26000.0,5.0,0.5,1500,15.0,1.0,0.55,0.075,60,5
+EW-005,External Wall,AAC (Autoclaved Aerated Concrete) Block 200 mm,AAC Block,Lightweight; 600×200×200 mm; good thermal,m²,4800,24000.0,3.0,0.3,650,3.5,2.0,3.6,0.29,50,3
+EW-006,External Wall,Cavity Brick Wall (2 × 100 mm leaves + 50 mm cavity),Brick / Masonry,Thermal cavity wall; brick both leaves,m²,12500,62500.0,3.5,0.35,2600,10.0,2.0,3.5,0.24,75,5
+EW-007,External Wall,Glass Curtain Wall – Aluminium Frame + 6 mm Plate,Aluminium / Glass,Al-Mg-Si alloy frame; anodised; plate glass,m²,65000,325000.0,30.0,40.0,2600,70.0,1.0,14.5,1.05,40,3
+EW-008,External Wall,GFRC (Glass Fibre Reinforced Concrete) Panel,Composite,10–12 mm GFRC cladding panel; precast,m²,8500,70833.0,30.0,4.0,1900,20.0,1.5,1.8,0.25,40,3
+EW-009,External Wall,Timber Cladding – Teak 25 mm T&G,Timber,Teak; FSC certified; natural finish,m²,6800,27200.0,7.5,10.0,650,8.0,0.5,10.0,0.45,30,4
+IW-001,Internal Wall / Partition,Brick Wall 100 mm – 1:4 CM,Brick / Masonry,100 mm half-brick; 1:4 cement mortar,m²,3850,38500.0,3.5,0.35,2600,10.0,1.0,3.5,0.24,75,5
+IW-002,Internal Wall / Partition,Hollow Concrete Block 100 mm – 5 N/mm² (SLS 855),Concrete Block,Hollow; 100 mm; loadbearing partition,m²,2600,26000.0,5.0,0.5,1500,15.0,1.0,0.55,0.075,60,5
+IW-003,Internal Wall / Partition,Lightweight Aggregate Block 75 mm – Non-loadbearing,Concrete Block,GGBS/expanded clay; 75 mm; partition,m²,1950,26000.0,2.8,0.28,900,7.0,0.5,0.5,0.072,50,5
+IW-004,Internal Wall / Partition,Clay Hollow Block 100 mm – Partition,Clay Block,Press-moulded; hollow; 290×215×100 mm,m²,2100,21000.0,3.0,0.3,1200,10.0,1.0,2.5,0.15,50,4
+IW-005,Internal Wall / Partition,Gypsum Board (Drywall) 12.5 mm on 48 mm stud,Drywall,2× 12.5 mm GWB; metal stud; fast erect,m²,2800,22400.0,0.5,0.5,950,4.0,0.5,6.1,0.38,30,4
+IW-006,Internal Wall / Partition,RC Shear Wall Gr. 30 – 200 mm,Reinforced Concrete,High-rise lateral resistance; OPC 53,m²,12200,61000.0,30.0,3.0,2450,27.0,4.0,1.65,0.225,75,5
+IW-007,Internal Wall / Partition,Timber Stud Wall – 100×50 mm sawn timber + GWB,Timber,Domestic; 600 mm stud centres; linings both sides,m²,3600,28800.0,7.5,10.0,600,8.0,0.5,5.5,0.32,40,4
+RS-001,Roof Structure,RC Flat Roof Gr. 25 – 150 mm,Reinforced Concrete,OPC 43; RC flat roof; bar reinforcement,m³,52000,52000.0,25.0,2.5,2450,26.0,2.0,1.55,0.215,60,5
+RS-002,Roof Structure,Steel Portal Frame (Grade 250 mild steel),Structural Steel,Welded RHS portal; Grade 250; industrial,kg,450,3150000.0,250.0,400.0,7850,200.0,1.0,25.0,1.77,60,4
+RS-003,Roof Structure,Glulam Timber Beam (GL28h) – Long-span,Timber,Glued-laminated softwood; GL28h grade,m³,185000,185000.0,28.0,30.0,480,13.0,0.5,8.8,0.39,50,3
+RS-004,Roof Structure,Steel Truss (Grade 350) – Industrial Roof,Structural Steel,Bolted angle truss; Grade 350; span 12–20 m,kg,420,2940000.0,350.0,430.0,7850,200.0,1.0,24.0,1.7,60,4
+RS-005,Roof Structure,Timber Rafter (Hal/Teak) 100×50 @ 400 c/c,Timber,Traditional pitched roof; domestic,m,650,32500.0,7.5,10.0,600,8.0,0.25,5.0,0.3,40,5
+RS-006,Roof Structure,Precast RC Beam Gr. 35 – 300×600 mm,Precast Concrete,Factory cast; crane erect; beam-slab roof,m,8500,47222.0,35.0,3.5,2500,30.0,2.0,1.8,0.25,60,3
+RF-001,Roof Finish / Waterproof,Clay Roof Tile – Mangalore pattern,Clay,Traditional fired clay; 330×230 mm,m²,1800,9000.0,,,2000,,1.0,2.5,0.24,50,5
+RF-002,Roof Finish / Waterproof,Concrete Roof Tile (interlocking),Concrete,Pressed concrete tile; 420×330 mm,m²,1400,7000.0,,,2100,,0.5,0.95,0.13,40,5
+RF-003,Roof Finish / Waterproof,Corrugated Aluminium Sheet 0.7 mm,Aluminium,Al alloy; corrugated; industrial; no paint,m²,6800,34000.0,,,2700,,0.25,170.0,8.24,40,4
+RF-004,Roof Finish / Waterproof,Galvanised Steel Sheet (CGI) 0.5 mm,Steel,Hot-dip galvanised; corrugated,m²,3200,16000.0,,,7850,,0.25,22.0,1.55,30,5
+RF-005,Roof Finish / Waterproof,Bituminous Felt + SBS Membrane (4 mm),Bitumen,Torch-on SBS; waterproof flat roof,m²,2200,11000.0,,,1200,,0.5,48.0,0.9,25,5
+RF-006,Roof Finish / Waterproof,EPDM Rubber Membrane 1.2 mm,Rubber/Polymer,Single-ply; cold-applied adhesive,m²,3800,19000.0,,,1200,,0.5,110.0,2.2,40,3
+RF-007,Roof Finish / Waterproof,Fibre Cement Sheet (Asbestos-free) 6 mm,Fibre Cement,Compressed FC sheet; corrugated; no asbestos,m²,1600,8000.0,,,1800,,1.0,3.5,0.42,30,5
+COL-001,Structural Frame – Column,RC Column Gr. 30 – 300×300 mm,Reinforced Concrete,OPC 53; 4T16 bars; 3-storey domestic,m³,61000,61000.0,30.0,3.0,2450,27.0,4.0,1.65,0.225,75,5
+COL-002,Structural Frame – Column,RC Column Gr. 35 – 400×400 mm,Reinforced Concrete,OPC 53; 8T20 bars; medium-rise,m³,72000,72000.0,35.0,3.5,2500,30.0,4.0,1.8,0.25,75,5
+COL-003,Structural Frame – Column,Steel Column (UC 254×254×89) Grade 350,Structural Steel,Universal Column; Grade 350; welded base,kg,480,3360000.0,350.0,430.0,7850,200.0,1.0,25.0,1.77,60,4
+COL-004,Structural Frame – Column,Steel Column (SHS 200×200×8) Grade 350,Structural Steel,Square hollow section; Grade 350,kg,450,3150000.0,350.0,430.0,7850,200.0,1.0,25.0,1.77,60,4
+COL-005,Structural Frame – Column,Glulam Timber Column 200×200 mm (GL28h),Timber,Glued-laminated; Grade GL28h; multi-storey,m,12000,300000.0,28.0,30.0,480,13.0,0.5,8.8,0.39,50,3
+BM-001,Structural Frame – Beam,RC Beam Gr. 25 – 250×450 mm,Reinforced Concrete,OPC 43; 2T16 top/3T20 bottom; domestic,m³,52000,52000.0,25.0,2.5,2450,26.0,2.0,1.55,0.215,60,5
+BM-002,Structural Frame – Beam,RC Beam Gr. 30 – 300×600 mm (high-rise),Reinforced Concrete,OPC 53; high shear links; commercial,m³,61000,61000.0,30.0,3.0,2450,27.0,2.0,1.65,0.225,60,5
+BM-003,Structural Frame – Beam,Steel Beam (UB 305×165×40) Grade 350,Structural Steel,Universal Beam; Grade 350; bolted connection,kg,460,3220000.0,350.0,430.0,7850,200.0,0.5,25.0,1.77,60,4
+BM-004,Structural Frame – Beam,Steel Beam (RHS 200×100×6) Grade 350,Structural Steel,Rectangular hollow section; secondary beam,kg,440,3080000.0,350.0,430.0,7850,200.0,0.5,25.0,1.77,60,4
+BM-005,Structural Frame – Beam,Glulam Timber Beam 200×400 mm (GL32h),Timber,GL32h; long-span roof beam; 8–12 m,m,22000,275000.0,32.0,35.0,500,14.0,0.5,9.0,0.4,50,3
+BM-006,Structural Frame – Beam,Precast RC Lintel 150×225 mm – Window/Door,Precast Concrete,Factory cast; 150 mm wide; standard opening,m,1800,53333.0,25.0,2.5,2400,26.0,2.0,1.55,0.215,60,4
+SL-001,Structural Frame – Slab,RC Flat Slab Gr. 30 – 200 mm (no drops),Reinforced Concrete,Flat plate; commercial buildings,m³,61000,61000.0,30.0,3.0,2450,27.0,2.0,1.65,0.225,60,5
+SL-002,Structural Frame – Slab,RC Ribbed Slab Gr. 25 – 300 mm overall,Reinforced Concrete,Ribs + infill block; reduced self-weight,m³,56000,56000.0,25.0,2.5,2000,26.0,2.0,1.4,0.19,60,5
+SL-003,Structural Frame – Slab,RC Waffle Slab Gr. 30 – 450 mm overall,Reinforced Concrete,Grid ribs; long-span; commercial,m³,65000,65000.0,30.0,3.0,1900,27.0,2.0,1.5,0.21,60,4
+W-001,Window / Glazing,Aluminium Window – Single Glaze 4 mm,Aluminium / Glass,Al-Mg-Si alloy frame; anodised; 4 mm sheet,m²,18500,92500.0,3.5,40.0,2600,70.0,0.5,15.0,1.05,40,4
+W-002,Window / Glazing,Aluminium Window – Double Glaze (6+12+6 mm IGU),Aluminium / Glass,Al frame; insulating glass unit; energy sav.,m²,28000,140000.0,3.5,40.0,2550,70.0,0.5,16.5,1.12,40,4
+W-003,Window / Glazing,UPVC Window – Double Glaze (6+12+6 mm IGU),UPVC / Glass,UPVC profile; no painting; thermal break,m²,22000,110000.0,3.5,40.0,1400,3.0,0.5,80.0,2.8,30,3
+W-004,Window / Glazing,Timber Window (Teak) – Single Glaze 4 mm,Timber / Glass,Traditional teak frame; painted/polished,m²,16000,80000.0,3.5,40.0,650,8.0,0.5,12.0,0.6,30,4
+W-005,Window / Glazing,Steel Window (Crittall-type) – Single Glaze 4 mm,Steel / Glass,Mild steel sections; painted; factory-made,m²,14500,72500.0,3.5,40.0,7850,200.0,0.5,26.0,1.8,40,4
+W-006,Window / Glazing,Aluminium Curtain Wall – Unitised System,Aluminium / Glass,High-rise; factory-assembled units; 8 mm plate,m²,85000,425000.0,30.0,40.0,2600,70.0,0.5,16.0,1.1,40,3
+D-001,Door,Solid Timber Door (Jak) – 900×2100 mm,Timber,Jak solid core; traditional; painted,No.,22000,,7.5,10.0,600,8.0,0.5,5.0,0.3,40,5
+D-002,Door,Flush Timber Door (HDF-faced) – 900×2100 mm,Timber,HDF flush panel; timber frame; hollow core,No.,14000,,4.0,5.0,600,8.0,0.5,6.5,0.38,25,5
+D-003,Door,Steel Fire Door (FD60) – 900×2100 mm,Steel,60-min fire door; galvanised steel; commercial,No.,68000,,250.0,400.0,7850,200.0,2.0,24.0,1.7,40,3
+D-004,Door,Aluminium Sliding Door – 1800×2100 mm,Aluminium / Glass,Al frame; 6 mm toughened glass,No.,85000,,30.0,400.0,2700,70.0,0.5,15.5,1.07,40,4
+D-005,Door,UPVC Door – 900×2100 mm (double-glaze panel),UPVC,UPVC multi-chamber profile; low maintenance,No.,38000,,3.5,5.0,1400,3.0,0.5,80.0,2.8,25,3
+ST-001,Staircase,RC Staircase Gr. 25 – in-situ,Reinforced Concrete,180 mm waist; 170×250 mm rises/treads,m³,54000,54000.0,25.0,2.5,2450,26.0,2.0,1.55,0.215,75,5
+ST-002,Staircase,Steel Staircase (stringers + chequered plate),Structural Steel,MS stringers + 5 mm chequered plate; painted,kg,520,3640000.0,250.0,400.0,7850,200.0,0.5,25.0,1.77,50,4
+ST-003,Staircase,Precast RC Staircase – factory made,Precast Concrete,OPC 43; shop-fabricated; crane set,m³,68000,68000.0,30.0,3.0,2450,27.0,2.0,1.7,0.235,75,3
+ST-004,Staircase,Timber Staircase – Solid Jak,Timber,Closed-string; solid Jak treads; domestic,m²,28000,280000.0,7.5,10.0,600,8.0,0.25,5.0,0.3,40,4
+FF-001,Finishes – Floor,Ceramic Floor Tile 300×300×7 mm – 1:3 CM bed,Ceramic / Tile,ISO 13006 Class BIa; 300×300 mm; internal,m²,1850,9250.0,,,2400,,1.0,10.0,0.65,25,5
+FF-002,Finishes – Floor,Porcelain Floor Tile 600×600×10 mm – Commercial,Ceramic / Tile,Porcelain; low water absorption (<0.5%),m²,4200,21000.0,,,2400,,1.0,10.5,0.68,30,5
+FF-003,Finishes – Floor,Terrazzo Floor – In-situ (25 mm thick),Terrazzo,White cement + marble chips; ground/polished,m²,3800,15200.0,,,2100,,1.0,1.4,0.2,50,4
+FF-004,Finishes – Floor,Timber Parquet Floor – Jak 15 mm,Timber,Jak strip parquet; 15 mm; adhesive-fix,m²,4500,30000.0,,,600,,0.25,5.0,0.3,30,4
+FF-005,Finishes – Floor,Vinyl Composition Tile (VCT) 3 mm,Vinyl / Polymer,Homogeneous VCT; 300×300 mm; commercial,m²,1200,4000.0,,,1450,,0.25,65.0,2.0,20,4
+FF-006,Finishes – Floor,Concrete Screed – 50 mm (1:3 CM),Concrete,OPC 33; 50 mm screed; power-floated,m²,950,19000.0,,,2100,,0.5,0.95,0.13,30,5
+FW-001,Finishes – Wall,Cement Plaster – 15 mm internal (1:4),Mortar,OPC 33 + sand; 15 mm; internal walls,m²,650,43333.0,,,1900,,0.5,1.4,0.16,20,5
+FW-002,Finishes – Wall,Cement Plaster – 20 mm external (1:5),Mortar,OPC 33; external render; 20 mm,m²,780,39000.0,,,1950,,0.5,1.4,0.16,20,5
+FW-003,Finishes – Wall,Ceramic Wall Tile 300×600×7 mm – 1:3 CM bed,Ceramic / Tile,ISO 13006 Class BIII; wet areas,m²,2600,13000.0,,,2400,,1.0,10.0,0.65,25,5
+FW-004,Finishes – Wall,Lime-Cement Render 1:1:6 (Gauged Plaster),Mortar,Fat lime + OPC + sand; good bond,m²,720,48000.0,,,1850,,0.5,1.1,0.11,25,5
+FW-005,Finishes – Wall,Gypsum Plaster – 12 mm internal (pre-mix),Gypsum,Hydrated gypsum; smooth finish; no sanding,m²,1100,91667.0,,,1200,,0.5,3.5,0.26,20,4
+FW-006,Finishes – Wall,Aluminium Composite Panel (ACP) 4 mm cladding,Aluminium / Polymer,Al skin + PE core; external cladding,m²,7800,39000.0,,,1500,,0.25,15.5,1.07,25,4
+FC-001,Finishes – Ceiling,Cement Plaster – 12 mm (1:4) on RC soffit,Mortar,OPC 33; soffit plaster; 12 mm,m²,620,51667.0,,,1900,,0.5,1.4,0.16,20,5
+FC-002,Finishes – Ceiling,Gypsum Board Suspended Ceiling 12.5 mm,Gypsum,Metal grid + 12.5 mm GWB; commercial,m²,2400,19200.0,,,950,,0.5,6.1,0.38,20,4
+FC-003,Finishes – Ceiling,Acoustic Ceiling Tile (mineral fibre 600×600),Mineral Fibre,600×600 lay-in; NRC 0.7; office/commercial,m²,3200,25600.0,,,400,,0.25,7.5,0.42,15,4
+FC-004,Finishes – Ceiling,Timber Ceiling Board – Jak 12 mm T&G,Timber,Jak tongue & groove; domestic/heritage,m²,3800,31667.0,,,600,,0.25,5.0,0.3,30,4
+MEP-001,Services / MEP,uPVC Water Pipe (50 mm dia) – Supply,UPVC,AS/NZS 1477; above-slab water supply,m,480,,,,1400,,,65.0,2.2,30,4
+MEP-002,Services / MEP,HDPE Drain Pipe (110 mm dia),HDPE,Smooth bore; underground drainage,m,850,,,,950,,,78.0,2.5,50,4
+MEP-003,Services / MEP,Copper Pipe (22 mm dia) – Hot Water,Copper,Type R; soldered joints; hot water,m,2200,,,,8900,,,70.0,3.1,50,4
+MEP-004,Services / MEP,Electrical Conduit – PVC 20 mm,UPVC,Surface/concealed wiring protection,m,120,,,,1400,,,65.0,2.2,25,5
+DW-001,Drainage / Waterproof,Crystalline Waterproof Coating (Xypex type) – 1 mm,Crystalline,Applied to RC; self-sealing; BS 8102,m²,2800,,,,1800,,,4.5,0.45,75,3
+DW-002,Drainage / Waterproof,Torch-on Bitumen Felt (SBS 4 mm) – 2 layers,Bitumen,Class 4 SBS membrane; flat roof/basement,m²,2200,,,,1200,,0.5,48.0,0.9,25,5
+DW-003,Drainage / Waterproof,Bentonite Waterproof Board (6 mm) – Below-slab,Bentonite,Sodium bentonite; self-sealing; eco-friendly,m²,3500,,,,1600,,,3.2,0.28,50,3
+SP-001,Specialty / Misc,Bamboo Structural Culm (Dendrocalamus strictus),Bamboo,Locally grown; treated; non-structural light,m,350,,20.0,10.0,700,20.0,0.25,2.5,0.05,20,5
+SP-002,Specialty / Misc,Compressed Earth Block (CEB) 290×140×90 mm,Earth / Stabilised,5% OPC stabilised; rammed earth equiv.,m²,2200,15714.0,2.5,0.25,1800,1.5,0.5,0.35,0.025,50,5
+SP-003,Specialty / Misc,Recycled Aggregate Concrete Gr. 20 (30% RA),Recycled Concrete,30% recycled coarse agg; reduced EC,m³,32000,32000.0,18.0,1.8,2300,22.0,1.0,0.85,0.11,50,5
+SP-004,Specialty / Misc,Fly-Ash Brick (ASTM C62 type),Fly-Ash Brick,Industrial by-product; 75% FA + lime,m²,2800,28000.0,5.0,0.5,1700,10.0,1.0,2.2,0.12,60,4
+SP-005,Specialty / Misc,GGBS Blended Concrete Gr. 25 (50% GGBS),Concrete (GGBS),50% GGBS replacement; low-heat; durable,m³,38000,38000.0,25.0,2.5,2400,26.0,2.0,0.72,0.078,75,4
