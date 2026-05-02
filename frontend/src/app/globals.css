@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Orbitron:wght@400;700;900&display=swap');
+
+:root {
+  --bg: #0d1111;
+  --primary: #27ae60; /* Forest Green */
+  --primary-glow: rgba(39, 174, 96, 0.3);
+  --secondary: #8d6e63; /* Timber Brown */
+  --slate: #2c3e50;
+  --concrete: #bdc3c7;
+  --border: #1a1f1f;
+  --panel-bg: #121616;
+  --text-main: #ecf0f1;
+  --text-muted: #7f8c8d;
+  --font-tech: 'Orbitron', sans-serif;
+  --font-main: 'Inter', sans-serif;
+}
+
+body {
+  background-color: var(--bg);
+  background-image: 
+    linear-gradient(rgba(39, 174, 96, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(39, 174, 96, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  color: var(--text-main);
+  font-family: var(--font-main);
+  margin: 0;
+  min-height: 100vh;
+}
+
+/* Eco-Texture Overlay */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background-image: url('https://www.transparenttextures.com/patterns/recycled-paper-texture.png');
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Eco-Engineering Header */
+.header {
+  grid-column: 1 / span 2;
+  background: linear-gradient(to right, #0a0e0e, #121616);
+  border-bottom: 2px solid var(--primary);
+  padding: 0.75rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+}
+
+.header h1 {
+  font-family: var(--font-tech);
+  font-size: 1.2rem;
+  margin: 0;
+  letter-spacing: 2px;
+  color: #fff;
+}
+
+.header p {
+  font-size: 0.6rem;
+  color: var(--primary);
+  margin: 0;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Navigation Tabs */
+.nav-links { display: flex; gap: 1rem; }
+.nav-link {
+    text-decoration: none;
+    font-family: var(--font-tech);
+    font-size: 0.65rem;
+    font-weight: 900;
+    color: var(--text-muted);
+    padding: 0.5rem 1rem;
+    transition: all 0.3s;
+}
+.nav-link.active {
+    color: var(--primary);
+    border-bottom: 2px solid var(--primary);
+    text-shadow: 0 0 10px var(--primary-glow);
+}
+
+/* Control Panel */
+.control-panel {
+  background: var(--panel-bg);
+  border-right: 1px solid var(--border);
+  padding: 1.5rem;
+  overflow-y: auto;
+}
+
+.section-title {
+  font-family: var(--font-tech);
+  font-size: 0.7rem;
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-left: 4px solid var(--primary);
+  padding-left: 0.75rem;
+}
+
+/* Eco-Inputs */
+.input-field {
+    width: 100%;
+    background: #080a0a;
+    border: 1px solid var(--border);
+    border-bottom: 2px solid var(--slate);
+    padding: 0.8rem;
+    color: #fff;
+    font-family: var(--font-main);
+    transition: all 0.3s;
+}
+
+.input-field:focus {
+    border-color: var(--primary);
+    background: #000;
+    outline: none;
+    box-shadow: 0 0 15px var(--primary-glow);
+}
+
+/* Eco-Structural Buttons */
+.btn-primary {
+    width: 100%;
+    padding: 1rem;
+    background: var(--primary);
+    color: #000;
+    border: none;
+    font-family: var(--font-tech);
+    font-size: 0.75rem;
+    font-weight: 900;
+    cursor: pointer;
+    letter-spacing: 2px;
+    transition: all 0.2s;
+    box-shadow: 0 4px 0 #1e8449;
+}
+
+.btn-primary:hover {
+    background: #2ecc71;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0 #1e8449;
+}
+
+.btn-primary:active {
+    transform: translateY(2px);
+    box-shadow: 0 0px 0 #1e8449;
+}
+
+/* Spec Sheets (Eco Style) */
+.spec-sheet {
+  background: #121616;
+  border: 1px solid var(--border);
+  border-top: 5px solid var(--primary);
+  margin-bottom: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  transition: all 0.3s;
+}
+
+.spec-sheet:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary);
+}
+
+.rank-badge {
+    background: var(--primary);
+    color: #000;
+    font-family: var(--font-tech);
+    font-weight: 900;
+    padding: 0.3rem 0.75rem;
+    font-size: 0.7rem;
+}
+
+/* Risk Badges */
+.risk-badge {
+    font-family: var(--font-tech);
+    font-size: 0.6rem;
+    font-weight: 900;
+    padding: 0.25rem 0.5rem;
+    letter-spacing: 1px;
+}
+.risk-low { background: var(--primary); color: #000; }
+.risk-medium { background: var(--secondary); color: #fff; }
+.risk-high { background: #e74c3c; color: #fff; }
+
+/* Progress Bars */
+.progress-container { height: 6px; background: #000; }
+.progress-bar { background: var(--primary); box-shadow: 0 0 10px var(--primary-glow); }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border); }
+::-webkit-scrollbar-thumb:hover { background: var(--primary); }
