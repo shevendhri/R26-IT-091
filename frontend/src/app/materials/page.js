@@ -5,7 +5,8 @@ import Link from 'next/link';
 
 export default function Materials() {
   const [budget, setBudget] = useState(1000000);
-  const [city, setCity] = useState('Colombo');
+  const [selectedLocation, setSelectedLocation] = useState('Colombo');
+  const [customLocation, setCustomLocation] = useState('');
   const [buildingType, setBuildingType] = useState('Residential');
   const [specs, setSpecs] = useState('');
   const [loading, setLoading] = useState(false);
@@ -20,13 +21,15 @@ export default function Materials() {
   const fetchMaterials = async (e) => {
     e?.preventDefault();
     setLoading(true);
+    const finalCity = selectedLocation === 'Custom' ? customLocation || 'Unknown' : selectedLocation;
+    
     try {
       const res = await fetch('http://127.0.0.1:5000/api/recommend', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 
             max_budget: parseFloat(budget), 
-            city, 
+            city: finalCity, 
             building_type: buildingType,
             specs 
         }),
@@ -46,7 +49,7 @@ export default function Materials() {
 
         setLandscapeAnalysis({ 
             label: 'Site Context Active', 
-            summary: `Optimizing material durability and carbon threshold for ${city} terrain.` 
+            summary: `Optimizing material durability and carbon threshold for ${finalCity} terrain.` 
         });
       }
     } catch (err) {
@@ -91,21 +94,27 @@ export default function Materials() {
 
           <div className="input-group">
             <label>Location Context</label>
-            <select className="input-field" value={city} onChange={(e) => setCity(e.target.value)}>
+            <select className="input-field" value={selectedLocation} onChange={(e) => setSelectedLocation(e.target.value)}>
                 <option value="Colombo">Colombo (Coastal)</option>
+                <option value="Galle">Galle (Coastal / Humid)</option>
                 <option value="Kandy">Kandy (Highland)</option>
                 <option value="Nuwara Eliya">Nuwara Eliya (Cold/Damp)</option>
+                <option value="Ratnapura">Ratnapura (Heavy Rain / Wet Zone)</option>
+                <option value="Kurunegala">Kurunegala (Intermediate Zone)</option>
                 <option value="Anuradhapura">Anuradhapura (Dry Zone)</option>
                 <option value="Hambantota">Hambantota (Arid)</option>
+                <option value="Jaffna">Jaffna (Arid / Northern)</option>
+                <option value="Trincomalee">Trincomalee (Coastal / Dry)</option>
                 <option value="Custom">Enter Custom Location...</option>
             </select>
-            {city === 'Custom' && (
+            {selectedLocation === 'Custom' && (
                 <input 
                     type="text" 
                     className="input-field" 
                     style={{ marginTop: '0.5rem', borderLeft: '4px solid var(--primary)' }} 
                     placeholder="Type custom city..." 
-                    onChange={(e) => setCity(e.target.value)}
+                    value={customLocation}
+                    onChange={(e) => setCustomLocation(e.target.value)}
                     autoFocus
                 />
             )}
@@ -149,7 +158,7 @@ export default function Materials() {
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
                     {/* Regional Analysis */}
                     <div style={{ background: 'var(--slate)', padding: '1.5rem', borderLeft: '6px solid var(--primary)', boxShadow: '0 10px 30px rgba(0,0,0,0.3)' }}>
-                        <h4 style={{ margin: 0, fontSize: '0.6rem', color: 'var(--primary)', fontWeight: 900, letterSpacing: '1px' }}>REGIONAL ANALYSIS: {city.toUpperCase()}</h4>
+                        <h4 style={{ margin: 0, fontSize: '0.6rem', color: 'var(--primary)', fontWeight: 900, letterSpacing: '1px' }}>REGIONAL ANALYSIS: {(selectedLocation === 'Custom' ? customLocation : selectedLocation).toUpperCase()}</h4>
                         <p style={{ margin: '0.4rem 0 0 0', fontSize: '1rem', fontWeight: 600 }}>{landscapeAnalysis?.summary}</p>
                         {impactNotes && impactNotes[activeTab] && (
                             <div style={{ marginTop: '0.5rem', fontSize: '0.65rem', color: '#fff', fontStyle: 'italic', opacity: 0.8 }}>
