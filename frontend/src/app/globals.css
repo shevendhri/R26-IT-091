@@ -13,6 +13,27 @@
   --text-muted: #7f8c8d;
   --font-tech: 'Orbitron', sans-serif;
   --font-main: 'Inter', sans-serif;
+  --header-bg: linear-gradient(to right, #0a0e0e, #121616);
+  --glass-bg: rgba(0,0,0,0.4);
+  --team-bg: #0d1111;
+  --team-border: #1a1f1f;
+}
+
+[data-theme="light"] {
+  --bg: #f4f6f8;
+  --primary: #27ae60;
+  --primary-glow: rgba(39, 174, 96, 0.2);
+  --secondary: #8d6e63;
+  --slate: #e2e8f0;
+  --concrete: #95a5a6;
+  --border: #d1d5db;
+  --panel-bg: #ffffff;
+  --text-main: #1f2937;
+  --text-muted: #6b7280;
+  --header-bg: #ffffff;
+  --glass-bg: rgba(255,255,255,0.7);
+  --team-bg: #ffffff;
+  --team-border: #e5e7eb;
 }
 
 body {
@@ -25,6 +46,7 @@ body {
   font-family: var(--font-main);
   margin: 0;
   min-height: 100vh;
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 /* Eco-Texture Overlay */
@@ -48,7 +70,7 @@ body::before {
 /* Eco-Engineering Header */
 .header {
   grid-column: 1 / span 2;
-  background: linear-gradient(to right, #0a0e0e, #121616);
+  background: var(--header-bg);
   border-bottom: 2px solid var(--primary);
   padding: 0.75rem 2rem;
   display: flex;
@@ -63,7 +85,7 @@ body::before {
   font-size: 1.2rem;
   margin: 0;
   letter-spacing: 2px;
-  color: #fff;
+  color: var(--text-main);
 }
 
 .header p {
@@ -114,18 +136,18 @@ body::before {
 /* Eco-Inputs */
 .input-field {
     width: 100%;
-    background: #080a0a;
+    background: var(--panel-bg);
     border: 1px solid var(--border);
     border-bottom: 2px solid var(--slate);
     padding: 0.8rem;
-    color: #fff;
+    color: var(--text-main);
     font-family: var(--font-main);
     transition: all 0.3s;
 }
 
 .input-field:focus {
     border-color: var(--primary);
-    background: #000;
+    background: var(--bg);
     outline: none;
     box-shadow: 0 0 15px var(--primary-glow);
 }
@@ -159,7 +181,7 @@ body::before {
 
 /* Spec Sheets (Eco Style) */
 .spec-sheet {
-  background: #121616;
+  background: var(--panel-bg);
   border: 1px solid var(--border);
   border-top: 5px solid var(--primary);
   margin-bottom: 1.5rem;
