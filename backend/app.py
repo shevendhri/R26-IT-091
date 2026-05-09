@@ -3,6 +3,10 @@ import sqlite3
 import numpy as np
 import joblib
 import asyncio
+import math
+import logging
+import traceback
+import uvicorn
 from fastapi import FastAPI, File, UploadFile, Form, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
@@ -12,247 +16,221 @@ from typing import List, Optional
 from database import get_all_materials, format_material
 from mcdm_engine import calculate_mcdm
 import vision_analysis
+from brain import run_ai_audit
+from feasibility_validator import validate_feasibility
+from spatial_ai import spatial_engine
 
-app = FastAPI(title="GreenConstructAI Backend")
+app = FastAPI(title="GreenConstructAI Engineering Intelligence v17.0")
 
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
+    allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-# 🧠 LOAD YOUR TRAINED ECOBUILD MODEL
-# Using 'ecobuild.pkl' as provided
-MODEL_PATH = 'ecobuild.pkl' # Ensure this is in the backend root or correct path
+# ── LOAD CORE ML LOGIC ──
+MODEL_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "ml", "ecobuild_model.pkl")
 try:
     ecobuild_model = joblib.load(MODEL_PATH)
-    print("SUCCESS: EcoBuild Model Loaded.")
-except Exception as e:
-    print(f"WARNING: Could not load {MODEL_PATH}. Error: {e}")
+except:
     ecobuild_model = None
+
+class ProgramRequest(BaseModel):
+    max_budget: float
+    city: str
+    building_type: str
+    num_floors: int = 1
+    sustainability_pref: Optional[str] = "Medium"
+    specs: Optional[str] = ""
 
 class RecommendationRequest(BaseModel):
     max_budget: float
     city: str
     building_type: str
+    num_floors: int = 1
+    sustainability_pref: Optional[str] = "Medium"
     specs: Optional[str] = ""
+    rooms: Optional[dict] = None
+    total_area: Optional[float] = None
 
-def generate_local_rationale(m, city, phase="Structural", is_top=False):
-    import random
+def estimate_quantities_v18(program, total_area, floors, b_type):
+    """
+    REALISTIC QUANTITY DERIVATION v18.0 - AUDITOR GRADE
+    """
+    safe_floors = max(1, floors)
+    footprint = total_area / safe_floors
     
-    ec = m.get('Embodied_Carbon', 0)
-    strength = m.get('Strength_N_mm2') or m.get('Fire_Rating', 0)
-    life = m.get('Service_Life', 0)
-    cost = m.get('Rate_LKR', 0)
-    name_cat = (m['Name'] + " " + m['Category']).lower()
+    # 1. Structural Logic (m3 and kg)
+    f_factor = 1.0 + (floors * 0.15)
+    if b_type == "Industrial": f_factor *= 1.5
+    foundation_vol = footprint * 0.65 * f_factor
     
-    parts = []
+    s_factor = 0.14 * (1.0 + (floors * 0.12))
+    if b_type == "Commercial": s_factor *= 1.3
+    structural_vol = total_area * s_factor
     
-    # Deterministic randomness setup
-    rand_gen = random.Random(m['Name'] + city)
+    rebar_kg = structural_vol * 115 # Average 115kg per m3 of concrete
     
-    # Cost Variation
-    if cost < 2000:
-        cost_phrases = ["Highly cost-effective selection.", "Optimized for budget constraints without sacrificing baseline quality.", "Economically viable for large-scale application."]
-        parts.append(rand_gen.choice(cost_phrases))
-    elif cost > 8000:
-        cost_phrases = ["Initial capital expenditure is offset by long-term durability.", "High-performance tier specification.", "Specified for critical zones where performance outweighs initial cost."]
-        parts.append(rand_gen.choice(cost_phrases))
-        
-    # Carbon Variation
-    if ec < 0.2:
-        if "timber" in name_cat or "bamboo" in name_cat:
-            parts.append(f"Biogenic properties ({ec} kgCO2e) actively sequester carbon.")
-        else:
-            parts.append(f"Exceptional low-carbon profile ({ec} kgCO2e) supports net-zero targets.")
-    elif ec < 0.5:
-        parts.append(f"Moderate embodied carbon ({ec} kgCO2e) optimized for general sustainable building.")
-    else:
-        parts.append(f"Higher embodied carbon ({ec} kgCO2e) must be offset by extended operational lifespan.")
-        
-    # Thermal Behavior Logic (Corrected Material Science)
-    if "aac" in name_cat or "insulated" in name_cat or "eps" in name_cat:
-        parts.append("Excellent thermal insulation properties significantly reduce HVAC operational loads.")
-    elif "brick" in name_cat or "concrete" in name_cat or "earth" in name_cat or "stone" in name_cat:
-        parts.append("High thermal mass stabilizes diurnal temperature swings, improving passive cooling.")
-        
-    # Strength/Performance Variation based on PHASE
-    if phase == "Structural":
-        if strength and strength >= 40:
-            parts.append(f"Ultra-high compressive strength ({strength} N/mm2) ensures maximum load-bearing capability.")
-        elif strength and strength >= 25:
-            parts.append(f"Robust structural capacity ({strength} N/mm2) ideal for multi-story framing.")
-        elif strength and strength >= 10:
-            parts.append(f"Adequate compressive threshold ({strength} N/mm2) for standard loading scenarios.")
-    elif phase == "Building Envelope":
-        parts.append("Provides a durable, weather-resistant barrier against external elements.")
-    elif phase == "Openings":
-        if strength and strength >= 10:
-            parts.append("High wind-load resistance and secure framing integrity.")
-        parts.append("Optimized fenestration sealing reduces unwanted air infiltration.")
-    elif phase == "Finishing":
-        parts.append("Superior surface resilience, reducing long-term aesthetic degradation.")
-        
-    # Durability/Life Variation
-    if life >= 75:
-        parts.append(f"Generational durability with a {life}-year projected service life.")
-    elif life >= 40:
-        parts.append(f"Excellent longevity ({life} years) minimizing long-term maintenance cycles.")
-    else:
-        parts.append(f"Standard {life}-year lifecycle suitable for regular replacement schedules.")
-        
-    # Climate Variation
-    city_lower = city.lower()
-    city_logic = ""
-    if "colombo" in city_lower or "galle" in city_lower:
-        if "ggbs" in name_cat or "epoxy" in name_cat or "composite" in name_cat:
-            city_logic = "Provides crucial chloride-ion resistance in corrosive coastal environments."
-        elif "steel" in name_cat or "reinforcement" in name_cat:
-            city_logic = "Requires proper cover to mitigate rapid coastal corrosion."
-        else:
-            city_logic = "Offers necessary durability against coastal salinity and high atmospheric moisture."
-    elif "nuwara eliya" in city_lower or "kandy" in city_lower:
-        if "timber" in name_cat or "insulated" in name_cat or "aac" in name_cat:
-            city_logic = "Excellent thermal resistance minimizes heat loss in highland cold climates."
-        else:
-            city_logic = "Prevents damp-rising and maintains structural resilience in persistent wet conditions."
-    else:
-        if "aac" in name_cat or "insulated" in name_cat:
-            city_logic = "Thermal insulation prevents excessive heat transfer in arid climates."
-        elif "brick" in name_cat or "earth" in name_cat or "concrete" in name_cat:
-            city_logic = "Thermal mass effectively delays heat penetration during peak daytime temperatures."
-        else:
-            city_logic = "Material density optimized for dry heat stability and regional cost-efficiency."
-            
-    parts.append(city_logic)
+    # 2. Enclosure & Finish Logic (m2)
+    perimeter = 4 * math.sqrt(footprint)
+    wall_height = {"Residential": 3.1, "Commercial": 3.8, "Industrial": 7.5}.get(b_type, 3.2)
+    gross_wall_area = perimeter * wall_height * floors
     
-    # Shuffle parts deterministically
-    rand_gen.shuffle(parts)
+    o_ratio = {"Residential": 0.22, "Commercial": 0.45, "Industrial": 0.10}.get(b_type, 0.20)
+    opening_area = total_area * o_ratio
+    wall_area = max(gross_wall_area * 0.7, gross_wall_area - opening_area)
     
-    rationale = " ".join(parts).strip()
-    
-    if is_top:
-        rationale = f"OPTIMAL SPECIFICATION: {rationale} Scientifically validated for regional constraints."
-    
-    return rationale
+    # 3. Units Assignment Logic
+    return {
+        "Foundation": f"{round(foundation_vol, 1)} m³",
+        "Structural": f"{round(structural_vol, 1)} m³ / {round(rebar_kg, 0)} kg",
+        "Walling": f"{round(wall_area, 1)} m²",
+        "Roofing": f"{round(footprint * 1.4, 1)} m²",
+        "Flooring": f"{round(total_area, 1)} m²",
+        "Ceiling": f"{round(total_area * 0.95, 1)} m²",
+        "Openings": f"{int(total_area / 25)} Units",
+        "Waterproofing": f"{round((footprint + (total_area * 0.1)), 1)} m²",
+        "Finishing": f"{round(wall_area * 2.2, 1)} Liters",
+        "solar_allocation": f"{round(footprint * 0.6, 1)} m²",
+        "footprint": round(footprint, 2),
+        "total_area": round(total_area, 2)
+    }
 
-def generate_prognosis(city, building_type):
-    city_lower = city.lower()
-    if "colombo" in city_lower or "galle" in city_lower:
-        return f"The {building_type.lower()} structure will be exposed to severe coastal salinity, high humidity, and potential sandy soil settlement. The specified materials will proactively prevent rapid rebar corrosion and concrete spalling, ensuring structural integrity against coastal weathering."
-    elif "nuwara eliya" in city_lower or "kandy" in city_lower:
-        return f"Located in highland topography with persistent cold and damp weather, the {building_type.lower()} foundation must resist high soil moisture and thermal contraction. The recommended system prevents thermal bridging and damp-rising, maintaining internal stability."
-    elif "dry zone" in city_lower or "anuradhapura" in city_lower or "hambantota" in city_lower:
-        return f"The {building_type.lower()} will face intense arid heat, prolonged UV degradation, and dry soil conditions. The selected material matrix maximizes thermal mass and heat resistance, minimizing internal cooling costs while preventing structural micro-cracking."
-    else:
-        return f"The {building_type.lower()} structure is optimized for localized terrain and seasonal weathering. The specification ensures baseline structural integrity and long-term cost-efficiency."
-
-@app.post("/api/recommend")
-async def recommend_materials(data: RecommendationRequest):
+@app.post("/api/generate-program")
+def generate_program(data: ProgramRequest):
+    print(f"DEBUG: Received program request for {data.building_type}...")
     try:
-        # Simulate heavy core processing for the dashboard UX
-        await asyncio.sleep(1.2)
+        rates = {"Residential": 145000, "Commercial": 210000, "Industrial": 165000}
+        overhead_mod = 1.25 
+        mep_mod = 1.18      
+        sus_mod = 1.12 if data.sustainability_pref == "High" else 1.0
+        spec_mod = 1.05 if any(k in (data.specs or "").lower() for k in ["solar", "hvac", "smart"]) else 1.0
         
-        # 1. RUN YOUR TRAINED MODEL PREDICTION
-        ai_prediction = "Project Optimized"
-        if ecobuild_model:
-            try:
-                # Basic prediction logic
-                ai_prediction = "Eco-Premium Strategy" if data.max_budget > 1000000 else "Sustainable Economy"
-            except:
-                ai_prediction = "Dynamic Optimization"
-
-        # 2. Fetch data
-        all_rows = get_all_materials()
-        all_mats = [format_material(r) for r in all_rows]
-
-        # 3. Process Results by Phase (Strict Category Filtering)
-        workflow_results = {}
-        justification = {}
-        impact_notes = {}
+        effective_rate = rates.get(data.building_type, 145000) * (1.0 + (data.num_floors * 0.085))
+        reserved_budget = data.max_budget / (overhead_mod * mep_mod * sus_mod * spec_mod)
+        base_area = max(50, round(reserved_budget / effective_rate))
         
-        phase_rules = {
-            "Structural": {
-                "include": ["foundation", "pile", "substructure", "slab", "column", "beam", "frame", "structural", "concrete", "reinforcement"],
-                "exclude": ["door", "window", "glass", "paint", "tile", "fixture", "cladding", "plaster", "finish", "aac", "block", "brick", "masonry", "wall", "curtain"]
-            },
-            "Building Envelope": {
-                "include": ["brick", "block", "aac", "masonry", "wall", "cladding", "envelope"],
-                "exclude": ["concrete", "reinforcement", "column", "beam", "slab", "pile", "substructure", "foundation", "shear", "plaster", "paint", "window", "door", "floor", "tile"]
-            },
-            "Finishing": {
-                "include": ["partition", "floor", "plaster", "paint", "tiles", "timber", "finish"],
-                "exclude": ["foundation", "pile", "substructure", "door", "window", "glass", "fixture", "curtain", "brick", "block", "aac", "masonry", "cladding"]
-            },
-            "Openings": {
-                "include": ["door", "window", "glazing", "opening", "fixture", "aluminum", "glass", "curtain"],
-                "exclude": ["foundation", "pile", "concrete", "slab", "column", "beam", "paint", "block", "brick", "aac", "masonry"]
+        # ── ARCHITECTURAL PROGRAM SCALING ──
+        if data.building_type == "Residential":
+            if data.max_budget < 12_000_000:
+                program = {"Bedrooms": 2, "Bathrooms": 1, "Living": 1, "Kitchen": 1}
+            elif data.max_budget < 25_000_000:
+                program = {"Bedrooms": 3, "Bathrooms": 2, "Living": 1, "Dining": 1, "Kitchen": 1, "Verandah": 1}
+            elif data.max_budget < 50_000_000:
+                program = {"Bedrooms": 5, "Bathrooms": 4, "Living": 1, "Dining": 1, "Pantry": 1, "Study": 1, "Laundry": 1, "Verandah": 2}
+            else: # Luxury Tier
+                program = {"Bedrooms": 6, "Bathrooms": 6, "Master_Suite": 1, "Living": 2, "Dining": 1, "Modern_Kitchen": 1, "Maid_Room": 1, "Library": 1, "Laundry": 1, "Home_Office": 1}
+            zones = ["Private", "Public", "Service", "Semi-Private"]
+            
+        elif data.building_type == "Commercial":
+            units = max(1, int(base_area / 60))
+            program = {
+                "Lobby_Reception": 1,
+                "Office_Suites": units,
+                "Meeting_Rooms": max(1, int(units / 3)),
+                "MEP_Central_Core": 1,
+                "Service_Washrooms": max(2, int(units / 4)),
+                "Vertical_Circulation": 1 if data.num_floors > 1 else 0
             }
-        }
-        
-        for phase, rules in phase_rules.items():
-            phase_mats = []
-            for m in all_mats:
-                search_text = (m['Category'] + " " + m['Name']).lower()
-                
-                has_include = any(kw in search_text for kw in rules["include"])
-                has_exclude = any(kw in search_text for kw in rules["exclude"])
-                
-                if has_include and not has_exclude:
-                    # Structural validity constraint
-                    if phase == "Structural":
-                        strength = m.get('Strength_N_mm2')
-                        if strength is not None and str(strength).strip():
-                            try:
-                                if float(strength) > 0 and float(strength) < 10:
-                                    continue # Skip low-strength materials in structural phase
-                            except ValueError:
-                                pass
-                    phase_mats.append(m)
+            zones = ["Active-Retail", "Professional-Suite", "Core-Service"]
             
-            # Run MCDM specifically for this phase
-            ranked_list, impact_note = calculate_mcdm(phase_mats, data.max_budget, data.city, phase, ecobuild_model)
-            
-            top_mats = ranked_list[:5] if ranked_list else []
-            if top_mats:
-                for idx, m in enumerate(top_mats):
-                    m['Rationale'] = generate_local_rationale(m, data.city, phase, is_top=(idx == 0))
-                    ec = m["Embodied_Carbon"]
-                    life = m["Service_Life"]
-                    
-                    # Corrected Sustainability Classification
-                    if ec < 0.1:
-                        m["Sustainability_Risk"] = "HIGH"
-                    elif ec <= 0.3:
-                        m["Sustainability_Risk"] = "MEDIUM"
-                    else:
-                        m["Sustainability_Risk"] = "LOW"
-                        
-                    m["Lifecycle_Risk"] = "Low" if life >= 50 else "Medium" if life >= 25 else "High"
-                    m['Rate_Display'] = f"Rs. {m['Rate_LKR']}" if m['Rate_LKR'] > 0 else "Market Rate Req."
-
-                workflow_results[phase] = top_mats
-                justification[phase] = {"weights": top_mats[0].get('Weights_Used', [])}
-                # Pass the location note from mcdm_engine
-                impact_notes[phase] = impact_note
-
-        if not workflow_results:
-            return {"status": "error", "message": "Insufficient budget or missing valid data."}
+        else: # Industrial
+            program = {
+                "Production_Hall": 1,
+                "Storage_Bay": max(1, int(base_area / 500)),
+                "Loading_Docks": max(2, int(base_area / 1000)),
+                "Admin_Block": 1,
+                "Machinery_Zone": 1,
+                "Safety_Exits": 4
+            }
+            zones = ["Heavy-Loading", "Production-Matrix", "Management"]
 
         return {
             "status": "success",
-            "city": data.city,
-            "ai_strategy": ai_prediction,
-            "prognosis": generate_prognosis(data.city, data.building_type),
-            "workflow_results": workflow_results,
-            "mathematical_justification": justification,
-            "impact_notes": impact_notes
+            "total_area": base_area,
+            "program": program,
+            "zones": zones,
+            "floor_distribution": {f"Level {i+1}": "Zoned" for i in range(data.num_floors)}
+        }
+    except Exception as e:
+        print(f"ERROR in generate_program: {traceback.format_exc()}")
+        return {"status": "error", "message": str(e)}
+
+@app.post("/api/recommend")
+async def recommend_materials(data: RecommendationRequest):
+    print(f"DEBUG: Recommendation request received for {data.city}...")
+    try:
+        # Resolve Program & Area dynamically
+        rates = {"Residential": 145000, "Commercial": 210000, "Industrial": 165000}
+        eff_rate = rates.get(data.building_type, 145000) * (1.0 + (data.num_floors * 0.08))
+        base_area = max(50, round(data.max_budget / (eff_rate * 1.4)))
+        
+        program = {}
+        if data.building_type == "Residential":
+            program = {"Bedrooms": 3, "Bathrooms": 2, "Living": 1, "Kitchen": 1} if data.max_budget < 25_000_000 else {"Bedrooms": 5, "Bathrooms": 4, "Living": 2}
+        elif data.building_type == "Commercial":
+            program = {"Office_Suites": 4, "Lobby": 1, "MEP_Core": 1}
+        else:
+            program = {"Production_Hall": 1, "Admin": 1, "Storage": 1}
+
+        total_area = data.total_area if (data.total_area or 0) > 0 else base_area
+        
+        # 0. QUANTITY ESTIMATION
+        quantities = estimate_quantities_v18({}, total_area, data.num_floors, data.building_type)
+        all_rows = get_all_materials()
+        all_mats = [format_material(r) for r in all_rows]
+        
+        # 1. VALIDATE FEASIBILITY v18.0
+        print("DEBUG: Running feasibility audit...")
+        feasibility = validate_feasibility(
+            budget=data.max_budget,
+            b_type=data.building_type,
+            floors=data.num_floors,
+            city=data.city,
+            sustainability_pref=data.sustainability_pref,
+            total_area=total_area
+        )
+        
+        # 2. SPATIAL LAYOUT
+        spatial_layout = spatial_engine.generate_layout(
+            rooms=program,
+            total_area=total_area,
+            floors=data.num_floors,
+            b_type=data.building_type,
+            query=data.specs or ""
+        )
+
+        # 3. CALCULATE MCDM
+        workflow_results_raw, rejections, impact_note, climate_profile = calculate_mcdm(
+            all_mats, data.city, data.building_type, data.num_floors, 
+            data.max_budget, quantities, data.sustainability_pref, data.specs,
+            ml_model=ecobuild_model
+        )
+
+        ranking_package = {
+            "workflow_results": workflow_results_raw,
+            "rejections": rejections,
+            "ai_strategy": impact_note,
+            "climate_profile": climate_profile,
+            "spatial_layout": spatial_layout,
+            "feasibility_review": feasibility,
+            "total_area": total_area,
+            "budget_analysis": {
+                "status": feasibility["status_label"],
+                "total_cost": feasibility["total_estimated"],
+                "budget_ceiling": data.max_budget
+            }
         }
 
+        return {
+            "status": "success",
+            "ranking": ranking_package
+        }
     except Exception as e:
-        print(f"ERROR: {str(e)}")
-        raise HTTPException(status_code=500, detail=str(e))
+        print(f"ERROR in recommend_materials: {traceback.format_exc()}")
+        return {"status": "error", "message": str(e)}
 
 @app.post("/api/analyze-blueprint")
 async def analyze_blueprint(
@@ -260,15 +238,18 @@ async def analyze_blueprint(
     instruction: str = Form(default=""),
     building_type: str = Form(default="Residential"),
 ):
-    image_bytes = await image.read()
-    processed_img_b64, feedback, recommendations = vision_analysis.process_blueprint(image_bytes, instruction, building_type)
-    return {
-        "status": "success",
-        "annotated_image": f"data:image/jpeg;base64,{processed_img_b64}",
-        "feedback": feedback,
-        "recommendations": recommendations,
-    }
+    try:
+        image_bytes = await image.read()
+        processed_img_b64, feedback, recommendations = vision_analysis.process_blueprint(image_bytes, instruction, building_type)
+        return {
+            "status": "success",
+            "annotated_image": f"data:image/jpeg;base64,{processed_img_b64}",
+            "feedback": feedback,
+            "recommendations": recommendations,
+        }
+    except Exception as e:
+        print(f"ERROR in analyze_blueprint: {str(e)}")
+        raise HTTPException(status_code=500, detail=str(e))
 
 if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run("app:app", host="0.0.0.0", port=5000, reload=True)
+    uvicorn.run(app, host="127.0.0.1", port=5000)
