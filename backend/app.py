@@ -15,6 +15,7 @@ from typing import List, Optional
 # Core Logic Imports
 from database import get_all_materials, format_material
 from mcdm_engine import calculate_mcdm
+import vision_analysis
 from brain import run_ai_audit
 from feasibility_validator import validate_feasibility
 from spatial_ai import spatial_engine
@@ -229,6 +230,25 @@ async def recommend_materials(data: RecommendationRequest):
     except Exception as e:
         print(f"ERROR in recommend_materials: {traceback.format_exc()}")
         return {"status": "error", "message": str(e)}
+
+@app.post("/api/analyze-blueprint")
+async def analyze_blueprint(
+    image: UploadFile = File(...),
+    instruction: str = Form(default=""),
+    building_type: str = Form(default="Residential"),
+):
+    try:
+        image_bytes = await image.read()
+        processed_img_b64, feedback, recommendations = vision_analysis.process_blueprint(image_bytes, instruction, building_type)
+        return {
+            "status": "success",
+            "annotated_image": f"data:image/jpeg;base64,{processed_img_b64}",
+            "feedback": feedback,
+            "recommendations": recommendations,
+        }
+    except Exception as e:
+        print(f"ERROR in analyze_blueprint: {str(e)}")
+        raise HTTPException(status_code=500, detail=str(e))
 
 if __name__ == "__main__":
     uvicorn.run(app, host="127.0.0.1", port=5000)
