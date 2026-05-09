@@ -9,10 +9,12 @@ export function ThemeProvider({ children }) {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
     const stored = localStorage.getItem('theme') || 'dark';
     setTheme(stored);
     document.documentElement.setAttribute('data-theme', stored);
+    // Delay setMounted to avoid synchronous cascading renders warning
+    const timer = setTimeout(() => setMounted(true), 0);
+    return () => clearTimeout(timer);
   }, []);
 
   const toggleTheme = () => {
