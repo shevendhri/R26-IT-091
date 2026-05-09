@@ -271,6 +271,7 @@ def calculate_mcdm(materials: List[dict], city: str, building_type: str,
             all_warnings.extend(_generate_contextual_warnings_v17(sorted_mats[0], strategy_key, num_floors, building_type))
         else:
             # 🚨 SAFETY VALVE: If everything was filtered, pick the best "standard" materials anyway
+            # This prevents the "No optimal materials found" blocker for critical phases.
             fallback_mats = []
             for m in phase_mats:
                 res = _calculate_adaptive_score_v17(m, strategy_key, building_type, num_floors, budget, budget_tier, sustainability_pref, city, 0)
@@ -330,7 +331,7 @@ def _filter_material_hard(m, strategy, floors, budget, b_type, sus_pref) -> Tupl
     if b_type == "Residential" and any(k in name for k in ["industrial epoxy", "portal frame", "corrugated metal"]):
         return False, "Sector Mismatch: Industrial-grade system rejected for domestic residential programme."
 
-    # Relaxed Budget filtering
+    # Relaxed Budget filtering (only block extremely premium if budget is very low)
     if budget < 5_000_000 and any(k in name for k in ["marine-grade", "epoxy-coated", "engineered timber"]):
         return False, "Budget Gate: Premium specification exceeds low-budget project envelope."
 
@@ -420,28 +421,32 @@ def _calculate_adaptive_score_v17(m, strategy_key, b_type, floors, budget, budge
 
 
 def _generate_rationale_v17(m, s_key, b_type, floors, budget_tier, sus_pref, phase) -> str:
-    """ZERO-TEMPLATE RATIONALE GENERATOR v17.0"""
+    """ZERO-TEMPLATE RATIONALE GENERATOR v17.0 — unique per phase × sector × climate × budget × height."""
     name = m["Name"].lower()
     strategy = CLIMATE_STRATEGIES.get(s_key, {})
     climate_cue = strategy.get("rationale_cue", "the prevailing local climate")
 
+    # Pull from sector+phase library, fallback gracefully
     sector_lib = RATIONALE_LIBRARY.get(b_type, RATIONALE_LIBRARY["Residential"])
     phase_templates = sector_lib.get(phase, ["{name} specified based on project context and engineering requirements."])
     template = random.choice(phase_templates)
 
+    # Resolve placeholders with safety fallback
     try:
         rationale = template.format(
-            climate_cue=climate_cue,
+            climate=climate_cue,
             floors=floors,
             budget_tier=budget_tier,
-            name=m.get("Name", "This material"),
-            city=strategy.get("cities", ["the site"])[0].title()
+            name=m.get("Name", "This material")
         )
     except KeyError as e:
+        # Fallback if template has unexpected placeholder
+        print(f"Rationale Format Error: {e}")
         rationale = template.replace("{", "").replace("}", "")
     except Exception:
         rationale = f"{m.get('Name', 'Material')} specified for {b_type} structural requirements in {climate_cue}."
 
+    # Append a unique closing clause based on non-trivial conditions
     closers = []
     if sus_pref == "High":
         closers.append(f"Selected to minimise embodied carbon footprint consistent with the project's eco-priority specification.")

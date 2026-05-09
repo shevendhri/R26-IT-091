@@ -4,10 +4,10 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer style={{
-      padding: '4rem 3rem',
-      borderTop: '1px solid var(--glass-border)',
-      background: 'rgba(4, 13, 10, 0.5)',
+    <footer style={{ 
+      padding: '4rem 3rem', 
+      borderTop: '1px solid var(--glass-border)', 
+      background: 'rgba(4, 13, 10, 0.5)', 
       textAlign: 'center',
       position: 'relative',
       zIndex: 10

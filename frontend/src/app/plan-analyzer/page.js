@@ -22,8 +22,8 @@ const Modal = ({ isOpen, onClose, title, content }) => {
       zIndex: 3000,
       padding: '2rem'
     }} onClick={onClose}>
-      <div
-        className="glass-panel glow-border"
+      <div 
+        className="glass-panel glow-border" 
         style={{
           width: '100%',
           maxWidth: '800px',
@@ -33,10 +33,10 @@ const Modal = ({ isOpen, onClose, title, content }) => {
           overflowY: 'auto',
           backgroundColor: 'var(--eco-deep)',
           border: '1px solid var(--eco-glow-soft)'
-        }}
+        }} 
         onClick={e => e.stopPropagation()}
       >
-        <button
+        <button 
           onClick={onClose}
           style={{
             position: 'absolute',
@@ -55,10 +55,10 @@ const Modal = ({ isOpen, onClose, title, content }) => {
           ✕
         </button>
 
-        <h2 style={{
-          fontFamily: 'Space Grotesk',
-          fontSize: '2rem',
-          color: 'var(--eco-glow)',
+        <h2 style={{ 
+          fontFamily: 'Space Grotesk', 
+          fontSize: '2rem', 
+          color: 'var(--eco-glow)', 
           marginBottom: '2rem',
           borderBottom: '1px solid var(--glass-border)',
           paddingBottom: '1rem'
@@ -66,9 +66,9 @@ const Modal = ({ isOpen, onClose, title, content }) => {
           {title}
         </h2>
 
-        <div style={{
-          color: 'var(--text-primary)',
-          lineHeight: '1.8',
+        <div style={{ 
+          color: 'var(--text-primary)', 
+          lineHeight: '1.8', 
           fontSize: '1rem',
           whiteSpace: 'pre-wrap'
         }}>
@@ -76,8 +76,8 @@ const Modal = ({ isOpen, onClose, title, content }) => {
         </div>
 
         <div style={{ marginTop: '3rem', display: 'flex', justifyContent: 'flex-end' }}>
-          <button
-            className="btn-premium"
+          <button 
+            className="btn-premium" 
             onClick={onClose}
             style={{ padding: '0.8rem 2rem', fontSize: '0.8rem' }}
           >
@@ -161,7 +161,7 @@ Warning.
         <div className="gradient-mesh"></div>
         <div className="blueprint-grid"></div>
       </div>
-
+      
       <Header />
 
       <main style={{ padding: '4rem 2rem', maxWidth: '1200px', margin: '0 auto', position: 'relative', zIndex: 10 }}>
@@ -187,14 +187,14 @@ Warning.
 
         {/* Info Buttons Section */}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem', marginBottom: '4rem' }}>
-          <button
+          <button 
             className="glass-panel glow-border"
             onClick={() => setActiveModal('act')}
-            style={{
-              padding: '1.25rem',
-              color: '#fff',
-              cursor: 'pointer',
-              fontSize: '1rem',
+            style={{ 
+              padding: '1.25rem', 
+              color: '#fff', 
+              cursor: 'pointer', 
+              fontSize: '1rem', 
               fontWeight: 600,
               border: '1px solid var(--glass-border)',
               background: 'rgba(255, 255, 255, 0.02)'
@@ -202,14 +202,14 @@ Warning.
           >
             Act No 4 of 1978
           </button>
-          <button
+          <button 
             className="glass-panel glow-border"
             onClick={() => setActiveModal('special')}
-            style={{
-              padding: '1.25rem',
-              color: '#fff',
-              cursor: 'pointer',
-              fontSize: '1rem',
+            style={{ 
+              padding: '1.25rem', 
+              color: '#fff', 
+              cursor: 'pointer', 
+              fontSize: '1rem', 
               fontWeight: 600,
               border: '1px solid var(--glass-border)',
               background: 'rgba(255, 255, 255, 0.02)'
@@ -217,14 +217,14 @@ Warning.
           >
             Special Actions
           </button>
-          <button
+          <button 
             className="glass-panel glow-border"
             onClick={() => setActiveModal('gazette')}
-            style={{
-              padding: '1.25rem',
-              color: '#fff',
-              cursor: 'pointer',
-              fontSize: '1rem',
+            style={{ 
+              padding: '1.25rem', 
+              color: '#fff', 
+              cursor: 'pointer', 
+              fontSize: '1rem', 
               fontWeight: 600,
               border: '1px solid var(--glass-border)',
               background: 'rgba(255, 255, 255, 0.02)'
@@ -235,22 +235,22 @@ Warning.
         </div>
 
         {/* Upload Section */}
-        <div className="glass-panel" style={{
-          padding: '2.5rem',
-          border: '1px solid var(--eco-glow-soft)',
+        <div className="glass-panel" style={{ 
+          padding: '2.5rem', 
+          border: '1px solid var(--eco-glow-soft)', 
           borderRadius: '12px',
           background: 'rgba(13, 43, 33, 0.2)'
         }}>
           <h3 style={{ fontSize: '1.4rem', marginBottom: '1.5rem', fontFamily: 'Space Grotesk', fontWeight: 700 }}>Upload Plan</h3>
-
+          
           <div style={{ marginBottom: '1.5rem' }}>
             <label style={{ display: 'block', fontSize: '0.65rem', fontWeight: 800, color: 'var(--text-secondary)', textTransform: 'uppercase', marginBottom: '0.5rem', letterSpacing: '1px' }}>
               Selected File Name
             </label>
-            <div style={{
-              background: 'rgba(0, 0, 0, 0.2)',
-              padding: '1.25rem',
-              borderRadius: '8px',
+            <div style={{ 
+              background: 'rgba(0, 0, 0, 0.2)', 
+              padding: '1.25rem', 
+              borderRadius: '8px', 
               border: '1px solid var(--glass-border)',
               color: selectedFile ? '#fff' : 'var(--text-dim)',
               fontSize: '0.9rem'
@@ -260,19 +260,19 @@ Warning.
           </div>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginBottom: '2.5rem' }}>
-            <input
-              type="file"
-              id="plan-upload"
-              hidden
+            <input 
+              type="file" 
+              id="plan-upload" 
+              hidden 
               onChange={handleFileChange}
               accept=".pdf,.png,.jpg,.jpeg,.dwg"
             />
-            <label
-              htmlFor="plan-upload"
-              style={{
-                width: 'fit-content',
-                padding: '0.75rem 2rem',
-                fontSize: '0.8rem',
+            <label 
+              htmlFor="plan-upload" 
+              style={{ 
+                width: 'fit-content', 
+                padding: '0.75rem 2rem', 
+                fontSize: '0.8rem', 
                 cursor: 'pointer',
                 display: 'inline-flex',
                 alignItems: 'center',
@@ -293,9 +293,9 @@ Warning.
             </p>
           </div>
 
-          <button
-            style={{
-              width: '100%',
+          <button 
+            style={{ 
+              width: '100%', 
               padding: '1rem',
               backgroundColor: 'var(--eco-glow)',
               color: 'var(--eco-black)',
@@ -323,9 +323,9 @@ Warning.
 
       {/* Modals */}
       {activeModal && (
-        <Modal
-          isOpen={true}
-          onClose={() => setActiveModal(null)}
+        <Modal 
+          isOpen={true} 
+          onClose={() => setActiveModal(null)} 
           title={modalContents[activeModal].title}
           content={modalContents[activeModal].content}
         />

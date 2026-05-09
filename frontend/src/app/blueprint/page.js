@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
@@ -55,7 +55,7 @@ export default function BlueprintIntelligence() {
   const [loading, setLoading] = useState(false);
   const [loadingStep, setLoadingStep] = useState("");
 
-  const API_URL = process.env.NEXT_PUBLIC_BLUEPRINT_API_URL || 'http://127.0.0.1:5000';
+  const API_URL = process.env.NEXT_PUBLIC_BLUEPRINT_API_URL || 'http://127.0.0.1:5001';
 
   const handleProcess = async (e) => {
     if (e) e.preventDefault();
@@ -68,7 +68,7 @@ export default function BlueprintIntelligence() {
     try {
         const blob = await fetch(image).then(r => r.blob());
         formData.append('image', blob, 'blueprint.jpg');
-        formData.append('instruction', query || "Perform a full architectural audit.");
+        formData.append('userQuery', query || "Perform a full architectural audit.");
 
         const res = await fetch(`${API_URL}/api/analyze-blueprint`, {
             method: 'POST',

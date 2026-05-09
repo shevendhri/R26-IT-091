@@ -52,26 +52,26 @@ def ensure_table(force_reinit=False):
         ("AAC Eco-Block (G4)", "Walling", 4500.0, 98, 55, 40, 45, 90, 30, 0.15, "dry,highland", "mid", "residential,commercial", "1-2,3-5", 50, "Superior thermal insulation with ultra-low dead-load."),
         ("High-Density Cement Block", "Walling", 2650.0, 45, 75, 55, 55, 45, 50, 0.35, "dry,wet", "low,mid", "residential,commercial,industrial", "1-2,3-5", 40, "Load-bearing utility blocks for industrial/commercial partitioning."),
         ("Curtain Wall Spandrel (Insulated)", "Walling", 85000.0, 90, 95, 90, 20, 70, 30, 0.75, "urban,commercial", "high", "commercial", "6+", 35, "High-performance glazing system for commercial high-rises."),
-        
+
         # ── ROOFING ──
         ("Marine-Grade Aluminium (0.47mm)", "Roofing", 7800.0, 45, 98, 98, 15, 65, 10, 0.45, "coastal", "mid,high", "residential,commercial,industrial", "1-2,3-5", 45, "Salt-air proof roofing for severe coastal zones."),
         ("Portuguese Clay Tiles (Unglazed)", "Roofing", 6900.0, 92, 85, 95, 10, 85, 20, 0.18, "highland,wet", "mid,high", "residential", "1-2", 65, "Classic thermal performance with natural ventilation."),
         ("Insulated Sandwich Roof Panel", "Roofing", 9500.0, 95, 80, 70, 20, 50, 25, 0.55, "dry,industrial", "mid,high", "industrial,commercial", "1-2,3-5", 35, "High-R value roofing for climate-controlled industrial space."),
-        
+
         # ── FLOORING ──
         ("Heavy-Duty Industrial Epoxy", "Flooring", 12500.0, 20, 98, 90, 85, 40, 15, 0.65, "industrial,wet", "mid,high", "industrial", "1-2", 25, "Chemical-resistant, dust-proof floor for process zones."),
         ("Polished Terrazzo (Traditional)", "Flooring", 7200.0, 55, 88, 75, 50, 75, 15, 0.22, "dry,wet", "mid,high", "residential,commercial", "1-2,3-5", 65, "Seamless high-durability traditional flooring."),
         ("Porcelain GVT Slab (Premium)", "Flooring", 9800.0, 45, 95, 85, 45, 65, 10, 0.40, "urban,coastal", "high", "residential,commercial", "1-2,3-5", 45, "Stain-resistant luxury floor for high-traffic lobbies."),
-        
+
         # ── OPENINGS ──
         ("uPVC Multi-Chamber Window", "Openings", 72000.0, 95, 98, 100, 15, 85, 10, 0.28, "coastal,highland", "high", "residential,commercial", "1-2,3-5,6+", 45, "Maximum energy efficiency; chloride-resistant frame."),
         ("Commercial Grade Glazing (DGU)", "Openings", 95000.0, 92, 90, 85, 20, 75, 20, 0.55, "urban,commercial", "high", "commercial", "3-5,6+", 40, "Double-glazed unit with low-E coating for peak heat reduction."),
         ("Industrial Sectional Door", "Openings", 185000.0, 50, 80, 70, 60, 45, 30, 0.70, "industrial", "mid,high", "industrial", "1-2", 25, "High-speed insulated door for industrial logistics."),
-        
+
         # ── WATERPROOFING ──
         ("Crystalline Slurry (Deep)", "Waterproofing", 3800.0, 10, 100, 95, 15, 55, 5, 0.05, "wet,coastal", "mid,high", "residential,commercial,industrial", "1-2,3-5,6+", 60, "Growth-penetrating seal for structural slabs."),
         ("Liquid Polyurethane Membrane", "Waterproofing", 4500.0, 15, 95, 90, 10, 40, 15, 0.55, "wet,coastal", "high", "residential,commercial", "1-2,3-5", 25, "Highly flexible membrane for thermal-movement zones."),
-        
+
         # ── FINISHING ──
         ("Advanced Nano-Exterior Paint", "Finishing", 2100.0, 95, 90, 85, 10, 65, 15, 0.25, "coastal,wet,dry", "mid,high", "residential,commercial,industrial", "1-2,3-5,6+", 12, "Self-cleaning, high-UV resistant protective coating."),
         ("Eco-Friendly Low VOC Emulsion", "Finishing", 1650.0, 55, 60, 40, 10, 95, 15, 0.12, "residential,urban", "low,mid", "residential", "1-2,3-5", 15, "Indoor air quality focused domestic finish."),

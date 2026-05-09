@@ -6,25 +6,24 @@
   --eco-deep: #071a14;
   --eco-mid: #0d2b21;
   --eco-forest: #143d30;
-
-  --eco-glow: #00ff9d;
-  /* Neon Eco Green */
+  
+  --eco-glow: #00ff9d; /* Neon Eco Green */
   --eco-glow-soft: rgba(0, 255, 157, 0.15);
   --eco-emerald: #10b981;
-
+  
   --blueprint-blue: #0ea5e9;
   --blueprint-glow: rgba(14, 165, 233, 0.2);
-
+  
   --warn-amber: #f59e0b;
   --error-red: #ef4444;
-
+  
   --concrete-gray: #d1d5db;
   --graphite: #1f2937;
-
+  
   --glass-bg: rgba(255, 255, 255, 0.02);
   --glass-border: rgba(255, 255, 255, 0.05);
   --glass-blur: blur(24px);
-
+  
   --text-primary: #ffffff;
   --text-secondary: #94a3b8;
   --text-dim: #64748b;
@@ -45,11 +44,7 @@ body {
   min-height: 100vh;
 }
 
-h1,
-h2,
-h3,
-h4,
-.font-heading {
+h1, h2, h3, h4, .font-heading {
   font-family: 'Space Grotesk', sans-serif;
   letter-spacing: -0.03em;
   font-weight: 700;
@@ -67,7 +62,7 @@ h4,
 .gradient-mesh {
   position: absolute;
   inset: 0;
-  background:
+  background: 
     radial-gradient(circle at 0% 0%, rgba(16, 185, 129, 0.08) 0%, transparent 50%),
     radial-gradient(circle at 100% 100%, rgba(14, 165, 233, 0.08) 0%, transparent 50%),
     radial-gradient(circle at 50% 50%, rgba(4, 13, 10, 1) 0%, transparent 100%);
@@ -76,19 +71,14 @@ h4,
 }
 
 @keyframes mesh-pulse {
-  0% {
-    transform: scale(1) translate(0, 0);
-  }
-
-  100% {
-    transform: scale(1.2) translate(-5%, -5%);
-  }
+  0% { transform: scale(1) translate(0, 0); }
+  100% { transform: scale(1.2) translate(-5%, -5%); }
 }
 
 .blueprint-grid {
   position: absolute;
   inset: 0;
-  background-image:
+  background-image: 
     linear-gradient(rgba(0, 255, 157, 0.02) 1px, transparent 1px),
     linear-gradient(90deg, rgba(0, 255, 157, 0.02) 1px, transparent 1px);
   background-size: 50px 50px;
@@ -106,13 +96,8 @@ h4,
 }
 
 @keyframes topo-flow {
-  from {
-    background-position: 0 0;
-  }
-
-  to {
-    background-position: 800px 800px;
-  }
+  from { background-position: 0 0; }
+  to { background-position: 800px 800px; }
 }
 
 /* ✨ PREMIUM GLASSMORPHISM */
@@ -170,35 +155,13 @@ h4,
   border: 1.5px solid transparent;
 }
 
-.core-ring-1 {
-  width: 100%;
-  height: 100%;
-  border-top-color: var(--eco-glow);
-  animation: spin-v2 8s linear infinite;
-}
-
-.core-ring-2 {
-  width: 80%;
-  height: 80%;
-  border-right-color: var(--blueprint-blue);
-  animation: spin-v2 6s linear reverse infinite;
-}
-
-.core-ring-3 {
-  width: 60%;
-  height: 60%;
-  border-bottom-color: var(--warn-amber);
-  animation: spin-v2 4s ease-in-out infinite;
-}
+.core-ring-1 { width: 100%; height: 100%; border-top-color: var(--eco-glow); animation: spin-v2 8s linear infinite; }
+.core-ring-2 { width: 80%; height: 80%; border-right-color: var(--blueprint-blue); animation: spin-v2 6s linear reverse infinite; }
+.core-ring-3 { width: 60%; height: 60%; border-bottom-color: var(--warn-amber); animation: spin-v2 4s ease-in-out infinite; }
 
 @keyframes spin-v2 {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 /* 📐 TECHNICAL INPUTS */
@@ -318,50 +281,17 @@ h4,
 }
 
 @keyframes scanner-v2 {
-  0% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(300px);
-  }
-
-  100% {
-    transform: translateY(0);
-  }
+  0% { transform: translateY(0); }
+  50% { transform: translateY(300px); }
+  100% { transform: translateY(0); }
 }
 
 /* Scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--eco-black);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--eco-mid);
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--eco-glow);
-}
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--eco-black); }
+::-webkit-scrollbar-thumb { background: var(--eco-mid); border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: var(--eco-glow); }
 
 /* Animations */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-fade-in {
-  animation: fadeIn 0.8s cubic-bezier(0.23, 1, 0.32, 1) forwards;
-}
+@keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+.animate-fade-in { animation: fadeIn 0.8s cubic-bezier(0.23, 1, 0.32, 1) forwards; }

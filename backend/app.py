@@ -205,8 +205,7 @@ async def recommend_materials(data: RecommendationRequest):
         # 3. CALCULATE MCDM
         workflow_results_raw, rejections, impact_note, climate_profile = calculate_mcdm(
             all_mats, data.city, data.building_type, data.num_floors, 
-            data.max_budget, quantities, data.sustainability_pref, data.specs,
-            ml_model=ecobuild_model
+            data.max_budget, quantities, data.sustainability_pref, data.specs
         )
 
         ranking_package = {
