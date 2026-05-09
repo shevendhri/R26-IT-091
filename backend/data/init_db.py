@@ -4,7 +4,9 @@ Run this any time you want to wipe and reload the data:
     python init_db.py
 """
 import csv
+import sys
 import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from database import get_connection, ensure_table
 
 def init_database():
@@ -48,8 +50,12 @@ def init_database():
                 category = row[3]
                 unit = row[5]
                 try:
-                    # BSR Rate (LKR/m³ equiv.) at index 7
-                    rate = float(row[7]) if row[7] else 0.0
+                    # BSR Rate: Prefer row[7] (LKR/m3 equiv.) but fall back to row[6] (LKR / Unit)
+                    rate = 0.0
+                    if len(row) > 7 and row[7].strip():
+                        rate = float(row[7])
+                    elif len(row) > 6 and row[6].strip():
+                        rate = float(row[6])
                     # Compressive Strength at index 8
                     strength = float(row[8]) if row[8] else 0.0
                     # Tensile Strength at index 9 (used as proxy for Ductility)
@@ -58,8 +64,24 @@ def init_database():
                     fire = float(row[12]) if row[12] else 0.0
                     # Embodied Carbon at index 14
                     carbon = float(row[14]) if row[14] else 0.0
-                    # Service Life at index 15
+                    
+                    # --- ENGINEERING CORRECTION LAYER ---
+                    name_cat = (name + " " + category).lower()
+
+                    # CSV concrete carbon values (0.13–0.26 kgCO2e/kg) are correct as-is.
+                    # NO scaling applied — multiplying would inflate to 130–260 and
+                    # destroy MCDM scoring by triggering the >10.0 carbon hard penalty.
+
+                    # Aluminium Carbon: Primary Al is ~16–20 kgCO2e/kg.
+                    # CSV value may understate; correct to engineering standard.
+                    if "alumini" in name_cat and carbon < 5.0:
+                        carbon = 18.5  # kgCO2e/kg — primary aluminium (IAI 2023)
+
+                    # Timber Lifecycle: Cap untreated timber at 25 yrs in humid climates.
                     life = int(row[15]) if row[15] else 50
+                    if "timber" in name_cat and "treated" not in name_cat:
+                        life = min(life, 25)
+                    # -------------------------------------------
                 except ValueError:
                     continue # Skip invalid rows
                 

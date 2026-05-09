@@ -1,5 +1,6 @@
 import './globals.css';
 import { ThemeProvider } from './ThemeProvider';
+import { ProjectProvider } from '../context/ProjectContext';
 
 export const metadata = {
   title: 'IntelliBuild AI - Blueprint & Material System',
@@ -11,7 +12,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <ThemeProvider>
-          {children}
+          <ProjectProvider>
+            {children}
+          </ProjectProvider>
         </ThemeProvider>
       </body>
     </html>
