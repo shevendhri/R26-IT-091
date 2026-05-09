@@ -1,6 +1,6 @@
 import './globals.css';
 import { ThemeProvider } from './ThemeProvider';
-import { ProjectProvider } from '../context/ProjectContext';
+import { ProjectProvider } from '@/context/ProjectContext';
 
 export const metadata = {
   title: 'IntelliBuild AI - Blueprint & Material System',

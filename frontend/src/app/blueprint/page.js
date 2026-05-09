@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from 'react';
-import Header from '../../components/Header';
-import Footer from '../../components/Footer';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 // 🧬 Neural Core Status for Blueprint v18.0
 const BlueprintNeuralStatus = ({ status = "ACTIVE" }) => (
