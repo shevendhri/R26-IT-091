@@ -2,8 +2,8 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import Header from '../../components/Header';
-import Footer from '../../components/Footer';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 // ── CONFIG BAR ──
 const ConfigBar = ({ params, handlers, handleGenerate, loading }) => {
