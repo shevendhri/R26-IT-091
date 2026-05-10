@@ -134,33 +134,137 @@ const LoadingOverlay = ({ step }) => {
 
 // ── BLUEPRINT CANVAS ──
 const BlueprintCanvas = ({ layout }) => {
-  if (!layout || !layout.rooms) return null;
+  const [activeFloor, setActiveFloor] = useState(0);
+  if (!layout || (!layout.rooms && !layout.floors_data)) return null;
+  
   const scale = 25;
-  const padding = 50;
+  const padding = 45;
   const viewWidth = (layout.footprint.w * scale) + (padding * 2);
   const viewHeight = (layout.footprint.h * scale) + (padding * 2);
 
+  const currentFloor = layout.floors_data ? layout.floors_data[activeFloor] : { rooms: layout.rooms, label: "GROUND FLOOR" };
+
+  const getRoomColor = (type) => {
+    switch(type) {
+      case 'WET': return 'rgba(56, 189, 248, 0.12)';
+      case 'PUBLIC': return 'rgba(255, 255, 255, 0.04)';
+      case 'PRIVATE': return 'rgba(0, 255, 157, 0.06)';
+      default: return 'rgba(255, 255, 255, 0.02)';
+    }
+  };
+
+  const getRoomStroke = (type) => {
+    switch(type) {
+      case 'WET': return '#38bdf8';
+      case 'PUBLIC': return '#ffffff';
+      case 'PRIVATE': return '#00ff9d';
+      default: return '#475569';
+    }
+  };
+
+  const getRoomIcon = (label) => {
+    const l = label.toLowerCase();
+    if (l.includes('bedroom')) return '🛏️';
+    if (l.includes('bath')) return '🚿';
+    if (l.includes('living')) return '🛋️';
+    if (l.includes('kitchen')) return '🍳';
+    if (l.includes('dining')) return '🍽️';
+    if (l.includes('office') || l.includes('study')) return '🖥️';
+    return '📦';
+  };
+
   return (
-    <div className="glass-panel glow-border" style={{ padding: '2.5rem', flex: 1.5, background: 'rgba(0,0,0,0.5)', minHeight: '550px', position: 'relative' }}>
-      <div className="scan-line"></div>
-      <div style={{ fontSize: '0.8rem', fontWeight: 900, color: 'var(--blueprint-blue)', letterSpacing: '6px', marginBottom: '2rem' }}>SPATIAL_GENOMICS_PLAN</div>
-      <div style={{ background: 'rgba(4, 13, 10, 0.6)', borderRadius: '24px', border: '1px solid var(--glass-border)', padding: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-        <svg width="100%" height="450" viewBox={`0 0 ${viewWidth} ${viewHeight}`}>
-          <rect width="100%" height="100%" fill="rgba(14, 165, 233, 0.02)" />
-          {layout.rooms.map((room, i) => (
+    <div className="glass-panel glow-border" style={{ padding: '2.5rem', flex: 1.5, background: 'linear-gradient(135deg, #0f172a 0%, #020617 100%)', minHeight: '620px', position: 'relative', overflow: 'hidden' }}>
+      <div className="scan-line" style={{ background: 'linear-gradient(to right, transparent, rgba(56, 189, 248, 0.2), transparent)', height: '2px' }}></div>
+      
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1.5rem' }}>
+        <div>
+          <div style={{ fontSize: '0.65rem', fontWeight: 900, color: '#38bdf8', letterSpacing: '5px', textTransform: 'uppercase' }}>Architectural Protocol v18.4</div>
+          <h3 style={{ fontSize: '1.2rem', fontWeight: 800, color: '#fff', fontFamily: 'Space Grotesk', marginTop: '0.5rem' }}>MULTI-LEVEL SPATIAL MAPPING</h3>
+        </div>
+        <div style={{ textAlign: 'right' }}>
+          <div style={{ fontSize: '0.55rem', color: '#64748b', fontWeight: 900, letterSpacing: '2px' }}>SYSTEM_REF: GC-2026-X</div>
+          <div style={{ fontSize: '0.7rem', color: '#fff', fontWeight: 700, marginTop: '0.2rem' }}>SCALE 1:50</div>
+        </div>
+      </div>
+
+      {/* FLOOR SWITCHER */}
+      {layout.floors_data && layout.floors_data.length > 1 && (
+        <div style={{ display: 'flex', gap: '10px', marginBottom: '1.5rem' }}>
+          {layout.floors_data.map((floor, idx) => (
+            <button 
+              key={idx}
+              onClick={() => setActiveFloor(idx)}
+              className={`glow-border ${activeFloor === idx ? 'active-floor-btn' : ''}`}
+              style={{
+                padding: '8px 16px',
+                background: activeFloor === idx ? 'var(--blueprint-blue)' : 'rgba(255,255,255,0.05)',
+                border: '1px solid var(--glass-border)',
+                borderRadius: '8px',
+                color: '#fff',
+                fontSize: '0.65rem',
+                fontWeight: 900,
+                cursor: 'pointer',
+                transition: 'all 0.3s ease',
+                letterSpacing: '1px'
+              }}
+            >
+              {floor.label}
+            </button>
+          ))}
+        </div>
+      )}
+
+      <div style={{ 
+        background: '#020617', 
+        borderRadius: '20px', 
+        border: '1px solid #1e293b', 
+        padding: '15px', 
+        display: 'flex', 
+        alignItems: 'center', 
+        justifyContent: 'center',
+        boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)',
+        position: 'relative'
+      }}>
+        <div style={{ 
+          position: 'absolute', 
+          inset: 0, 
+          backgroundImage: 'linear-gradient(#1e293b 1px, transparent 1px), linear-gradient(90deg, #1e293b 1px, transparent 1px)', 
+          backgroundSize: '30px 30px',
+          opacity: 0.2
+        }}></div>
+
+        <svg width="100%" height="450" viewBox={`0 0 ${viewWidth} ${viewHeight}`} style={{ position: 'relative', zIndex: 2 }}>
+          <rect x={padding} y={padding} width={layout.footprint.w * scale} height={layout.footprint.h * scale} fill="none" stroke="#1e293b" strokeWidth="10" rx="4" />
+          <rect x={padding} y={padding} width={layout.footprint.w * scale} height={layout.footprint.h * scale} fill="none" stroke="#38bdf8" strokeWidth="1" strokeDasharray="10 5" opacity="0.5" />
+
+          {currentFloor.rooms.map((room, i) => (
             <g key={i} transform={`translate(${padding + (room.x * scale)}, ${padding + (room.y * scale)})`}>
-              <rect 
-                width={room.w * scale} 
-                height={room.h * scale} 
-                fill={room.type === 'WET' ? 'rgba(14, 165, 233, 0.15)' : (room.type === 'HABITABLE' ? 'rgba(0, 255, 157, 0.1)' : 'rgba(255, 255, 255, 0.05)')} 
-                stroke={room.type === 'WET' ? 'var(--blueprint-blue)' : (room.type === 'HABITABLE' ? 'var(--eco-glow)' : 'var(--glass-border)')} 
-                strokeWidth="2" 
-              />
-              <text x="5" y="15" fontSize="8" fill="#fff" fontWeight="800" style={{ opacity: 0.8 }}>{room.label.toUpperCase()}</text>
-              <text x="5" y="28" fontSize="6" fill="var(--text-secondary)" fontWeight="500">{room.w}m x {room.h}m</text>
+              <rect width={room.w * scale} height={room.h * scale} fill={getRoomColor(room.type)} stroke={getRoomStroke(room.type)} strokeWidth="2" rx="2" />
+              <rect width="25" height="12" fill={getRoomStroke(room.type)} opacity="0.8" rx="2" x="5" y="5" />
+              <text x="17.5" y="14" fontSize="6" fill="#000" fontWeight="900" textAnchor="middle">{i+1}</text>
+              <text x="8" y="28" fontSize="9" fill="#fff" fontWeight="900" style={{ letterSpacing: '0.5px' }}>{room.label.toUpperCase()}</text>
+              <text x="8" y="42" fontSize="7" fill="#64748b" fontWeight="700">{room.w}m x {room.h}m ({Math.round(room.w * room.h)}m²)</text>
+              <text x={room.w * scale - 20} y={room.h * scale - 10} fontSize="12">{getRoomIcon(room.label)}</text>
             </g>
           ))}
+
+          <g opacity="0.6">
+            <line x1={padding} y1={padding - 20} x2={padding + layout.footprint.w * scale} y2={padding - 20} stroke="#38bdf8" strokeWidth="1" />
+            <text x={padding + (layout.footprint.w * scale)/2} y={padding - 28} fontSize="8" fill="#38bdf8" textAnchor="middle" fontWeight="800">WIDTH: {layout.footprint.w}m</text>
+            <line x1={padding - 20} y1={padding} x2={padding - 20} y2={padding + layout.footprint.h * scale} stroke="#38bdf8" strokeWidth="1" />
+            <text x={padding - 28} y={padding + (layout.footprint.h * scale)/2} fontSize="8" fill="#38bdf8" textAnchor="middle" transform={`rotate(-90, ${padding - 28}, ${padding + (layout.footprint.h * scale)/2})`} fontWeight="800">DEPTH: {layout.footprint.h}m</text>
+          </g>
         </svg>
+      </div>
+
+      <div style={{ marginTop: '1.5rem', display: 'flex', gap: '2rem', padding: '0.8rem 1.2rem', background: 'rgba(255,255,255,0.02)', borderRadius: '12px' }}>
+        {['PUBLIC', 'PRIVATE', 'WET'].map(type => (
+          <div key={type} style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+            <div style={{ width: '12px', height: '12px', background: getRoomColor(type), border: `1.5px solid ${getRoomStroke(type)}`, borderRadius: '3px' }}></div>
+            <span style={{ fontSize: '0.6rem', fontWeight: 800, color: '#94a3b8' }}>{type}</span>
+          </div>
+        ))}
       </div>
     </div>
   );
