@@ -363,8 +363,352 @@ export default function ResultsPage() {
         </div>
 
         {/* Floor Plan */}
+        {/* Critical Issues */}
+{failedRules.length > 0 && (
+  <div>
+    <h3
+      style={{
+        ...sectionTitle,
+        color: '#ff4d4f',
+      }}
+    >
+      Critical Issues
+    </h3>
+
+    <div
+      style={{
+        display: 'grid',
+        gridTemplateColumns:
+          'repeat(auto-fit, minmax(320px, 1fr))',
+        gap: '18px',
+      }}
+    >
+      {failedRules.map((rule) => (
+        <div
+          key={rule.ruleNumber}
+          style={{
+            border:
+              '1px solid rgba(231,76,60,0.8)',
+            background:
+              'rgba(231,76,60,0.05)',
+            borderRadius: '18px',
+            padding: '22px',
+          }}
+        >
+          <div
+            style={{
+              display: 'flex',
+              gap: '14px',
+              alignItems: 'flex-start',
+            }}
+          >
+            <AlertCircle
+              size={20}
+              color="#ff4d4f"
+            />
+
+            <div>
+              <p
+                style={{
+                  color: '#ffffff',
+                  fontWeight: '700',
+                  fontSize: '18px',
+                  marginBottom: '6px',
+                }}
+              >
+                {rule.name}
+              </p>
+
+              <p
+                style={{
+                  color: '#8aa0b5',
+                  fontSize: '13px',
+                  marginBottom: '14px',
+                }}
+              >
+                {rule.ruleNumber}
+              </p>
+
+              <p
+                style={{
+                  color: '#ffffff',
+                  lineHeight: '1.6',
+                  fontSize: '15px',
+                }}
+              >
+                {rule.details}
+              </p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+)}
+
+{/* Warnings */}
+{warningRules.length > 0 && (
+  <div>
+    <h3
+      style={{
+        ...sectionTitle,
+        color: '#ff9f1a',
+      }}
+    >
+      Warnings
+    </h3>
+
+    <div
+      style={{
+        display: 'grid',
+        gridTemplateColumns:
+          'repeat(auto-fit, minmax(320px, 1fr))',
+        gap: '18px',
+      }}
+    >
+      {warningRules.map((rule) => (
+        <div
+          key={rule.ruleNumber}
+          style={{
+            border:
+              '1px solid rgba(255,159,26,0.7)',
+            background:
+              'rgba(255,159,26,0.05)',
+            borderRadius: '18px',
+            padding: '22px',
+          }}
+        >
+          <div
+            style={{
+              display: 'flex',
+              gap: '14px',
+              alignItems: 'flex-start',
+            }}
+          >
+            <AlertTriangle
+              size={20}
+              color="#ff9f1a"
+            />
+
+            <div>
+              <p
+                style={{
+                  color: '#ffffff',
+                  fontWeight: '700',
+                  fontSize: '18px',
+                  marginBottom: '6px',
+                }}
+              >
+                {rule.name}
+              </p>
+
+              <p
+                style={{
+                  color: '#8aa0b5',
+                  fontSize: '13px',
+                  marginBottom: '14px',
+                }}
+              >
+                {rule.ruleNumber}
+              </p>
+
+              <p
+                style={{
+                  color: '#ffffff',
+                  lineHeight: '1.6',
+                  fontSize: '15px',
+                }}
+              >
+                {rule.details}
+              </p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+)}
+
+{/* Download Report */}
+<div style={cardStyle}>
+  <div
+    style={{
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      flexWrap: 'wrap',
+      gap: '20px',
+    }}
+  >
+    <div>
+      <h3
+        style={{
+          color: '#ffffff',
+          fontSize: '18px',
+          fontWeight: '700',
+          marginBottom: '8px',
+        }}
+      >
+        Download Report
+      </h3>
+
+      <p
+        style={{
+          color: '#8aa0b5',
+          fontSize: '15px',
+        }}
+      >
+        Get a detailed PDF report of
+        the fire safety analysis
+      </p>
+    </div>
+
+    <PDFDownloadLink
+      document={generatePDFDocument(results)}
+      fileName={`FireSafe_Report_${submissionId}.pdf`}
+    >
+      {({ loading }) => (
+        <button
+          disabled={loading}
+          style={{
+            background: '#27ae60',
+            color: '#000',
+            border: 'none',
+            borderRadius: '14px',
+            padding: '14px 26px',
+            fontWeight: '700',
+            fontSize: '15px',
+            cursor: 'pointer',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '10px',
+          }}
+        >
+          <Download size={18} />
+
+          {loading
+            ? 'Generating...'
+            : 'Download PDF'}
+        </button>
+      )}
+    </PDFDownloadLink>
+  </div>
+</div>
+
+{/* Statistics */}
+<div
+  style={{
+    display: 'grid',
+    gridTemplateColumns:
+      'repeat(auto-fit, minmax(260px, 1fr))',
+    gap: '18px',
+  }}
+>
+  {/* Compliant */}
+  <div style={cardStyle}>
+    <p
+      style={{
+        color: '#8aa0b5',
+        marginBottom: '18px',
+      }}
+    >
+      Compliant Rules
+    </p>
+
+    <p
+      style={{
+        color: '#27ae60',
+        fontSize: '54px',
+        fontWeight: '700',
+        fontFamily:
+          "'Orbitron', monospace",
+      }}
+    >
+      {passedRules.length}
+    </p>
+
+    <p
+      style={{
+        color: '#8aa0b5',
+        marginTop: '10px',
+      }}
+    >
+      out of {results.rules.length} total
+    </p>
+  </div>
+
+  {/* Issues */}
+  <div style={cardStyle}>
+    <p
+      style={{
+        color: '#8aa0b5',
+        marginBottom: '18px',
+      }}
+    >
+      Issues Found
+    </p>
+
+    <p
+      style={{
+        color: '#ff4d4f',
+        fontSize: '54px',
+        fontWeight: '700',
+        fontFamily:
+          "'Orbitron', monospace",
+      }}
+    >
+      {failedRules.length +
+        warningRules.length}
+    </p>
+
+    <p
+      style={{
+        color: '#8aa0b5',
+        marginTop: '10px',
+      }}
+    >
+      {failedRules.length} critical,{' '}
+      {warningRules.length} warnings
+    </p>
+  </div>
+
+  {/* Completion */}
+  <div style={cardStyle}>
+    <p
+      style={{
+        color: '#8aa0b5',
+        marginBottom: '18px',
+      }}
+    >
+      Completion
+    </p>
+
+    <p
+      style={{
+        color: '#27ae60',
+        fontSize: '54px',
+        fontWeight: '700',
+        fontFamily:
+          "'Orbitron', monospace",
+      }}
+    >
+      {results.completionPercentage}%
+    </p>
+
+    <p
+      style={{
+        color: '#8aa0b5',
+        marginTop: '10px',
+      }}
+    >
+      Analysis completion
+    </p>
+  </div>
+</div>
+   
    
       </div>
+  
     </div>
   );
 }
