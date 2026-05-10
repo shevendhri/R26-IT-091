@@ -71,6 +71,14 @@ const Header = () => {
           PLAN ANALYZER
           {pathname === '/plan-analyzer' && <div style={{ position: 'absolute', bottom: '-8px', left: 0, width: '100%', height: '2px', background: 'var(--eco-glow)' }} />}
         </Link>
+                <Link href="/firesefty/feature/submission/new" style={{ 
+          color: pathname === '/firesefty/feature/submission/new' ? 'var(--eco-glow)' : 'var(--text-secondary)', 
+          textDecoration: 'none',
+          position: 'relative'
+        }}>
+            FIRE ANALYZER
+          {pathname === '/firesefty/feature/submission/new' && <div style={{ position: 'absolute', bottom: '-8px', left: 0, width: '100%', height: '2px', background: 'var(--eco-glow)' }} />}
+        </Link>
       </nav>
     </header>
   );
