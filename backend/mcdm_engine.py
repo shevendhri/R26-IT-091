@@ -361,19 +361,22 @@ def _calculate_adaptive_score_v17(m, strategy_key, b_type, floors, budget, budge
 
     # ── CLIMATE ALIGNMENT ──
     if strategy_key == "SEVERE_COASTAL":
-        if any(k in name for k in ["marine", "epoxy", "upvc", "crystalline", "stainless"]): s_suit += 42
-        if any(k in name for k in ["mild steel", "untreated", "gypsum"]): s_suit -= 35
-    elif strategy_key == "HIGHLAND_WET":
-        if any(k in name for k in ["mold", "moisture", "waterproof", "sloped", "treated"]): s_suit += 35
-        if any(k in name for k in ["gypsum", "flat roof", "untreated timber"]): s_suit -= 25
-    elif strategy_key == "DRY_ZONE_THERMAL":
-        if any(k in name for k in ["aac", "reflective", "cavity", "passive", "insulated"]): s_suit += 38
-        if any(k in name for k in ["dark", "uninsulated", "metal plain"]): s_suit -= 20
+        if any(k in name for k in ["marine", "epoxy", "upvc", "crystalline", "stainless"]): s_suit += 50
+        if any(k in name for k in ["mild steel", "untreated", "gypsum", "zinc-alum"]): s_suit -= 40
+    elif strategy_key == "CENTRAL_HIGHLAND":
+        if any(k in name for k in ["thermal", "insulation", "timber", "clay", "stone", "hemp"]): s_suit += 45
+        if any(k in name for k in ["flat roof", "uninsulated", "basic concrete"]): s_suit -= 30
+    elif strategy_key == "DRY_ZONE":
+        if any(k in name for k in ["aac", "reflective", "cavity", "passive", "insulated", "earth"]): s_suit += 48
+        if any(k in name for k in ["dark", "uninsulated", "metal plain", "black"]): s_suit -= 35
+    elif strategy_key == "WET_TROPICAL":
+        if any(k in name for k in ["crystalline", "moisture", "waterproof", "pitched", "tile"]): s_suit += 35
+        if any(k in name for k in ["gypsum", "unsealed", "paper"]): s_suit -= 25
 
     # ── FLOOR COUNT SCALING ──
     if floors >= 4:
-        if any(k in name for k in ["rc", "reinforced", "high strength", "shear"]): s_suit += 20
-        if any(k in name for k in ["masonry only", "clay brick", "aac"]): s_suit -= 35
+        if any(k in name for k in ["rc", "reinforced", "high strength", "shear", "raft"]): s_suit += 25
+        if any(k in name for k in ["masonry only", "clay brick", "aac", "unreinforced"]): s_suit -= 45
 
     # ── AFFORDABILITY ──
     unit_rate = m.get("Rate_LKR", 1000)
@@ -401,12 +404,12 @@ def _calculate_adaptive_score_v17(m, strategy_key, b_type, floors, budget, budge
     }
     w = masks.get(b_type, masks["Residential"])
     if sus_pref == "High":
-        w = {"suit": 0.25, "afford": 0.12, "dur": 0.25, "sus": 0.38}
+        w = {"suit": 0.20, "afford": 0.10, "dur": 0.20, "sus": 0.50}
 
     total = (s_suit * w["suit"]) + (affordability * w["afford"]) + (s_dur * w["dur"]) + (s_sus * w["sus"])
     total = max(5.0, min(99.0, total + ml_bias + random.uniform(-1.5, 1.5)))
 
-    rationale = _generate_rationale_v17(m, strategy_key, b_type, floors, budget_tier, sus_pref, phase)
+    rationale = _generate_rationale_v17(m, strategy_key, b_type, floors, budget_tier, sus_pref, phase, city)
 
     return {
         "total": total,
@@ -420,7 +423,7 @@ def _calculate_adaptive_score_v17(m, strategy_key, b_type, floors, budget, budge
     }
 
 
-def _generate_rationale_v17(m, s_key, b_type, floors, budget_tier, sus_pref, phase) -> str:
+def _generate_rationale_v17(m, s_key, b_type, floors, budget_tier, sus_pref, phase, city) -> str:
     """ZERO-TEMPLATE RATIONALE GENERATOR v17.0 — unique per phase × sector × climate × budget × height."""
     name = m["Name"].lower()
     strategy = CLIMATE_STRATEGIES.get(s_key, {})
@@ -437,6 +440,7 @@ def _generate_rationale_v17(m, s_key, b_type, floors, budget_tier, sus_pref, pha
             climate=climate_cue,
             floors=floors,
             budget_tier=budget_tier,
+            city=city,
             name=m.get("Name", "This material")
         )
     except KeyError as e:
@@ -449,19 +453,21 @@ def _generate_rationale_v17(m, s_key, b_type, floors, budget_tier, sus_pref, pha
     # Append a unique closing clause based on non-trivial conditions
     closers = []
     if sus_pref == "High":
-        closers.append(f"Selected to minimise embodied carbon footprint consistent with the project's eco-priority specification.")
+        closers.append(f"Optimised for sustainability ({m.get('Sustainability_Rating', 50)}% eco-rating) as per your High-Sustainability mandate.")
     elif sus_pref == "Low":
-        closers.append(f"Prioritised for cost efficiency — lifecycle affordability over premium environmental certification.")
+        closers.append(f"Selected for maximum affordability given the budget-centric project constraints.")
 
     if s_key == "SEVERE_COASTAL":
-        closers.append(f"Marine-grade durability criteria applied — standard specification is technically inadequate for {climate_cue}.")
-    elif s_key == "HIGHLAND_WET":
-        closers.append(f"Mold and moisture ingress resistance is the primary selection driver in {climate_cue}.")
-    elif s_key == "DRY_ZONE_THERMAL":
-        closers.append(f"Passive thermal performance prioritised to reduce active cooling energy demand in {climate_cue}.")
+        closers.append(f"Marine-grade durability logic was mandated due to {city}'s high-salinity coastal environment.")
+    elif s_key == "CENTRAL_HIGHLAND":
+        closers.append(f"Highland-grade moisture protection prioritized for {city}'s high-humidity highland climate.")
+    elif s_key == "DRY_ZONE":
+        closers.append(f"Thermal mass and solar reflectivity optimized for {city}'s arid dry-zone conditions.")
+    elif s_key == "URBAN_HEAT_ISLAND":
+        closers.append(f"Surface albedo and cooling logic optimized for {city}'s dense urban heat island profile.")
 
     if floors >= 5:
-        closers.append(f"High-rise structural demands at {floors} storeys require enhanced material specifications beyond standard domestic grade.")
+        closers.append(f"Structural integrity at {floors} storeys necessitates this industrial-grade material selection.")
 
     if closers:
         rationale += " " + random.choice(closers)
