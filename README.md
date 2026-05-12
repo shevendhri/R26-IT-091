@@ -25,7 +25,7 @@ GREENCONSTRUCTAI is an intelligent engineering platform designed to support sust
 ## Green Building Certification Pre-Assessment
 - Evaluates sustainability readiness
 - Performs preliminary green-building compliance analysis
-- Supports eco-friendly construction planning
+- Supports eco-friendly construction planning.
 
 ## Fire Safety Certification Pre-Assessment
 - Performs preliminary fire-safety evaluation
