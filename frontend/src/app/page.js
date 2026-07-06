@@ -47,9 +47,9 @@ export default function Home() {
 
         <div style={{ display: 'flex', gap: '2rem', justifyContent: 'center', flexWrap: 'wrap' }}>
            <Link href="/materials" className="btn-premium" style={{ padding: '1.2rem 3rem', minWidth: '250px', textDecoration: 'none', textAlign: 'center', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            START ENGINEERING MATRIX
+            START RECOMMENDATION ENGINE
            </Link>
-           <Link href="/blueprint" className="glass-panel glow-border" style={{ 
+           <Link href="/plan-analyzer" className="glass-panel glow-border" style={{ 
             padding: '1.2rem 3rem', 
             minWidth: '250px', 
             textDecoration: 'none', 
@@ -62,7 +62,7 @@ export default function Home() {
             justifyContent: 'center',
             border: '1px solid var(--blueprint-blue)'
            }}>
-            SCAN BLUEPRINT AI
+            RUN BLUEPRINT VISION AUDIT
            </Link>
         </div>
 

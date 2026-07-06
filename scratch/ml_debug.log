@@ -1,0 +1,1168 @@
+2026-06-19 15:37:10,295 - INFO - [OK] MaterialSpecificationEngine loaded ML model.
+2026-06-19 15:37:10,323 - DEBUG - Model details: RandomForestClassifier(n_estimators=120, random_state=42)
+2026-06-19 15:39:34,127 - DEBUG - ML inference completed. probs: [array([[0.925, 0.   , 0.075]]), array([[0.55      , 0.39166667, 0.00833333, 0.00833333, 0.04166667]]), array([[0.        , 0.81666667, 0.00833333, 0.04166667, 0.13333333]]), array([[0.975, 0.025]]), array([[0.00833333, 0.4       , 0.025     , 0.06666667, 0.5       ]])], classes: [array([1, 2, 3]), array([ 7,  8,  9, 10, 24]), array([11, 12, 13, 29, 30]), array([17, 18]), array([14, 15, 16, 25, 31])]
+2026-06-19 15:39:34,128 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 119: 55.0
+2026-06-19 15:39:34,147 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 120: 41.599999999999994
+2026-06-19 15:39:34,147 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 121: 82.0
+2026-06-19 15:39:34,147 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 122: 33.199999999999996
+2026-06-19 15:39:34,148 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 123: 90.4
+2026-06-19 15:39:34,148 - DEBUG - Heuristic ML score for component 'Concrete', material 124: 53.2
+2026-06-19 15:39:34,148 - DEBUG - Heuristic ML score for component 'Concrete', material 125: 40.39999999999999
+2026-06-19 15:39:34,148 - DEBUG - Heuristic ML score for component 'Concrete', material 126: 84.0
+2026-06-19 15:39:34,148 - DEBUG - Heuristic ML score for component 'Concrete', material 127: 48.0
+2026-06-19 15:39:34,149 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 128: 30.0
+2026-06-19 15:39:34,149 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 129: 51.0
+2026-06-19 15:39:34,149 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 130: 40.0
+2026-06-19 15:39:34,149 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 131: 21.0
+2026-06-19 15:39:34,149 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 132: 66.0
+2026-06-19 15:39:34,149 - DEBUG - Heuristic ML score for component 'Walls', material 133: 82.2
+2026-06-19 15:39:34,150 - DEBUG - Heuristic ML score for component 'Walls', material 134: 86.8
+2026-06-19 15:39:34,150 - DEBUG - Heuristic ML score for component 'Walls', material 135: 52.4
+2026-06-19 15:39:34,150 - DEBUG - Heuristic ML score for component 'Walls', material 136: 95.6
+2026-06-19 15:39:34,150 - DEBUG - Heuristic ML score for component 'Walls', material 137: 79.6
+2026-06-19 15:39:34,150 - DEBUG - Heuristic ML score for component 'Walls', material 138: 80.0
+2026-06-19 15:39:34,150 - DEBUG - Heuristic ML score for component 'Roofing', material 139: 59.8
+2026-06-19 15:39:34,150 - DEBUG - Heuristic ML score for component 'Roofing', material 140: 83.80000000000001
+2026-06-19 15:39:34,150 - DEBUG - Heuristic ML score for component 'Roofing', material 141: 48.0
+2026-06-19 15:39:34,150 - DEBUG - Heuristic ML score for component 'Roofing', material 142: 47.2
+2026-06-19 15:39:34,151 - DEBUG - Heuristic ML score for component 'Roofing', material 143: 59.2
+2026-06-19 15:39:34,151 - DEBUG - Heuristic ML score for component 'Roofing', material 144: 94.8
+2026-06-19 15:39:34,151 - DEBUG - Heuristic ML score for component 'Roofing', material 145: 51.0
+2026-06-19 15:39:34,151 - DEBUG - Heuristic ML score for component 'Roofing', material 146: 73.0
+2026-06-19 15:39:34,151 - DEBUG - Heuristic ML score for component 'Windows', material 147: 78.0
+2026-06-19 15:39:34,151 - DEBUG - Heuristic ML score for component 'Windows', material 148: 55.0
+2026-06-19 15:39:34,151 - DEBUG - Heuristic ML score for component 'Windows', material 149: 75.0
+2026-06-19 15:39:34,151 - DEBUG - Heuristic ML score for component 'Windows', material 150: 60.0
+2026-06-19 15:39:34,151 - DEBUG - Heuristic ML score for component 'Windows', material 151: 53.2
+2026-06-19 15:39:34,151 - DEBUG - Heuristic ML score for component 'Windows', material 152: 55.2
+2026-06-19 15:39:34,152 - DEBUG - Heuristic ML score for component 'Doors', material 153: 76.2
+2026-06-19 15:39:34,152 - DEBUG - Heuristic ML score for component 'Doors', material 154: 48.0
+2026-06-19 15:39:34,152 - DEBUG - Heuristic ML score for component 'Doors', material 155: 59.8
+2026-06-19 15:39:34,152 - DEBUG - Heuristic ML score for component 'Doors', material 156: 50.0
+2026-06-19 15:39:34,152 - DEBUG - Heuristic ML score for component 'Doors', material 157: 35.2
+2026-06-19 15:39:34,152 - DEBUG - Heuristic ML score for component 'Doors', material 158: 75.19999999999999
+2026-06-19 15:39:34,152 - DEBUG - Heuristic ML score for component 'Doors', material 159: 75.19999999999999
+2026-06-19 15:39:34,152 - DEBUG - Heuristic ML score for component 'Flooring', material 160: 76.2
+2026-06-19 15:39:34,153 - DEBUG - Heuristic ML score for component 'Flooring', material 161: 62.2
+2026-06-19 15:39:34,153 - DEBUG - Heuristic ML score for component 'Flooring', material 162: 51.2
+2026-06-19 15:39:34,153 - DEBUG - Heuristic ML score for component 'Flooring', material 163: 72.0
+2026-06-19 15:39:34,153 - DEBUG - Heuristic ML score for component 'Flooring', material 164: 76.8
+2026-06-19 15:39:34,153 - DEBUG - Heuristic ML score for component 'Flooring', material 165: 62.0
+2026-06-19 15:39:34,153 - DEBUG - Heuristic ML score for component 'Flooring', material 166: 85.2
+2026-06-19 15:39:34,153 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 167: 95.0
+2026-06-19 15:39:34,153 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 168: 52.4
+2026-06-19 15:39:34,153 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 169: 33.6
+2026-06-19 15:39:34,153 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 170: 66.0
+2026-06-19 15:39:34,153 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 171: 56.8
+2026-06-19 15:39:34,153 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 172: 57.199999999999996
+2026-06-19 15:39:34,153 - DEBUG - Heuristic ML score for component 'Waterproofing', material 173: 72.8
+2026-06-19 15:39:34,154 - DEBUG - Heuristic ML score for component 'Waterproofing', material 174: 42.0
+2026-06-19 15:39:34,154 - DEBUG - Heuristic ML score for component 'Waterproofing', material 175: 44.8
+2026-06-19 15:39:34,154 - DEBUG - Heuristic ML score for component 'Waterproofing', material 176: 63.8
+2026-06-19 15:39:34,154 - DEBUG - Heuristic ML score for component 'Waterproofing', material 177: 87.80000000000001
+2026-06-19 15:39:34,154 - DEBUG - Heuristic ML score for component 'Surface Finishes', material 178: 69.0
+2026-06-19 15:39:34,154 - DEBUG - Heuristic ML score for component 'Surface Finishes', material 179: 92.2
+2026-06-19 15:39:34,154 - DEBUG - Heuristic ML score for component 'Surface Finishes', material 180: 54.0
+2026-06-19 15:39:34,154 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 119: 55.0
+2026-06-19 15:39:34,154 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 120: 41.599999999999994
+2026-06-19 15:39:34,154 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 121: 82.0
+2026-06-19 15:39:34,154 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 122: 33.199999999999996
+2026-06-19 15:39:34,154 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 123: 90.4
+2026-06-19 15:39:34,154 - DEBUG - Heuristic ML score for component 'Concrete', material 124: 53.2
+2026-06-19 15:39:34,154 - DEBUG - Heuristic ML score for component 'Concrete', material 125: 40.39999999999999
+2026-06-19 15:39:34,154 - DEBUG - Heuristic ML score for component 'Concrete', material 126: 84.0
+2026-06-19 15:39:34,154 - DEBUG - Heuristic ML score for component 'Concrete', material 127: 48.0
+2026-06-19 15:39:34,154 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 128: 30.0
+2026-06-19 15:39:34,155 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 129: 51.0
+2026-06-19 15:39:34,155 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 130: 40.0
+2026-06-19 15:39:34,155 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 131: 21.0
+2026-06-19 15:39:34,155 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 132: 66.0
+2026-06-19 15:39:34,155 - DEBUG - Heuristic ML score for component 'Walls', material 133: 82.2
+2026-06-19 15:39:34,155 - DEBUG - Heuristic ML score for component 'Walls', material 134: 86.8
+2026-06-19 15:39:34,155 - DEBUG - Heuristic ML score for component 'Walls', material 135: 52.4
+2026-06-19 15:39:34,155 - DEBUG - Heuristic ML score for component 'Walls', material 136: 95.6
+2026-06-19 15:39:34,155 - DEBUG - Heuristic ML score for component 'Walls', material 137: 79.6
+2026-06-19 15:39:34,155 - DEBUG - Heuristic ML score for component 'Walls', material 138: 80.0
+2026-06-19 15:39:34,155 - DEBUG - Heuristic ML score for component 'Roofing', material 139: 59.8
+2026-06-19 15:39:34,155 - DEBUG - Heuristic ML score for component 'Roofing', material 140: 83.80000000000001
+2026-06-19 15:39:34,155 - DEBUG - Heuristic ML score for component 'Roofing', material 141: 48.0
+2026-06-19 15:39:34,155 - DEBUG - Heuristic ML score for component 'Roofing', material 142: 47.2
+2026-06-19 15:39:34,155 - DEBUG - Heuristic ML score for component 'Roofing', material 143: 59.2
+2026-06-19 15:39:34,155 - DEBUG - Heuristic ML score for component 'Roofing', material 144: 94.8
+2026-06-19 15:39:34,155 - DEBUG - Heuristic ML score for component 'Roofing', material 145: 51.0
+2026-06-19 15:39:34,155 - DEBUG - Heuristic ML score for component 'Roofing', material 146: 73.0
+2026-06-19 15:39:34,155 - DEBUG - Heuristic ML score for component 'Windows', material 147: 78.0
+2026-06-19 15:39:34,155 - DEBUG - Heuristic ML score for component 'Windows', material 148: 55.0
+2026-06-19 15:39:34,155 - DEBUG - Heuristic ML score for component 'Windows', material 149: 75.0
+2026-06-19 15:39:34,156 - DEBUG - Heuristic ML score for component 'Windows', material 150: 60.0
+2026-06-19 15:39:34,156 - DEBUG - Heuristic ML score for component 'Windows', material 151: 53.2
+2026-06-19 15:39:34,156 - DEBUG - Heuristic ML score for component 'Windows', material 152: 55.2
+2026-06-19 15:39:34,156 - DEBUG - Heuristic ML score for component 'Doors', material 153: 76.2
+2026-06-19 15:39:34,156 - DEBUG - Heuristic ML score for component 'Doors', material 154: 48.0
+2026-06-19 15:39:34,156 - DEBUG - Heuristic ML score for component 'Doors', material 155: 59.8
+2026-06-19 15:39:34,156 - DEBUG - Heuristic ML score for component 'Doors', material 156: 50.0
+2026-06-19 15:39:34,156 - DEBUG - Heuristic ML score for component 'Doors', material 157: 35.2
+2026-06-19 15:39:34,156 - DEBUG - Heuristic ML score for component 'Doors', material 158: 75.19999999999999
+2026-06-19 15:39:34,156 - DEBUG - Heuristic ML score for component 'Doors', material 159: 75.19999999999999
+2026-06-19 15:39:34,156 - DEBUG - Heuristic ML score for component 'Flooring', material 160: 76.2
+2026-06-19 15:39:34,156 - DEBUG - Heuristic ML score for component 'Flooring', material 161: 62.2
+2026-06-19 15:39:34,156 - DEBUG - Heuristic ML score for component 'Flooring', material 162: 51.2
+2026-06-19 15:39:34,156 - DEBUG - Heuristic ML score for component 'Flooring', material 163: 72.0
+2026-06-19 15:39:34,156 - DEBUG - Heuristic ML score for component 'Flooring', material 164: 76.8
+2026-06-19 15:39:34,156 - DEBUG - Heuristic ML score for component 'Flooring', material 165: 62.0
+2026-06-19 15:39:34,156 - DEBUG - Heuristic ML score for component 'Flooring', material 166: 85.2
+2026-06-19 15:39:34,156 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 167: 95.0
+2026-06-19 15:39:34,156 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 168: 52.4
+2026-06-19 15:39:34,156 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 169: 33.6
+2026-06-19 15:39:34,156 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 170: 66.0
+2026-06-19 15:39:34,156 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 171: 56.8
+2026-06-19 15:39:34,156 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 172: 57.199999999999996
+2026-06-19 15:39:34,157 - DEBUG - Heuristic ML score for component 'Waterproofing', material 173: 72.8
+2026-06-19 15:39:34,157 - DEBUG - Heuristic ML score for component 'Waterproofing', material 174: 42.0
+2026-06-19 15:39:34,157 - DEBUG - Heuristic ML score for component 'Waterproofing', material 175: 44.8
+2026-06-19 15:39:34,157 - DEBUG - Heuristic ML score for component 'Waterproofing', material 176: 63.8
+2026-06-19 15:39:34,157 - DEBUG - Heuristic ML score for component 'Waterproofing', material 177: 87.80000000000001
+2026-06-19 15:39:34,157 - DEBUG - Heuristic ML score for component 'Surface Finishes', material 178: 69.0
+2026-06-19 15:39:34,157 - DEBUG - Heuristic ML score for component 'Surface Finishes', material 179: 92.2
+2026-06-19 15:39:34,157 - DEBUG - Heuristic ML score for component 'Surface Finishes', material 180: 54.0
+2026-06-19 15:39:34,157 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 119: 55.0
+2026-06-19 15:39:34,157 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 120: 41.599999999999994
+2026-06-19 15:39:34,157 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 121: 82.0
+2026-06-19 15:39:34,157 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 122: 33.199999999999996
+2026-06-19 15:39:34,157 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 123: 90.4
+2026-06-19 15:39:34,157 - DEBUG - Heuristic ML score for component 'Concrete', material 124: 53.2
+2026-06-19 15:39:34,157 - DEBUG - Heuristic ML score for component 'Concrete', material 125: 40.39999999999999
+2026-06-19 15:39:34,157 - DEBUG - Heuristic ML score for component 'Concrete', material 126: 84.0
+2026-06-19 15:39:34,157 - DEBUG - Heuristic ML score for component 'Concrete', material 127: 48.0
+2026-06-19 15:39:34,157 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 128: 30.0
+2026-06-19 15:39:34,157 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 129: 51.0
+2026-06-19 15:39:34,157 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 130: 40.0
+2026-06-19 15:39:34,157 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 131: 21.0
+2026-06-19 15:39:34,157 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 132: 66.0
+2026-06-19 15:39:34,158 - DEBUG - Heuristic ML score for component 'Walls', material 133: 82.2
+2026-06-19 15:39:34,158 - DEBUG - Heuristic ML score for component 'Walls', material 134: 86.8
+2026-06-19 15:39:34,158 - DEBUG - Heuristic ML score for component 'Walls', material 135: 52.4
+2026-06-19 15:39:34,158 - DEBUG - Heuristic ML score for component 'Walls', material 136: 95.6
+2026-06-19 15:39:34,158 - DEBUG - Heuristic ML score for component 'Walls', material 137: 79.6
+2026-06-19 15:39:34,158 - DEBUG - Heuristic ML score for component 'Walls', material 138: 80.0
+2026-06-19 15:39:34,158 - DEBUG - Heuristic ML score for component 'Roofing', material 139: 59.8
+2026-06-19 15:39:34,158 - DEBUG - Heuristic ML score for component 'Roofing', material 140: 83.80000000000001
+2026-06-19 15:39:34,158 - DEBUG - Heuristic ML score for component 'Roofing', material 141: 48.0
+2026-06-19 15:39:34,158 - DEBUG - Heuristic ML score for component 'Roofing', material 142: 47.2
+2026-06-19 15:39:34,158 - DEBUG - Heuristic ML score for component 'Roofing', material 143: 59.2
+2026-06-19 15:39:34,158 - DEBUG - Heuristic ML score for component 'Roofing', material 144: 94.8
+2026-06-19 15:39:34,158 - DEBUG - Heuristic ML score for component 'Roofing', material 145: 51.0
+2026-06-19 15:39:34,158 - DEBUG - Heuristic ML score for component 'Roofing', material 146: 73.0
+2026-06-19 15:39:34,158 - DEBUG - Heuristic ML score for component 'Windows', material 147: 78.0
+2026-06-19 15:39:34,158 - DEBUG - Heuristic ML score for component 'Windows', material 148: 55.0
+2026-06-19 15:39:34,158 - DEBUG - Heuristic ML score for component 'Windows', material 149: 75.0
+2026-06-19 15:39:34,158 - DEBUG - Heuristic ML score for component 'Windows', material 150: 60.0
+2026-06-19 15:39:34,158 - DEBUG - Heuristic ML score for component 'Windows', material 151: 53.2
+2026-06-19 15:39:34,158 - DEBUG - Heuristic ML score for component 'Windows', material 152: 55.2
+2026-06-19 15:39:34,158 - DEBUG - Heuristic ML score for component 'Doors', material 153: 76.2
+2026-06-19 15:39:34,158 - DEBUG - Heuristic ML score for component 'Doors', material 154: 48.0
+2026-06-19 15:39:34,159 - DEBUG - Heuristic ML score for component 'Doors', material 155: 59.8
+2026-06-19 15:39:34,159 - DEBUG - Heuristic ML score for component 'Doors', material 156: 50.0
+2026-06-19 15:39:34,159 - DEBUG - Heuristic ML score for component 'Doors', material 157: 35.2
+2026-06-19 15:39:34,159 - DEBUG - Heuristic ML score for component 'Doors', material 158: 75.19999999999999
+2026-06-19 15:39:34,159 - DEBUG - Heuristic ML score for component 'Doors', material 159: 75.19999999999999
+2026-06-19 15:39:34,159 - DEBUG - Heuristic ML score for component 'Flooring', material 160: 76.2
+2026-06-19 15:39:34,159 - DEBUG - Heuristic ML score for component 'Flooring', material 161: 62.2
+2026-06-19 15:39:34,159 - DEBUG - Heuristic ML score for component 'Flooring', material 162: 51.2
+2026-06-19 15:39:34,159 - DEBUG - Heuristic ML score for component 'Flooring', material 163: 72.0
+2026-06-19 15:39:34,159 - DEBUG - Heuristic ML score for component 'Flooring', material 164: 76.8
+2026-06-19 15:39:34,159 - DEBUG - Heuristic ML score for component 'Flooring', material 165: 62.0
+2026-06-19 15:39:34,159 - DEBUG - Heuristic ML score for component 'Flooring', material 166: 85.2
+2026-06-19 15:39:34,159 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 167: 95.0
+2026-06-19 15:39:34,159 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 168: 52.4
+2026-06-19 15:39:34,159 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 169: 33.6
+2026-06-19 15:39:34,159 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 170: 66.0
+2026-06-19 15:39:34,159 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 171: 56.8
+2026-06-19 15:39:34,159 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 172: 57.199999999999996
+2026-06-19 15:39:34,159 - DEBUG - Heuristic ML score for component 'Waterproofing', material 173: 72.8
+2026-06-19 15:39:34,159 - DEBUG - Heuristic ML score for component 'Waterproofing', material 174: 42.0
+2026-06-19 15:39:34,159 - DEBUG - Heuristic ML score for component 'Waterproofing', material 175: 44.8
+2026-06-19 15:39:34,160 - DEBUG - Heuristic ML score for component 'Waterproofing', material 176: 63.8
+2026-06-19 15:39:34,160 - DEBUG - Heuristic ML score for component 'Waterproofing', material 177: 87.80000000000001
+2026-06-19 15:39:34,160 - DEBUG - Heuristic ML score for component 'Surface Finishes', material 178: 69.0
+2026-06-19 15:39:34,160 - DEBUG - Heuristic ML score for component 'Surface Finishes', material 179: 92.2
+2026-06-19 15:39:34,160 - DEBUG - Heuristic ML score for component 'Surface Finishes', material 180: 54.0
+2026-06-19 15:39:37,141 - DEBUG - ML inference completed. probs: [array([[0.91666667, 0.        , 0.08333333]]), array([[0.55833333, 0.34166667, 0.01666667, 0.05      , 0.03333333]]), array([[0.        , 0.8       , 0.01666667, 0.025     , 0.15833333]]), array([[0.14166667, 0.85833333]]), array([[0.01666667, 0.05      , 0.85833333, 0.        , 0.075     ]])], classes: [array([1, 2, 3]), array([ 7,  8,  9, 10, 24]), array([11, 12, 13, 29, 30]), array([17, 18]), array([14, 15, 16, 25, 31])]
+2026-06-19 15:39:37,143 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 119: 55.0
+2026-06-19 15:39:37,143 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 120: 41.599999999999994
+2026-06-19 15:39:37,143 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 121: 82.0
+2026-06-19 15:39:37,144 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 122: 33.199999999999996
+2026-06-19 15:39:37,144 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 123: 90.4
+2026-06-19 15:39:37,144 - DEBUG - Heuristic ML score for component 'Concrete', material 124: 53.2
+2026-06-19 15:39:37,144 - DEBUG - Heuristic ML score for component 'Concrete', material 125: 40.39999999999999
+2026-06-19 15:39:37,144 - DEBUG - Heuristic ML score for component 'Concrete', material 126: 84.0
+2026-06-19 15:39:37,144 - DEBUG - Heuristic ML score for component 'Concrete', material 127: 48.0
+2026-06-19 15:39:37,144 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 128: 30.0
+2026-06-19 15:39:37,144 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 129: 51.0
+2026-06-19 15:39:37,144 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 130: 40.0
+2026-06-19 15:39:37,145 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 131: 21.0
+2026-06-19 15:39:37,145 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 132: 66.0
+2026-06-19 15:39:37,145 - DEBUG - Heuristic ML score for component 'Walls', material 133: 82.2
+2026-06-19 15:39:37,145 - DEBUG - Heuristic ML score for component 'Walls', material 134: 86.8
+2026-06-19 15:39:37,145 - DEBUG - Heuristic ML score for component 'Walls', material 135: 52.4
+2026-06-19 15:39:37,145 - DEBUG - Heuristic ML score for component 'Walls', material 136: 95.6
+2026-06-19 15:39:37,145 - DEBUG - Heuristic ML score for component 'Walls', material 137: 79.6
+2026-06-19 15:39:37,145 - DEBUG - Heuristic ML score for component 'Walls', material 138: 80.0
+2026-06-19 15:39:37,145 - DEBUG - Heuristic ML score for component 'Roofing', material 139: 59.8
+2026-06-19 15:39:37,145 - DEBUG - Heuristic ML score for component 'Roofing', material 140: 83.80000000000001
+2026-06-19 15:39:37,146 - DEBUG - Heuristic ML score for component 'Roofing', material 141: 48.0
+2026-06-19 15:39:37,146 - DEBUG - Heuristic ML score for component 'Roofing', material 142: 47.2
+2026-06-19 15:39:37,146 - DEBUG - Heuristic ML score for component 'Roofing', material 143: 59.2
+2026-06-19 15:39:37,146 - DEBUG - Heuristic ML score for component 'Roofing', material 144: 94.8
+2026-06-19 15:39:37,146 - DEBUG - Heuristic ML score for component 'Roofing', material 145: 51.0
+2026-06-19 15:39:37,146 - DEBUG - Heuristic ML score for component 'Roofing', material 146: 73.0
+2026-06-19 15:39:37,147 - DEBUG - Heuristic ML score for component 'Windows', material 147: 78.0
+2026-06-19 15:39:37,147 - DEBUG - Heuristic ML score for component 'Windows', material 148: 55.0
+2026-06-19 15:39:37,147 - DEBUG - Heuristic ML score for component 'Windows', material 149: 75.0
+2026-06-19 15:39:37,147 - DEBUG - Heuristic ML score for component 'Windows', material 150: 60.0
+2026-06-19 15:39:37,147 - DEBUG - Heuristic ML score for component 'Windows', material 151: 53.2
+2026-06-19 15:39:37,147 - DEBUG - Heuristic ML score for component 'Windows', material 152: 55.2
+2026-06-19 15:39:37,147 - DEBUG - Heuristic ML score for component 'Doors', material 153: 76.2
+2026-06-19 15:39:37,147 - DEBUG - Heuristic ML score for component 'Doors', material 154: 48.0
+2026-06-19 15:39:37,147 - DEBUG - Heuristic ML score for component 'Doors', material 155: 59.8
+2026-06-19 15:39:37,147 - DEBUG - Heuristic ML score for component 'Doors', material 156: 50.0
+2026-06-19 15:39:37,147 - DEBUG - Heuristic ML score for component 'Doors', material 157: 35.2
+2026-06-19 15:39:37,148 - DEBUG - Heuristic ML score for component 'Doors', material 158: 75.19999999999999
+2026-06-19 15:39:37,148 - DEBUG - Heuristic ML score for component 'Doors', material 159: 75.19999999999999
+2026-06-19 15:39:37,148 - DEBUG - Heuristic ML score for component 'Flooring', material 160: 76.2
+2026-06-19 15:39:37,148 - DEBUG - Heuristic ML score for component 'Flooring', material 161: 62.2
+2026-06-19 15:39:37,148 - DEBUG - Heuristic ML score for component 'Flooring', material 162: 51.2
+2026-06-19 15:39:37,148 - DEBUG - Heuristic ML score for component 'Flooring', material 163: 72.0
+2026-06-19 15:39:37,148 - DEBUG - Heuristic ML score for component 'Flooring', material 164: 76.8
+2026-06-19 15:39:37,148 - DEBUG - Heuristic ML score for component 'Flooring', material 165: 62.0
+2026-06-19 15:39:37,148 - DEBUG - Heuristic ML score for component 'Flooring', material 166: 85.2
+2026-06-19 15:39:37,148 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 167: 95.0
+2026-06-19 15:39:37,148 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 168: 52.4
+2026-06-19 15:39:37,148 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 169: 33.6
+2026-06-19 15:39:37,148 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 170: 66.0
+2026-06-19 15:39:37,148 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 171: 56.8
+2026-06-19 15:39:37,148 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 172: 57.199999999999996
+2026-06-19 15:39:37,148 - DEBUG - Heuristic ML score for component 'Waterproofing', material 173: 72.8
+2026-06-19 15:39:37,148 - DEBUG - Heuristic ML score for component 'Waterproofing', material 174: 42.0
+2026-06-19 15:39:37,149 - DEBUG - Heuristic ML score for component 'Waterproofing', material 175: 44.8
+2026-06-19 15:39:37,149 - DEBUG - Heuristic ML score for component 'Waterproofing', material 176: 63.8
+2026-06-19 15:39:37,149 - DEBUG - Heuristic ML score for component 'Waterproofing', material 177: 87.80000000000001
+2026-06-19 15:39:37,149 - DEBUG - Heuristic ML score for component 'Surface Finishes', material 178: 69.0
+2026-06-19 15:39:37,149 - DEBUG - Heuristic ML score for component 'Surface Finishes', material 179: 92.2
+2026-06-19 15:39:37,149 - DEBUG - Heuristic ML score for component 'Surface Finishes', material 180: 54.0
+2026-06-19 15:39:37,149 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 119: 55.0
+2026-06-19 15:39:37,149 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 120: 41.599999999999994
+2026-06-19 15:39:37,149 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 121: 82.0
+2026-06-19 15:39:37,149 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 122: 33.199999999999996
+2026-06-19 15:39:37,149 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 123: 90.4
+2026-06-19 15:39:37,149 - DEBUG - Heuristic ML score for component 'Concrete', material 124: 53.2
+2026-06-19 15:39:37,149 - DEBUG - Heuristic ML score for component 'Concrete', material 125: 40.39999999999999
+2026-06-19 15:39:37,149 - DEBUG - Heuristic ML score for component 'Concrete', material 126: 84.0
+2026-06-19 15:39:37,149 - DEBUG - Heuristic ML score for component 'Concrete', material 127: 48.0
+2026-06-19 15:39:37,149 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 128: 30.0
+2026-06-19 15:39:37,149 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 129: 51.0
+2026-06-19 15:39:37,149 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 130: 40.0
+2026-06-19 15:39:37,149 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 131: 21.0
+2026-06-19 15:39:37,149 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 132: 66.0
+2026-06-19 15:39:37,150 - DEBUG - Heuristic ML score for component 'Walls', material 133: 82.2
+2026-06-19 15:39:37,150 - DEBUG - Heuristic ML score for component 'Walls', material 134: 86.8
+2026-06-19 15:39:37,150 - DEBUG - Heuristic ML score for component 'Walls', material 135: 52.4
+2026-06-19 15:39:37,150 - DEBUG - Heuristic ML score for component 'Walls', material 136: 95.6
+2026-06-19 15:39:37,150 - DEBUG - Heuristic ML score for component 'Walls', material 137: 79.6
+2026-06-19 15:39:37,150 - DEBUG - Heuristic ML score for component 'Walls', material 138: 80.0
+2026-06-19 15:39:37,150 - DEBUG - Heuristic ML score for component 'Roofing', material 139: 59.8
+2026-06-19 15:39:37,150 - DEBUG - Heuristic ML score for component 'Roofing', material 140: 83.80000000000001
+2026-06-19 15:39:37,150 - DEBUG - Heuristic ML score for component 'Roofing', material 141: 48.0
+2026-06-19 15:39:37,150 - DEBUG - Heuristic ML score for component 'Roofing', material 142: 47.2
+2026-06-19 15:39:37,150 - DEBUG - Heuristic ML score for component 'Roofing', material 143: 59.2
+2026-06-19 15:39:37,150 - DEBUG - Heuristic ML score for component 'Roofing', material 144: 94.8
+2026-06-19 15:39:37,150 - DEBUG - Heuristic ML score for component 'Roofing', material 145: 51.0
+2026-06-19 15:39:37,150 - DEBUG - Heuristic ML score for component 'Roofing', material 146: 73.0
+2026-06-19 15:39:37,150 - DEBUG - Heuristic ML score for component 'Windows', material 147: 78.0
+2026-06-19 15:39:37,150 - DEBUG - Heuristic ML score for component 'Windows', material 148: 55.0
+2026-06-19 15:39:37,150 - DEBUG - Heuristic ML score for component 'Windows', material 149: 75.0
+2026-06-19 15:39:37,150 - DEBUG - Heuristic ML score for component 'Windows', material 150: 60.0
+2026-06-19 15:39:37,150 - DEBUG - Heuristic ML score for component 'Windows', material 151: 53.2
+2026-06-19 15:39:37,151 - DEBUG - Heuristic ML score for component 'Windows', material 152: 55.2
+2026-06-19 15:39:37,151 - DEBUG - Heuristic ML score for component 'Doors', material 153: 76.2
+2026-06-19 15:39:37,151 - DEBUG - Heuristic ML score for component 'Doors', material 154: 48.0
+2026-06-19 15:39:37,151 - DEBUG - Heuristic ML score for component 'Doors', material 155: 59.8
+2026-06-19 15:39:37,151 - DEBUG - Heuristic ML score for component 'Doors', material 156: 50.0
+2026-06-19 15:39:37,151 - DEBUG - Heuristic ML score for component 'Doors', material 157: 35.2
+2026-06-19 15:39:37,151 - DEBUG - Heuristic ML score for component 'Doors', material 158: 75.19999999999999
+2026-06-19 15:39:37,151 - DEBUG - Heuristic ML score for component 'Doors', material 159: 75.19999999999999
+2026-06-19 15:39:37,151 - DEBUG - Heuristic ML score for component 'Flooring', material 160: 76.2
+2026-06-19 15:39:37,151 - DEBUG - Heuristic ML score for component 'Flooring', material 161: 62.2
+2026-06-19 15:39:37,151 - DEBUG - Heuristic ML score for component 'Flooring', material 162: 51.2
+2026-06-19 15:39:37,151 - DEBUG - Heuristic ML score for component 'Flooring', material 163: 72.0
+2026-06-19 15:39:37,151 - DEBUG - Heuristic ML score for component 'Flooring', material 164: 76.8
+2026-06-19 15:39:37,151 - DEBUG - Heuristic ML score for component 'Flooring', material 165: 62.0
+2026-06-19 15:39:37,151 - DEBUG - Heuristic ML score for component 'Flooring', material 166: 85.2
+2026-06-19 15:39:37,151 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 167: 95.0
+2026-06-19 15:39:37,151 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 168: 52.4
+2026-06-19 15:39:37,151 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 169: 33.6
+2026-06-19 15:39:37,151 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 170: 66.0
+2026-06-19 15:39:37,151 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 171: 56.8
+2026-06-19 15:39:37,151 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 172: 57.199999999999996
+2026-06-19 15:39:37,151 - DEBUG - Heuristic ML score for component 'Waterproofing', material 173: 72.8
+2026-06-19 15:39:37,152 - DEBUG - Heuristic ML score for component 'Waterproofing', material 174: 42.0
+2026-06-19 15:39:37,152 - DEBUG - Heuristic ML score for component 'Waterproofing', material 175: 44.8
+2026-06-19 15:39:37,152 - DEBUG - Heuristic ML score for component 'Waterproofing', material 176: 63.8
+2026-06-19 15:39:37,152 - DEBUG - Heuristic ML score for component 'Waterproofing', material 177: 87.80000000000001
+2026-06-19 15:39:37,152 - DEBUG - Heuristic ML score for component 'Surface Finishes', material 178: 69.0
+2026-06-19 15:39:37,152 - DEBUG - Heuristic ML score for component 'Surface Finishes', material 179: 92.2
+2026-06-19 15:39:37,152 - DEBUG - Heuristic ML score for component 'Surface Finishes', material 180: 54.0
+2026-06-19 15:39:37,152 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 119: 55.0
+2026-06-19 15:39:37,152 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 120: 41.599999999999994
+2026-06-19 15:39:37,152 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 121: 82.0
+2026-06-19 15:39:37,152 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 122: 33.199999999999996
+2026-06-19 15:39:37,152 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 123: 90.4
+2026-06-19 15:39:37,152 - DEBUG - Heuristic ML score for component 'Concrete', material 124: 53.2
+2026-06-19 15:39:37,152 - DEBUG - Heuristic ML score for component 'Concrete', material 125: 40.39999999999999
+2026-06-19 15:39:37,152 - DEBUG - Heuristic ML score for component 'Concrete', material 126: 84.0
+2026-06-19 15:39:37,152 - DEBUG - Heuristic ML score for component 'Concrete', material 127: 48.0
+2026-06-19 15:39:37,152 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 128: 30.0
+2026-06-19 15:39:37,152 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 129: 51.0
+2026-06-19 15:39:37,152 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 130: 40.0
+2026-06-19 15:39:37,153 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 131: 21.0
+2026-06-19 15:39:37,153 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 132: 66.0
+2026-06-19 15:39:37,153 - DEBUG - Heuristic ML score for component 'Walls', material 133: 82.2
+2026-06-19 15:39:37,153 - DEBUG - Heuristic ML score for component 'Walls', material 134: 86.8
+2026-06-19 15:39:37,153 - DEBUG - Heuristic ML score for component 'Walls', material 135: 52.4
+2026-06-19 15:39:37,153 - DEBUG - Heuristic ML score for component 'Walls', material 136: 95.6
+2026-06-19 15:39:37,153 - DEBUG - Heuristic ML score for component 'Walls', material 137: 79.6
+2026-06-19 15:39:37,153 - DEBUG - Heuristic ML score for component 'Walls', material 138: 80.0
+2026-06-19 15:39:37,153 - DEBUG - Heuristic ML score for component 'Roofing', material 139: 59.8
+2026-06-19 15:39:37,153 - DEBUG - Heuristic ML score for component 'Roofing', material 140: 83.80000000000001
+2026-06-19 15:39:37,153 - DEBUG - Heuristic ML score for component 'Roofing', material 141: 48.0
+2026-06-19 15:39:37,153 - DEBUG - Heuristic ML score for component 'Roofing', material 142: 47.2
+2026-06-19 15:39:37,153 - DEBUG - Heuristic ML score for component 'Roofing', material 143: 59.2
+2026-06-19 15:39:37,153 - DEBUG - Heuristic ML score for component 'Roofing', material 144: 94.8
+2026-06-19 15:39:37,153 - DEBUG - Heuristic ML score for component 'Roofing', material 145: 51.0
+2026-06-19 15:39:37,153 - DEBUG - Heuristic ML score for component 'Roofing', material 146: 73.0
+2026-06-19 15:39:37,153 - DEBUG - Heuristic ML score for component 'Windows', material 147: 78.0
+2026-06-19 15:39:37,153 - DEBUG - Heuristic ML score for component 'Windows', material 148: 55.0
+2026-06-19 15:39:37,153 - DEBUG - Heuristic ML score for component 'Windows', material 149: 75.0
+2026-06-19 15:39:37,153 - DEBUG - Heuristic ML score for component 'Windows', material 150: 60.0
+2026-06-19 15:39:37,153 - DEBUG - Heuristic ML score for component 'Windows', material 151: 53.2
+2026-06-19 15:39:37,153 - DEBUG - Heuristic ML score for component 'Windows', material 152: 55.2
+2026-06-19 15:39:37,154 - DEBUG - Heuristic ML score for component 'Doors', material 153: 76.2
+2026-06-19 15:39:37,154 - DEBUG - Heuristic ML score for component 'Doors', material 154: 48.0
+2026-06-19 15:39:37,154 - DEBUG - Heuristic ML score for component 'Doors', material 155: 59.8
+2026-06-19 15:39:37,154 - DEBUG - Heuristic ML score for component 'Doors', material 156: 50.0
+2026-06-19 15:39:37,154 - DEBUG - Heuristic ML score for component 'Doors', material 157: 35.2
+2026-06-19 15:39:37,154 - DEBUG - Heuristic ML score for component 'Doors', material 158: 75.19999999999999
+2026-06-19 15:39:37,154 - DEBUG - Heuristic ML score for component 'Doors', material 159: 75.19999999999999
+2026-06-19 15:39:37,154 - DEBUG - Heuristic ML score for component 'Flooring', material 160: 76.2
+2026-06-19 15:39:37,154 - DEBUG - Heuristic ML score for component 'Flooring', material 161: 62.2
+2026-06-19 15:39:37,154 - DEBUG - Heuristic ML score for component 'Flooring', material 162: 51.2
+2026-06-19 15:39:37,154 - DEBUG - Heuristic ML score for component 'Flooring', material 163: 72.0
+2026-06-19 15:39:37,154 - DEBUG - Heuristic ML score for component 'Flooring', material 164: 76.8
+2026-06-19 15:39:37,154 - DEBUG - Heuristic ML score for component 'Flooring', material 165: 62.0
+2026-06-19 15:39:37,154 - DEBUG - Heuristic ML score for component 'Flooring', material 166: 85.2
+2026-06-19 15:39:37,154 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 167: 95.0
+2026-06-19 15:39:37,154 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 168: 52.4
+2026-06-19 15:39:37,154 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 169: 33.6
+2026-06-19 15:39:37,154 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 170: 66.0
+2026-06-19 15:39:37,154 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 171: 56.8
+2026-06-19 15:39:37,154 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 172: 57.199999999999996
+2026-06-19 15:39:37,154 - DEBUG - Heuristic ML score for component 'Waterproofing', material 173: 72.8
+2026-06-19 15:39:37,154 - DEBUG - Heuristic ML score for component 'Waterproofing', material 174: 42.0
+2026-06-19 15:39:37,154 - DEBUG - Heuristic ML score for component 'Waterproofing', material 175: 44.8
+2026-06-19 15:39:37,154 - DEBUG - Heuristic ML score for component 'Waterproofing', material 176: 63.8
+2026-06-19 15:39:37,155 - DEBUG - Heuristic ML score for component 'Waterproofing', material 177: 87.80000000000001
+2026-06-19 15:39:37,155 - DEBUG - Heuristic ML score for component 'Surface Finishes', material 178: 69.0
+2026-06-19 15:39:37,155 - DEBUG - Heuristic ML score for component 'Surface Finishes', material 179: 92.2
+2026-06-19 15:39:37,155 - DEBUG - Heuristic ML score for component 'Surface Finishes', material 180: 54.0
+2026-06-19 15:39:44,699 - DEBUG - ML inference completed. probs: [array([[0., 0., 1.]]), array([[0., 0., 1., 0., 0.]]), array([[0., 0., 1., 0., 0.]]), array([[1., 0.]]), array([[1., 0., 0., 0., 0.]])], classes: [array([1, 2, 3]), array([ 7,  8,  9, 10, 24]), array([11, 12, 13, 29, 30]), array([17, 18]), array([14, 15, 16, 25, 31])]
+2026-06-19 15:39:44,699 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 119: 55.0
+2026-06-19 15:39:44,699 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 120: 41.599999999999994
+2026-06-19 15:39:44,700 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 121: 82.0
+2026-06-19 15:39:44,700 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 122: 33.199999999999996
+2026-06-19 15:39:44,700 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 123: 90.4
+2026-06-19 15:39:44,700 - DEBUG - Heuristic ML score for component 'Concrete', material 124: 53.2
+2026-06-19 15:39:44,700 - DEBUG - Heuristic ML score for component 'Concrete', material 125: 40.39999999999999
+2026-06-19 15:39:44,700 - DEBUG - Heuristic ML score for component 'Concrete', material 126: 84.0
+2026-06-19 15:39:44,700 - DEBUG - Heuristic ML score for component 'Concrete', material 127: 48.0
+2026-06-19 15:39:44,700 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 128: 30.0
+2026-06-19 15:39:44,700 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 129: 51.0
+2026-06-19 15:39:44,700 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 130: 40.0
+2026-06-19 15:39:44,700 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 131: 21.0
+2026-06-19 15:39:44,700 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 132: 66.0
+2026-06-19 15:39:44,700 - DEBUG - Heuristic ML score for component 'Walls', material 133: 82.2
+2026-06-19 15:39:44,700 - DEBUG - Heuristic ML score for component 'Walls', material 134: 86.8
+2026-06-19 15:39:44,700 - DEBUG - Heuristic ML score for component 'Walls', material 135: 52.4
+2026-06-19 15:39:44,700 - DEBUG - Heuristic ML score for component 'Walls', material 136: 95.6
+2026-06-19 15:39:44,700 - DEBUG - Heuristic ML score for component 'Walls', material 137: 79.6
+2026-06-19 15:39:44,700 - DEBUG - Heuristic ML score for component 'Walls', material 138: 80.0
+2026-06-19 15:39:44,700 - DEBUG - Heuristic ML score for component 'Roofing', material 139: 59.8
+2026-06-19 15:39:44,700 - DEBUG - Heuristic ML score for component 'Roofing', material 140: 83.80000000000001
+2026-06-19 15:39:44,700 - DEBUG - Heuristic ML score for component 'Roofing', material 141: 48.0
+2026-06-19 15:39:44,701 - DEBUG - Heuristic ML score for component 'Roofing', material 142: 47.2
+2026-06-19 15:39:44,701 - DEBUG - Heuristic ML score for component 'Roofing', material 143: 59.2
+2026-06-19 15:39:44,701 - DEBUG - Heuristic ML score for component 'Roofing', material 144: 94.8
+2026-06-19 15:39:44,701 - DEBUG - Heuristic ML score for component 'Roofing', material 145: 51.0
+2026-06-19 15:39:44,701 - DEBUG - Heuristic ML score for component 'Roofing', material 146: 73.0
+2026-06-19 15:39:44,701 - DEBUG - Heuristic ML score for component 'Windows', material 147: 78.0
+2026-06-19 15:39:44,701 - DEBUG - Heuristic ML score for component 'Windows', material 148: 55.0
+2026-06-19 15:39:44,701 - DEBUG - Heuristic ML score for component 'Windows', material 149: 75.0
+2026-06-19 15:39:44,701 - DEBUG - Heuristic ML score for component 'Windows', material 150: 60.0
+2026-06-19 15:39:44,701 - DEBUG - Heuristic ML score for component 'Windows', material 151: 53.2
+2026-06-19 15:39:44,701 - DEBUG - Heuristic ML score for component 'Windows', material 152: 55.2
+2026-06-19 15:39:44,701 - DEBUG - Heuristic ML score for component 'Doors', material 153: 76.2
+2026-06-19 15:39:44,701 - DEBUG - Heuristic ML score for component 'Doors', material 154: 48.0
+2026-06-19 15:39:44,701 - DEBUG - Heuristic ML score for component 'Doors', material 155: 59.8
+2026-06-19 15:39:44,701 - DEBUG - Heuristic ML score for component 'Doors', material 156: 50.0
+2026-06-19 15:39:44,701 - DEBUG - Heuristic ML score for component 'Doors', material 157: 35.2
+2026-06-19 15:39:44,701 - DEBUG - Heuristic ML score for component 'Doors', material 158: 75.19999999999999
+2026-06-19 15:39:44,701 - DEBUG - Heuristic ML score for component 'Doors', material 159: 75.19999999999999
+2026-06-19 15:39:44,701 - DEBUG - Heuristic ML score for component 'Flooring', material 160: 76.2
+2026-06-19 15:39:44,702 - DEBUG - Heuristic ML score for component 'Flooring', material 161: 62.2
+2026-06-19 15:39:44,702 - DEBUG - Heuristic ML score for component 'Flooring', material 162: 51.2
+2026-06-19 15:39:44,702 - DEBUG - Heuristic ML score for component 'Flooring', material 163: 72.0
+2026-06-19 15:39:44,702 - DEBUG - Heuristic ML score for component 'Flooring', material 164: 76.8
+2026-06-19 15:39:44,702 - DEBUG - Heuristic ML score for component 'Flooring', material 165: 62.0
+2026-06-19 15:39:44,702 - DEBUG - Heuristic ML score for component 'Flooring', material 166: 85.2
+2026-06-19 15:39:44,702 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 167: 95.0
+2026-06-19 15:39:44,702 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 168: 52.4
+2026-06-19 15:39:44,702 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 169: 33.6
+2026-06-19 15:39:44,702 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 170: 66.0
+2026-06-19 15:39:44,703 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 171: 56.8
+2026-06-19 15:39:44,703 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 172: 57.199999999999996
+2026-06-19 15:39:44,703 - DEBUG - Heuristic ML score for component 'Waterproofing', material 173: 72.8
+2026-06-19 15:39:44,703 - DEBUG - Heuristic ML score for component 'Waterproofing', material 174: 42.0
+2026-06-19 15:39:44,703 - DEBUG - Heuristic ML score for component 'Waterproofing', material 175: 44.8
+2026-06-19 15:39:44,703 - DEBUG - Heuristic ML score for component 'Waterproofing', material 176: 63.8
+2026-06-19 15:39:44,703 - DEBUG - Heuristic ML score for component 'Waterproofing', material 177: 87.80000000000001
+2026-06-19 15:39:44,703 - DEBUG - Heuristic ML score for component 'Surface Finishes', material 178: 69.0
+2026-06-19 15:39:44,703 - DEBUG - Heuristic ML score for component 'Surface Finishes', material 179: 92.2
+2026-06-19 15:39:44,704 - DEBUG - Heuristic ML score for component 'Surface Finishes', material 180: 54.0
+2026-06-19 15:39:44,704 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 119: 55.0
+2026-06-19 15:39:44,704 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 120: 41.599999999999994
+2026-06-19 15:39:44,704 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 121: 82.0
+2026-06-19 15:39:44,704 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 122: 33.199999999999996
+2026-06-19 15:39:44,704 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 123: 90.4
+2026-06-19 15:39:44,704 - DEBUG - Heuristic ML score for component 'Concrete', material 124: 53.2
+2026-06-19 15:39:44,704 - DEBUG - Heuristic ML score for component 'Concrete', material 125: 40.39999999999999
+2026-06-19 15:39:44,704 - DEBUG - Heuristic ML score for component 'Concrete', material 126: 84.0
+2026-06-19 15:39:44,704 - DEBUG - Heuristic ML score for component 'Concrete', material 127: 48.0
+2026-06-19 15:39:44,704 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 128: 30.0
+2026-06-19 15:39:44,705 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 129: 51.0
+2026-06-19 15:39:44,705 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 130: 40.0
+2026-06-19 15:39:44,705 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 131: 21.0
+2026-06-19 15:39:44,705 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 132: 66.0
+2026-06-19 15:39:44,705 - DEBUG - Heuristic ML score for component 'Walls', material 133: 82.2
+2026-06-19 15:39:44,705 - DEBUG - Heuristic ML score for component 'Walls', material 134: 86.8
+2026-06-19 15:39:44,705 - DEBUG - Heuristic ML score for component 'Walls', material 135: 52.4
+2026-06-19 15:39:44,705 - DEBUG - Heuristic ML score for component 'Walls', material 136: 95.6
+2026-06-19 15:39:44,705 - DEBUG - Heuristic ML score for component 'Walls', material 137: 79.6
+2026-06-19 15:39:44,705 - DEBUG - Heuristic ML score for component 'Walls', material 138: 80.0
+2026-06-19 15:39:44,706 - DEBUG - Heuristic ML score for component 'Roofing', material 139: 59.8
+2026-06-19 15:39:44,706 - DEBUG - Heuristic ML score for component 'Roofing', material 140: 83.80000000000001
+2026-06-19 15:39:44,706 - DEBUG - Heuristic ML score for component 'Roofing', material 141: 48.0
+2026-06-19 15:39:44,706 - DEBUG - Heuristic ML score for component 'Roofing', material 142: 47.2
+2026-06-19 15:39:44,706 - DEBUG - Heuristic ML score for component 'Roofing', material 143: 59.2
+2026-06-19 15:39:44,706 - DEBUG - Heuristic ML score for component 'Roofing', material 144: 94.8
+2026-06-19 15:39:44,706 - DEBUG - Heuristic ML score for component 'Roofing', material 145: 51.0
+2026-06-19 15:39:44,706 - DEBUG - Heuristic ML score for component 'Roofing', material 146: 73.0
+2026-06-19 15:39:44,707 - DEBUG - Heuristic ML score for component 'Windows', material 147: 78.0
+2026-06-19 15:39:44,707 - DEBUG - Heuristic ML score for component 'Windows', material 148: 55.0
+2026-06-19 15:39:44,707 - DEBUG - Heuristic ML score for component 'Windows', material 149: 75.0
+2026-06-19 15:39:44,707 - DEBUG - Heuristic ML score for component 'Windows', material 150: 60.0
+2026-06-19 15:39:44,707 - DEBUG - Heuristic ML score for component 'Windows', material 151: 53.2
+2026-06-19 15:39:44,707 - DEBUG - Heuristic ML score for component 'Windows', material 152: 55.2
+2026-06-19 15:39:44,707 - DEBUG - Heuristic ML score for component 'Doors', material 153: 76.2
+2026-06-19 15:39:44,707 - DEBUG - Heuristic ML score for component 'Doors', material 154: 48.0
+2026-06-19 15:39:44,707 - DEBUG - Heuristic ML score for component 'Doors', material 155: 59.8
+2026-06-19 15:39:44,707 - DEBUG - Heuristic ML score for component 'Doors', material 156: 50.0
+2026-06-19 15:39:44,707 - DEBUG - Heuristic ML score for component 'Doors', material 157: 35.2
+2026-06-19 15:39:44,707 - DEBUG - Heuristic ML score for component 'Doors', material 158: 75.19999999999999
+2026-06-19 15:39:44,707 - DEBUG - Heuristic ML score for component 'Doors', material 159: 75.19999999999999
+2026-06-19 15:39:44,708 - DEBUG - Heuristic ML score for component 'Flooring', material 160: 76.2
+2026-06-19 15:39:44,708 - DEBUG - Heuristic ML score for component 'Flooring', material 161: 62.2
+2026-06-19 15:39:44,708 - DEBUG - Heuristic ML score for component 'Flooring', material 162: 51.2
+2026-06-19 15:39:44,708 - DEBUG - Heuristic ML score for component 'Flooring', material 163: 72.0
+2026-06-19 15:39:44,708 - DEBUG - Heuristic ML score for component 'Flooring', material 164: 76.8
+2026-06-19 15:39:44,708 - DEBUG - Heuristic ML score for component 'Flooring', material 165: 62.0
+2026-06-19 15:39:44,708 - DEBUG - Heuristic ML score for component 'Flooring', material 166: 85.2
+2026-06-19 15:39:44,708 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 167: 95.0
+2026-06-19 15:39:44,708 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 168: 52.4
+2026-06-19 15:39:44,708 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 169: 33.6
+2026-06-19 15:39:44,708 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 170: 66.0
+2026-06-19 15:39:44,708 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 171: 56.8
+2026-06-19 15:39:44,708 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 172: 57.199999999999996
+2026-06-19 15:39:44,708 - DEBUG - Heuristic ML score for component 'Waterproofing', material 173: 72.8
+2026-06-19 15:39:44,708 - DEBUG - Heuristic ML score for component 'Waterproofing', material 174: 42.0
+2026-06-19 15:39:44,708 - DEBUG - Heuristic ML score for component 'Waterproofing', material 175: 44.8
+2026-06-19 15:39:44,708 - DEBUG - Heuristic ML score for component 'Waterproofing', material 176: 63.8
+2026-06-19 15:39:44,709 - DEBUG - Heuristic ML score for component 'Waterproofing', material 177: 87.80000000000001
+2026-06-19 15:39:44,709 - DEBUG - Heuristic ML score for component 'Surface Finishes', material 178: 69.0
+2026-06-19 15:39:44,709 - DEBUG - Heuristic ML score for component 'Surface Finishes', material 179: 92.2
+2026-06-19 15:39:44,709 - DEBUG - Heuristic ML score for component 'Surface Finishes', material 180: 54.0
+2026-06-19 15:39:44,709 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 119: 55.0
+2026-06-19 15:39:44,709 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 120: 41.599999999999994
+2026-06-19 15:39:44,709 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 121: 82.0
+2026-06-19 15:39:44,709 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 122: 33.199999999999996
+2026-06-19 15:39:44,709 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 123: 90.4
+2026-06-19 15:39:44,709 - DEBUG - Heuristic ML score for component 'Concrete', material 124: 53.2
+2026-06-19 15:39:44,709 - DEBUG - Heuristic ML score for component 'Concrete', material 125: 40.39999999999999
+2026-06-19 15:39:44,709 - DEBUG - Heuristic ML score for component 'Concrete', material 126: 84.0
+2026-06-19 15:39:44,709 - DEBUG - Heuristic ML score for component 'Concrete', material 127: 48.0
+2026-06-19 15:39:44,709 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 128: 30.0
+2026-06-19 15:39:44,709 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 129: 51.0
+2026-06-19 15:39:44,709 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 130: 40.0
+2026-06-19 15:39:44,709 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 131: 21.0
+2026-06-19 15:39:44,709 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 132: 66.0
+2026-06-19 15:39:44,709 - DEBUG - Heuristic ML score for component 'Walls', material 133: 82.2
+2026-06-19 15:39:44,709 - DEBUG - Heuristic ML score for component 'Walls', material 134: 86.8
+2026-06-19 15:39:44,709 - DEBUG - Heuristic ML score for component 'Walls', material 135: 52.4
+2026-06-19 15:39:44,710 - DEBUG - Heuristic ML score for component 'Walls', material 136: 95.6
+2026-06-19 15:39:44,710 - DEBUG - Heuristic ML score for component 'Walls', material 137: 79.6
+2026-06-19 15:39:44,710 - DEBUG - Heuristic ML score for component 'Walls', material 138: 80.0
+2026-06-19 15:39:44,710 - DEBUG - Heuristic ML score for component 'Roofing', material 139: 59.8
+2026-06-19 15:39:44,710 - DEBUG - Heuristic ML score for component 'Roofing', material 140: 83.80000000000001
+2026-06-19 15:39:44,710 - DEBUG - Heuristic ML score for component 'Roofing', material 141: 48.0
+2026-06-19 15:39:44,710 - DEBUG - Heuristic ML score for component 'Roofing', material 142: 47.2
+2026-06-19 15:39:44,710 - DEBUG - Heuristic ML score for component 'Roofing', material 143: 59.2
+2026-06-19 15:39:44,710 - DEBUG - Heuristic ML score for component 'Roofing', material 144: 94.8
+2026-06-19 15:39:44,710 - DEBUG - Heuristic ML score for component 'Roofing', material 145: 51.0
+2026-06-19 15:39:44,710 - DEBUG - Heuristic ML score for component 'Roofing', material 146: 73.0
+2026-06-19 15:39:44,710 - DEBUG - Heuristic ML score for component 'Windows', material 147: 78.0
+2026-06-19 15:39:44,710 - DEBUG - Heuristic ML score for component 'Windows', material 148: 55.0
+2026-06-19 15:39:44,710 - DEBUG - Heuristic ML score for component 'Windows', material 149: 75.0
+2026-06-19 15:39:44,710 - DEBUG - Heuristic ML score for component 'Windows', material 150: 60.0
+2026-06-19 15:39:44,710 - DEBUG - Heuristic ML score for component 'Windows', material 151: 53.2
+2026-06-19 15:39:44,710 - DEBUG - Heuristic ML score for component 'Windows', material 152: 55.2
+2026-06-19 15:39:44,710 - DEBUG - Heuristic ML score for component 'Doors', material 153: 76.2
+2026-06-19 15:39:44,710 - DEBUG - Heuristic ML score for component 'Doors', material 154: 48.0
+2026-06-19 15:39:44,710 - DEBUG - Heuristic ML score for component 'Doors', material 155: 59.8
+2026-06-19 15:39:44,710 - DEBUG - Heuristic ML score for component 'Doors', material 156: 50.0
+2026-06-19 15:39:44,711 - DEBUG - Heuristic ML score for component 'Doors', material 157: 35.2
+2026-06-19 15:39:44,711 - DEBUG - Heuristic ML score for component 'Doors', material 158: 75.19999999999999
+2026-06-19 15:39:44,711 - DEBUG - Heuristic ML score for component 'Doors', material 159: 75.19999999999999
+2026-06-19 15:39:44,711 - DEBUG - Heuristic ML score for component 'Flooring', material 160: 76.2
+2026-06-19 15:39:44,711 - DEBUG - Heuristic ML score for component 'Flooring', material 161: 62.2
+2026-06-19 15:39:44,711 - DEBUG - Heuristic ML score for component 'Flooring', material 162: 51.2
+2026-06-19 15:39:44,711 - DEBUG - Heuristic ML score for component 'Flooring', material 163: 72.0
+2026-06-19 15:39:44,711 - DEBUG - Heuristic ML score for component 'Flooring', material 164: 76.8
+2026-06-19 15:39:44,711 - DEBUG - Heuristic ML score for component 'Flooring', material 165: 62.0
+2026-06-19 15:39:44,711 - DEBUG - Heuristic ML score for component 'Flooring', material 166: 85.2
+2026-06-19 15:39:44,711 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 167: 95.0
+2026-06-19 15:39:44,711 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 168: 52.4
+2026-06-19 15:39:44,711 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 169: 33.6
+2026-06-19 15:39:44,711 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 170: 66.0
+2026-06-19 15:39:44,711 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 171: 56.8
+2026-06-19 15:39:44,711 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 172: 57.199999999999996
+2026-06-19 15:39:44,711 - DEBUG - Heuristic ML score for component 'Waterproofing', material 173: 72.8
+2026-06-19 15:39:44,711 - DEBUG - Heuristic ML score for component 'Waterproofing', material 174: 42.0
+2026-06-19 15:39:44,711 - DEBUG - Heuristic ML score for component 'Waterproofing', material 175: 44.8
+2026-06-19 15:39:44,711 - DEBUG - Heuristic ML score for component 'Waterproofing', material 176: 63.8
+2026-06-19 15:39:44,711 - DEBUG - Heuristic ML score for component 'Waterproofing', material 177: 87.80000000000001
+2026-06-19 15:39:44,711 - DEBUG - Heuristic ML score for component 'Surface Finishes', material 178: 69.0
+2026-06-19 15:39:44,711 - DEBUG - Heuristic ML score for component 'Surface Finishes', material 179: 92.2
+2026-06-19 15:39:44,712 - DEBUG - Heuristic ML score for component 'Surface Finishes', material 180: 54.0
+2026-06-19 16:02:56,772 - INFO - [OK] MaterialSpecificationEngine loaded ML model.
+2026-06-19 16:02:56,777 - DEBUG - Model details: RandomForestClassifier(n_estimators=120, random_state=42)
+2026-06-19 16:03:40,982 - INFO - [OK] MaterialSpecificationEngine loaded ML model.
+2026-06-19 16:03:40,986 - DEBUG - Model details: RandomForestClassifier(n_estimators=120, random_state=42)
+2026-06-19 16:03:52,126 - DEBUG - ML inference completed. probs: [array([[0.95, 0.  , 0.05]]), array([[0.56666667, 0.40833333, 0.00833333, 0.        , 0.01666667]]), array([[0.        , 0.88333333, 0.00833333, 0.01666667, 0.09166667]]), array([[0.98333333, 0.01666667]]), array([[0.00833333, 0.41666667, 0.01666667, 0.04166667, 0.51666667]])], classes: [array([1, 2, 3]), array([ 7,  8,  9, 10, 24]), array([11, 12, 13, 29, 30]), array([17, 18]), array([14, 15, 16, 25, 31])]
+2026-06-19 16:03:52,127 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 119: 55.0
+2026-06-19 16:03:52,127 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 120: 41.599999999999994
+2026-06-19 16:03:52,127 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 121: 82.0
+2026-06-19 16:03:52,127 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 122: 33.199999999999996
+2026-06-19 16:03:52,127 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 123: 90.4
+2026-06-19 16:03:52,127 - DEBUG - Heuristic ML score for component 'Concrete', material 124: 53.2
+2026-06-19 16:03:52,127 - DEBUG - Heuristic ML score for component 'Concrete', material 125: 40.39999999999999
+2026-06-19 16:03:52,127 - DEBUG - Heuristic ML score for component 'Concrete', material 126: 84.0
+2026-06-19 16:03:52,127 - DEBUG - Heuristic ML score for component 'Concrete', material 127: 48.0
+2026-06-19 16:03:52,127 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 128: 30.0
+2026-06-19 16:03:52,127 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 129: 51.0
+2026-06-19 16:03:52,127 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 130: 40.0
+2026-06-19 16:03:52,127 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 131: 21.0
+2026-06-19 16:03:52,127 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 132: 66.0
+2026-06-19 16:03:52,128 - DEBUG - Heuristic ML score for component 'Walls', material 133: 82.2
+2026-06-19 16:03:52,128 - DEBUG - Heuristic ML score for component 'Walls', material 134: 86.8
+2026-06-19 16:03:52,128 - DEBUG - Heuristic ML score for component 'Walls', material 135: 52.4
+2026-06-19 16:03:52,128 - DEBUG - Heuristic ML score for component 'Walls', material 136: 95.6
+2026-06-19 16:03:52,128 - DEBUG - Heuristic ML score for component 'Walls', material 137: 79.6
+2026-06-19 16:03:52,128 - DEBUG - Heuristic ML score for component 'Walls', material 138: 80.0
+2026-06-19 16:03:52,128 - DEBUG - Heuristic ML score for component 'Roofing', material 139: 59.8
+2026-06-19 16:03:52,128 - DEBUG - Heuristic ML score for component 'Roofing', material 140: 83.80000000000001
+2026-06-19 16:03:52,128 - DEBUG - Heuristic ML score for component 'Roofing', material 141: 48.0
+2026-06-19 16:03:52,128 - DEBUG - Heuristic ML score for component 'Roofing', material 142: 47.2
+2026-06-19 16:03:52,128 - DEBUG - Heuristic ML score for component 'Roofing', material 143: 59.2
+2026-06-19 16:03:52,128 - DEBUG - Heuristic ML score for component 'Roofing', material 144: 94.8
+2026-06-19 16:03:52,128 - DEBUG - Heuristic ML score for component 'Roofing', material 145: 51.0
+2026-06-19 16:03:52,128 - DEBUG - Heuristic ML score for component 'Roofing', material 146: 73.0
+2026-06-19 16:03:52,128 - DEBUG - Heuristic ML score for component 'Windows', material 147: 78.0
+2026-06-19 16:03:52,128 - DEBUG - Heuristic ML score for component 'Windows', material 148: 55.0
+2026-06-19 16:03:52,128 - DEBUG - Heuristic ML score for component 'Windows', material 149: 75.0
+2026-06-19 16:03:52,128 - DEBUG - Heuristic ML score for component 'Windows', material 150: 60.0
+2026-06-19 16:03:52,128 - DEBUG - Heuristic ML score for component 'Windows', material 151: 53.2
+2026-06-19 16:03:52,128 - DEBUG - Heuristic ML score for component 'Windows', material 152: 55.2
+2026-06-19 16:03:52,128 - DEBUG - Heuristic ML score for component 'Doors', material 153: 76.2
+2026-06-19 16:03:52,128 - DEBUG - Heuristic ML score for component 'Doors', material 154: 48.0
+2026-06-19 16:03:52,129 - DEBUG - Heuristic ML score for component 'Doors', material 155: 59.8
+2026-06-19 16:03:52,129 - DEBUG - Heuristic ML score for component 'Doors', material 156: 50.0
+2026-06-19 16:03:52,129 - DEBUG - Heuristic ML score for component 'Doors', material 157: 35.2
+2026-06-19 16:03:52,129 - DEBUG - Heuristic ML score for component 'Doors', material 158: 75.19999999999999
+2026-06-19 16:03:52,129 - DEBUG - Heuristic ML score for component 'Doors', material 159: 75.19999999999999
+2026-06-19 16:03:52,129 - DEBUG - Heuristic ML score for component 'Flooring', material 160: 76.2
+2026-06-19 16:03:52,129 - DEBUG - Heuristic ML score for component 'Flooring', material 161: 62.2
+2026-06-19 16:03:52,129 - DEBUG - Heuristic ML score for component 'Flooring', material 162: 51.2
+2026-06-19 16:03:52,129 - DEBUG - Heuristic ML score for component 'Flooring', material 163: 72.0
+2026-06-19 16:03:52,129 - DEBUG - Heuristic ML score for component 'Flooring', material 164: 76.8
+2026-06-19 16:03:52,129 - DEBUG - Heuristic ML score for component 'Flooring', material 165: 62.0
+2026-06-19 16:03:52,129 - DEBUG - Heuristic ML score for component 'Flooring', material 166: 85.2
+2026-06-19 16:03:52,129 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 167: 95.0
+2026-06-19 16:03:52,129 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 168: 52.4
+2026-06-19 16:03:52,129 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 169: 33.6
+2026-06-19 16:03:52,129 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 170: 66.0
+2026-06-19 16:03:52,129 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 171: 56.8
+2026-06-19 16:03:52,129 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 172: 57.199999999999996
+2026-06-19 16:03:52,129 - DEBUG - Heuristic ML score for component 'Waterproofing', material 173: 72.8
+2026-06-19 16:03:52,129 - DEBUG - Heuristic ML score for component 'Waterproofing', material 174: 42.0
+2026-06-19 16:03:52,130 - DEBUG - Heuristic ML score for component 'Waterproofing', material 175: 44.8
+2026-06-19 16:03:52,130 - DEBUG - Heuristic ML score for component 'Waterproofing', material 176: 63.8
+2026-06-19 16:03:52,130 - DEBUG - Heuristic ML score for component 'Waterproofing', material 177: 87.80000000000001
+2026-06-19 16:03:52,130 - DEBUG - Heuristic ML score for component 'Surface Finishes', material 178: 69.0
+2026-06-19 16:03:52,130 - DEBUG - Heuristic ML score for component 'Surface Finishes', material 179: 92.2
+2026-06-19 16:03:52,130 - DEBUG - Heuristic ML score for component 'Surface Finishes', material 180: 54.0
+2026-06-19 16:03:52,130 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 119: 55.0
+2026-06-19 16:03:52,130 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 120: 41.599999999999994
+2026-06-19 16:03:52,130 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 121: 82.0
+2026-06-19 16:03:52,130 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 122: 33.199999999999996
+2026-06-19 16:03:52,130 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 123: 90.4
+2026-06-19 16:03:52,130 - DEBUG - Heuristic ML score for component 'Concrete', material 124: 53.2
+2026-06-19 16:03:52,130 - DEBUG - Heuristic ML score for component 'Concrete', material 125: 40.39999999999999
+2026-06-19 16:03:52,130 - DEBUG - Heuristic ML score for component 'Concrete', material 126: 84.0
+2026-06-19 16:03:52,130 - DEBUG - Heuristic ML score for component 'Concrete', material 127: 48.0
+2026-06-19 16:03:52,130 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 128: 30.0
+2026-06-19 16:03:52,130 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 129: 51.0
+2026-06-19 16:03:52,130 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 130: 40.0
+2026-06-19 16:03:52,130 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 131: 21.0
+2026-06-19 16:03:52,130 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 132: 66.0
+2026-06-19 16:03:52,130 - DEBUG - Heuristic ML score for component 'Walls', material 133: 82.2
+2026-06-19 16:03:52,130 - DEBUG - Heuristic ML score for component 'Walls', material 134: 86.8
+2026-06-19 16:03:52,130 - DEBUG - Heuristic ML score for component 'Walls', material 135: 52.4
+2026-06-19 16:03:52,130 - DEBUG - Heuristic ML score for component 'Walls', material 136: 95.6
+2026-06-19 16:03:52,130 - DEBUG - Heuristic ML score for component 'Walls', material 137: 79.6
+2026-06-19 16:03:52,131 - DEBUG - Heuristic ML score for component 'Walls', material 138: 80.0
+2026-06-19 16:03:52,131 - DEBUG - Heuristic ML score for component 'Roofing', material 139: 59.8
+2026-06-19 16:03:52,131 - DEBUG - Heuristic ML score for component 'Roofing', material 140: 83.80000000000001
+2026-06-19 16:03:52,131 - DEBUG - Heuristic ML score for component 'Roofing', material 141: 48.0
+2026-06-19 16:03:52,131 - DEBUG - Heuristic ML score for component 'Roofing', material 142: 47.2
+2026-06-19 16:03:52,131 - DEBUG - Heuristic ML score for component 'Roofing', material 143: 59.2
+2026-06-19 16:03:52,131 - DEBUG - Heuristic ML score for component 'Roofing', material 144: 94.8
+2026-06-19 16:03:52,131 - DEBUG - Heuristic ML score for component 'Roofing', material 145: 51.0
+2026-06-19 16:03:52,131 - DEBUG - Heuristic ML score for component 'Roofing', material 146: 73.0
+2026-06-19 16:03:52,131 - DEBUG - Heuristic ML score for component 'Windows', material 147: 78.0
+2026-06-19 16:03:52,131 - DEBUG - Heuristic ML score for component 'Windows', material 148: 55.0
+2026-06-19 16:03:52,131 - DEBUG - Heuristic ML score for component 'Windows', material 149: 75.0
+2026-06-19 16:03:52,131 - DEBUG - Heuristic ML score for component 'Windows', material 150: 60.0
+2026-06-19 16:03:52,131 - DEBUG - Heuristic ML score for component 'Windows', material 151: 53.2
+2026-06-19 16:03:52,131 - DEBUG - Heuristic ML score for component 'Windows', material 152: 55.2
+2026-06-19 16:03:52,131 - DEBUG - Heuristic ML score for component 'Doors', material 153: 76.2
+2026-06-19 16:03:52,131 - DEBUG - Heuristic ML score for component 'Doors', material 154: 48.0
+2026-06-19 16:03:52,131 - DEBUG - Heuristic ML score for component 'Doors', material 155: 59.8
+2026-06-19 16:03:52,131 - DEBUG - Heuristic ML score for component 'Doors', material 156: 50.0
+2026-06-19 16:03:52,131 - DEBUG - Heuristic ML score for component 'Doors', material 157: 35.2
+2026-06-19 16:03:52,131 - DEBUG - Heuristic ML score for component 'Doors', material 158: 75.19999999999999
+2026-06-19 16:03:52,131 - DEBUG - Heuristic ML score for component 'Doors', material 159: 75.19999999999999
+2026-06-19 16:03:52,131 - DEBUG - Heuristic ML score for component 'Flooring', material 160: 76.2
+2026-06-19 16:03:52,131 - DEBUG - Heuristic ML score for component 'Flooring', material 161: 62.2
+2026-06-19 16:03:52,131 - DEBUG - Heuristic ML score for component 'Flooring', material 162: 51.2
+2026-06-19 16:03:52,132 - DEBUG - Heuristic ML score for component 'Flooring', material 163: 72.0
+2026-06-19 16:03:52,132 - DEBUG - Heuristic ML score for component 'Flooring', material 164: 76.8
+2026-06-19 16:03:52,132 - DEBUG - Heuristic ML score for component 'Flooring', material 165: 62.0
+2026-06-19 16:03:52,132 - DEBUG - Heuristic ML score for component 'Flooring', material 166: 85.2
+2026-06-19 16:03:52,132 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 167: 95.0
+2026-06-19 16:03:52,132 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 168: 52.4
+2026-06-19 16:03:52,132 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 169: 33.6
+2026-06-19 16:03:52,132 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 170: 66.0
+2026-06-19 16:03:52,132 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 171: 56.8
+2026-06-19 16:03:52,132 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 172: 57.199999999999996
+2026-06-19 16:03:52,132 - DEBUG - Heuristic ML score for component 'Waterproofing', material 173: 72.8
+2026-06-19 16:03:52,132 - DEBUG - Heuristic ML score for component 'Waterproofing', material 174: 42.0
+2026-06-19 16:03:52,132 - DEBUG - Heuristic ML score for component 'Waterproofing', material 175: 44.8
+2026-06-19 16:03:52,132 - DEBUG - Heuristic ML score for component 'Waterproofing', material 176: 63.8
+2026-06-19 16:03:52,132 - DEBUG - Heuristic ML score for component 'Waterproofing', material 177: 87.80000000000001
+2026-06-19 16:03:52,132 - DEBUG - Heuristic ML score for component 'Surface Finishes', material 178: 69.0
+2026-06-19 16:03:52,132 - DEBUG - Heuristic ML score for component 'Surface Finishes', material 179: 92.2
+2026-06-19 16:03:52,132 - DEBUG - Heuristic ML score for component 'Surface Finishes', material 180: 54.0
+2026-06-19 16:03:52,132 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 119: 55.0
+2026-06-19 16:03:52,132 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 120: 41.599999999999994
+2026-06-19 16:03:52,132 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 121: 82.0
+2026-06-19 16:03:52,132 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 122: 33.199999999999996
+2026-06-19 16:03:52,132 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 123: 90.4
+2026-06-19 16:03:52,132 - DEBUG - Heuristic ML score for component 'Concrete', material 124: 53.2
+2026-06-19 16:03:52,132 - DEBUG - Heuristic ML score for component 'Concrete', material 125: 40.39999999999999
+2026-06-19 16:03:52,132 - DEBUG - Heuristic ML score for component 'Concrete', material 126: 84.0
+2026-06-19 16:03:52,132 - DEBUG - Heuristic ML score for component 'Concrete', material 127: 48.0
+2026-06-19 16:03:52,133 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 128: 30.0
+2026-06-19 16:03:52,133 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 129: 51.0
+2026-06-19 16:03:52,133 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 130: 40.0
+2026-06-19 16:03:52,133 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 131: 21.0
+2026-06-19 16:03:52,133 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 132: 66.0
+2026-06-19 16:03:52,133 - DEBUG - Heuristic ML score for component 'Walls', material 133: 82.2
+2026-06-19 16:03:52,133 - DEBUG - Heuristic ML score for component 'Walls', material 134: 86.8
+2026-06-19 16:03:52,133 - DEBUG - Heuristic ML score for component 'Walls', material 135: 52.4
+2026-06-19 16:03:52,133 - DEBUG - Heuristic ML score for component 'Walls', material 136: 95.6
+2026-06-19 16:03:52,133 - DEBUG - Heuristic ML score for component 'Walls', material 137: 79.6
+2026-06-19 16:03:52,133 - DEBUG - Heuristic ML score for component 'Walls', material 138: 80.0
+2026-06-19 16:03:52,133 - DEBUG - Heuristic ML score for component 'Roofing', material 139: 59.8
+2026-06-19 16:03:52,133 - DEBUG - Heuristic ML score for component 'Roofing', material 140: 83.80000000000001
+2026-06-19 16:03:52,133 - DEBUG - Heuristic ML score for component 'Roofing', material 141: 48.0
+2026-06-19 16:03:52,133 - DEBUG - Heuristic ML score for component 'Roofing', material 142: 47.2
+2026-06-19 16:03:52,133 - DEBUG - Heuristic ML score for component 'Roofing', material 143: 59.2
+2026-06-19 16:03:52,133 - DEBUG - Heuristic ML score for component 'Roofing', material 144: 94.8
+2026-06-19 16:03:52,133 - DEBUG - Heuristic ML score for component 'Roofing', material 145: 51.0
+2026-06-19 16:03:52,133 - DEBUG - Heuristic ML score for component 'Roofing', material 146: 73.0
+2026-06-19 16:03:52,133 - DEBUG - Heuristic ML score for component 'Windows', material 147: 78.0
+2026-06-19 16:03:52,133 - DEBUG - Heuristic ML score for component 'Windows', material 148: 55.0
+2026-06-19 16:03:52,133 - DEBUG - Heuristic ML score for component 'Windows', material 149: 75.0
+2026-06-19 16:03:52,133 - DEBUG - Heuristic ML score for component 'Windows', material 150: 60.0
+2026-06-19 16:03:52,133 - DEBUG - Heuristic ML score for component 'Windows', material 151: 53.2
+2026-06-19 16:03:52,133 - DEBUG - Heuristic ML score for component 'Windows', material 152: 55.2
+2026-06-19 16:03:52,134 - DEBUG - Heuristic ML score for component 'Doors', material 153: 76.2
+2026-06-19 16:03:52,134 - DEBUG - Heuristic ML score for component 'Doors', material 154: 48.0
+2026-06-19 16:03:52,134 - DEBUG - Heuristic ML score for component 'Doors', material 155: 59.8
+2026-06-19 16:03:52,134 - DEBUG - Heuristic ML score for component 'Doors', material 156: 50.0
+2026-06-19 16:03:52,134 - DEBUG - Heuristic ML score for component 'Doors', material 157: 35.2
+2026-06-19 16:03:52,134 - DEBUG - Heuristic ML score for component 'Doors', material 158: 75.19999999999999
+2026-06-19 16:03:52,134 - DEBUG - Heuristic ML score for component 'Doors', material 159: 75.19999999999999
+2026-06-19 16:03:52,134 - DEBUG - Heuristic ML score for component 'Flooring', material 160: 76.2
+2026-06-19 16:03:52,134 - DEBUG - Heuristic ML score for component 'Flooring', material 161: 62.2
+2026-06-19 16:03:52,134 - DEBUG - Heuristic ML score for component 'Flooring', material 162: 51.2
+2026-06-19 16:03:52,134 - DEBUG - Heuristic ML score for component 'Flooring', material 163: 72.0
+2026-06-19 16:03:52,134 - DEBUG - Heuristic ML score for component 'Flooring', material 164: 76.8
+2026-06-19 16:03:52,134 - DEBUG - Heuristic ML score for component 'Flooring', material 165: 62.0
+2026-06-19 16:03:52,134 - DEBUG - Heuristic ML score for component 'Flooring', material 166: 85.2
+2026-06-19 16:03:52,135 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 167: 95.0
+2026-06-19 16:03:52,135 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 168: 52.4
+2026-06-19 16:03:52,135 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 169: 33.6
+2026-06-19 16:03:52,135 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 170: 66.0
+2026-06-19 16:03:52,135 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 171: 56.8
+2026-06-19 16:03:52,135 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 172: 57.199999999999996
+2026-06-19 16:03:52,136 - DEBUG - Heuristic ML score for component 'Waterproofing', material 173: 72.8
+2026-06-19 16:03:52,136 - DEBUG - Heuristic ML score for component 'Waterproofing', material 174: 42.0
+2026-06-19 16:03:52,136 - DEBUG - Heuristic ML score for component 'Waterproofing', material 175: 44.8
+2026-06-19 16:03:52,136 - DEBUG - Heuristic ML score for component 'Waterproofing', material 176: 63.8
+2026-06-19 16:03:52,137 - DEBUG - Heuristic ML score for component 'Waterproofing', material 177: 87.80000000000001
+2026-06-19 16:03:52,137 - DEBUG - Heuristic ML score for component 'Surface Finishes', material 178: 69.0
+2026-06-19 16:03:52,137 - DEBUG - Heuristic ML score for component 'Surface Finishes', material 179: 92.2
+2026-06-19 16:03:52,137 - DEBUG - Heuristic ML score for component 'Surface Finishes', material 180: 54.0
+2026-06-19 16:04:02,753 - INFO - [OK] MaterialSpecificationEngine loaded ML model.
+2026-06-19 16:04:02,759 - DEBUG - Model details: RandomForestClassifier(n_estimators=120, random_state=42)
+2026-06-19 16:04:59,573 - DEBUG - ML inference completed. probs: [array([[0.95, 0.  , 0.05]]), array([[0.56666667, 0.40833333, 0.00833333, 0.        , 0.01666667]]), array([[0.        , 0.88333333, 0.00833333, 0.01666667, 0.09166667]]), array([[0.98333333, 0.01666667]]), array([[0.00833333, 0.41666667, 0.01666667, 0.04166667, 0.51666667]])], classes: [array([1, 2, 3]), array([ 7,  8,  9, 10, 24]), array([11, 12, 13, 29, 30]), array([17, 18]), array([14, 15, 16, 25, 31])]
+2026-06-19 16:04:59,576 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 119: 55.0
+2026-06-19 16:04:59,577 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 120: 41.599999999999994
+2026-06-19 16:04:59,578 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 121: 82.0
+2026-06-19 16:04:59,578 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 122: 33.199999999999996
+2026-06-19 16:04:59,579 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 123: 90.4
+2026-06-19 16:04:59,579 - DEBUG - Heuristic ML score for component 'Concrete', material 124: 53.2
+2026-06-19 16:04:59,579 - DEBUG - Heuristic ML score for component 'Concrete', material 125: 40.39999999999999
+2026-06-19 16:04:59,580 - DEBUG - Heuristic ML score for component 'Concrete', material 126: 84.0
+2026-06-19 16:04:59,580 - DEBUG - Heuristic ML score for component 'Concrete', material 127: 48.0
+2026-06-19 16:04:59,580 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 128: 30.0
+2026-06-19 16:04:59,581 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 129: 51.0
+2026-06-19 16:04:59,581 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 130: 40.0
+2026-06-19 16:04:59,581 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 131: 21.0
+2026-06-19 16:04:59,582 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 132: 66.0
+2026-06-19 16:04:59,582 - DEBUG - Heuristic ML score for component 'Walls', material 133: 82.2
+2026-06-19 16:04:59,582 - DEBUG - Heuristic ML score for component 'Walls', material 134: 86.8
+2026-06-19 16:04:59,583 - DEBUG - Heuristic ML score for component 'Walls', material 135: 52.4
+2026-06-19 16:04:59,583 - DEBUG - Heuristic ML score for component 'Walls', material 136: 95.6
+2026-06-19 16:04:59,583 - DEBUG - Heuristic ML score for component 'Walls', material 137: 79.6
+2026-06-19 16:04:59,584 - DEBUG - Heuristic ML score for component 'Walls', material 138: 80.0
+2026-06-19 16:04:59,584 - DEBUG - Heuristic ML score for component 'Roofing', material 139: 59.8
+2026-06-19 16:04:59,584 - DEBUG - Heuristic ML score for component 'Roofing', material 140: 83.80000000000001
+2026-06-19 16:04:59,584 - DEBUG - Heuristic ML score for component 'Roofing', material 141: 48.0
+2026-06-19 16:04:59,584 - DEBUG - Heuristic ML score for component 'Roofing', material 142: 47.2
+2026-06-19 16:04:59,585 - DEBUG - Heuristic ML score for component 'Roofing', material 143: 59.2
+2026-06-19 16:04:59,585 - DEBUG - Heuristic ML score for component 'Roofing', material 144: 94.8
+2026-06-19 16:04:59,585 - DEBUG - Heuristic ML score for component 'Roofing', material 145: 51.0
+2026-06-19 16:04:59,585 - DEBUG - Heuristic ML score for component 'Roofing', material 146: 73.0
+2026-06-19 16:04:59,586 - DEBUG - Heuristic ML score for component 'Windows', material 147: 78.0
+2026-06-19 16:04:59,586 - DEBUG - Heuristic ML score for component 'Windows', material 148: 55.0
+2026-06-19 16:04:59,587 - DEBUG - Heuristic ML score for component 'Windows', material 149: 75.0
+2026-06-19 16:04:59,587 - DEBUG - Heuristic ML score for component 'Windows', material 150: 60.0
+2026-06-19 16:04:59,587 - DEBUG - Heuristic ML score for component 'Windows', material 151: 53.2
+2026-06-19 16:04:59,588 - DEBUG - Heuristic ML score for component 'Windows', material 152: 55.2
+2026-06-19 16:04:59,588 - DEBUG - Heuristic ML score for component 'Doors', material 153: 76.2
+2026-06-19 16:04:59,588 - DEBUG - Heuristic ML score for component 'Doors', material 154: 48.0
+2026-06-19 16:04:59,589 - DEBUG - Heuristic ML score for component 'Doors', material 155: 59.8
+2026-06-19 16:04:59,589 - DEBUG - Heuristic ML score for component 'Doors', material 156: 50.0
+2026-06-19 16:04:59,589 - DEBUG - Heuristic ML score for component 'Doors', material 157: 35.2
+2026-06-19 16:04:59,589 - DEBUG - Heuristic ML score for component 'Doors', material 158: 75.19999999999999
+2026-06-19 16:04:59,590 - DEBUG - Heuristic ML score for component 'Doors', material 159: 75.19999999999999
+2026-06-19 16:04:59,590 - DEBUG - Heuristic ML score for component 'Flooring', material 160: 76.2
+2026-06-19 16:04:59,590 - DEBUG - Heuristic ML score for component 'Flooring', material 161: 62.2
+2026-06-19 16:04:59,591 - DEBUG - Heuristic ML score for component 'Flooring', material 162: 51.2
+2026-06-19 16:04:59,591 - DEBUG - Heuristic ML score for component 'Flooring', material 163: 72.0
+2026-06-19 16:04:59,591 - DEBUG - Heuristic ML score for component 'Flooring', material 164: 76.8
+2026-06-19 16:04:59,592 - DEBUG - Heuristic ML score for component 'Flooring', material 165: 62.0
+2026-06-19 16:04:59,592 - DEBUG - Heuristic ML score for component 'Flooring', material 166: 85.2
+2026-06-19 16:04:59,592 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 167: 95.0
+2026-06-19 16:04:59,592 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 168: 52.4
+2026-06-19 16:04:59,593 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 169: 33.6
+2026-06-19 16:04:59,593 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 170: 66.0
+2026-06-19 16:04:59,593 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 171: 56.8
+2026-06-19 16:04:59,593 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 172: 57.199999999999996
+2026-06-19 16:04:59,594 - DEBUG - Heuristic ML score for component 'Waterproofing', material 173: 72.8
+2026-06-19 16:04:59,594 - DEBUG - Heuristic ML score for component 'Waterproofing', material 174: 42.0
+2026-06-19 16:04:59,594 - DEBUG - Heuristic ML score for component 'Waterproofing', material 175: 44.8
+2026-06-19 16:04:59,594 - DEBUG - Heuristic ML score for component 'Waterproofing', material 176: 63.8
+2026-06-19 16:04:59,595 - DEBUG - Heuristic ML score for component 'Waterproofing', material 177: 87.80000000000001
+2026-06-19 16:04:59,595 - DEBUG - Heuristic ML score for component 'Surface Finishes', material 178: 69.0
+2026-06-19 16:04:59,595 - DEBUG - Heuristic ML score for component 'Surface Finishes', material 179: 92.2
+2026-06-19 16:04:59,595 - DEBUG - Heuristic ML score for component 'Surface Finishes', material 180: 54.0
+2026-06-19 16:04:59,596 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 119: 55.0
+2026-06-19 16:04:59,596 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 120: 41.599999999999994
+2026-06-19 16:04:59,596 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 121: 82.0
+2026-06-19 16:04:59,597 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 122: 33.199999999999996
+2026-06-19 16:04:59,597 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 123: 90.4
+2026-06-19 16:04:59,597 - DEBUG - Heuristic ML score for component 'Concrete', material 124: 53.2
+2026-06-19 16:04:59,597 - DEBUG - Heuristic ML score for component 'Concrete', material 125: 40.39999999999999
+2026-06-19 16:04:59,598 - DEBUG - Heuristic ML score for component 'Concrete', material 126: 84.0
+2026-06-19 16:04:59,598 - DEBUG - Heuristic ML score for component 'Concrete', material 127: 48.0
+2026-06-19 16:04:59,598 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 128: 30.0
+2026-06-19 16:04:59,598 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 129: 51.0
+2026-06-19 16:04:59,599 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 130: 40.0
+2026-06-19 16:04:59,599 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 131: 21.0
+2026-06-19 16:04:59,599 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 132: 66.0
+2026-06-19 16:04:59,599 - DEBUG - Heuristic ML score for component 'Walls', material 133: 82.2
+2026-06-19 16:04:59,600 - DEBUG - Heuristic ML score for component 'Walls', material 134: 86.8
+2026-06-19 16:04:59,600 - DEBUG - Heuristic ML score for component 'Walls', material 135: 52.4
+2026-06-19 16:04:59,600 - DEBUG - Heuristic ML score for component 'Walls', material 136: 95.6
+2026-06-19 16:04:59,601 - DEBUG - Heuristic ML score for component 'Walls', material 137: 79.6
+2026-06-19 16:04:59,601 - DEBUG - Heuristic ML score for component 'Walls', material 138: 80.0
+2026-06-19 16:04:59,602 - DEBUG - Heuristic ML score for component 'Roofing', material 139: 59.8
+2026-06-19 16:04:59,604 - DEBUG - Heuristic ML score for component 'Roofing', material 140: 83.80000000000001
+2026-06-19 16:04:59,607 - DEBUG - Heuristic ML score for component 'Roofing', material 141: 48.0
+2026-06-19 16:04:59,607 - DEBUG - Heuristic ML score for component 'Roofing', material 142: 47.2
+2026-06-19 16:04:59,608 - DEBUG - Heuristic ML score for component 'Roofing', material 143: 59.2
+2026-06-19 16:04:59,608 - DEBUG - Heuristic ML score for component 'Roofing', material 144: 94.8
+2026-06-19 16:04:59,609 - DEBUG - Heuristic ML score for component 'Roofing', material 145: 51.0
+2026-06-19 16:04:59,609 - DEBUG - Heuristic ML score for component 'Roofing', material 146: 73.0
+2026-06-19 16:04:59,610 - DEBUG - Heuristic ML score for component 'Windows', material 147: 78.0
+2026-06-19 16:04:59,610 - DEBUG - Heuristic ML score for component 'Windows', material 148: 55.0
+2026-06-19 16:04:59,610 - DEBUG - Heuristic ML score for component 'Windows', material 149: 75.0
+2026-06-19 16:04:59,611 - DEBUG - Heuristic ML score for component 'Windows', material 150: 60.0
+2026-06-19 16:04:59,611 - DEBUG - Heuristic ML score for component 'Windows', material 151: 53.2
+2026-06-19 16:04:59,612 - DEBUG - Heuristic ML score for component 'Windows', material 152: 55.2
+2026-06-19 16:04:59,612 - DEBUG - Heuristic ML score for component 'Doors', material 153: 76.2
+2026-06-19 16:04:59,612 - DEBUG - Heuristic ML score for component 'Doors', material 154: 48.0
+2026-06-19 16:04:59,613 - DEBUG - Heuristic ML score for component 'Doors', material 155: 59.8
+2026-06-19 16:04:59,613 - DEBUG - Heuristic ML score for component 'Doors', material 156: 50.0
+2026-06-19 16:04:59,613 - DEBUG - Heuristic ML score for component 'Doors', material 157: 35.2
+2026-06-19 16:04:59,613 - DEBUG - Heuristic ML score for component 'Doors', material 158: 75.19999999999999
+2026-06-19 16:04:59,614 - DEBUG - Heuristic ML score for component 'Doors', material 159: 75.19999999999999
+2026-06-19 16:04:59,614 - DEBUG - Heuristic ML score for component 'Flooring', material 160: 76.2
+2026-06-19 16:04:59,614 - DEBUG - Heuristic ML score for component 'Flooring', material 161: 62.2
+2026-06-19 16:04:59,615 - DEBUG - Heuristic ML score for component 'Flooring', material 162: 51.2
+2026-06-19 16:04:59,615 - DEBUG - Heuristic ML score for component 'Flooring', material 163: 72.0
+2026-06-19 16:04:59,615 - DEBUG - Heuristic ML score for component 'Flooring', material 164: 76.8
+2026-06-19 16:04:59,615 - DEBUG - Heuristic ML score for component 'Flooring', material 165: 62.0
+2026-06-19 16:04:59,615 - DEBUG - Heuristic ML score for component 'Flooring', material 166: 85.2
+2026-06-19 16:04:59,616 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 167: 95.0
+2026-06-19 16:04:59,616 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 168: 52.4
+2026-06-19 16:04:59,617 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 169: 33.6
+2026-06-19 16:04:59,617 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 170: 66.0
+2026-06-19 16:04:59,618 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 171: 56.8
+2026-06-19 16:04:59,618 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 172: 57.199999999999996
+2026-06-19 16:04:59,619 - DEBUG - Heuristic ML score for component 'Waterproofing', material 173: 72.8
+2026-06-19 16:04:59,619 - DEBUG - Heuristic ML score for component 'Waterproofing', material 174: 42.0
+2026-06-19 16:04:59,620 - DEBUG - Heuristic ML score for component 'Waterproofing', material 175: 44.8
+2026-06-19 16:04:59,620 - DEBUG - Heuristic ML score for component 'Waterproofing', material 176: 63.8
+2026-06-19 16:04:59,621 - DEBUG - Heuristic ML score for component 'Waterproofing', material 177: 87.80000000000001
+2026-06-19 16:04:59,621 - DEBUG - Heuristic ML score for component 'Surface Finishes', material 178: 69.0
+2026-06-19 16:04:59,622 - DEBUG - Heuristic ML score for component 'Surface Finishes', material 179: 92.2
+2026-06-19 16:04:59,622 - DEBUG - Heuristic ML score for component 'Surface Finishes', material 180: 54.0
+2026-06-19 16:04:59,623 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 119: 55.0
+2026-06-19 16:04:59,623 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 120: 41.599999999999994
+2026-06-19 16:04:59,624 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 121: 82.0
+2026-06-19 16:04:59,624 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 122: 33.199999999999996
+2026-06-19 16:04:59,625 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 123: 90.4
+2026-06-19 16:04:59,625 - DEBUG - Heuristic ML score for component 'Concrete', material 124: 53.2
+2026-06-19 16:04:59,625 - DEBUG - Heuristic ML score for component 'Concrete', material 125: 40.39999999999999
+2026-06-19 16:04:59,626 - DEBUG - Heuristic ML score for component 'Concrete', material 126: 84.0
+2026-06-19 16:04:59,626 - DEBUG - Heuristic ML score for component 'Concrete', material 127: 48.0
+2026-06-19 16:04:59,627 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 128: 30.0
+2026-06-19 16:04:59,627 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 129: 51.0
+2026-06-19 16:04:59,627 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 130: 40.0
+2026-06-19 16:04:59,628 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 131: 21.0
+2026-06-19 16:04:59,628 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 132: 66.0
+2026-06-19 16:04:59,628 - DEBUG - Heuristic ML score for component 'Walls', material 133: 82.2
+2026-06-19 16:04:59,629 - DEBUG - Heuristic ML score for component 'Walls', material 134: 86.8
+2026-06-19 16:04:59,629 - DEBUG - Heuristic ML score for component 'Walls', material 135: 52.4
+2026-06-19 16:04:59,629 - DEBUG - Heuristic ML score for component 'Walls', material 136: 95.6
+2026-06-19 16:04:59,629 - DEBUG - Heuristic ML score for component 'Walls', material 137: 79.6
+2026-06-19 16:04:59,630 - DEBUG - Heuristic ML score for component 'Walls', material 138: 80.0
+2026-06-19 16:04:59,630 - DEBUG - Heuristic ML score for component 'Roofing', material 139: 59.8
+2026-06-19 16:04:59,630 - DEBUG - Heuristic ML score for component 'Roofing', material 140: 83.80000000000001
+2026-06-19 16:04:59,630 - DEBUG - Heuristic ML score for component 'Roofing', material 141: 48.0
+2026-06-19 16:04:59,631 - DEBUG - Heuristic ML score for component 'Roofing', material 142: 47.2
+2026-06-19 16:04:59,631 - DEBUG - Heuristic ML score for component 'Roofing', material 143: 59.2
+2026-06-19 16:04:59,631 - DEBUG - Heuristic ML score for component 'Roofing', material 144: 94.8
+2026-06-19 16:04:59,631 - DEBUG - Heuristic ML score for component 'Roofing', material 145: 51.0
+2026-06-19 16:04:59,632 - DEBUG - Heuristic ML score for component 'Roofing', material 146: 73.0
+2026-06-19 16:04:59,632 - DEBUG - Heuristic ML score for component 'Windows', material 147: 78.0
+2026-06-19 16:04:59,632 - DEBUG - Heuristic ML score for component 'Windows', material 148: 55.0
+2026-06-19 16:04:59,633 - DEBUG - Heuristic ML score for component 'Windows', material 149: 75.0
+2026-06-19 16:04:59,633 - DEBUG - Heuristic ML score for component 'Windows', material 150: 60.0
+2026-06-19 16:04:59,633 - DEBUG - Heuristic ML score for component 'Windows', material 151: 53.2
+2026-06-19 16:04:59,633 - DEBUG - Heuristic ML score for component 'Windows', material 152: 55.2
+2026-06-19 16:04:59,633 - DEBUG - Heuristic ML score for component 'Doors', material 153: 76.2
+2026-06-19 16:04:59,634 - DEBUG - Heuristic ML score for component 'Doors', material 154: 48.0
+2026-06-19 16:04:59,634 - DEBUG - Heuristic ML score for component 'Doors', material 155: 59.8
+2026-06-19 16:04:59,634 - DEBUG - Heuristic ML score for component 'Doors', material 156: 50.0
+2026-06-19 16:04:59,635 - DEBUG - Heuristic ML score for component 'Doors', material 157: 35.2
+2026-06-19 16:04:59,635 - DEBUG - Heuristic ML score for component 'Doors', material 158: 75.19999999999999
+2026-06-19 16:04:59,636 - DEBUG - Heuristic ML score for component 'Doors', material 159: 75.19999999999999
+2026-06-19 16:04:59,637 - DEBUG - Heuristic ML score for component 'Flooring', material 160: 76.2
+2026-06-19 16:04:59,638 - DEBUG - Heuristic ML score for component 'Flooring', material 161: 62.2
+2026-06-19 16:04:59,638 - DEBUG - Heuristic ML score for component 'Flooring', material 162: 51.2
+2026-06-19 16:04:59,639 - DEBUG - Heuristic ML score for component 'Flooring', material 163: 72.0
+2026-06-19 16:04:59,639 - DEBUG - Heuristic ML score for component 'Flooring', material 164: 76.8
+2026-06-19 16:04:59,640 - DEBUG - Heuristic ML score for component 'Flooring', material 165: 62.0
+2026-06-19 16:04:59,640 - DEBUG - Heuristic ML score for component 'Flooring', material 166: 85.2
+2026-06-19 16:04:59,640 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 167: 95.0
+2026-06-19 16:04:59,641 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 168: 52.4
+2026-06-19 16:04:59,641 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 169: 33.6
+2026-06-19 16:04:59,641 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 170: 66.0
+2026-06-19 16:04:59,641 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 171: 56.8
+2026-06-19 16:04:59,642 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 172: 57.199999999999996
+2026-06-19 16:04:59,642 - DEBUG - Heuristic ML score for component 'Waterproofing', material 173: 72.8
+2026-06-19 16:04:59,643 - DEBUG - Heuristic ML score for component 'Waterproofing', material 174: 42.0
+2026-06-19 16:04:59,643 - DEBUG - Heuristic ML score for component 'Waterproofing', material 175: 44.8
+2026-06-19 16:04:59,643 - DEBUG - Heuristic ML score for component 'Waterproofing', material 176: 63.8
+2026-06-19 16:04:59,644 - DEBUG - Heuristic ML score for component 'Waterproofing', material 177: 87.80000000000001
+2026-06-19 16:04:59,644 - DEBUG - Heuristic ML score for component 'Surface Finishes', material 178: 69.0
+2026-06-19 16:04:59,644 - DEBUG - Heuristic ML score for component 'Surface Finishes', material 179: 92.2
+2026-06-19 16:04:59,644 - DEBUG - Heuristic ML score for component 'Surface Finishes', material 180: 54.0
+2026-06-19 16:05:41,240 - DEBUG - ML inference completed. probs: [array([[0.975, 0.   , 0.025]]), array([[0.45      , 0.53333333, 0.00833333, 0.        , 0.00833333]]), array([[0.        , 0.98333333, 0.00833333, 0.00833333, 0.        ]]), array([[0.96666667, 0.03333333]]), array([[0.00833333, 0.525     , 0.03333333, 0.01666667, 0.41666667]])], classes: [array([1, 2, 3]), array([ 7,  8,  9, 10, 24]), array([11, 12, 13, 29, 30]), array([17, 18]), array([14, 15, 16, 25, 31])]
+2026-06-19 16:05:41,243 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 119: 55.0
+2026-06-19 16:05:41,244 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 120: 41.599999999999994
+2026-06-19 16:05:41,244 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 121: 82.0
+2026-06-19 16:05:41,244 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 122: 33.199999999999996
+2026-06-19 16:05:41,245 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 123: 90.4
+2026-06-19 16:05:41,245 - DEBUG - Heuristic ML score for component 'Concrete', material 124: 53.2
+2026-06-19 16:05:41,246 - DEBUG - Heuristic ML score for component 'Concrete', material 125: 40.39999999999999
+2026-06-19 16:05:41,246 - DEBUG - Heuristic ML score for component 'Concrete', material 126: 84.0
+2026-06-19 16:05:41,247 - DEBUG - Heuristic ML score for component 'Concrete', material 127: 48.0
+2026-06-19 16:05:41,247 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 128: 30.0
+2026-06-19 16:05:41,248 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 129: 51.0
+2026-06-19 16:05:41,248 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 130: 40.0
+2026-06-19 16:05:41,249 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 131: 21.0
+2026-06-19 16:05:41,249 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 132: 66.0
+2026-06-19 16:05:41,250 - DEBUG - Heuristic ML score for component 'Walls', material 133: 82.2
+2026-06-19 16:05:41,250 - DEBUG - Heuristic ML score for component 'Walls', material 134: 86.8
+2026-06-19 16:05:41,250 - DEBUG - Heuristic ML score for component 'Walls', material 135: 52.4
+2026-06-19 16:05:41,251 - DEBUG - Heuristic ML score for component 'Walls', material 136: 95.6
+2026-06-19 16:05:41,251 - DEBUG - Heuristic ML score for component 'Walls', material 137: 79.6
+2026-06-19 16:05:41,251 - DEBUG - Heuristic ML score for component 'Walls', material 138: 80.0
+2026-06-19 16:05:41,252 - DEBUG - Heuristic ML score for component 'Roofing', material 139: 59.8
+2026-06-19 16:05:41,253 - DEBUG - Heuristic ML score for component 'Roofing', material 140: 83.80000000000001
+2026-06-19 16:05:41,253 - DEBUG - Heuristic ML score for component 'Roofing', material 141: 48.0
+2026-06-19 16:05:41,254 - DEBUG - Heuristic ML score for component 'Roofing', material 142: 47.2
+2026-06-19 16:05:41,254 - DEBUG - Heuristic ML score for component 'Roofing', material 143: 59.2
+2026-06-19 16:05:41,255 - DEBUG - Heuristic ML score for component 'Roofing', material 144: 94.8
+2026-06-19 16:05:41,256 - DEBUG - Heuristic ML score for component 'Roofing', material 145: 51.0
+2026-06-19 16:05:41,257 - DEBUG - Heuristic ML score for component 'Roofing', material 146: 73.0
+2026-06-19 16:05:41,277 - DEBUG - Heuristic ML score for component 'Windows', material 147: 78.0
+2026-06-19 16:05:41,278 - DEBUG - Heuristic ML score for component 'Windows', material 148: 55.0
+2026-06-19 16:05:41,278 - DEBUG - Heuristic ML score for component 'Windows', material 149: 75.0
+2026-06-19 16:05:41,278 - DEBUG - Heuristic ML score for component 'Windows', material 150: 60.0
+2026-06-19 16:05:41,279 - DEBUG - Heuristic ML score for component 'Windows', material 151: 53.2
+2026-06-19 16:05:41,279 - DEBUG - Heuristic ML score for component 'Windows', material 152: 55.2
+2026-06-19 16:05:41,280 - DEBUG - Heuristic ML score for component 'Doors', material 153: 76.2
+2026-06-19 16:05:41,280 - DEBUG - Heuristic ML score for component 'Doors', material 154: 48.0
+2026-06-19 16:05:41,280 - DEBUG - Heuristic ML score for component 'Doors', material 155: 59.8
+2026-06-19 16:05:41,281 - DEBUG - Heuristic ML score for component 'Doors', material 156: 50.0
+2026-06-19 16:05:41,281 - DEBUG - Heuristic ML score for component 'Doors', material 157: 35.2
+2026-06-19 16:05:41,282 - DEBUG - Heuristic ML score for component 'Doors', material 158: 75.19999999999999
+2026-06-19 16:05:41,282 - DEBUG - Heuristic ML score for component 'Doors', material 159: 75.19999999999999
+2026-06-19 16:05:41,283 - DEBUG - Heuristic ML score for component 'Flooring', material 160: 76.2
+2026-06-19 16:05:41,283 - DEBUG - Heuristic ML score for component 'Flooring', material 161: 62.2
+2026-06-19 16:05:41,283 - DEBUG - Heuristic ML score for component 'Flooring', material 162: 51.2
+2026-06-19 16:05:41,284 - DEBUG - Heuristic ML score for component 'Flooring', material 163: 72.0
+2026-06-19 16:05:41,284 - DEBUG - Heuristic ML score for component 'Flooring', material 164: 76.8
+2026-06-19 16:05:41,284 - DEBUG - Heuristic ML score for component 'Flooring', material 165: 62.0
+2026-06-19 16:05:41,285 - DEBUG - Heuristic ML score for component 'Flooring', material 166: 85.2
+2026-06-19 16:05:41,285 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 167: 95.0
+2026-06-19 16:05:41,285 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 168: 52.4
+2026-06-19 16:05:41,286 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 169: 33.6
+2026-06-19 16:05:41,286 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 170: 66.0
+2026-06-19 16:05:41,287 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 171: 56.8
+2026-06-19 16:05:41,287 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 172: 57.199999999999996
+2026-06-19 16:05:41,288 - DEBUG - Heuristic ML score for component 'Waterproofing', material 173: 72.8
+2026-06-19 16:05:41,288 - DEBUG - Heuristic ML score for component 'Waterproofing', material 174: 42.0
+2026-06-19 16:05:41,289 - DEBUG - Heuristic ML score for component 'Waterproofing', material 175: 44.8
+2026-06-19 16:05:41,289 - DEBUG - Heuristic ML score for component 'Waterproofing', material 176: 63.8
+2026-06-19 16:05:41,289 - DEBUG - Heuristic ML score for component 'Waterproofing', material 177: 87.80000000000001
+2026-06-19 16:05:41,290 - DEBUG - Heuristic ML score for component 'Surface Finishes', material 178: 69.0
+2026-06-19 16:05:41,290 - DEBUG - Heuristic ML score for component 'Surface Finishes', material 179: 92.2
+2026-06-19 16:05:41,291 - DEBUG - Heuristic ML score for component 'Surface Finishes', material 180: 54.0
+2026-06-19 16:05:41,291 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 119: 55.0
+2026-06-19 16:05:41,292 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 120: 41.599999999999994
+2026-06-19 16:05:41,292 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 121: 82.0
+2026-06-19 16:05:41,292 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 122: 33.199999999999996
+2026-06-19 16:05:41,293 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 123: 90.4
+2026-06-19 16:05:41,293 - DEBUG - Heuristic ML score for component 'Concrete', material 124: 53.2
+2026-06-19 16:05:41,294 - DEBUG - Heuristic ML score for component 'Concrete', material 125: 40.39999999999999
+2026-06-19 16:05:41,294 - DEBUG - Heuristic ML score for component 'Concrete', material 126: 84.0
+2026-06-19 16:05:41,294 - DEBUG - Heuristic ML score for component 'Concrete', material 127: 48.0
+2026-06-19 16:05:41,295 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 128: 30.0
+2026-06-19 16:05:41,295 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 129: 51.0
+2026-06-19 16:05:41,295 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 130: 40.0
+2026-06-19 16:05:41,296 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 131: 21.0
+2026-06-19 16:05:41,296 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 132: 66.0
+2026-06-19 16:05:41,296 - DEBUG - Heuristic ML score for component 'Walls', material 133: 82.2
+2026-06-19 16:05:41,296 - DEBUG - Heuristic ML score for component 'Walls', material 134: 86.8
+2026-06-19 16:05:41,297 - DEBUG - Heuristic ML score for component 'Walls', material 135: 52.4
+2026-06-19 16:05:41,297 - DEBUG - Heuristic ML score for component 'Walls', material 136: 95.6
+2026-06-19 16:05:41,297 - DEBUG - Heuristic ML score for component 'Walls', material 137: 79.6
+2026-06-19 16:05:41,298 - DEBUG - Heuristic ML score for component 'Walls', material 138: 80.0
+2026-06-19 16:05:41,298 - DEBUG - Heuristic ML score for component 'Roofing', material 139: 59.8
+2026-06-19 16:05:41,299 - DEBUG - Heuristic ML score for component 'Roofing', material 140: 83.80000000000001
+2026-06-19 16:05:41,299 - DEBUG - Heuristic ML score for component 'Roofing', material 141: 48.0
+2026-06-19 16:05:41,299 - DEBUG - Heuristic ML score for component 'Roofing', material 142: 47.2
+2026-06-19 16:05:41,300 - DEBUG - Heuristic ML score for component 'Roofing', material 143: 59.2
+2026-06-19 16:05:41,300 - DEBUG - Heuristic ML score for component 'Roofing', material 144: 94.8
+2026-06-19 16:05:41,300 - DEBUG - Heuristic ML score for component 'Roofing', material 145: 51.0
+2026-06-19 16:05:41,301 - DEBUG - Heuristic ML score for component 'Roofing', material 146: 73.0
+2026-06-19 16:05:41,301 - DEBUG - Heuristic ML score for component 'Windows', material 147: 78.0
+2026-06-19 16:05:41,301 - DEBUG - Heuristic ML score for component 'Windows', material 148: 55.0
+2026-06-19 16:05:41,301 - DEBUG - Heuristic ML score for component 'Windows', material 149: 75.0
+2026-06-19 16:05:41,302 - DEBUG - Heuristic ML score for component 'Windows', material 150: 60.0
+2026-06-19 16:05:41,302 - DEBUG - Heuristic ML score for component 'Windows', material 151: 53.2
+2026-06-19 16:05:41,302 - DEBUG - Heuristic ML score for component 'Windows', material 152: 55.2
+2026-06-19 16:05:41,302 - DEBUG - Heuristic ML score for component 'Doors', material 153: 76.2
+2026-06-19 16:05:41,303 - DEBUG - Heuristic ML score for component 'Doors', material 154: 48.0
+2026-06-19 16:05:41,303 - DEBUG - Heuristic ML score for component 'Doors', material 155: 59.8
+2026-06-19 16:05:41,303 - DEBUG - Heuristic ML score for component 'Doors', material 156: 50.0
+2026-06-19 16:05:41,303 - DEBUG - Heuristic ML score for component 'Doors', material 157: 35.2
+2026-06-19 16:05:41,304 - DEBUG - Heuristic ML score for component 'Doors', material 158: 75.19999999999999
+2026-06-19 16:05:41,304 - DEBUG - Heuristic ML score for component 'Doors', material 159: 75.19999999999999
+2026-06-19 16:05:41,305 - DEBUG - Heuristic ML score for component 'Flooring', material 160: 76.2
+2026-06-19 16:05:41,305 - DEBUG - Heuristic ML score for component 'Flooring', material 161: 62.2
+2026-06-19 16:05:41,305 - DEBUG - Heuristic ML score for component 'Flooring', material 162: 51.2
+2026-06-19 16:05:41,305 - DEBUG - Heuristic ML score for component 'Flooring', material 163: 72.0
+2026-06-19 16:05:41,306 - DEBUG - Heuristic ML score for component 'Flooring', material 164: 76.8
+2026-06-19 16:05:41,306 - DEBUG - Heuristic ML score for component 'Flooring', material 165: 62.0
+2026-06-19 16:05:41,306 - DEBUG - Heuristic ML score for component 'Flooring', material 166: 85.2
+2026-06-19 16:05:41,307 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 167: 95.0
+2026-06-19 16:05:41,307 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 168: 52.4
+2026-06-19 16:05:41,307 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 169: 33.6
+2026-06-19 16:05:41,308 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 170: 66.0
+2026-06-19 16:05:41,308 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 171: 56.8
+2026-06-19 16:05:41,308 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 172: 57.199999999999996
+2026-06-19 16:05:41,308 - DEBUG - Heuristic ML score for component 'Waterproofing', material 173: 72.8
+2026-06-19 16:05:41,309 - DEBUG - Heuristic ML score for component 'Waterproofing', material 174: 42.0
+2026-06-19 16:05:41,309 - DEBUG - Heuristic ML score for component 'Waterproofing', material 175: 44.8
+2026-06-19 16:05:41,309 - DEBUG - Heuristic ML score for component 'Waterproofing', material 176: 63.8
+2026-06-19 16:05:41,309 - DEBUG - Heuristic ML score for component 'Waterproofing', material 177: 87.80000000000001
+2026-06-19 16:05:41,310 - DEBUG - Heuristic ML score for component 'Surface Finishes', material 178: 69.0
+2026-06-19 16:05:41,310 - DEBUG - Heuristic ML score for component 'Surface Finishes', material 179: 92.2
+2026-06-19 16:05:41,310 - DEBUG - Heuristic ML score for component 'Surface Finishes', material 180: 54.0
+2026-06-19 16:05:41,311 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 119: 55.0
+2026-06-19 16:05:41,311 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 120: 41.599999999999994
+2026-06-19 16:05:41,311 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 121: 82.0
+2026-06-19 16:05:41,312 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 122: 33.199999999999996
+2026-06-19 16:05:41,312 - DEBUG - Heuristic ML score for component 'Foundation Materials', material 123: 90.4
+2026-06-19 16:05:41,312 - DEBUG - Heuristic ML score for component 'Concrete', material 124: 53.2
+2026-06-19 16:05:41,313 - DEBUG - Heuristic ML score for component 'Concrete', material 125: 40.39999999999999
+2026-06-19 16:05:41,313 - DEBUG - Heuristic ML score for component 'Concrete', material 126: 84.0
+2026-06-19 16:05:41,313 - DEBUG - Heuristic ML score for component 'Concrete', material 127: 48.0
+2026-06-19 16:05:41,313 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 128: 30.0
+2026-06-19 16:05:41,314 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 129: 51.0
+2026-06-19 16:05:41,314 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 130: 40.0
+2026-06-19 16:05:41,314 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 131: 21.0
+2026-06-19 16:05:41,314 - DEBUG - Heuristic ML score for component 'Reinforcement Steel', material 132: 66.0
+2026-06-19 16:05:41,315 - DEBUG - Heuristic ML score for component 'Walls', material 133: 82.2
+2026-06-19 16:05:41,315 - DEBUG - Heuristic ML score for component 'Walls', material 134: 86.8
+2026-06-19 16:05:41,315 - DEBUG - Heuristic ML score for component 'Walls', material 135: 52.4
+2026-06-19 16:05:41,315 - DEBUG - Heuristic ML score for component 'Walls', material 136: 95.6
+2026-06-19 16:05:41,315 - DEBUG - Heuristic ML score for component 'Walls', material 137: 79.6
+2026-06-19 16:05:41,316 - DEBUG - Heuristic ML score for component 'Walls', material 138: 80.0
+2026-06-19 16:05:41,316 - DEBUG - Heuristic ML score for component 'Roofing', material 139: 59.8
+2026-06-19 16:05:41,316 - DEBUG - Heuristic ML score for component 'Roofing', material 140: 83.80000000000001
+2026-06-19 16:05:41,316 - DEBUG - Heuristic ML score for component 'Roofing', material 141: 48.0
+2026-06-19 16:05:41,317 - DEBUG - Heuristic ML score for component 'Roofing', material 142: 47.2
+2026-06-19 16:05:41,317 - DEBUG - Heuristic ML score for component 'Roofing', material 143: 59.2
+2026-06-19 16:05:41,318 - DEBUG - Heuristic ML score for component 'Roofing', material 144: 94.8
+2026-06-19 16:05:41,318 - DEBUG - Heuristic ML score for component 'Roofing', material 145: 51.0
+2026-06-19 16:05:41,318 - DEBUG - Heuristic ML score for component 'Roofing', material 146: 73.0
+2026-06-19 16:05:41,319 - DEBUG - Heuristic ML score for component 'Windows', material 147: 78.0
+2026-06-19 16:05:41,319 - DEBUG - Heuristic ML score for component 'Windows', material 148: 55.0
+2026-06-19 16:05:41,319 - DEBUG - Heuristic ML score for component 'Windows', material 149: 75.0
+2026-06-19 16:05:41,320 - DEBUG - Heuristic ML score for component 'Windows', material 150: 60.0
+2026-06-19 16:05:41,320 - DEBUG - Heuristic ML score for component 'Windows', material 151: 53.2
+2026-06-19 16:05:41,320 - DEBUG - Heuristic ML score for component 'Windows', material 152: 55.2
+2026-06-19 16:05:41,320 - DEBUG - Heuristic ML score for component 'Doors', material 153: 76.2
+2026-06-19 16:05:41,321 - DEBUG - Heuristic ML score for component 'Doors', material 154: 48.0
+2026-06-19 16:05:41,321 - DEBUG - Heuristic ML score for component 'Doors', material 155: 59.8
+2026-06-19 16:05:41,321 - DEBUG - Heuristic ML score for component 'Doors', material 156: 50.0
+2026-06-19 16:05:41,322 - DEBUG - Heuristic ML score for component 'Doors', material 157: 35.2
+2026-06-19 16:05:41,322 - DEBUG - Heuristic ML score for component 'Doors', material 158: 75.19999999999999
+2026-06-19 16:05:41,323 - DEBUG - Heuristic ML score for component 'Doors', material 159: 75.19999999999999
+2026-06-19 16:05:41,323 - DEBUG - Heuristic ML score for component 'Flooring', material 160: 76.2
+2026-06-19 16:05:41,324 - DEBUG - Heuristic ML score for component 'Flooring', material 161: 62.2
+2026-06-19 16:05:41,324 - DEBUG - Heuristic ML score for component 'Flooring', material 162: 51.2
+2026-06-19 16:05:41,324 - DEBUG - Heuristic ML score for component 'Flooring', material 163: 72.0
+2026-06-19 16:05:41,324 - DEBUG - Heuristic ML score for component 'Flooring', material 164: 76.8
+2026-06-19 16:05:41,325 - DEBUG - Heuristic ML score for component 'Flooring', material 165: 62.0
+2026-06-19 16:05:41,325 - DEBUG - Heuristic ML score for component 'Flooring', material 166: 85.2
+2026-06-19 16:05:41,326 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 167: 95.0
+2026-06-19 16:05:41,326 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 168: 52.4
+2026-06-19 16:05:41,326 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 169: 33.6
+2026-06-19 16:05:41,327 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 170: 66.0
+2026-06-19 16:05:41,327 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 171: 56.8
+2026-06-19 16:05:41,327 - DEBUG - Heuristic ML score for component 'Ceiling Systems', material 172: 57.199999999999996
+2026-06-19 16:05:41,328 - DEBUG - Heuristic ML score for component 'Waterproofing', material 173: 72.8
+2026-06-19 16:05:41,328 - DEBUG - Heuristic ML score for component 'Waterproofing', material 174: 42.0
+2026-06-19 16:05:41,328 - DEBUG - Heuristic ML score for component 'Waterproofing', material 175: 44.8
+2026-06-19 16:05:41,328 - DEBUG - Heuristic ML score for component 'Waterproofing', material 176: 63.8
+2026-06-19 16:05:41,329 - DEBUG - Heuristic ML score for component 'Waterproofing', material 177: 87.80000000000001
+2026-06-19 16:05:41,329 - DEBUG - Heuristic ML score for component 'Surface Finishes', material 178: 69.0
+2026-06-19 16:05:41,329 - DEBUG - Heuristic ML score for component 'Surface Finishes', material 179: 92.2
+2026-06-19 16:05:41,329 - DEBUG - Heuristic ML score for component 'Surface Finishes', material 180: 54.0
+2026-06-19 16:28:53,936 - INFO - [OK] MaterialSpecificationEngine loaded ML model.
+2026-06-19 16:28:53,940 - DEBUG - Model details: RandomForestClassifier(n_estimators=120, random_state=42)
+2026-06-19 16:31:17,655 - INFO - [OK] MaterialSpecificationEngine loaded ML model.
+2026-06-19 16:31:17,659 - DEBUG - Model details: RandomForestClassifier(n_estimators=120, random_state=42)
+2026-06-19 16:32:14,212 - INFO - [OK] MaterialSpecificationEngine loaded ML model.
+2026-06-19 16:32:14,214 - DEBUG - Model details: RandomForestClassifier(n_estimators=120, random_state=42)
+2026-06-19 16:38:47,499 - INFO - [OK] MaterialSpecificationEngine loaded ML model.
+2026-06-19 16:38:47,501 - DEBUG - Model details: RandomForestClassifier(n_estimators=120, random_state=42)
+2026-06-19 16:39:19,577 - INFO - [OK] MaterialSpecificationEngine loaded ML model.
+2026-06-19 16:39:19,583 - DEBUG - Model details: RandomForestClassifier(n_estimators=200, n_jobs=-1, random_state=42)
+2026-06-19 16:40:12,068 - INFO - [OK] MaterialSpecificationEngine loaded ML model.
+2026-06-19 16:40:12,091 - DEBUG - Model details: RandomForestClassifier(n_estimators=200, n_jobs=-1, random_state=42)
+2026-06-19 16:45:37,490 - INFO - [OK] MaterialSpecificationEngine loaded ML model.
+2026-06-19 16:45:37,493 - DEBUG - Model details: RandomForestClassifier(n_estimators=200, n_jobs=-1, random_state=42)
+2026-06-19 17:22:44,944 - INFO - [OK] MaterialSpecificationEngine loaded ML model.
+2026-06-19 17:22:45,101 - DEBUG - Model details: RandomForestClassifier(class_weight='balanced_subsample', n_estimators=300,
+                       n_jobs=-1, random_state=42)
+2026-06-19 17:30:45,713 - INFO - [OK] MaterialSpecificationEngine loaded ML model.
+2026-06-19 17:30:45,796 - DEBUG - Model details: RandomForestClassifier(class_weight='balanced_subsample', n_estimators=300,
+                       n_jobs=-1, random_state=42)
+2026-06-19 17:37:16,702 - INFO - [OK] MaterialSpecificationEngine loaded ML model.
+2026-06-19 17:37:16,894 - DEBUG - Model details: RandomForestClassifier(class_weight='balanced_subsample', n_estimators=300,
+                       n_jobs=-1, random_state=42)
+2026-06-20 15:06:14,015 - INFO - [OK] MaterialSpecificationEngine loaded ML model.
+2026-06-20 15:06:14,550 - DEBUG - Model details: RandomForestClassifier(class_weight='balanced_subsample', n_estimators=300,
+                       n_jobs=-1, random_state=42)
+2026-06-20 15:21:54,040 - INFO - [OK] MaterialSpecificationEngine loaded ML model.
+2026-06-20 15:21:54,171 - DEBUG - Model details: RandomForestClassifier(class_weight='balanced_subsample', n_estimators=300,
+                       n_jobs=-1, random_state=42)
+2026-06-20 15:29:44,765 - INFO - [OK] MaterialSpecificationEngine loaded ML model.
+2026-06-20 15:29:44,873 - DEBUG - Model details: RandomForestClassifier(class_weight='balanced_subsample', n_estimators=300,
+                       n_jobs=-1, random_state=42)
+2026-06-20 15:58:26,782 - INFO - [OK] MaterialSpecificationEngine loaded ML model.
+2026-06-20 15:58:27,088 - DEBUG - Model details: RandomForestClassifier(class_weight='balanced_subsample', n_estimators=300,
+                       n_jobs=-1, random_state=42)
+2026-06-20 16:05:29,383 - INFO - [OK] MaterialSpecificationEngine loaded ML model.
+2026-06-20 16:05:29,710 - DEBUG - Model details: RandomForestClassifier(class_weight='balanced_subsample', n_estimators=300,
+                       n_jobs=-1, random_state=42)

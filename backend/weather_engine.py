@@ -50,10 +50,26 @@ CLIMATE_ZONES = {
     }
 }
 
+CITY_COORDS = {
+    "jaffna": {"lat": 9.66, "lon": 80.02, "distance_km": 1.0},
+    "batticaloa": {"lat": 7.71, "lon": 81.69, "distance_km": 1.0},
+    "trincomalee": {"lat": 8.57, "lon": 81.23, "distance_km": 1.0},
+    "colombo": {"lat": 6.92, "lon": 79.86, "distance_km": 0.5},
+    "galle": {"lat": 6.05, "lon": 80.21, "distance_km": 0.5},
+    "matara": {"lat": 5.94, "lon": 80.54, "distance_km": 0.5},
+    "nuwara eliya": {"lat": 6.97, "lon": 80.78, "distance_km": 150.0},
+    "badulla": {"lat": 6.99, "lon": 81.05, "distance_km": 100.0},
+    "anuradhapura": {"lat": 8.31, "lon": 80.41, "distance_km": 90.0},
+    "polonnaruwa": {"lat": 7.94, "lon": 81.00, "distance_km": 70.0},
+    "kurunegala": {"lat": 7.48, "lon": 80.36, "distance_km": 50.0},
+    "kandy": {"lat": 7.29, "lon": 80.63, "distance_km": 100.0}
+}
+
 def get_climate_profile(city: str):
     city_lc = city.lower()
     profile_data = None
     
+    # 1. Base default from CLIMATE_ZONES
     for zone, cfg in CLIMATE_ZONES.items():
         if any(c in city_lc for c in cfg["cities"]):
             profile_data = cfg["data"].copy()
@@ -64,6 +80,59 @@ def get_climate_profile(city: str):
         
     profile_data["city"] = city.capitalize()
     profile_data["status"] = "AI Climate Intelligence Active"
+    
+    # Distance logic for salinity
+    coords = None
+    for c_name, c_data in CITY_COORDS.items():
+        if c_name in city_lc:
+            coords = c_data
+            break
+    
+    if coords is None:
+        coords = {"lat": 7.87, "lon": 80.77, "distance_km": 50.0}
+        
+    profile_data["distance_km"] = coords["distance_km"]
+    
+    # Derive salinity from distance
+    if coords["distance_km"] <= 2.0:
+        profile_data["salinity"] = "High"
+    elif coords["distance_km"] <= 10.0:
+        profile_data["salinity"] = "Moderate"
+    else:
+        profile_data["salinity"] = "Low"
+    
+    # Open-Meteo API Fetch
+    climate_warning = None
+    try:
+        url = f"https://api.open-meteo.com/v1/forecast?latitude={coords['lat']}&longitude={coords['lon']}&current=temperature_2m,relative_humidity_2m,precipitation"
+        response = requests.get(url, timeout=5)
+        response.raise_for_status()
+        data = response.json()
+        current = data.get("current", {})
+        
+        # Override with live API data if available
+        if "temperature_2m" in current:
+            profile_data["temp"] = f"{current['temperature_2m']}°C"
+        if "relative_humidity_2m" in current:
+            profile_data["humidity"] = current["relative_humidity_2m"]
+        if "precipitation" in current:
+            # simple scaling for annual rainfall approximation if needed, 
+            # but we just keep the base rainfall logic for now unless we get historical.
+            pass
+            
+    except Exception as e:
+        climate_warning = f"Open-Meteo API failed ({e}). Using default climatic data."
+        print(f"Climate API Error: {climate_warning}")
+        
+    if climate_warning:
+        profile_data["climate_warning"] = climate_warning
+
+    # Strict Validation
+    required_keys = ["humidity", "rainfall", "salinity", "temp", "type"]
+    for k in required_keys:
+        if k not in profile_data or profile_data[k] is None or str(profile_data[k]).strip() in ["", "—", "-"]:
+            raise ValueError(f"Climate profile missing required field: {k}")
+            
     return profile_data
 
 def generate_suitability_analysis(city: str, building_type: str):

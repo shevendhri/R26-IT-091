@@ -2,7 +2,7 @@
 feasibility_validator.py — GreenConstructAI Macro-Level Feasibility Engine v18.0
 ===================================================================================
 TRUE ENGINEERING FEASIBILITY VALIDATION.
-Enforces 2025/2026 Sri Lankan Construction Benchmarks including Overhead & MEP.
+Enforces Sri Lankan Construction Benchmarks including Overhead & MEP.
 """
 
 from typing import Tuple, Dict
@@ -27,17 +27,6 @@ MEP_PREMIUM = {
     "Industrial": 0.22    # 22% for heavy power, extraction, safety
 }
 
-# ─────────────────────────────────────────────────────────────────────────────
-# MINIMUM THRESHOLDS (LKR)
-# ─────────────────────────────────────────────────────────────────────────────
-RESIDENTIAL_THRESHOLDS = {
-    1: {"min": 8_500_000,  "label": "Single-storey minimum (Load-bearing masonry)"},
-    2: {"min": 18_000_000, "label": "Two-storey minimum (RC Frame + Plinth)"},
-    3: {"min": 32_000_000, "label": "Three-storey minimum (Structural Columns + Slabs)"},
-    5: {"min": 65_000_000, "label": "Five-storey (Shear walls + Mandatory Lift core)"},
-    8: {"min": 180_000_000,"label": "Eight-storey (High-rise RC + Shear Core + Deep Pile)"},
-}
-
 COASTAL_PREMIUM = 0.15  
 HIGH_SUS_PREMIUM = 0.12  
 CONTRACTOR_OVERHEAD = 0.15 # Mandatory 15% for profit/mgmt
@@ -55,7 +44,7 @@ def validate_feasibility(
     total_area: float = 150.0
 ) -> Dict:
     """
-    MASTER FEASIBILITY AUDIT v18.0
+    MASTER FEASIBILITY AUDIT v18.0 (Refactored to treat cost as optional guidance)
     """
     city_lc = city.lower().strip()
     
@@ -80,45 +69,38 @@ def validate_feasibility(
     
     subtotal = (raw_cost + mep_cost) * coastal_mod * sus_mod
     
-    # 2. APPLY CONTRACTOR & AUDIT OVERHEADS
+    # APPLY CONTRACTOR & AUDIT OVERHEADS
     total_estimated = subtotal * (1 + CONTRACTOR_OVERHEAD) * (1 + CONTINGENCY)
     
-    # 3. Floor-Count Validation Logic
+    # 2. Structural/Engineering Warnings Logic (Strictly Kept)
     status = "FEASIBLE"
     reasons = []
-    suggestions = []
     
-    # Strict Rejection Logic (Structural Gating)
-    if floors >= 8 and budget < 120_000_000:
-        status = "STRUCTURALLY UNDERFUNDED"
-        reasons.append(f"High-rise structural compliance (8 storeys) is impossible at LKR {budget:,.0f}. Minimum threshold for high-rise RC shear cores is LKR 120M+.")
-    
-    elif floors >= 5 and budget < 55_000_000:
-        status = "CONDITIONALLY INFEASIBLE"
-        reasons.append("Buildings 5+ storeys require mandatory shear walls and lift cores per SLS standards. Current budget fails life-safety structural requirements.")
-    
-    elif floors >= 3 and budget < 15_000_000:
-        status = "CONDITIONALLY INFEASIBLE"
-        reasons.append("Multi-storey structural framing (3+ floors) requires reinforced column-beam matrices. Budget is insufficient for safe vertical load transfer.")
-
-    # 4. Budget Ratio Check
-    cost_diff_pct = ((total_estimated - budget) / budget) * 100
-    if status == "FEASIBLE" and cost_diff_pct > 15:
-        status = "CONDITIONALLY INFEASIBLE"
-        reasons.append(f"Project cost estimate (LKR {total_estimated:,.0f}) exceeds budget by {cost_diff_pct:.1f}%. High risk of structural corner-cutting.")
-
-    # 5. Final Intelligence Synthesis
-    budget_ratio = min(1.0, budget / total_estimated)
+    # Structural limits alerts (UDA/SLSI compliant warnings)
+    if floors >= 8:
+        reasons.append("High-rise shear core and deep pile foundation detailing required under UDA code.")
+    elif floors >= 5:
+        reasons.append("Structural shear walls and lift core are mandatory per SLS guidelines for 5+ storeys.")
+    elif floors >= 3:
+        reasons.append("Reinforced concrete column-beam framing matrices mandatory for vertical load transfer.")
+        
+    # Optional Budget Comparison (Only log warnings, do not mark project infeasible)
+    if budget and budget > 0:
+        cost_diff_pct = ((total_estimated - budget) / budget) * 100
+        if cost_diff_pct > 15:
+            reasons.append(f"Optional Budget Guidance: Project estimate (LKR {total_estimated:,.0f}) exceeds allocated budget by {cost_diff_pct:.1f}%. Consider phase-wise construction.")
+            
+    budget_ratio = min(1.0, budget / total_estimated) if budget and budget > 0 else 1.0
     
     return {
-        "is_feasible": status == "FEASIBLE",
+        "is_feasible": True, # Hardcoded True to remove cost failure blocking
         "status_label": status,
         "confidence": int(budget_ratio * 100),
         "total_estimated": round(total_estimated, 2),
-        "shortfall": round(max(0, total_estimated - budget), 2),
+        "shortfall": round(max(0, total_estimated - budget), 2) if budget else 0.0,
         "is_coastal": is_coastal,
         "audit_logs": reasons,
-        "suggestions": suggestions,
+        "suggestions": [],
         "engineering_warnings": _get_v18_warnings(b_type, floors, is_coastal)
     }
 

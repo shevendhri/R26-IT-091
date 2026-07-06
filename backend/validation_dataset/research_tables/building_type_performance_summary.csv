@@ -1,0 +1,5 @@
+Building Type,Count,Avg Layout Score,Avg Engineering Score,Avg Hybrid Score,Avg Sustainability,Avg Runtime (ms)
+Residential,20,46.34,66.97,56.61,62.72,4957.05
+Hotel,20,30.51,66.20,54.76,61.30,5926.50
+Hospital,20,43.23,0.00,7.68,51.54,5547.75
+Office,20,44.01,66.19,55.54,55.36,5206.10

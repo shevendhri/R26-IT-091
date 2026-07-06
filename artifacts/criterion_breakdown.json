@@ -1,0 +1,2296 @@
+[
+  {
+    "material": "Gr. 25 Standard Concrete Foundation",
+    "criterion_breakdown": {
+      "structural": {
+        "score": 25.0,
+        "max": 25
+      },
+      "climate": {
+        "score": 20.0,
+        "max": 20
+      },
+      "durability": {
+        "score": 11.25,
+        "max": 15
+      },
+      "service_life": {
+        "score": 10.0,
+        "max": 10
+      },
+      "fire": {
+        "score": 5.0,
+        "max": 10
+      },
+      "thermal": {
+        "score": 4.0,
+        "max": 10
+      },
+      "maintenance": {
+        "score": 4.0,
+        "max": 5
+      },
+      "sustainability": {
+        "score": 2.75,
+        "max": 5
+      }
+    }
+  },
+  {
+    "material": "Gr. 30 Marine-Grade Concrete Foundation",
+    "criterion_breakdown": {
+      "structural": {
+        "score": 25.0,
+        "max": 25
+      },
+      "climate": {
+        "score": 20.0,
+        "max": 20
+      },
+      "durability": {
+        "score": 14.1,
+        "max": 15
+      },
+      "service_life": {
+        "score": 10.0,
+        "max": 10
+      },
+      "fire": {
+        "score": 5.0,
+        "max": 10
+      },
+      "thermal": {
+        "score": 4.5,
+        "max": 10
+      },
+      "maintenance": {
+        "score": 4.25,
+        "max": 5
+      },
+      "sustainability": {
+        "score": 2.4,
+        "max": 5
+      }
+    }
+  },
+  {
+    "material": "Eco-Concrete Foundation (30% Recycled Aggregate)",
+    "criterion_breakdown": {
+      "structural": {
+        "score": 25.0,
+        "max": 25
+      },
+      "climate": {
+        "score": 20.0,
+        "max": 20
+      },
+      "durability": {
+        "score": 11.03,
+        "max": 15
+      },
+      "service_life": {
+        "score": 10.0,
+        "max": 10
+      },
+      "fire": {
+        "score": 5.0,
+        "max": 10
+      },
+      "thermal": {
+        "score": 4.2,
+        "max": 10
+      },
+      "maintenance": {
+        "score": 4.0,
+        "max": 5
+      },
+      "sustainability": {
+        "score": 4.5,
+        "max": 5
+      }
+    }
+  },
+  {
+    "material": "Raft Foundation Assembly (RC Heavy)",
+    "criterion_breakdown": {
+      "structural": {
+        "score": 25.0,
+        "max": 25
+      },
+      "climate": {
+        "score": 20.0,
+        "max": 20
+      },
+      "durability": {
+        "score": 14.85,
+        "max": 15
+      },
+      "service_life": {
+        "score": 10.0,
+        "max": 10
+      },
+      "fire": {
+        "score": 5.0,
+        "max": 10
+      },
+      "thermal": {
+        "score": 3.5,
+        "max": 10
+      },
+      "maintenance": {
+        "score": 4.4,
+        "max": 5
+      },
+      "sustainability": {
+        "score": 2.1,
+        "max": 5
+      }
+    }
+  },
+  {
+    "material": "Lime-Pozzolan Natural Foundation",
+    "criterion_breakdown": {
+      "structural": {
+        "score": 25.0,
+        "max": 25
+      },
+      "climate": {
+        "score": 0.0,
+        "max": 20
+      },
+      "durability": {
+        "score": 12.0,
+        "max": 15
+      },
+      "service_life": {
+        "score": 10.0,
+        "max": 10
+      },
+      "fire": {
+        "score": 5.0,
+        "max": 10
+      },
+      "thermal": {
+        "score": 5.0,
+        "max": 10
+      },
+      "maintenance": {
+        "score": 3.75,
+        "max": 5
+      },
+      "sustainability": {
+        "score": 4.6,
+        "max": 5
+      }
+    }
+  },
+  {
+    "material": "Gr. 25 Standard Structural Concrete",
+    "criterion_breakdown": {
+      "structural": {
+        "score": 20.0,
+        "max": 25
+      },
+      "climate": {
+        "score": 20.0,
+        "max": 20
+      },
+      "durability": {
+        "score": 12.75,
+        "max": 15
+      },
+      "service_life": {
+        "score": 10.0,
+        "max": 10
+      },
+      "fire": {
+        "score": 5.0,
+        "max": 10
+      },
+      "thermal": {
+        "score": 4.0,
+        "max": 10
+      },
+      "maintenance": {
+        "score": 3.75,
+        "max": 5
+      },
+      "sustainability": {
+        "score": 2.6,
+        "max": 5
+      }
+    }
+  },
+  {
+    "material": "Gr. 30 Marine-Grade Concrete Mix",
+    "criterion_breakdown": {
+      "structural": {
+        "score": 22.5,
+        "max": 25
+      },
+      "climate": {
+        "score": 20.0,
+        "max": 20
+      },
+      "durability": {
+        "score": 14.25,
+        "max": 15
+      },
+      "service_life": {
+        "score": 10.0,
+        "max": 10
+      },
+      "fire": {
+        "score": 5.0,
+        "max": 10
+      },
+      "thermal": {
+        "score": 4.5,
+        "max": 10
+      },
+      "maintenance": {
+        "score": 4.25,
+        "max": 5
+      },
+      "sustainability": {
+        "score": 2.3,
+        "max": 5
+      }
+    }
+  },
+  {
+    "material": "Eco-Concrete (Recycled Aggregate + Fly-Ash)",
+    "criterion_breakdown": {
+      "structural": {
+        "score": 18.75,
+        "max": 25
+      },
+      "climate": {
+        "score": 20.0,
+        "max": 20
+      },
+      "durability": {
+        "score": 11.25,
+        "max": 15
+      },
+      "service_life": {
+        "score": 10.0,
+        "max": 10
+      },
+      "fire": {
+        "score": 5.0,
+        "max": 10
+      },
+      "thermal": {
+        "score": 4.2,
+        "max": 10
+      },
+      "maintenance": {
+        "score": 3.9,
+        "max": 5
+      },
+      "sustainability": {
+        "score": 4.6,
+        "max": 5
+      }
+    }
+  },
+  {
+    "material": "Self-Compacting Concrete (SCC)",
+    "criterion_breakdown": {
+      "structural": {
+        "score": 21.25,
+        "max": 25
+      },
+      "climate": {
+        "score": 20.0,
+        "max": 20
+      },
+      "durability": {
+        "score": 13.69,
+        "max": 15
+      },
+      "service_life": {
+        "score": 10.0,
+        "max": 10
+      },
+      "fire": {
+        "score": 5.0,
+        "max": 10
+      },
+      "thermal": {
+        "score": 4.5,
+        "max": 10
+      },
+      "maintenance": {
+        "score": 4.25,
+        "max": 5
+      },
+      "sustainability": {
+        "score": 2.5,
+        "max": 5
+      }
+    }
+  },
+  {
+    "material": "Epoxy-Coated Rebar (ASTM A775)",
+    "criterion_breakdown": {
+      "structural": {
+        "score": 25.0,
+        "max": 25
+      },
+      "climate": {
+        "score": 20.0,
+        "max": 20
+      },
+      "durability": {
+        "score": 14.85,
+        "max": 15
+      },
+      "service_life": {
+        "score": 10.0,
+        "max": 10
+      },
+      "fire": {
+        "score": 5.0,
+        "max": 10
+      },
+      "thermal": {
+        "score": 1.0,
+        "max": 10
+      },
+      "maintenance": {
+        "score": 4.6,
+        "max": 5
+      },
+      "sustainability": {
+        "score": 2.1,
+        "max": 5
+      }
+    }
+  },
+  {
+    "material": "TMT High-Yield Rebar (SLS 375)",
+    "criterion_breakdown": {
+      "structural": {
+        "score": 25.0,
+        "max": 25
+      },
+      "climate": {
+        "score": 20.0,
+        "max": 20
+      },
+      "durability": {
+        "score": 14.21,
+        "max": 15
+      },
+      "service_life": {
+        "score": 10.0,
+        "max": 10
+      },
+      "fire": {
+        "score": 5.0,
+        "max": 10
+      },
+      "thermal": {
+        "score": 1.0,
+        "max": 10
+      },
+      "maintenance": {
+        "score": 3.6,
+        "max": 5
+      },
+      "sustainability": {
+        "score": 2.75,
+        "max": 5
+      }
+    }
+  },
+  {
+    "material": "Galvanized Steel Rebar (Hot-Dip)",
+    "criterion_breakdown": {
+      "structural": {
+        "score": 25.0,
+        "max": 25
+      },
+      "climate": {
+        "score": 20.0,
+        "max": 20
+      },
+      "durability": {
+        "score": 14.25,
+        "max": 15
+      },
+      "service_life": {
+        "score": 10.0,
+        "max": 10
+      },
+      "fire": {
+        "score": 5.0,
+        "max": 10
+      },
+      "thermal": {
+        "score": 1.0,
+        "max": 10
+      },
+      "maintenance": {
+        "score": 4.25,
+        "max": 5
+      },
+      "sustainability": {
+        "score": 2.5,
+        "max": 5
+      }
+    }
+  },
+  {
+    "material": "Stainless Steel Rebar (Grade 316L)",
+    "criterion_breakdown": {
+      "structural": {
+        "score": 25.0,
+        "max": 25
+      },
+      "climate": {
+        "score": 20.0,
+        "max": 20
+      },
+      "durability": {
+        "score": 14.62,
+        "max": 15
+      },
+      "service_life": {
+        "score": 10.0,
+        "max": 10
+      },
+      "fire": {
+        "score": 5.0,
+        "max": 10
+      },
+      "thermal": {
+        "score": 1.0,
+        "max": 10
+      },
+      "maintenance": {
+        "score": 4.75,
+        "max": 5
+      },
+      "sustainability": {
+        "score": 1.75,
+        "max": 5
+      }
+    }
+  },
+  {
+    "material": "GFRP Rebar (Glass Fibre Reinforced Polymer)",
+    "criterion_breakdown": {
+      "structural": {
+        "score": 25.0,
+        "max": 25
+      },
+      "climate": {
+        "score": 20.0,
+        "max": 20
+      },
+      "durability": {
+        "score": 13.5,
+        "max": 15
+      },
+      "service_life": {
+        "score": 10.0,
+        "max": 10
+      },
+      "fire": {
+        "score": 5.0,
+        "max": 10
+      },
+      "thermal": {
+        "score": 1.0,
+        "max": 10
+      },
+      "maintenance": {
+        "score": 4.75,
+        "max": 5
+      },
+      "sustainability": {
+        "score": 4.0,
+        "max": 5
+      }
+    }
+  },
+  {
+    "material": "Wire-Cut Clay Brick (Premium Grade)",
+    "criterion_breakdown": {
+      "structural": {
+        "score": 17.0,
+        "max": 25
+      },
+      "climate": {
+        "score": 0.0,
+        "max": 20
+      },
+      "durability": {
+        "score": 12.6,
+        "max": 15
+      },
+      "service_life": {
+        "score": 10.0,
+        "max": 10
+      },
+      "fire": {
+        "score": 5.0,
+        "max": 10
+      },
+      "thermal": {
+        "score": 8.8,
+        "max": 10
+      },
+      "maintenance": {
+        "score": 4.1,
+        "max": 5
+      },
+      "sustainability": {
+        "score": 4.25,
+        "max": 5
+      }
+    }
+  },
+  {
+    "material": "AAC Eco-Block G4 (Autoclaved Aerated Concrete)",
+    "criterion_breakdown": {
+      "structural": {
+        "score": 12.0,
+        "max": 25
+      },
+      "climate": {
+        "score": 20.0,
+        "max": 20
+      },
+      "durability": {
+        "score": 9.22,
+        "max": 15
+      },
+      "service_life": {
+        "score": 10.0,
+        "max": 10
+      },
+      "fire": {
+        "score": 5.0,
+        "max": 10
+      },
+      "thermal": {
+        "score": 9.8,
+        "max": 10
+      },
+      "maintenance": {
+        "score": 3.6,
+        "max": 5
+      },
+      "sustainability": {
+        "score": 4.4,
+        "max": 5
+      }
+    }
+  },
+  {
+    "material": "High-Density Cement Block",
+    "criterion_breakdown": {
+      "structural": {
+        "score": 14.5,
+        "max": 25
+      },
+      "climate": {
+        "score": 20.0,
+        "max": 20
+      },
+      "durability": {
+        "score": 8.85,
+        "max": 15
+      },
+      "service_life": {
+        "score": 8.0,
+        "max": 10
+      },
+      "fire": {
+        "score": 5.0,
+        "max": 10
+      },
+      "thermal": {
+        "score": 4.8,
+        "max": 10
+      },
+      "maintenance": {
+        "score": 2.6,
+        "max": 5
+      },
+      "sustainability": {
+        "score": 2.3,
+        "max": 5
+      }
+    }
+  },
+  {
+    "material": "CSEB Compressed Stabilized Earth Block",
+    "criterion_breakdown": {
+      "structural": {
+        "score": 15.5,
+        "max": 25
+      },
+      "climate": {
+        "score": 0.0,
+        "max": 20
+      },
+      "durability": {
+        "score": 11.4,
+        "max": 15
+      },
+      "service_life": {
+        "score": 10.0,
+        "max": 10
+      },
+      "fire": {
+        "score": 5.0,
+        "max": 10
+      },
+      "thermal": {
+        "score": 9.2,
+        "max": 10
+      },
+      "maintenance": {
+        "score": 3.9,
+        "max": 5
+      },
+      "sustainability": {
+        "score": 4.9,
+        "max": 5
+      }
+    }
+  },
+  {
+    "material": "Hollow Clay Block (Perforated)",
+    "criterion_breakdown": {
+      "structural": {
+        "score": 13.75,
+        "max": 25
+      },
+      "climate": {
+        "score": 20.0,
+        "max": 20
+      },
+      "durability": {
+        "score": 11.44,
+        "max": 15
+      },
+      "service_life": {
+        "score": 10.0,
+        "max": 10
+      },
+      "fire": {
+        "score": 5.0,
+        "max": 10
+      },
+      "thermal": {
+        "score": 7.5,
+        "max": 10
+      },
+      "maintenance": {
+        "score": 4.0,
+        "max": 5
+      },
+      "sustainability": {
+        "score": 3.9,
+        "max": 5
+      }
+    }
+  },
+  {
+    "material": "Fly-Ash Composite Block",
+    "criterion_breakdown": {
+      "structural": {
+        "score": 15.0,
+        "max": 25
+      },
+      "climate": {
+        "score": 20.0,
+        "max": 20
+      },
+      "durability": {
+        "score": 10.12,
+        "max": 15
+      },
+      "service_life": {
+        "score": 10.0,
+        "max": 10
+      },
+      "fire": {
+        "score": 5.0,
+        "max": 10
+      },
+      "thermal": {
+        "score": 5.5,
+        "max": 10
+      },
+      "maintenance": {
+        "score": 3.75,
+        "max": 5
+      },
+      "sustainability": {
+        "score": 4.0,
+        "max": 5
+      }
+    }
+  },
+  {
+    "material": "Marine-Grade Aluminium Roofing (0.55mm)",
+    "criterion_breakdown": {
+      "structural": {
+        "score": 3.75,
+        "max": 25
+      },
+      "climate": {
+        "score": 20.0,
+        "max": 20
+      },
+      "durability": {
+        "score": 6.19,
+        "max": 15
+      },
+      "service_life": {
+        "score": 9.0,
+        "max": 10
+      },
+      "fire": {
+        "score": 5.0,
+        "max": 10
+      },
+      "thermal": {
+        "score": 4.5,
+        "max": 10
+      },
+      "maintenance": {
+        "score": 4.6,
+        "max": 5
+      },
+      "sustainability": {
+        "score": 3.25,
+        "max": 5
+      }
+    }
+  },
+  {
+    "material": "Portuguese Clay Tile (Unglazed Terracotta)",
+    "criterion_breakdown": {
+      "structural": {
+        "score": 2.5,
+        "max": 25
+      },
+      "climate": {
+        "score": 0.0,
+        "max": 20
+      },
+      "durability": {
+        "score": 8.06,
+        "max": 15
+      },
+      "service_life": {
+        "score": 10.0,
+        "max": 10
+      },
+      "fire": {
+        "score": 5.0,
+        "max": 10
+      },
+      "thermal": {
+        "score": 9.2,
+        "max": 10
+      },
+      "maintenance": {
+        "score": 4.1,
+        "max": 5
+      },
+      "sustainability": {
+        "score": 4.25,
+        "max": 5
+      }
+    }
+  },
+  {
+    "material": "Insulated Sandwich Roof Panel (PU Core)",
+    "criterion_breakdown": {
+      "structural": {
+        "score": 5.0,
+        "max": 25
+      },
+      "climate": {
+        "score": 20.0,
+        "max": 20
+      },
+      "durability": {
+        "score": 5.44,
+        "max": 15
+      },
+      "service_life": {
+        "score": 7.0,
+        "max": 10
+      },
+      "fire": {
+        "score": 5.0,
+        "max": 10
+      },
+      "thermal": {
+        "score": 9.5,
+        "max": 10
+      },
+      "maintenance": {
+        "score": 3.9,
+        "max": 5
+      },
+      "sustainability": {
+        "score": 2.6,
+        "max": 5
+      }
+    }
+  },
+  {
+    "material": "Standard Cement Tile (Concrete Interlocking)",
+    "criterion_breakdown": {
+      "structural": {
+        "score": 2.5,
+        "max": 25
+      },
+      "climate": {
+        "score": 0.0,
+        "max": 20
+      },
+      "durability": {
+        "score": 5.25,
+        "max": 15
+      },
+      "service_life": {
+        "score": 8.0,
+        "max": 10
+      },
+      "fire": {
+        "score": 5.0,
+        "max": 10
+      },
+      "thermal": {
+        "score": 5.5,
+        "max": 10
+      },
+      "maintenance": {
+        "score": 3.4,
+        "max": 5
+      },
+      "sustainability": {
+        "score": 2.1,
+        "max": 5
+      }
+    }
+  },
+  {
+    "material": "Zinc-Aluminium Corrugated Sheet (55% Al-Zn)",
+    "criterion_breakdown": {
+      "structural": {
+        "score": 3.0,
+        "max": 25
+      },
+      "climate": {
+        "score": 20.0,
+        "max": 20
+      },
+      "durability": {
+        "score": 6.53,
+        "max": 15
+      },
+      "service_life": {
+        "score": 10.0,
+        "max": 10
+      },
+      "fire": {
+        "score": 5.0,
+        "max": 10
+      },
+      "thermal": {
+        "score": 4.2,
+        "max": 10
+      },
+      "maintenance": {
+        "score": 4.5,
+        "max": 5
+      },
+      "sustainability": {
+        "score": 3.0,
+        "max": 5
+      }
+    }
+  },
+  {
+    "material": "Green Intensive Roof System (Growing Medium)",
+    "criterion_breakdown": {
+      "structural": {
+        "score": 3.75,
+        "max": 25
+      },
+      "climate": {
+        "score": 20.0,
+        "max": 20
+      },
+      "durability": {
+        "score": 6.75,
+        "max": 15
+      },
+      "service_life": {
+        "score": 10.0,
+        "max": 10
+      },
+      "fire": {
+        "score": 5.0,
+        "max": 10
+      },
+      "thermal": {
+        "score": 9.8,
+        "max": 10
+      },
+      "maintenance": {
+        "score": 3.6,
+        "max": 5
+      },
+      "sustainability": {
+        "score": 4.9,
+        "max": 5
+      }
+    }
+  },
+  {
+    "material": "Polycarbonate Translucent Roofing",
+    "criterion_breakdown": {
+      "structural": {
+        "score": 2.0,
+        "max": 25
+      },
+      "climate": {
+        "score": 20.0,
+        "max": 20
+      },
+      "durability": {
+        "score": 2.85,
+        "max": 15
+      },
+      "service_life": {
+        "score": 4.0,
+        "max": 10
+      },
+      "fire": {
+        "score": 5.0,
+        "max": 10
+      },
+      "thermal": {
+        "score": 5.5,
+        "max": 10
+      },
+      "maintenance": {
+        "score": 4.0,
+        "max": 5
+      },
+      "sustainability": {
+        "score": 2.75,
+        "max": 5
+      }
+    }
+  },
+  {
+    "material": "Recycled Rubber Flat Roof Membrane",
+    "criterion_breakdown": {
+      "structural": {
+        "score": 2.0,
+        "max": 25
+      },
+      "climate": {
+        "score": 20.0,
+        "max": 20
+      },
+      "durability": {
+        "score": 4.54,
+        "max": 15
+      },
+      "service_life": {
+        "score": 7.0,
+        "max": 10
+      },
+      "fire": {
+        "score": 5.0,
+        "max": 10
+      },
+      "thermal": {
+        "score": 4.0,
+        "max": 10
+      },
+      "maintenance": {
+        "score": 4.25,
+        "max": 5
+      },
+      "sustainability": {
+        "score": 3.75,
+        "max": 5
+      }
+    }
+  },
+  {
+    "material": "uPVC Multi-Chamber Window System",
+    "criterion_breakdown": {
+      "structural": {
+        "score": 3.75,
+        "max": 25
+      },
+      "climate": {
+        "score": 20.0,
+        "max": 20
+      },
+      "durability": {
+        "score": 6.19,
+        "max": 15
+      },
+      "service_life": {
+        "score": 9.0,
+        "max": 10
+      },
+      "fire": {
+        "score": 5.0,
+        "max": 10
+      },
+      "thermal": {
+        "score": 9.5,
+        "max": 10
+      },
+      "maintenance": {
+        "score": 4.6,
+        "max": 5
+      },
+      "sustainability": {
+        "score": 4.1,
+        "max": 5
+      }
+    }
+  },
+  {
+    "material": "Casement Aluminium Window (Powder-Coated)",
+    "criterion_breakdown": {
+      "structural": {
+        "score": 3.75,
+        "max": 25
+      },
+      "climate": {
+        "score": 20.0,
+        "max": 20
+      },
+      "durability": {
+        "score": 5.62,
+        "max": 15
+      },
+      "service_life": {
+        "score": 8.0,
+        "max": 10
+      },
+      "fire": {
+        "score": 5.0,
+        "max": 10
+      },
+      "thermal": {
+        "score": 6.0,
+        "max": 10
+      },
+      "maintenance": {
+        "score": 4.25,
+        "max": 5
+      },
+      "sustainability": {
+        "score": 2.75,
+        "max": 5
+      }
+    }
+  },
+  {
+    "material": "Timber Louvre Window (Treated Hardwood)",
+    "criterion_breakdown": {
+      "structural": {
+        "score": 2.5,
+        "max": 25
+      },
+      "climate": {
+        "score": 0.0,
+        "max": 20
+      },
+      "durability": {
+        "score": 5.25,
+        "max": 15
+      },
+      "service_life": {
+        "score": 8.0,
+        "max": 10
+      },
+      "fire": {
+        "score": 5.0,
+        "max": 10
+      },
+      "thermal": {
+        "score": 8.0,
+        "max": 10
+      },
+      "maintenance": {
+        "score": 2.9,
+        "max": 5
+      },
+      "sustainability": {
+        "score": 3.75,
+        "max": 5
+      }
+    }
+  },
+  {
+    "material": "Commercial Double-Glazed Unit (DGU Low-E)",
+    "criterion_breakdown": {
+      "structural": {
+        "score": 5.0,
+        "max": 25
+      },
+      "climate": {
+        "score": 20.0,
+        "max": 20
+      },
+      "durability": {
+        "score": 6.0,
+        "max": 15
+      },
+      "service_life": {
+        "score": 8.0,
+        "max": 10
+      },
+      "fire": {
+        "score": 5.0,
+        "max": 10
+      },
+      "thermal": {
+        "score": 9.2,
+        "max": 10
+      },
+      "maintenance": {
+        "score": 4.1,
+        "max": 5
+      },
+      "sustainability": {
+        "score": 3.6,
+        "max": 5
+      }
+    }
+  },
+  {
+    "material": "Fixed Aluminium Framed Glass Panel",
+    "criterion_breakdown": {
+      "structural": {
+        "score": 2.5,
+        "max": 25
+      },
+      "climate": {
+        "score": 20.0,
+        "max": 20
+      },
+      "durability": {
+        "score": 4.69,
+        "max": 15
+      },
+      "service_life": {
+        "score": 7.0,
+        "max": 10
+      },
+      "fire": {
+        "score": 5.0,
+        "max": 10
+      },
+      "thermal": {
+        "score": 5.5,
+        "max": 10
+      },
+      "maintenance": {
+        "score": 4.5,
+        "max": 5
+      },
+      "sustainability": {
+        "score": 2.5,
+        "max": 5
+      }
+    }
+  },
+  {
+    "material": "Sliding Aluminium Window (Impact-Resistant)",
+    "criterion_breakdown": {
+      "structural": {
+        "score": 3.0,
+        "max": 25
+      },
+      "climate": {
+        "score": 20.0,
+        "max": 20
+      },
+      "durability": {
+        "score": 5.17,
+        "max": 15
+      },
+      "service_life": {
+        "score": 7.6,
+        "max": 10
+      },
+      "fire": {
+        "score": 5.0,
+        "max": 10
+      },
+      "thermal": {
+        "score": 6.5,
+        "max": 10
+      },
+      "maintenance": {
+        "score": 4.4,
+        "max": 5
+      },
+      "sustainability": {
+        "score": 2.6,
+        "max": 5
+      }
+    }
+  },
+  {
+    "material": "Solid Teak Timber Door (Premium)",
+    "criterion_breakdown": {
+      "structural": {
+        "score": 10.5,
+        "max": 25
+      },
+      "climate": {
+        "score": 20.0,
+        "max": 20
+      },
+      "durability": {
+        "score": 10.65,
+        "max": 15
+      },
+      "service_life": {
+        "score": 10.0,
+        "max": 10
+      },
+      "fire": {
+        "score": 5.0,
+        "max": 10
+      },
+      "thermal": {
+        "score": 4.8,
+        "max": 10
+      },
+      "maintenance": {
+        "score": 2.9,
+        "max": 5
+      },
+      "sustainability": {
+        "score": 3.75,
+        "max": 5
+      }
+    }
+  },
+  {
+    "material": "Aluminium Profile Glass Door (Heavy-Duty)",
+    "criterion_breakdown": {
+      "structural": {
+        "score": 12.0,
+        "max": 25
+      },
+      "climate": {
+        "score": 20.0,
+        "max": 20
+      },
+      "durability": {
+        "score": 9.22,
+        "max": 15
+      },
+      "service_life": {
+        "score": 10.0,
+        "max": 10
+      },
+      "fire": {
+        "score": 5.0,
+        "max": 10
+      },
+      "thermal": {
+        "score": 5.2,
+        "max": 10
+      },
+      "maintenance": {
+        "score": 3.9,
+        "max": 5
+      },
+      "sustainability": {
+        "score": 2.6,
+        "max": 5
+      }
+    }
+  },
+  {
+    "material": "FRP Fiberglass Reinforced Door",
+    "criterion_breakdown": {
+      "structural": {
+        "score": 10.5,
+        "max": 25
+      },
+      "climate": {
+        "score": 20.0,
+        "max": 20
+      },
+      "durability": {
+        "score": 9.9,
+        "max": 15
+      },
+      "service_life": {
+        "score": 10.0,
+        "max": 10
+      },
+      "fire": {
+        "score": 5.0,
+        "max": 10
+      },
+      "thermal": {
+        "score": 4.2,
+        "max": 10
+      },
+      "maintenance": {
+        "score": 4.4,
+        "max": 5
+      },
+      "sustainability": {
+        "score": 3.25,
+        "max": 5
+      }
+    }
+  },
+  {
+    "material": "Standard Hollow-Core Flush Door (HDF Faced)",
+    "criterion_breakdown": {
+      "structural": {
+        "score": 7.0,
+        "max": 25
+      },
+      "climate": {
+        "score": 20.0,
+        "max": 20
+      },
+      "durability": {
+        "score": 4.35,
+        "max": 15
+      },
+      "service_life": {
+        "score": 4.0,
+        "max": 10
+      },
+      "fire": {
+        "score": 5.0,
+        "max": 10
+      },
+      "thermal": {
+        "score": 3.2,
+        "max": 10
+      },
+      "maintenance": {
+        "score": 2.6,
+        "max": 5
+      },
+      "sustainability": {
+        "score": 2.1,
+        "max": 5
+      }
+    }
+  },
+  {
+    "material": "Steel Security Door (Powder-Coated)",
+    "criterion_breakdown": {
+      "structural": {
+        "score": 21.25,
+        "max": 25
+      },
+      "climate": {
+        "score": 20.0,
+        "max": 20
+      },
+      "durability": {
+        "score": 10.88,
+        "max": 15
+      },
+      "service_life": {
+        "score": 8.0,
+        "max": 10
+      },
+      "fire": {
+        "score": 5.0,
+        "max": 10
+      },
+      "thermal": {
+        "score": 3.5,
+        "max": 10
+      },
+      "maintenance": {
+        "score": 3.75,
+        "max": 5
+      },
+      "sustainability": {
+        "score": 2.0,
+        "max": 5
+      }
+    }
+  },
+  {
+    "material": "Timber Louvre Door (Ventilated Hardwood)",
+    "criterion_breakdown": {
+      "structural": {
+        "score": 7.5,
+        "max": 25
+      },
+      "climate": {
+        "score": 0.0,
+        "max": 20
+      },
+      "durability": {
+        "score": 7.31,
+        "max": 15
+      },
+      "service_life": {
+        "score": 9.0,
+        "max": 10
+      },
+      "fire": {
+        "score": 5.0,
+        "max": 10
+      },
+      "thermal": {
+        "score": 7.5,
+        "max": 10
+      },
+      "maintenance": {
+        "score": 3.1,
+        "max": 5
+      },
+      "sustainability": {
+        "score": 3.6,
+        "max": 5
+      }
+    }
+  },
+  {
+    "material": "UPVC Sliding Door (Weather-Sealed)",
+    "criterion_breakdown": {
+      "structural": {
+        "score": 5.0,
+        "max": 25
+      },
+      "climate": {
+        "score": 20.0,
+        "max": 20
+      },
+      "durability": {
+        "score": 6.0,
+        "max": 15
+      },
+      "service_life": {
+        "score": 8.0,
+        "max": 10
+      },
+      "fire": {
+        "score": 5.0,
+        "max": 10
+      },
+      "thermal": {
+        "score": 8.8,
+        "max": 10
+      },
+      "maintenance": {
+        "score": 4.5,
+        "max": 5
+      },
+      "sustainability": {
+        "score": 4.0,
+        "max": 5
+      }
+    }
+  },
+  {
+    "material": "Polished Terrazzo Flooring (Marble Aggregate)",
+    "criterion_breakdown": {
+      "structural": {
+        "score": 13.0,
+        "max": 25
+      },
+      "climate": {
+        "score": 20.0,
+        "max": 20
+      },
+      "durability": {
+        "score": 11.21,
+        "max": 15
+      },
+      "service_life": {
+        "score": 10.0,
+        "max": 10
+      },
+      "fire": {
+        "score": 5.0,
+        "max": 10
+      },
+      "thermal": {
+        "score": 5.8,
+        "max": 10
+      },
+      "maintenance": {
+        "score": 4.4,
+        "max": 5
+      },
+      "sustainability": {
+        "score": 3.75,
+        "max": 5
+      }
+    }
+  },
+  {
+    "material": "Porcelain GVT Slab (Full-Body Vitrified)",
+    "criterion_breakdown": {
+      "structural": {
+        "score": 12.0,
+        "max": 25
+      },
+      "climate": {
+        "score": 20.0,
+        "max": 20
+      },
+      "durability": {
+        "score": 8.66,
+        "max": 15
+      },
+      "service_life": {
+        "score": 9.0,
+        "max": 10
+      },
+      "fire": {
+        "score": 5.0,
+        "max": 10
+      },
+      "thermal": {
+        "score": 4.8,
+        "max": 10
+      },
+      "maintenance": {
+        "score": 4.6,
+        "max": 5
+      },
+      "sustainability": {
+        "score": 3.25,
+        "max": 5
+      }
+    }
+  },
+  {
+    "material": "Standard Ceramic Floor Tile",
+    "criterion_breakdown": {
+      "structural": {
+        "score": 11.25,
+        "max": 25
+      },
+      "climate": {
+        "score": 20.0,
+        "max": 20
+      },
+      "durability": {
+        "score": 6.19,
+        "max": 15
+      },
+      "service_life": {
+        "score": 5.0,
+        "max": 10
+      },
+      "fire": {
+        "score": 5.0,
+        "max": 10
+      },
+      "thermal": {
+        "score": 3.8,
+        "max": 10
+      },
+      "maintenance": {
+        "score": 4.1,
+        "max": 5
+      },
+      "sustainability": {
+        "score": 2.1,
+        "max": 5
+      }
+    }
+  },
+  {
+    "material": "Timber Strip Flooring (Treated Hardwood)",
+    "criterion_breakdown": {
+      "structural": {
+        "score": 10.0,
+        "max": 25
+      },
+      "climate": {
+        "score": 0.0,
+        "max": 20
+      },
+      "durability": {
+        "score": 7.5,
+        "max": 15
+      },
+      "service_life": {
+        "score": 8.0,
+        "max": 10
+      },
+      "fire": {
+        "score": 5.0,
+        "max": 10
+      },
+      "thermal": {
+        "score": 8.8,
+        "max": 10
+      },
+      "maintenance": {
+        "score": 2.75,
+        "max": 5
+      },
+      "sustainability": {
+        "score": 3.6,
+        "max": 5
+      }
+    }
+  },
+  {
+    "material": "Rubber Flooring (Recycled Automotive)",
+    "criterion_breakdown": {
+      "structural": {
+        "score": 12.0,
+        "max": 25
+      },
+      "climate": {
+        "score": 20.0,
+        "max": 20
+      },
+      "durability": {
+        "score": 6.97,
+        "max": 15
+      },
+      "service_life": {
+        "score": 6.0,
+        "max": 10
+      },
+      "fire": {
+        "score": 5.0,
+        "max": 10
+      },
+      "thermal": {
+        "score": 5.5,
+        "max": 10
+      },
+      "maintenance": {
+        "score": 4.6,
+        "max": 5
+      },
+      "sustainability": {
+        "score": 4.0,
+        "max": 5
+      }
+    }
+  },
+  {
+    "material": "Micro-Cement Screed Flooring",
+    "criterion_breakdown": {
+      "structural": {
+        "score": 14.5,
+        "max": 25
+      },
+      "climate": {
+        "score": 20.0,
+        "max": 20
+      },
+      "durability": {
+        "score": 6.6,
+        "max": 15
+      },
+      "service_life": {
+        "score": 4.0,
+        "max": 10
+      },
+      "fire": {
+        "score": 5.0,
+        "max": 10
+      },
+      "thermal": {
+        "score": 4.2,
+        "max": 10
+      },
+      "maintenance": {
+        "score": 3.9,
+        "max": 5
+      },
+      "sustainability": {
+        "score": 3.0,
+        "max": 5
+      }
+    }
+  },
+  {
+    "material": "Recycled Composite Decking (WPC)",
+    "criterion_breakdown": {
+      "structural": {
+        "score": 10.5,
+        "max": 25
+      },
+      "climate": {
+        "score": 20.0,
+        "max": 20
+      },
+      "durability": {
+        "score": 6.53,
+        "max": 15
+      },
+      "service_life": {
+        "score": 6.0,
+        "max": 10
+      },
+      "fire": {
+        "score": 5.0,
+        "max": 10
+      },
+      "thermal": {
+        "score": 4.8,
+        "max": 10
+      },
+      "maintenance": {
+        "score": 4.6,
+        "max": 5
+      },
+      "sustainability": {
+        "score": 4.5,
+        "max": 5
+      }
+    }
+  },
+  {
+    "material": "Bamboo-Fibre Acoustic Ceiling Panel",
+    "criterion_breakdown": {
+      "structural": {
+        "score": 2.5,
+        "max": 25
+      },
+      "climate": {
+        "score": 20.0,
+        "max": 20
+      },
+      "durability": {
+        "score": 3.56,
+        "max": 15
+      },
+      "service_life": {
+        "score": 5.0,
+        "max": 10
+      },
+      "fire": {
+        "score": 5.0,
+        "max": 10
+      },
+      "thermal": {
+        "score": 6.8,
+        "max": 10
+      },
+      "maintenance": {
+        "score": 4.1,
+        "max": 5
+      },
+      "sustainability": {
+        "score": 4.75,
+        "max": 5
+      }
+    }
+  },
+  {
+    "material": "Standard Gypsum Board Ceiling (Suspended)",
+    "criterion_breakdown": {
+      "structural": {
+        "score": 1.25,
+        "max": 25
+      },
+      "climate": {
+        "score": 20.0,
+        "max": 20
+      },
+      "durability": {
+        "score": 2.06,
+        "max": 15
+      },
+      "service_life": {
+        "score": 3.0,
+        "max": 10
+      },
+      "fire": {
+        "score": 5.0,
+        "max": 10
+      },
+      "thermal": {
+        "score": 4.8,
+        "max": 10
+      },
+      "maintenance": {
+        "score": 3.1,
+        "max": 5
+      },
+      "sustainability": {
+        "score": 2.3,
+        "max": 5
+      }
+    }
+  },
+  {
+    "material": "PVC Laminated Ceiling Panel (Moisture-Proof)",
+    "criterion_breakdown": {
+      "structural": {
+        "score": 1.25,
+        "max": 25
+      },
+      "climate": {
+        "score": 20.0,
+        "max": 20
+      },
+      "durability": {
+        "score": 2.62,
+        "max": 15
+      },
+      "service_life": {
+        "score": 4.0,
+        "max": 10
+      },
+      "fire": {
+        "score": 5.0,
+        "max": 10
+      },
+      "thermal": {
+        "score": 4.2,
+        "max": 10
+      },
+      "maintenance": {
+        "score": 4.6,
+        "max": 5
+      },
+      "sustainability": {
+        "score": 1.4,
+        "max": 5
+      }
+    }
+  },
+  {
+    "material": "Calcium Silicate Board Ceiling",
+    "criterion_breakdown": {
+      "structural": {
+        "score": 2.0,
+        "max": 25
+      },
+      "climate": {
+        "score": 20.0,
+        "max": 20
+      },
+      "durability": {
+        "score": 3.98,
+        "max": 15
+      },
+      "service_life": {
+        "score": 6.0,
+        "max": 10
+      },
+      "fire": {
+        "score": 5.0,
+        "max": 10
+      },
+      "thermal": {
+        "score": 7.5,
+        "max": 10
+      },
+      "maintenance": {
+        "score": 4.4,
+        "max": 5
+      },
+      "sustainability": {
+        "score": 3.1,
+        "max": 5
+      }
+    }
+  },
+  {
+    "material": "Suspended Metal Tile Ceiling (Aluminium)",
+    "criterion_breakdown": {
+      "structural": {
+        "score": 2.0,
+        "max": 25
+      },
+      "climate": {
+        "score": 20.0,
+        "max": 20
+      },
+      "durability": {
+        "score": 5.1,
+        "max": 15
+      },
+      "service_life": {
+        "score": 8.0,
+        "max": 10
+      },
+      "fire": {
+        "score": 5.0,
+        "max": 10
+      },
+      "thermal": {
+        "score": 4.5,
+        "max": 10
+      },
+      "maintenance": {
+        "score": 4.5,
+        "max": 5
+      },
+      "sustainability": {
+        "score": 2.9,
+        "max": 5
+      }
+    }
+  },
+  {
+    "material": "Acoustic Mineral Fibre Suspended Tile",
+    "criterion_breakdown": {
+      "structural": {
+        "score": 1.25,
+        "max": 25
+      },
+      "climate": {
+        "score": 20.0,
+        "max": 20
+      },
+      "durability": {
+        "score": 2.62,
+        "max": 15
+      },
+      "service_life": {
+        "score": 4.0,
+        "max": 10
+      },
+      "fire": {
+        "score": 5.0,
+        "max": 10
+      },
+      "thermal": {
+        "score": 5.5,
+        "max": 10
+      },
+      "maintenance": {
+        "score": 3.75,
+        "max": 5
+      },
+      "sustainability": {
+        "score": 2.5,
+        "max": 5
+      }
+    }
+  },
+  {
+    "material": "Crystalline Slurry Waterproofing (Penetrating)",
+    "criterion_breakdown": {
+      "structural": {
+        "score": 3.75,
+        "max": 25
+      },
+      "climate": {
+        "score": 20.0,
+        "max": 20
+      },
+      "durability": {
+        "score": 7.88,
+        "max": 15
+      },
+      "service_life": {
+        "score": 10.0,
+        "max": 10
+      },
+      "fire": {
+        "score": 5.0,
+        "max": 10
+      },
+      "thermal": {
+        "score": 1.0,
+        "max": 10
+      },
+      "maintenance": {
+        "score": 4.75,
+        "max": 5
+      },
+      "sustainability": {
+        "score": 2.9,
+        "max": 5
+      }
+    }
+  },
+  {
+    "material": "Liquid Polyurethane Membrane (Seamless)",
+    "criterion_breakdown": {
+      "structural": {
+        "score": 2.5,
+        "max": 25
+      },
+      "climate": {
+        "score": 20.0,
+        "max": 20
+      },
+      "durability": {
+        "score": 3.56,
+        "max": 15
+      },
+      "service_life": {
+        "score": 5.0,
+        "max": 10
+      },
+      "fire": {
+        "score": 5.0,
+        "max": 10
+      },
+      "thermal": {
+        "score": 1.5,
+        "max": 10
+      },
+      "maintenance": {
+        "score": 4.4,
+        "max": 5
+      },
+      "sustainability": {
+        "score": 2.1,
+        "max": 5
+      }
+    }
+  },
+  {
+    "material": "Bituminous Modified Membrane (Torch-Applied)",
+    "criterion_breakdown": {
+      "structural": {
+        "score": 3.0,
+        "max": 25
+      },
+      "climate": {
+        "score": 20.0,
+        "max": 20
+      },
+      "durability": {
+        "score": 3.15,
+        "max": 15
+      },
+      "service_life": {
+        "score": 4.0,
+        "max": 10
+      },
+      "fire": {
+        "score": 5.0,
+        "max": 10
+      },
+      "thermal": {
+        "score": 2.0,
+        "max": 10
+      },
+      "maintenance": {
+        "score": 4.1,
+        "max": 5
+      },
+      "sustainability": {
+        "score": 1.9,
+        "max": 5
+      }
+    }
+  },
+  {
+    "material": "HDPE Sheet Waterproofing Barrier",
+    "criterion_breakdown": {
+      "structural": {
+        "score": 2.5,
+        "max": 25
+      },
+      "climate": {
+        "score": 20.0,
+        "max": 20
+      },
+      "durability": {
+        "score": 6.38,
+        "max": 15
+      },
+      "service_life": {
+        "score": 10.0,
+        "max": 10
+      },
+      "fire": {
+        "score": 5.0,
+        "max": 10
+      },
+      "thermal": {
+        "score": 1.0,
+        "max": 10
+      },
+      "maintenance": {
+        "score": 4.6,
+        "max": 5
+      },
+      "sustainability": {
+        "score": 3.25,
+        "max": 5
+      }
+    }
+  },
+  {
+    "material": "Bentonite Clay Waterproofing Panel",
+    "criterion_breakdown": {
+      "structural": {
+        "score": 2.0,
+        "max": 25
+      },
+      "climate": {
+        "score": 20.0,
+        "max": 20
+      },
+      "durability": {
+        "score": 5.1,
+        "max": 15
+      },
+      "service_life": {
+        "score": 8.0,
+        "max": 10
+      },
+      "fire": {
+        "score": 5.0,
+        "max": 10
+      },
+      "thermal": {
+        "score": 1.2,
+        "max": 10
+      },
+      "maintenance": {
+        "score": 4.75,
+        "max": 5
+      },
+      "sustainability": {
+        "score": 4.25,
+        "max": 5
+      }
+    }
+  },
+  {
+    "material": "Advanced Nano-Exterior Paint",
+    "criterion_breakdown": {
+      "structural": {
+        "score": 1.25,
+        "max": 25
+      },
+      "climate": {
+        "score": 20.0,
+        "max": 20
+      },
+      "durability": {
+        "score": 1.73,
+        "max": 15
+      },
+      "service_life": {
+        "score": 2.4,
+        "max": 10
+      },
+      "fire": {
+        "score": 5.0,
+        "max": 10
+      },
+      "thermal": {
+        "score": 1.0,
+        "max": 10
+      },
+      "maintenance": {
+        "score": 4.25,
+        "max": 5
+      },
+      "sustainability": {
+        "score": 3.25,
+        "max": 5
+      }
+    }
+  },
+  {
+    "material": "Eco-Friendly Low VOC Emulsion",
+    "criterion_breakdown": {
+      "structural": {
+        "score": 1.25,
+        "max": 25
+      },
+      "climate": {
+        "score": 0.0,
+        "max": 20
+      },
+      "durability": {
+        "score": 2.06,
+        "max": 15
+      },
+      "service_life": {
+        "score": 3.0,
+        "max": 10
+      },
+      "fire": {
+        "score": 5.0,
+        "max": 10
+      },
+      "thermal": {
+        "score": 1.0,
+        "max": 10
+      },
+      "maintenance": {
+        "score": 4.25,
+        "max": 5
+      },
+      "sustainability": {
+        "score": 4.75,
+        "max": 5
+      }
+    }
+  },
+  {
+    "material": "Standard Exterior Emulsion",
+    "criterion_breakdown": {
+      "structural": {
+        "score": 1.25,
+        "max": 25
+      },
+      "climate": {
+        "score": 20.0,
+        "max": 20
+      },
+      "durability": {
+        "score": 1.27,
+        "max": 15
+      },
+      "service_life": {
+        "score": 1.6,
+        "max": 10
+      },
+      "fire": {
+        "score": 5.0,
+        "max": 10
+      },
+      "thermal": {
+        "score": 1.0,
+        "max": 10
+      },
+      "maintenance": {
+        "score": 3.75,
+        "max": 5
+      },
+      "sustainability": {
+        "score": 2.0,
+        "max": 5
+      }
+    }
+  }
+]
