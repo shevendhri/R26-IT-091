@@ -27,11 +27,10 @@ export default function BlueprintSection({ data }) {
       <p style={{ color: 'var(--text-primary)' }}><strong>Building Type:</strong> {blueprint.building_type || 'N/A'}</p>
       <p style={{ color: 'var(--text-primary)' }}><strong>Total Area:</strong> {blueprint.total_area ? `${blueprint.total_area} m²` : 'N/A'}</p>
       <p style={{ color: 'var(--text-primary)' }}><strong>Floors:</strong> {blueprint.num_floors ?? 'N/A'}</p>
-      {/* Placeholder for 3D viewer */}
       <button
         className="btn-premium"
         style={{ marginTop: '1rem' }}
-        onClick={() => console.log('Open 3D blueprint viewer')}
+        onClick={() => { window.location.href = '/visualization'; }}
       >
         View 3D Blueprint
       </button>

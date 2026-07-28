@@ -120,9 +120,7 @@ class MaterialSpecificationEngine:
             }
         }
 
-        adjusted_weights = {}
-        for pkg, weights in base_weights.items():
-            adjusted_weights[pkg] = self._adjust_weights(weights, material_priority)
+        # adjusted_weights loop removed as constraint_engine handles weights internally
 
         # 6. Evaluate all materials for each package
         packages_data = {
@@ -208,8 +206,16 @@ class MaterialSpecificationEngine:
             print(f"[Warning] Blueprint generation failed: {e}")
             blueprint = {}
         
+        # Build a package-level blueprint dict that the constraint engine accepts
+        spec_blueprint = {
+            "building_type": b_type,
+            "floors": floor_count,
+            "num_floors": floor_count,
+            "structural_system": structural_system,
+            "total_area": total_floor_area,
+        }
+
         for pkg_title, pkg_key in package_names_map.items():
-            pkg_weights = adjusted_weights[pkg_key]
             selected_items = []
 
             for comp in components:
@@ -226,27 +232,51 @@ class MaterialSpecificationEngine:
                 exclusions: List[str] = []
 
                 for mat in mats:
-                    mcdm_score, reasons, veto = self._evaluate_mcdm(
-                        mat=mat,
-                        weights=pkg_weights,
+                    # ── TASK 1: Use constraint_engine as single source of truth ──
+                    from backend.engines.constraint_engine import evaluate_constraints
+                    try:
+                        profile_obj = UserProfile(**{
+                            "building_type": b_type,
+                            "sustainability_pref": sus_level,
+                            "maintenance_pref": maint_pref,
+                            "style_pref": int_finish,
+                            "budget_tier": preferences.get("budget_tier", "Balanced"),
+                        })
+                    except Exception:
+                        profile_obj = None
+
+                    eval_res = evaluate_constraints(
+                        material=mat,
+                        occupancy=b_type,
+                        blueprint=spec_blueprint,
                         climate=climate,
-                        b_type=b_type,
-                        floor_count=floor_count,
-                        structural_system=structural_system,
-                        sus_level=sus_level,
-                        maint_pref=maint_pref,
-                        int_finish=int_finish,
-                        ext_finish=ext_finish
+                        profile=profile_obj,
                     )
+                    mcdm_score = eval_res["engineering_score"]
+                    reasons = eval_res["rejection_reasons"]
+                    veto = eval_res["veto"]
+
+                    # ── Package-specific sustainability/climate weight boost ──
+                    if not veto:
+                        s_rating = float(mat.get("Sustainability_Rating", 50))
+                        carbon = float(mat.get("Embodied_Carbon", 0.5))
+                        moisture = float(mat.get("Moisture_Resistance", 50))
+                        corrosion = float(mat.get("Corrosion_Resistance", 50))
+                        if pkg_key == "sustainable":
+                            if s_rating >= 80 or carbon <= 0.15:
+                                mcdm_score = min(100.0, mcdm_score + 5.0)
+                        elif pkg_key == "climate_resilient":
+                            if moisture >= 90 or corrosion >= 90:
+                                mcdm_score = min(100.0, mcdm_score + 5.0)
 
                     if veto:
                         exclusions.append(mat["Name"])
-                    
-                    # Compute ML score using model probabilities when available; otherwise fall back to heuristic.
+
+                    # Heuristic ML score (consistent with recommendation_engine fallback)
                     ml_base = self._get_ml_score(comp, mat["Material_ID"], ml_probs, ml_classes, mat)
                     ml_score = self._enrich_ml_score(ml_base, mat, pkg_key)
 
-                    hybrid_score = (0.70 * mcdm_score) + (0.30 * ml_score)
+                    hybrid_score = (0.75 * mcdm_score) + (0.25 * ml_score)
                     if veto:
                         hybrid_score = 0.0
                     filtered_reasons = [r for r in reasons if "VETO" not in r and "Sector mismatch" not in r]
@@ -265,7 +295,7 @@ class MaterialSpecificationEngine:
 
                 qty, unit, count_label = self._resolve_qty_details(comp, best_mat["Name"], quantities)
 
-                total_cost = round(qty * best_mat["Rate_LKR"])
+                total_cost = 0
                 total_carbon = round(qty * best_mat["Embodied_Carbon"], 2)
 
                 selected_items.append({
@@ -276,9 +306,9 @@ class MaterialSpecificationEngine:
                     "quantity": qty,
                     "unit": unit,
                     "count_label": count_label,
-                    "rate_lkr": best_mat["Rate_LKR"],
-                    "cost_per_unit_lkr": best_mat["Rate_LKR"],
-                    "total_cost_lkr": total_cost,
+                    "rate_lkr": None,
+                    "cost_per_unit_lkr": None,
+                    "total_cost_lkr": None,
                     "embodied_carbon_tons": total_carbon,
                     "service_life_years": best_mat["Service_Life"],
                     "sustainability_rating": best_mat.get("Sustainability_Rating", 50),
@@ -290,7 +320,7 @@ class MaterialSpecificationEngine:
                     "justifications": best_reasons
                 })
 
-            total_pkg_cost = sum(item["total_cost_lkr"] for item in selected_items)
+            total_pkg_cost = None
             total_pkg_carbon = sum(item["embodied_carbon_tons"] for item in selected_items)
             avg_pkg_life = sum(item["service_life_years"] for item in selected_items) / len(selected_items)
             avg_sustainability = sum(item["sustainability_rating"] for item in selected_items) / len(selected_items)
@@ -301,7 +331,7 @@ class MaterialSpecificationEngine:
             packages_data[pkg_title] = {
                 "materials": selected_items,
                 "summary": {
-                    "total_cost_lkr": total_pkg_cost,
+                    "total_cost_lkr": None,
                     "total_embodied_carbon_tons": round(total_pkg_carbon, 2),
                     "average_service_life_years": round(avg_pkg_life, 1),
                     "average_sustainability_rating": round(avg_sustainability, 1),
@@ -340,7 +370,7 @@ class MaterialSpecificationEngine:
                 "interior_finish": int_finish,
                 "exterior_finish": ext_finish,
                 "material_priority": material_priority,
-                "adjusted_weights": adjusted_weights
+                "adjusted_weights": {}
             },
             "quantities": quantities,
             "geoclimatic": {
@@ -355,7 +385,7 @@ class MaterialSpecificationEngine:
             "recommendation_notes": recommendation_notes,
             "packages": packages_data,
             "blueprint": blueprint,
-            "formula": "Final Score = 0.70 × Engineering (MCDM) + 0.30 × ML",
+            "formula": "Final Score = 0.75 × Engineering (Constraint Engine) + 0.25 × ML",
             "future_roadmap": {
                 "description": "3D Material Visualization Pipeline via Planner5D Integration",
                 "steps": [
@@ -367,155 +397,6 @@ class MaterialSpecificationEngine:
             }
         }
         return response
-
-    def _adjust_weights(self, base_weights: Dict[str, float], priority: str) -> Dict[str, float]:
-        target_key = {
-            "eco-friendliness": "sustainability",
-            "durability": "durability",
-            "aesthetic appeal": "finish",
-            "structural strength": "structural"
-        }.get(priority.lower())
-
-        if not target_key or target_key not in base_weights:
-            return base_weights
-
-        adjusted = base_weights.copy()
-        boost = 0.15
-        adjusted[target_key] = adjusted.get(target_key, 0) + boost
-
-        other_sum = sum(v for k, v in adjusted.items() if k != target_key)
-        remaining = 1.0 - adjusted[target_key]
-        for k in adjusted:
-            if k != target_key:
-                adjusted[k] = adjusted[k] * remaining / other_sum
-
-        return adjusted
-
-    def _evaluate_mcdm(
-        self,
-        mat: Dict[str, Any],
-        weights: Dict[str, float],
-        climate: Dict[str, Any],
-        b_type: str,
-        floor_count: int,
-        structural_system: str,
-        sus_level: str,
-        maint_pref: str,
-        int_finish: str,
-        ext_finish: str
-    ) -> Tuple[float, List[str], bool]:
-
-        name = mat["Name"].lower()
-        category = mat["Category"].lower()
-        reasons = []
-        veto = False
-
-        sectors = mat.get("Building_Sectors", "").lower()
-        if b_type.lower() == "residential":
-            if ("industrial" in sectors and
-                    "residential" not in sectors and
-                    "commercial" not in sectors and
-                    "hotel" not in sectors and
-                    "apartment" not in sectors):
-                veto = True
-                reasons.append("VETO: Industrial-only component incompatible with residential typology")
-
-        if category in ["structural", "foundation", "concrete"]:
-            if floor_count >= 4:
-                if any(k in name for k in ["clay brick", "aac", "timber", "unreinforced"]):
-                    veto = True
-                    reasons.append("VETO: High-rise structural hazard (strength limits exceeded)")
-            if "steel frame" in structural_system.lower() and "timber" in name:
-                veto = True
-                reasons.append("VETO: Framing system mismatch (Timber in Steel structure)")
-            elif "timber frame" in structural_system.lower() and "steel portal" in name:
-                veto = True
-                reasons.append("VETO: Framing system mismatch (Industrial Steel in Timber structure)")
-
-        is_coastal = ("coastal" in climate.get("type", "").lower() or
-                      climate.get("salinity", "Low").lower() == "extreme")
-        if is_coastal:
-            if any(k in name for k in ["untreated timber", "gypsum board", "mild steel"]):
-                veto = True
-                reasons.append("VETO: Coastal hazard - severe corrosion/degradation risk")
-
-        if veto:
-            return 0.0, reasons, True
-
-        climates = mat.get("Suitable_Climates", "").lower()
-        city_climate = climate.get("type", "").lower()
-        score_cli = 50.0
-        climate_tokens = city_climate.replace('-', ' ').split()
-        if any(c in climates for c in climate_tokens):
-            score_cli = 90.0
-            reasons.append("Suitable for local climate zone.")
-
-        if is_coastal:
-            if ("coastal" in climates or
-                    any(k in name for k in ["marine", "epoxy", "upvc", "crystalline", "aluminium", "frp", "hdpe"])):
-                score_cli = min(100.0, score_cli + 15)
-                reasons.append("Resilient against coastal salinity.")
-
-        score_str = float(mat.get("Structural_Capacity", 50))
-        if category in ["structural", "foundation", "concrete"] and score_str > 75:
-            reasons.append("High structural capacity for load-bearing framing.")
-
-        service_life = float(mat.get("Service_Life", 30))
-        score_dur = min(100.0, (service_life / 100.0) * 100.0)
-        if service_life >= 60:
-            reasons.append(f"Extended service life of {int(service_life)} years.")
-
-        s_rating = float(mat.get("Sustainability_Rating", 50))
-        carbon = float(mat.get("Embodied_Carbon", 0.5))
-        score_sus = (s_rating * 0.7) + ((1.0 - min(1.0, carbon)) * 30.0)
-        if sus_level == "High" and (s_rating >= 80 or carbon < 0.15):
-            score_sus = min(100.0, score_sus + 15)
-            reasons.append("High eco-rating with low carbon footprint.")
-
-        maintenance_lvl = float(mat.get("Maintenance_Level", 50))
-        score_mnt = 100.0 - maintenance_lvl
-        if maint_pref == "Low" and maintenance_lvl <= 20:
-            score_mnt = min(100.0, score_mnt + 15)
-            reasons.append("Low maintenance specification.")
-
-        avail = mat.get("Local_Availability", "High")
-        score_avb = {"High": 95.0, "Medium": 70.0, "Low": 40.0}.get(avail, 70.0)
-        density = mat.get("Supplier_Density", "").lower()
-        if climate.get("city", "").lower() in density:
-            score_avb = min(100.0, score_avb + 10)
-            reasons.append("High local supplier density.")
-
-        score_fin = 60.0
-        if category in ["walling", "flooring", "ceiling", "roofing", "windows", "doors", "surface_finish"]:
-            if int_finish.lower() == "traditional" and any(k in name for k in ["clay", "terrazzo", "wood", "bamboo", "teak"]):
-                score_fin = 95.0
-            elif int_finish.lower() == "modern" and any(k in name for k in ["porcelain", "epoxy", "glass", "aluminium", "gypsum", "nano", "paint"]):
-                score_fin = 95.0
-            elif int_finish.lower() == "minimalist" and any(k in name for k in ["concrete", "gypsum", "ceramic", "micro-cement"]):
-                score_fin = 90.0
-            if ext_finish.lower() == "traditional" and any(k in name for k in ["clay", "brick", "teak", "terracotta"]):
-                score_fin = 95.0
-            elif ext_finish.lower() == "modern" and any(k in name for k in ["aluminium", "glass", "concrete", "paint", "nano"]):
-                score_fin = 95.0
-        if score_fin >= 90.0:
-            reasons.append("Matches architectural finish preferences.")
-
-        mcdm_score = (
-            weights.get("structural", 0.15) * score_str +
-            weights.get("climate", 0.15) * score_cli +
-            weights.get("durability", 0.15) * score_dur +
-            weights.get("sustainability", 0.15) * score_sus +
-            weights.get("maintenance", 0.10) * score_mnt +
-            weights.get("availability", 0.10) * score_avb
-        )
-
-        if maint_pref == "Low" and maintenance_lvl > 50:
-            mcdm_score -= 10
-        if sus_level == "High" and s_rating < 50:
-            mcdm_score -= 10
-
-        final_score = max(5.0, min(100.0, mcdm_score))
-        return final_score, list(set(reasons))[:4], False
 
     def _enrich_ml_score(self, ml_base: float, mat: Dict[str, Any], pkg_key: str) -> float:
         s_rating = float(mat.get("Sustainability_Rating", 50))

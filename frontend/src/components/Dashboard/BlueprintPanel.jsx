@@ -36,6 +36,36 @@ export default function BlueprintPanel({ data }) {
   const totalArea = bp.total_area || 'N/A';
   const footprint = bp.footprint ? `${bp.footprint.w}m × ${bp.footprint.h}m` : 'N/A';
 
+  // Prefer blueprint_analysis from backend if available, else compute fallback
+  const bpa = data.blueprint_analysis || {};
+  const footprintArea = totalArea / Math.max(numFloors, 1);
+  const perim = 4 * Math.sqrt(footprintArea);
+  const wallH = 3.2;
+  const grossWall = bpa.total_wall_area ?? Math.round(perim * wallH * numFloors * 10) / 10;
+  const roofArea = bpa.roof_area ?? Math.round(footprintArea * 1.3 * 10) / 10;
+  const winArea = bpa.estimated_window_area ?? Math.round(grossWall * 0.15 * 10) / 10;
+  const doorArea = bpa.estimated_door_area ?? Math.round(grossWall * 0.04 * 10) / 10;
+  const foundVol = bpa.estimated_foundation_volume ?? Math.round(footprintArea * 0.4 * 10) / 10;
+  const concVol = bpa.estimated_concrete_volume ?? Math.round(totalArea * 0.12 * 10) / 10;
+  const frameArea = bpa.estimated_structural_frame_area ?? Math.round(totalArea * 0.08 * 10) / 10;
+  const buildHeight = bpa.building_height ?? Math.round(wallH * numFloors * 10) / 10;
+  const envelopeArea = bpa.external_envelope_area ?? Math.round((grossWall + roofArea) * 10) / 10;
+  const openRatio = bpa.opening_ratio ?? Math.round((winArea + doorArea) / grossWall * 100 * 10) / 10;
+
+  const geometryMetrics = [
+    { label: 'Total Wall Area', val: `${grossWall} m²`, color: '#00ff9d' },
+    { label: 'Roof Area', val: `${roofArea} m²`, color: '#0ea5e9' },
+    { label: 'Floor Area', val: `${totalArea} m²`, color: '#a78bfa' },
+    { label: 'Est. Window Area', val: `${winArea} m²`, color: '#06b6d4' },
+    { label: 'Est. Door Area', val: `${doorArea} m²`, color: '#fbbf24' },
+    { label: 'Foundation Volume', val: `${foundVol} m³`, color: '#f97316' },
+    { label: 'Concrete Volume', val: `${concVol} m³`, color: '#34d399' },
+    { label: 'Structural Frame Area', val: `${frameArea} m²`, color: '#ec4899' },
+    { label: 'Building Height', val: `${buildHeight} m`, color: '#94a3b8' },
+    { label: 'Ext. Envelope Area', val: `${envelopeArea} m²`, color: '#4ade80' },
+    { label: 'Opening Ratio', val: `${openRatio}%`, color: '#fb923c' },
+  ];
+
   const floors = bp.floors_data || [];
   const currentFloor = floors[activeFloor];
   const rooms = currentFloor?.rooms || [];
@@ -73,7 +103,7 @@ export default function BlueprintPanel({ data }) {
           {/* Schematic Header & Tabs */}
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
             <span style={{ fontSize: '0.65rem', fontWeight: 900, color: 'var(--eco-glow)', letterSpacing: '2px', textTransform: 'uppercase' }}>
-              Dynamic 2D Floor Plan
+              Automated Floor Plan Layout
             </span>
             {floors.length > 1 && (
               <div style={{ display: 'flex', gap: '4px' }}>
@@ -207,27 +237,45 @@ export default function BlueprintPanel({ data }) {
             LAUNCH INTERACTIVE 3D VIEWER
           </Link>
 
-          {/* Blueprint Spec Grid */}
+          {/* Building Geometry Analysis Grid */}
           <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(2, 1fr)',
-            gap: '1rem',
             background: 'var(--bg-light)',
             border: '1px solid var(--card-border)',
             borderRadius: '12px',
             padding: '1.25rem'
           }}>
-            {[
-              { label: 'Building Type', val: buildingType },
-              { label: 'Floors Count', val: `${numFloors} Levels` },
-              { label: 'Total Blueprint Area', val: `${totalArea} m²` },
-              { label: 'Footprint Dimensions', val: footprint }
-            ].map((item, idx) => (
-              <div key={idx}>
-                <div style={{ fontSize: '0.65rem', color: 'var(--text-dim)', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: 700 }}>{item.label}</div>
-                <div style={{ fontSize: '1.05rem', fontWeight: 800, color: 'var(--text-primary)', marginTop: '4px', fontFamily: 'Space Grotesk' }}>{item.val}</div>
-              </div>
-            ))}
+            <div style={{ fontSize: '0.6rem', fontWeight: 900, color: 'var(--eco-glow)', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
+              Building Geometry Analysis
+            </div>
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(2, 1fr)',
+              gap: '0.6rem'
+            }}>
+              {geometryMetrics.map((item, idx) => (
+                <div key={idx} style={{
+                  background: 'rgba(255,255,255,0.02)',
+                  border: `1px solid ${item.color}20`,
+                  borderRadius: '8px',
+                  padding: '0.5rem 0.65rem',
+                  position: 'relative',
+                  overflow: 'hidden'
+                }}>
+                  <div style={{
+                    position: 'absolute', top: 0, left: 0, bottom: 0, width: '2px',
+                    background: item.color, borderRadius: '8px 0 0 8px'
+                  }}/>
+                  <div style={{ paddingLeft: '0.35rem' }}>
+                    <div style={{ fontSize: '0.52rem', color: 'var(--text-dim)', fontWeight: 700, letterSpacing: '0.5px', textTransform: 'uppercase', marginBottom: '2px' }}>
+                      {item.label}
+                    </div>
+                    <div style={{ fontSize: '0.95rem', fontWeight: 900, color: item.color, fontFamily: 'Space Grotesk' }}>
+                      {item.val}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
 
           {/* Raw Blueprint JSON Data Toggle */}

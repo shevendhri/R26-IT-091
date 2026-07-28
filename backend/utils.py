@@ -133,14 +133,29 @@ def climate_confidence(material: dict, climate: dict) -> float:
     percentage of criteria that meet the climate requirements.
     """
     criteria = {
-        "humidity": material.get("Humidity_Resistance", 0) >= 70,
-        "salinity": material.get("Salinity_Resistance", 0) >= 70,
-        "rainfall": material.get("Rainfall_Resistance", 0) >= 70,
-        "uv": material.get("UV_Resistance", 0) >= 70,
-        "temperature": material.get("Temperature_Suitability", 0) >= 70,
+        "moisture": float(material.get("Moisture_Resistance", 0)) >= 70,
+        "corrosion": float(material.get("Corrosion_Resistance", 0)) >= 70,
+        "thermal": float(material.get("Thermal_Rating", 0)) >= 70,
+        "climate_risk": float(material.get("Climate_Risk_Score", 100)) <= 30,
+        "sustainability": float(material.get("Sustainability_Rating", 0)) >= 50,
     }
     matched = sum(1 for v in criteria.values() if v)
     return round((matched / len(criteria)) * 100, 1)
+
+def get_suitability_badge(eng_score: float) -> dict:
+    """Returns the suitability label and color based on the engineering score."""
+    if eng_score is None:
+        return None
+    if eng_score >= 95:
+        return {"text": "Excellent Match", "color": "var(--eco-glow)"}
+    elif eng_score >= 85:
+        return {"text": "Very Good Match", "color": "#10b981"}
+    elif eng_score >= 75:
+        return {"text": "Good Match", "color": "#3b82f6"}
+    elif eng_score >= 65:
+        return {"text": "Acceptable", "color": "#fbbf24"}
+    return {"text": "Conditional Recommendation", "color": "#ef4444"}
+
 
 # ---------------------------------------------------------------------------
 # Deterministic recommendation sorting helper (used in recommendation engine)

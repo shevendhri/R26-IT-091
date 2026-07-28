@@ -5,11 +5,13 @@ DB_PATH = os.path.join(os.path.dirname(__file__), "data", "materials.db")
 
 def get_connection():
     os.makedirs(os.path.dirname(DB_PATH), exist_ok=True)
-    return sqlite3.connect(DB_PATH)
+    conn = sqlite3.connect(DB_PATH)
+    conn.row_factory = sqlite3.Row
+    return conn
 
 def ensure_table():
     os.makedirs(os.path.dirname(DB_PATH), exist_ok=True)
-    conn = sqlite3.connect(DB_PATH)
+    conn = get_connection()
     cur = conn.cursor()
 
     # Drop and recreate to ensure clean schema with all new columns
@@ -687,7 +689,7 @@ def ensure_table():
 
 def get_all_materials():
     ensure_table()
-    conn = sqlite3.connect(DB_PATH)
+    conn = get_connection()
     conn.row_factory = sqlite3.Row
     cur = conn.cursor()
     cur.execute("SELECT * FROM materials")
@@ -795,29 +797,126 @@ def format_material(row):
         else:
             rate = 2000.0
 
+    # ── Derive engineering fields not present as DB columns ───────────────
+    structural_cap = int(r["Structural_Capacity"] or 50)
+    moisture_res   = int(r["Moisture_Resistance"] or 50)
+    corrosion_res  = int(r["Corrosion_Resistance"] or 50)
+    service_life   = int(r["Service_Life"] or 30)
+    category_lc    = (r["Category"] or "").lower()
+    name_lc        = (r["Name"] or "").lower()
+
+    # Durability_Rating: composite of structural capacity + service life + moisture resistance
+    durability_score = (structural_cap * 0.50) + (min(service_life, 100) * 0.30) + (moisture_res * 0.20)
+    if durability_score >= 70:
+        durability_rating = "High"
+    elif durability_score >= 45:
+        durability_rating = "Medium"
+    else:
+        durability_rating = "Low"
+
+    # Fire_Resistance: engineering-based derivation from category + material type
+    # Concrete, masonry = very high fire resistance; timber, PVC, polycarbonate = low
+    if category_lc in ("foundation", "concrete"):
+        fire_resistance = 95
+    elif category_lc == "structural":
+        # Rebar embedded in concrete has high resistance; standalone steel is moderate
+        if "stainless" in name_lc or "epoxy" in name_lc or "gfrp" in name_lc:
+            fire_resistance = 80
+        else:
+            fire_resistance = 85
+    elif category_lc == "walling":
+        if "clay" in name_lc or "brick" in name_lc:
+            fire_resistance = 90
+        elif "aac" in name_lc or "cement" in name_lc or "fly-ash" in name_lc or "cseb" in name_lc:
+            fire_resistance = 85
+        else:
+            fire_resistance = 75
+    elif category_lc == "roofing":
+        if "clay" in name_lc or "concrete" in name_lc or "cement" in name_lc:
+            fire_resistance = 80
+        elif "aluminium" in name_lc or "zinc" in name_lc:
+            fire_resistance = 70
+        elif "polycarbonate" in name_lc:
+            fire_resistance = 20   # combustible plastic
+        elif "rubber" in name_lc or "bituminous" in name_lc or "pu core" in name_lc or "insulated" in name_lc:
+            fire_resistance = 30
+        elif "green" in name_lc:
+            fire_resistance = 75   # growing medium acts as thermal blanket
+        else:
+            fire_resistance = 55
+    elif category_lc in ("windows", "doors"):
+        if "aluminium" in name_lc or "steel" in name_lc or "frp" in name_lc:
+            fire_resistance = 65
+        elif "upvc" in name_lc or "pvc" in name_lc:
+            fire_resistance = 35
+        elif "teak" in name_lc or "timber" in name_lc or "louvre" in name_lc:
+            fire_resistance = 40   # hardwood chars slowly but is combustible
+        else:
+            fire_resistance = 55
+    elif category_lc == "flooring":
+        if "terrazzo" in name_lc or "porcelain" in name_lc or "ceramic" in name_lc or "micro-cement" in name_lc:
+            fire_resistance = 90
+        elif "timber" in name_lc:
+            fire_resistance = 35
+        elif "rubber" in name_lc or "wpc" in name_lc or "composite" in name_lc:
+            fire_resistance = 40
+        else:
+            fire_resistance = 60
+    elif category_lc == "ceiling":
+        if "calcium silicate" in name_lc:
+            fire_resistance = 90   # fire-rated board
+        elif "gypsum" in name_lc:
+            fire_resistance = 75   # passive fire rating
+        elif "aluminium" in name_lc or "metal" in name_lc:
+            fire_resistance = 70
+        elif "pvc" in name_lc:
+            fire_resistance = 25
+        elif "bamboo" in name_lc:
+            fire_resistance = 35
+        else:
+            fire_resistance = 55
+    elif category_lc == "waterproofing":
+        # Waterproofing is thin layer; fire contribution is minimal
+        if "crystalline" in name_lc or "hdpe" in name_lc or "bentonite" in name_lc:
+            fire_resistance = 60
+        elif "bituminous" in name_lc:
+            fire_resistance = 30
+        else:
+            fire_resistance = 45
+    elif category_lc in ("finishing", "paint"):
+        if "nano" in name_lc or "exterior" in name_lc:
+            fire_resistance = 50
+        else:
+            fire_resistance = 45
+    else:
+        fire_resistance = 55  # generic fallback
+
     return {
         "Material_ID": r["Material_ID"],
         "Name": r["Name"],
         "Category": r["Category"],
         "Rate_LKR": rate,
-        "Thermal_Rating": r["Thermal_Rating"],
-        "Moisture_Resistance": r["Moisture_Resistance"],
-        "Corrosion_Resistance": r["Corrosion_Resistance"],
-        "Structural_Capacity": r["Structural_Capacity"],
-        "Sustainability_Rating": r["Sustainability_Rating"],
-        "Maintenance_Level": r["Maintenance_Level"],
-        "Embodied_Carbon": r["Embodied_Carbon"],
-        "Suitable_Climates": r["Suitable_Climates"],
-        "Building_Sectors": r["Building_Sectors"],
-        "Floor_Count_Range": r["Floor_Count_Range"],
-        "Service_Life": r["Service_Life"],
-        "Description": r["Description"],
-        "Local_Availability": r["Local_Availability"],
-        "Supplier_Density": r["Supplier_Density"],
-        "Style_Compatibility": r.get("Style_Compatibility", "Modern,Contemporary"),
-        "Recyclability_Rating": r["Recyclability_Rating"],
-        "Thermal_Performance_Rating": r["Thermal_Performance_Rating"],
-        "Climate_Risk_Score": r["Climate_Risk_Score"],
+        "Thermal_Rating": int(r["Thermal_Rating"] or 50),
+        "Moisture_Resistance": int(r["Moisture_Resistance"] or 50),
+        "Corrosion_Resistance": int(r["Corrosion_Resistance"] or 50),
+        "Structural_Capacity": int(r["Structural_Capacity"] or 50),
+        "Sustainability_Rating": int(r["Sustainability_Rating"] or 50),
+        "Maintenance_Level": int(r["Maintenance_Level"] or 50),
+        "Embodied_Carbon": float(r["Embodied_Carbon"] or 0.5),
+        "Suitable_Climates": r["Suitable_Climates"] or "intermediate",
+        "Building_Sectors": r["Building_Sectors"] or "residential,commercial",
+        "Floor_Count_Range": r["Floor_Count_Range"] or "1-2",
+        "Service_Life": int(r["Service_Life"] or 30),
+        "Description": r["Description"] or "",
+        "Local_Availability": r["Local_Availability"] or "Medium",
+        "Supplier_Density": r["Supplier_Density"] or "Medium",
+        "Style_Compatibility": r.get("Style_Compatibility") or "Modern,Contemporary",
+        "Recyclability_Rating": int(r.get("Recyclability_Rating") or 50),
+        "Thermal_Performance_Rating": int(r.get("Thermal_Performance_Rating") or 50),
+        "Climate_Risk_Score": int(r.get("Climate_Risk_Score") or 50),
+        # ── Derived engineering fields (not stored in DB, computed here) ──
+        "Durability_Rating": durability_rating,
+        "Fire_Resistance": fire_resistance,
     }
 
 

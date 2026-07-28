@@ -85,7 +85,6 @@ export const MaterialProvider = ({ children }) => {
       } else {
         localStorage.removeItem('reportData');
       }
-      console.log('[Context] reportData persisted manually', data);
     }
   };
   const [blueprint, setBlueprint] = useState(null);

@@ -79,8 +79,8 @@ export default function XAIPanel({ componentName, material, onSelect, isSelected
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem' }}>
         {[
           { label: 'HYBRID SCORE', value: finalScore, color: 'var(--eco-glow)' },
-          { label: 'ENGINEERING', value: eng_score ?? 'N/A', color: 'var(--text-primary)' },
-          { label: 'NEURAL ML', value: ml_score ?? 'N/A', color: 'var(--blueprint-blue)' }
+          { label: 'ENG. VALIDATION', value: eng_score ?? 'N/A', color: 'var(--text-primary)' },
+          { label: 'ML CONFIDENCE', value: ml_score ?? 'N/A', color: 'var(--blueprint-blue)' }
         ].map((score, i) => (
           <div key={i} style={{
             background: 'rgba(255,255,255,0.02)',
@@ -130,21 +130,101 @@ export default function XAIPanel({ componentName, material, onSelect, isSelected
           ))}
         </div>
       </div>
+      {/* Structured XAI Justification */}
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+        {/* Engineering Rationale */}
+        {reasonText && (
+          <div style={{
+            background: 'rgba(255, 255, 255, 0.02)',
+            border: '1px solid rgba(255, 255, 255, 0.06)',
+            borderRadius: '12px',
+            padding: '1.5rem'
+          }}>
+            <div style={{ fontSize: '0.65rem', fontWeight: 900, color: 'var(--blueprint-blue)', letterSpacing: '3px', textTransform: 'uppercase', marginBottom: '0.75rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <span style={{ display: 'inline-block', width: '6px', height: '6px', background: 'var(--blueprint-blue)', borderRadius: '50%', boxShadow: '0 0 10px var(--blueprint-blue)' }}></span>
+              ENGINEERING RATIONALE
+            </div>
+            <p style={{ margin: 0, fontSize: '0.82rem', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
+              {reasonText}
+            </p>
+          </div>
+        )}
 
-      {/* AI Justification */}
-      <div style={{
-        background: 'rgba(0, 255, 157, 0.03)',
-        border: '1px solid rgba(0, 255, 157, 0.1)',
-        borderRadius: '12px',
-        padding: '1.5rem'
-      }}>
-        <div style={{ fontSize: '0.65rem', fontWeight: 900, color: 'var(--eco-glow)', letterSpacing: '3px', textTransform: 'uppercase', marginBottom: '0.75rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-          <span style={{ display: 'inline-block', width: '6px', height: '6px', background: 'var(--eco-glow)', borderRadius: '50%', boxShadow: '0 0 10px var(--eco-glow)' }}></span>
-          AI JUSTIFICATION
-        </div>
-        <p style={{ fontSize: '0.9rem', color: 'var(--text-primary)', lineHeight: 1.6, margin: 0 }}>
-          {reasonText}
-        </p>
+        {/* Performance Benefits */}
+        {material.why_this_material && material.why_this_material.length > 0 && (
+          <div style={{
+            background: 'rgba(0, 255, 157, 0.03)',
+            border: '1px solid rgba(0, 255, 157, 0.1)',
+            borderRadius: '12px',
+            padding: '1.5rem'
+          }}>
+            <div style={{ fontSize: '0.65rem', fontWeight: 900, color: 'var(--eco-glow)', letterSpacing: '3px', textTransform: 'uppercase', marginBottom: '0.75rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <span style={{ display: 'inline-block', width: '6px', height: '6px', background: 'var(--eco-glow)', borderRadius: '50%', boxShadow: '0 0 10px var(--eco-glow)' }}></span>
+              PERFORMANCE BENEFITS
+            </div>
+            <ul style={{ margin: 0, paddingLeft: '1.25rem', fontSize: '0.82rem', color: 'var(--text-secondary)', lineHeight: 1.6, listStyleType: 'square' }}>
+              {material.why_this_material.map((bullet, idx) => (
+                <li key={idx} style={{ marginBottom: '4px' }}>{bullet.replace(/^✓\s*/, '')}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        {/* Engineering Trade-offs */}
+        {material.trade_offs && material.trade_offs.length > 0 && (
+          <div style={{
+            background: 'rgba(251, 191, 36, 0.03)',
+            border: '1px solid rgba(251, 191, 36, 0.1)',
+            borderRadius: '12px',
+            padding: '1.5rem'
+          }}>
+            <div style={{ fontSize: '0.65rem', fontWeight: 900, color: 'var(--warn-amber)', letterSpacing: '3px', textTransform: 'uppercase', marginBottom: '0.75rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <span style={{ display: 'inline-block', width: '6px', height: '6px', background: 'var(--warn-amber)', borderRadius: '50%', boxShadow: '0 0 10px var(--warn-amber)' }}></span>
+              ENGINEERING TRADE-OFFS
+            </div>
+            <ul style={{ margin: 0, paddingLeft: '1.25rem', fontSize: '0.82rem', color: 'var(--text-secondary)', lineHeight: 1.6, listStyleType: 'square' }}>
+              {material.trade_offs.map((bullet, idx) => {
+                const cleaned = bullet.replace(/^(↳|•|✗|✓)\s*/, '');
+                return (
+                  <li key={idx} style={{ marginBottom: '4px' }}>{cleaned}</li>
+                );
+              })}
+            </ul>
+          </div>
+        )}
+
+        {/* Alternative Considered & Why Recommended */}
+        {material.why_not_comparison && (
+          <div style={{
+            background: 'rgba(14, 165, 233, 0.03)',
+            border: '1px solid rgba(14, 165, 233, 0.1)',
+            borderRadius: '12px',
+            padding: '1.5rem',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '0.75rem'
+          }}>
+            <div>
+              <div style={{ fontSize: '0.65rem', fontWeight: 900, color: 'var(--blueprint-blue)', letterSpacing: '3px', textTransform: 'uppercase', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <span style={{ display: 'inline-block', width: '6px', height: '6px', background: 'var(--blueprint-blue)', borderRadius: '50%', boxShadow: '0 0 10px var(--blueprint-blue)' }}></span>
+                ALTERNATIVE CONSIDERED
+              </div>
+              <div style={{ fontSize: '0.9rem', fontWeight: 700, color: '#fff', paddingLeft: '0.75rem' }}>
+                {material.why_not_comparison.alternative_name}
+              </div>
+            </div>
+            <div>
+              <div style={{ fontSize: '0.65rem', fontWeight: 900, color: 'var(--text-dim)', letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '0.5rem', paddingLeft: '0.75rem' }}>
+                WHY RECOMMENDED
+              </div>
+              <ul style={{ margin: 0, paddingLeft: '2rem', fontSize: '0.82rem', color: 'var(--text-secondary)', lineHeight: 1.6, listStyleType: 'square' }}>
+                {(material.why_not_comparison.reasons_not_selected || []).map((reason, idx) => (
+                  <li key={idx} style={{ marginBottom: '4px' }}>{reason}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        )}
       </div>
 
     </div>

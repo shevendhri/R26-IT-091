@@ -19,39 +19,71 @@ export default function SustainabilityDashboard({ data }) {
   if (!mounted) return null;
   if (!data) return null;
 
-  const overallScore = typeof data?.metrics?.overall_hybrid_score === 'number' ? data.metrics.overall_hybrid_score.toFixed(1) : 'N/A';
-  const sustainabilityRating = typeof data?.metrics?.average_sustainability === 'number' ? data.metrics.average_sustainability.toFixed(1) : 'N/A';
-  const carbonScore = typeof data?.metrics?.average_carbon === 'number' ? data.metrics.average_carbon.toFixed(1) : 'N/A';
-  const serviceLife = typeof data?.metrics?.average_service_life === 'number' ? `${data.metrics.average_service_life.toFixed(0)} Years` : 'N/A';
+  const averageSustainability = data?.metrics?.average_sustainability ?? null;
+  const averageServiceLife = data?.metrics?.average_service_life ?? null;
+  const averageCarbon = data?.metrics?.average_carbon ?? null;
+  
+  const envLabels = data?.metrics?.environmental_labels || {};
+  const moistureResistanceLabel = envLabels.moisture_resistance || 'Verified';
+  const climateResilienceLabel = envLabels.climate_resilience || 'Verified';
+  const maintenanceLabel = envLabels.maintenance_requirement || 'Standard';
+  const carbonImpact = envLabels.carbon_impact || (averageCarbon != null ? (averageCarbon < 0.3 ? 'Low' : averageCarbon < 0.6 ? 'Average' : 'High') : 'N/A');
+
+  const carbonColor = carbonImpact === 'Low' ? 'var(--eco-glow)' : carbonImpact === 'Average' ? '#fbbf24' : carbonImpact === 'High' ? '#ef4444' : 'var(--text-dim)';
+
+  const sustainabilityRating = averageSustainability != null ? `${Math.round(averageSustainability)}%` : 'N/A';
+  const serviceLife = averageServiceLife != null ? `${Math.round(averageServiceLife)} Years` : 'N/A';
 
   const kpis = [
-    { label: 'Overall AI Score', value: overallScore, eco: true, icon: 'AI' },
-    { label: 'Sustainability Rating', value: sustainabilityRating, eco: true, icon: 'SR' },
-    { label: 'Carbon Score', value: carbonScore, eco: false, icon: 'CO₂' },
-    { label: 'Service Life', value: serviceLife, eco: false, icon: 'SL' },
+    { label: 'Carbon Impact', value: carbonImpact, color: carbonColor, icon: '🌍', desc: 'Net greenhouse gas index' },
+    { label: 'Average Eco Rating', value: sustainabilityRating, color: 'var(--eco-glow)', icon: '🌱', desc: 'Material circularity rating' },
+    { label: 'Average Service Life', value: serviceLife, color: '#fff', icon: '⏱️', desc: 'Structural lifespan' },
+    { label: 'Climate Resilience', value: climateResilienceLabel, color: '#06b6d4', icon: '🌊', desc: 'Extreme exposure resistance' },
+    { label: 'Moisture Resistance', value: moistureResistanceLabel, color: '#0ea5e9', icon: '💧', desc: 'SLS humidity gating compliance' },
+    { label: 'Maintenance Requirement', value: maintenanceLabel, color: '#a78bfa', icon: '🛡️', desc: 'Operational upkeep factor' },
   ];
 
   return (
-    <GlassCard className="dashboard-section sustainability-dashboard">
-      <div className="section-header">
-        <span className="section-dot eco"></span>
-        <h2>Sustainability Dashboard</h2>
+    <GlassCard className="dashboard-section sustainability-dashboard" style={{ position: 'relative' }}>
+      <div style={{
+        position: 'absolute', bottom: 0, right: 0, width: '120px', height: '120px',
+        background: 'radial-gradient(circle at 100% 100%, rgba(0, 255, 157, 0.05), transparent 70%)',
+        pointerEvents: 'none'
+      }}/>
+
+      <div style={{ marginBottom: '1.5rem' }}>
+        <div style={{ fontSize: '0.65rem', fontWeight: 900, color: 'var(--eco-glow)', letterSpacing: '4px', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
+          Environmental Dashboard
+        </div>
+        <h2 style={{ fontSize: '1.6rem', color: '#fff', fontFamily: 'Space Grotesk', margin: 0 }}>
+          Overall Sustainability Metrics
+        </h2>
       </div>
-      <div className="card-grid">
-        {kpis.map(kpi => (
-          <div key={kpi.label} className="kpi-card hoverable">
-            <div style={{
-              fontSize: '0.7rem',
-              fontWeight: 900,
-              letterSpacing: '3px',
-              color: kpi.eco ? 'var(--eco-glow)' : 'var(--blueprint-blue)',
-              marginBottom: '0.5rem',
-              textTransform: 'uppercase'
-            }}>
-              {kpi.icon}
+
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem' }}>
+        {kpis.map((kpi, idx) => (
+          <div key={idx} style={{
+            background: 'rgba(255, 255, 255, 0.02)',
+            border: '1px solid rgba(255, 255, 255, 0.04)',
+            borderRadius: '12px',
+            padding: '1.25rem',
+            textAlign: 'center',
+            position: 'relative',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center'
+          }}>
+            <div style={{ fontSize: '1.5rem', marginBottom: '0.4rem' }}>{kpi.icon}</div>
+            <div style={{ fontSize: '0.6rem', color: 'var(--text-dim)', fontWeight: 800, letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '4px' }}>
+              {kpi.label}
             </div>
-            <div className={`kpi-value${kpi.eco ? ' eco' : ''}`} style={{ fontSize: '3rem' }}>{kpi.value}</div>
-            <div className="kpi-label">{kpi.label}</div>
+            <div style={{ fontSize: '1.4rem', fontWeight: 900, color: kpi.color, fontFamily: 'Space Grotesk' }}>
+              {kpi.value}
+            </div>
+            <div style={{ fontSize: '0.58rem', color: 'var(--text-dim)', marginTop: '4px' }}>
+              {kpi.desc}
+            </div>
           </div>
         ))}
       </div>

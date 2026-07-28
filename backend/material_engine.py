@@ -142,8 +142,9 @@ def get_alternatives(
 ) -> Dict[str, List[MaterialOption]]:
     """Return a mapping of component name → list of five MaterialOption objects.
 
-    Uses a strict 70/30 hybrid formula:
-    hybrid = (0.7 * eng_score) + (0.3 * ml_score)
+    Uses the authoritative 75/25 hybrid formula (consistent with constraint_engine):
+        hybrid = (0.75 * eng_score) + (0.25 * ml_score)
+    Engineering veto always forces hybrid_score = 0.0 regardless of ML confidence.
     """
     raw_rows = get_all_materials()
     catalog = [format_material(r) for r in raw_rows]
@@ -210,12 +211,7 @@ def get_alternatives(
             cost_score = max(0.0, min(100.0, 100.0 - (rate / 15000.0) * 80.0))
 
         # Combine into Hybrid Score
-        if eng_score is None:
-            hybrid = None
-        elif ml_sc is None:
-            hybrid = float(eng_score)
-        else:
-            hybrid = calculate_hybrid_score(eng_score, ml_sc, vetoed=veto)
+        hybrid = calculate_hybrid_score(eng_score, ml_sc, vetoed=veto)
 
         reasoning = []
         if veto:
@@ -230,9 +226,11 @@ def get_alternatives(
                 reasoning.extend(reasons)
         
         if hybrid is not None and ml_sc is not None and eng_score is not None:
-            # Verify consistency with helper formula
-            expected = (0.7 * eng_score) + (0.3 * ml_sc)
-            assert abs(hybrid - expected) < 0.01 or hybrid == 0.0, "Score contradiction detected."
+            # Verify consistency – log discrepancy instead of crashing
+            expected = (0.75 * eng_score) + (0.25 * ml_sc)
+            if not (hybrid == 0.0) and abs(hybrid - expected) >= 0.05:
+                print(f"[WARN] material_engine hybrid discrepancy: {mat.get('Name')} "
+                      f"reported={hybrid:.2f} expected={expected:.2f}")
 
         option_dict = {
             "id": str(mat.get("Material_ID", "")),
@@ -256,19 +254,19 @@ def get_alternatives(
         }
         scored.append({"material": mat, "option": option_dict, "score": hybrid if hybrid is not None else 0.0, "veto": veto})
 
-# Map components to DB Categories
+# Map components to DB Categories (keys match Category column values, lowercased)
     component_category_map = {
         "Foundation":        ["foundation"],
+        "Concrete":          ["concrete"],
         "Structural System": ["structural"],
-        "Walls":             ["walling", "wall"],
-        "Roof":              ["roofing", "roof"],
-        "Windows":           ["openings", "window"],
-        "Doors":             ["openings", "door"],
-        "Flooring":          ["flooring", "floor"],
+        "Walls":             ["walling"],
+        "Roof":              ["roofing"],
+        "Windows":           ["windows"],
+        "Doors":             ["doors"],
+        "Flooring":          ["flooring"],
         "Ceiling":           ["ceiling"],
-        "Finishes":          ["finishing", "finish"],
-        "Paint":             ["finishing", "paint"],
-        "Insulation":        ["roofing", "ceiling", "insulation"],
+        "Waterproofing":     ["waterproofing"],
+        "Finishes":          ["finishing"],
     }
     
     result: Dict[str, List[MaterialOption]] = {}

@@ -2,8 +2,7 @@ import React, { useEffect, useState } from 'react';
 import GlassCard from '@/components/ui/GlassCard';
 
 /**
- * PerformanceAssessment – shows high‑level performance metrics derived from the AI recommendation.
- * Currently a placeholder; replace with detailed charts/tables as needed.
+ * PerformanceAssessment – shows high-level performance metrics derived from the AI recommendation.
  */
 export default function PerformanceAssessment({ data }) {
   const [mounted, setMounted] = useState(false);

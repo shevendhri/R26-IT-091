@@ -11,7 +11,6 @@ export default function ProcessingPage() {
   const [loadingStep, setLoadingStep] = useState('Initialising Climate Analysis');
 
   useEffect(() => {
-    console.log('[Processing] component mounted'); console.log('[PROCESSING] Starting recommendation request');
     const steps = [
       [0,    'Loading Geoclimatic Constraints'],
       [900,  'Resolving Multi-Criteria Decision Weights'],
@@ -25,7 +24,6 @@ export default function ProcessingPage() {
 
     const fetchRecommendations = async () => {
       try {
-        console.log('[Processing] starting API call');
         // Map MaterialContext fields → API request schema
         const payload = {
           // ── Core building parameters (existing — do not remove) ────────
@@ -58,7 +56,6 @@ export default function ProcessingPage() {
           buildingRequirements:     buildingRequirements                          || {},
         };
 
-        console.log('[Processing] payload', payload);
         const apiBase = process.env.NEXT_PUBLIC_API_BASE || 'http://127.0.0.1:5000';
     const res = await fetch(`${apiBase}/api/recommendations/generate`, {
           method:  'POST',
@@ -66,32 +63,25 @@ export default function ProcessingPage() {
           body:    JSON.stringify(payload),
         });
 
-        console.log('[Processing] raw response status', res.status);
         if (!res.ok) {
           const err = await res.text();
           throw new Error(`Server error ${res.status}: ${err}`);
         }
 
         const data = await res.json();
-        console.log('[Processing] API response', data);
 
         // Handle both possible response shapes
         let reportPayload = data;
         if (data.success && data.data) {
           reportPayload = data.data;
         }
-        console.log('[PROCESSING] REPORT PAYLOAD', reportPayload);
 
         if (reportPayload.status === 'success' || reportPayload.success) {
-          console.log('[Processing] setting report data');
-          console.log('[PROCESSING] SETTING REPORT DATA');
           setReportData({ ...reportPayload, projectPreferences });
-          console.log('[PROCESSING] SAVING TO LOCAL STORAGE');
           persistReportData({ ...reportPayload, projectPreferences });
           if (reportPayload.blueprint) {
             setBlueprint(reportPayload.blueprint);
           }
-          console.log('[PROCESSING] NAVIGATING TO REPORT');
           // Small delay to ensure state updates before navigation
           setTimeout(() => router.replace('/materials/report'), 100);
         } else {

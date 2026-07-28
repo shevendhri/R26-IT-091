@@ -176,7 +176,9 @@ class RecommendRequest(BaseModel):
     validation_severity: str = "low"
 
 class RecommendationsGenerateRequest(BaseModel):
-    """Slim frontend-facing request for the XAI-enriched recommendation endpoint."""
+    """Slim frontend-facing request for the XAI-enriched recommendation endpoint.
+    Allows additional fields for future extensions.
+    """
     buildingType: str = "Residential"
     location: str = "Colombo"
     floorCount: int = 2
@@ -186,6 +188,10 @@ class RecommendationsGenerateRequest(BaseModel):
     sustainabilityPreference: str = "Medium"
     climateProfile: Dict[str, Any] = {}
     buildingRequirements: Dict[str, Any] = {}
+    # Accept extra fields without validation errors
+    class Config:
+        extra = "allow"
+
 
 class ArchitecturalStyleRequest(BaseModel):
     profile: Dict[str, Any]
@@ -234,7 +240,6 @@ async def api_questionnaire(request: Request):
         # Log payload to file for debugging
         with open('C:/Users/ASUS/Desktop/Material specification/scratch/questionnaire_debug.log','a') as f:
             f.write('Payload received: '+json.dumps(payload)+'\n')
-        print('Received questionnaire payload:', payload)  # Debug log
         profile = process_questionnaire(payload)
         # Perform engineering validation
         from validation_engine import validate_project, generate_validation_log
@@ -243,7 +248,6 @@ async def api_questionnaire(request: Request):
         response = {"status":"success","profile":profile.model_dump(),"validation":validation_result}
         with open('C:/Users/ASUS/Desktop/Material specification/scratch/questionnaire_debug.log','a') as f:
             f.write('Response sent: '+json.dumps(response)+'\n')
-        print('Sending questionnaire response:', response)  # Debug log
         return response
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
@@ -445,6 +449,19 @@ def api_recommendations_generate(data: RecommendationsGenerateRequest):
 
         # ── ENRICH: top3_candidates per category (read-only, from audit_log) ──
         from collections import defaultdict
+        from database import get_all_materials, format_material
+        from backend.engines.constraint_engine import evaluate_constraints
+
+        def _get_relative_cost_tier(rate: float) -> str:
+            if rate <= 500:
+                return "$"
+            elif rate <= 1500:
+                return "$$"
+            else:
+                return "$$$"
+
+        all_materials = {m["Name"]: m for m in [format_material(r) for r in get_all_materials()]}
+
         category_logs: dict = defaultdict(list)
         for log in response.get("audit_log", []):
             if log.get("hybrid_score") is not None:
@@ -457,10 +474,24 @@ def api_recommendations_generate(data: RecommendationsGenerateRequest):
                 key=lambda x: float(x.get("hybrid_score") or 0),
                 reverse=True
             )
-            top3_candidates[cat] = [
-                {
+            top3_candidates[cat] = []
+            for i, l in enumerate(sorted_logs[:3]):
+                m_name = l["item_name"]
+                m_db = all_materials.get(m_name, {})
+                
+                # Get dynamic criteria breakdown for this alternative candidate
+                eval_res = evaluate_constraints(
+                    material=m_db,
+                    occupancy=data.buildingType,
+                    blueprint=bp,
+                    climate=climate,
+                    profile=profile_obj
+                )
+                breakdown = eval_res.get("constraint_breakdown", {})
+
+                top3_candidates[cat].append({
                     "rank": i + 1,
-                    "material": l["item_name"],
+                    "material": m_name,
                     "hybrid_score": round(float(l.get("hybrid_score") or 0), 1),
                     "ml_score": (
                         round(float(l["ml_score"]), 1)
@@ -468,10 +499,14 @@ def api_recommendations_generate(data: RecommendationsGenerateRequest):
                         else None
                     ),
                     "engineering_score": round(float(l.get("engineering_score") or 0), 1),
-                    "explanation": l.get("explanation", "")
-                }
-                for i, l in enumerate(sorted_logs[:3])
-            ]
+                    "explanation": l.get("explanation", ""),
+                    "sustainability_rating": m_db.get("Sustainability_Rating", 50),
+                    "service_life": m_db.get("Service_Life", 30),
+                    "maintenance": m_db.get("Maintenance_Level", 50),
+                    "relative_cost": _get_relative_cost_tier(m_db.get("Rate_LKR", 0)),
+                    "embodied_carbon": m_db.get("Embodied_Carbon", 0.35),
+                    "engineering_breakdown": breakdown
+                })
 
         response["top3_candidates"] = top3_candidates
 
