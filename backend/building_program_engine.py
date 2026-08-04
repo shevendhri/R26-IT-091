@@ -38,7 +38,8 @@ def generate_building_program(spatial_program: Dict[str, List[Dict[str, str]]], 
         "MEETING_ROOM": 20.0,
         "RECEPTION": 30.0,
         "RETAIL": 100.0,
-        "CIRCULATION": 15.0
+        "CIRCULATION": 15.0,
+        "UTILITY": 10.0
     }
     
     # Zones mapping
@@ -50,6 +51,7 @@ def generate_building_program(spatial_program: Dict[str, List[Dict[str, str]]], 
         "KITCHEN": "service",
         "OFFICE": "private",
         "SERVICE": "service",
+        "UTILITY": "utility",
         "OUTDOOR": "outdoor",
         "PARKING": "service",
         "GUEST_ROOM": "guestroom",
@@ -89,34 +91,63 @@ def generate_building_program(spatial_program: Dict[str, List[Dict[str, str]]], 
     elif traffic == "low":
         circulation_factor -= 0.05
 
-    enriched_rooms = []
-    total_net_area = 0.0
+    # Check if target total area is explicitly requested in questionnaire
+    target_total_area = None
+    if questionnaire.get("total_area"):
+        try:
+            target_total_area = float(questionnaire["total_area"])
+        except (ValueError, TypeError):
+            target_total_area = None
+
+    raw_rooms = []
+    base_net_area = 0.0
     
     for r in rooms:
         rtype = r["type"]
-        area = room_sizes.get(rtype, 15.0)
+        base_area = room_sizes.get(rtype, 15.0)
         zone = zone_mapping.get(rtype, "service")
         
-        enriched_rooms.append({
+        raw_rooms.append({
             "name": r["label"],
             "type": rtype,
             "zone": zone,
+            "base_area": base_area
+        })
+        base_net_area += base_area
+
+    # Calculate scaling factor if target area is specified and sensible
+    scale_factor = 1.0
+    if target_total_area and target_total_area > 30.0:
+        target_net = target_total_area / (1.0 + circulation_factor)
+        if base_net_area > 0:
+            scale_factor = max(0.5, min(2.5, target_net / base_net_area))
+
+    enriched_rooms = []
+    total_net_area = 0.0
+
+    for r in raw_rooms:
+        area = round(r["base_area"] * scale_factor, 1)
+        enriched_rooms.append({
+            "name": r["name"],
+            "type": r["type"],
+            "zone": r["zone"],
             "area": area
         })
         total_net_area += area
-        
-    circulation_area = total_net_area * circulation_factor
-    # Update the core circulation area
+
+    circulation_area = round(total_net_area * circulation_factor, 1)
+    # Update core circulation area
     for r in enriched_rooms:
         if r["type"] == "CIRCULATION":
-            r["area"] += circulation_area
+            r["area"] = round(r["area"] + circulation_area, 1)
             break
 
-    total_gross_area = total_net_area + circulation_area
+    total_gross_area = round(total_net_area + circulation_area, 1)
 
     return {
         "rooms": enriched_rooms,
-        "total_net_area": total_net_area,
+        "total_net_area": round(total_net_area, 1),
         "total_gross_area": total_gross_area,
         "circulation_factor": circulation_factor
     }
+

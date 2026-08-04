@@ -178,19 +178,19 @@ function ProceduralExposedStructure({ w, d, numFloors, structuralSystem, activeF
             {/* Steel Truss Cross Bracing (Steel Frame only) */}
             {isSteel && (
               <group>
-                <mesh position={[0, yColBase + WALL_H / 2, d / 2]} rotation={[0, 0, Math.atan(WALL_H / d)]} castShadow>
+                <mesh position={[0, yColBase + WALL_H / 2, d / 2]} rotation={[Math.atan(d / WALL_H), 0, 0]} castShadow>
                   <boxGeometry args={[0.06, Math.sqrt(d*d + WALL_H*WALL_H), 0.06]} />
                   <meshStandardMaterial {...matProps} />
                 </mesh>
-                <mesh position={[0, yColBase + WALL_H / 2, d / 2]} rotation={[0, 0, -Math.atan(WALL_H / d)]} castShadow>
+                <mesh position={[0, yColBase + WALL_H / 2, d / 2]} rotation={[-Math.atan(d / WALL_H), 0, 0]} castShadow>
                   <boxGeometry args={[0.06, Math.sqrt(d*d + WALL_H*WALL_H), 0.06]} />
                   <meshStandardMaterial {...matProps} />
                 </mesh>
-                <mesh position={[w, yColBase + WALL_H / 2, d / 2]} rotation={[0, 0, Math.atan(WALL_H / d)]} castShadow>
+                <mesh position={[w, yColBase + WALL_H / 2, d / 2]} rotation={[Math.atan(d / WALL_H), 0, 0]} castShadow>
                   <boxGeometry args={[0.06, Math.sqrt(d*d + WALL_H*WALL_H), 0.06]} />
                   <meshStandardMaterial {...matProps} />
                 </mesh>
-                <mesh position={[w, yColBase + WALL_H / 2, d / 2]} rotation={[0, 0, -Math.atan(WALL_H / d)]} castShadow>
+                <mesh position={[w, yColBase + WALL_H / 2, d / 2]} rotation={[-Math.atan(d / WALL_H), 0, 0]} castShadow>
                   <boxGeometry args={[0.06, Math.sqrt(d*d + WALL_H*WALL_H), 0.06]} />
                   <meshStandardMaterial {...matProps} />
                 </mesh>
@@ -631,38 +631,70 @@ function InteriorPartitions({ rooms, w, d, floorIdx, selections, palette, threeD
   const color = isDollhouse ? '#ffffff' : (WALL_HEX[String(selections?.Walls || '8')] || palette?.wall || '#d4d4d4');
   const mat = { color, transparent: op < 1.0, opacity: op, roughness: 0.75, side: THREE.DoubleSide };
 
-  const partitions = useMemo(() => {
-    const xSet = new Set();
-    const zSet = new Set();
+  const segments = useMemo(() => {
+    const wallSegments = [];
+    const seen = new Set();
+
     rooms.forEach(r => {
-      const rx = Math.round((r.x + r.w) * 10) / 10;
-      const lx = Math.round(r.x * 10) / 10;
-      const bz = Math.round((r.y + r.h) * 10) / 10;
-      const tz = Math.round(r.y * 10) / 10;
-      if (rx > tol && rx < w - tol) xSet.add(rx);
-      if (lx > tol && lx < w - tol) xSet.add(lx);
-      if (bz > tol && bz < d - tol) zSet.add(bz);
-      if (tz > tol && tz < d - tol) zSet.add(tz);
+      const rx = Math.round(r.x * 100) / 100;
+      const ry = Math.round(r.y * 100) / 100;
+      const rw = Math.round(r.w * 100) / 100;
+      const rh = Math.round(r.h * 100) / 100;
+
+      const edges = [
+        { x1: rx, z1: ry, x2: rx + rw, z2: ry, isVert: false },
+        { x1: rx, z1: ry + rh, x2: rx + rw, z2: ry + rh, isVert: false },
+        { x1: rx, z1: ry, x2: rx, z2: ry + rh, isVert: true },
+        { x1: rx + rw, z1: ry, x2: rx + rw, z2: ry + rh, isVert: true },
+      ];
+
+      edges.forEach(e => {
+        // Exclude exterior perimeter walls (handled by ArchitecturalWalls)
+        if (e.isVert) {
+          if (e.x1 <= tol || e.x1 >= w - tol) return;
+        } else {
+          if (e.z1 <= tol || e.z1 >= d - tol) return;
+        }
+
+        const key = e.isVert
+          ? `V_${Math.round(e.x1 * 10) / 10}_${Math.round(e.z1 * 10) / 10}_${Math.round(e.z2 * 10) / 10}`
+          : `H_${Math.round(e.z1 * 10) / 10}_${Math.round(e.x1 * 10) / 10}_${Math.round(e.x2 * 10) / 10}`;
+
+        if (!seen.has(key)) {
+          seen.add(key);
+          wallSegments.push(e);
+        }
+      });
     });
-    return { xLines: [...xSet], zLines: [...zSet] };
+
+    return wallSegments;
   }, [rooms, w, d]);
 
   if (threeDMode === 'exterior' && presentationMode !== 'dollhouse') return null;
 
   return (
     <group>
-      {partitions.xLines.map((x, i) => (
-        <mesh key={`x${i}`} position={[x, yMid, d / 2]} castShadow>
-          <boxGeometry args={[t, WALL_H, d - 2 * EXT_T]} />
-          <meshStandardMaterial {...mat} />
-        </mesh>
-      ))}
-      {partitions.zLines.map((z, i) => (
-        <mesh key={`z${i}`} position={[w / 2, yMid, z]} castShadow>
-          <boxGeometry args={[w - 2 * EXT_T, WALL_H, t]} />
-          <meshStandardMaterial {...mat} />
-        </mesh>
-      ))}
+      {segments.map((seg, i) => {
+        if (seg.isVert) {
+          const len = seg.z2 - seg.z1;
+          const cz = seg.z1 + len / 2;
+          return (
+            <mesh key={`v${i}`} position={[seg.x1, yMid, cz]} castShadow>
+              <boxGeometry args={[t, WALL_H, len]} />
+              <meshStandardMaterial {...mat} />
+            </mesh>
+          );
+        } else {
+          const len = seg.x2 - seg.x1;
+          const cx = seg.x1 + len / 2;
+          return (
+            <mesh key={`h${i}`} position={[cx, yMid, seg.z1]} castShadow>
+              <boxGeometry args={[len, WALL_H, t]} />
+              <meshStandardMaterial {...mat} />
+            </mesh>
+          );
+        }
+      })}
     </group>
   );
 }

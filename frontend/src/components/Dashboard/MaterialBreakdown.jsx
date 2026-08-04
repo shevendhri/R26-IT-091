@@ -2,11 +2,7 @@ import React from 'react';
 import EngineeringCard from '@/components/Dashboard/EngineeringCard';
 
 /**
- * MaterialBreakdown – Displays recommended material specifications inside structured cards.
- * Labeled explicitly as "3. AI Recommendation Explanation" to align with data traceability profiles.
- *
- * Data Traceability:
- *   Material Breakdown  → data.recommended_package
+ * MaterialBreakdown – Renders the primary recommended material package specification cards.
  */
 export default function MaterialBreakdown({ data }) {
   if (!data) return null;
@@ -16,23 +12,29 @@ export default function MaterialBreakdown({ data }) {
 
   if (categories.length === 0) {
     return (
-      <section className="glass-card">
-        <div className="section-header">
-          <span className="section-dot eco"></span>
-          <h2>3. AI Recommendation Explanation</h2>
-        </div>
-        <p style={{ color: 'var(--text-dim)' }}>No material data available.</p>
+      <section style={{ padding: '1rem', color: '#64748b' }}>
+        <p style={{ margin: 0, fontSize: '0.85rem' }}>No material specification data available.</p>
       </section>
     );
   }
 
   return (
-    <section className="glass-card">
-      <div className="section-header">
-        <span className="section-dot eco"></span>
-        <h2>3. AI Recommendation Explanation</h2>
+    <section style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.75rem', borderBottom: '1px solid #1e293b', paddingBottom: '0.75rem' }}>
+        <div>
+          <h2 style={{ fontSize: '1.2rem', fontWeight: 600, color: '#f8fafc', margin: 0, fontFamily: 'Space Grotesk' }}>
+            Primary Recommended Material Package
+          </h2>
+          <p style={{ fontSize: '0.78rem', color: '#94a3b8', margin: '0.2rem 0 0 0' }}>
+            Engineered specifications selected by the Hybrid Recommendation Engine for Sri Lankan climate and SLS compliance.
+          </p>
+        </div>
+        <span className="telemetry-badge telemetry-badge-success">
+          Rank #1 Specification Package
+        </span>
       </div>
-      <div className="card-grid">
+
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(360px, 1fr))', gap: '1.25rem' }}>
         {categories.map((cat) => {
           const entry = pkg[cat];
           if (!entry) return null;

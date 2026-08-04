@@ -392,10 +392,10 @@ function Model3DPage() {
             {/* Design Insights */}
             <div className="viewer-side-sep">
               <div className="viewer-side-label">DESIGN INSIGHTS</div>
-              <div style={{ display:'flex', flexDirection:'column', gap:'0.55rem' }}>
+              <div style={{ display:'flex', flexDirection:'column', gap:'0.5rem' }}>
                 {insights.map((insight, idx) => (
                   <div key={idx} className="viewer-insight-row">
-                    <span>💡</span>
+                    <span style={{ flexShrink:0, fontSize:'0.8rem' }}>💡</span>
                     <span>{insight}</span>
                   </div>
                 ))}
@@ -405,14 +405,14 @@ function Model3DPage() {
             {/* Active Materials */}
             <div>
               <div className="viewer-side-label">ACTIVE MATERIALS</div>
-              <div style={{ display:'flex', flexDirection:'column', gap:'0.4rem' }}>
+              <div style={{ display:'flex', flexDirection:'column', gap:'0.38rem' }}>
                 {Object.entries(resolvedSelections).map(([comp, val], idx) => {
                   const label = comp === 'Walls' ? 'Walling' : comp;
                   const item  = pkg?.[keyMap[comp]] || {};
                   return (
                     <div key={idx} className="viewer-mat-row">
-                      <span style={{ color:'#8892b0' }}>{label}:</span>
-                      <span style={{ fontWeight:800, color:'#fff', maxWidth:'150px', overflow:'hidden', textOverflow:'ellipsis', whiteSpace:'nowrap' }}>
+                      <span style={{ color:'#4f6880', fontFamily:'Inter,sans-serif', fontSize:'0.7rem' }}>{label}</span>
+                      <span style={{ fontWeight:800, color:'#e2e8f0', maxWidth:'145px', overflow:'hidden', textOverflow:'ellipsis', whiteSpace:'nowrap', fontSize:'0.73rem', letterSpacing:'-0.01em' }}>
                         {item.name || `Material #${val}`}
                       </span>
                     </div>
@@ -428,20 +428,18 @@ function Model3DPage() {
         {/* end viewerGrid */}
 
         {/* ── Material Highlight Cards ── */}
-        <div style={{ marginBottom:'0.5rem', fontSize:'0.62rem', fontWeight:900, color:'#8892b0', letterSpacing:'2px', textTransform:'uppercase' }}>
-          Recommended Material Highlights
-        </div>
+        <div className="viewer-section-label">Recommended Material Highlights</div>
         <div className="viewer-highlight-grid">
           {highlightCategories.map((cat, idx) => {
             const matObj  = pkg?.[cat.key] || {};
             const matName = matObj.name || cat.defaultMat;
             return (
               <div key={idx} className="viewer-highlight-card">
-                <div style={{ fontSize:'1.6rem', marginBottom:'0.5rem' }}>{cat.icon}</div>
-                <div style={{ fontSize:'0.58rem', fontWeight:800, color:'#8892b0', textTransform:'uppercase', letterSpacing:'1.5px', marginBottom:'0.35rem' }}>
+                <div style={{ fontSize:'1.75rem', marginBottom:'0.6rem', lineHeight:1 }}>{cat.icon}</div>
+                <div style={{ fontSize:'0.54rem', fontWeight:900, color:'#4f6880', textTransform:'uppercase', letterSpacing:'1.8px', marginBottom:'0.4rem', fontFamily:'Inter,sans-serif' }}>
                   {cat.label}
                 </div>
-                <div style={{ fontSize:'0.8rem', fontWeight:800, color:'#e2e8f0', overflow:'hidden', textOverflow:'ellipsis', whiteSpace:'nowrap' }}>
+                <div style={{ fontSize:'0.78rem', fontWeight:800, color:'#d4e4f7', overflow:'hidden', textOverflow:'ellipsis', whiteSpace:'nowrap', letterSpacing:'-0.01em', lineHeight:1.3 }}>
                   {matName}
                 </div>
               </div>

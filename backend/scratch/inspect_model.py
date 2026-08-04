@@ -1,6 +1,6 @@
 import sys
 import os
-import pickle
+import joblib
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
@@ -10,8 +10,7 @@ print("=" * 70)
 print("LOADING MODEL")
 print("=" * 70)
 
-with open(MODEL_PATH, "rb") as f:
-    model_data = pickle.load(f)
+model_data = joblib.load(MODEL_PATH)
 
 if isinstance(model_data, dict):
     print(f"model_data keys: {list(model_data.keys())}")

@@ -1,5 +1,6 @@
 import os
 import pickle
+import joblib
 import math
 import time
 import logging
@@ -34,13 +35,12 @@ class MaterialSpecificationEngine:
         model_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "ml", "greenconstruct_model.pkl")
         if os.path.exists(model_path):
             try:
-                with open(model_path, "rb") as f:
-                    data = pickle.load(f)
-                    if isinstance(data, dict) and "model" in data:
-                        self.model = data["model"]
-                        self.model_loaded = True
-                        logger.info("[OK] MaterialSpecificationEngine loaded ML model.")
-                        logger.debug(f"Model details: {self.model}")
+                data = joblib.load(model_path)
+                if isinstance(data, dict) and "model" in data:
+                    self.model = data["model"]
+                    self.model_loaded = True
+                    logger.info("[OK] MaterialSpecificationEngine loaded ML model.")
+                    logger.debug(f"Model details: {self.model}")
             except Exception as e:
                 print(f"[Error] Failed to load ML model in engine: {e}")
 

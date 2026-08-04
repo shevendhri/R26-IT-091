@@ -1,13 +1,9 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import GlassCard from '@/components/ui/GlassCard';
 
 /**
- * BlueprintPanel – Displays the generated blueprint data summary,
- * offers a button to launch the interactive 3D model visualizer,
- * and renders a dynamic, live 2D SVG floorplan representation based
- * on actual backend floors/rooms coordinates.
+ * BlueprintPanel – Technical documentation style presentation of geometry parameters, floorplan schematic, and payload viewer.
  */
 export default function BlueprintPanel({ data }) {
   const [mounted, setMounted] = useState(false);
@@ -22,11 +18,17 @@ export default function BlueprintPanel({ data }) {
 
   if (!data?.blueprint) {
     return (
-      <GlassCard className="dashboard-section blueprint-panel">
-        <h3 style={{ marginBottom: '1rem', color: 'var(--text-primary)' }}>Blueprint & 3D Visualization</h3>
-        <p style={{ color: 'var(--text-dim)' }}>No blueprint data available. Please generate the blueprint first.</p>
-        <Link href="/materials/form" className="btn-premium" style={{ marginTop: '1rem', display: 'inline-block' }}>Go to Form</Link>
-      </GlassCard>
+      <div style={{
+        background: '#0f172a',
+        border: '1px solid #1e293b',
+        borderRadius: '8px',
+        padding: '1.25rem',
+        color: '#94a3b8'
+      }}>
+        <h3 style={{ marginBottom: '0.5rem', color: '#f8fafc', fontFamily: 'Space Grotesk' }}>Blueprint & Geometry Analysis</h3>
+        <p style={{ margin: 0, fontSize: '0.85rem' }}>No blueprint data available. Please run the plan analyzer first.</p>
+        <Link href="/plan-analyzer" className="btn-secondary" style={{ marginTop: '1rem', display: 'inline-block', textDecoration: 'none' }}>Launch Plan Analyzer</Link>
+      </div>
     );
   }
 
@@ -36,7 +38,6 @@ export default function BlueprintPanel({ data }) {
   const totalArea = bp.total_area || 'N/A';
   const footprint = bp.footprint ? `${bp.footprint.w}m × ${bp.footprint.h}m` : 'N/A';
 
-  // Prefer blueprint_analysis from backend if available, else compute fallback
   const bpa = data.blueprint_analysis || {};
   const footprintArea = totalArea / Math.max(numFloors, 1);
   const perim = 4 * Math.sqrt(footprintArea);
@@ -53,24 +54,23 @@ export default function BlueprintPanel({ data }) {
   const openRatio = bpa.opening_ratio ?? Math.round((winArea + doorArea) / grossWall * 100 * 10) / 10;
 
   const geometryMetrics = [
-    { label: 'Total Wall Area', val: `${grossWall} m²`, color: '#00ff9d' },
-    { label: 'Roof Area', val: `${roofArea} m²`, color: '#0ea5e9' },
-    { label: 'Floor Area', val: `${totalArea} m²`, color: '#a78bfa' },
-    { label: 'Est. Window Area', val: `${winArea} m²`, color: '#06b6d4' },
-    { label: 'Est. Door Area', val: `${doorArea} m²`, color: '#fbbf24' },
-    { label: 'Foundation Volume', val: `${foundVol} m³`, color: '#f97316' },
-    { label: 'Concrete Volume', val: `${concVol} m³`, color: '#34d399' },
-    { label: 'Structural Frame Area', val: `${frameArea} m²`, color: '#ec4899' },
-    { label: 'Building Height', val: `${buildHeight} m`, color: '#94a3b8' },
-    { label: 'Ext. Envelope Area', val: `${envelopeArea} m²`, color: '#4ade80' },
-    { label: 'Opening Ratio', val: `${openRatio}%`, color: '#fb923c' },
+    { label: 'Total Wall Area', val: `${grossWall} m²` },
+    { label: 'Roof Area', val: `${roofArea} m²` },
+    { label: 'Floor Area', val: `${totalArea} m²` },
+    { label: 'Est. Window Area', val: `${winArea} m²` },
+    { label: 'Est. Door Area', val: `${doorArea} m²` },
+    { label: 'Foundation Volume', val: `${foundVol} m³` },
+    { label: 'Concrete Volume', val: `${concVol} m³` },
+    { label: 'Structural Frame Area', val: `${frameArea} m²` },
+    { label: 'Building Height', val: `${buildHeight} m` },
+    { label: 'Ext. Envelope Area', val: `${envelopeArea} m²` },
+    { label: 'Opening Ratio', val: `${openRatio}%` },
   ];
 
   const floors = bp.floors_data || [];
   const currentFloor = floors[activeFloor];
   const rooms = currentFloor?.rooms || [];
 
-  // Determine bounds of the room layout to compute the SVG viewBox dynamically
   let minX = 0, minY = 0, maxX = 10, maxY = 10;
   if (rooms.length > 0) {
     minX = Math.min(...rooms.map(r => r.x || 0));
@@ -79,244 +79,237 @@ export default function BlueprintPanel({ data }) {
     maxY = Math.max(...rooms.map(r => (r.y || 0) + (r.h || 4)));
   }
   
-  // Add a padding border to the view
   const width = (maxX - minX) || 10;
   const height = (maxY - minY) || 10;
   const padding = 1;
   const viewBox = `${minX - padding} ${minY - padding} ${width + padding * 2} ${height + padding * 2}`;
 
   return (
-    <GlassCard className="dashboard-section blueprint-panel">
-      <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: '2rem', minHeight: '500px' }}>
+    <div style={{
+      background: '#0f172a',
+      border: '1px solid #1e293b',
+      borderRadius: '8px',
+      padding: '1.25rem',
+      display: 'flex',
+      flexDirection: 'column',
+      gap: '1.25rem'
+    }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.75rem', borderBottom: '1px solid #1e293b', paddingBottom: '0.75rem' }}>
+        <div>
+          <h3 style={{ fontSize: '1.1rem', fontWeight: 600, color: '#f8fafc', margin: 0, fontFamily: 'Space Grotesk' }}>
+            Blueprint Geometry & Floorplan Parameters
+          </h3>
+          <p style={{ fontSize: '0.78rem', color: '#94a3b8', margin: '0.2rem 0 0 0' }}>
+            11 Extracted structural dimensions and schematic spatial geometry layout.
+          </p>
+        </div>
+
+        <Link href="/materials/3d" className="btn-secondary" style={{ padding: '0.5rem 1rem', fontSize: '0.75rem', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
+          Launch Interactive 3D Model
+        </Link>
+      </div>
+
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '1.25rem' }}>
         
-        {/* Dynamic 2D SVG Schematic Floorplan */}
+        {/* 2D Floorplan Schematic */}
         <div style={{
-          background: '#040d0d',
-          border: '1px solid rgba(0, 255, 157, 0.15)',
-          borderRadius: '16px',
-          padding: '1.5rem',
+          background: '#090d16',
+          border: '1px solid #1e293b',
+          borderRadius: '6px',
+          padding: '1rem',
           display: 'flex',
           flexDirection: 'column',
-          gap: '1rem',
-          position: 'relative'
+          gap: '0.75rem'
         }}>
-          {/* Schematic Header & Tabs */}
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <span style={{ fontSize: '0.65rem', fontWeight: 900, color: 'var(--eco-glow)', letterSpacing: '2px', textTransform: 'uppercase' }}>
-              Automated Floor Plan Layout
+            <span style={{ fontSize: '0.65rem', color: '#38bdf8', fontWeight: 700, letterSpacing: '0.05em', textTransform: 'uppercase' }}>
+              Floor Plan Schematic
             </span>
             {floors.length > 1 && (
               <div style={{ display: 'flex', gap: '4px' }}>
-                {floors.map((_, idx) => (
+                {floors.map((fl, idx) => (
                   <button
                     key={idx}
                     onClick={() => setActiveFloor(idx)}
                     style={{
-                      background: activeFloor === idx ? 'var(--eco-glow)' : 'rgba(255,255,255,0.05)',
+                      background: activeFloor === idx ? '#38bdf8' : '#1e293b',
+                      color: activeFloor === idx ? '#090d16' : '#94a3b8',
                       border: 'none',
-                      color: activeFloor === idx ? '#000' : '#fff',
+                      padding: '2px 8px',
+                      borderRadius: '3px',
                       fontSize: '0.65rem',
-                      fontWeight: 800,
-                      padding: '4px 10px',
-                      borderRadius: '4px',
+                      fontWeight: 700,
                       cursor: 'pointer'
                     }}
                   >
-                    Level {idx + 1}
+                    L{idx + 1}
                   </button>
                 ))}
               </div>
             )}
           </div>
 
-          {/* SVG Floorplan View */}
-          <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '320px' }}>
-            {rooms.length === 0 ? (
-              <div style={{ color: 'var(--text-dim)', fontSize: '0.85rem' }}>No rooms defined for this floor level.</div>
-            ) : (
-              <svg 
-                viewBox={viewBox} 
-                style={{ 
-                  width: '100%', 
-                  height: '100%', 
-                  maxHeight: '360px',
-                  stroke: 'var(--eco-glow)', 
-                  strokeWidth: 0.08,
-                  fill: 'none'
-                }}
-              >
-                {/* Architectural Blueprint Grid Pattern */}
-                <defs>
-                  <pattern id="grid" width="1" height="1" patternUnits="userSpaceOnUse">
-                    <path d="M 1 0 L 0 0 0 1" fill="none" stroke="rgba(0, 255, 157, 0.04)" strokeWidth="0.05" />
-                  </pattern>
-                </defs>
-                <rect x={minX - padding} y={minY - padding} width={width + padding * 2} height={height + padding * 2} fill="url(#grid)" stroke="none" />
+          <div style={{ width: '100%', height: '280px', background: '#080c14', borderRadius: '4px', border: '1px solid #1e293b', position: 'relative', overflow: 'hidden' }}>
+            <svg viewBox={viewBox} style={{ width: '100%', height: '100%' }}>
+              <defs>
+                <pattern id="grid" width="1" height="1" patternUnits="userSpaceOnUse">
+                  <path d="M 1 0 L 0 0 0 1" fill="none" stroke="rgba(255, 255, 255, 0.03)" strokeWidth="0.05" />
+                </pattern>
+              </defs>
+              <rect x={minX - padding} y={minY - padding} width={width + padding * 2} height={height + padding * 2} fill="url(#grid)" />
 
-                {/* Rooms Render */}
-                {rooms.map((room, idx) => {
-                  const rx = room.x || 0;
-                  const ry = room.y || 0;
-                  const rw = room.w || 4;
-                  const rh = room.h || 4;
-                  const label = room.label || room.type || 'Room';
-                  const area = (rw * rh).toFixed(1);
+              {rooms.map((room, idx) => {
+                const rx = room.x || 0;
+                const ry = room.y || 0;
+                const rw = room.w || 4;
+                const rh = room.h || 4;
+                const label = room.label || room.name || `Room ${idx + 1}`;
+                const zone = (room.zone || room.type || '').toLowerCase();
 
-                  return (
-                    <g key={idx}>
-                      {/* Room boundaries */}
-                      <rect 
-                        x={rx} 
-                        y={ry} 
-                        width={rw} 
-                        height={rh} 
-                        fill="rgba(0, 255, 157, 0.02)" 
-                        stroke="var(--eco-glow)" 
-                        strokeWidth="0.08"
-                        style={{ transition: 'all 0.3s ease' }}
-                      />
-                      {/* Sub-hatching lines for structural feel */}
-                      <line x1={rx} y1={ry} x2={rx + 0.5} y2={ry + 0.5} stroke="rgba(0, 255, 157, 0.2)" strokeWidth="0.05" />
-                      <line x1={rx + rw} y1={ry + rh} x2={rx + rw - 0.5} y2={ry + rh - 0.5} stroke="rgba(0, 255, 157, 0.2)" strokeWidth="0.05" />
-                      
-                      {/* Labels */}
-                      <text 
-                        x={rx + rw / 2} 
-                        y={ry + rh / 2} 
-                        textAnchor="middle" 
-                        dominantBaseline="middle" 
-                        fill="#fff" 
-                        fontSize="0.32" 
-                        fontWeight="700"
-                        stroke="none"
-                        style={{ fontFamily: 'Space Grotesk' }}
-                      >
-                        {label}
-                      </text>
-                      <text 
-                        x={rx + rw / 2} 
-                        y={ry + rh / 2 + 0.4} 
-                        textAnchor="middle" 
-                        dominantBaseline="middle" 
-                        fill="var(--text-dim)" 
-                        fontSize="0.24" 
-                        fontWeight="500"
-                        stroke="none"
-                        style={{ fontFamily: 'Inter' }}
-                      >
-                        {area} m²
-                      </text>
-                    </g>
-                  );
-                })}
-              </svg>
-            )}
-          </div>
-        </div>
+                let strokeColor = '#38bdf8';
+                let fillColor = 'rgba(56, 189, 248, 0.06)';
 
-        {/* Right content info panel */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-          {/* Header Section */}
-          <div>
-            <h2 style={{ margin: 0, fontSize: '1.4rem', color: 'var(--text-primary)', fontFamily: 'Space Grotesk' }}>Blueprint Analysis</h2>
-            <p style={{ color: 'var(--text-dim)', fontSize: '0.85rem', marginTop: '0.25rem', lineHeight: 1.5 }}>
-              Generated layout topology and 2D floorplans mapped from parameters. Launch the visualizer to explore inside the 3D model.
-            </p>
-          </div>
+                if (zone.includes('private') || zone.includes('bedroom')) {
+                  strokeColor = '#34d399';
+                  fillColor = 'rgba(52, 211, 153, 0.08)';
+                } else if (zone.includes('service') || zone.includes('wet') || zone.includes('bath')) {
+                  strokeColor = '#f59e0b';
+                  fillColor = 'rgba(245, 158, 11, 0.08)';
+                } else if (zone.includes('utility')) {
+                  strokeColor = '#c084fc';
+                  fillColor = 'rgba(192, 132, 252, 0.08)';
+                } else if (zone.includes('circulation')) {
+                  strokeColor = '#a855f7';
+                  fillColor = 'rgba(168, 85, 247, 0.12)';
+                } else if (zone.includes('outdoor')) {
+                  strokeColor = '#10b981';
+                  fillColor = 'rgba(16, 185, 129, 0.08)';
+                }
 
-          <Link
-            href="/materials/3d"
-            className="btn-premium"
-            style={{
-              textDecoration: 'none',
-              textAlign: 'center',
-              display: 'block',
-              padding: '1.1rem'
-            }}
-          >
-            LAUNCH INTERACTIVE 3D VIEWER
-          </Link>
+                return (
+                  <g key={idx}>
+                    <rect
+                      x={rx}
+                      y={ry}
+                      width={rw}
+                      height={rh}
+                      fill={fillColor}
+                      stroke={strokeColor}
+                      strokeWidth="0.12"
+                      rx="0.1"
+                    />
+                    <text
+                      x={rx + rw / 2}
+                      y={ry + rh / 2}
+                      fill="#e2e8f0"
+                      fontSize="0.38"
+                      fontWeight="600"
+                      textAnchor="middle"
+                      dominantBaseline="middle"
+                    >
+                      {label}
+                    </text>
+                  </g>
+                );
+              })}
 
-          {/* Building Geometry Analysis Grid */}
-          <div style={{
-            background: 'var(--bg-light)',
-            border: '1px solid var(--card-border)',
-            borderRadius: '12px',
-            padding: '1.25rem'
-          }}>
-            <div style={{ fontSize: '0.6rem', fontWeight: 900, color: 'var(--eco-glow)', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
-              Building Geometry Analysis
-            </div>
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(2, 1fr)',
-              gap: '0.6rem'
-            }}>
-              {geometryMetrics.map((item, idx) => (
-                <div key={idx} style={{
-                  background: 'rgba(255,255,255,0.02)',
-                  border: `1px solid ${item.color}20`,
-                  borderRadius: '8px',
-                  padding: '0.5rem 0.65rem',
-                  position: 'relative',
-                  overflow: 'hidden'
-                }}>
-                  <div style={{
-                    position: 'absolute', top: 0, left: 0, bottom: 0, width: '2px',
-                    background: item.color, borderRadius: '8px 0 0 8px'
-                  }}/>
-                  <div style={{ paddingLeft: '0.35rem' }}>
-                    <div style={{ fontSize: '0.52rem', color: 'var(--text-dim)', fontWeight: 700, letterSpacing: '0.5px', textTransform: 'uppercase', marginBottom: '2px' }}>
-                      {item.label}
-                    </div>
-                    <div style={{ fontSize: '0.95rem', fontWeight: 900, color: item.color, fontFamily: 'Space Grotesk' }}>
-                      {item.val}
-                    </div>
-                  </div>
-                </div>
+              {/* Doors Overlay */}
+              {(bp.doors || []).map((door, idx) => (
+                <circle key={`door-${idx}`} cx={door.x} cy={door.y} r="0.25" fill="#f59e0b" stroke="#090d16" strokeWidth="0.05" />
               ))}
-            </div>
+
+              {/* Windows Overlay */}
+              {(bp.windows || []).map((win, idx) => (
+                <rect key={`win-${idx}`} x={win.x - (win.w || 1)/2} y={win.y - 0.1} width={win.w || 1} height="0.2" fill="#38bdf8" stroke="#090d16" strokeWidth="0.05" />
+              ))}
+            </svg>
           </div>
 
-          {/* Raw Blueprint JSON Data Toggle */}
-          <div style={{ borderTop: '1px solid var(--card-border)', paddingTop: '1rem' }}>
-            <button
-              onClick={() => setShowRaw(!showRaw)}
-              style={{
-                background: 'transparent',
-                border: 'none',
-                color: 'var(--accent-eco)',
-                cursor: 'pointer',
-                fontSize: '0.75rem',
-                fontWeight: 700,
-                padding: 0,
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '4px'
-              }}
-            >
-              {showRaw ? '▼ Hide Technical Blueprint Payload' : '▶ Show Technical Blueprint Payload'}
-            </button>
-
-            {showRaw && (
-              <pre style={{
-                color: 'var(--text-dim)',
-                fontSize: '0.8rem',
-                background: 'var(--bg-light)',
-                padding: '1rem',
-                borderRadius: '8px',
-                overflowX: 'auto',
-                marginTop: '1rem',
-                maxHeight: '200px',
-                border: '1px solid var(--card-border)'
-              }}>
-                {JSON.stringify(bp, null, 2)}
-              </pre>
-            )}
+          {/* Zone Legend */}
+          <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', fontSize: '0.62rem', color: '#94a3b8', paddingTop: '0.25rem' }}>
+            <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+              <span style={{ width: '8px', height: '8px', borderRadius: '2px', background: '#38bdf8' }} /> Public
+            </span>
+            <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+              <span style={{ width: '8px', height: '8px', borderRadius: '2px', background: '#34d399' }} /> Private
+            </span>
+            <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+              <span style={{ width: '8px', height: '8px', borderRadius: '2px', background: '#f59e0b' }} /> Service
+            </span>
+            <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+              <span style={{ width: '8px', height: '8px', borderRadius: '2px', background: '#c084fc' }} /> Utility
+            </span>
+            <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+              <span style={{ width: '8px', height: '8px', borderRadius: '2px', background: '#a855f7' }} /> Circulation
+            </span>
           </div>
         </div>
 
+        {/* 11 Geometric Parameters Grid */}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+          <div style={{ fontSize: '0.65rem', color: '#64748b', fontWeight: 700, letterSpacing: '0.05em', textTransform: 'uppercase' }}>
+            Extracted Geometry Parameters
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '0.5rem' }}>
+            {geometryMetrics.map((gm, i) => (
+              <div key={i} style={{
+                background: '#090d16',
+                border: '1px solid #1e293b',
+                borderRadius: '4px',
+                padding: '0.5rem 0.75rem'
+              }}>
+                <div style={{ fontSize: '0.62rem', color: '#64748b', textTransform: 'uppercase', marginBottom: '0.15rem' }}>
+                  {gm.label}
+                </div>
+                <div style={{ fontSize: '0.85rem', fontWeight: 600, color: '#f8fafc', fontFamily: 'Space Grotesk' }}>
+                  {gm.val}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
-    </GlassCard>
+
+      {/* Conceptual Disclaimer Banner */}
+      <div style={{ background: '#090d16', border: '1px solid #1e293b', borderRadius: '6px', padding: '0.65rem 0.85rem', fontSize: '0.72rem', color: '#64748b', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+        <span style={{ color: '#38bdf8', fontSize: '0.9rem' }}>ℹ</span>
+        <span>{bp.disclaimer || "GreenConstructAI Conceptual Planning Engine — Provides preliminary architectural spatial zoning, room program sizing, and environmental layout analysis."}</span>
+      </div>
+
+      {/* Collapsible Raw Blueprint Payload Viewer */}
+      <div style={{ borderTop: '1px solid #1e293b', paddingTop: '0.75rem' }}>
+        <button
+          onClick={() => setShowRaw(!showRaw)}
+          style={{
+            background: '#090d16',
+            border: '1px solid #1e293b',
+            color: '#94a3b8',
+            cursor: 'pointer',
+            fontSize: '0.72rem',
+            fontWeight: 600,
+            padding: '0.4rem 0.75rem',
+            borderRadius: '4px',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '0.4rem',
+            transition: 'background 0.2s'
+          }}
+        >
+          {showRaw ? 'Hide Raw Blueprint Payload' : 'View Technical Blueprint Payload JSON'}
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ transform: showRaw ? 'rotate(180deg)' : 'none', transition: 'transform 0.2s' }}>
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+
+        {showRaw && (
+          <div style={{ marginTop: '0.5rem', background: '#080c14', border: '1px solid #1e293b', borderRadius: '4px', padding: '0.75rem', overflowX: 'auto' }}>
+            <pre style={{ margin: 0, fontSize: '0.7rem', color: '#38bdf8', fontFamily: 'monospace' }}>
+              {JSON.stringify(bp, null, 2)}
+            </pre>
+          </div>
+        )}
+      </div>
+    </div>
   );
 }

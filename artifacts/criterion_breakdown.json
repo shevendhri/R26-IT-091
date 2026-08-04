@@ -2,2294 +2,3782 @@
   {
     "material": "Gr. 25 Standard Concrete Foundation",
     "criterion_breakdown": {
-      "structural": {
-        "score": 25.0,
-        "max": 25
+      "structural_safety": {
+        "score": 75.0,
+        "max": 25.0,
+        "contribution": 18.75,
+        "normalized_weight": 0.25,
+        "is_na": false
       },
-      "climate": {
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2,
+        "is_na": false
+      },
+      "climate_compatibility": {
         "score": 20.0,
-        "max": 20
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.15,
+        "is_na": false
       },
-      "durability": {
-        "score": 11.25,
-        "max": 15
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.15,
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1,
+        "is_na": false
       },
       "service_life": {
-        "score": 10.0,
-        "max": 10
-      },
-      "fire": {
-        "score": 5.0,
-        "max": 10
-      },
-      "thermal": {
-        "score": 4.0,
-        "max": 10
+        "score": 85.0,
+        "max": 5.0,
+        "contribution": 4.25,
+        "normalized_weight": 0.05,
+        "is_na": false
       },
       "maintenance": {
-        "score": 4.0,
-        "max": 5
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.05,
+        "is_na": false
       },
       "sustainability": {
-        "score": 2.75,
-        "max": 5
+        "score": 58.33,
+        "max": 5.0,
+        "contribution": 2.92,
+        "normalized_weight": 0.05,
+        "is_na": false
       }
     }
   },
   {
     "material": "Gr. 30 Marine-Grade Concrete Foundation",
     "criterion_breakdown": {
-      "structural": {
-        "score": 25.0,
-        "max": 25
+      "structural_safety": {
+        "score": 88.0,
+        "max": 25.0,
+        "contribution": 22.0,
+        "normalized_weight": 0.25,
+        "is_na": false
       },
-      "climate": {
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2,
+        "is_na": false
+      },
+      "climate_compatibility": {
         "score": 20.0,
-        "max": 20
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.15,
+        "is_na": false
       },
-      "durability": {
-        "score": 14.1,
-        "max": 15
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.15,
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1,
+        "is_na": false
       },
       "service_life": {
-        "score": 10.0,
-        "max": 10
-      },
-      "fire": {
-        "score": 5.0,
-        "max": 10
-      },
-      "thermal": {
-        "score": 4.5,
-        "max": 10
+        "score": 95.0,
+        "max": 5.0,
+        "contribution": 4.75,
+        "normalized_weight": 0.05,
+        "is_na": false
       },
       "maintenance": {
-        "score": 4.25,
-        "max": 5
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.05,
+        "is_na": false
       },
       "sustainability": {
-        "score": 2.4,
-        "max": 5
+        "score": 49.33,
+        "max": 5.0,
+        "contribution": 2.47,
+        "normalized_weight": 0.05,
+        "is_na": false
       }
     }
   },
   {
     "material": "Eco-Concrete Foundation (30% Recycled Aggregate)",
     "criterion_breakdown": {
-      "structural": {
-        "score": 25.0,
-        "max": 25
+      "structural_safety": {
+        "score": 72.0,
+        "max": 25.0,
+        "contribution": 18.0,
+        "normalized_weight": 0.25,
+        "is_na": false
       },
-      "climate": {
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2,
+        "is_na": false
+      },
+      "climate_compatibility": {
         "score": 20.0,
-        "max": 20
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.15,
+        "is_na": false
       },
-      "durability": {
-        "score": 11.03,
-        "max": 15
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.15,
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1,
+        "is_na": false
       },
       "service_life": {
-        "score": 10.0,
-        "max": 10
-      },
-      "fire": {
-        "score": 5.0,
-        "max": 10
-      },
-      "thermal": {
-        "score": 4.2,
-        "max": 10
+        "score": 85.0,
+        "max": 5.0,
+        "contribution": 4.25,
+        "normalized_weight": 0.05,
+        "is_na": false
       },
       "maintenance": {
-        "score": 4.0,
-        "max": 5
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.05,
+        "is_na": false
       },
       "sustainability": {
-        "score": 4.5,
-        "max": 5
+        "score": 88.33,
+        "max": 5.0,
+        "contribution": 4.42,
+        "normalized_weight": 0.05,
+        "is_na": false
       }
     }
   },
   {
     "material": "Raft Foundation Assembly (RC Heavy)",
     "criterion_breakdown": {
-      "structural": {
-        "score": 25.0,
-        "max": 25
+      "structural_safety": {
+        "score": 98.0,
+        "max": 25.0,
+        "contribution": 24.5,
+        "normalized_weight": 0.25,
+        "is_na": false
       },
-      "climate": {
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2,
+        "is_na": false
+      },
+      "climate_compatibility": {
         "score": 20.0,
-        "max": 20
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.15,
+        "is_na": false
       },
-      "durability": {
-        "score": 14.85,
-        "max": 15
+      "occupancy_requirements": {
+        "score": 20.0,
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.15,
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1,
+        "is_na": false
       },
       "service_life": {
-        "score": 10.0,
-        "max": 10
-      },
-      "fire": {
-        "score": 5.0,
-        "max": 10
-      },
-      "thermal": {
-        "score": 3.5,
-        "max": 10
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.05,
+        "is_na": false
       },
       "maintenance": {
-        "score": 4.4,
-        "max": 5
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.05,
+        "is_na": false
       },
       "sustainability": {
-        "score": 2.1,
-        "max": 5
+        "score": 45.67,
+        "max": 5.0,
+        "contribution": 2.28,
+        "normalized_weight": 0.05,
+        "is_na": false
       }
     }
   },
   {
     "material": "Lime-Pozzolan Natural Foundation",
     "criterion_breakdown": {
-      "structural": {
-        "score": 25.0,
-        "max": 25
+      "structural_safety": {
+        "score": 60.0,
+        "max": 25.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.25,
+        "is_na": false
       },
-      "climate": {
-        "score": 0.0,
-        "max": 20
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2,
+        "is_na": false
       },
-      "durability": {
-        "score": 12.0,
-        "max": 15
+      "climate_compatibility": {
+        "score": 20.0,
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.15,
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.15,
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1,
+        "is_na": false
       },
       "service_life": {
-        "score": 10.0,
-        "max": 10
-      },
-      "fire": {
-        "score": 5.0,
-        "max": 10
-      },
-      "thermal": {
-        "score": 5.0,
-        "max": 10
+        "score": 95.0,
+        "max": 5.0,
+        "contribution": 4.75,
+        "normalized_weight": 0.05,
+        "is_na": false
       },
       "maintenance": {
-        "score": 3.75,
-        "max": 5
+        "score": 90.0,
+        "max": 5.0,
+        "contribution": 4.5,
+        "normalized_weight": 0.05,
+        "is_na": false
       },
       "sustainability": {
-        "score": 4.6,
-        "max": 5
+        "score": 94.0,
+        "max": 5.0,
+        "contribution": 4.7,
+        "normalized_weight": 0.05,
+        "is_na": false
       }
     }
   },
   {
     "material": "Gr. 25 Standard Structural Concrete",
     "criterion_breakdown": {
-      "structural": {
-        "score": 20.0,
-        "max": 25
+      "structural_safety": {
+        "score": 80.0,
+        "max": 25.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.25,
+        "is_na": false
       },
-      "climate": {
-        "score": 20.0,
-        "max": 20
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2,
+        "is_na": false
       },
-      "durability": {
-        "score": 12.75,
-        "max": 15
+      "climate_compatibility": {
+        "score": 20.0,
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.15,
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.15,
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1,
+        "is_na": false
       },
       "service_life": {
-        "score": 10.0,
-        "max": 10
-      },
-      "fire": {
-        "score": 5.0,
-        "max": 10
-      },
-      "thermal": {
-        "score": 4.0,
-        "max": 10
+        "score": 85.0,
+        "max": 5.0,
+        "contribution": 4.25,
+        "normalized_weight": 0.05,
+        "is_na": false
       },
       "maintenance": {
-        "score": 3.75,
-        "max": 5
+        "score": 90.0,
+        "max": 5.0,
+        "contribution": 4.5,
+        "normalized_weight": 0.05,
+        "is_na": false
       },
       "sustainability": {
-        "score": 2.6,
-        "max": 5
+        "score": 57.33,
+        "max": 5.0,
+        "contribution": 2.87,
+        "normalized_weight": 0.05,
+        "is_na": false
       }
     }
   },
   {
     "material": "Gr. 30 Marine-Grade Concrete Mix",
     "criterion_breakdown": {
-      "structural": {
-        "score": 22.5,
-        "max": 25
+      "structural_safety": {
+        "score": 90.0,
+        "max": 25.0,
+        "contribution": 22.5,
+        "normalized_weight": 0.25,
+        "is_na": false
       },
-      "climate": {
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2,
+        "is_na": false
+      },
+      "climate_compatibility": {
         "score": 20.0,
-        "max": 20
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.15,
+        "is_na": false
       },
-      "durability": {
-        "score": 14.25,
-        "max": 15
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.15,
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1,
+        "is_na": false
       },
       "service_life": {
-        "score": 10.0,
-        "max": 10
-      },
-      "fire": {
-        "score": 5.0,
-        "max": 10
-      },
-      "thermal": {
-        "score": 4.5,
-        "max": 10
+        "score": 95.0,
+        "max": 5.0,
+        "contribution": 4.75,
+        "normalized_weight": 0.05,
+        "is_na": false
       },
       "maintenance": {
-        "score": 4.25,
-        "max": 5
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.05,
+        "is_na": false
       },
       "sustainability": {
-        "score": 2.3,
-        "max": 5
+        "score": 48.67,
+        "max": 5.0,
+        "contribution": 2.43,
+        "normalized_weight": 0.05,
+        "is_na": false
       }
     }
   },
   {
     "material": "Eco-Concrete (Recycled Aggregate + Fly-Ash)",
     "criterion_breakdown": {
-      "structural": {
-        "score": 18.75,
-        "max": 25
+      "structural_safety": {
+        "score": 75.0,
+        "max": 25.0,
+        "contribution": 18.75,
+        "normalized_weight": 0.25,
+        "is_na": false
       },
-      "climate": {
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2,
+        "is_na": false
+      },
+      "climate_compatibility": {
         "score": 20.0,
-        "max": 20
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.15,
+        "is_na": false
       },
-      "durability": {
-        "score": 11.25,
-        "max": 15
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.15,
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1,
+        "is_na": false
       },
       "service_life": {
-        "score": 10.0,
-        "max": 10
-      },
-      "fire": {
-        "score": 5.0,
-        "max": 10
-      },
-      "thermal": {
-        "score": 4.2,
-        "max": 10
+        "score": 85.0,
+        "max": 5.0,
+        "contribution": 4.25,
+        "normalized_weight": 0.05,
+        "is_na": false
       },
       "maintenance": {
-        "score": 3.9,
-        "max": 5
+        "score": 90.0,
+        "max": 5.0,
+        "contribution": 4.5,
+        "normalized_weight": 0.05,
+        "is_na": false
       },
       "sustainability": {
-        "score": 4.6,
-        "max": 5
+        "score": 90.0,
+        "max": 5.0,
+        "contribution": 4.5,
+        "normalized_weight": 0.05,
+        "is_na": false
       }
     }
   },
   {
     "material": "Self-Compacting Concrete (SCC)",
     "criterion_breakdown": {
-      "structural": {
-        "score": 21.25,
-        "max": 25
+      "structural_safety": {
+        "score": 85.0,
+        "max": 25.0,
+        "contribution": 21.25,
+        "normalized_weight": 0.25,
+        "is_na": false
       },
-      "climate": {
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2,
+        "is_na": false
+      },
+      "climate_compatibility": {
         "score": 20.0,
-        "max": 20
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.15,
+        "is_na": false
       },
-      "durability": {
-        "score": 13.69,
-        "max": 15
+      "occupancy_requirements": {
+        "score": 20.0,
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.15,
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1,
+        "is_na": false
       },
       "service_life": {
-        "score": 10.0,
-        "max": 10
-      },
-      "fire": {
-        "score": 5.0,
-        "max": 10
-      },
-      "thermal": {
-        "score": 4.5,
-        "max": 10
+        "score": 85.0,
+        "max": 5.0,
+        "contribution": 4.25,
+        "normalized_weight": 0.05,
+        "is_na": false
       },
       "maintenance": {
-        "score": 4.25,
-        "max": 5
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.05,
+        "is_na": false
       },
       "sustainability": {
-        "score": 2.5,
-        "max": 5
+        "score": 56.67,
+        "max": 5.0,
+        "contribution": 2.83,
+        "normalized_weight": 0.05,
+        "is_na": false
       }
     }
   },
   {
     "material": "Epoxy-Coated Rebar (ASTM A775)",
     "criterion_breakdown": {
-      "structural": {
-        "score": 25.0,
-        "max": 25
+      "structural_safety": {
+        "score": 98.0,
+        "max": 25.0,
+        "contribution": 24.5,
+        "normalized_weight": 0.25,
+        "is_na": false
       },
-      "climate": {
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2,
+        "is_na": false
+      },
+      "climate_compatibility": {
         "score": 20.0,
-        "max": 20
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.15,
+        "is_na": false
       },
-      "durability": {
-        "score": 14.85,
-        "max": 15
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.15,
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1,
+        "is_na": false
       },
       "service_life": {
-        "score": 10.0,
-        "max": 10
-      },
-      "fire": {
-        "score": 5.0,
-        "max": 10
-      },
-      "thermal": {
-        "score": 1.0,
-        "max": 10
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.05,
+        "is_na": false
       },
       "maintenance": {
-        "score": 4.6,
-        "max": 5
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.05,
+        "is_na": false
       },
       "sustainability": {
-        "score": 2.1,
-        "max": 5
+        "score": 44.0,
+        "max": 5.0,
+        "contribution": 2.2,
+        "normalized_weight": 0.05,
+        "is_na": false
       }
     }
   },
   {
     "material": "TMT High-Yield Rebar (SLS 375)",
     "criterion_breakdown": {
-      "structural": {
-        "score": 25.0,
-        "max": 25
+      "structural_safety": {
+        "score": 92.0,
+        "max": 25.0,
+        "contribution": 23.0,
+        "normalized_weight": 0.25,
+        "is_na": false
       },
-      "climate": {
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2,
+        "is_na": false
+      },
+      "climate_compatibility": {
         "score": 20.0,
-        "max": 20
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.15,
+        "is_na": false
       },
-      "durability": {
-        "score": 14.21,
-        "max": 15
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.15,
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1,
+        "is_na": false
       },
       "service_life": {
-        "score": 10.0,
-        "max": 10
-      },
-      "fire": {
-        "score": 5.0,
-        "max": 10
-      },
-      "thermal": {
-        "score": 1.0,
-        "max": 10
+        "score": 85.0,
+        "max": 5.0,
+        "contribution": 4.25,
+        "normalized_weight": 0.05,
+        "is_na": false
       },
       "maintenance": {
-        "score": 3.6,
-        "max": 5
+        "score": 90.0,
+        "max": 5.0,
+        "contribution": 4.5,
+        "normalized_weight": 0.05,
+        "is_na": false
       },
       "sustainability": {
-        "score": 2.75,
-        "max": 5
+        "score": 56.67,
+        "max": 5.0,
+        "contribution": 2.83,
+        "normalized_weight": 0.05,
+        "is_na": false
       }
     }
   },
   {
     "material": "Galvanized Steel Rebar (Hot-Dip)",
     "criterion_breakdown": {
-      "structural": {
-        "score": 25.0,
-        "max": 25
+      "structural_safety": {
+        "score": 90.0,
+        "max": 25.0,
+        "contribution": 22.5,
+        "normalized_weight": 0.25,
+        "is_na": false
       },
-      "climate": {
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2,
+        "is_na": false
+      },
+      "climate_compatibility": {
         "score": 20.0,
-        "max": 20
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.15,
+        "is_na": false
       },
-      "durability": {
-        "score": 14.25,
-        "max": 15
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.15,
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1,
+        "is_na": false
       },
       "service_life": {
-        "score": 10.0,
-        "max": 10
-      },
-      "fire": {
-        "score": 5.0,
-        "max": 10
-      },
-      "thermal": {
-        "score": 1.0,
-        "max": 10
+        "score": 95.0,
+        "max": 5.0,
+        "contribution": 4.75,
+        "normalized_weight": 0.05,
+        "is_na": false
       },
       "maintenance": {
-        "score": 4.25,
-        "max": 5
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.05,
+        "is_na": false
       },
       "sustainability": {
-        "score": 2.5,
-        "max": 5
+        "score": 55.0,
+        "max": 5.0,
+        "contribution": 2.75,
+        "normalized_weight": 0.05,
+        "is_na": false
       }
     }
   },
   {
     "material": "Stainless Steel Rebar (Grade 316L)",
     "criterion_breakdown": {
-      "structural": {
-        "score": 25.0,
-        "max": 25
+      "structural_safety": {
+        "score": 95.0,
+        "max": 25.0,
+        "contribution": 23.75,
+        "normalized_weight": 0.25,
+        "is_na": false
       },
-      "climate": {
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2,
+        "is_na": false
+      },
+      "climate_compatibility": {
         "score": 20.0,
-        "max": 20
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.15,
+        "is_na": false
       },
-      "durability": {
-        "score": 14.62,
-        "max": 15
+      "occupancy_requirements": {
+        "score": 20.0,
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.15,
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1,
+        "is_na": false
       },
       "service_life": {
-        "score": 10.0,
-        "max": 10
-      },
-      "fire": {
-        "score": 5.0,
-        "max": 10
-      },
-      "thermal": {
-        "score": 1.0,
-        "max": 10
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.05,
+        "is_na": false
       },
       "maintenance": {
-        "score": 4.75,
-        "max": 5
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.05,
+        "is_na": false
       },
       "sustainability": {
-        "score": 1.75,
-        "max": 5
+        "score": 55.0,
+        "max": 5.0,
+        "contribution": 2.75,
+        "normalized_weight": 0.05,
+        "is_na": false
       }
     }
   },
   {
     "material": "GFRP Rebar (Glass Fibre Reinforced Polymer)",
     "criterion_breakdown": {
-      "structural": {
-        "score": 25.0,
-        "max": 25
+      "structural_safety": {
+        "score": 80.0,
+        "max": 25.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.25,
+        "is_na": false
       },
-      "climate": {
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2,
+        "is_na": false
+      },
+      "climate_compatibility": {
         "score": 20.0,
-        "max": 20
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.15,
+        "is_na": false
       },
-      "durability": {
-        "score": 13.5,
-        "max": 15
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.15,
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1,
+        "is_na": false
       },
       "service_life": {
-        "score": 10.0,
-        "max": 10
-      },
-      "fire": {
-        "score": 5.0,
-        "max": 10
-      },
-      "thermal": {
-        "score": 1.0,
-        "max": 10
+        "score": 95.0,
+        "max": 5.0,
+        "contribution": 4.75,
+        "normalized_weight": 0.05,
+        "is_na": false
       },
       "maintenance": {
-        "score": 4.75,
-        "max": 5
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.05,
+        "is_na": false
       },
       "sustainability": {
-        "score": 4.0,
-        "max": 5
+        "score": 73.33,
+        "max": 5.0,
+        "contribution": 3.67,
+        "normalized_weight": 0.05,
+        "is_na": false
       }
     }
   },
   {
     "material": "Wire-Cut Clay Brick (Premium Grade)",
     "criterion_breakdown": {
-      "structural": {
-        "score": 17.0,
-        "max": 25
+      "structural_safety": {
+        "score": 68.0,
+        "max": 25.0,
+        "contribution": 17.0,
+        "normalized_weight": 0.25,
+        "is_na": false
       },
-      "climate": {
-        "score": 0.0,
-        "max": 20
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2,
+        "is_na": false
       },
-      "durability": {
-        "score": 12.6,
-        "max": 15
+      "climate_compatibility": {
+        "score": 20.0,
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.15,
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.15,
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1,
+        "is_na": false
       },
       "service_life": {
-        "score": 10.0,
-        "max": 10
-      },
-      "fire": {
-        "score": 5.0,
-        "max": 10
-      },
-      "thermal": {
-        "score": 8.8,
-        "max": 10
+        "score": 95.0,
+        "max": 5.0,
+        "contribution": 4.75,
+        "normalized_weight": 0.05,
+        "is_na": false
       },
       "maintenance": {
-        "score": 4.1,
-        "max": 5
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.05,
+        "is_na": false
       },
       "sustainability": {
-        "score": 4.25,
-        "max": 5
+        "score": 83.33,
+        "max": 5.0,
+        "contribution": 4.17,
+        "normalized_weight": 0.05,
+        "is_na": false
       }
     }
   },
   {
     "material": "AAC Eco-Block G4 (Autoclaved Aerated Concrete)",
     "criterion_breakdown": {
-      "structural": {
-        "score": 12.0,
-        "max": 25
+      "structural_safety": {
+        "score": 48.0,
+        "max": 25.0,
+        "contribution": 12.0,
+        "normalized_weight": 0.25,
+        "is_na": false
       },
-      "climate": {
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2,
+        "is_na": false
+      },
+      "climate_compatibility": {
         "score": 20.0,
-        "max": 20
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.15,
+        "is_na": false
       },
-      "durability": {
-        "score": 9.22,
-        "max": 15
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.15,
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1,
+        "is_na": false
       },
       "service_life": {
-        "score": 10.0,
-        "max": 10
-      },
-      "fire": {
-        "score": 5.0,
-        "max": 10
-      },
-      "thermal": {
-        "score": 9.8,
-        "max": 10
+        "score": 85.0,
+        "max": 5.0,
+        "contribution": 4.25,
+        "normalized_weight": 0.05,
+        "is_na": false
       },
       "maintenance": {
-        "score": 3.6,
-        "max": 5
+        "score": 90.0,
+        "max": 5.0,
+        "contribution": 4.5,
+        "normalized_weight": 0.05,
+        "is_na": false
       },
       "sustainability": {
-        "score": 4.4,
-        "max": 5
+        "score": 79.33,
+        "max": 5.0,
+        "contribution": 3.97,
+        "normalized_weight": 0.05,
+        "is_na": false
       }
     }
   },
   {
     "material": "High-Density Cement Block",
     "criterion_breakdown": {
-      "structural": {
-        "score": 14.5,
-        "max": 25
+      "structural_safety": {
+        "score": 58.0,
+        "max": 25.0,
+        "contribution": 14.5,
+        "normalized_weight": 0.25,
+        "is_na": false
       },
-      "climate": {
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2,
+        "is_na": false
+      },
+      "climate_compatibility": {
         "score": 20.0,
-        "max": 20
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.15,
+        "is_na": false
       },
-      "durability": {
-        "score": 8.85,
-        "max": 15
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.15,
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1,
+        "is_na": false
       },
       "service_life": {
-        "score": 8.0,
-        "max": 10
-      },
-      "fire": {
-        "score": 5.0,
-        "max": 10
-      },
-      "thermal": {
-        "score": 4.8,
-        "max": 10
+        "score": 70.0,
+        "max": 5.0,
+        "contribution": 3.5,
+        "normalized_weight": 0.05,
+        "is_na": false
       },
       "maintenance": {
-        "score": 2.6,
-        "max": 5
+        "score": 75.0,
+        "max": 5.0,
+        "contribution": 3.75,
+        "normalized_weight": 0.05,
+        "is_na": false
       },
       "sustainability": {
-        "score": 2.3,
-        "max": 5
+        "score": 55.33,
+        "max": 5.0,
+        "contribution": 2.77,
+        "normalized_weight": 0.05,
+        "is_na": false
       }
     }
   },
   {
     "material": "CSEB Compressed Stabilized Earth Block",
     "criterion_breakdown": {
-      "structural": {
-        "score": 15.5,
-        "max": 25
+      "structural_safety": {
+        "score": 62.0,
+        "max": 25.0,
+        "contribution": 15.5,
+        "normalized_weight": 0.25,
+        "is_na": false
       },
-      "climate": {
-        "score": 0.0,
-        "max": 20
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2,
+        "is_na": false
       },
-      "durability": {
-        "score": 11.4,
-        "max": 15
+      "climate_compatibility": {
+        "score": 20.0,
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.15,
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.15,
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1,
+        "is_na": false
       },
       "service_life": {
-        "score": 10.0,
-        "max": 10
-      },
-      "fire": {
-        "score": 5.0,
-        "max": 10
-      },
-      "thermal": {
-        "score": 9.2,
-        "max": 10
+        "score": 85.0,
+        "max": 5.0,
+        "contribution": 4.25,
+        "normalized_weight": 0.05,
+        "is_na": false
       },
       "maintenance": {
-        "score": 3.9,
-        "max": 5
+        "score": 90.0,
+        "max": 5.0,
+        "contribution": 4.5,
+        "normalized_weight": 0.05,
+        "is_na": false
       },
       "sustainability": {
-        "score": 4.9,
-        "max": 5
+        "score": 96.67,
+        "max": 5.0,
+        "contribution": 4.83,
+        "normalized_weight": 0.05,
+        "is_na": false
       }
     }
   },
   {
     "material": "Hollow Clay Block (Perforated)",
     "criterion_breakdown": {
-      "structural": {
-        "score": 13.75,
-        "max": 25
+      "structural_safety": {
+        "score": 55.0,
+        "max": 25.0,
+        "contribution": 13.75,
+        "normalized_weight": 0.25,
+        "is_na": false
       },
-      "climate": {
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2,
+        "is_na": false
+      },
+      "climate_compatibility": {
         "score": 20.0,
-        "max": 20
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.15,
+        "is_na": false
       },
-      "durability": {
-        "score": 11.44,
-        "max": 15
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.15,
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1,
+        "is_na": false
       },
       "service_life": {
-        "score": 10.0,
-        "max": 10
-      },
-      "fire": {
-        "score": 5.0,
-        "max": 10
-      },
-      "thermal": {
-        "score": 7.5,
-        "max": 10
+        "score": 85.0,
+        "max": 5.0,
+        "contribution": 4.25,
+        "normalized_weight": 0.05,
+        "is_na": false
       },
       "maintenance": {
-        "score": 4.0,
-        "max": 5
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.05,
+        "is_na": false
       },
       "sustainability": {
-        "score": 3.9,
-        "max": 5
+        "score": 79.33,
+        "max": 5.0,
+        "contribution": 3.97,
+        "normalized_weight": 0.05,
+        "is_na": false
       }
     }
   },
   {
     "material": "Fly-Ash Composite Block",
     "criterion_breakdown": {
-      "structural": {
-        "score": 15.0,
-        "max": 25
+      "structural_safety": {
+        "score": 60.0,
+        "max": 25.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.25,
+        "is_na": false
       },
-      "climate": {
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2,
+        "is_na": false
+      },
+      "climate_compatibility": {
         "score": 20.0,
-        "max": 20
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.15,
+        "is_na": false
       },
-      "durability": {
-        "score": 10.12,
-        "max": 15
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.15,
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1,
+        "is_na": false
       },
       "service_life": {
-        "score": 10.0,
-        "max": 10
-      },
-      "fire": {
-        "score": 5.0,
-        "max": 10
-      },
-      "thermal": {
-        "score": 5.5,
-        "max": 10
+        "score": 85.0,
+        "max": 5.0,
+        "contribution": 4.25,
+        "normalized_weight": 0.05,
+        "is_na": false
       },
       "maintenance": {
-        "score": 3.75,
-        "max": 5
+        "score": 90.0,
+        "max": 5.0,
+        "contribution": 4.5,
+        "normalized_weight": 0.05,
+        "is_na": false
       },
       "sustainability": {
-        "score": 4.0,
-        "max": 5
+        "score": 83.33,
+        "max": 5.0,
+        "contribution": 4.17,
+        "normalized_weight": 0.05,
+        "is_na": false
       }
     }
   },
   {
     "material": "Marine-Grade Aluminium Roofing (0.55mm)",
     "criterion_breakdown": {
-      "structural": {
-        "score": 3.75,
-        "max": 25
+      "structural_safety": {
+        "score": 0.0,
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "is_na": true
       },
-      "climate": {
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "is_na": false
+      },
+      "climate_compatibility": {
         "score": 20.0,
-        "max": 20
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.2,
+        "is_na": false
       },
-      "durability": {
-        "score": 6.19,
-        "max": 15
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "is_na": false
       },
       "service_life": {
-        "score": 9.0,
-        "max": 10
-      },
-      "fire": {
-        "score": 5.0,
-        "max": 10
-      },
-      "thermal": {
-        "score": 4.5,
-        "max": 10
+        "score": 70.0,
+        "max": 5.0,
+        "contribution": 3.5,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "maintenance": {
-        "score": 4.6,
-        "max": 5
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "sustainability": {
-        "score": 3.25,
-        "max": 5
+        "score": 73.33,
+        "max": 5.0,
+        "contribution": 3.67,
+        "normalized_weight": 0.0667,
+        "is_na": false
       }
     }
   },
   {
     "material": "Portuguese Clay Tile (Unglazed Terracotta)",
     "criterion_breakdown": {
-      "structural": {
-        "score": 2.5,
-        "max": 25
-      },
-      "climate": {
+      "structural_safety": {
         "score": 0.0,
-        "max": 20
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "is_na": true
       },
-      "durability": {
-        "score": 8.06,
-        "max": 15
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "is_na": false
+      },
+      "climate_compatibility": {
+        "score": 20.0,
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.2,
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "is_na": false
       },
       "service_life": {
-        "score": 10.0,
-        "max": 10
-      },
-      "fire": {
-        "score": 5.0,
-        "max": 10
-      },
-      "thermal": {
-        "score": 9.2,
-        "max": 10
+        "score": 85.0,
+        "max": 5.0,
+        "contribution": 4.25,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "maintenance": {
-        "score": 4.1,
-        "max": 5
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "sustainability": {
-        "score": 4.25,
-        "max": 5
+        "score": 85.67,
+        "max": 5.0,
+        "contribution": 4.28,
+        "normalized_weight": 0.0667,
+        "is_na": false
       }
     }
   },
   {
     "material": "Insulated Sandwich Roof Panel (PU Core)",
     "criterion_breakdown": {
-      "structural": {
-        "score": 5.0,
-        "max": 25
+      "structural_safety": {
+        "score": 0.0,
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "is_na": true
       },
-      "climate": {
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "is_na": false
+      },
+      "climate_compatibility": {
         "score": 20.0,
-        "max": 20
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.2,
+        "is_na": false
       },
-      "durability": {
-        "score": 5.44,
-        "max": 15
+      "occupancy_requirements": {
+        "score": 40.0,
+        "max": 15.0,
+        "contribution": 6.0,
+        "normalized_weight": 0.2,
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "is_na": false
       },
       "service_life": {
-        "score": 7.0,
-        "max": 10
-      },
-      "fire": {
-        "score": 5.0,
-        "max": 10
-      },
-      "thermal": {
-        "score": 9.5,
-        "max": 10
+        "score": 70.0,
+        "max": 5.0,
+        "contribution": 3.5,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "maintenance": {
-        "score": 3.9,
-        "max": 5
+        "score": 90.0,
+        "max": 5.0,
+        "contribution": 4.5,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "sustainability": {
-        "score": 2.6,
-        "max": 5
+        "score": 57.33,
+        "max": 5.0,
+        "contribution": 2.87,
+        "normalized_weight": 0.0667,
+        "is_na": false
       }
     }
   },
   {
     "material": "Standard Cement Tile (Concrete Interlocking)",
     "criterion_breakdown": {
-      "structural": {
-        "score": 2.5,
-        "max": 25
-      },
-      "climate": {
+      "structural_safety": {
         "score": 0.0,
-        "max": 20
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "is_na": true
       },
-      "durability": {
-        "score": 5.25,
-        "max": 15
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "is_na": false
+      },
+      "climate_compatibility": {
+        "score": 20.0,
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.2,
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "is_na": false
       },
       "service_life": {
-        "score": 8.0,
-        "max": 10
-      },
-      "fire": {
-        "score": 5.0,
-        "max": 10
-      },
-      "thermal": {
-        "score": 5.5,
-        "max": 10
+        "score": 70.0,
+        "max": 5.0,
+        "contribution": 3.5,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "maintenance": {
-        "score": 3.4,
-        "max": 5
+        "score": 90.0,
+        "max": 5.0,
+        "contribution": 4.5,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "sustainability": {
-        "score": 2.1,
-        "max": 5
+        "score": 53.33,
+        "max": 5.0,
+        "contribution": 2.67,
+        "normalized_weight": 0.0667,
+        "is_na": false
       }
     }
   },
   {
     "material": "Zinc-Aluminium Corrugated Sheet (55% Al-Zn)",
     "criterion_breakdown": {
-      "structural": {
-        "score": 3.0,
-        "max": 25
+      "structural_safety": {
+        "score": 0.0,
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "is_na": true
       },
-      "climate": {
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "is_na": false
+      },
+      "climate_compatibility": {
         "score": 20.0,
-        "max": 20
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.2,
+        "is_na": false
       },
-      "durability": {
-        "score": 6.53,
-        "max": 15
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "is_na": false
       },
       "service_life": {
-        "score": 10.0,
-        "max": 10
-      },
-      "fire": {
-        "score": 5.0,
-        "max": 10
-      },
-      "thermal": {
-        "score": 4.2,
-        "max": 10
+        "score": 85.0,
+        "max": 5.0,
+        "contribution": 4.25,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "maintenance": {
-        "score": 4.5,
-        "max": 5
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "sustainability": {
-        "score": 3.0,
-        "max": 5
+        "score": 66.67,
+        "max": 5.0,
+        "contribution": 3.33,
+        "normalized_weight": 0.0667,
+        "is_na": false
       }
     }
   },
   {
     "material": "Green Intensive Roof System (Growing Medium)",
     "criterion_breakdown": {
-      "structural": {
-        "score": 3.75,
-        "max": 25
+      "structural_safety": {
+        "score": 0.0,
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "is_na": true
       },
-      "climate": {
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "is_na": false
+      },
+      "climate_compatibility": {
         "score": 20.0,
-        "max": 20
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.2,
+        "is_na": false
       },
-      "durability": {
-        "score": 6.75,
-        "max": 15
+      "occupancy_requirements": {
+        "score": 20.0,
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.2,
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "is_na": false
       },
       "service_life": {
-        "score": 10.0,
-        "max": 10
-      },
-      "fire": {
-        "score": 5.0,
-        "max": 10
-      },
-      "thermal": {
-        "score": 9.8,
-        "max": 10
+        "score": 85.0,
+        "max": 5.0,
+        "contribution": 4.25,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "maintenance": {
-        "score": 3.6,
-        "max": 5
+        "score": 90.0,
+        "max": 5.0,
+        "contribution": 4.5,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "sustainability": {
-        "score": 4.9,
-        "max": 5
+        "score": 97.67,
+        "max": 5.0,
+        "contribution": 4.88,
+        "normalized_weight": 0.0667,
+        "is_na": false
       }
     }
   },
   {
     "material": "Polycarbonate Translucent Roofing",
     "criterion_breakdown": {
-      "structural": {
-        "score": 2.0,
-        "max": 25
+      "structural_safety": {
+        "score": 0.0,
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "is_na": true
       },
-      "climate": {
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "is_na": false
+      },
+      "climate_compatibility": {
         "score": 20.0,
-        "max": 20
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.2,
+        "is_na": false
       },
-      "durability": {
-        "score": 2.85,
-        "max": 15
+      "occupancy_requirements": {
+        "score": 40.0,
+        "max": 15.0,
+        "contribution": 6.0,
+        "normalized_weight": 0.2,
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "is_na": false
       },
       "service_life": {
-        "score": 4.0,
-        "max": 10
-      },
-      "fire": {
-        "score": 5.0,
-        "max": 10
-      },
-      "thermal": {
-        "score": 5.5,
-        "max": 10
+        "score": 55.0,
+        "max": 5.0,
+        "contribution": 2.75,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "maintenance": {
-        "score": 4.0,
-        "max": 5
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "sustainability": {
-        "score": 2.75,
-        "max": 5
+        "score": 60.0,
+        "max": 5.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.0667,
+        "is_na": false
       }
     }
   },
   {
     "material": "Recycled Rubber Flat Roof Membrane",
     "criterion_breakdown": {
-      "structural": {
-        "score": 2.0,
-        "max": 25
+      "structural_safety": {
+        "score": 0.0,
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "is_na": true
       },
-      "climate": {
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "is_na": false
+      },
+      "climate_compatibility": {
         "score": 20.0,
-        "max": 20
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.2,
+        "is_na": false
       },
-      "durability": {
-        "score": 4.54,
-        "max": 15
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "is_na": false
       },
       "service_life": {
-        "score": 7.0,
-        "max": 10
-      },
-      "fire": {
-        "score": 5.0,
-        "max": 10
-      },
-      "thermal": {
-        "score": 4.0,
-        "max": 10
+        "score": 70.0,
+        "max": 5.0,
+        "contribution": 3.5,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "maintenance": {
-        "score": 4.25,
-        "max": 5
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "sustainability": {
-        "score": 3.75,
-        "max": 5
+        "score": 83.33,
+        "max": 5.0,
+        "contribution": 4.17,
+        "normalized_weight": 0.0667,
+        "is_na": false
       }
     }
   },
   {
     "material": "uPVC Multi-Chamber Window System",
     "criterion_breakdown": {
-      "structural": {
-        "score": 3.75,
-        "max": 25
+      "structural_safety": {
+        "score": 0.0,
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "is_na": true
       },
-      "climate": {
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "is_na": false
+      },
+      "climate_compatibility": {
         "score": 20.0,
-        "max": 20
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.2,
+        "is_na": false
       },
-      "durability": {
-        "score": 6.19,
-        "max": 15
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "is_na": false
       },
       "service_life": {
-        "score": 9.0,
-        "max": 10
-      },
-      "fire": {
-        "score": 5.0,
-        "max": 10
-      },
-      "thermal": {
-        "score": 9.5,
-        "max": 10
+        "score": 70.0,
+        "max": 5.0,
+        "contribution": 3.5,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "maintenance": {
-        "score": 4.6,
-        "max": 5
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "sustainability": {
-        "score": 4.1,
-        "max": 5
+        "score": 71.33,
+        "max": 5.0,
+        "contribution": 3.57,
+        "normalized_weight": 0.0667,
+        "is_na": false
       }
     }
   },
   {
     "material": "Casement Aluminium Window (Powder-Coated)",
     "criterion_breakdown": {
-      "structural": {
-        "score": 3.75,
-        "max": 25
+      "structural_safety": {
+        "score": 0.0,
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "is_na": true
       },
-      "climate": {
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "is_na": false
+      },
+      "climate_compatibility": {
         "score": 20.0,
-        "max": 20
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.2,
+        "is_na": false
       },
-      "durability": {
-        "score": 5.62,
-        "max": 15
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "is_na": false
       },
       "service_life": {
-        "score": 8.0,
-        "max": 10
-      },
-      "fire": {
-        "score": 5.0,
-        "max": 10
-      },
-      "thermal": {
-        "score": 6.0,
-        "max": 10
+        "score": 70.0,
+        "max": 5.0,
+        "contribution": 3.5,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "maintenance": {
-        "score": 4.25,
-        "max": 5
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "sustainability": {
-        "score": 2.75,
-        "max": 5
+        "score": 61.67,
+        "max": 5.0,
+        "contribution": 3.08,
+        "normalized_weight": 0.0667,
+        "is_na": false
       }
     }
   },
   {
     "material": "Timber Louvre Window (Treated Hardwood)",
     "criterion_breakdown": {
-      "structural": {
-        "score": 2.5,
-        "max": 25
-      },
-      "climate": {
+      "structural_safety": {
         "score": 0.0,
-        "max": 20
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "is_na": true
       },
-      "durability": {
-        "score": 5.25,
-        "max": 15
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "is_na": false
+      },
+      "climate_compatibility": {
+        "score": 20.0,
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.2,
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "is_na": false
       },
       "service_life": {
-        "score": 8.0,
-        "max": 10
-      },
-      "fire": {
-        "score": 5.0,
-        "max": 10
-      },
-      "thermal": {
-        "score": 8.0,
-        "max": 10
+        "score": 70.0,
+        "max": 5.0,
+        "contribution": 3.5,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "maintenance": {
-        "score": 2.9,
-        "max": 5
+        "score": 75.0,
+        "max": 5.0,
+        "contribution": 3.75,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "sustainability": {
-        "score": 3.75,
-        "max": 5
+        "score": 78.33,
+        "max": 5.0,
+        "contribution": 3.92,
+        "normalized_weight": 0.0667,
+        "is_na": false
       }
     }
   },
   {
     "material": "Commercial Double-Glazed Unit (DGU Low-E)",
     "criterion_breakdown": {
-      "structural": {
-        "score": 5.0,
-        "max": 25
+      "structural_safety": {
+        "score": 0.0,
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "is_na": true
       },
-      "climate": {
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "is_na": false
+      },
+      "climate_compatibility": {
         "score": 20.0,
-        "max": 20
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.2,
+        "is_na": false
       },
-      "durability": {
-        "score": 6.0,
-        "max": 15
+      "occupancy_requirements": {
+        "score": 20.0,
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.2,
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "is_na": false
       },
       "service_life": {
-        "score": 8.0,
-        "max": 10
-      },
-      "fire": {
-        "score": 5.0,
-        "max": 10
-      },
-      "thermal": {
-        "score": 9.2,
-        "max": 10
+        "score": 70.0,
+        "max": 5.0,
+        "contribution": 3.5,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "maintenance": {
-        "score": 4.1,
-        "max": 5
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "sustainability": {
-        "score": 3.6,
-        "max": 5
+        "score": 63.33,
+        "max": 5.0,
+        "contribution": 3.17,
+        "normalized_weight": 0.0667,
+        "is_na": false
       }
     }
   },
   {
     "material": "Fixed Aluminium Framed Glass Panel",
     "criterion_breakdown": {
-      "structural": {
-        "score": 2.5,
-        "max": 25
+      "structural_safety": {
+        "score": 0.0,
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "is_na": true
       },
-      "climate": {
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "is_na": false
+      },
+      "climate_compatibility": {
         "score": 20.0,
-        "max": 20
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.2,
+        "is_na": false
       },
-      "durability": {
-        "score": 4.69,
-        "max": 15
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "is_na": false
       },
       "service_life": {
-        "score": 7.0,
-        "max": 10
-      },
-      "fire": {
-        "score": 5.0,
-        "max": 10
-      },
-      "thermal": {
-        "score": 5.5,
-        "max": 10
+        "score": 70.0,
+        "max": 5.0,
+        "contribution": 3.5,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "maintenance": {
-        "score": 4.5,
-        "max": 5
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "sustainability": {
-        "score": 2.5,
-        "max": 5
+        "score": 58.33,
+        "max": 5.0,
+        "contribution": 2.92,
+        "normalized_weight": 0.0667,
+        "is_na": false
       }
     }
   },
   {
     "material": "Sliding Aluminium Window (Impact-Resistant)",
     "criterion_breakdown": {
-      "structural": {
-        "score": 3.0,
-        "max": 25
+      "structural_safety": {
+        "score": 0.0,
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "is_na": true
       },
-      "climate": {
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "is_na": false
+      },
+      "climate_compatibility": {
         "score": 20.0,
-        "max": 20
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.2,
+        "is_na": false
       },
-      "durability": {
-        "score": 5.17,
-        "max": 15
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "is_na": false
       },
       "service_life": {
-        "score": 7.6,
-        "max": 10
-      },
-      "fire": {
-        "score": 5.0,
-        "max": 10
-      },
-      "thermal": {
-        "score": 6.5,
-        "max": 10
+        "score": 70.0,
+        "max": 5.0,
+        "contribution": 3.5,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "maintenance": {
-        "score": 4.4,
-        "max": 5
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "sustainability": {
-        "score": 2.6,
-        "max": 5
+        "score": 60.0,
+        "max": 5.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.0667,
+        "is_na": false
       }
     }
   },
   {
     "material": "Solid Teak Timber Door (Premium)",
     "criterion_breakdown": {
-      "structural": {
-        "score": 10.5,
-        "max": 25
+      "structural_safety": {
+        "score": 0.0,
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "is_na": true
       },
-      "climate": {
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "is_na": false
+      },
+      "climate_compatibility": {
         "score": 20.0,
-        "max": 20
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.2,
+        "is_na": false
       },
-      "durability": {
-        "score": 10.65,
-        "max": 15
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "is_na": false
       },
       "service_life": {
-        "score": 10.0,
-        "max": 10
-      },
-      "fire": {
-        "score": 5.0,
-        "max": 10
-      },
-      "thermal": {
-        "score": 4.8,
-        "max": 10
+        "score": 95.0,
+        "max": 5.0,
+        "contribution": 4.75,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "maintenance": {
-        "score": 2.9,
-        "max": 5
+        "score": 75.0,
+        "max": 5.0,
+        "contribution": 3.75,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "sustainability": {
-        "score": 3.75,
-        "max": 5
+        "score": 76.67,
+        "max": 5.0,
+        "contribution": 3.83,
+        "normalized_weight": 0.0667,
+        "is_na": false
       }
     }
   },
   {
     "material": "Aluminium Profile Glass Door (Heavy-Duty)",
     "criterion_breakdown": {
-      "structural": {
-        "score": 12.0,
-        "max": 25
+      "structural_safety": {
+        "score": 0.0,
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "is_na": true
       },
-      "climate": {
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "is_na": false
+      },
+      "climate_compatibility": {
         "score": 20.0,
-        "max": 20
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.2,
+        "is_na": false
       },
-      "durability": {
-        "score": 9.22,
-        "max": 15
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "is_na": false
       },
       "service_life": {
-        "score": 10.0,
-        "max": 10
-      },
-      "fire": {
-        "score": 5.0,
-        "max": 10
-      },
-      "thermal": {
-        "score": 5.2,
-        "max": 10
+        "score": 85.0,
+        "max": 5.0,
+        "contribution": 4.25,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "maintenance": {
-        "score": 3.9,
-        "max": 5
+        "score": 90.0,
+        "max": 5.0,
+        "contribution": 4.5,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "sustainability": {
-        "score": 2.6,
-        "max": 5
+        "score": 61.33,
+        "max": 5.0,
+        "contribution": 3.07,
+        "normalized_weight": 0.0667,
+        "is_na": false
       }
     }
   },
   {
     "material": "FRP Fiberglass Reinforced Door",
     "criterion_breakdown": {
-      "structural": {
-        "score": 10.5,
-        "max": 25
+      "structural_safety": {
+        "score": 0.0,
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "is_na": true
       },
-      "climate": {
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "is_na": false
+      },
+      "climate_compatibility": {
         "score": 20.0,
-        "max": 20
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.2,
+        "is_na": false
       },
-      "durability": {
-        "score": 9.9,
-        "max": 15
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "is_na": false
       },
       "service_life": {
-        "score": 10.0,
-        "max": 10
-      },
-      "fire": {
-        "score": 5.0,
-        "max": 10
-      },
-      "thermal": {
-        "score": 4.2,
-        "max": 10
+        "score": 85.0,
+        "max": 5.0,
+        "contribution": 4.25,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "maintenance": {
-        "score": 4.4,
-        "max": 5
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "sustainability": {
-        "score": 3.25,
-        "max": 5
+        "score": 66.67,
+        "max": 5.0,
+        "contribution": 3.33,
+        "normalized_weight": 0.0667,
+        "is_na": false
       }
     }
   },
   {
     "material": "Standard Hollow-Core Flush Door (HDF Faced)",
     "criterion_breakdown": {
-      "structural": {
-        "score": 7.0,
-        "max": 25
+      "structural_safety": {
+        "score": 0.0,
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "is_na": true
       },
-      "climate": {
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "is_na": false
+      },
+      "climate_compatibility": {
         "score": 20.0,
-        "max": 20
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.2,
+        "is_na": false
       },
-      "durability": {
-        "score": 4.35,
-        "max": 15
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "is_na": false
       },
       "service_life": {
-        "score": 4.0,
-        "max": 10
-      },
-      "fire": {
-        "score": 5.0,
-        "max": 10
-      },
-      "thermal": {
-        "score": 3.2,
-        "max": 10
+        "score": 55.0,
+        "max": 5.0,
+        "contribution": 2.75,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "maintenance": {
-        "score": 2.6,
-        "max": 5
+        "score": 75.0,
+        "max": 5.0,
+        "contribution": 3.75,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "sustainability": {
-        "score": 2.1,
-        "max": 5
+        "score": 50.67,
+        "max": 5.0,
+        "contribution": 2.53,
+        "normalized_weight": 0.0667,
+        "is_na": false
       }
     }
   },
   {
     "material": "Steel Security Door (Powder-Coated)",
     "criterion_breakdown": {
-      "structural": {
-        "score": 21.25,
-        "max": 25
+      "structural_safety": {
+        "score": 0.0,
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "is_na": true
       },
-      "climate": {
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "is_na": false
+      },
+      "climate_compatibility": {
         "score": 20.0,
-        "max": 20
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.2,
+        "is_na": false
       },
-      "durability": {
-        "score": 10.88,
-        "max": 15
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "is_na": false
       },
       "service_life": {
-        "score": 8.0,
-        "max": 10
-      },
-      "fire": {
-        "score": 5.0,
-        "max": 10
-      },
-      "thermal": {
-        "score": 3.5,
-        "max": 10
+        "score": 70.0,
+        "max": 5.0,
+        "contribution": 3.5,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "maintenance": {
-        "score": 3.75,
-        "max": 5
+        "score": 90.0,
+        "max": 5.0,
+        "contribution": 4.5,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "sustainability": {
-        "score": 2.0,
-        "max": 5
+        "score": 48.33,
+        "max": 5.0,
+        "contribution": 2.42,
+        "normalized_weight": 0.0667,
+        "is_na": false
       }
     }
   },
   {
     "material": "Timber Louvre Door (Ventilated Hardwood)",
     "criterion_breakdown": {
-      "structural": {
-        "score": 7.5,
-        "max": 25
-      },
-      "climate": {
+      "structural_safety": {
         "score": 0.0,
-        "max": 20
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "is_na": true
       },
-      "durability": {
-        "score": 7.31,
-        "max": 15
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "is_na": false
+      },
+      "climate_compatibility": {
+        "score": 20.0,
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.2,
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "is_na": false
       },
       "service_life": {
-        "score": 9.0,
-        "max": 10
-      },
-      "fire": {
-        "score": 5.0,
-        "max": 10
-      },
-      "thermal": {
-        "score": 7.5,
-        "max": 10
+        "score": 70.0,
+        "max": 5.0,
+        "contribution": 3.5,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "maintenance": {
-        "score": 3.1,
-        "max": 5
+        "score": 90.0,
+        "max": 5.0,
+        "contribution": 4.5,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "sustainability": {
-        "score": 3.6,
-        "max": 5
+        "score": 76.67,
+        "max": 5.0,
+        "contribution": 3.83,
+        "normalized_weight": 0.0667,
+        "is_na": false
       }
     }
   },
   {
     "material": "UPVC Sliding Door (Weather-Sealed)",
     "criterion_breakdown": {
-      "structural": {
-        "score": 5.0,
-        "max": 25
+      "structural_safety": {
+        "score": 0.0,
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "is_na": true
       },
-      "climate": {
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "is_na": false
+      },
+      "climate_compatibility": {
         "score": 20.0,
-        "max": 20
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.2,
+        "is_na": false
       },
-      "durability": {
-        "score": 6.0,
-        "max": 15
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "is_na": false
       },
       "service_life": {
-        "score": 8.0,
-        "max": 10
-      },
-      "fire": {
-        "score": 5.0,
-        "max": 10
-      },
-      "thermal": {
-        "score": 8.8,
-        "max": 10
+        "score": 70.0,
+        "max": 5.0,
+        "contribution": 3.5,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "maintenance": {
-        "score": 4.5,
-        "max": 5
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "sustainability": {
-        "score": 4.0,
-        "max": 5
+        "score": 67.33,
+        "max": 5.0,
+        "contribution": 3.37,
+        "normalized_weight": 0.0667,
+        "is_na": false
       }
     }
   },
   {
     "material": "Polished Terrazzo Flooring (Marble Aggregate)",
     "criterion_breakdown": {
-      "structural": {
-        "score": 13.0,
-        "max": 25
+      "structural_safety": {
+        "score": 0.0,
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "is_na": true
       },
-      "climate": {
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "is_na": false
+      },
+      "climate_compatibility": {
         "score": 20.0,
-        "max": 20
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.2,
+        "is_na": false
       },
-      "durability": {
-        "score": 11.21,
-        "max": 15
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "is_na": false
       },
       "service_life": {
-        "score": 10.0,
-        "max": 10
-      },
-      "fire": {
-        "score": 5.0,
-        "max": 10
-      },
-      "thermal": {
-        "score": 5.8,
-        "max": 10
+        "score": 85.0,
+        "max": 5.0,
+        "contribution": 4.25,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "maintenance": {
-        "score": 4.4,
-        "max": 5
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "sustainability": {
-        "score": 3.75,
-        "max": 5
+        "score": 79.0,
+        "max": 5.0,
+        "contribution": 3.95,
+        "normalized_weight": 0.0667,
+        "is_na": false
       }
     }
   },
   {
     "material": "Porcelain GVT Slab (Full-Body Vitrified)",
     "criterion_breakdown": {
-      "structural": {
-        "score": 12.0,
-        "max": 25
+      "structural_safety": {
+        "score": 0.0,
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "is_na": true
       },
-      "climate": {
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "is_na": false
+      },
+      "climate_compatibility": {
         "score": 20.0,
-        "max": 20
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.2,
+        "is_na": false
       },
-      "durability": {
-        "score": 8.66,
-        "max": 15
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "is_na": false
       },
       "service_life": {
-        "score": 9.0,
-        "max": 10
-      },
-      "fire": {
-        "score": 5.0,
-        "max": 10
-      },
-      "thermal": {
-        "score": 4.8,
-        "max": 10
+        "score": 70.0,
+        "max": 5.0,
+        "contribution": 3.5,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "maintenance": {
-        "score": 4.6,
-        "max": 5
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "sustainability": {
-        "score": 3.25,
-        "max": 5
+        "score": 61.67,
+        "max": 5.0,
+        "contribution": 3.08,
+        "normalized_weight": 0.0667,
+        "is_na": false
       }
     }
   },
   {
     "material": "Standard Ceramic Floor Tile",
     "criterion_breakdown": {
-      "structural": {
-        "score": 11.25,
-        "max": 25
+      "structural_safety": {
+        "score": 0.0,
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "is_na": true
       },
-      "climate": {
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "is_na": false
+      },
+      "climate_compatibility": {
         "score": 20.0,
-        "max": 20
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.2,
+        "is_na": false
       },
-      "durability": {
-        "score": 6.19,
-        "max": 15
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "is_na": false
       },
       "service_life": {
-        "score": 5.0,
-        "max": 10
-      },
-      "fire": {
-        "score": 5.0,
-        "max": 10
-      },
-      "thermal": {
-        "score": 3.8,
-        "max": 10
+        "score": 55.0,
+        "max": 5.0,
+        "contribution": 2.75,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "maintenance": {
-        "score": 4.1,
-        "max": 5
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "sustainability": {
-        "score": 2.1,
-        "max": 5
+        "score": 53.33,
+        "max": 5.0,
+        "contribution": 2.67,
+        "normalized_weight": 0.0667,
+        "is_na": false
       }
     }
   },
   {
     "material": "Timber Strip Flooring (Treated Hardwood)",
     "criterion_breakdown": {
-      "structural": {
-        "score": 10.0,
-        "max": 25
-      },
-      "climate": {
+      "structural_safety": {
         "score": 0.0,
-        "max": 20
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "is_na": true
       },
-      "durability": {
-        "score": 7.5,
-        "max": 15
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "is_na": false
+      },
+      "climate_compatibility": {
+        "score": 20.0,
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.2,
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "is_na": false
       },
       "service_life": {
-        "score": 8.0,
-        "max": 10
-      },
-      "fire": {
-        "score": 5.0,
-        "max": 10
-      },
-      "thermal": {
-        "score": 8.8,
-        "max": 10
+        "score": 70.0,
+        "max": 5.0,
+        "contribution": 3.5,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "maintenance": {
-        "score": 2.75,
-        "max": 5
+        "score": 75.0,
+        "max": 5.0,
+        "contribution": 3.75,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "sustainability": {
-        "score": 3.6,
-        "max": 5
+        "score": 76.67,
+        "max": 5.0,
+        "contribution": 3.83,
+        "normalized_weight": 0.0667,
+        "is_na": false
       }
     }
   },
   {
     "material": "Rubber Flooring (Recycled Automotive)",
     "criterion_breakdown": {
-      "structural": {
-        "score": 12.0,
-        "max": 25
+      "structural_safety": {
+        "score": 0.0,
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "is_na": true
       },
-      "climate": {
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "is_na": false
+      },
+      "climate_compatibility": {
         "score": 20.0,
-        "max": 20
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.2,
+        "is_na": false
       },
-      "durability": {
-        "score": 6.97,
-        "max": 15
+      "occupancy_requirements": {
+        "score": 40.0,
+        "max": 15.0,
+        "contribution": 6.0,
+        "normalized_weight": 0.2,
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "is_na": false
       },
       "service_life": {
-        "score": 6.0,
-        "max": 10
-      },
-      "fire": {
-        "score": 5.0,
-        "max": 10
-      },
-      "thermal": {
-        "score": 5.5,
-        "max": 10
+        "score": 70.0,
+        "max": 5.0,
+        "contribution": 3.5,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "maintenance": {
-        "score": 4.6,
-        "max": 5
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "sustainability": {
-        "score": 4.0,
-        "max": 5
+        "score": 87.33,
+        "max": 5.0,
+        "contribution": 4.37,
+        "normalized_weight": 0.0667,
+        "is_na": false
       }
     }
   },
   {
     "material": "Micro-Cement Screed Flooring",
     "criterion_breakdown": {
-      "structural": {
-        "score": 14.5,
-        "max": 25
+      "structural_safety": {
+        "score": 0.0,
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "is_na": true
       },
-      "climate": {
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "is_na": false
+      },
+      "climate_compatibility": {
         "score": 20.0,
-        "max": 20
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.2,
+        "is_na": false
       },
-      "durability": {
-        "score": 6.6,
-        "max": 15
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "is_na": false
       },
       "service_life": {
-        "score": 4.0,
-        "max": 10
-      },
-      "fire": {
-        "score": 5.0,
-        "max": 10
-      },
-      "thermal": {
-        "score": 4.2,
-        "max": 10
+        "score": 55.0,
+        "max": 5.0,
+        "contribution": 2.75,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "maintenance": {
-        "score": 3.9,
-        "max": 5
+        "score": 90.0,
+        "max": 5.0,
+        "contribution": 4.5,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "sustainability": {
-        "score": 3.0,
-        "max": 5
+        "score": 61.67,
+        "max": 5.0,
+        "contribution": 3.08,
+        "normalized_weight": 0.0667,
+        "is_na": false
       }
     }
   },
   {
     "material": "Recycled Composite Decking (WPC)",
     "criterion_breakdown": {
-      "structural": {
-        "score": 10.5,
-        "max": 25
+      "structural_safety": {
+        "score": 0.0,
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "is_na": true
       },
-      "climate": {
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "is_na": false
+      },
+      "climate_compatibility": {
         "score": 20.0,
-        "max": 20
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.2,
+        "is_na": false
       },
-      "durability": {
-        "score": 6.53,
-        "max": 15
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "is_na": false
       },
       "service_life": {
-        "score": 6.0,
-        "max": 10
-      },
-      "fire": {
-        "score": 5.0,
-        "max": 10
-      },
-      "thermal": {
-        "score": 4.8,
-        "max": 10
+        "score": 70.0,
+        "max": 5.0,
+        "contribution": 3.5,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "maintenance": {
-        "score": 4.6,
-        "max": 5
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "sustainability": {
-        "score": 4.5,
-        "max": 5
+        "score": 90.67,
+        "max": 5.0,
+        "contribution": 4.53,
+        "normalized_weight": 0.0667,
+        "is_na": false
       }
     }
   },
   {
     "material": "Bamboo-Fibre Acoustic Ceiling Panel",
     "criterion_breakdown": {
-      "structural": {
-        "score": 2.5,
-        "max": 25
+      "structural_safety": {
+        "score": 0.0,
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "is_na": true
       },
-      "climate": {
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "is_na": false
+      },
+      "climate_compatibility": {
         "score": 20.0,
-        "max": 20
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.2,
+        "is_na": false
       },
-      "durability": {
-        "score": 3.56,
-        "max": 15
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "is_na": false
       },
       "service_life": {
-        "score": 5.0,
-        "max": 10
-      },
-      "fire": {
-        "score": 5.0,
-        "max": 10
-      },
-      "thermal": {
-        "score": 6.8,
-        "max": 10
+        "score": 55.0,
+        "max": 5.0,
+        "contribution": 2.75,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "maintenance": {
-        "score": 4.1,
-        "max": 5
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "sustainability": {
-        "score": 4.75,
-        "max": 5
+        "score": 97.67,
+        "max": 5.0,
+        "contribution": 4.88,
+        "normalized_weight": 0.0667,
+        "is_na": false
       }
     }
   },
   {
     "material": "Standard Gypsum Board Ceiling (Suspended)",
     "criterion_breakdown": {
-      "structural": {
-        "score": 1.25,
-        "max": 25
+      "structural_safety": {
+        "score": 0.0,
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "is_na": true
       },
-      "climate": {
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "is_na": false
+      },
+      "climate_compatibility": {
         "score": 20.0,
-        "max": 20
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.2,
+        "is_na": false
       },
-      "durability": {
-        "score": 2.06,
-        "max": 15
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "is_na": false
       },
       "service_life": {
-        "score": 3.0,
-        "max": 10
-      },
-      "fire": {
-        "score": 5.0,
-        "max": 10
-      },
-      "thermal": {
-        "score": 4.8,
-        "max": 10
+        "score": 55.0,
+        "max": 5.0,
+        "contribution": 2.75,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "maintenance": {
-        "score": 3.1,
-        "max": 5
+        "score": 90.0,
+        "max": 5.0,
+        "contribution": 4.5,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "sustainability": {
-        "score": 2.3,
-        "max": 5
+        "score": 53.67,
+        "max": 5.0,
+        "contribution": 2.68,
+        "normalized_weight": 0.0667,
+        "is_na": false
       }
     }
   },
   {
     "material": "PVC Laminated Ceiling Panel (Moisture-Proof)",
     "criterion_breakdown": {
-      "structural": {
-        "score": 1.25,
-        "max": 25
+      "structural_safety": {
+        "score": 0.0,
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "is_na": true
       },
-      "climate": {
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "is_na": false
+      },
+      "climate_compatibility": {
         "score": 20.0,
-        "max": 20
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.2,
+        "is_na": false
       },
-      "durability": {
-        "score": 2.62,
-        "max": 15
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "is_na": false
       },
       "service_life": {
-        "score": 4.0,
-        "max": 10
-      },
-      "fire": {
-        "score": 5.0,
-        "max": 10
-      },
-      "thermal": {
-        "score": 4.2,
-        "max": 10
+        "score": 55.0,
+        "max": 5.0,
+        "contribution": 2.75,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "maintenance": {
-        "score": 4.6,
-        "max": 5
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "sustainability": {
-        "score": 1.4,
-        "max": 5
+        "score": 46.0,
+        "max": 5.0,
+        "contribution": 2.3,
+        "normalized_weight": 0.0667,
+        "is_na": false
       }
     }
   },
   {
     "material": "Calcium Silicate Board Ceiling",
     "criterion_breakdown": {
-      "structural": {
-        "score": 2.0,
-        "max": 25
+      "structural_safety": {
+        "score": 0.0,
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "is_na": true
       },
-      "climate": {
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "is_na": false
+      },
+      "climate_compatibility": {
         "score": 20.0,
-        "max": 20
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.2,
+        "is_na": false
       },
-      "durability": {
-        "score": 3.98,
-        "max": 15
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "is_na": false
       },
       "service_life": {
-        "score": 6.0,
-        "max": 10
-      },
-      "fire": {
-        "score": 5.0,
-        "max": 10
-      },
-      "thermal": {
-        "score": 7.5,
-        "max": 10
+        "score": 70.0,
+        "max": 5.0,
+        "contribution": 3.5,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "maintenance": {
-        "score": 4.4,
-        "max": 5
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "sustainability": {
-        "score": 3.1,
-        "max": 5
+        "score": 69.0,
+        "max": 5.0,
+        "contribution": 3.45,
+        "normalized_weight": 0.0667,
+        "is_na": false
       }
     }
   },
   {
     "material": "Suspended Metal Tile Ceiling (Aluminium)",
     "criterion_breakdown": {
-      "structural": {
-        "score": 2.0,
-        "max": 25
+      "structural_safety": {
+        "score": 0.0,
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "is_na": true
       },
-      "climate": {
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "is_na": false
+      },
+      "climate_compatibility": {
         "score": 20.0,
-        "max": 20
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.2,
+        "is_na": false
       },
-      "durability": {
-        "score": 5.1,
-        "max": 15
+      "occupancy_requirements": {
+        "score": 40.0,
+        "max": 15.0,
+        "contribution": 6.0,
+        "normalized_weight": 0.2,
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "is_na": false
       },
       "service_life": {
-        "score": 8.0,
-        "max": 10
-      },
-      "fire": {
-        "score": 5.0,
-        "max": 10
-      },
-      "thermal": {
-        "score": 4.5,
-        "max": 10
+        "score": 70.0,
+        "max": 5.0,
+        "contribution": 3.5,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "maintenance": {
-        "score": 4.5,
-        "max": 5
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "sustainability": {
-        "score": 2.9,
-        "max": 5
+        "score": 67.67,
+        "max": 5.0,
+        "contribution": 3.38,
+        "normalized_weight": 0.0667,
+        "is_na": false
       }
     }
   },
   {
     "material": "Acoustic Mineral Fibre Suspended Tile",
     "criterion_breakdown": {
-      "structural": {
-        "score": 1.25,
-        "max": 25
+      "structural_safety": {
+        "score": 0.0,
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "is_na": true
       },
-      "climate": {
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "is_na": false
+      },
+      "climate_compatibility": {
         "score": 20.0,
-        "max": 20
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.2,
+        "is_na": false
       },
-      "durability": {
-        "score": 2.62,
-        "max": 15
+      "occupancy_requirements": {
+        "score": 40.0,
+        "max": 15.0,
+        "contribution": 6.0,
+        "normalized_weight": 0.2,
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "is_na": false
       },
       "service_life": {
-        "score": 4.0,
-        "max": 10
-      },
-      "fire": {
-        "score": 5.0,
-        "max": 10
-      },
-      "thermal": {
-        "score": 5.5,
-        "max": 10
+        "score": 55.0,
+        "max": 5.0,
+        "contribution": 2.75,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "maintenance": {
-        "score": 3.75,
-        "max": 5
+        "score": 90.0,
+        "max": 5.0,
+        "contribution": 4.5,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "sustainability": {
-        "score": 2.5,
-        "max": 5
+        "score": 56.67,
+        "max": 5.0,
+        "contribution": 2.83,
+        "normalized_weight": 0.0667,
+        "is_na": false
       }
     }
   },
   {
     "material": "Crystalline Slurry Waterproofing (Penetrating)",
     "criterion_breakdown": {
-      "structural": {
-        "score": 3.75,
-        "max": 25
+      "structural_safety": {
+        "score": 0.0,
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "is_na": true
       },
-      "climate": {
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "is_na": false
+      },
+      "climate_compatibility": {
         "score": 20.0,
-        "max": 20
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.2,
+        "is_na": false
       },
-      "durability": {
-        "score": 7.88,
-        "max": 15
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "is_na": false
       },
       "service_life": {
-        "score": 10.0,
-        "max": 10
-      },
-      "fire": {
-        "score": 5.0,
-        "max": 10
-      },
-      "thermal": {
-        "score": 1.0,
-        "max": 10
+        "score": 85.0,
+        "max": 5.0,
+        "contribution": 4.25,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "maintenance": {
-        "score": 4.75,
-        "max": 5
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "sustainability": {
-        "score": 2.9,
-        "max": 5
+        "score": 68.67,
+        "max": 5.0,
+        "contribution": 3.43,
+        "normalized_weight": 0.0667,
+        "is_na": false
       }
     }
   },
   {
     "material": "Liquid Polyurethane Membrane (Seamless)",
     "criterion_breakdown": {
-      "structural": {
-        "score": 2.5,
-        "max": 25
+      "structural_safety": {
+        "score": 0.0,
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "is_na": true
       },
-      "climate": {
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "is_na": false
+      },
+      "climate_compatibility": {
         "score": 20.0,
-        "max": 20
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.2,
+        "is_na": false
       },
-      "durability": {
-        "score": 3.56,
-        "max": 15
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "is_na": false
       },
       "service_life": {
-        "score": 5.0,
-        "max": 10
-      },
-      "fire": {
-        "score": 5.0,
-        "max": 10
-      },
-      "thermal": {
-        "score": 1.5,
-        "max": 10
+        "score": 55.0,
+        "max": 5.0,
+        "contribution": 2.75,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "maintenance": {
-        "score": 4.4,
-        "max": 5
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "sustainability": {
-        "score": 2.1,
-        "max": 5
+        "score": 52.33,
+        "max": 5.0,
+        "contribution": 2.62,
+        "normalized_weight": 0.0667,
+        "is_na": false
       }
     }
   },
   {
     "material": "Bituminous Modified Membrane (Torch-Applied)",
     "criterion_breakdown": {
-      "structural": {
-        "score": 3.0,
-        "max": 25
+      "structural_safety": {
+        "score": 0.0,
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "is_na": true
       },
-      "climate": {
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "is_na": false
+      },
+      "climate_compatibility": {
         "score": 20.0,
-        "max": 20
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.2,
+        "is_na": false
       },
-      "durability": {
-        "score": 3.15,
-        "max": 15
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "is_na": false
       },
       "service_life": {
-        "score": 4.0,
-        "max": 10
-      },
-      "fire": {
-        "score": 5.0,
-        "max": 10
-      },
-      "thermal": {
-        "score": 2.0,
-        "max": 10
+        "score": 55.0,
+        "max": 5.0,
+        "contribution": 2.75,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "maintenance": {
-        "score": 4.1,
-        "max": 5
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "sustainability": {
-        "score": 1.9,
-        "max": 5
+        "score": 49.33,
+        "max": 5.0,
+        "contribution": 2.47,
+        "normalized_weight": 0.0667,
+        "is_na": false
       }
     }
   },
   {
     "material": "HDPE Sheet Waterproofing Barrier",
     "criterion_breakdown": {
-      "structural": {
-        "score": 2.5,
-        "max": 25
+      "structural_safety": {
+        "score": 0.0,
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "is_na": true
       },
-      "climate": {
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "is_na": false
+      },
+      "climate_compatibility": {
         "score": 20.0,
-        "max": 20
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.2,
+        "is_na": false
       },
-      "durability": {
-        "score": 6.38,
-        "max": 15
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "is_na": false
       },
       "service_life": {
-        "score": 10.0,
-        "max": 10
-      },
-      "fire": {
-        "score": 5.0,
-        "max": 10
-      },
-      "thermal": {
-        "score": 1.0,
-        "max": 10
+        "score": 85.0,
+        "max": 5.0,
+        "contribution": 4.25,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "maintenance": {
-        "score": 4.6,
-        "max": 5
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "sustainability": {
-        "score": 3.25,
-        "max": 5
+        "score": 66.67,
+        "max": 5.0,
+        "contribution": 3.33,
+        "normalized_weight": 0.0667,
+        "is_na": false
       }
     }
   },
   {
     "material": "Bentonite Clay Waterproofing Panel",
     "criterion_breakdown": {
-      "structural": {
-        "score": 2.0,
-        "max": 25
+      "structural_safety": {
+        "score": 0.0,
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "is_na": true
       },
-      "climate": {
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "is_na": false
+      },
+      "climate_compatibility": {
         "score": 20.0,
-        "max": 20
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.2,
+        "is_na": false
       },
-      "durability": {
-        "score": 5.1,
-        "max": 15
+      "occupancy_requirements": {
+        "score": 80.0,
+        "max": 15.0,
+        "contribution": 12.0,
+        "normalized_weight": 0.2,
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "is_na": false
       },
       "service_life": {
-        "score": 8.0,
-        "max": 10
-      },
-      "fire": {
-        "score": 5.0,
-        "max": 10
-      },
-      "thermal": {
-        "score": 1.2,
-        "max": 10
+        "score": 70.0,
+        "max": 5.0,
+        "contribution": 3.5,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "maintenance": {
-        "score": 4.75,
-        "max": 5
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "sustainability": {
-        "score": 4.25,
-        "max": 5
+        "score": 88.33,
+        "max": 5.0,
+        "contribution": 4.42,
+        "normalized_weight": 0.0667,
+        "is_na": false
       }
     }
   },
   {
     "material": "Advanced Nano-Exterior Paint",
     "criterion_breakdown": {
-      "structural": {
-        "score": 1.25,
-        "max": 25
+      "structural_safety": {
+        "score": 0.0,
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "is_na": true
       },
-      "climate": {
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "is_na": false
+      },
+      "climate_compatibility": {
         "score": 20.0,
-        "max": 20
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.2,
+        "is_na": false
       },
-      "durability": {
-        "score": 1.73,
-        "max": 15
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "is_na": false
       },
       "service_life": {
-        "score": 2.4,
-        "max": 10
-      },
-      "fire": {
-        "score": 5.0,
-        "max": 10
-      },
-      "thermal": {
-        "score": 1.0,
-        "max": 10
+        "score": 40.0,
+        "max": 5.0,
+        "contribution": 2.0,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "maintenance": {
-        "score": 4.25,
-        "max": 5
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "sustainability": {
-        "score": 3.25,
-        "max": 5
+        "score": 61.67,
+        "max": 5.0,
+        "contribution": 3.08,
+        "normalized_weight": 0.0667,
+        "is_na": false
       }
     }
   },
   {
     "material": "Eco-Friendly Low VOC Emulsion",
     "criterion_breakdown": {
-      "structural": {
-        "score": 1.25,
-        "max": 25
-      },
-      "climate": {
+      "structural_safety": {
         "score": 0.0,
-        "max": 20
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "is_na": true
       },
-      "durability": {
-        "score": 2.06,
-        "max": 15
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "is_na": false
+      },
+      "climate_compatibility": {
+        "score": 20.0,
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.2,
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "is_na": false
       },
       "service_life": {
-        "score": 3.0,
-        "max": 10
-      },
-      "fire": {
-        "score": 5.0,
-        "max": 10
-      },
-      "thermal": {
-        "score": 1.0,
-        "max": 10
+        "score": 55.0,
+        "max": 5.0,
+        "contribution": 2.75,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "maintenance": {
-        "score": 4.25,
-        "max": 5
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "sustainability": {
-        "score": 4.75,
-        "max": 5
+        "score": 93.33,
+        "max": 5.0,
+        "contribution": 4.67,
+        "normalized_weight": 0.0667,
+        "is_na": false
       }
     }
   },
   {
     "material": "Standard Exterior Emulsion",
     "criterion_breakdown": {
-      "structural": {
-        "score": 1.25,
-        "max": 25
+      "structural_safety": {
+        "score": 0.0,
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "is_na": true
       },
-      "climate": {
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "is_na": false
+      },
+      "climate_compatibility": {
         "score": 20.0,
-        "max": 20
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.2,
+        "is_na": false
       },
-      "durability": {
-        "score": 1.27,
-        "max": 15
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "is_na": false
       },
       "service_life": {
-        "score": 1.6,
-        "max": 10
-      },
-      "fire": {
-        "score": 5.0,
-        "max": 10
-      },
-      "thermal": {
-        "score": 1.0,
-        "max": 10
+        "score": 40.0,
+        "max": 5.0,
+        "contribution": 2.0,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "maintenance": {
-        "score": 3.75,
-        "max": 5
+        "score": 90.0,
+        "max": 5.0,
+        "contribution": 4.5,
+        "normalized_weight": 0.0667,
+        "is_na": false
       },
       "sustainability": {
-        "score": 2.0,
-        "max": 5
+        "score": 56.67,
+        "max": 5.0,
+        "contribution": 2.83,
+        "normalized_weight": 0.0667,
+        "is_na": false
       }
     }
   }

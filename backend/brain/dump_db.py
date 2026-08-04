@@ -1,7 +1,7 @@
 import sqlite3
 import os
 
-DB_PATH = "backend/data/materials.db"
+DB_PATH = os.path.join(os.path.dirname(__file__), "data", "materials.db")
 
 def dump_mats():
     if not os.path.exists(DB_PATH):

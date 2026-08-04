@@ -19,7 +19,7 @@ def _patched_get_ml_score(self, material_category, material_id, climate, b_type,
                            structural_system="Concrete Frame",
                            sustainability_pref="Medium", mat=None):
     if not self.model:
-        return None
+        return None, "HEURISTIC_FALLBACK"
     try:
         b_type_map   = {"residential": 0, "commercial": 1, "industrial": 2}
         c_zone_map   = {"extreme coastal": 0, "moderate coastal": 1, "highland": 2,
@@ -64,7 +64,7 @@ def _patched_get_ml_score(self, material_category, material_id, climate, b_type,
                 # ── ML PATH HIT ───────────────────────────────────────────
                 _ml_path_count["count"] += 1
                 idx = list(classes).index(material_id)
-                return float(probs[idx] * 100)
+                return float(probs[idx] * 100), "ML_MODEL"
             else:
                 # ── FALLBACK HIT — count it ───────────────────────────────
                 _fallback_hits["count"] += 1
@@ -72,11 +72,11 @@ def _patched_get_ml_score(self, material_category, material_id, climate, b_type,
                 s_rating  = float(mat.get("Sustainability_Rating", 50)) if mat else 50.0
                 carbon    = float(mat.get("Embodied_Carbon", 0.5)) if mat else 0.5
                 heuristic = (s_rating * 0.6) + ((1.0 - min(1.0, carbon)) * 40.0)
-                return max(30.0, min(100.0, heuristic))
-        return 50.0
+                return max(30.0, min(100.0, heuristic)), "HEURISTIC_FALLBACK"
+        return 50.0, "HEURISTIC_FALLBACK"
     except Exception as e:
         print(f"ML error: {e}")
-        return 50.0
+        return 50.0, "HEURISTIC_FALLBACK"
 
 re_module.RecommendationEngine._get_ml_score = _patched_get_ml_score
 
@@ -133,7 +133,7 @@ audit_ml_hits  = sum(1 for e in audit if e.get("ml_score") is not None)
 audit_eng_only = sum(1 for e in audit if e.get("ml_score") is None)
 
 print(f"  Total materials evaluated          : {_ml_path_count['count'] + _fallback_hits['count']}")
-print(f"  'material_id in classes' path hits : {_ml_path_count['count']}  ← real ML probability used")
+print(f"  'material_id in classes' path hits : {_ml_path_count['count']}  <- real ML probability used")
 print(f"  Heuristic fallback hits            : {_fallback_hits['count']}")
 print(f"  Audit log — ML score present       : {audit_ml_hits}")
 print(f"  Audit log — engineering only       : {audit_eng_only}")

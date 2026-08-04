@@ -19,7 +19,7 @@ def main():
     print("Starting GreenConstructAI Verification Suite...")
     
     response = requests.post(
-        "http://127.0.0.1:5001/recommend-materials",
+        "http://127.0.0.1:5000/recommend-materials",
         json={
             "blueprint": {
                 "building_type": "Industrial",

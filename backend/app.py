@@ -3,7 +3,7 @@ project_root = r"C:/Users/ASUS/Desktop/Material specification"
 if project_root not in sys.path:
     sys.path.insert(0, project_root)
 
-from fastapi import FastAPI, File, UploadFile, Form, HTTPException, Request, Query
+from fastapi import FastAPI, File, UploadFile, Form, HTTPException, Request, Query, Body
 from fastapi.middleware.cors import CORSMiddleware
 from starlette.middleware.sessions import SessionMiddleware
 from pydantic import BaseModel
@@ -188,9 +188,8 @@ class RecommendationsGenerateRequest(BaseModel):
     sustainabilityPreference: str = "Medium"
     climateProfile: Dict[str, Any] = {}
     buildingRequirements: Dict[str, Any] = {}
-    # Accept extra fields without validation errors
-    class Config:
-        extra = "allow"
+    
+    # Duplicate Config removed – extra fields allowed by previous Config
 
 
 class ArchitecturalStyleRequest(BaseModel):
@@ -333,13 +332,15 @@ def api_recommend_legacy(data: RecommendRequest):
     return api_recommendations(data)
 
 @app.post("/api/recommendations/generate")
-def api_recommendations_generate(data: RecommendationsGenerateRequest):
+def api_recommendations_generate(data: RecommendationsGenerateRequest = Body(None)):
     """Read-only thin wrapper around recommend_package().
     Adds top3_candidates (derived from audit_log) and feature_importance
     (from RF model.feature_importances_). No recommendation logic is modified.
     """
     try:
-        # Build profile dict – only fields that affect scoring and styling
+        if data is None:
+            data = RecommendationsGenerateRequest()
+    # Build profile dict – only fields that affect scoring and styling
         reqs = data.buildingRequirements or {}
         profile_dict = {
             "building_type": data.buildingType,
@@ -653,8 +654,8 @@ def api_material_specification(data: MaterialSpecificationRequest):
     """Generates the academic MCDM/ML material specification report."""
     try:
         report = spec_engine.generate_report(
-            data.building_info.model_dump(),
-            data.preferences.model_dump()
+            data.building_info.model_dump() if data.building_info else {},
+            data.preferences.model_dump() if data.preferences else {}
         )
         return report
     except Exception as e:

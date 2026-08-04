@@ -1,27 +1,19 @@
 "use client";
-import React from 'react';
-import GlassCard from '@/components/ui/GlassCard';
+import React, { useState } from 'react';
 import { getTopCandidates } from '@/lib/reportHelpers';
 
 /**
- * AlternativesTable – renders comparison table accordion for each category.
- * Enables multiple accordions to be expanded simultaneously ("open them in the same time")
- * and styles it as a high-density, spotlighted technical comparison zone.
- *
- * Data Traceability:
- *   Alternative Materials  → data.top3_candidates
- *   Material Info          → rank, material, hybrid_score, engineering_score, ml_score
+ * AlternativesTable – Candidate material matrix with rank #1 spotlighting and expandable criteria.
  */
 export default function AlternativesTable({ data }) {
   const candidates = data?.top3_candidates || getTopCandidates(data);
   const categories = Object.keys(candidates);
 
-  // Initialize expanded state with the first category open, allowing multiple to be open concurrently
-  const [expanded, setExpanded] = React.useState(() => 
+  const [expanded, setExpanded] = useState(() => 
     Object.fromEntries(categories.map((cat, i) => [cat, i === 0]))
   );
 
-  const [expandedRow, setExpandedRow] = React.useState(null);
+  const [expandedRow, setExpandedRow] = useState(null);
 
   const toggleExpand = (cat) => {
     setExpanded(prev => ({
@@ -33,36 +25,30 @@ export default function AlternativesTable({ data }) {
   const getClimateMatch = (c) => {
     const score = c.engineering_breakdown?.climate_compatibility?.score;
     if (score == null) return '—';
-    if (score >= 90) return 'Excellent';
+    if (score >= 90) return 'Optimal';
     if (score >= 75) return 'Good';
     if (score >= 60) return 'Moderate';
     return 'Limited';
   };
 
   const getClimateColor = (label) => {
-    if (label === 'Excellent') return 'var(--eco-glow)';
-    if (label === 'Good') return '#34d399';
-    if (label === 'Moderate') return '#fbbf24';
+    if (label === 'Optimal') return '#10b981';
+    if (label === 'Good') return '#38bdf8';
+    if (label === 'Moderate') return '#f59e0b';
     if (label === 'Limited') return '#ef4444';
-    return 'var(--text-dim)';
+    return '#64748b';
   };
 
   if (categories.length === 0) return null;
 
   return (
-    <GlassCard className="dashboard-section alternatives-table" style={{ position: 'relative' }}>
-      {/* Visual Accent Corner for spotlight styling */}
-      
-
-      <div style={{ marginBottom: '1.5rem' }}>
-        <div style={{ fontSize: '0.65rem', fontWeight: 900, color: 'var(--eco-glow)', letterSpacing: '4px', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
-          Decision Support Matrix
-        </div>
-        <h2 style={{ fontSize: '1.6rem', color: '#fff', fontFamily: 'Space Grotesk', margin: 0 }}>
-          Alternative Material Evaluations
-        </h2>
-        <p style={{ color: 'var(--text-dim)', fontSize: '0.85rem', marginTop: '0.5rem', lineHeight: 1.5 }}>
-          Comparison grids listing alternate material ranks computed by the Hybrid Decision Engine. Click any section header to expand or collapse. Click any candidate material row to toggle its detailed 8-criteria engineering breakdown.
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
+      <div style={{ marginBottom: '0.25rem' }}>
+        <h3 style={{ fontSize: '1.1rem', color: '#f8fafc', fontFamily: 'Space Grotesk', margin: '0 0 0.2rem 0', fontWeight: 600 }}>
+          Candidate Material Evaluation Matrix
+        </h3>
+        <p style={{ color: '#94a3b8', fontSize: '0.78rem', margin: 0, lineHeight: 1.4 }}>
+          Full candidate matrix ranked by Hybrid Score. Select any row to inspect individual engineering criteria scores.
         </p>
       </div>
 
@@ -70,58 +56,55 @@ export default function AlternativesTable({ data }) {
         const isExpanded = expanded[cat];
         const displayName = cat.charAt(0).toUpperCase() + cat.slice(1).replace(/_/g, ' ');
         return (
-          <div key={cat} className="accordion-panel" style={{ 
-            marginBottom: '0.75rem', 
-            border: `1px solid ${isExpanded ? 'rgba(255,255,255,0.08)' : 'rgba(255,255,255,0.04)'}`,
-          borderRadius: '12px',
-          background: isExpanded ? 'rgba(0,0,0,0.15)' : 'rgba(0,0,0,0.05)',
+          <div key={cat} style={{ 
+            border: '1px solid #1e293b',
+            borderRadius: '6px',
+            background: '#0f172a',
             overflow: 'hidden',
-            transition: 'border-color 0.2s, background-color 0.2s'
           }}>
             <div
-              className="accordion-header"
               onClick={() => toggleExpand(cat)}
               style={{
                 display: 'flex',
                 justifyContent: 'space-between',
                 alignItems: 'center',
-                padding: '1.15rem 1.5rem',
+                padding: '0.65rem 0.85rem',
                 cursor: 'pointer',
-                background: isExpanded ? 'rgba(0, 255, 157, 0.04)' : 'rgba(255,255,255,0.01)',
-                transition: 'background-color 0.2s'
+                background: '#0b0f19',
+                borderBottom: isExpanded ? '1px solid #1e293b' : 'none',
               }}
             >
               <strong style={{ 
-                color: isExpanded ? 'var(--eco-glow)' : 'var(--text-primary)', 
-                fontSize: '0.85rem', 
-                letterSpacing: '0.5px',
-                fontFamily: 'Space Grotesk'
+                color: '#f8fafc', 
+                fontSize: '0.82rem', 
+                fontFamily: 'Space Grotesk',
+                fontWeight: 600
               }}>
-                {displayName} Alternatives
+                {displayName} Category Options
               </strong>
               <span style={{ 
-                color: isExpanded ? 'var(--eco-glow)' : 'var(--text-dim)', 
-                fontSize: '0.7rem',
-                fontWeight: 900
+                color: '#64748b', 
+                fontSize: '0.68rem',
+                fontWeight: 600
               }}>
-                {isExpanded ? '▲ COLLAPSE' : '▶ EXPAND'}
+                {isExpanded ? 'Collapse ▲' : 'Expand ▶'}
               </span>
             </div>
             {isExpanded && (
-              <div style={{ padding: '1.5rem', background: 'rgba(0,0,0,0.2)', borderTop: '1px solid rgba(255,255,255,0.04)' }}>
+              <div style={{ padding: '0.5rem', background: '#090d16' }}>
                 <div style={{ overflowX: 'auto' }}>
-                  <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.8rem' }}>
+                  <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.75rem' }}>
                     <thead>
-                      <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
-                        {['Rank', 'Material Specification', 'Overall', 'Eng. Val', 'ML Conf', 'Eco', 'Carbon', 'Life', 'Maint.', 'Climate Match'].map((h, i) => (
+                      <tr style={{ borderBottom: '1px solid #1e293b' }}>
+                        {['Rank', 'Material Specification', 'Hybrid Score', 'Eng. Val', 'ML Conf', 'Eco', 'Carbon', 'Service Life', 'Climate Match'].map((h, i) => (
                           <th key={i} style={{
                             textAlign: 'left',
-                            padding: '12px 10px',
-                            color: 'var(--text-dim)',
-                            fontWeight: 800,
-                            fontSize: '0.58rem',
+                            padding: '6px 8px',
+                            color: '#64748b',
+                            fontWeight: 700,
+                            fontSize: '0.62rem',
                             textTransform: 'uppercase',
-                            letterSpacing: '1px',
+                            letterSpacing: '0.05em',
                             whiteSpace: 'nowrap'
                           }}>
                             {h}
@@ -132,69 +115,62 @@ export default function AlternativesTable({ data }) {
                     <tbody>
                       {candidates[cat].map((c, i) => {
                         const isRowExpanded = expandedRow === `${cat}_${i}`;
-                        const maintLabel = c.maintenance != null 
-                          ? (c.maintenance <= 20 ? 'Low' : c.maintenance <= 40 ? 'L-M' : c.maintenance <= 60 ? 'Med' : c.maintenance <= 80 ? 'M-H' : 'High')
-                          : '—';
-
                         const climMatch = getClimateMatch(c);
+                        const isTop = i === 0;
 
                         return (
                           <React.Fragment key={i}>
                             <tr 
-                               onClick={() => setExpandedRow(prev => prev === `${cat}_${i}` ? null : `${cat}_${i}`)}
+                              onClick={() => setExpandedRow(prev => prev === `${cat}_${i}` ? null : `${cat}_${i}`)}
                               style={{
-                                borderBottom: '1px solid rgba(255,255,255,0.03)',
-                                background: i === 0 ? 'rgba(255,255,255,0.08)' : isRowExpanded ? 'rgba(255,255,255,0.04)' : 'transparent',
+                                borderBottom: '1px solid #1e293b',
+                                background: isTop ? 'rgba(16, 185, 129, 0.04)' : isRowExpanded ? '#0f172a' : 'transparent',
                                 cursor: 'pointer',
-                                transition: 'background-color 0.2s'
                               }}
                             >
-                              <td style={{ padding: '12px 10px', fontWeight: 900, color: i === 0 ? 'var(--eco-glow)' : 'var(--text-dim)', fontFamily: 'Space Grotesk' }}>
-                                {i === 0 ? '⭐' : `#${c.rank || (i + 1)}`}
+                              <td style={{ padding: '6px 8px', fontWeight: 700, color: isTop ? '#10b981' : '#64748b', fontFamily: 'Space Grotesk' }}>
+                                {isTop ? 'Rank #1' : `#${c.rank || (i + 1)}`}
                               </td>
-                              <td style={{ padding: '12px 10px', color: i === 0 ? '#fff' : 'var(--text-secondary)', fontWeight: i === 0 ? 700 : 400 }}>
+                              <td style={{ padding: '6px 8px', color: isTop ? '#ffffff' : '#cbd5e1', fontWeight: isTop ? 600 : 400 }}>
                                 {c.material} {isRowExpanded ? '▼' : '▶'}
                               </td>
-                              <td style={{ padding: '12px 10px', color: 'var(--eco-glow)', fontWeight: 900, fontFamily: 'Space Grotesk', fontSize: '0.85rem' }}>
+                              <td style={{ padding: '6px 8px', color: isTop ? '#10b981' : '#f8fafc', fontWeight: 700, fontFamily: 'Space Grotesk' }}>
                                 {typeof c.hybrid_score === 'number' ? c.hybrid_score.toFixed(1) : '—'}
                               </td>
-                              <td style={{ padding: '12px 10px', color: 'var(--text-primary)', fontWeight: 500 }}>
+                              <td style={{ padding: '6px 8px', color: '#38bdf8', fontWeight: 500 }}>
                                 {typeof c.engineering_score === 'number' ? c.engineering_score.toFixed(1) : '—'}
                               </td>
-                              <td style={{ padding: '12px 10px', color: 'var(--blueprint-blue)', fontWeight: 500 }}>
+                              <td style={{ padding: '6px 8px', color: '#cbd5e1', fontWeight: 500 }}>
                                 {typeof c.ml_score === 'number' ? c.ml_score.toFixed(1) : '—'}
                               </td>
-                              <td style={{ padding: '12px 10px' }}>
+                              <td style={{ padding: '6px 8px' }}>
                                 <span style={{
-                                  fontSize: '0.7rem',
-                                  fontWeight: 800,
-                                  color: (c.sustainability_rating >= 70) ? 'var(--eco-glow)' : (c.sustainability_rating >= 50) ? '#fbbf24' : 'var(--text-dim)',
+                                  fontSize: '0.72rem',
+                                  fontWeight: 600,
+                                  color: (c.sustainability_rating >= 70) ? '#10b981' : (c.sustainability_rating >= 50) ? '#f59e0b' : '#64748b',
                                   fontFamily: 'Space Grotesk'
                                 }}>
                                   {c.sustainability_rating != null ? `${c.sustainability_rating}/100` : '—'}
                                 </span>
                               </td>
-                              <td style={{ padding: '12px 10px', color: 'var(--text-dim)' }}>
+                              <td style={{ padding: '6px 8px', color: '#94a3b8' }}>
                                 {c.embodied_carbon != null ? `${c.embodied_carbon.toFixed(2)} kg` : '—'}
                               </td>
-                              <td style={{ padding: '12px 10px', color: 'var(--text-secondary)' }}>
+                              <td style={{ padding: '6px 8px', color: '#94a3b8' }}>
                                 {c.service_life ? `${c.service_life} yrs` : '—'}
                               </td>
-                              <td style={{ padding: '12px 10px', color: 'var(--text-secondary)' }}>
-                                {maintLabel}
-                              </td>
-                              <td style={{ padding: '12px 10px', color: getClimateColor(climMatch), fontWeight: 700 }}>
+                              <td style={{ padding: '6px 8px', color: getClimateColor(climMatch), fontWeight: 600 }}>
                                 {climMatch}
                               </td>
                             </tr>
                             {isRowExpanded && (
-                              <tr style={{ background: 'rgba(0,0,0,0.3)' }}>
-                                <td colSpan={10} style={{ padding: '1rem 1.5rem', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
-                                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                                    <div style={{ fontSize: '0.62rem', fontWeight: 900, color: 'var(--eco-glow)', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '0.25rem' }}>
+                              <tr style={{ background: '#0f172a' }}>
+                                <td colSpan={9} style={{ padding: '0.75rem', borderBottom: '1px solid #1e293b' }}>
+                                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
+                                    <div style={{ fontSize: '0.62rem', fontWeight: 700, color: '#38bdf8', letterSpacing: '0.05em', textTransform: 'uppercase' }}>
                                       Engineering Evaluation Criteria Breakdown
                                     </div>
-                                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '0.5rem' }}>
+                                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '0.4rem' }}>
                                       {[
                                         { key: 'structural_safety', label: 'Structural Safety', weight: 25 },
                                         { key: 'sls_compliance', label: 'SLS Compliance', weight: 20 },
@@ -213,11 +189,11 @@ export default function AlternativesTable({ data }) {
                                         const maxContrib = (normalizedWeight * 100).toFixed(1);
                                         const actualContrib = (score * normalizedWeight).toFixed(1);
                                         
-                                        const color = isNa ? 'var(--text-dim)' : score >= 70 ? 'var(--eco-glow)' : score >= 50 ? 'var(--warn-amber)' : 'var(--error-red)';
+                                        const color = isNa ? '#64748b' : score >= 70 ? '#10b981' : score >= 50 ? '#f59e0b' : '#ef4444';
 
                                         return (
-                                          <div key={key} style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.7rem', background: 'rgba(255,255,255,0.02)', padding: '0.35rem 0.5rem', borderRadius: '4px', border: '1px solid rgba(255,255,255,0.03)' }}>
-                                            <span style={{ color: 'var(--text-secondary)' }}>{label}</span>
+                                          <div key={key} style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.68rem', background: '#090d16', padding: '0.3rem 0.5rem', borderRadius: '4px', border: '1px solid #1e293b' }}>
+                                            <span style={{ color: '#94a3b8' }}>{label}</span>
                                             <span style={{ color: color, fontWeight: 700 }}>
                                               {isNa ? 'N/A' : `${score.toFixed(0)}/100 (${actualContrib}/${maxContrib})`}
                                             </span>
@@ -240,6 +216,6 @@ export default function AlternativesTable({ data }) {
           </div>
         );
       })}
-    </GlassCard>
+    </div>
   );
 }

@@ -1,5 +1,6 @@
 import os
 import pickle
+import joblib
 import math
 from typing import Dict, List, Any, Optional
 
@@ -47,13 +48,12 @@ def _load_ml_model() -> Any:
     for path in model_paths:
         if os.path.exists(path):
             try:
-                with open(path, "rb") as f:
-                    data = pickle.load(f)
-                    if isinstance(data, dict) and "model" in data:
-                        model = data["model"]
-                        ml_features = data.get("features", [])
-                    else:
-                        model = data
+                data = joblib.load(path)
+                if isinstance(data, dict) and "model" in data:
+                    model = data["model"]
+                    ml_features = data.get("features", [])
+                else:
+                    model = data
                 print(f"Loaded ML model from {path}")
                 break
             except Exception as e:

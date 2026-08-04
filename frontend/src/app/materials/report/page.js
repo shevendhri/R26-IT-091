@@ -4,9 +4,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { useState, useEffect } from 'react';
 
-// Import Premium Dashboard Components
-import ExecutiveHero from '@/components/Dashboard/ExecutiveHero';
-import AiRecommendationHero from '@/components/Report/AiRecommendationHero';
+import CompactSummaryStrip from '@/components/Report/CompactSummaryStrip';
 import Accordion from '@/components/ui/Accordion';
 import BlueprintPanel from '@/components/Dashboard/BlueprintPanel';
 import ProjectOverview from '@/components/Dashboard/ProjectOverview';
@@ -19,17 +17,17 @@ import HybridScorePanel from '@/components/Dashboard/HybridScorePanel';
 import DecisionFactorsPanel from '@/components/Dashboard/DecisionFactorsPanel';
 import QuantityEstimationPanel from '@/components/Dashboard/QuantityEstimationPanel';
 
-// AI Decision Timeline stages
+// AI Decision Timeline stages — no emojis, use status indicators
 const TIMELINE_STAGES = [
-  { id: 1, label: 'Questionnaire Completed', icon: '📋', desc: 'User profile and requirements captured' },
-  { id: 2, label: 'Blueprint Generated', icon: '🏗️', desc: 'Automated floor plan layout produced' },
-  { id: 3, label: 'Geometry Extracted', icon: '📐', desc: '11 structural and geometric parameters computed' },
-  { id: 4, label: 'Climate Analysis', icon: '🌤️', desc: 'Climate zone, humidity, salinity and rainfall profiled' },
-  { id: 5, label: 'Engineering Rules Applied', icon: '⚙️', desc: 'SLS structural load constraints validated' },
-  { id: 6, label: 'ML Prediction Computed', icon: '🤖', desc: 'Machine learning model scored all candidates' },
-  { id: 7, label: 'Hybrid Ranking Generated', icon: '🏆', desc: '75% Engineering + 25% ML scores combined' },
-  { id: 8, label: 'Top Materials Selected', icon: '✅', desc: 'Ranked material package built per component' },
-  { id: 9, label: '3D Visualization Ready', icon: '🔭', desc: 'Conceptual 3D model prepared for launch' },
+  { id: 1, label: 'Questionnaire Completed', desc: 'User profile and requirements captured' },
+  { id: 2, label: 'Blueprint Generated', desc: 'Automated floor plan layout produced' },
+  { id: 3, label: 'Geometry Extracted', desc: '11 structural and geometric parameters computed' },
+  { id: 4, label: 'Climate Analysis', desc: 'Climate zone, humidity, salinity and rainfall profiled' },
+  { id: 5, label: 'Engineering Rules Applied', desc: 'SLS structural load constraints validated' },
+  { id: 6, label: 'ML Prediction Computed', desc: 'Machine learning model scored all candidates' },
+  { id: 7, label: 'Hybrid Ranking Generated', desc: '75% Engineering + 25% ML scores combined' },
+  { id: 8, label: 'Top Materials Selected', desc: 'Ranked material package built per component' },
+  { id: 9, label: '3D Visualization Ready', desc: 'Conceptual 3D model prepared for launch' },
 ];
 
 function DecisionTimeline() {
@@ -42,75 +40,54 @@ function DecisionTimeline() {
     }
   }, [active]);
 
-  return <section style={{
-         background: 'rgba(255,255,255,0.015)',
-         border: '1px solid rgba(255,255,255,0.04)',
-         borderRadius: '12px',
-         padding: '1.5rem',
-       }}>      <div style={{ fontSize: '0.65rem', fontWeight: 900, color: 'var(--eco-glow)', letterSpacing: '4px', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
-        AI Execution Trace
+  return (
+    <section>
+      <div style={{ fontSize: '0.62rem', fontWeight: 700, color: '#38bdf8', letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
+        AI Execution Trace — Decision Stages
       </div>
-      <h3 style={{ fontSize: '1.25rem', color: '#fff', fontFamily: 'Space Grotesk', margin: '0 0 1.25rem 0' }}>
-        Decision Timeline
-      </h3>
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '0' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.35rem' }}>
         {TIMELINE_STAGES.map((stage, i) => {
           const isDone = i <= active;
-          const isLast = i === TIMELINE_STAGES.length - 1;
           return (
-            <div key={stage.id} style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
-              {/* Connector */}
-              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', flexShrink: 0 }}>
-                <div style={{
-                  width: '28px',
-                  height: '28px',
-                  borderRadius: '50%',
-                  background: isDone ? 'var(--eco-glow)' : 'rgba(255,255,255,0.06)',
-                  border: isDone ? '2px solid var(--eco-glow)' : '2px solid rgba(255,255,255,0.1)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  fontSize: '0.7rem',
-                  transition: 'all 0.4s ease',
-                  boxShadow: isDone ? '0 0 12px rgba(0,255,157,0.3)' : 'none',
-                  color: isDone ? '#000' : 'var(--text-dim)',
-                  fontWeight: 900
-                }}>
-                  {isDone ? '✓' : stage.id}
-                </div>
-                {!isLast && (
-                  <div style={{
-                    width: '2px',
-                    height: '32px',
-                    background: isDone ? 'rgba(0,255,157,0.3)' : 'rgba(255,255,255,0.05)',
-                    transition: 'background 0.4s ease'
-                  }}/>
-                )}
+            <div key={stage.id} style={{
+              display: 'flex',
+              gap: '0.65rem',
+              alignItems: 'center',
+              background: isDone ? 'rgba(16, 185, 129, 0.04)' : '#090d16',
+              padding: '0.4rem 0.65rem',
+              borderRadius: '4px',
+              border: isDone ? '1px solid rgba(16, 185, 129, 0.2)' : '1px solid #1e293b'
+            }}>
+              <div style={{
+                width: '20px',
+                height: '20px',
+                borderRadius: '50%',
+                background: isDone ? 'rgba(16, 185, 129, 0.15)' : 'rgba(255,255,255,0.03)',
+                border: isDone ? '1px solid #10b981' : '1px solid #334155',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontSize: '0.62rem',
+                color: isDone ? '#10b981' : '#64748b',
+                fontWeight: 700,
+                flexShrink: 0
+              }}>
+                {isDone ? '✓' : stage.id}
               </div>
-
-              {/* Content */}
-              <div style={{ paddingTop: '4px', paddingBottom: isLast ? 0 : '1rem', flex: 1 }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                  <span style={{ fontSize: '0.8rem' }}>{stage.icon}</span>
-                  <span style={{
-                    fontSize: '0.8rem',
-                    fontWeight: isDone ? 700 : 500,
-                    color: isDone ? '#fff' : 'var(--text-dim)',
-                    fontFamily: 'Space Grotesk',
-                    transition: 'color 0.4s ease'
-                  }}>
-                    {stage.label}
-                  </span>
-                </div>
-                <div style={{ fontSize: '0.67rem', color: isDone ? 'var(--text-secondary)' : 'rgba(255,255,255,0.2)', marginTop: '2px', lineHeight: 1.4, transition: 'color 0.4s ease' }}>
+              <div style={{ flex: 1, display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.25rem' }}>
+                <span style={{ fontSize: '0.78rem', fontWeight: 600, color: isDone ? '#f8fafc' : '#64748b' }}>
+                  {stage.label}
+                </span>
+                <span style={{ fontSize: '0.68rem', color: '#64748b' }}>
                   {stage.desc}
-                </div>
+                </span>
               </div>
             </div>
           );
         })}
       </div>
-    </section>;
+    </section>
+  );
 }
 
 function ProjectProfileCard({ data }) {
@@ -132,28 +109,27 @@ function ProjectProfileCard({ data }) {
 
   return (
     <div style={{
-      background: 'rgba(255,255,255,0.015)',
-      border: '1px solid rgba(14,165,233,0.1)',
-      borderRadius: '16px',
-      padding: '1.5rem',
+      background: '#090d16',
+      border: '1px solid #1e293b',
+      borderRadius: '6px',
+      padding: '0.85rem 1rem',
     }}>
-      <div style={{ fontSize: '0.65rem', fontWeight: 900, color: '#0ea5e9', letterSpacing: '4px', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
-        Personalized Recommendation
+      <div style={{ fontSize: '0.62rem', fontWeight: 700, color: '#38bdf8', letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
+        Personalized Specification Profile
       </div>
-      <h3 style={{ fontSize: '1.25rem', color: '#fff', fontFamily: 'Space Grotesk', margin: '0 0 1rem 0' }}>
-        Project Profile
-      </h3>
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '0' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '0.4rem' }}>
         {rows.map((row, i) => (
           <div key={i} style={{
             display: 'flex',
             justifyContent: 'space-between',
             alignItems: 'center',
-            padding: '0.55rem 0',
-            borderBottom: i < rows.length - 1 ? '1px solid rgba(255,255,255,0.04)' : 'none'
+            padding: '0.35rem 0.5rem',
+            background: 'rgba(255,255,255,0.02)',
+            borderRadius: '4px',
+            border: '1px solid rgba(255,255,255,0.04)'
           }}>
-            <span style={{ fontSize: '0.75rem', color: 'var(--text-dim)', fontWeight: 600 }}>{row.label}</span>
-            <span style={{ fontSize: '0.8rem', fontWeight: 800, color: '#fff', fontFamily: 'Space Grotesk', textAlign: 'right', maxWidth: '55%' }}>{row.value}</span>
+            <span style={{ fontSize: '0.7rem', color: '#94a3b8' }}>{row.label}</span>
+            <span style={{ fontSize: '0.75rem', fontWeight: 600, color: '#f8fafc', fontFamily: 'Space Grotesk' }}>{row.value}</span>
           </div>
         ))}
       </div>
@@ -163,16 +139,15 @@ function ProjectProfileCard({ data }) {
 
 export default function ReportPage() {
   const { reportData } = useMaterial();
-
   const [mounted, setMounted] = useState(false);
   useEffect(() => { setMounted(true); }, []);
 
   if (!mounted) {
     return (
-      <div style={{ minHeight: '100vh', background: 'var(--eco-black)', color: 'var(--text-primary)' }}>
+      <div style={{ minHeight: '100vh', background: '#090d16', color: '#f8fafc' }}>
         <Header />
-        <div style={{ padding: '2rem', color: 'var(--text-dim)', textAlign: 'center', marginTop: '10vh' }}>
-          <h2>Initializing Engineering Dashboard...</h2>
+        <div style={{ padding: '3rem', color: '#64748b', textAlign: 'center', marginTop: '10vh' }}>
+          <div style={{ fontFamily: 'Space Grotesk', fontSize: '1.1rem' }}>Initializing Engineering Decision Support System...</div>
         </div>
         <Footer />
       </div>
@@ -180,81 +155,79 @@ export default function ReportPage() {
   }
 
   return (
-    <div style={{ minHeight: '100vh', color: 'var(--text-primary)' }}>
+    <div style={{ minHeight: '100vh', color: '#f8fafc' }}>
       <div className="premium-bg">
         <div className="gradient-mesh" />
         <div className="blueprint-grid" />
-        <div className="topo-pattern" />
       </div>
       <div style={{ position: 'relative', zIndex: 10 }}>
         <Header />
         {!reportData ? (
-          <div style={{ padding: '2rem', color: 'var(--text-dim)', textAlign: 'center', marginTop: '10vh', minHeight: '60vh' }}>
-            <h2>Initializing Engineering Dashboard...</h2>
+          <div style={{ padding: '3rem', color: '#94a3b8', textAlign: 'center', marginTop: '10vh', minHeight: '60vh' }}>
+            <div style={{ fontFamily: 'Space Grotesk', fontSize: '1.1rem', marginBottom: '0.5rem' }}>
+              No Report Data Available
+            </div>
+            <div style={{ fontSize: '0.85rem', color: '#64748b' }}>
+              Please complete the material recommendation questionnaire to generate a report.
+            </div>
           </div>
         ) : (
-          <main style={{ maxWidth: '1600px', margin: '0 auto', padding: '2rem 1.5rem', display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+          <main style={{ maxWidth: '1400px', margin: '0 auto', padding: '1.5rem 1.25rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
 
-            {/* Section 1: Executive Summary Hero Banner */}
-            <ExecutiveHero data={reportData} />
-            <AiRecommendationHero data={reportData} />
+            {/* 1. Compact Project Context Telemetry Strip */}
+            <CompactSummaryStrip data={reportData} />
 
-            {/* Section 2: Hybrid Score + Decision Factors (Full Width) */}
+            {/* 2. Primary Recommendation — the main visual focus */}
             <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'minmax(0, 1.2fr) minmax(0, 1fr)',
-              gap: '2rem',
-              alignItems: 'start'
+              background: '#0f172a',
+              border: '1px solid #1e293b',
+              borderRadius: '8px',
+              padding: '1.25rem',
+              boxShadow: '0 4px 12px rgba(0, 0, 0, 0.25)',
             }}>
-               <HybridScorePanel data={reportData} />
-               <DecisionFactorsPanel data={reportData} />
+              <MaterialBreakdown data={reportData} />
             </div>
 
-            {/* Section 3: Split Grid Layout – Blueprint + Recommendations on left, sidebar on right */}
-            <div className="report-layout-grid" style={{
-              display: 'grid',
-              gridTemplateColumns: 'minmax(0, 1.8fr) minmax(0, 1.2fr)',
-              gap: '2rem',
-              alignItems: 'start'
-            }}>
+            {/* 3. Supporting Analysis — All Collapsed by Default */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
 
-              {/* Left Column */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-                <Accordion title="Blueprint & Geometry" defaultOpen={false}>
-                  <BlueprintPanel data={reportData} />
-                </Accordion>
-                <Accordion title="Material Package Details" defaultOpen={false}>
-                  <MaterialBreakdown data={reportData} />
-                </Accordion>
-                <Accordion title="Quantity Estimation" defaultOpen={false}>
-                  <QuantityEstimationPanel data={reportData} />
-                </Accordion>
-              </div>
+              <Accordion title="Hybrid Score Breakdown & Decision Factors" subtitle="Engineering Rules + ML Weighting Methodology">
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '1rem' }}>
+                  <HybridScorePanel data={reportData} />
+                  <DecisionFactorsPanel data={reportData} />
+                </div>
+              </Accordion>
 
-              {/* Right Column – Sidebar */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-                <Accordion title="AI Decision Timeline" defaultOpen={false}>
-                  <DecisionTimeline />
-                </Accordion>
-                <Accordion title="Project Profile" defaultOpen={false}>
+              <Accordion title="Alternative Material Evaluation Matrix" subtitle="Ranked Candidate Comparison by Component">
+                <AlternativesTable data={reportData} />
+              </Accordion>
+
+              <Accordion title="Blueprint Geometry & Floorplan Parameters" subtitle="11 Structural Dimensions & Schematic Layout">
+                <BlueprintPanel data={reportData} />
+              </Accordion>
+
+              <Accordion title="Quantity Takeoff & Material Estimates" subtitle="Structural Unit Volumes from Geometry Computation">
+                <QuantityEstimationPanel data={reportData} />
+              </Accordion>
+
+              <Accordion title="Project Specification & Sri Lankan Climate Profile" subtitle="Environmental Constraints & Sustainability Context">
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                   <ProjectProfileCard data={reportData} />
-                </Accordion>
-                <Accordion title="Project & Climate Overview" defaultOpen={false}>
                   <ProjectOverview data={reportData} />
-                </Accordion>
-                <Accordion title="Sustainability KPIs" defaultOpen={false}>
                   <SustainabilityDashboard data={reportData} />
-                </Accordion>
-                <Accordion title="Feature Importance (XAI)" defaultOpen={false}>
-                  <FeatureImportance data={reportData} />
-                </Accordion>
-                <Accordion title="Alternative Materials" defaultOpen={false}>
-                  <AlternativesTable data={reportData} />
-                </Accordion>
-                <Accordion title="Audit Log" defaultOpen={false}>
+                </div>
+              </Accordion>
+
+              <Accordion title="Explainable AI — Feature Importance (XAI)" subtitle="ML Model Feature Weights & Contribution Profile">
+                <FeatureImportance data={reportData} />
+              </Accordion>
+
+              <Accordion title="AI Execution Trace & System Audit Log" subtitle="Decision Stage Timeline & Full Evaluation Stream">
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '1rem' }}>
+                  <DecisionTimeline />
                   <AuditLogPanel data={reportData} />
-                </Accordion>
-              </div>
+                </div>
+              </Accordion>
 
             </div>
 
