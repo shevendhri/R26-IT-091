@@ -6,3 +6,4 @@ datasets/
 blueprint_dataset.zip
 train_coco_pt.json
 *.log
+node_modules/
