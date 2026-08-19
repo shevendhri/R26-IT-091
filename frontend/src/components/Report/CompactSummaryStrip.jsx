@@ -49,7 +49,7 @@ export default function CompactSummaryStrip({ data }) {
               Project Context
             </span>
             <span className="telemetry-badge telemetry-badge-success">
-              SLS Compliant
+              SLS-Referenced Rule Check
             </span>
           </div>
           <h1 style={{ fontSize: '1.5rem', fontWeight: 600, color: 'var(--text-primary)', margin: '0 0 0.5rem 0', fontFamily: 'Space Grotesk', letterSpacing: '-0.02em' }}>
@@ -80,7 +80,7 @@ export default function CompactSummaryStrip({ data }) {
               </span>
               <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)', fontWeight: 600 }}>/100</span>
             </div>
-            <div style={{ fontSize: '0.65rem', color: 'var(--text-secondary)', marginTop: '0.5rem' }}>Primary Ranking Metric</div>
+            <div style={{ fontSize: '0.65rem', color: 'var(--text-secondary)', marginTop: '0.5rem' }}>Primary Decision Ranking</div>
           </div>
 
           {/* Engineering Score */}
@@ -97,7 +97,7 @@ export default function CompactSummaryStrip({ data }) {
               </span>
               <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)', fontWeight: 600 }}>/100</span>
             </div>
-            <div style={{ fontSize: '0.65rem', color: 'var(--text-secondary)', marginTop: '0.5rem' }}>Deterministic Rules (75%)</div>
+            <div style={{ fontSize: '0.65rem', color: 'var(--text-secondary)', marginTop: '0.5rem' }}>Deterministic Rules (70%)</div>
           </div>
 
           {/* ML Confidence */}
@@ -113,7 +113,7 @@ export default function CompactSummaryStrip({ data }) {
                 {mlScore}%
               </span>
             </div>
-            <div style={{ fontSize: '0.65rem', color: 'var(--text-secondary)', marginTop: '0.5rem' }}>Random Forest (25%)</div>
+            <div style={{ fontSize: '0.65rem', color: 'var(--text-secondary)', marginTop: '0.5rem' }}>ML Pattern Inference (30%)</div>
           </div>
 
         </div>

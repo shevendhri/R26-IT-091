@@ -25,9 +25,21 @@ export default function ProcessingPage() {
     const fetchRecommendations = async () => {
       try {
         // Map MaterialContext fields → API request schema
+        console.log('Payload:', {
+          // ── Core building parameters (existing — do not remove) ────────
+          buildingType:            buildingInfo.building_type      || 'Residential',
+          location:                 buildingInfo.location           || 'Colombo',
+          floorCount:               parseInt(buildingInfo.floor_count)  || 2,
+          totalArea:                parseFloat(buildingInfo.total_area) || 170.0,
+          structuralSystem:         buildingInfo.structural_system  || 'Concrete Frame',
+          sustainabilityPreference: preferences.sustainability_level || 'Medium',
+          budgetLevel:              preferences.budget_tier          || 'Balanced',
+          // ── Project Requirements ... omitted for brevity ...
+        });
+        console.log('Payload object constructed');
         const payload = {
           // ── Core building parameters (existing — do not remove) ────────
-          buildingType:             buildingInfo.building_type      || 'Residential',
+          buildingType:            buildingInfo.building_type      || 'Residential',
           location:                 buildingInfo.location           || 'Colombo',
           floorCount:               parseInt(buildingInfo.floor_count)  || 2,
           totalArea:                parseFloat(buildingInfo.total_area) || 170.0,
@@ -38,8 +50,6 @@ export default function ProcessingPage() {
           // ── Project Requirements & Priorities (enrichment fields) ──────
           // These are passed as-is; current backend ignores unknown keys.
           // Future recommendation models can consume them without UI changes.
-          building_usage:           projectPreferences?.building_usage            || 'Office Building',
-          primary_goal:             projectPreferences?.primary_goal              || 'Maximum Durability',
           architectural_style:      projectPreferences?.architectural_style       || 'Modern',
           material_preferences:     projectPreferences?.material_preferences      || [],
           thermal_comfort_priority: projectPreferences?.thermal_comfort_priority  || 'Medium',
@@ -68,7 +78,12 @@ export default function ProcessingPage() {
           throw new Error(`Server error ${res.status}: ${err}`);
         }
 
+        // Clone the response before reading as text for debug logging,
+        // so the original body stream stays intact for res.json() below.
+        const resClone = res.clone();
+        resClone.text().then(raw => console.log('API response raw:', raw));
         const data = await res.json();
+        console.log('Parsed response data:', data);
 
         // Handle both possible response shapes
         let reportPayload = data;

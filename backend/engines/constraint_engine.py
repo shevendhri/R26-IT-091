@@ -128,7 +128,13 @@ def evaluate_constraints(
     structural_safety_score = None
     if is_structural:
         cap = float(material.get("Structural_Capacity", 60))
-        structural_safety_score = cap
+        # Structural capacity adequacy evaluated relative to building height / floor count
+        if num_floors <= 2:
+            structural_safety_score = min(100.0, cap * 1.35) if cap >= 50 else cap
+        elif num_floors <= 5:
+            structural_safety_score = min(100.0, cap * 1.15) if cap >= 65 else cap
+        else:
+            structural_safety_score = cap
         struct_ok = cap >= 40
         if not struct_ok:
             rejection_reasons.append(f"FAIL: Structural capacity ({cap}/100) falls below required safety limit of 40")
@@ -156,18 +162,21 @@ def evaluate_constraints(
 
     # 3. Climate Compatibility (Weight: 15)
     project_climate = climate.get("type", "intermediate").lower().strip()
-    climate_aliases = {
-        "wet zone": "wet",
-        "dry zone": "dry",
-        "intermediate zone": "intermediate",
-        "extreme coastal": "extreme coastal",
-        "moderate coastal": "coastal",
-        "coastal": "coastal",
-        "highland": "highland",
-        "urban": "intermediate"
-    }
+    climate_aliases = [
+        ("extreme coastal", "extreme coastal"),
+        ("moderate coastal", "coastal"),
+        ("coastal", "coastal"),
+        ("highland", "highland"),
+        ("montane", "highland"),
+        ("dry zone", "dry"),
+        ("dry", "dry"),
+        ("wet zone", "wet"),
+        ("wet", "wet"),
+        ("intermediate", "intermediate"),
+        ("urban", "intermediate")
+    ]
     mapped_climate = project_climate
-    for k, v in climate_aliases.items():
+    for k, v in climate_aliases:
         if k in project_climate:
             mapped_climate = v
             break
@@ -186,16 +195,26 @@ def evaluate_constraints(
     corrosion_res = float(material.get("Corrosion_Resistance", 50))
     is_marine_mat = corrosion_res >= 90
 
+    salinity_val = str(climate.get("salinity", "Low")).lower() if climate else "low"
+    dist_val = float(climate.get("distance_km", 999.0)) if climate else 999.0
+
     # Range-based Climate Compatibility scoring
     if not allowed_climates or "all" in allowed_climates or mapped_climate in allowed_climates:
-        if marine_needed:
-            climate_score = 100.0 if is_marine_mat else 55.0  # Marginal if marine zone but not marine grade
+        if marine_needed or salinity_val in ("extreme", "high") or dist_val <= 5.0:
+            climate_score = 100.0 if is_marine_mat else 55.0  # Marine zone: marine-grade gets full positive advantage
+        elif salinity_val == "moderate" or dist_val <= 15.0:
+            climate_score = 90.0 if is_marine_mat else 85.0   # Moderate coastal: both eligible, slight marine edge
         else:
-            climate_score = 90.0 if is_marine_mat else 100.0  # Good but over-specified if marine grade in inland zone
+            # Low / inland salinity: standard materials get full preference (100); marine-grade over-specification score (35)
+            climate_score = 35.0 if is_marine_mat else 100.0
     elif mapped_climate == "extreme coastal" and "coastal" in allowed_climates:
-        climate_score = 90.0
+        climate_score = 90.0 if is_marine_mat else 50.0
     else:
-        climate_score = 20.0  # Unsuitable
+        # Purely coastal materials in inland zone remain eligible with over-specification rating
+        if is_marine_mat and salinity_val == "low":
+            climate_score = 35.0
+        else:
+            climate_score = 20.0  # Unsuitable
 
     # Moisture adjustment under high humidity
     hum_str = str(climate.get("humidity", "70%")).replace("%", "")

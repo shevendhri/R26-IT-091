@@ -89,7 +89,7 @@ const PILLARS = [
   { label: "Climate-Aware", sub: "14 Sri Lankan micro-climate zones" },
   { label: "AI + Engineering", sub: "Hybrid deterministic & ML architecture" },
   { label: "Explainable", sub: "Every decision traced & reasoned" },
-  { label: "SLS Compliant", sub: "SLS 134 / SLS 139 validated outputs" },
+  { label: "SLS-Referenced", sub: "SLS 134 / SLS 139 rule-checked outputs" },
 ];
 
 export default function Home() {
@@ -807,6 +807,7 @@ export default function Home() {
             <li><Link href="/materials">Materials</Link></li>
             <li><Link href="/plan-analyzer">Plan Analyzer</Link></li>
             <li><Link href="/materials/report">Reports</Link></li>
+            <li><Link href="/feedback">User Feedback</Link></li>
           </ul>
 
           <Link href="/materials" className="lp-nav-cta">Begin</Link>

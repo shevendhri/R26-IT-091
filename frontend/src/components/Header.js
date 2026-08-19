@@ -68,7 +68,7 @@ export default function Header() {
         </div>
 
         {/* Navigation */}
-        <nav style={{ display: 'flex', gap: '2rem', fontSize: '0.72rem', fontWeight: 600, letterSpacing: '0.06em' }}>
+        <nav style={{ display: 'flex', gap: '1.75rem', fontSize: '0.72rem', fontWeight: 600, letterSpacing: '0.06em', alignItems: 'center', flexWrap: 'wrap' }}>
           <Link href="/" style={{
             color: pathname === '/' ? '#10b981' : '#94a3b8',
             textDecoration: 'none',
@@ -95,6 +95,21 @@ export default function Header() {
           }}>
             MATERIAL RECOMMENDATIONS
             {pathname.startsWith('/materials') && <div style={{ position: 'absolute', bottom: 0, left: 0, width: '100%', height: '2px', background: '#10b981' }} />}
+          </Link>
+          <Link href="/feedback" style={{
+            color: pathname === '/feedback' ? '#10b981' : '#94a3b8',
+            textDecoration: 'none',
+            position: 'relative',
+            padding: '4px 0',
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '6px'
+          }}>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ opacity: pathname === '/feedback' ? 1 : 0.8 }}>
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+            </svg>
+            USER FEEDBACK
+            {pathname === '/feedback' && <div style={{ position: 'absolute', bottom: 0, left: 0, width: '100%', height: '2px', background: '#10b981' }} />}
           </Link>
         </nav>
       </div>

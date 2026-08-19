@@ -3,9 +3,9 @@
     "material": "Gr. 25 Standard Concrete Foundation",
     "criterion_breakdown": {
       "structural_safety": {
-        "score": 75.0,
+        "score": 100.0,
         "max": 25.0,
-        "contribution": 18.75,
+        "contribution": 25.0,
         "normalized_weight": 0.25,
         "is_na": false
       },
@@ -17,9 +17,9 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 15.0,
         "normalized_weight": 0.15,
         "is_na": false
       },
@@ -64,9 +64,9 @@
     "material": "Gr. 30 Marine-Grade Concrete Foundation",
     "criterion_breakdown": {
       "structural_safety": {
-        "score": 88.0,
+        "score": 100.0,
         "max": 25.0,
-        "contribution": 22.0,
+        "contribution": 25.0,
         "normalized_weight": 0.25,
         "is_na": false
       },
@@ -78,9 +78,9 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 35.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 5.25,
         "normalized_weight": 0.15,
         "is_na": false
       },
@@ -125,9 +125,9 @@
     "material": "Eco-Concrete Foundation (30% Recycled Aggregate)",
     "criterion_breakdown": {
       "structural_safety": {
-        "score": 72.0,
+        "score": 97.2,
         "max": 25.0,
-        "contribution": 18.0,
+        "contribution": 24.3,
         "normalized_weight": 0.25,
         "is_na": false
       },
@@ -139,9 +139,9 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 15.0,
         "normalized_weight": 0.15,
         "is_na": false
       },
@@ -186,9 +186,9 @@
     "material": "Raft Foundation Assembly (RC Heavy)",
     "criterion_breakdown": {
       "structural_safety": {
-        "score": 98.0,
+        "score": 100.0,
         "max": 25.0,
-        "contribution": 24.5,
+        "contribution": 25.0,
         "normalized_weight": 0.25,
         "is_na": false
       },
@@ -247,9 +247,9 @@
     "material": "Lime-Pozzolan Natural Foundation",
     "criterion_breakdown": {
       "structural_safety": {
-        "score": 60.0,
+        "score": 81.0,
         "max": 25.0,
-        "contribution": 15.0,
+        "contribution": 20.25,
         "normalized_weight": 0.25,
         "is_na": false
       },
@@ -261,9 +261,9 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 75.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 11.25,
         "normalized_weight": 0.15,
         "is_na": false
       },
@@ -308,9 +308,9 @@
     "material": "Gr. 25 Standard Structural Concrete",
     "criterion_breakdown": {
       "structural_safety": {
-        "score": 80.0,
+        "score": 100.0,
         "max": 25.0,
-        "contribution": 20.0,
+        "contribution": 25.0,
         "normalized_weight": 0.25,
         "is_na": false
       },
@@ -322,9 +322,9 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 15.0,
         "normalized_weight": 0.15,
         "is_na": false
       },
@@ -369,9 +369,9 @@
     "material": "Gr. 30 Marine-Grade Concrete Mix",
     "criterion_breakdown": {
       "structural_safety": {
-        "score": 90.0,
+        "score": 100.0,
         "max": 25.0,
-        "contribution": 22.5,
+        "contribution": 25.0,
         "normalized_weight": 0.25,
         "is_na": false
       },
@@ -383,9 +383,9 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 35.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 5.25,
         "normalized_weight": 0.15,
         "is_na": false
       },
@@ -430,9 +430,9 @@
     "material": "Eco-Concrete (Recycled Aggregate + Fly-Ash)",
     "criterion_breakdown": {
       "structural_safety": {
-        "score": 75.0,
+        "score": 100.0,
         "max": 25.0,
-        "contribution": 18.75,
+        "contribution": 25.0,
         "normalized_weight": 0.25,
         "is_na": false
       },
@@ -444,9 +444,9 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 15.0,
         "normalized_weight": 0.15,
         "is_na": false
       },
@@ -491,9 +491,9 @@
     "material": "Self-Compacting Concrete (SCC)",
     "criterion_breakdown": {
       "structural_safety": {
-        "score": 85.0,
+        "score": 100.0,
         "max": 25.0,
-        "contribution": 21.25,
+        "contribution": 25.0,
         "normalized_weight": 0.25,
         "is_na": false
       },
@@ -552,9 +552,9 @@
     "material": "Epoxy-Coated Rebar (ASTM A775)",
     "criterion_breakdown": {
       "structural_safety": {
-        "score": 98.0,
+        "score": 100.0,
         "max": 25.0,
-        "contribution": 24.5,
+        "contribution": 25.0,
         "normalized_weight": 0.25,
         "is_na": false
       },
@@ -566,9 +566,9 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 35.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 5.25,
         "normalized_weight": 0.15,
         "is_na": false
       },
@@ -613,9 +613,9 @@
     "material": "TMT High-Yield Rebar (SLS 375)",
     "criterion_breakdown": {
       "structural_safety": {
-        "score": 92.0,
+        "score": 100.0,
         "max": 25.0,
-        "contribution": 23.0,
+        "contribution": 25.0,
         "normalized_weight": 0.25,
         "is_na": false
       },
@@ -627,9 +627,9 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 15.0,
         "normalized_weight": 0.15,
         "is_na": false
       },
@@ -674,9 +674,9 @@
     "material": "Galvanized Steel Rebar (Hot-Dip)",
     "criterion_breakdown": {
       "structural_safety": {
-        "score": 90.0,
+        "score": 100.0,
         "max": 25.0,
-        "contribution": 22.5,
+        "contribution": 25.0,
         "normalized_weight": 0.25,
         "is_na": false
       },
@@ -735,9 +735,9 @@
     "material": "Stainless Steel Rebar (Grade 316L)",
     "criterion_breakdown": {
       "structural_safety": {
-        "score": 95.0,
+        "score": 100.0,
         "max": 25.0,
-        "contribution": 23.75,
+        "contribution": 25.0,
         "normalized_weight": 0.25,
         "is_na": false
       },
@@ -749,9 +749,9 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 35.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 5.25,
         "normalized_weight": 0.15,
         "is_na": false
       },
@@ -796,9 +796,9 @@
     "material": "GFRP Rebar (Glass Fibre Reinforced Polymer)",
     "criterion_breakdown": {
       "structural_safety": {
-        "score": 80.0,
+        "score": 100.0,
         "max": 25.0,
-        "contribution": 20.0,
+        "contribution": 25.0,
         "normalized_weight": 0.25,
         "is_na": false
       },
@@ -810,9 +810,9 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 35.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 5.25,
         "normalized_weight": 0.15,
         "is_na": false
       },
@@ -857,9 +857,9 @@
     "material": "Wire-Cut Clay Brick (Premium Grade)",
     "criterion_breakdown": {
       "structural_safety": {
-        "score": 68.0,
+        "score": 91.8,
         "max": 25.0,
-        "contribution": 17.0,
+        "contribution": 22.95,
         "normalized_weight": 0.25,
         "is_na": false
       },
@@ -871,9 +871,9 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 15.0,
         "normalized_weight": 0.15,
         "is_na": false
       },
@@ -932,9 +932,9 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 75.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 11.25,
         "normalized_weight": 0.15,
         "is_na": false
       },
@@ -979,9 +979,9 @@
     "material": "High-Density Cement Block",
     "criterion_breakdown": {
       "structural_safety": {
-        "score": 58.0,
+        "score": 78.3,
         "max": 25.0,
-        "contribution": 14.5,
+        "contribution": 19.58,
         "normalized_weight": 0.25,
         "is_na": false
       },
@@ -1040,9 +1040,9 @@
     "material": "CSEB Compressed Stabilized Earth Block",
     "criterion_breakdown": {
       "structural_safety": {
-        "score": 62.0,
+        "score": 83.7,
         "max": 25.0,
-        "contribution": 15.5,
+        "contribution": 20.93,
         "normalized_weight": 0.25,
         "is_na": false
       },
@@ -1054,9 +1054,9 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 75.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 11.25,
         "normalized_weight": 0.15,
         "is_na": false
       },
@@ -1101,9 +1101,9 @@
     "material": "Hollow Clay Block (Perforated)",
     "criterion_breakdown": {
       "structural_safety": {
-        "score": 55.0,
+        "score": 74.25,
         "max": 25.0,
-        "contribution": 13.75,
+        "contribution": 18.56,
         "normalized_weight": 0.25,
         "is_na": false
       },
@@ -1115,9 +1115,9 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 75.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 11.25,
         "normalized_weight": 0.15,
         "is_na": false
       },
@@ -1162,9 +1162,9 @@
     "material": "Fly-Ash Composite Block",
     "criterion_breakdown": {
       "structural_safety": {
-        "score": 60.0,
+        "score": 81.0,
         "max": 25.0,
-        "contribution": 15.0,
+        "contribution": 20.25,
         "normalized_weight": 0.25,
         "is_na": false
       },
@@ -1237,9 +1237,9 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 35.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 5.25,
         "normalized_weight": 0.2,
         "is_na": false
       },
@@ -1298,9 +1298,9 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 35.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 5.25,
         "normalized_weight": 0.2,
         "is_na": false
       },
@@ -1481,9 +1481,9 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 35.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 5.25,
         "normalized_weight": 0.2,
         "is_na": false
       },
@@ -1542,9 +1542,9 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 35.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 5.25,
         "normalized_weight": 0.2,
         "is_na": false
       },
@@ -1725,9 +1725,9 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 35.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 5.25,
         "normalized_weight": 0.2,
         "is_na": false
       },
@@ -1786,9 +1786,9 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 35.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 5.25,
         "normalized_weight": 0.2,
         "is_na": false
       },
@@ -1847,9 +1847,9 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 75.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 11.25,
         "normalized_weight": 0.2,
         "is_na": false
       },
@@ -1969,9 +1969,9 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 35.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 5.25,
         "normalized_weight": 0.2,
         "is_na": false
       },
@@ -2030,9 +2030,9 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 35.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 5.25,
         "normalized_weight": 0.2,
         "is_na": false
       },
@@ -2091,9 +2091,9 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
         "is_na": false
       },
@@ -2152,9 +2152,9 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 35.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 5.25,
         "normalized_weight": 0.2,
         "is_na": false
       },
@@ -2213,9 +2213,9 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 35.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 5.25,
         "normalized_weight": 0.2,
         "is_na": false
       },
@@ -2396,9 +2396,9 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
         "is_na": false
       },
@@ -2457,9 +2457,9 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 35.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 5.25,
         "normalized_weight": 0.2,
         "is_na": false
       },
@@ -2518,9 +2518,9 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
         "is_na": false
       },
@@ -2701,9 +2701,9 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 75.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 11.25,
         "normalized_weight": 0.2,
         "is_na": false
       },
@@ -2884,9 +2884,9 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 35.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 5.25,
         "normalized_weight": 0.2,
         "is_na": false
       },
@@ -2945,9 +2945,9 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 75.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 11.25,
         "normalized_weight": 0.2,
         "is_na": false
       },
@@ -3128,9 +3128,9 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
         "is_na": false
       },
@@ -3189,9 +3189,9 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 35.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 5.25,
         "normalized_weight": 0.2,
         "is_na": false
       },
@@ -3311,9 +3311,9 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 35.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 5.25,
         "normalized_weight": 0.2,
         "is_na": false
       },
@@ -3494,16 +3494,16 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 35.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 5.25,
         "normalized_weight": 0.2,
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 100.0,
+        "score": 40.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 6.0,
         "normalized_weight": 0.2,
         "is_na": false
       },
@@ -3555,16 +3555,16 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 80.0,
+        "score": 20.0,
         "max": 15.0,
-        "contribution": 12.0,
+        "contribution": 3.0,
         "normalized_weight": 0.2,
         "is_na": false
       },
@@ -3616,9 +3616,9 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 35.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 5.25,
         "normalized_weight": 0.2,
         "is_na": false
       },
@@ -3677,9 +3677,9 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 75.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 11.25,
         "normalized_weight": 0.2,
         "is_na": false
       },

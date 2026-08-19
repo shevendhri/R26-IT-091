@@ -1,0 +1,4 @@
+Approach,Accuracy,Precision,Recall,F1-Score,Balanced Accuracy,ROC-AUC,Shannon Diversity Index,Unique Materials Recommended
+Engineering Only,0.7411,0.9321,0.5515,0.6930,0.7531,0.7698,3.343,31
+ML Only,0.9958,0.9945,0.9976,0.9961,0.9957,0.9998,3.368,33
+Hybrid Engine (v3.0),0.7668,0.9820,0.5704,0.7216,0.7793,0.7724,3.354,33

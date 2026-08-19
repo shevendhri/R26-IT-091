@@ -84,7 +84,7 @@ export default function ExecutiveHero({ data }) {
               letterSpacing: '1.5px',
               textTransform: 'uppercase'
             }}>
-              SLS COMPLIANT
+              SLS-REFERENCED RULE CHECK
             </span>
           </div>
           <h1 style={{ fontSize: '2.5rem', fontWeight: 800, fontFamily: 'Space Grotesk', color: '#fff', margin: 0, lineHeight: 1.1 }}>

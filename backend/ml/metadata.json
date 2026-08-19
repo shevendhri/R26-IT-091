@@ -1,17 +1,20 @@
 {
-  "model_name": "RandomForest",
+  "model_name": "GradientBoosting",
+  "pipeline_version": "3.0",
   "model_file": "best_model.pkl",
   "encoder_file": "encoder.pkl",
+  "scaler_file": "scaler.pkl",
   "feature_columns_file": "feature_columns.pkl",
   "label_encoders_file": "label_encoders.pkl",
-  "training_date": "2026-07-16T06:39:05.109067Z",
+  "training_date": "2026-08-05T10:58:30.715882Z",
   "random_state": 42,
   "train_test_split": "80/20 stratified",
   "cv_folds": 5,
-  "engineering_weight": 0.75,
-  "ml_weight": 0.25,
-  "model_size_mb": 20.46,
-  "feature_count": 33,
+  "engineering_weight": 0.7,
+  "ml_weight": 0.3,
+  "adaptive_weighting": true,
+  "model_size_mb": 0.91,
+  "feature_count": 38,
   "categorical_features": [
     "material_name",
     "category",
@@ -43,15 +46,41 @@
     "service_life_years",
     "suitable_for_coastal",
     "suitable_for_wet_zone",
-    "suitable_for_dry_zone",
     "suitable_for_highland",
     "recommended_for_residential",
     "recommended_for_commercial",
-    "recommended_for_industrial"
+    "recommended_for_industrial",
+    "floor_to_limit_ratio",
+    "sector_match",
+    "zone_match",
+    "coastal_corrosion_match",
+    "humidity_moisture_match",
+    "budget_sustainability_fit"
+  ],
+  "interaction_features": [
+    "floor_to_limit_ratio",
+    "sector_match",
+    "zone_match",
+    "coastal_corrosion_match",
+    "humidity_moisture_match",
+    "budget_sustainability_fit"
   ],
   "dataset_rows": 11000,
   "target_distribution": {
     "1": 5828,
     "0": 5172
+  },
+  "fixed_leakage": [
+    "recommendation_score"
+  ],
+  "removed_zero_variance": [
+    "suitable_for_dry_zone"
+  ],
+  "calibration": {
+    "status": "Calibrated",
+    "method": "Isotonic",
+    "ece": 0.0076,
+    "brier_score": 0.0162,
+    "model_checksum_sha256": "588cb0b635c4a98dd4f5266d98bd6f466ae52912af36e60bbe068df186b683b3"
   }
 }

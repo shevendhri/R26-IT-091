@@ -120,16 +120,18 @@
   {
     "feature": "actual_floor_count",
     "datatype": "int64",
-    "encoding": "none",
+    "encoding": "scaled_numeric",
     "min": 1.0,
-    "max": 42.0
+    "max": 42.0,
+    "is_interaction": false
   },
   {
     "feature": "building_area_m2",
     "datatype": "int64",
-    "encoding": "none",
+    "encoding": "scaled_numeric",
     "min": 80.0,
-    "max": 10000.0
+    "max": 10000.0,
+    "is_interaction": false
   },
   {
     "feature": "budget_tier",
@@ -185,141 +187,201 @@
   {
     "feature": "coastal_exposure",
     "datatype": "int64",
-    "encoding": "none",
+    "encoding": "scaled_numeric",
     "min": 0.0,
-    "max": 1.0
+    "max": 1.0,
+    "is_interaction": false
   },
   {
     "feature": "humidity_exposure",
     "datatype": "int64",
-    "encoding": "none",
+    "encoding": "scaled_numeric",
     "min": 0.0,
-    "max": 1.0
+    "max": 1.0,
+    "is_interaction": false
   },
   {
     "feature": "max_recommended_floors",
     "datatype": "int64",
-    "encoding": "none",
+    "encoding": "scaled_numeric",
     "min": 2.0,
-    "max": 40.0
+    "max": 40.0,
+    "is_interaction": false
   },
   {
     "feature": "compressive_strength_mpa",
     "datatype": "int64",
-    "encoding": "none",
+    "encoding": "scaled_numeric",
     "min": 0.0,
-    "max": 500.0
+    "max": 500.0,
+    "is_interaction": false
   },
   {
     "feature": "thermal_performance_score",
     "datatype": "int64",
-    "encoding": "none",
+    "encoding": "scaled_numeric",
     "min": 15.0,
-    "max": 91.0
+    "max": 91.0,
+    "is_interaction": false
   },
   {
     "feature": "moisture_resistance_score",
     "datatype": "int64",
-    "encoding": "none",
+    "encoding": "scaled_numeric",
     "min": 25.0,
-    "max": 95.0
+    "max": 95.0,
+    "is_interaction": false
   },
   {
     "feature": "corrosion_resistance_score",
     "datatype": "int64",
-    "encoding": "none",
+    "encoding": "scaled_numeric",
     "min": 18.0,
-    "max": 92.0
+    "max": 92.0,
+    "is_interaction": false
   },
   {
     "feature": "fire_resistance_score",
     "datatype": "int64",
-    "encoding": "none",
+    "encoding": "scaled_numeric",
     "min": 32.0,
-    "max": 98.0
+    "max": 98.0,
+    "is_interaction": false
   },
   {
     "feature": "durability_score",
     "datatype": "int64",
-    "encoding": "none",
+    "encoding": "scaled_numeric",
     "min": 40.0,
-    "max": 96.0
+    "max": 96.0,
+    "is_interaction": false
   },
   {
     "feature": "maintenance_score",
     "datatype": "int64",
-    "encoding": "none",
+    "encoding": "scaled_numeric",
     "min": 40.0,
-    "max": 94.0
+    "max": 94.0,
+    "is_interaction": false
   },
   {
     "feature": "sustainability_score",
     "datatype": "int64",
-    "encoding": "none",
+    "encoding": "scaled_numeric",
     "min": 28.0,
-    "max": 92.0
+    "max": 92.0,
+    "is_interaction": false
   },
   {
     "feature": "carbon_footprint_kgco2e",
     "datatype": "int64",
-    "encoding": "none",
+    "encoding": "scaled_numeric",
     "min": 20.0,
-    "max": 1800.0
+    "max": 1800.0,
+    "is_interaction": false
   },
   {
     "feature": "service_life_years",
     "datatype": "int64",
-    "encoding": "none",
+    "encoding": "scaled_numeric",
     "min": 7.0,
-    "max": 60.0
+    "max": 60.0,
+    "is_interaction": false
   },
   {
     "feature": "suitable_for_coastal",
     "datatype": "int64",
-    "encoding": "none",
+    "encoding": "scaled_numeric",
     "min": 0.0,
-    "max": 1.0
+    "max": 1.0,
+    "is_interaction": false
   },
   {
     "feature": "suitable_for_wet_zone",
     "datatype": "int64",
-    "encoding": "none",
+    "encoding": "scaled_numeric",
     "min": 0.0,
-    "max": 1.0
-  },
-  {
-    "feature": "suitable_for_dry_zone",
-    "datatype": "int64",
-    "encoding": "none",
-    "min": 1.0,
-    "max": 1.0
+    "max": 1.0,
+    "is_interaction": false
   },
   {
     "feature": "suitable_for_highland",
     "datatype": "int64",
-    "encoding": "none",
+    "encoding": "scaled_numeric",
     "min": 0.0,
-    "max": 1.0
+    "max": 1.0,
+    "is_interaction": false
   },
   {
     "feature": "recommended_for_residential",
     "datatype": "int64",
-    "encoding": "none",
+    "encoding": "scaled_numeric",
     "min": 0.0,
-    "max": 1.0
+    "max": 1.0,
+    "is_interaction": false
   },
   {
     "feature": "recommended_for_commercial",
     "datatype": "int64",
-    "encoding": "none",
+    "encoding": "scaled_numeric",
     "min": 0.0,
-    "max": 1.0
+    "max": 1.0,
+    "is_interaction": false
   },
   {
     "feature": "recommended_for_industrial",
     "datatype": "int64",
-    "encoding": "none",
+    "encoding": "scaled_numeric",
     "min": 0.0,
-    "max": 1.0
+    "max": 1.0,
+    "is_interaction": false
+  },
+  {
+    "feature": "floor_to_limit_ratio",
+    "datatype": "float64",
+    "encoding": "scaled_numeric",
+    "min": 0.025,
+    "max": 15.0,
+    "is_interaction": true
+  },
+  {
+    "feature": "sector_match",
+    "datatype": "int64",
+    "encoding": "scaled_numeric",
+    "min": 0.0,
+    "max": 1.0,
+    "is_interaction": true
+  },
+  {
+    "feature": "zone_match",
+    "datatype": "int64",
+    "encoding": "scaled_numeric",
+    "min": 0.0,
+    "max": 1.0,
+    "is_interaction": true
+  },
+  {
+    "feature": "coastal_corrosion_match",
+    "datatype": "float64",
+    "encoding": "scaled_numeric",
+    "min": 0.0,
+    "max": 0.8,
+    "is_interaction": true
+  },
+  {
+    "feature": "humidity_moisture_match",
+    "datatype": "float64",
+    "encoding": "scaled_numeric",
+    "min": 0.0,
+    "max": 0.95,
+    "is_interaction": true
+  },
+  {
+    "feature": "budget_sustainability_fit",
+    "datatype": "int64",
+    "encoding": "scaled_numeric",
+    "min": 0.0,
+    "max": 1.0,
+    "is_interaction": true
   }
 ]

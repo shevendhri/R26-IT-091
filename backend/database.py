@@ -14,33 +14,30 @@ def ensure_table():
     conn = get_connection()
     cur = conn.cursor()
 
-    # Drop and recreate to ensure clean schema with all new columns
     cur.execute("SELECT name FROM sqlite_master WHERE type='table' AND name='materials'")
     table_exists = cur.fetchone()
     if table_exists:
         cur.execute("PRAGMA table_info(materials)")
         columns = [row[1] for row in cur.fetchall()]
         # Re-seed if new columns are missing
-        if "Style_Compatibility" not in columns or "Recyclability_Rating" not in columns:
-            print("[DB] Dropping outdated materials table for schema upgrade (adding Style_Compatibility, Recyclability_Rating, etc.)...")
+        if "Component" not in columns or "Unit" not in columns or "Unit_Rate" not in columns or "Standard_Reference" not in columns:
+            print("[DB] Upgrading materials table schema with Component, Unit, Unit_Rate, and Standard_Reference...")
             cur.execute("DROP TABLE IF EXISTS materials")
             conn.commit()
-        else:
-            # Check if we have enough materials (62+)
-            cur.execute("SELECT COUNT(*) FROM materials")
-            count = cur.fetchone()[0]
-            if count < 62:
-                print(f"[DB] Only {count} materials found. Re-seeding with expanded 62 material database...")
-                cur.execute("DELETE FROM materials")
-                conn.commit()
-                # Reset count so that later seeding logic runs
-                count = 0
 
     cur.execute("""
         CREATE TABLE IF NOT EXISTS materials (
             Material_ID INTEGER PRIMARY KEY AUTOINCREMENT,
             Name TEXT,
+            Component TEXT,
+            Application TEXT,
             Category TEXT,
+            Unit TEXT,
+            Unit_Rate REAL,
+            Rate_Basis TEXT,
+            Data_Source TEXT,
+            Data_Quality TEXT,
+            Standard_Reference TEXT,
             Thermal_Rating INTEGER,
             Moisture_Resistance INTEGER,
             Corrosion_Resistance INTEGER,
@@ -66,12 +63,13 @@ def ensure_table():
 
     cur.execute("SELECT COUNT(*) FROM materials")
     if cur.fetchone()[0] == 0:
-        print("[DB] Seeding expanded 60+ material database...")
+        print("[DB] Seeding expanded 62-material database with strict component eligibility...")
+
         # Schema:
-        # (Name, Category, Thermal_Rating, Moisture_Resistance, Corrosion_Resistance,
-        #  Structural_Capacity, Sustainability_Rating, Maintenance_Level, Embodied_Carbon,
-        #  Suitable_Climates, Budget_Level, Building_Sectors, Floor_Count_Range, Service_Life,
-        #  Description, Local_Availability, Supplier_Density, Style_Compatibility,
+        # (Name, Component, Application, Category, Unit, Unit_Rate, Rate_Basis, Data_Source, Data_Quality, Standard_Reference,
+        #  Thermal_Rating, Moisture_Resistance, Corrosion_Resistance, Structural_Capacity, Sustainability_Rating,
+        #  Maintenance_Level, Embodied_Carbon, Suitable_Climates, Budget_Level, Building_Sectors, Floor_Count_Range,
+        #  Service_Life, Description, Local_Availability, Supplier_Density, Style_Compatibility,
         #  Recyclability_Rating, Thermal_Performance_Rating, Climate_Risk_Score)
 
         materials = [
@@ -80,7 +78,9 @@ def ensure_table():
         # FOUNDATION (5 materials)
         # ═══════════════════════════════════════════════════
         ("Gr. 25 Standard Concrete Foundation",
-         "Foundation", 40, 65, 45, 75, 55, 20, 0.45,
+         "Foundation", "Pad and strip footings for low-to-mid rise buildings", "Foundation",
+         "m³", 34500.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "SLS 614 / BS 8110 ref",
+         40, 65, 45, 75, 55, 20, 0.45,
          "wet,dry,intermediate,highland",
          "mid", "residential,commercial,hotel,school,apartment", "1-2,3-5", 50,
          "Standard M25 structural concrete for pad and strip foundations in low-rise buildings. Suitable for non-aggressive soils under moderate load.",
@@ -89,7 +89,9 @@ def ensure_table():
          40, 40, 60),
 
         ("Gr. 30 Marine-Grade Concrete Foundation",
-         "Foundation", 45, 98, 98, 88, 48, 15, 0.68,
+         "Foundation", "Substructure in saline/coastal marine environment", "Foundation",
+         "m³", 48000.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "SLS 614 Marine Exposure / BS 6349",
+         45, 98, 98, 88, 48, 15, 0.68,
          "coastal,extreme coastal",
          "high", "residential,commercial,hotel,industrial,apartment,school", "1-2,3-5,6+", 100,
          "Sulphate-resistant dense-mix M30 concrete with silica fume and corrosion inhibitors. Mandatory for coastal and saline-soil foundations to resist chloride-induced corrosion.",
@@ -98,7 +100,9 @@ def ensure_table():
          35, 45, 98),
 
         ("Eco-Concrete Foundation (30% Recycled Aggregate)",
-         "Foundation", 42, 65, 50, 72, 90, 20, 0.30,
+         "Foundation", "Sustainable substructure footings & grade slabs", "Foundation",
+         "m³", 38000.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "SLS 614 Blended / GREENSL Tier-1",
+         42, 65, 50, 72, 90, 20, 0.30,
          "dry,wet,intermediate,highland",
          "mid", "residential,commercial,apartment,school", "1-2,3-5", 50,
          "Sustainable M25-equivalent concrete using 30% recycled crushed aggregate and fly-ash blended cement. Reduces embodied carbon by 35% vs standard mix.",
@@ -107,16 +111,20 @@ def ensure_table():
          85, 40, 60),
 
         ("Raft Foundation Assembly (RC Heavy)",
-         "Foundation", 35, 92, 85, 98, 42, 12, 0.80,
+         "Foundation", "Full-footprint mat/raft foundation for soft soils or heavy load", "Foundation",
+         "m³", 85000.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "BS 8004 / SLS 614 ref",
+         35, 92, 85, 98, 42, 12, 0.80,
          "wet,coastal,dry,intermediate",
          "high", "commercial,hotel,apartment,industrial", "3-5,6+", 120,
-         "Heavily reinforced raft slab system distributing loads across full footprint. Ideal for soft ground conditions, high-occupancy buildings, and seismically active zones.",
+         "Heavily reinforced raft slab system distributing loads across full footprint. Ideal for soft ground conditions, high-occupancy buildings, and multi-storey structures.",
          "Medium", "Western: High, Southern: Medium, Central: Low",
          "Modern,Contemporary",
          30, 35, 85),
 
         ("Lime-Pozzolan Natural Foundation",
-         "Foundation", 50, 60, 40, 60, 92, 25, 0.12,
+         "Foundation", "Low-carbon heritage foundation for light low-rise buildings", "Foundation",
+         "m³", 29000.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "Traditional / GreenSL Heritage Guidelines",
+         50, 60, 40, 60, 92, 25, 0.12,
          "dry,intermediate,highland",
          "mid", "residential", "1-2", 80,
          "Traditional hydraulic lime and volcanic pozzolan foundation mortar. Near-zero embodied carbon with good load transfer for low-rise residential in non-aggressive soil conditions.",
@@ -125,28 +133,34 @@ def ensure_table():
          90, 50, 45),
 
         # ═══════════════════════════════════════════════════
-        # CONCRETE MIXES (4 materials)
+        # STRUCTURAL / CONCRETE & REBAR (9 materials)
         # ═══════════════════════════════════════════════════
         ("Gr. 25 Standard Structural Concrete",
-         "Concrete", 40, 65, 50, 80, 52, 25, 0.45,
+         "Structural", "Columns, beams, and suspended structural slabs", "Concrete",
+         "m³", 32500.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "SLS 614 / BS 8110 ref",
+         40, 65, 50, 80, 52, 25, 0.45,
          "wet,dry,intermediate,highland",
          "low,mid", "residential,commercial,hotel,apartment,school,industrial", "1-2,3-5", 60,
-         "Standard M25 ready-mix concrete for columns, beams, and suspended slabs. Meets SLS 614 requirements for structural elements in non-aggressive environments.",
+         "Standard M25 ready-mix concrete for columns, beams, and suspended slabs. Meets structural load guidelines for non-aggressive environments.",
          "High", "All Provinces: High",
          "Modern,Contemporary,Traditional Sri Lankan,Colonial,Minimalist,Tropical",
          40, 40, 60),
 
         ("Gr. 30 Marine-Grade Concrete Mix",
-         "Concrete", 45, 98, 98, 90, 46, 15, 0.68,
+         "Structural", "Columns, beams & coastal superstructure within 1km coast", "Concrete",
+         "m³", 45000.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "SLS 614 Marine / BS 6349",
+         45, 98, 98, 90, 46, 15, 0.68,
          "coastal,extreme coastal",
          "mid,high", "residential,commercial,hotel,industrial,apartment", "1-2,3-5,6+", 100,
-         "High-durability dense M30 concrete with 5% silica fume, maximum w/c ratio 0.40, and corrosion inhibitors. Required for all structural elements within 1km of the coast.",
+         "High-durability dense M30 concrete with 5% silica fume, maximum w/c ratio 0.40, and corrosion inhibitors. Recommended for superstructure elements in coastal zones.",
          "High", "Western: High, Southern: High, Northern: Medium, Eastern: Medium",
          "Modern,Contemporary,Tropical,Minimalist",
          35, 45, 98),
 
         ("Eco-Concrete (Recycled Aggregate + Fly-Ash)",
-         "Concrete", 42, 65, 48, 75, 92, 22, 0.28,
+         "Structural", "Low-carbon frame columns, beams and slabs", "Concrete",
+         "m³", 35000.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "SLS 614 Blended / GREENSL Tier-1",
+         42, 65, 48, 75, 92, 22, 0.28,
          "dry,wet,intermediate,highland",
          "mid", "residential,commercial,apartment,school", "1-2,3-5", 50,
          "Low-carbon structural concrete incorporating 30% recycled coarse aggregate and 20% fly-ash cement replacement. Reduces embodied carbon by 38% vs conventional M25.",
@@ -155,7 +169,9 @@ def ensure_table():
          88, 40, 60),
 
         ("Self-Compacting Concrete (SCC)",
-         "Concrete", 45, 80, 75, 85, 50, 15, 0.55,
+         "Structural", "Heavily congested column-beam junctions & architectural concrete", "Concrete",
+         "m³", 42000.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "SLS 614 Special Mix",
+         45, 80, 75, 85, 50, 15, 0.55,
          "wet,dry,coastal,intermediate",
          "high", "commercial,hotel,apartment", "3-5,6+", 65,
          "High-flow self-compacting concrete for congested reinforcement zones. Eliminates vibration requirement and ensures dense, void-free structural elements.",
@@ -163,20 +179,21 @@ def ensure_table():
          "Modern,Contemporary",
          40, 45, 75),
 
-        # ═══════════════════════════════════════════════════
-        # STRUCTURAL REBAR (5 materials)
-        # ═══════════════════════════════════════════════════
         ("Epoxy-Coated Rebar (ASTM A775)",
-         "Structural", 10, 98, 100, 98, 42, 8, 0.88,
+         "Structural", "Reinforcement steel for coastal/saline environments", "Structural",
+         "ton", 545000.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "ASTM A775 / SLS 375 ref",
+         10, 98, 100, 98, 42, 8, 0.88,
          "coastal,extreme coastal",
          "high", "residential,commercial,hotel,industrial,apartment,school", "1-2,3-5,6+", 120,
-         "Fusion-bonded epoxy-coated high-yield deformed reinforcement bar. Essential for marine and coastal structures where chloride-induced corrosion is the primary durability threat.",
+         "Fusion-bonded epoxy-coated high-yield deformed reinforcement bar. Recommended for marine and coastal structures where chloride-induced corrosion is the primary threat.",
          "Medium", "Western: High, Southern: Medium, Eastern: Low",
          "Modern,Contemporary,Tropical,Minimalist",
          25, 10, 98),
 
         ("TMT High-Yield Rebar (SLS 375)",
-         "Structural", 10, 68, 42, 92, 55, 28, 0.55,
+         "Structural", "Standard reinforcement steel for inland concrete framing", "Structural",
+         "ton", 395000.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "SLS 375 Grade RB500",
+         10, 68, 42, 92, 55, 28, 0.55,
          "dry,wet,intermediate,highland",
          "mid,high", "residential,commercial,hotel,apartment,school", "1-2,3-5,6+", 65,
          "Thermo-mechanically treated Fe500D high-yield deformed steel bars per SLS 375. Standard reinforcement for inland and non-coastal structural concrete frames.",
@@ -185,25 +202,31 @@ def ensure_table():
          35, 10, 55),
 
         ("Galvanized Steel Rebar (Hot-Dip)",
-         "Structural", 10, 85, 85, 90, 50, 15, 0.75,
+         "Structural", "Corrosion-resistant reinforcement for moderate coastal zones", "Structural",
+         "ton", 425000.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "ISO 1461 / SLS 375 ref",
+         10, 85, 85, 90, 50, 15, 0.75,
          "coastal,wet,extreme coastal",
          "high", "residential,commercial,hotel,apartment", "1-2,3-5", 80,
-         "Hot-dip galvanized deformed reinforcement bar with 85μm zinc coating. Good corrosion resistance for moderately aggressive marine environments without full epoxy specification.",
+         "Hot-dip galvanized deformed reinforcement bar with 85μm zinc coating. Good corrosion resistance for moderately aggressive marine environments.",
          "Low", "Western: Medium, Southern: Low",
          "Modern,Contemporary,Tropical",
          50, 10, 80),
 
         ("Stainless Steel Rebar (Grade 316L)",
-         "Structural", 10, 100, 100, 95, 35, 5, 1.25,
+         "Structural", "Ultra-durability reinforcement for critical marine infrastructure", "Structural",
+         "ton", 780000.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "BS 6744 / ASTM A955",
+         10, 100, 100, 95, 35, 5, 1.25,
          "coastal,extreme coastal",
          "high", "commercial,hotel,industrial", "3-5,6+", 150,
-         "Grade 316L austenitic stainless steel reinforcement for extreme chloride exposure. Premium specification for bridge decks, marine infrastructure, and critical coastal structures.",
+         "Grade 316L austenitic stainless steel reinforcement for extreme chloride exposure. Premium specification for long-life critical coastal structures.",
          "Low", "Western: Low",
          "Modern,Contemporary,Minimalist",
          65, 10, 100),
 
         ("GFRP Rebar (Glass Fibre Reinforced Polymer)",
-         "Structural", 10, 100, 100, 80, 80, 5, 0.55,
+         "Structural", "Non-metallic non-corrosive reinforcement for saline concrete", "Structural",
+         "ton", 490000.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "ACI 440.1R / CSA S806",
+         10, 100, 100, 80, 80, 5, 0.55,
          "coastal,extreme coastal,wet",
          "high", "residential,commercial,apartment", "1-2,3-5", 100,
          "Non-corrosive glass fibre reinforced polymer rebar. Zero corrosion risk in marine environments. Lighter than steel, ideal for aggressive exposure conditions.",
@@ -215,7 +238,9 @@ def ensure_table():
         # WALLING (6 materials)
         # ═══════════════════════════════════════════════════
         ("Wire-Cut Clay Brick (Premium Grade)",
-         "Walling", 88, 68, 48, 68, 85, 18, 0.22,
+         "Walling", "External load-bearing and partition walls", "Walling",
+         "m²", 3100.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "SLS 39 / BS 3921 ref",
+         88, 68, 48, 68, 85, 18, 0.22,
          "highland,intermediate,dry,wet",
          "mid,high", "residential,hotel,school", "1-2", 80,
          "Traditional machine-cut high-density clay bricks with excellent thermal mass. Natural breathable material ideal for highland and intermediate zones where thermal comfort is critical.",
@@ -224,7 +249,9 @@ def ensure_table():
          75, 88, 50),
 
         ("AAC Eco-Block G4 (Autoclaved Aerated Concrete)",
-         "Walling", 98, 55, 42, 48, 88, 28, 0.15,
+         "Walling", "Lightweight exterior and interior partition walls", "Walling",
+         "m²", 4500.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "SLS 1344 / EN 771-4",
+         98, 55, 42, 48, 88, 28, 0.15,
          "dry,intermediate,highland",
          "mid", "residential,commercial,apartment,hotel,school", "1-2,3-5", 50,
          "Factory-made lightweight aerated concrete block with R-value 3× better than standard brick. Reduces structural dead load by 60% and provides superior thermal insulation.",
@@ -233,7 +260,9 @@ def ensure_table():
          50, 98, 40),
 
         ("High-Density Cement Block",
-         "Walling", 48, 78, 58, 58, 46, 48, 0.38,
+         "Walling", "Standard masonry external and boundary walls", "Walling",
+         "m²", 2650.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "SLS 855 / BS 6073 ref",
+         48, 78, 58, 58, 46, 48, 0.38,
          "dry,wet,intermediate",
          "low,mid", "residential,commercial,apartment,hotel,school,industrial", "1-2,3-5", 40,
          "Standard solid or hollow dense aggregate concrete block. Workhorse walling unit for general construction with adequate structural performance and high local availability.",
@@ -242,7 +271,9 @@ def ensure_table():
          40, 48, 55),
 
         ("CSEB Compressed Stabilized Earth Block",
-         "Walling", 92, 58, 48, 62, 98, 22, 0.08,
+         "Walling", "Eco-friendly thermal external and internal walls", "Walling",
+         "m²", 3800.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "SLS 1382 / ARS 680",
+         92, 58, 48, 62, 98, 22, 0.08,
          "dry,intermediate,highland",
          "mid", "residential,school", "1-2", 60,
          "Manually or machine-pressed stabilized soil blocks with 5-8% cement. Lowest embodied carbon walling material, excellent thermal mass, carbon-negative lifecycle when using unfired soil.",
@@ -251,7 +282,9 @@ def ensure_table():
          92, 92, 40),
 
         ("Hollow Clay Block (Perforated)",
-         "Walling", 75, 62, 50, 55, 78, 20, 0.18,
+         "Walling", "Thermally insulated external partition masonry", "Walling",
+         "m²", 3400.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "SLS 39 / EN 771-1",
+         75, 62, 50, 55, 78, 20, 0.18,
          "wet,intermediate,highland,dry",
          "mid", "residential,commercial,hotel,apartment,school", "1-2,3-5", 65,
          "Extruded hollow clay partition block with vertical perforations. Better thermal performance than solid brick due to air cavities, while maintaining traditional clay aesthetics.",
@@ -260,7 +293,9 @@ def ensure_table():
          70, 78, 48),
 
         ("Fly-Ash Composite Block",
-         "Walling", 55, 72, 55, 60, 80, 25, 0.20,
+         "Walling", "Resource-efficient masonry wall units", "Walling",
+         "m²", 2900.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "IS 12894 / SLS Ref",
+         55, 72, 55, 60, 80, 25, 0.20,
          "dry,wet,intermediate",
          "mid", "residential,commercial,apartment,school", "1-2,3-5", 50,
          "Class C fly-ash based masonry block utilizing industrial waste aggregate. 30% lower carbon than cement block with comparable strength and high recycled content.",
@@ -272,7 +307,9 @@ def ensure_table():
         # ROOFING (8 materials)
         # ═══════════════════════════════════════════════════
         ("Marine-Grade Aluminium Roofing (0.55mm)",
-         "Roofing", 45, 98, 98, 15, 65, 8, 0.48,
+         "Roofing", "Corrosion-resistant pitched roof covering in marine zones", "Roofing",
+         "m²", 7800.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "SLS 1024 / BS EN 508",
+         45, 98, 98, 15, 65, 8, 0.48,
          "coastal,extreme coastal,wet",
          "mid,high", "residential,commercial,hotel,industrial,apartment", "1-2,3-5", 45,
          "Anodized aluminium roofing sheet with 0.55mm gauge for severe salt-air and coastal environments. Corrosion-proof with reflective finish reducing solar heat gain.",
@@ -281,7 +318,9 @@ def ensure_table():
          75, 45, 95),
 
         ("Portuguese Clay Tile (Unglazed Terracotta)",
-         "Roofing", 92, 88, 95, 10, 85, 18, 0.18,
+         "Roofing", "Pitched roof covering with natural thermal breathability", "Roofing",
+         "m²", 6900.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "SLS 2 / EN 1304",
+         92, 88, 95, 10, 85, 18, 0.18,
          "highland,intermediate,wet",
          "mid,high", "residential,hotel,school", "1-2", 65,
          "Traditional half-round terracotta roofing tiles with natural breathability. Excellent thermal mass and moisture management. Heritage aesthetic for highland and intermediate zones.",
@@ -290,7 +329,9 @@ def ensure_table():
          82, 92, 45),
 
         ("Insulated Sandwich Roof Panel (PU Core)",
-         "Roofing", 95, 85, 72, 20, 52, 22, 0.58,
+         "Roofing", "High thermal insulation composite roof panels", "Roofing",
+         "m²", 9500.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "EN 14509 / ISO 9001 ref",
+         95, 85, 72, 20, 52, 22, 0.58,
          "dry,intermediate,industrial",
          "mid,high", "commercial,hotel,industrial", "1-2,3-5", 35,
          "Factory-assembled rigid polyurethane core sandwich panel with steel face sheets. High thermal insulation and fast installation for commercial spans.",
@@ -299,7 +340,9 @@ def ensure_table():
          40, 95, 65),
 
         ("Standard Cement Tile (Concrete Interlocking)",
-         "Roofing", 55, 88, 78, 10, 42, 32, 0.45,
+         "Roofing", "Interlocking concrete tile for general pitched roofs", "Roofing",
+         "m²", 3800.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "SLS 400 / BS EN 490",
+         55, 88, 78, 10, 42, 32, 0.45,
          "wet,dry,intermediate",
          "low,mid", "residential,school,apartment", "1-2", 40,
          "Concrete interlocking roof tiles with standard weather seal. Economical and widely available. Suited for pitched roofs in non-coastal areas.",
@@ -308,7 +351,9 @@ def ensure_table():
          38, 55, 55),
 
         ("Zinc-Aluminium Corrugated Sheet (55% Al-Zn)",
-         "Roofing", 42, 95, 92, 12, 60, 10, 0.42,
+         "Roofing", "Lightweight metal roofing with aluminium-zinc corrosion barrier", "Roofing",
+         "m²", 5200.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "SLS 1188 / AS 1397",
+         42, 95, 92, 12, 60, 10, 0.42,
          "coastal,wet,intermediate,dry",
          "mid", "residential,commercial,apartment,industrial", "1-2,3-5", 50,
          "55% aluminium-zinc alloy coated corrugated roofing sheet (Zincalume equivalent). Superior corrosion resistance in tropical and coastal climates vs plain galvanized steel.",
@@ -317,7 +362,9 @@ def ensure_table():
          60, 42, 85),
 
         ("Green Intensive Roof System (Growing Medium)",
-         "Roofing", 98, 95, 90, 15, 98, 28, 0.10,
+         "Roofing", "Vegetated living flat roof for stormwater & urban cooling", "Roofing",
+         "m²", 24000.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "FLL Green Roof Guidelines",
+         98, 95, 90, 15, 98, 28, 0.10,
          "wet,intermediate",
          "high", "commercial,hotel,apartment", "3-5,6+", 50,
          "Engineered soil + drainage + waterproof membrane green roof. Maximum stormwater management, urban heat island mitigation, and biodiversity gain. Premium sustainable specification.",
@@ -326,7 +373,9 @@ def ensure_table():
          95, 98, 70),
 
         ("Polycarbonate Translucent Roofing",
-         "Roofing", 55, 92, 80, 8, 55, 20, 0.55,
+         "Roofing", "Daylight canopy and atrium translucent roof panels", "Roofing",
+         "m²", 4500.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "EN 16153 / ASTM D3841",
+         55, 92, 80, 8, 55, 20, 0.55,
          "wet,dry,intermediate",
          "mid", "commercial,hotel,school", "1-2,3-5", 20,
          "Multi-wall polycarbonate sheets for natural-light roofing of atriums, corridors, and covered walkways. UV stabilized with anti-drip coating.",
@@ -335,7 +384,9 @@ def ensure_table():
          45, 55, 60),
 
         ("Recycled Rubber Flat Roof Membrane",
-         "Roofing", 40, 98, 80, 8, 75, 15, 0.30,
+         "Roofing", "Elastomeric flat roof waterproofing membrane from recycled scrap", "Roofing",
+         "m²", 6200.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "ASTM D4637 / ISO 14021",
+         40, 98, 80, 8, 75, 15, 0.30,
          "wet,coastal,intermediate",
          "mid", "residential,commercial,apartment", "1-2,3-5", 35,
          "EPDM-equivalent flat roof membrane made from recycled automotive rubber. High flexibility, UV resistant, and produced from waste streams for sustainability points.",
@@ -344,10 +395,12 @@ def ensure_table():
          85, 40, 72),
 
         # ═══════════════════════════════════════════════════
-        # WINDOWS (6 materials)
+        # OPENINGS / WINDOWS (6 materials)
         # ═══════════════════════════════════════════════════
         ("uPVC Multi-Chamber Window System",
-         "Windows", 95, 98, 100, 15, 82, 8, 0.28,
+         "Openings", "High thermal insulation and saline corrosion-proof windows", "Windows",
+         "m²", 72000.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "BS EN 12608 / SLS Ref",
+         95, 98, 100, 15, 82, 8, 0.28,
          "coastal,highland,wet,extreme coastal,intermediate",
          "high", "residential,commercial,hotel,apartment,school", "1-2,3-5,6+", 45,
          "Multi-chamber uPVC profile with double-glazed low-E unit. Highest thermal insulation and zero corrosion risk. Ideal for coastal salinity, highland cold, and humid zones.",
@@ -356,7 +409,9 @@ def ensure_table():
          42, 95, 90),
 
         ("Casement Aluminium Window (Powder-Coated)",
-         "Windows", 60, 92, 92, 15, 55, 15, 0.45,
+         "Openings", "Weather-resistant operable window frames with thermal break", "Windows",
+         "m²", 48000.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "SLS 1410 / BS 4873",
+         60, 92, 92, 15, 55, 15, 0.45,
          "coastal,wet,intermediate,dry,extreme coastal",
          "mid,high", "residential,commercial,hotel,apartment,school", "1-2,3-5,6+", 40,
          "Powder-coated aluminium casement window with thermal break. Good corrosion resistance for coastal zones with modern aesthetic. Cost-effective alternative to uPVC.",
@@ -365,7 +420,9 @@ def ensure_table():
          50, 60, 82),
 
         ("Timber Louvre Window (Treated Hardwood)",
-         "Windows", 80, 62, 55, 10, 75, 42, 0.25,
+         "Openings", "Passive natural cross-ventilation adjustable louvre apertures", "Windows",
+         "m²", 35000.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "Traditional / SLS 263 ref",
+         80, 62, 55, 10, 75, 42, 0.25,
          "highland,intermediate,dry",
          "mid", "residential,hotel,school", "1-2", 40,
          "Adjustable hardwood louvre window promoting natural cross-ventilation. Traditional Sri Lankan architectural element with excellent passive cooling. Not recommended for coastal zones.",
@@ -374,7 +431,9 @@ def ensure_table():
          70, 82, 38),
 
         ("Commercial Double-Glazed Unit (DGU Low-E)",
-         "Windows", 92, 92, 88, 20, 72, 18, 0.58,
+         "Openings", "Solar control acoustic curtain wall and vision glass", "Windows",
+         "m²", 95000.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "EN 1279 / ASTM E2190",
+         92, 92, 88, 20, 72, 18, 0.58,
          "coastal,urban,wet,intermediate",
          "high", "commercial,hotel,apartment", "3-5,6+", 40,
          "Low-emissivity double-glazed unit with argon fill for commercial curtain wall and window systems. Superior solar control and thermal performance for air-conditioned spaces.",
@@ -383,7 +442,9 @@ def ensure_table():
          38, 92, 80),
 
         ("Fixed Aluminium Framed Glass Panel",
-         "Windows", 55, 92, 90, 10, 50, 10, 0.42,
+         "Openings", "Non-operable daylight vision apertures and façade panels", "Windows",
+         "m²", 28000.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "SLS 1410 / BS 6262",
+         55, 92, 90, 10, 50, 10, 0.42,
          "coastal,wet,dry,intermediate",
          "mid", "residential,commercial,hotel", "1-2,3-5", 35,
          "Fixed vision glazing panel in aluminium frame. Low maintenance, high light transmission for façade apertures where ventilation is not required.",
@@ -392,7 +453,9 @@ def ensure_table():
          45, 55, 78),
 
         ("Sliding Aluminium Window (Impact-Resistant)",
-         "Windows", 65, 95, 95, 12, 52, 12, 0.40,
+         "Openings", "Wind-load certified sliding windows for multi-storey & coastal", "Windows",
+         "m²", 42000.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "SLS 1410 / ASTM E1886",
+         65, 95, 95, 12, 52, 12, 0.40,
          "coastal,extreme coastal,wet",
          "mid", "residential,commercial,hotel,apartment", "1-2,3-5", 38,
          "Marine-grade anodized aluminium sliding window with impact-resistant glazing. Specified for cyclone-prone coastal zones with tested wind load resistance.",
@@ -401,10 +464,12 @@ def ensure_table():
          48, 65, 92),
 
         # ═══════════════════════════════════════════════════
-        # DOORS (7 materials)
+        # OPENINGS / DOORS (7 materials)
         # ═══════════════════════════════════════════════════
         ("Solid Teak Timber Door (Premium)",
-         "Doors", 48, 82, 82, 42, 75, 42, 0.22,
+         "Openings", "Primary entrance and high-traffic interior hardwood door leaf", "Doors",
+         "units", 120000.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "SLS 263 / BS 4787",
+         48, 82, 82, 42, 75, 42, 0.22,
          "wet,dry,highland,intermediate",
          "high", "residential,commercial,hotel,school", "1-2,3-5,6+", 80,
          "Hand-crafted solid Burma or Sri Lankan teak door panel with mortise and tenon joinery. Superior durability in non-coastal zones with premium aesthetic for traditional and colonial styles.",
@@ -413,7 +478,9 @@ def ensure_table():
          65, 48, 42),
 
         ("Aluminium Profile Glass Door (Heavy-Duty)",
-         "Doors", 52, 95, 95, 48, 52, 22, 0.58,
+         "Openings", "Commercial entrance & weather-resistant glazed sliding door", "Doors",
+         "units", 85000.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "SLS 1410 / BS EN 14351",
+         52, 95, 95, 48, 52, 22, 0.58,
          "coastal,wet,intermediate,extreme coastal,dry",
          "mid,high", "residential,commercial,hotel,apartment,industrial", "1-2,3-5,6+", 50,
          "Heavy-duty powder-coated aluminium profile door with full-height glazed panel. Excellent for coastal salinity resistance with contemporary aesthetic.",
@@ -422,7 +489,9 @@ def ensure_table():
          52, 52, 88),
 
         ("FRP Fiberglass Reinforced Door",
-         "Doors", 42, 98, 100, 42, 65, 12, 0.48,
+         "Openings", "100% moisture-proof and chemical-resistant door leaf for wet/coastal areas", "Doors",
+         "units", 98000.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "ASTM D4024 / BS EN 14351",
+         42, 98, 100, 42, 65, 12, 0.48,
          "coastal,wet,extreme coastal",
          "high", "residential,commercial,hotel,apartment,industrial", "1-2,3-5,6+", 60,
          "Glass fibre reinforced polymer door leaf. Completely immune to marine corrosion, moisture, salt spray, and biological attack. Premium specification for aggressive coastal environments.",
@@ -431,7 +500,9 @@ def ensure_table():
          55, 42, 98),
 
         ("Standard Hollow-Core Flush Door (HDF Faced)",
-         "Doors", 32, 42, 32, 28, 42, 48, 0.38,
+         "Openings", "Interior bedroom and office dry partition door leaf", "Doors",
+         "units", 22000.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "SLS 263 / BS 4787 Part 1",
+         32, 42, 32, 28, 42, 48, 0.38,
          "dry,intermediate",
          "low,mid", "residential,commercial,apartment,school", "1-2,3-5", 20,
          "Hollow-core internal flush door with HDF facing and timber frame. Cost-effective interior partition door for dry and intermediate climate zones only.",
@@ -440,7 +511,9 @@ def ensure_table():
          30, 32, 28),
 
         ("Steel Security Door (Powder-Coated)",
-         "Doors", 35, 75, 70, 85, 40, 25, 0.72,
+         "Openings", "High-security external and utility entrance door", "Doors",
+         "units", 65000.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "BS EN 1627 / SLS Ref",
+         35, 75, 70, 85, 40, 25, 0.72,
          "dry,intermediate,wet",
          "mid", "residential,commercial,apartment,school", "1-2,3-5,6+", 40,
          "Heavy-gauge steel security door with multi-point locking and powder-coat finish. High structural resistance for entrance and security-sensitive openings.",
@@ -449,7 +522,9 @@ def ensure_table():
          40, 35, 55),
 
         ("Timber Louvre Door (Ventilated Hardwood)",
-         "Doors", 75, 65, 58, 30, 72, 38, 0.20,
+         "Openings", "Passive airflow internal and veranda hardwood louvre door", "Doors",
+         "units", 45000.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "Traditional / SLS 263",
+         75, 65, 58, 30, 72, 38, 0.20,
          "highland,intermediate,dry,wet",
          "mid", "residential,hotel,school", "1-2", 45,
          "Hardwood slatted louvre door promoting passive ventilation while maintaining privacy. Traditional Sri Lankan architectural element unsuited for direct coastal exposure.",
@@ -458,7 +533,9 @@ def ensure_table():
          68, 78, 38),
 
         ("UPVC Sliding Door (Weather-Sealed)",
-         "Doors", 88, 98, 100, 20, 80, 10, 0.32,
+         "Openings", "Thermal and acoustic weather-sealed patio and balcony sliding door", "Doors",
+         "units", 78000.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "BS EN 12608 / PAS 24",
+         88, 98, 100, 20, 80, 10, 0.32,
          "coastal,wet,highland,extreme coastal",
          "high", "residential,commercial,hotel,apartment", "1-2,3-5", 40,
          "Multi-chamber uPVC sliding door system with double-glazed panel and weather-sealed track. Zero corrosion, excellent thermal performance for coastal and highland climates.",
@@ -470,7 +547,9 @@ def ensure_table():
         # FLOORING (7 materials)
         # ═══════════════════════════════════════════════════
         ("Polished Terrazzo Flooring (Marble Aggregate)",
-         "Flooring", 58, 92, 78, 52, 75, 12, 0.22,
+         "Flooring", "High-durability seamless indoor flooring", "Flooring",
+         "m²", 7200.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "SLS 844 / BS 8204-6",
+         58, 92, 78, 52, 75, 12, 0.22,
          "wet,dry,intermediate,highland",
          "mid,high", "residential,commercial,hotel,apartment,school", "1-2,3-5", 65,
          "Seamless monolithic terrazzo floor with marble chip aggregate and white cement matrix. Timeless durability with near-zero maintenance when sealed correctly. Traditional Sri Lankan aesthetic.",
@@ -479,7 +558,9 @@ def ensure_table():
          72, 58, 58),
 
         ("Porcelain GVT Slab (Full-Body Vitrified)",
-         "Flooring", 48, 95, 88, 48, 65, 8, 0.42,
+         "Flooring", "High-traffic stain-resistant commercial & residential floor tile", "Flooring",
+         "m²", 9800.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "ISO 13006 Group BIa / SLS 1181",
+         48, 95, 88, 48, 65, 8, 0.42,
          "wet,coastal,intermediate,dry",
          "high", "residential,commercial,hotel,apartment", "1-2,3-5", 45,
          "Large-format full-body vitrified porcelain tile with digital-print finish. Stain-resistant, scratch-proof surface with high design flexibility for contemporary interiors.",
@@ -488,7 +569,9 @@ def ensure_table():
          40, 48, 68),
 
         ("Standard Ceramic Floor Tile",
-         "Flooring", 38, 90, 85, 45, 42, 18, 0.35,
+         "Flooring", "General residential floor tiling", "Flooring",
+         "m²", 4200.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "SLS 1181 / ISO 13006 Group BIIa",
+         38, 90, 85, 45, 42, 18, 0.35,
          "wet,dry,intermediate",
          "low,mid", "residential,commercial,apartment,school", "1-2,3-5,6+", 25,
          "Standard glazed ceramic floor tile in 300×300mm and 400×400mm format. Economical, widely available, adequate for general residential and commercial applications.",
@@ -497,7 +580,9 @@ def ensure_table():
          38, 38, 55),
 
         ("Timber Strip Flooring (Treated Hardwood)",
-         "Flooring", 88, 55, 52, 40, 72, 45, 0.28,
+         "Flooring", "Highland/dry zone internal decorative hardwood floor", "Flooring",
+         "m²", 11000.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "BS 8201 / SLS Timber Ref",
+         88, 55, 52, 40, 72, 45, 0.28,
          "highland,intermediate,dry",
          "mid,high", "residential,hotel", "1-2", 40,
          "Kiln-dried and treated hardwood strip flooring. Excellent thermal comfort in highland zones. Must be protected from moisture — not suitable for coastal or wet zones.",
@@ -506,7 +591,9 @@ def ensure_table():
          68, 88, 38),
 
         ("Rubber Flooring (Recycled Automotive)",
-         "Flooring", 55, 98, 88, 48, 80, 8, 0.28,
+         "Flooring", "Shock-absorbent utility, gym and laboratory resilient flooring", "Flooring",
+         "m²", 8500.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "ASTM F1344 / ISO 14021",
+         55, 98, 88, 48, 80, 8, 0.28,
          "wet,coastal,intermediate",
          "mid", "commercial,industrial,school", "1-2,3-5,6+", 30,
          "Recycled automotive rubber tile for wet-area, gym, laboratory, and commercial utility floors. Non-slip, shock-absorbent, and fully recyclable end-of-life.",
@@ -515,7 +602,9 @@ def ensure_table():
          92, 55, 68),
 
         ("Micro-Cement Screed Flooring",
-         "Flooring", 42, 82, 72, 58, 60, 22, 0.35,
+         "Flooring", "Seamless polymer-modified architectural floor screed", "Flooring",
+         "m²", 5500.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "BS EN 13813 / EN 1504",
+         42, 82, 72, 58, 60, 22, 0.35,
          "wet,dry,intermediate,coastal",
          "mid,high", "residential,commercial,hotel,apartment", "1-2,3-5", 20,
          "Thin-layer (3mm) polymer-modified cementitious topping applied over structural slab. Seamless minimalist finish with good moisture and scratch resistance when sealed.",
@@ -524,7 +613,9 @@ def ensure_table():
          45, 42, 65),
 
         ("Recycled Composite Decking (WPC)",
-         "Flooring", 48, 98, 100, 42, 90, 8, 0.22,
+         "Flooring", "Outdoor balcony, terrace and veranda decking boards", "Flooring",
+         "m²", 14500.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "ASTM D7032 / ISO 14021",
+         48, 98, 100, 42, 90, 8, 0.22,
          "coastal,wet,extreme coastal",
          "high", "residential,commercial,hotel", "1-2", 30,
          "Wood-plastic composite outdoor decking board manufactured from 95% recycled materials. Completely impervious to moisture and marine corrosion for balconies, terraces, and walkways.",
@@ -536,7 +627,9 @@ def ensure_table():
         # CEILING (6 materials)
         # ═══════════════════════════════════════════════════
         ("Bamboo-Fibre Acoustic Ceiling Panel",
-         "Ceiling", 68, 62, 72, 10, 95, 18, 0.05,
+         "Ceiling", "Sustainable acoustic interior ceiling panels", "Ceiling",
+         "m²", 4200.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "ISO 11654 / GREENSL Tier-1",
+         68, 62, 72, 10, 95, 18, 0.05,
          "dry,highland,intermediate",
          "mid,high", "residential,commercial,hotel,school", "1-2,3-5", 25,
          "Rapidly renewable compressed bamboo fibre acoustic ceiling panel. Carbon-negative material with warm natural aesthetic for sustainable interiors in dry and highland climates.",
@@ -545,7 +638,9 @@ def ensure_table():
          98, 68, 35),
 
         ("Standard Gypsum Board Ceiling (Suspended)",
-         "Ceiling", 48, 38, 32, 5, 46, 38, 0.38,
+         "Ceiling", "Dry indoor suspended false ceiling grid", "Ceiling",
+         "m²", 2850.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "SLS 521 / ASTM C1396",
+         48, 38, 32, 5, 46, 38, 0.38,
          "dry,intermediate",
          "low,mid", "residential,commercial,hotel,apartment,school", "1-2,3-5,6+", 15,
          "Standard 12.5mm gypsum plasterboard suspended on lightweight steel grid. Not suitable for humid or coastal zones — highly susceptible to moisture damage and sagging.",
@@ -554,7 +649,9 @@ def ensure_table():
          35, 48, 28),
 
         ("PVC Laminated Ceiling Panel (Moisture-Proof)",
-         "Ceiling", 42, 98, 82, 5, 28, 8, 0.58,
+         "Ceiling", "100% moisture-resistant bathroom and coastal ceiling panels", "Ceiling",
+         "m²", 3100.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "BS EN 13245-2",
+         42, 98, 82, 5, 28, 8, 0.58,
          "wet,coastal,extreme coastal,intermediate",
          "low,mid", "residential,commercial,apartment", "1-2,3-5", 20,
          "100% moisture-proof PVC interlocking ceiling panel. Ideal for bathrooms, coastal buildings, and high-humidity areas where gypsum would fail within months.",
@@ -563,7 +660,9 @@ def ensure_table():
          30, 42, 85),
 
         ("Calcium Silicate Board Ceiling",
-         "Ceiling", 75, 92, 85, 8, 62, 12, 0.28,
+         "Ceiling", "Fire-resistant moisture-proof commercial and residential ceiling", "Ceiling",
+         "m²", 3600.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "BS 476 Part 4 / ASTM C1186",
+         75, 92, 85, 8, 62, 12, 0.28,
          "wet,coastal,extreme coastal,highland,intermediate",
          "mid", "residential,commercial,hotel,apartment,school,industrial", "1-2,3-5,6+", 30,
          "Fire-resistant calcium silicate ceiling board. Immune to moisture, termites, and rot. Excellent performance in humid, coastal, and highland climates as gypsum replacement.",
@@ -572,7 +671,9 @@ def ensure_table():
          55, 75, 88),
 
         ("Suspended Metal Tile Ceiling (Aluminium)",
-         "Ceiling", 45, 95, 92, 8, 58, 10, 0.45,
+         "Ceiling", "Demountable services ceiling for commercial & high-salinity zones", "Ceiling",
+         "m²", 6500.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "BS EN 13964 / SLS Ref",
+         45, 95, 92, 8, 58, 10, 0.45,
          "coastal,wet,intermediate,dry",
          "mid,high", "commercial,hotel,apartment", "1-2,3-5,6+", 40,
          "Powder-coated aluminium lay-in ceiling tile in 600×600mm format. Demountable for services access, moisture-resistant, and durable in air-conditioned commercial environments.",
@@ -581,7 +682,9 @@ def ensure_table():
          65, 45, 80),
 
         ("Acoustic Mineral Fibre Suspended Tile",
-         "Ceiling", 55, 52, 48, 5, 50, 25, 0.32,
+         "Ceiling", "Acoustic absorption ceiling for offices and classrooms", "Ceiling",
+         "m²", 4800.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "ASTM E1264 / EN 13964",
+         55, 52, 48, 5, 50, 25, 0.32,
          "dry,intermediate",
          "mid", "commercial,hotel,school,apartment", "1-2,3-5,6+", 20,
          "Mineral wool acoustic ceiling tile for office and school environments requiring sound absorption and low reverberation. Not recommended for high-humidity or coastal zones.",
@@ -593,7 +696,9 @@ def ensure_table():
         # WATERPROOFING (5 materials)
         # ═══════════════════════════════════════════════════
         ("Crystalline Slurry Waterproofing (Penetrating)",
-         "Waterproofing", 10, 100, 95, 15, 58, 5, 0.05,
+         "Waterproofing", "Deep-penetrating integral concrete waterproofing for wet areas & basements", "Waterproofing",
+         "m²", 3800.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "ACI 212.3R / BS EN 1504-2",
+         10, 100, 95, 15, 58, 5, 0.05,
          "wet,coastal,extreme coastal,intermediate",
          "mid,high", "residential,commercial,hotel,industrial,apartment,school", "1-2,3-5,6+", 60,
          "Deep-penetrating crystalline chemical waterproofing slurry applied to concrete surfaces. Reacts with hydrating cement to form insoluble crystals that permanently seal pores and micro-cracks.",
@@ -602,7 +707,9 @@ def ensure_table():
          48, 10, 88),
 
         ("Liquid Polyurethane Membrane (Seamless)",
-         "Waterproofing", 15, 95, 88, 10, 42, 12, 0.58,
+         "Waterproofing", "Flexible crack-bridging membrane for flat roofs and bathrooms", "Waterproofing",
+         "m²", 4500.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "ASTM C836 / ETAG 005",
+         15, 95, 88, 10, 42, 12, 0.58,
          "wet,coastal,intermediate",
          "mid,high", "residential,commercial,hotel,apartment", "1-2,3-5", 25,
          "Cold-applied liquid polyurethane elastomeric waterproofing membrane. Highly flexible, accommodates structural movement and crack bridging up to 2mm. Suitable for roofs and wet areas.",
@@ -611,28 +718,34 @@ def ensure_table():
          35, 15, 80),
 
         ("Bituminous Modified Membrane (Torch-Applied)",
-         "Waterproofing", 20, 92, 82, 12, 38, 18, 0.45,
+         "Waterproofing", "Heavy-duty torch-applied barrier for underground structures & podium slabs", "Waterproofing",
+         "m²", 4000.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "BS EN 13707 / ASTM D6163",
+         20, 92, 82, 12, 38, 18, 0.45,
          "wet,coastal,dry,intermediate",
          "mid", "residential,commercial,industrial,apartment", "1-2,3-5", 20,
-         "SBS-modified bitumen torch-applied membrane for flat roofs and underground structures. Robust waterproofing with good puncture resistance but higher maintenance than crystalline systems.",
+         "SBS-modified bitumen torch-applied membrane for flat roofs and underground structures. Robust waterproofing with good puncture resistance.",
          "High", "All Provinces: High",
          "Modern,Contemporary,Traditional Sri Lankan",
          30, 20, 75),
 
         ("HDPE Sheet Waterproofing Barrier",
-         "Waterproofing", 10, 100, 100, 10, 65, 8, 0.38,
+         "Waterproofing", "Pre-applied basement and foundation tanking membrane", "Waterproofing",
+         "m²", 5800.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "ASTM D5385 / BS 8102 Type A",
+         10, 100, 100, 10, 65, 8, 0.38,
          "wet,coastal,extreme coastal,highland",
          "high", "commercial,industrial,hotel,apartment", "1-2,3-5,6+", 50,
-         "High-density polyethylene sheet membrane for basement and buried structure waterproofing. Factory-manufactured consistency with heat-welded seams for zero-leak guarantee.",
+         "High-density polyethylene sheet membrane for basement and buried structure waterproofing. Factory-manufactured consistency with heat-welded seams.",
          "Medium", "Western: High, Southern: Low",
          "Modern,Contemporary,Minimalist",
          55, 10, 92),
 
         ("Bentonite Clay Waterproofing Panel",
-         "Waterproofing", 12, 98, 88, 8, 85, 5, 0.08,
+         "Waterproofing", "Self-healing below-grade geotextile waterproofing barrier", "Waterproofing",
+         "m²", 7200.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "BS 8102 / ASTM D5887",
+         12, 98, 88, 8, 85, 5, 0.08,
          "wet,highland,intermediate",
          "mid,high", "commercial,hotel,apartment", "3-5,6+", 40,
-         "Natural sodium bentonite clay geotextile panel for below-grade waterproofing. Self-healing on hydration. Eco-friendly, low embodied carbon, no solvents or chemical cure required.",
+         "Natural sodium bentonite clay geotextile panel for below-grade waterproofing. Self-healing on hydration. Eco-friendly, low embodied carbon, no solvents required.",
          "Low", "Western: Low",
          "Modern,Contemporary,Minimalist",
          80, 12, 78),
@@ -641,7 +754,9 @@ def ensure_table():
         # FINISHING / PAINT (3 materials)
         # ═══════════════════════════════════════════════════
         ("Advanced Nano-Exterior Paint",
-         "Finishing", 10, 95, 90, 5, 65, 15, 0.25,
+         "Finishing", "Self-cleaning weather and UV-resistant exterior wall coating", "Finishing",
+         "m²", 2100.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "SLS 557 / ASTM D6904",
+         10, 95, 90, 5, 65, 15, 0.25,
          "coastal,wet,dry,extreme coastal,highland,intermediate",
          "mid,high", "residential,commercial,industrial,hotel,apartment,school", "1-2,3-5,6+", 12,
          "Self-cleaning, high-UV resistant protective paint coating with advanced nano-particles for exterior walls.",
@@ -650,7 +765,9 @@ def ensure_table():
          30, 15, 80),
 
         ("Eco-Friendly Low VOC Emulsion",
-         "Finishing", 10, 55, 40, 5, 95, 15, 0.12,
+         "Finishing", "Indoor air quality focused low-emission wall paint", "Finishing",
+         "m²", 1650.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "SLS 557 / GREENSL Tier-1",
+         10, 55, 40, 5, 95, 15, 0.12,
          "dry,wet,intermediate,highland",
          "low,mid", "residential,school", "1-2,3-5", 15,
          "Ultra-low VOC indoor air quality focused water-based paint emulsion for walls.",
@@ -659,7 +776,9 @@ def ensure_table():
          85, 15, 40),
 
         ("Standard Exterior Emulsion",
-         "Finishing", 10, 40, 35, 5, 40, 25, 0.25,
+         "Finishing", "Economical weather-resistant exterior acrylic paint", "Finishing",
+         "m²", 1250.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "SLS 557 Standard",
+         10, 40, 35, 5, 40, 25, 0.25,
          "dry,wet,intermediate",
          "low", "residential,commercial,industrial", "1-2,3-5,6+", 8,
          "Basic weather-resistant acrylic emulsion paint for external wall surfaces.",
@@ -671,13 +790,12 @@ def ensure_table():
 
         cur.executemany("""
             INSERT INTO materials (
-                Name, Category, Thermal_Rating, Moisture_Resistance,
-                Corrosion_Resistance, Structural_Capacity, Sustainability_Rating,
-                Maintenance_Level, Embodied_Carbon, Suitable_Climates, Budget_Level,
-                Building_Sectors, Floor_Count_Range, Service_Life, Description,
-                Local_Availability, Supplier_Density, Style_Compatibility,
+                Name, Component, Application, Category, Unit, Unit_Rate, Rate_Basis, Data_Source, Data_Quality, Standard_Reference,
+                Thermal_Rating, Moisture_Resistance, Corrosion_Resistance, Structural_Capacity, Sustainability_Rating,
+                Maintenance_Level, Embodied_Carbon, Suitable_Climates, Budget_Level, Building_Sectors, Floor_Count_Range,
+                Service_Life, Description, Local_Availability, Supplier_Density, Style_Compatibility,
                 Recyclability_Rating, Thermal_Performance_Rating, Climate_Risk_Score
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         """, materials)
 
         conn.commit()
@@ -690,7 +808,6 @@ def ensure_table():
 def get_all_materials():
     ensure_table()
     conn = get_connection()
-    conn.row_factory = sqlite3.Row
     cur = conn.cursor()
     cur.execute("SELECT * FROM materials")
     rows = cur.fetchall()
@@ -702,108 +819,21 @@ def format_material(row):
     r = dict(row)
     name = r.get("Name", "")
     category = r.get("Category", "")
-    
-    # Pre-coded rate mapping to ensure cost scoring works seamlessly
-    rate_map = {
-        "standard concrete foundation": 34500.0,
-        "marine-grade concrete foundation": 48000.0,
-        "eco-concrete foundation": 38000.0,
-        "raft foundation": 85000.0,
-        "lime-pozzolan natural foundation": 29000.0,
-        "standard structural concrete": 32500.0,
-        "marine-grade concrete mix": 45000.0,
-        "eco-concrete": 35000.0,
-        "self-compacting concrete": 42000.0,
-        "epoxy-coated rebar": 545000.0,
-        "tmt high-yield rebar": 395000.0,
-        "galvanized steel rebar": 425000.0,
-        "stainless steel rebar": 780000.0,
-        "gfrp rebar": 490000.0,
-        "wire-cut clay brick": 3100.0,
-        "aac eco-block": 4500.0,
-        "high-density cement block": 2650.0,
-        "cseb compressed stabilized earth block": 3800.0,
-        "hollow clay block": 3400.0,
-        "fly-ash composite block": 2900.0,
-        "marine-grade aluminium": 7800.0,
-        "portuguese clay tile": 6900.0,
-        "insulated sandwich roof panel": 9500.0,
-        "standard cement tile": 3800.0,
-        "zinc-aluminium corrugated": 5200.0,
-        "green intensive roof": 24000.0,
-        "polycarbonate translucent": 4500.0,
-        "recycled rubber flat roof": 6200.0,
-        "upvc multi-chamber window": 72000.0,
-        "casement aluminium window": 48000.0,
-        "timber louvre window": 35000.0,
-        "commercial double-glazed": 95000.0,
-        "fixed aluminium framed": 28000.0,
-        "sliding aluminium window": 42000.0,
-        "solid teak timber door": 120000.0,
-        "aluminium profile glass door": 85000.0,
-        "frp fiberglass reinforced door": 98000.0,
-        "standard hollow-core flush door": 22000.0,
-        "steel security door": 65000.0,
-        "timber louvre door": 45000.0,
-        "upvc sliding door": 78000.0,
-        "polished terrazzo": 7200.0,
-        "porcelain gvt slab": 9800.0,
-        "standard ceramic floor": 4200.0,
-        "timber strip flooring": 11000.0,
-        "rubber flooring": 8500.0,
-        "micro-cement screed": 5500.0,
-        "recycled composite decking": 14500.0,
-        "bamboo-fibre acoustic ceiling": 4200.0,
-        "standard gypsum board ceiling": 2850.0,
-        "pvc laminated ceiling": 3100.0,
-        "calcium silicate board ceiling": 3600.0,
-        "suspended metal tile ceiling": 6500.0,
-        "acoustic mineral fibre": 4800.0,
-        "crystalline slurry": 3800.0,
-        "liquid polyurethane membrane": 4500.0,
-        "bituminous modified membrane": 4000.0,
-        "hdpe sheet waterproofing": 5800.0,
-        "bentonite clay waterproofing": 7200.0,
-        "advanced nano-exterior paint": 2100.0,
-        "eco-friendly low voc emulsion": 1650.0,
-        "standard exterior emulsion": 1250.0
-    }
-    
-    rate = 0.0
-    name_lower = name.lower()
-    for key, val in rate_map.items():
-        if key in name_lower:
-            rate = val
-            break
-            
-    if rate == 0.0:
-        cat_lower = category.lower()
-        if "structural" in cat_lower:
-            rate = 395000.0
-        elif "foundation" in cat_lower:
-            rate = 35000.0
-        elif "wall" in cat_lower:
-            rate = 3500.0
-        elif "roof" in cat_lower:
-            rate = 6500.0
-        elif "floor" in cat_lower:
-            rate = 5000.0
-        elif "window" in cat_lower or "door" in cat_lower or "opening" in cat_lower:
-            rate = 45000.0
-        elif "ceiling" in cat_lower:
-            rate = 3000.0
-        elif "waterproof" in cat_lower:
-            rate = 4000.0
-        else:
-            rate = 2000.0
+    component = r.get("Component") or category
+    unit = r.get("Unit") or "m²"
+    unit_rate = float(r.get("Unit_Rate") or 0.0)
+    rate_basis = r.get("Rate_Basis") or "Preliminary illustrative unit rate"
+    data_quality = r.get("Data_Quality") or "Prototype / illustrative data"
+    standard_ref = r.get("Standard_Reference") or "SLS / Standard engineering reference check"
+    application = r.get("Application") or f"{component} element"
 
-    # ── Derive engineering fields not present as DB columns ───────────────
-    structural_cap = int(r["Structural_Capacity"] or 50)
-    moisture_res   = int(r["Moisture_Resistance"] or 50)
-    corrosion_res  = int(r["Corrosion_Resistance"] or 50)
-    service_life   = int(r["Service_Life"] or 30)
-    category_lc    = (r["Category"] or "").lower()
-    name_lc        = (r["Name"] or "").lower()
+    # Derive engineering properties
+    structural_cap = int(r.get("Structural_Capacity") or 50)
+    moisture_res   = int(r.get("Moisture_Resistance") or 50)
+    corrosion_res  = int(r.get("Corrosion_Resistance") or 50)
+    service_life   = int(r.get("Service_Life") or 30)
+    category_lc    = category.lower()
+    name_lc        = name.lower()
 
     # Durability_Rating: composite of structural capacity + service life + moisture resistance
     durability_score = (structural_cap * 0.50) + (min(service_life, 100) * 0.30) + (moisture_res * 0.20)
@@ -815,11 +845,9 @@ def format_material(row):
         durability_rating = "Low"
 
     # Fire_Resistance: engineering-based derivation from category + material type
-    # Concrete, masonry = very high fire resistance; timber, PVC, polycarbonate = low
     if category_lc in ("foundation", "concrete"):
         fire_resistance = 95
     elif category_lc == "structural":
-        # Rebar embedded in concrete has high resistance; standalone steel is moderate
         if "stainless" in name_lc or "epoxy" in name_lc or "gfrp" in name_lc:
             fire_resistance = 80
         else:
@@ -837,20 +865,20 @@ def format_material(row):
         elif "aluminium" in name_lc or "zinc" in name_lc:
             fire_resistance = 70
         elif "polycarbonate" in name_lc:
-            fire_resistance = 20   # combustible plastic
+            fire_resistance = 20
         elif "rubber" in name_lc or "bituminous" in name_lc or "pu core" in name_lc or "insulated" in name_lc:
             fire_resistance = 30
         elif "green" in name_lc:
-            fire_resistance = 75   # growing medium acts as thermal blanket
+            fire_resistance = 75
         else:
             fire_resistance = 55
-    elif category_lc in ("windows", "doors"):
+    elif category_lc in ("windows", "doors") or component in ("Windows", "Doors", "Openings"):
         if "aluminium" in name_lc or "steel" in name_lc or "frp" in name_lc:
             fire_resistance = 65
         elif "upvc" in name_lc or "pvc" in name_lc:
             fire_resistance = 35
         elif "teak" in name_lc or "timber" in name_lc or "louvre" in name_lc:
-            fire_resistance = 40   # hardwood chars slowly but is combustible
+            fire_resistance = 40
         else:
             fire_resistance = 55
     elif category_lc == "flooring":
@@ -864,9 +892,9 @@ def format_material(row):
             fire_resistance = 60
     elif category_lc == "ceiling":
         if "calcium silicate" in name_lc:
-            fire_resistance = 90   # fire-rated board
+            fire_resistance = 90
         elif "gypsum" in name_lc:
-            fire_resistance = 75   # passive fire rating
+            fire_resistance = 75
         elif "aluminium" in name_lc or "metal" in name_lc:
             fire_resistance = 70
         elif "pvc" in name_lc:
@@ -876,7 +904,6 @@ def format_material(row):
         else:
             fire_resistance = 55
     elif category_lc == "waterproofing":
-        # Waterproofing is thin layer; fire contribution is minimal
         if "crystalline" in name_lc or "hdpe" in name_lc or "bentonite" in name_lc:
             fire_resistance = 60
         elif "bituminous" in name_lc:
@@ -889,46 +916,50 @@ def format_material(row):
         else:
             fire_resistance = 45
     else:
-        fire_resistance = 55  # generic fallback
+        fire_resistance = 55
 
     return {
         "Material_ID": r["Material_ID"],
         "Name": r["Name"],
-        "Category": r["Category"],
-        "Rate_LKR": rate,
-        "Thermal_Rating": int(r["Thermal_Rating"] or 50),
-        "Moisture_Resistance": int(r["Moisture_Resistance"] or 50),
-        "Corrosion_Resistance": int(r["Corrosion_Resistance"] or 50),
-        "Structural_Capacity": int(r["Structural_Capacity"] or 50),
-        "Sustainability_Rating": int(r["Sustainability_Rating"] or 50),
-        "Maintenance_Level": int(r["Maintenance_Level"] or 50),
-        "Embodied_Carbon": float(r["Embodied_Carbon"] or 0.5),
-        "Suitable_Climates": r["Suitable_Climates"] or "intermediate",
-        "Building_Sectors": r["Building_Sectors"] or "residential,commercial",
-        "Floor_Count_Range": r["Floor_Count_Range"] or "1-2",
-        "Service_Life": int(r["Service_Life"] or 30),
-        "Description": r["Description"] or "",
-        "Local_Availability": r["Local_Availability"] or "Medium",
-        "Supplier_Density": r["Supplier_Density"] or "Medium",
+        "Component": component,
+        "Application": application,
+        "Category": category,
+        "Unit": unit,
+        "Unit_Rate": unit_rate,
+        "Rate_LKR": unit_rate,
+        "Rate_Basis": rate_basis,
+        "Data_Source": r.get("Data_Source") or "GreenConstructAI Baseline",
+        "Data_Quality": data_quality,
+        "Standard_Reference": standard_ref,
+        "Thermal_Rating": int(r.get("Thermal_Rating") or 50),
+        "Moisture_Resistance": int(r.get("Moisture_Resistance") or 50),
+        "Corrosion_Resistance": int(r.get("Corrosion_Resistance") or 50),
+        "Structural_Capacity": int(r.get("Structural_Capacity") or 50),
+        "Sustainability_Rating": int(r.get("Sustainability_Rating") or 50),
+        "Maintenance_Level": int(r.get("Maintenance_Level") or 50),
+        "Embodied_Carbon": float(r.get("Embodied_Carbon") or 0.5),
+        "Suitable_Climates": r.get("Suitable_Climates") or "intermediate",
+        "Building_Sectors": r.get("Building_Sectors") or "residential,commercial",
+        "Floor_Count_Range": r.get("Floor_Count_Range") or "1-2",
+        "Service_Life": int(r.get("Service_Life") or 30),
+        "Description": r.get("Description") or "",
+        "Local_Availability": r.get("Local_Availability") or "Medium",
+        "Supplier_Density": r.get("Supplier_Density") or "Western: High",
         "Style_Compatibility": r.get("Style_Compatibility") or "Modern,Contemporary",
         "Recyclability_Rating": int(r.get("Recyclability_Rating") or 50),
         "Thermal_Performance_Rating": int(r.get("Thermal_Performance_Rating") or 50),
         "Climate_Risk_Score": int(r.get("Climate_Risk_Score") or 50),
-        # ── Derived engineering fields (not stored in DB, computed here) ──
         "Durability_Rating": durability_rating,
         "Fire_Resistance": fire_resistance,
     }
 
 
-
-
 def get_material_by_id(material_id: int):
-    conn = sqlite3.connect(DB_PATH)
-    conn.row_factory = sqlite3.Row
+    conn = get_connection()
     cur = conn.cursor()
     cur.execute("SELECT * FROM materials WHERE Material_ID = ?", (material_id,))
     row = cur.fetchone()
     conn.close()
     if row:
-        return dict(row)
+        return format_material(row)
     return None

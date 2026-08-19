@@ -63,3 +63,12 @@ class MCDMEngine:
         return eng_score, reasons, is_vetoed, criterion_breakdown, eng_conf, clim_conf
 
 mcdm_engine = MCDMEngine()
+
+# Convenience wrapper for legacy imports
+def evaluate_material(m, climate, b_type, floors, profile, blueprint=None):
+    """Legacy entry point used by older code.
+
+    Creates a temporary MCDMEngine instance and forwards the call to
+    ``MCDMEngine.evaluate_material``.
+    """
+    return MCDMEngine().evaluate_material(m, climate, b_type, floors, profile, blueprint)

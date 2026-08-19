@@ -41,28 +41,75 @@ def annual_lifecycle_cost(initial_cost: float, service_life: float, maintenance_
         maintenance_factor = 0.05 * initial_cost
     return round(base + maintenance_factor, 2)
 
-def calculate_hybrid_score(eng_score: float | None, ml_score: float | None, vetoed: bool = False) -> float | None:
-    """Return the hybrid score using configurable weighting.
+def calculate_hybrid_score(
+    eng_score: float | None,
+    ml_score: float | None,
+    vetoed: bool = False,
+    ml_probability: float | None = None,
+) -> tuple[float | None, dict]:
+    """Return the hybrid score using adaptive confidence-based weighting.
 
-    * If ``vetoed`` is ``True`` the hybrid score is forced to ``0.0``.
+    Rules (v3.0):
+    * Engineering veto is unconditional — if ``vetoed`` is True the score
+      is forced to ``0.0`` regardless of ML confidence.
     * If either component score is ``None`` the hybrid score cannot be
-      computed and ``None`` is returned (caller must handle it).
-    * The engineering weight defaults to the value of the ``HYBRID_ENGINEERING_WEIGHT``
-      environment variable (float between 0 and 1). The ML weight is ``1 - eng_weight``.
-    * The result is rounded to two decimal places for consistency.
+      computed and ``None`` is returned.
+    * When ``ml_probability`` is supplied, an adaptive weight schedule fires:
+
+        ML prob ≥ 90%  →  Engineering 40% / ML 60%  (high ML confidence)
+        ML prob ≥ 70%  →  Engineering 60% / ML 40%  (good ML confidence)
+        ML prob ≥ 50%  →  Engineering 70% / ML 30%  (moderate)
+        ML prob  < 50%  →  Engineering 85% / ML 15%  (low ML confidence)
+
+    * When ``ml_probability`` is None, falls back to the
+      ``HYBRID_ENGINEERING_WEIGHT`` environment variable (default 0.70).
+    * Returns a tuple ``(score, weight_info)`` where ``weight_info`` is a
+      dict describing which weights were applied and why.
     """
     if vetoed:
-        return 0.0
+        weight_info = {
+            'eng_weight': 1.0, 'ml_weight': 0.0,
+            'reason': 'engineering_veto', 'ml_probability': ml_probability,
+        }
+        return 0.0, weight_info
+
     if eng_score is None or ml_score is None:
-        return None
-    try:
-        eng_weight = float(os.getenv("HYBRID_ENGINEERING_WEIGHT", "0.75"))
-        if not 0 <= eng_weight <= 1:
-            eng_weight = 0.75
-    except Exception:
-        eng_weight = 0.75
+        return None, {}
+
+    # Adaptive weighting based on ML prediction confidence
+    if ml_probability is not None:
+        p = float(ml_probability)
+        if p >= 90:
+            eng_weight = 0.40
+            reason = 'high_ml_confidence'
+        elif p >= 70:
+            eng_weight = 0.60
+            reason = 'good_ml_confidence'
+        elif p >= 50:
+            eng_weight = 0.70
+            reason = 'moderate_ml_confidence'
+        else:
+            eng_weight = 0.85
+            reason = 'low_ml_confidence'
+    else:
+        # Fallback: env-var or default
+        try:
+            eng_weight = float(os.getenv("HYBRID_ENGINEERING_WEIGHT", "0.70"))
+            if not 0 <= eng_weight <= 1:
+                eng_weight = 0.70
+        except Exception:
+            eng_weight = 0.70
+        reason = 'default_fixed'
+
     ml_weight = 1.0 - eng_weight
-    return round((eng_weight * eng_score) + (ml_weight * ml_score), 2)
+    score = round((eng_weight * eng_score) + (ml_weight * ml_score), 2)
+    weight_info = {
+        'eng_weight': round(eng_weight, 2),
+        'ml_weight': round(ml_weight, 2),
+        'reason': reason,
+        'ml_probability': ml_probability,
+    }
+    return score, weight_info
 
 # ---------------------------------------------------------------------------
 # Marine‑grade need detection
@@ -176,6 +223,10 @@ def deterministic_sort_key(item: dict) -> tuple:
 # API version metadata (could be imported by ``app.py``)
 # ---------------------------------------------------------------------------
 API_METADATA = {
-    "scoring_model": "hybrid_75_25_v2",
+    "scoring_model": "hybrid_adaptive_v3",
     "audit_synced": True,
+    "adaptive_weighting": True,
+    "leakage_fix": True,
+    "interaction_features": 6,
+    "pipeline_version": "3.0",
 }
