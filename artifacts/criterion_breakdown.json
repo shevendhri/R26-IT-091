@@ -3,9 +3,9 @@
     "material": "Gr. 25 Standard Concrete Foundation",
     "criterion_breakdown": {
       "structural_safety": {
-        "score": 100.0,
+        "score": 86.25,
         "max": 25.0,
-        "contribution": 25.0,
+        "contribution": 21.56,
         "normalized_weight": 0.25,
         "is_na": false
       },
@@ -17,9 +17,9 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 15.0,
         "normalized_weight": 0.15,
         "is_na": false
       },
@@ -78,16 +78,16 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
+        "score": 35.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 5.25,
         "normalized_weight": 0.15,
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 40.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 6.0,
+        "contribution": 15.0,
         "normalized_weight": 0.15,
         "is_na": false
       },
@@ -125,9 +125,9 @@
     "material": "Eco-Concrete Foundation (30% Recycled Aggregate)",
     "criterion_breakdown": {
       "structural_safety": {
-        "score": 97.2,
+        "score": 82.8,
         "max": 25.0,
-        "contribution": 24.3,
+        "contribution": 20.7,
         "normalized_weight": 0.25,
         "is_na": false
       },
@@ -139,9 +139,9 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 15.0,
         "normalized_weight": 0.15,
         "is_na": false
       },
@@ -200,16 +200,16 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 50.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 7.5,
+        "contribution": 15.0,
         "normalized_weight": 0.15,
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 20.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 15.0,
         "normalized_weight": 0.15,
         "is_na": false
       },
@@ -247,9 +247,9 @@
     "material": "Lime-Pozzolan Natural Foundation",
     "criterion_breakdown": {
       "structural_safety": {
-        "score": 81.0,
+        "score": 60.0,
         "max": 25.0,
-        "contribution": 20.25,
+        "contribution": 15.0,
         "normalized_weight": 0.25,
         "is_na": false
       },
@@ -261,16 +261,16 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 15.0,
         "normalized_weight": 0.15,
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 25.0,
+        "score": 20.0,
         "max": 15.0,
-        "contribution": 3.75,
+        "contribution": 3.0,
         "normalized_weight": 0.15,
         "is_na": false
       },
@@ -308,9 +308,9 @@
     "material": "Gr. 25 Standard Structural Concrete",
     "criterion_breakdown": {
       "structural_safety": {
-        "score": 100.0,
+        "score": 92.0,
         "max": 25.0,
-        "contribution": 25.0,
+        "contribution": 23.0,
         "normalized_weight": 0.25,
         "is_na": false
       },
@@ -322,16 +322,16 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 15.0,
         "normalized_weight": 0.15,
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 40.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 6.0,
+        "contribution": 15.0,
         "normalized_weight": 0.15,
         "is_na": false
       },
@@ -383,16 +383,16 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
+        "score": 35.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 5.25,
         "normalized_weight": 0.15,
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 40.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 6.0,
+        "contribution": 15.0,
         "normalized_weight": 0.15,
         "is_na": false
       },
@@ -430,9 +430,9 @@
     "material": "Eco-Concrete (Recycled Aggregate + Fly-Ash)",
     "criterion_breakdown": {
       "structural_safety": {
-        "score": 100.0,
+        "score": 86.25,
         "max": 25.0,
-        "contribution": 25.0,
+        "contribution": 21.56,
         "normalized_weight": 0.25,
         "is_na": false
       },
@@ -444,9 +444,9 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 15.0,
         "normalized_weight": 0.15,
         "is_na": false
       },
@@ -491,9 +491,9 @@
     "material": "Self-Compacting Concrete (SCC)",
     "criterion_breakdown": {
       "structural_safety": {
-        "score": 100.0,
+        "score": 97.75,
         "max": 25.0,
-        "contribution": 25.0,
+        "contribution": 24.44,
         "normalized_weight": 0.25,
         "is_na": false
       },
@@ -505,16 +505,16 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 50.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 7.5,
+        "contribution": 15.0,
         "normalized_weight": 0.15,
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 20.0,
+        "score": 40.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 6.0,
         "normalized_weight": 0.15,
         "is_na": false
       },
@@ -566,16 +566,16 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
+        "score": 35.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 5.25,
         "normalized_weight": 0.15,
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 40.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 6.0,
+        "contribution": 15.0,
         "normalized_weight": 0.15,
         "is_na": false
       },
@@ -627,9 +627,9 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 15.0,
         "normalized_weight": 0.15,
         "is_na": false
       },
@@ -688,9 +688,9 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 55.0,
+        "score": 20.0,
         "max": 15.0,
-        "contribution": 8.25,
+        "contribution": 3.0,
         "normalized_weight": 0.15,
         "is_na": false
       },
@@ -749,16 +749,16 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
+        "score": 35.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 5.25,
         "normalized_weight": 0.15,
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 20.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 15.0,
         "normalized_weight": 0.15,
         "is_na": false
       },
@@ -796,9 +796,9 @@
     "material": "GFRP Rebar (Glass Fibre Reinforced Polymer)",
     "criterion_breakdown": {
       "structural_safety": {
-        "score": 100.0,
+        "score": 92.0,
         "max": 25.0,
-        "contribution": 25.0,
+        "contribution": 23.0,
         "normalized_weight": 0.25,
         "is_na": false
       },
@@ -810,9 +810,9 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
+        "score": 35.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 5.25,
         "normalized_weight": 0.15,
         "is_na": false
       },
@@ -857,9 +857,9 @@
     "material": "Wire-Cut Clay Brick (Premium Grade)",
     "criterion_breakdown": {
       "structural_safety": {
-        "score": 91.8,
+        "score": 78.2,
         "max": 25.0,
-        "contribution": 22.95,
+        "contribution": 19.55,
         "normalized_weight": 0.25,
         "is_na": false
       },
@@ -871,16 +871,16 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 15.0,
         "normalized_weight": 0.15,
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 25.0,
+        "score": 20.0,
         "max": 15.0,
-        "contribution": 3.75,
+        "contribution": 3.0,
         "normalized_weight": 0.15,
         "is_na": false
       },
@@ -932,16 +932,16 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 15.0,
         "normalized_weight": 0.15,
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 10.0,
+        "score": 40.0,
         "max": 15.0,
-        "contribution": 1.5,
+        "contribution": 6.0,
         "normalized_weight": 0.15,
         "is_na": false
       },
@@ -979,9 +979,9 @@
     "material": "High-Density Cement Block",
     "criterion_breakdown": {
       "structural_safety": {
-        "score": 78.3,
+        "score": 58.0,
         "max": 25.0,
-        "contribution": 19.58,
+        "contribution": 14.5,
         "normalized_weight": 0.25,
         "is_na": false
       },
@@ -993,16 +993,16 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 15.0,
         "normalized_weight": 0.15,
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 25.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 3.75,
+        "contribution": 15.0,
         "normalized_weight": 0.15,
         "is_na": false
       },
@@ -1040,9 +1040,9 @@
     "material": "CSEB Compressed Stabilized Earth Block",
     "criterion_breakdown": {
       "structural_safety": {
-        "score": 83.7,
+        "score": 62.0,
         "max": 25.0,
-        "contribution": 20.93,
+        "contribution": 15.5,
         "normalized_weight": 0.25,
         "is_na": false
       },
@@ -1054,16 +1054,16 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 15.0,
         "normalized_weight": 0.15,
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 10.0,
+        "score": 20.0,
         "max": 15.0,
-        "contribution": 1.5,
+        "contribution": 3.0,
         "normalized_weight": 0.15,
         "is_na": false
       },
@@ -1101,9 +1101,9 @@
     "material": "Hollow Clay Block (Perforated)",
     "criterion_breakdown": {
       "structural_safety": {
-        "score": 74.25,
+        "score": 55.0,
         "max": 25.0,
-        "contribution": 18.56,
+        "contribution": 13.75,
         "normalized_weight": 0.25,
         "is_na": false
       },
@@ -1115,16 +1115,16 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 15.0,
         "normalized_weight": 0.15,
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 25.0,
+        "score": 40.0,
         "max": 15.0,
-        "contribution": 3.75,
+        "contribution": 6.0,
         "normalized_weight": 0.15,
         "is_na": false
       },
@@ -1162,9 +1162,9 @@
     "material": "Fly-Ash Composite Block",
     "criterion_breakdown": {
       "structural_safety": {
-        "score": 81.0,
+        "score": 60.0,
         "max": 25.0,
-        "contribution": 20.25,
+        "contribution": 15.0,
         "normalized_weight": 0.25,
         "is_na": false
       },
@@ -1176,16 +1176,16 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 15.0,
         "normalized_weight": 0.15,
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 25.0,
+        "score": 40.0,
         "max": 15.0,
-        "contribution": 3.75,
+        "contribution": 6.0,
         "normalized_weight": 0.15,
         "is_na": false
       },
@@ -1237,16 +1237,16 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
+        "score": 35.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 5.25,
         "normalized_weight": 0.2,
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 17.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 2.55,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
         "is_na": false
       },
@@ -1298,16 +1298,16 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 35.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 5.25,
         "normalized_weight": 0.2,
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 25.0,
+        "score": 20.0,
         "max": 15.0,
-        "contribution": 3.75,
+        "contribution": 3.0,
         "normalized_weight": 0.2,
         "is_na": false
       },
@@ -1359,16 +1359,16 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 10.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 1.5,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
         "is_na": false
       },
@@ -1420,16 +1420,16 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 25.0,
+        "score": 20.0,
         "max": 15.0,
-        "contribution": 3.75,
+        "contribution": 3.0,
         "normalized_weight": 0.2,
         "is_na": false
       },
@@ -1481,16 +1481,16 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 90.0,
+        "score": 35.0,
         "max": 15.0,
-        "contribution": 13.5,
+        "contribution": 5.25,
         "normalized_weight": 0.2,
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 17.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 2.55,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
         "is_na": false
       },
@@ -1542,16 +1542,16 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 35.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 5.25,
         "normalized_weight": 0.2,
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 10.0,
+        "score": 40.0,
         "max": 15.0,
-        "contribution": 1.5,
+        "contribution": 6.0,
         "normalized_weight": 0.2,
         "is_na": false
       },
@@ -1603,16 +1603,16 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 10.0,
+        "score": 40.0,
         "max": 15.0,
-        "contribution": 1.5,
+        "contribution": 6.0,
         "normalized_weight": 0.2,
         "is_na": false
       },
@@ -1664,16 +1664,16 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 50.0,
+        "score": 20.0,
         "max": 15.0,
-        "contribution": 7.5,
+        "contribution": 3.0,
         "normalized_weight": 0.2,
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 10.0,
+        "score": 40.0,
         "max": 15.0,
-        "contribution": 1.5,
+        "contribution": 6.0,
         "normalized_weight": 0.2,
         "is_na": false
       },
@@ -1725,16 +1725,16 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
+        "score": 35.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 5.25,
         "normalized_weight": 0.2,
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 10.0,
+        "score": 40.0,
         "max": 15.0,
-        "contribution": 1.5,
+        "contribution": 6.0,
         "normalized_weight": 0.2,
         "is_na": false
       },
@@ -1786,16 +1786,16 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
+        "score": 35.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 5.25,
         "normalized_weight": 0.2,
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 17.0,
+        "score": 40.0,
         "max": 15.0,
-        "contribution": 2.55,
+        "contribution": 6.0,
         "normalized_weight": 0.2,
         "is_na": false
       },
@@ -1847,16 +1847,16 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 10.0,
+        "score": 20.0,
         "max": 15.0,
-        "contribution": 1.5,
+        "contribution": 3.0,
         "normalized_weight": 0.2,
         "is_na": false
       },
@@ -1908,16 +1908,16 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 50.0,
+        "score": 20.0,
         "max": 15.0,
-        "contribution": 7.5,
+        "contribution": 3.0,
         "normalized_weight": 0.2,
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 10.0,
+        "score": 40.0,
         "max": 15.0,
-        "contribution": 1.5,
+        "contribution": 6.0,
         "normalized_weight": 0.2,
         "is_na": false
       },
@@ -1969,16 +1969,16 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 90.0,
+        "score": 35.0,
         "max": 15.0,
-        "contribution": 13.5,
+        "contribution": 5.25,
         "normalized_weight": 0.2,
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 17.0,
+        "score": 40.0,
         "max": 15.0,
-        "contribution": 2.55,
+        "contribution": 6.0,
         "normalized_weight": 0.2,
         "is_na": false
       },
@@ -2030,16 +2030,16 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
+        "score": 35.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 5.25,
         "normalized_weight": 0.2,
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 17.0,
+        "score": 40.0,
         "max": 15.0,
-        "contribution": 2.55,
+        "contribution": 6.0,
         "normalized_weight": 0.2,
         "is_na": false
       },
@@ -2091,16 +2091,16 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 10.0,
+        "score": 40.0,
         "max": 15.0,
-        "contribution": 1.5,
+        "contribution": 6.0,
         "normalized_weight": 0.2,
         "is_na": false
       },
@@ -2152,16 +2152,16 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
+        "score": 35.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 5.25,
         "normalized_weight": 0.2,
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 17.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 2.55,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
         "is_na": false
       },
@@ -2213,16 +2213,16 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
+        "score": 35.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 5.25,
         "normalized_weight": 0.2,
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 17.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 2.55,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
         "is_na": false
       },
@@ -2274,16 +2274,16 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 10.0,
+        "score": 40.0,
         "max": 15.0,
-        "contribution": 1.5,
+        "contribution": 6.0,
         "normalized_weight": 0.2,
         "is_na": false
       },
@@ -2335,16 +2335,16 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 32.0,
+        "score": 40.0,
         "max": 15.0,
-        "contribution": 4.8,
+        "contribution": 6.0,
         "normalized_weight": 0.2,
         "is_na": false
       },
@@ -2396,16 +2396,16 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 10.0,
+        "score": 20.0,
         "max": 15.0,
-        "contribution": 1.5,
+        "contribution": 3.0,
         "normalized_weight": 0.2,
         "is_na": false
       },
@@ -2457,16 +2457,16 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
+        "score": 35.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 5.25,
         "normalized_weight": 0.2,
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 10.0,
+        "score": 40.0,
         "max": 15.0,
-        "contribution": 1.5,
+        "contribution": 6.0,
         "normalized_weight": 0.2,
         "is_na": false
       },
@@ -2518,16 +2518,16 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 25.0,
+        "score": 40.0,
         "max": 15.0,
-        "contribution": 3.75,
+        "contribution": 6.0,
         "normalized_weight": 0.2,
         "is_na": false
       },
@@ -2579,16 +2579,16 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 50.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 7.5,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 25.0,
+        "score": 40.0,
         "max": 15.0,
-        "contribution": 3.75,
+        "contribution": 6.0,
         "normalized_weight": 0.2,
         "is_na": false
       },
@@ -2640,16 +2640,16 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 25.0,
+        "score": 40.0,
         "max": 15.0,
-        "contribution": 3.75,
+        "contribution": 6.0,
         "normalized_weight": 0.2,
         "is_na": false
       },
@@ -2701,16 +2701,16 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 10.0,
+        "score": 20.0,
         "max": 15.0,
-        "contribution": 1.5,
+        "contribution": 3.0,
         "normalized_weight": 0.2,
         "is_na": false
       },
@@ -2762,16 +2762,16 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 50.0,
+        "score": 20.0,
         "max": 15.0,
-        "contribution": 7.5,
+        "contribution": 3.0,
         "normalized_weight": 0.2,
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 10.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 1.5,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
         "is_na": false
       },
@@ -2823,16 +2823,16 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 50.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 7.5,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 25.0,
+        "score": 40.0,
         "max": 15.0,
-        "contribution": 3.75,
+        "contribution": 6.0,
         "normalized_weight": 0.2,
         "is_na": false
       },
@@ -2884,16 +2884,16 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
+        "score": 35.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 5.25,
         "normalized_weight": 0.2,
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 10.0,
+        "score": 20.0,
         "max": 15.0,
-        "contribution": 1.5,
+        "contribution": 3.0,
         "normalized_weight": 0.2,
         "is_na": false
       },
@@ -2945,16 +2945,16 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 10.0,
+        "score": 40.0,
         "max": 15.0,
-        "contribution": 1.5,
+        "contribution": 6.0,
         "normalized_weight": 0.2,
         "is_na": false
       },
@@ -3006,16 +3006,16 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 10.0,
+        "score": 40.0,
         "max": 15.0,
-        "contribution": 1.5,
+        "contribution": 6.0,
         "normalized_weight": 0.2,
         "is_na": false
       },
@@ -3067,16 +3067,16 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 55.0,
+        "score": 20.0,
         "max": 15.0,
-        "contribution": 8.25,
+        "contribution": 3.0,
         "normalized_weight": 0.2,
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 10.0,
+        "score": 40.0,
         "max": 15.0,
-        "contribution": 1.5,
+        "contribution": 6.0,
         "normalized_weight": 0.2,
         "is_na": false
       },
@@ -3128,16 +3128,16 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 55.0,
+        "score": 20.0,
         "max": 15.0,
-        "contribution": 8.25,
+        "contribution": 3.0,
         "normalized_weight": 0.2,
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 25.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 3.75,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
         "is_na": false
       },
@@ -3189,16 +3189,16 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 90.0,
+        "score": 35.0,
         "max": 15.0,
-        "contribution": 13.5,
+        "contribution": 5.25,
         "normalized_weight": 0.2,
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 17.0,
+        "score": 40.0,
         "max": 15.0,
-        "contribution": 2.55,
+        "contribution": 6.0,
         "normalized_weight": 0.2,
         "is_na": false
       },
@@ -3250,16 +3250,16 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 10.0,
+        "score": 40.0,
         "max": 15.0,
-        "contribution": 1.5,
+        "contribution": 6.0,
         "normalized_weight": 0.2,
         "is_na": false
       },
@@ -3311,16 +3311,16 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
+        "score": 35.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 5.25,
         "normalized_weight": 0.2,
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 17.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 2.55,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
         "is_na": false
       },
@@ -3372,16 +3372,16 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 50.0,
+        "score": 20.0,
         "max": 15.0,
-        "contribution": 7.5,
+        "contribution": 3.0,
         "normalized_weight": 0.2,
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 10.0,
+        "score": 40.0,
         "max": 15.0,
-        "contribution": 1.5,
+        "contribution": 6.0,
         "normalized_weight": 0.2,
         "is_na": false
       },
@@ -3433,16 +3433,16 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 50.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 7.5,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 10.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 1.5,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
         "is_na": false
       },
@@ -3494,16 +3494,16 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
+        "score": 35.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 5.25,
         "normalized_weight": 0.2,
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 17.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 2.55,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
         "is_na": false
       },
@@ -3562,9 +3562,9 @@
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 10.0,
+        "score": 40.0,
         "max": 15.0,
-        "contribution": 1.5,
+        "contribution": 6.0,
         "normalized_weight": 0.2,
         "is_na": false
       },
@@ -3616,16 +3616,16 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
+        "score": 35.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 5.25,
         "normalized_weight": 0.2,
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 10.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 1.5,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
         "is_na": false
       },
@@ -3677,16 +3677,16 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 10.0,
+        "score": 40.0,
         "max": 15.0,
-        "contribution": 1.5,
+        "contribution": 6.0,
         "normalized_weight": 0.2,
         "is_na": false
       },
@@ -3738,16 +3738,16 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 10.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 1.5,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
         "is_na": false
       },
