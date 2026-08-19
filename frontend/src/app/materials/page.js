@@ -2,297 +2,443 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
-export default function Materials() {
-  const [budget, setBudget] = useState(1000000);
-  const [city, setCity] = useState('Colombo');
-  const [buildingType, setBuildingType] = useState('Residential');
-  const [specs, setSpecs] = useState('');
-  const [loading, setLoading] = useState(false);
-  const [workflowRanking, setWorkflowRanking] = useState(null);
-  const [justification, setJustification] = useState(null);
-  const [impactNotes, setImpactNotes] = useState(null);
-  const [aiStrategy, setAiStrategy] = useState(null);
-  const [prognosis, setPrognosis] = useState(null);
-  const [activeTab, setActiveTab] = useState('Structural');
-  const [landscapeAnalysis, setLandscapeAnalysis] = useState(null);
+// ── CONFIG BAR ──
+const ConfigBar = ({ params, handlers, handleGenerate, loading }) => {
+  const cities = [
+    "Colombo", "Galle", "Kandy", "Negombo", "Ratnapura", "Anuradhapura", "Nuwara Eliya", 
+    "Jaffna", "Trincomalee", "Batticaloa", "Matara", "Hambantota", "Kurunegala", "Badulla", "Gampaha", "Kalutara"
+  ].sort();
 
-  const fetchMaterials = async (e) => {
-    e?.preventDefault();
-    setLoading(true);
-    try {
-      const res = await fetch('http://127.0.0.1:5000/api/recommend', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ 
-            max_budget: parseFloat(budget), 
-            city, 
-            building_type: buildingType,
-            specs 
-        }),
-      });
-      const data = await res.json();
-      if (data.status === 'success') {
-        setWorkflowRanking(data.workflow_results);
-        setJustification(data.mathematical_justification);
-        setImpactNotes(data.impact_notes);
-        setAiStrategy(data.ai_strategy);
-        setPrognosis(data.prognosis);
-        
-        if (!data.workflow_results[activeTab]) {
-            const first = Object.keys(data.workflow_results)[0];
-            if (first) setActiveTab(first);
-        }
+  return (
+    <section className="glass-panel glow-border" style={{ 
+      padding: '2rem 2.5rem', 
+      display: 'flex', 
+      flexDirection: 'column',
+      gap: '1.5rem', 
+      width: '100%', 
+      background: 'rgba(255,255,255,0.02)', 
+      zIndex: 100, 
+      position: 'relative' 
+    }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid var(--glass-border)', paddingBottom: '1rem' }}>
+        <div>
+          <div style={{ fontSize: '0.6rem', fontWeight: 900, color: 'var(--eco-glow)', letterSpacing: '3px' }}>DNA_CONFIG</div>
+          <div style={{ fontSize: '0.8rem', fontWeight: 800, color: '#fff', fontFamily: 'Space Grotesk' }}>PROJECT PARAMETERS</div>
+        </div>
+        <button className="btn-premium" style={{ height: '54px', padding: '0 3rem' }} onClick={handleGenerate} disabled={loading}>
+          {loading ? "PROFILING..." : "GENERATE MATRIX"}
+        </button>
+      </div>
+      
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '1.5rem' }}>
+        <div>
+          <label className="tech-label">Location</label>
+          <select className="tech-input" value={params.city} onChange={e => handlers.setCity(e.target.value)}>
+            {cities.map(c => <option key={c} value={c}>{c}</option>)}
+          </select>
+        </div>
 
-        setLandscapeAnalysis({ 
-            label: 'Site Context Active', 
-            summary: `Optimizing material durability and carbon threshold for ${city} terrain.` 
-        });
-      }
-    } catch (err) {
-      console.error(err);
-    } finally {
-      setLoading(false);
+        <div>
+          <label className="tech-label">Sector</label>
+          <select className="tech-input" value={params.buildingType} onChange={e => handlers.setBuildingType(e.target.value)}>
+            <option>Residential</option>
+            <option>Commercial</option>
+            <option>Industrial</option>
+          </select>
+        </div>
+
+        <div>
+          <label className="tech-label">Floors</label>
+          <input className="tech-input" type="number" value={params.numFloors} onChange={e => handlers.setNumFloors(Number(e.target.value))} />
+        </div>
+
+        <div>
+          <label className="tech-label">Sustainability</label>
+          <select className="tech-input" value={params.sustainabilityPref} onChange={e => handlers.setSustainabilityPref(e.target.value)}>
+            <option value="Low">Low (Cost-Centric)</option>
+            <option value="Medium">Medium (Balanced)</option>
+            <option value="High">High (Eco-Priority)</option>
+          </select>
+        </div>
+
+        <div style={{ flex: 1.5 }}>
+          <label className="tech-label">Budget (LKR)</label>
+          <input className="tech-input" type="number" value={params.budget} onChange={e => handlers.setBudget(Number(e.target.value))} />
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// ── COST DASHBOARD ──
+const CostDashboard = ({ analysis }) => {
+  if (!analysis) return null;
+  const isOver = analysis.shortfall > 0;
+  const isCritical = analysis.status.includes("INFEASIBLE") || analysis.status.includes("UNDERFUNDED");
+
+  return (
+    <div className="glass-panel" style={{ padding: '2rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '2rem', borderLeft: `6px solid ${isCritical ? 'var(--error-red)' : (isOver ? 'var(--warn-amber)' : 'var(--eco-glow)')}` }}>
+      <div>
+        <div style={{ fontSize: '0.6rem', color: 'var(--text-secondary)', letterSpacing: '2px', marginBottom: '0.5rem' }}>ESTIMATED_TOTAL_COST</div>
+        <div style={{ fontSize: '1.5rem', fontWeight: 800 }}>LKR {analysis.total_cost.toLocaleString()}</div>
+      </div>
+      <div>
+        <div style={{ fontSize: '0.6rem', color: 'var(--text-secondary)', letterSpacing: '2px', marginBottom: '0.5rem' }}>ALLOCATED_BUDGET</div>
+        <div style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--blueprint-blue)' }}>LKR {analysis.budget_ceiling.toLocaleString()}</div>
+      </div>
+      <div>
+        <div style={{ fontSize: '0.6rem', color: 'var(--text-secondary)', letterSpacing: '2px', marginBottom: '0.5rem' }}>{isOver ? 'BUDGET_SHORTFALL' : 'BUDGET_SURPLUS'}</div>
+        <div style={{ fontSize: '1.5rem', fontWeight: 800, color: isOver ? 'var(--error-red)' : 'var(--eco-glow)' }}>
+          {isOver ? '-' : '+'} LKR {Math.abs(isOver ? analysis.shortfall : analysis.budget_ceiling - analysis.total_cost).toLocaleString()}
+        </div>
+      </div>
+      <div>
+        <div style={{ fontSize: '0.6rem', color: 'var(--text-secondary)', letterSpacing: '2px', marginBottom: '0.5rem' }}>FEASIBILITY_STATUS</div>
+        <div style={{ fontSize: '1.2rem', fontWeight: 900, color: isCritical ? 'var(--error-red)' : '#fff' }}>{analysis.status}</div>
+      </div>
+    </div>
+  );
+};
+
+// ── LOADING OVERLAY ──
+const LoadingOverlay = ({ step }) => {
+  return (
+    <div style={{ 
+      position: 'fixed', 
+      inset: 0, 
+      zIndex: 5000, 
+      background: 'rgba(4, 13, 10, 0.98)', 
+      backdropFilter: 'blur(30px)', 
+      display: 'flex', 
+      flexDirection: 'column', 
+      alignItems: 'center', 
+      justifyContent: 'center', 
+      gap: '2rem' 
+    }}>
+      <div className="neural-core-v2" style={{ width: '140px', height: '140px' }}>
+        <div className="core-ring core-ring-1"></div>
+        <div className="core-ring core-ring-2"></div>
+        <div className="core-ring core-ring-3"></div>
+        <div style={{ fontSize: '4rem' }}>🧬</div>
+      </div>
+      <div style={{ textAlign: 'center' }}>
+        <div style={{ fontSize: '0.7rem', fontWeight: 900, color: 'var(--eco-glow)', letterSpacing: '10px', textTransform: 'uppercase', marginBottom: '15px' }}>Neural Core Processing</div>
+        <div style={{ fontSize: '1.4rem', fontWeight: 700, color: '#fff', fontFamily: 'Space Grotesk' }}>{step}...</div>
+      </div>
+    </div>
+  );
+};
+
+// ── BLUEPRINT CANVAS ──
+const BlueprintCanvas = ({ layout }) => {
+  const [activeFloor, setActiveFloor] = useState(0);
+  if (!layout || (!layout.rooms && !layout.floors_data)) return null;
+  
+  const scale = 25;
+  const padding = 45;
+  const viewWidth = (layout.footprint.w * scale) + (padding * 2);
+  const viewHeight = (layout.footprint.h * scale) + (padding * 2);
+
+  const currentFloor = layout.floors_data ? layout.floors_data[activeFloor] : { rooms: layout.rooms, label: "GROUND FLOOR" };
+
+  const getRoomColor = (type) => {
+    switch(type) {
+      case 'WET': return 'rgba(56, 189, 248, 0.12)';
+      case 'PUBLIC': return 'rgba(255, 255, 255, 0.04)';
+      case 'PRIVATE': return 'rgba(0, 255, 157, 0.06)';
+      default: return 'rgba(255, 255, 255, 0.02)';
     }
   };
 
-  const getMaterialsForTab = () => {
-    if (!workflowRanking || !workflowRanking[activeTab]) return [];
-    return workflowRanking[activeTab];
+  const getRoomStroke = (type) => {
+    switch(type) {
+      case 'WET': return '#38bdf8';
+      case 'PUBLIC': return '#ffffff';
+      case 'PRIVATE': return '#00ff9d';
+      default: return '#475569';
+    }
+  };
+
+  const getRoomIcon = (label) => {
+    const l = label.toLowerCase();
+    if (l.includes('bedroom')) return '🛏️';
+    if (l.includes('bath')) return '🚿';
+    if (l.includes('living')) return '🛋️';
+    if (l.includes('kitchen')) return '🍳';
+    if (l.includes('dining')) return '🍽️';
+    if (l.includes('office') || l.includes('study')) return '🖥️';
+    return '📦';
   };
 
   return (
-    <div className="container">
-      {/* 🏗️ ECO HEADER */}
-      <header className="header">
+    <div className="glass-panel glow-border" style={{ padding: '2.5rem', flex: 1.5, background: 'linear-gradient(135deg, #0f172a 0%, #020617 100%)', minHeight: '620px', position: 'relative', overflow: 'hidden' }}>
+      <div className="scan-line" style={{ background: 'linear-gradient(to right, transparent, rgba(56, 189, 248, 0.2), transparent)', height: '2px' }}></div>
+      
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1.5rem' }}>
         <div>
-            <h1>GreenConstructAI | <span style={{color: 'var(--primary)'}}>Specifier</span></h1>
-            <p>Sustainable Material Decision Support</p>
+          <div style={{ fontSize: '0.65rem', fontWeight: 900, color: '#38bdf8', letterSpacing: '5px', textTransform: 'uppercase' }}>Architectural Protocol v18.4</div>
+          <h3 style={{ fontSize: '1.2rem', fontWeight: 800, color: '#fff', fontFamily: 'Space Grotesk', marginTop: '0.5rem' }}>MULTI-LEVEL SPATIAL MAPPING</h3>
         </div>
-        <nav className="nav-links">
-          <Link href="/blueprint" className="nav-link">PLAN_ANALYSIS</Link>
-          <Link href="/materials" className="nav-link active">SELECTOR</Link>
-        </nav>
-      </header>
+        <div style={{ textAlign: 'right' }}>
+          <div style={{ fontSize: '0.55rem', color: '#64748b', fontWeight: 900, letterSpacing: '2px' }}>SYSTEM_REF: GC-2026-X</div>
+          <div style={{ fontSize: '0.7rem', color: '#fff', fontWeight: 700, marginTop: '0.2rem' }}>SCALE 1:50</div>
+        </div>
+      </div>
 
-      {/* ⚙️ CONTROL PANEL */}
-      <aside className="control-panel">
-        <h4 className="section-title">Analysis Parameters</h4>
-        <form onSubmit={fetchMaterials}>
-          <div className="input-group">
-            <label>Project Budget (LKR)</label>
-            <input 
-              type="number" 
-              className="input-field"
-              value={budget} 
-              onChange={(e) => setBudget(e.target.value)}
-            />
-          </div>
-
-          <div className="input-group">
-            <label>Location Context</label>
-            <select className="input-field" value={city} onChange={(e) => setCity(e.target.value)}>
-                <option value="Colombo">Colombo (Coastal)</option>
-                <option value="Kandy">Kandy (Highland)</option>
-                <option value="Nuwara Eliya">Nuwara Eliya (Cold/Damp)</option>
-                <option value="Anuradhapura">Anuradhapura (Dry Zone)</option>
-                <option value="Hambantota">Hambantota (Arid)</option>
-                <option value="Custom">Enter Custom Location...</option>
-            </select>
-            {city === 'Custom' && (
-                <input 
-                    type="text" 
-                    className="input-field" 
-                    style={{ marginTop: '0.5rem', borderLeft: '4px solid var(--primary)' }} 
-                    placeholder="Type custom city..." 
-                    onChange={(e) => setCity(e.target.value)}
-                    autoFocus
-                />
-            )}
-          </div>
-
-          <div className="input-group">
-            <label>Building Sector</label>
-            <select className="input-field" value={buildingType} onChange={(e) => setBuildingType(e.target.value)}>
-                <option value="Residential">Residential</option>
-                <option value="Commercial">Commercial</option>
-                <option value="Industrial">Industrial</option>
-            </select>
-          </div>
-
-          <button type="submit" className="btn-primary" disabled={loading} style={{marginTop: '1.5rem'}}>
-            {loading ? 'ANALYZING...' : 'EXECUTE OPTIMIZATION'}
-          </button>
-        </form>
-
-        {justification && justification[activeTab] && (
-            <div style={{ marginTop: '2.5rem', padding: '1.25rem', background: '#0a0a0a', border: '1px solid var(--border)' }}>
-                <h5 style={{ fontSize: '0.6rem', color: 'var(--primary)', margin: '0 0 1rem 0', letterSpacing: '1px' }}>SCORING_WEIGHTS (%)</h5>
-                <div style={{ display: 'grid', gap: '0.75rem', fontSize: '0.7rem', color: 'var(--text-muted)' }}>
-                    {['COST','CARBON','STRUCTURAL','LIFECYCLE'].map((label, idx) => (
-                        <div key={label} style={{ display: 'flex', justifyContent: 'space-between', fontFamily: 'var(--font-tech)' }}>
-                            <span>{label}</span>
-                            <span style={{color: '#fff'}}>{(justification[activeTab].weights[idx] * 100).toFixed(0)}%</span>
-                        </div>
-                    ))}
-                </div>
-            </div>
-        )}
-      </aside>
-
-      {/* 📊 RESULT DASHBOARD */}
-      <main style={{ padding: '2rem', overflowY: 'auto' }}>
-        
-        {/* 🧠 AI STRATEGY ROW */}
-        {aiStrategy && (
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginBottom: '3rem' }}>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
-                    {/* Regional Analysis */}
-                    <div style={{ background: 'var(--slate)', padding: '1.5rem', borderLeft: '6px solid var(--primary)', boxShadow: '0 10px 30px rgba(0,0,0,0.3)' }}>
-                        <h4 style={{ margin: 0, fontSize: '0.6rem', color: 'var(--primary)', fontWeight: 900, letterSpacing: '1px' }}>REGIONAL ANALYSIS: {city.toUpperCase()}</h4>
-                        <p style={{ margin: '0.4rem 0 0 0', fontSize: '1rem', fontWeight: 600 }}>{landscapeAnalysis?.summary}</p>
-                        {impactNotes && impactNotes[activeTab] && (
-                            <div style={{ marginTop: '0.5rem', fontSize: '0.65rem', color: '#fff', fontStyle: 'italic', opacity: 0.8 }}>
-                                &gt; {impactNotes[activeTab]}
-                            </div>
-                        )}
-                    </div>
-
-                    {/* AI Trained Model Insight */}
-                    <div style={{ background: '#050a05', border: '1px solid var(--primary)', padding: '1.5rem', boxShadow: '0 0 30px var(--primary-glow)' }}>
-                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
-                            <h4 style={{ margin: 0, fontSize: '0.6rem', color: 'var(--primary)', fontWeight: 900, letterSpacing: '1px' }}>AI OPTIMIZATION MODEL</h4>
-                            <span style={{ fontSize: '0.5rem', color: '#fff', background: 'var(--primary)', padding: '0.1rem 0.4rem', fontWeight: 900 }}>ACTIVE</span>
-                        </div>
-                        <p style={{ margin: 0, fontSize: '1.1rem', fontWeight: 900, textTransform: 'uppercase', color: '#fff' }}>{aiStrategy}</p>
-                        <div style={{ marginTop: '0.4rem', fontSize: '0.6rem', color: 'var(--text-muted)' }}>AI-assisted optimization model integrated for decision support.</div>
-                    </div>
-                </div>
-
-                {/* Structural Prognosis */}
-                {prognosis && (
-                    <div style={{ background: '#0a0a0a', padding: '1.25rem 1.5rem', border: '1px dashed var(--primary)', borderLeft: '6px solid var(--primary)' }}>
-                        <h4 style={{ margin: '0 0 0.5rem 0', fontSize: '0.65rem', color: 'var(--primary)', fontWeight: 900, letterSpacing: '1px' }}>🏗️ SITE-SPECIFIC STRUCTURAL PROGNOSIS</h4>
-                        <p style={{ margin: 0, fontSize: '0.9rem', color: '#ccc', lineHeight: '1.6', fontFamily: 'var(--font-tech)' }}>
-                            {prognosis}
-                        </p>
-                    </div>
-                )}
-            </div>
-        )}
-
-        {!workflowRanking && !loading && (
-            <div style={{ textAlign: 'center', padding: '10rem 0', opacity: 0.2 }}>
-                <h3 style={{ fontFamily: 'var(--font-tech)', letterSpacing: '4px' }}>AWAITING_CORE_INITIALIZATION</h3>
-                <p>Run project settings to synchronize with the optimization model.</p>
-            </div>
-        )}
-
-        {workflowRanking && (
-            <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '2.5rem' }}>
-                {['Structural', 'Finishing', 'Openings'].map(phase => (
-                    <button 
-                        key={phase}
-                        onClick={() => setActiveTab(phase)}
-                        disabled={!workflowRanking[phase]}
-                        style={{ 
-                            padding: '0.75rem 1.5rem', 
-                            background: activeTab === phase ? 'var(--primary)' : 'transparent',
-                            color: activeTab === phase ? '#000' : 'var(--text-muted)',
-                            border: '1px solid ' + (activeTab === phase ? 'var(--primary)' : 'var(--border)'),
-                            cursor: 'pointer', fontWeight: 900, fontSize: '0.65rem', fontFamily: 'var(--font-tech)', letterSpacing: '1px',
-                            opacity: workflowRanking[phase] ? 1 : 0.3
-                        }}
-                    >
-                        {phase.toUpperCase()} PHASE
-                    </button>
-                ))}
-            </div>
-        )}
-
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem' }}>
-          {getMaterialsForTab().map((mat, idx) => (
-            <section key={mat.id} className="spec-sheet" style={{ 
-                borderLeft: idx === 0 ? '6px solid var(--primary)' : '1px solid var(--border)', 
-                borderTop: 'none',
-                background: '#121616'
-            }}>
-              <div className="spec-sheet-header" style={{ display: 'flex', justifyContent: 'space-between', padding: '1rem 1.5rem', borderBottom: '1px solid var(--border)' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                    <h3 style={{fontSize: '1.1rem', margin: 0}}>{mat.Name}</h3>
-                    {idx === 0 && <span style={{ background: 'var(--primary)', color: '#000', fontSize: '0.55rem', fontWeight: 900, padding: '0.2rem 0.5rem' }}>TOP SELECTION</span>}
-                </div>
-                <span className="rank-badge">RANK #{idx + 1}</span>
-              </div>
-              
-              <div style={{ padding: '1.5rem' }}>
-                <div style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap' }}>
-                    
-                    {/* Performance Column */}
-                    <div style={{ flex: '1 1 250px' }}>
-                        <h5 style={{ fontSize: '0.6rem', color: 'var(--primary)', margin: '0 0 1rem 0', letterSpacing: '1px' }}>PERFORMANCE_METRICS</h5>
-                        <div style={{ display: 'grid', gap: '0.75rem' }}>
-                            <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.75rem' }}>
-                                <span style={{color: 'var(--text-muted)', width: '120px'}}>{activeTab === 'Structural' ? 'COMP. STRENGTH' : 'FIRE RATING'}</span>
-                                <span style={{fontWeight: 900}}>{mat.Strength_N_mm2 || mat.Fire_Rating || 'N/A'}</span>
-                            </div>
-                            <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.75rem' }}>
-                                <span style={{color: 'var(--text-muted)', width: '120px'}}>CARBON FOOTPRINT</span>
-                                <span style={{fontWeight: 900, color: 'var(--primary)'}}>{mat.Embodied_Carbon} kgCO2e</span>
-                            </div>
-                            <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.75rem' }}>
-                                <span style={{color: 'var(--text-muted)', width: '120px'}}>SERVICE LIFE</span>
-                                <span style={{fontWeight: 900}}>{mat.Service_Life} YRS</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Financials Column */}
-                    <div style={{ flex: '1 1 200px', borderLeft: '1px solid var(--border)', paddingLeft: '2rem' }}>
-                        <h5 style={{ fontSize: '0.6rem', color: 'var(--text-muted)', margin: '0 0 1rem 0', letterSpacing: '1px' }}>BSR_FINANCIALS</h5>
-                        <div style={{ display: 'grid', gap: '0.75rem' }}>
-                            <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.75rem' }}>
-                                <span style={{color: 'var(--text-muted)'}}>UNIT RATE</span>
-                                <span style={{fontWeight: 900}}>{mat.Rate_Display}</span>
-                            </div>
-                            <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.75rem', marginTop: '0.5rem' }}>
-                                <span style={{color: 'var(--text-muted)'}}>OPTIM_SCORE</span>
-                                <span style={{fontWeight: 900, color: 'var(--primary)'}}>{(mat.Topsis_Score * 100).toFixed(1)}%</span>
-                            </div>
-                            <div className="progress-container" style={{ marginTop: '0.25rem' }}>
-                                <div className="progress-bar" style={{ width: `${mat.Topsis_Score * 100}%` }}></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Risk Column */}
-                    <div style={{ flex: '1 1 200px', borderLeft: '1px solid var(--border)', paddingLeft: '2rem' }}>
-                        <h5 style={{ fontSize: '0.6rem', color: 'var(--text-muted)', margin: '0 0 1rem 0', letterSpacing: '1px' }}>ENVIRONMENTAL & RISK</h5>
-                        <div style={{ display: 'grid', gap: '0.6rem' }}>
-                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                                <span style={{fontSize: '0.6rem', fontWeight: 600}}>SUSTAINABILITY</span>
-                                <span className={`risk-badge risk-${(mat.Sustainability_Risk === 'HIGH' ? 'low' : mat.Sustainability_Risk === 'MEDIUM' ? 'medium' : 'high')}`}>{mat.Sustainability_Risk || 'HIGH'}</span>
-                            </div>
-                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                                <span style={{fontSize: '0.6rem', fontWeight: 600}}>LIFECYCLE RISK</span>
-                                <span className={`risk-badge risk-${(mat.Lifecycle_Risk || 'low').toLowerCase()}`}>{mat.Lifecycle_Risk || 'LOW'}</span>
-                            </div>
-                            <div style={{ marginTop: '0.5rem', background: 'rgba(39, 174, 96, 0.05)', border: '1px dashed var(--primary)', padding: '0.5rem', fontSize: '0.6rem', fontStyle: 'italic', lineHeight: '1.4' }}>
-                                Material suitability aligns with regional environmental conditions.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div style={{ marginTop: '1.5rem', padding: '1rem', background: 'rgba(255,255,255,0.02)', borderLeft: '4px solid var(--slate)' }}>
-                    <div style={{fontSize: '0.55rem', color: 'var(--primary)', fontWeight: 900, marginBottom: '0.4rem'}}>SYSTEM_ANALYSIS_RATIONALE:</div>
-                    <p style={{ margin: 0, fontSize: '0.8rem', color: '#ccc', lineHeight: '1.5', fontFamily: 'monospace' }}>{mat.Rationale}</p>
-                </div>
-              </div>
-            </section>
+      {/* FLOOR SWITCHER */}
+      {layout.floors_data && layout.floors_data.length > 1 && (
+        <div style={{ display: 'flex', gap: '10px', marginBottom: '1.5rem' }}>
+          {layout.floors_data.map((floor, idx) => (
+            <button 
+              key={idx}
+              onClick={() => setActiveFloor(idx)}
+              className={`glow-border ${activeFloor === idx ? 'active-floor-btn' : ''}`}
+              style={{
+                padding: '8px 16px',
+                background: activeFloor === idx ? 'var(--blueprint-blue)' : 'rgba(255,255,255,0.05)',
+                border: '1px solid var(--glass-border)',
+                borderRadius: '8px',
+                color: '#fff',
+                fontSize: '0.65rem',
+                fontWeight: 900,
+                cursor: 'pointer',
+                transition: 'all 0.3s ease',
+                letterSpacing: '1px'
+              }}
+            >
+              {floor.label}
+            </button>
           ))}
         </div>
+      )}
+
+      <div style={{ 
+        background: '#020617', 
+        borderRadius: '20px', 
+        border: '1px solid #1e293b', 
+        padding: '15px', 
+        display: 'flex', 
+        alignItems: 'center', 
+        justifyContent: 'center',
+        boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)',
+        position: 'relative'
+      }}>
+        <div style={{ 
+          position: 'absolute', 
+          inset: 0, 
+          backgroundImage: 'linear-gradient(#1e293b 1px, transparent 1px), linear-gradient(90deg, #1e293b 1px, transparent 1px)', 
+          backgroundSize: '30px 30px',
+          opacity: 0.2
+        }}></div>
+
+        <svg width="100%" height="450" viewBox={`0 0 ${viewWidth} ${viewHeight}`} style={{ position: 'relative', zIndex: 2 }}>
+          <rect x={padding} y={padding} width={layout.footprint.w * scale} height={layout.footprint.h * scale} fill="none" stroke="#1e293b" strokeWidth="10" rx="4" />
+          <rect x={padding} y={padding} width={layout.footprint.w * scale} height={layout.footprint.h * scale} fill="none" stroke="#38bdf8" strokeWidth="1" strokeDasharray="10 5" opacity="0.5" />
+
+          {currentFloor.rooms.map((room, i) => (
+            <g key={i} transform={`translate(${padding + (room.x * scale)}, ${padding + (room.y * scale)})`}>
+              <rect width={room.w * scale} height={room.h * scale} fill={getRoomColor(room.type)} stroke={getRoomStroke(room.type)} strokeWidth="2" rx="2" />
+              <rect width="25" height="12" fill={getRoomStroke(room.type)} opacity="0.8" rx="2" x="5" y="5" />
+              <text x="17.5" y="14" fontSize="6" fill="#000" fontWeight="900" textAnchor="middle">{i+1}</text>
+              <text x="8" y="28" fontSize="9" fill="#fff" fontWeight="900" style={{ letterSpacing: '0.5px' }}>{room.label.toUpperCase()}</text>
+              <text x="8" y="42" fontSize="7" fill="#64748b" fontWeight="700">{room.w}m x {room.h}m ({Math.round(room.w * room.h)}m²)</text>
+              <text x={room.w * scale - 20} y={room.h * scale - 10} fontSize="12">{getRoomIcon(room.label)}</text>
+            </g>
+          ))}
+
+          <g opacity="0.6">
+            <line x1={padding} y1={padding - 20} x2={padding + layout.footprint.w * scale} y2={padding - 20} stroke="#38bdf8" strokeWidth="1" />
+            <text x={padding + (layout.footprint.w * scale)/2} y={padding - 28} fontSize="8" fill="#38bdf8" textAnchor="middle" fontWeight="800">WIDTH: {layout.footprint.w}m</text>
+            <line x1={padding - 20} y1={padding} x2={padding - 20} y2={padding + layout.footprint.h * scale} stroke="#38bdf8" strokeWidth="1" />
+            <text x={padding - 28} y={padding + (layout.footprint.h * scale)/2} fontSize="8" fill="#38bdf8" textAnchor="middle" transform={`rotate(-90, ${padding - 28}, ${padding + (layout.footprint.h * scale)/2})`} fontWeight="800">DEPTH: {layout.footprint.h}m</text>
+          </g>
+        </svg>
+      </div>
+
+      <div style={{ marginTop: '1.5rem', display: 'flex', gap: '2rem', padding: '0.8rem 1.2rem', background: 'rgba(255,255,255,0.02)', borderRadius: '12px' }}>
+        {['PUBLIC', 'PRIVATE', 'WET'].map(type => (
+          <div key={type} style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+            <div style={{ width: '12px', height: '12px', background: getRoomColor(type), border: `1.5px solid ${getRoomStroke(type)}`, borderRadius: '3px' }}></div>
+            <span style={{ fontSize: '0.6rem', fontWeight: 800, color: '#94a3b8' }}>{type}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+// ── MAIN PAGE ──
+export default function MaterialsPage() {
+  const [city, setCity] = useState("Colombo");
+  const [buildingType, setBuildingType] = useState("Residential");
+  const [numFloors, setNumFloors] = useState(1);
+  const [budget, setBudget] = useState(25000000);
+  const [sustainabilityPref, setSustainabilityPref] = useState("Medium");
+  const [specs, setSpecs] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [loadingStep, setLoadingStep] = useState("");
+  const [error, setError] = useState(null);
+  const [workflowRanking, setWorkflowRanking] = useState(null);
+  const [activeTab, setActiveTab] = useState("Foundation");
+
+  const handleGenerate = async () => {
+    setLoading(true); setError(null);
+    setLoadingStep("Synchronizing Climate Matrix");
+    setTimeout(() => setLoadingStep("Optimizing Structural DNA"), 1000);
+    setTimeout(() => setLoadingStep("Auditing Material Lifecycle"), 2000);
+    try {
+      const res = await fetch('http://localhost:5000/api/recommend', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ city, building_type: buildingType, num_floors: numFloors, max_budget: budget, sustainability_pref: sustainabilityPref, specs: specs }),
+      });
+      const data = await res.json();
+      if (data.status === 'success') {
+        setWorkflowRanking(data.ranking);
+        const phases = Object.keys(data.ranking.workflow_results);
+        if (phases.length > 0) setActiveTab(phases[0]);
+      } else { setError(data.message); }
+    } catch (err) { setError("Neural Core Offline."); } finally { setLoading(false); }
+  };
+
+  const isCritical = workflowRanking?.feasibility_review?.status_label?.includes("INFEASIBLE") || 
+                     workflowRanking?.feasibility_review?.status_label?.includes("UNDERFUNDED");
+
+  return (
+    <div style={{ minHeight: '100vh', background: 'var(--eco-black)', color: '#fff', position: 'relative' }}>
+      <div className="premium-bg"><div className="gradient-mesh"></div><div className="blueprint-grid"></div></div>
+      
+      {loading && <LoadingOverlay step={loadingStep} />}
+      <Header />
+      
+      <main style={{ padding: '2rem 3rem', display: 'flex', flexDirection: 'column', gap: '3rem', position: 'relative', zIndex: 10 }}>
+        <ConfigBar 
+          params={{ city, buildingType, numFloors, budget, specs, sustainabilityPref }} 
+          handlers={{ setCity, setBuildingType, setNumFloors, setBudget, setSpecs, setSustainabilityPref }} 
+          handleGenerate={handleGenerate} 
+          loading={loading} 
+        />
+
+        {error && <div className="glass-panel" style={{ padding: '1.5rem', borderLeft: '6px solid var(--error-red)' }}>{error}</div>}
+
+        {workflowRanking ? (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem' }} className="animate-fade-in">
+            
+            <CostDashboard analysis={{ ...workflowRanking.budget_analysis, shortfall: workflowRanking.feasibility_review.shortfall }} />
+
+            {isCritical ? (
+               <div className="glass-panel" style={{ padding: '4rem', textAlign: 'center', border: '2px solid var(--error-red)', background: 'rgba(239, 68, 68, 0.05)' }}>
+                  <div style={{ fontSize: '4rem', marginBottom: '1.5rem' }}>⚠️</div>
+                  <h2 style={{ fontSize: '2rem', fontWeight: 900, color: 'var(--error-red)', marginBottom: '1rem', fontFamily: 'Space Grotesk' }}>PROJECT INFEASIBLE</h2>
+                  <p style={{ fontSize: '1.1rem', color: 'var(--text-secondary)', maxWidth: '700px', margin: '0 auto 2.5rem' }}>
+                    The neural core has determined that your current budget (LKR {budget.toLocaleString()}) is insufficient for a {numFloors}-storey {buildingType} project in {city}.
+                  </p>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', alignItems: 'center' }}>
+                     {workflowRanking.feasibility_review.audit_logs.map((log, i) => (
+                       <div key={i} style={{ color: 'var(--error-red)', fontSize: '0.9rem', fontWeight: 700 }}>► {log}</div>
+                     ))}
+                  </div>
+               </div>
+            ) : (
+              <>
+                <div style={{ display: 'flex', gap: '2rem' }}>
+                  <BlueprintCanvas layout={workflowRanking.spatial_layout} />
+                  <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+                    <div className="glass-panel" style={{ padding: '2rem', flex: 1 }}>
+                      <div style={{ fontSize: '0.7rem', color: 'var(--eco-glow)', letterSpacing: '4px', marginBottom: '1rem' }}>CLIMATE_STRATEGY</div>
+                      <div style={{ fontSize: '1.8rem', fontWeight: 800 }}>{workflowRanking.climate_profile.key.replace('_', ' ')}</div>
+                      <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', marginTop: '1rem' }}>{workflowRanking.climate_profile.logic}</p>
+                    </div>
+                    <div className="glass-panel" style={{ padding: '2rem', flex: 1 }}>
+                      <div style={{ fontSize: '0.7rem', color: 'var(--blueprint-blue)', letterSpacing: '4px', marginBottom: '1rem' }}>AUDIT_RATIONALE</div>
+                      {workflowRanking.spatial_layout?.blueprint_summary.map((s, i) => <div key={i} style={{ marginBottom: '10px', fontSize: '0.85rem' }}>► {s}</div>)}
+                    </div>
+                  </div>
+                </div>
+
+                <div className="glass-panel" style={{ padding: '2.5rem' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2.5rem', flexWrap: 'wrap', gap: '1rem' }}>
+                    <h3 style={{ fontFamily: 'Space Grotesk', fontSize: '1.5rem' }}>Material Optimization Matrix</h3>
+                    <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+                      {Object.keys(workflowRanking.workflow_results).map(phase => (
+                        <button 
+                          key={phase} 
+                          onClick={() => setActiveTab(phase)} 
+                          style={{ 
+                            padding: '0.6rem 1.2rem', 
+                            background: activeTab === phase ? 'var(--eco-glow)' : 'rgba(255,255,255,0.05)', 
+                            color: activeTab === phase ? 'var(--eco-black)' : '#fff', 
+                            border: '1px solid var(--glass-border)', 
+                            borderRadius: '8px', 
+                            cursor: 'pointer',
+                            fontSize: '0.65rem',
+                            fontWeight: 800,
+                            letterSpacing: '1px',
+                            transition: 'all 0.3s'
+                          }}>
+                          {phase.toUpperCase()}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                  
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '2rem' }}>
+                    {workflowRanking.workflow_results[activeTab]?.length > 0 ? (
+                      workflowRanking.workflow_results[activeTab].map((mat, i) => (
+                        <div key={i} className="glass-panel glow-border" style={{ padding: '2rem', position: 'relative' }}>
+                          <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '1.5rem' }}>
+                            <div style={{ fontWeight: 800, fontSize: '1.2rem' }}>{mat.Name}</div>
+                            <div style={{ fontSize: '0.7rem', color: 'var(--eco-glow)', fontWeight: 900 }}>SCORE: {mat.Display_Score}</div>
+                          </div>
+                          
+                          <div style={{ background: 'rgba(0,0,0,0.3)', padding: '1.25rem', borderRadius: '12px', marginBottom: '1.5rem' }}>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}>
+                              <span style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>Metric Quantity:</span>
+                              <span style={{ fontWeight: 700 }}>{mat.Quantity}</span>
+                            </div>
+                            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                              <span style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>Phase Cost:</span>
+                              <span style={{ fontWeight: 700, color: 'var(--eco-glow)' }}>LKR {mat.Phase_Cost.toLocaleString()}</span>
+                            </div>
+                          </div>
+
+                          <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', lineHeight: 1.6, minHeight: '80px' }}>{mat.Rationale}</p>
+                          
+                          <div style={{ marginTop: '1.5rem', display: 'flex', gap: '15px' }}>
+                            {Object.entries(mat.Alignment_Breakdown).map(([label, val]) => (
+                              <div key={label} style={{ flex: 1 }}>
+                                  <div style={{ fontSize: '0.5rem', color: 'var(--text-dim)', textTransform: 'uppercase', marginBottom: '4px' }}>{label.slice(0, 3)}</div>
+                                  <div style={{ height: '4px', background: 'rgba(255,255,255,0.05)', borderRadius: '2px', overflow: 'hidden' }}>
+                                    <div style={{ height: '100%', background: 'var(--eco-glow)', width: `${val}%` }} />
+                                  </div>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      ))
+                    ) : (
+                      <div className="glass-panel" style={{ padding: '3rem', textAlign: 'center', gridColumn: '1 / -1', border: '1px dashed var(--glass-border)' }}>
+                        <div style={{ fontSize: '2rem', marginBottom: '1rem' }}>🔬</div>
+                        <div style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>No optimal materials found for {activeTab} within the current budget/sustainability constraints.</div>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </>
+            )}
+          </div>
+        ) : (
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '500px' }}>
+             <div className="neural-core-v2" style={{ width: '120px', height: '120px' }}><div className="core-ring core-ring-1"></div><div style={{fontSize: '4rem'}}>🏗️</div></div>
+             <div style={{ marginTop: '2rem', opacity: 0.5, letterSpacing: '8px', fontWeight: 900 }}>SYSTEM_READY</div>
+             <div style={{ marginTop: '1rem', color: 'var(--text-secondary)', fontSize: '0.8rem' }}>Configure project parameters and generate engineering matrix</div>
+          </div>
+        )}
       </main>
+      <Footer />
     </div>
   );
 }
