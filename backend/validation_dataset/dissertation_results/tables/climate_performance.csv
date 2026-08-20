@@ -1,0 +1,4 @@
+climate_zone,layout_score,engineering_score,ml_score,hybrid_score,runtime_ms,sustainability,placement_success,functional_coverage,space_utilization
+Extreme Coastal Saline,41.57,49.86,26.8,44.11,5376.95,57.66,50.66,52.39,5.98
+Intermediate Tropical,41.01,49.82,23.24,43.16,5061.38,58.02,49.14,50.43,5.72
+Moderate Coastal Humid,40.5,49.85,27.16,44.16,6137.7,57.23,48.94,49.78,6.03

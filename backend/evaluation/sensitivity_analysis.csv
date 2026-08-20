@@ -1,0 +1,11 @@
+Scenario,ML Probability (%)
+"Base (Residential, Intermediate, 2F)",99.98
+Coastal Zone (salinity risk),89.98
+Coastal + Coastal-Rated,99.96
+Industrial Sector,57.11
+Industrial + Material-Suited,99.97
+Highland Zone,99.97
+Floor Near Limit (3/4),99.95
+Floor Exceeds Limit (6/4),95.89
+Budget Low + High Carbon,99.54
+Budget Premium + Sustainable,99.99

@@ -1,0 +1,12 @@
+| scenario_id   | building_type   | budget   | climate_zone          |   hybrid_score |   sustainability |
+|:--------------|:----------------|:---------|:----------------------|---------------:|-----------------:|
+| scenario_050  | Hospital        | Budget   | Intermediate Tropical |            6   |             51.5 |
+| scenario_053  | Hospital        | Budget   | Intermediate Tropical |            6   |             52.8 |
+| scenario_058  | Hospital        | Balanced | Intermediate Tropical |            6.1 |             49.9 |
+| scenario_041  | Hospital        | Budget   | Intermediate Tropical |            6.7 |             49.8 |
+| scenario_049  | Hospital        | Balanced | Intermediate Tropical |            6.7 |             50.5 |
+| scenario_057  | Hospital        | Premium  | Intermediate Tropical |            6.8 |             53.2 |
+| scenario_054  | Hospital        | Premium  | Intermediate Tropical |            7.2 |             50.8 |
+| scenario_045  | Hospital        | Premium  | Intermediate Tropical |            7.3 |             50.5 |
+| scenario_046  | Hospital        | Balanced | Intermediate Tropical |            7.5 |             50.5 |
+| scenario_042  | Hospital        | Premium  | Intermediate Tropical |            7.8 |             50.2 |

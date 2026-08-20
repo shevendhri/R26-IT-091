@@ -1,0 +1,1708 @@
+{
+  "Acoustic Mineral Fibre Suspended Tile": {
+    "category": "Ceiling",
+    "sls_compliant": true,
+    "structural_systems": [
+      "Load Bearing",
+      "RC Frame"
+    ],
+    "climate": [
+      "dry",
+      "intermediate"
+    ],
+    "budget": "Balanced",
+    "availability": "Medium",
+    "local_preference_stars": 3,
+    "eco_score": 0.32,
+    "maintenance": "Medium",
+    "service_life": 20,
+    "floor_range": [
+      "1-2",
+      "3-5",
+      "6+"
+    ],
+    "structural_capacity": 5,
+    "moisture_resistance": 52,
+    "corrosion_resistance": 48,
+    "compatible_with": []
+  },
+  "Bamboo-Fibre Acoustic Ceiling Panel": {
+    "category": "Ceiling",
+    "sls_compliant": true,
+    "structural_systems": [
+      "Load Bearing",
+      "RC Frame"
+    ],
+    "climate": [
+      "dry",
+      "highland",
+      "intermediate"
+    ],
+    "budget": "Balanced",
+    "availability": "Medium",
+    "local_preference_stars": 3,
+    "eco_score": 0.05,
+    "maintenance": "Low",
+    "service_life": 25,
+    "floor_range": [
+      "1-2",
+      "3-5"
+    ],
+    "structural_capacity": 10,
+    "moisture_resistance": 62,
+    "corrosion_resistance": 72,
+    "compatible_with": []
+  },
+  "Calcium Silicate Board Ceiling": {
+    "category": "Ceiling",
+    "sls_compliant": true,
+    "structural_systems": [
+      "Load Bearing",
+      "RC Frame"
+    ],
+    "climate": [
+      "wet",
+      "coastal",
+      "extreme coastal",
+      "highland",
+      "intermediate"
+    ],
+    "budget": "Balanced",
+    "availability": "Medium",
+    "local_preference_stars": 3,
+    "eco_score": 0.28,
+    "maintenance": "Low",
+    "service_life": 30,
+    "floor_range": [
+      "1-2",
+      "3-5",
+      "6+"
+    ],
+    "structural_capacity": 8,
+    "moisture_resistance": 92,
+    "corrosion_resistance": 85,
+    "compatible_with": []
+  },
+  "PVC Laminated Ceiling Panel (Moisture-Proof)": {
+    "category": "Ceiling",
+    "sls_compliant": true,
+    "structural_systems": [
+      "Load Bearing",
+      "RC Frame"
+    ],
+    "climate": [
+      "wet",
+      "coastal",
+      "extreme coastal",
+      "intermediate"
+    ],
+    "budget": "Economy",
+    "availability": "High",
+    "local_preference_stars": 4,
+    "eco_score": 0.58,
+    "maintenance": "Low",
+    "service_life": 20,
+    "floor_range": [
+      "1-2",
+      "3-5"
+    ],
+    "structural_capacity": 5,
+    "moisture_resistance": 98,
+    "corrosion_resistance": 82,
+    "compatible_with": []
+  },
+  "Standard Gypsum Board Ceiling (Suspended)": {
+    "category": "Ceiling",
+    "sls_compliant": true,
+    "structural_systems": [
+      "Load Bearing",
+      "RC Frame"
+    ],
+    "climate": [
+      "dry",
+      "intermediate"
+    ],
+    "budget": "Economy",
+    "availability": "High",
+    "local_preference_stars": 4,
+    "eco_score": 0.38,
+    "maintenance": "Medium",
+    "service_life": 15,
+    "floor_range": [
+      "1-2",
+      "3-5",
+      "6+"
+    ],
+    "structural_capacity": 5,
+    "moisture_resistance": 38,
+    "corrosion_resistance": 32,
+    "compatible_with": []
+  },
+  "Suspended Metal Tile Ceiling (Aluminium)": {
+    "category": "Ceiling",
+    "sls_compliant": true,
+    "structural_systems": [
+      "Load Bearing",
+      "RC Frame"
+    ],
+    "climate": [
+      "coastal",
+      "wet",
+      "intermediate",
+      "dry"
+    ],
+    "budget": "Balanced",
+    "availability": "High",
+    "local_preference_stars": 4,
+    "eco_score": 0.45,
+    "maintenance": "Low",
+    "service_life": 40,
+    "floor_range": [
+      "1-2",
+      "3-5",
+      "6+"
+    ],
+    "structural_capacity": 8,
+    "moisture_resistance": 95,
+    "corrosion_resistance": 92,
+    "compatible_with": []
+  },
+  "Eco-Concrete (Recycled Aggregate + Fly-Ash)": {
+    "category": "Concrete",
+    "sls_compliant": true,
+    "structural_systems": [
+      "Load Bearing",
+      "RC Frame"
+    ],
+    "climate": [
+      "dry",
+      "wet",
+      "intermediate",
+      "highland"
+    ],
+    "budget": "Balanced",
+    "availability": "Medium",
+    "local_preference_stars": 3,
+    "eco_score": 0.28,
+    "maintenance": "Medium",
+    "service_life": 50,
+    "floor_range": [
+      "1-2",
+      "3-5"
+    ],
+    "structural_capacity": 75,
+    "moisture_resistance": 65,
+    "corrosion_resistance": 48,
+    "compatible_with": []
+  },
+  "Gr. 25 Standard Structural Concrete": {
+    "category": "Concrete",
+    "sls_compliant": true,
+    "structural_systems": [
+      "Load Bearing",
+      "RC Frame"
+    ],
+    "climate": [
+      "wet",
+      "dry",
+      "intermediate",
+      "highland"
+    ],
+    "budget": "Economy",
+    "availability": "High",
+    "local_preference_stars": 4,
+    "eco_score": 0.45,
+    "maintenance": "Medium",
+    "service_life": 60,
+    "floor_range": [
+      "1-2",
+      "3-5"
+    ],
+    "structural_capacity": 80,
+    "moisture_resistance": 65,
+    "corrosion_resistance": 50,
+    "compatible_with": []
+  },
+  "Gr. 30 Marine-Grade Concrete Mix": {
+    "category": "Concrete",
+    "sls_compliant": true,
+    "structural_systems": [
+      "Load Bearing",
+      "RC Frame"
+    ],
+    "climate": [
+      "coastal",
+      "extreme coastal"
+    ],
+    "budget": "Balanced",
+    "availability": "High",
+    "local_preference_stars": 4,
+    "eco_score": 0.68,
+    "maintenance": "Low",
+    "service_life": 100,
+    "floor_range": [
+      "1-2",
+      "3-5",
+      "6+"
+    ],
+    "structural_capacity": 90,
+    "moisture_resistance": 98,
+    "corrosion_resistance": 98,
+    "compatible_with": []
+  },
+  "Self-Compacting Concrete (SCC)": {
+    "category": "Concrete",
+    "sls_compliant": true,
+    "structural_systems": [
+      "RC Frame"
+    ],
+    "climate": [
+      "wet",
+      "dry",
+      "coastal",
+      "intermediate"
+    ],
+    "budget": "Premium",
+    "availability": "Medium",
+    "local_preference_stars": 3,
+    "eco_score": 0.55,
+    "maintenance": "Low",
+    "service_life": 65,
+    "floor_range": [
+      "3-5",
+      "6+"
+    ],
+    "structural_capacity": 85,
+    "moisture_resistance": 80,
+    "corrosion_resistance": 75,
+    "compatible_with": []
+  },
+  "Aluminium Profile Glass Door (Heavy-Duty)": {
+    "category": "Doors",
+    "sls_compliant": true,
+    "structural_systems": [
+      "Load Bearing",
+      "RC Frame"
+    ],
+    "climate": [
+      "coastal",
+      "wet",
+      "intermediate",
+      "extreme coastal",
+      "dry"
+    ],
+    "budget": "Balanced",
+    "availability": "High",
+    "local_preference_stars": 4,
+    "eco_score": 0.58,
+    "maintenance": "Medium",
+    "service_life": 50,
+    "floor_range": [
+      "1-2",
+      "3-5",
+      "6+"
+    ],
+    "structural_capacity": 48,
+    "moisture_resistance": 95,
+    "corrosion_resistance": 95,
+    "compatible_with": []
+  },
+  "FRP Fiberglass Reinforced Door": {
+    "category": "Doors",
+    "sls_compliant": true,
+    "structural_systems": [
+      "Load Bearing",
+      "RC Frame"
+    ],
+    "climate": [
+      "coastal",
+      "wet",
+      "extreme coastal"
+    ],
+    "budget": "Premium",
+    "availability": "Medium",
+    "local_preference_stars": 3,
+    "eco_score": 0.48,
+    "maintenance": "Low",
+    "service_life": 60,
+    "floor_range": [
+      "1-2",
+      "3-5",
+      "6+"
+    ],
+    "structural_capacity": 42,
+    "moisture_resistance": 98,
+    "corrosion_resistance": 100,
+    "compatible_with": []
+  },
+  "Solid Teak Timber Door (Premium)": {
+    "category": "Doors",
+    "sls_compliant": true,
+    "structural_systems": [
+      "Load Bearing",
+      "RC Frame"
+    ],
+    "climate": [
+      "wet",
+      "dry",
+      "highland",
+      "intermediate"
+    ],
+    "budget": "Premium",
+    "availability": "High",
+    "local_preference_stars": 4,
+    "eco_score": 0.22,
+    "maintenance": "High",
+    "service_life": 80,
+    "floor_range": [
+      "1-2",
+      "3-5",
+      "6+"
+    ],
+    "structural_capacity": 42,
+    "moisture_resistance": 82,
+    "corrosion_resistance": 82,
+    "compatible_with": []
+  },
+  "Standard Hollow-Core Flush Door (HDF Faced)": {
+    "category": "Doors",
+    "sls_compliant": true,
+    "structural_systems": [
+      "Load Bearing",
+      "RC Frame"
+    ],
+    "climate": [
+      "dry",
+      "intermediate"
+    ],
+    "budget": "Economy",
+    "availability": "High",
+    "local_preference_stars": 4,
+    "eco_score": 0.38,
+    "maintenance": "High",
+    "service_life": 20,
+    "floor_range": [
+      "1-2",
+      "3-5"
+    ],
+    "structural_capacity": 28,
+    "moisture_resistance": 42,
+    "corrosion_resistance": 32,
+    "compatible_with": []
+  },
+  "Steel Security Door (Powder-Coated)": {
+    "category": "Doors",
+    "sls_compliant": true,
+    "structural_systems": [
+      "Load Bearing",
+      "RC Frame"
+    ],
+    "climate": [
+      "dry",
+      "intermediate",
+      "wet"
+    ],
+    "budget": "Balanced",
+    "availability": "High",
+    "local_preference_stars": 4,
+    "eco_score": 0.72,
+    "maintenance": "Medium",
+    "service_life": 40,
+    "floor_range": [
+      "1-2",
+      "3-5",
+      "6+"
+    ],
+    "structural_capacity": 85,
+    "moisture_resistance": 75,
+    "corrosion_resistance": 70,
+    "compatible_with": []
+  },
+  "Timber Louvre Door (Ventilated Hardwood)": {
+    "category": "Doors",
+    "sls_compliant": true,
+    "structural_systems": [
+      "Load Bearing",
+      "RC Frame"
+    ],
+    "climate": [
+      "highland",
+      "intermediate",
+      "dry",
+      "wet"
+    ],
+    "budget": "Balanced",
+    "availability": "Medium",
+    "local_preference_stars": 3,
+    "eco_score": 0.2,
+    "maintenance": "Medium",
+    "service_life": 45,
+    "floor_range": [
+      "1-2"
+    ],
+    "structural_capacity": 30,
+    "moisture_resistance": 65,
+    "corrosion_resistance": 58,
+    "compatible_with": []
+  },
+  "UPVC Sliding Door (Weather-Sealed)": {
+    "category": "Doors",
+    "sls_compliant": true,
+    "structural_systems": [
+      "Load Bearing",
+      "RC Frame"
+    ],
+    "climate": [
+      "coastal",
+      "wet",
+      "highland",
+      "extreme coastal"
+    ],
+    "budget": "Premium",
+    "availability": "Medium",
+    "local_preference_stars": 3,
+    "eco_score": 0.32,
+    "maintenance": "Low",
+    "service_life": 40,
+    "floor_range": [
+      "1-2",
+      "3-5"
+    ],
+    "structural_capacity": 20,
+    "moisture_resistance": 98,
+    "corrosion_resistance": 100,
+    "compatible_with": []
+  },
+  "Advanced Nano-Exterior Paint": {
+    "category": "Finishing",
+    "sls_compliant": true,
+    "structural_systems": [
+      "Load Bearing",
+      "RC Frame"
+    ],
+    "climate": [
+      "coastal",
+      "wet",
+      "dry",
+      "extreme coastal",
+      "highland",
+      "intermediate"
+    ],
+    "budget": "Balanced",
+    "availability": "High",
+    "local_preference_stars": 4,
+    "eco_score": 0.25,
+    "maintenance": "Low",
+    "service_life": 12,
+    "floor_range": [
+      "1-2",
+      "3-5",
+      "6+"
+    ],
+    "structural_capacity": 5,
+    "moisture_resistance": 95,
+    "corrosion_resistance": 90,
+    "compatible_with": []
+  },
+  "Eco-Friendly Low VOC Emulsion": {
+    "category": "Finishing",
+    "sls_compliant": true,
+    "structural_systems": [
+      "Load Bearing",
+      "RC Frame"
+    ],
+    "climate": [
+      "dry",
+      "wet",
+      "intermediate",
+      "highland"
+    ],
+    "budget": "Economy",
+    "availability": "High",
+    "local_preference_stars": 4,
+    "eco_score": 0.12,
+    "maintenance": "Low",
+    "service_life": 15,
+    "floor_range": [
+      "1-2",
+      "3-5"
+    ],
+    "structural_capacity": 5,
+    "moisture_resistance": 55,
+    "corrosion_resistance": 40,
+    "compatible_with": []
+  },
+  "Standard Exterior Emulsion": {
+    "category": "Finishing",
+    "sls_compliant": true,
+    "structural_systems": [
+      "Load Bearing",
+      "RC Frame"
+    ],
+    "climate": [
+      "dry",
+      "wet",
+      "intermediate"
+    ],
+    "budget": "Economy",
+    "availability": "High",
+    "local_preference_stars": 4,
+    "eco_score": 0.25,
+    "maintenance": "Medium",
+    "service_life": 8,
+    "floor_range": [
+      "1-2",
+      "3-5",
+      "6+"
+    ],
+    "structural_capacity": 5,
+    "moisture_resistance": 40,
+    "corrosion_resistance": 35,
+    "compatible_with": []
+  },
+  "Micro-Cement Screed Flooring": {
+    "category": "Flooring",
+    "sls_compliant": true,
+    "structural_systems": [
+      "Load Bearing",
+      "RC Frame"
+    ],
+    "climate": [
+      "wet",
+      "dry",
+      "intermediate",
+      "coastal"
+    ],
+    "budget": "Balanced",
+    "availability": "Medium",
+    "local_preference_stars": 3,
+    "eco_score": 0.35,
+    "maintenance": "Medium",
+    "service_life": 20,
+    "floor_range": [
+      "1-2",
+      "3-5"
+    ],
+    "structural_capacity": 58,
+    "moisture_resistance": 82,
+    "corrosion_resistance": 72,
+    "compatible_with": []
+  },
+  "Polished Terrazzo Flooring (Marble Aggregate)": {
+    "category": "Flooring",
+    "sls_compliant": true,
+    "structural_systems": [
+      "Load Bearing",
+      "RC Frame"
+    ],
+    "climate": [
+      "wet",
+      "dry",
+      "intermediate",
+      "highland"
+    ],
+    "budget": "Balanced",
+    "availability": "High",
+    "local_preference_stars": 4,
+    "eco_score": 0.22,
+    "maintenance": "Low",
+    "service_life": 65,
+    "floor_range": [
+      "1-2",
+      "3-5"
+    ],
+    "structural_capacity": 52,
+    "moisture_resistance": 92,
+    "corrosion_resistance": 78,
+    "compatible_with": []
+  },
+  "Porcelain GVT Slab (Full-Body Vitrified)": {
+    "category": "Flooring",
+    "sls_compliant": true,
+    "structural_systems": [
+      "Load Bearing",
+      "RC Frame"
+    ],
+    "climate": [
+      "wet",
+      "coastal",
+      "intermediate",
+      "dry"
+    ],
+    "budget": "Premium",
+    "availability": "High",
+    "local_preference_stars": 4,
+    "eco_score": 0.42,
+    "maintenance": "Low",
+    "service_life": 45,
+    "floor_range": [
+      "1-2",
+      "3-5"
+    ],
+    "structural_capacity": 48,
+    "moisture_resistance": 95,
+    "corrosion_resistance": 88,
+    "compatible_with": []
+  },
+  "Recycled Composite Decking (WPC)": {
+    "category": "Flooring",
+    "sls_compliant": true,
+    "structural_systems": [
+      "Load Bearing",
+      "RC Frame"
+    ],
+    "climate": [
+      "coastal",
+      "wet",
+      "extreme coastal"
+    ],
+    "budget": "Premium",
+    "availability": "Medium",
+    "local_preference_stars": 3,
+    "eco_score": 0.22,
+    "maintenance": "Low",
+    "service_life": 30,
+    "floor_range": [
+      "1-2"
+    ],
+    "structural_capacity": 42,
+    "moisture_resistance": 98,
+    "corrosion_resistance": 100,
+    "compatible_with": []
+  },
+  "Rubber Flooring (Recycled Automotive)": {
+    "category": "Flooring",
+    "sls_compliant": true,
+    "structural_systems": [
+      "Load Bearing",
+      "RC Frame"
+    ],
+    "climate": [
+      "wet",
+      "coastal",
+      "intermediate"
+    ],
+    "budget": "Balanced",
+    "availability": "Medium",
+    "local_preference_stars": 3,
+    "eco_score": 0.28,
+    "maintenance": "Low",
+    "service_life": 30,
+    "floor_range": [
+      "1-2",
+      "3-5",
+      "6+"
+    ],
+    "structural_capacity": 48,
+    "moisture_resistance": 98,
+    "corrosion_resistance": 88,
+    "compatible_with": []
+  },
+  "Standard Ceramic Floor Tile": {
+    "category": "Flooring",
+    "sls_compliant": true,
+    "structural_systems": [
+      "Load Bearing",
+      "RC Frame"
+    ],
+    "climate": [
+      "wet",
+      "dry",
+      "intermediate"
+    ],
+    "budget": "Economy",
+    "availability": "High",
+    "local_preference_stars": 4,
+    "eco_score": 0.35,
+    "maintenance": "Low",
+    "service_life": 25,
+    "floor_range": [
+      "1-2",
+      "3-5",
+      "6+"
+    ],
+    "structural_capacity": 45,
+    "moisture_resistance": 90,
+    "corrosion_resistance": 85,
+    "compatible_with": []
+  },
+  "Timber Strip Flooring (Treated Hardwood)": {
+    "category": "Flooring",
+    "sls_compliant": true,
+    "structural_systems": [
+      "Load Bearing",
+      "RC Frame"
+    ],
+    "climate": [
+      "highland",
+      "intermediate",
+      "dry"
+    ],
+    "budget": "Balanced",
+    "availability": "Medium",
+    "local_preference_stars": 3,
+    "eco_score": 0.28,
+    "maintenance": "High",
+    "service_life": 40,
+    "floor_range": [
+      "1-2"
+    ],
+    "structural_capacity": 40,
+    "moisture_resistance": 55,
+    "corrosion_resistance": 52,
+    "compatible_with": []
+  },
+  "Eco-Concrete Foundation (30% Recycled Aggregate)": {
+    "category": "Foundation",
+    "sls_compliant": true,
+    "structural_systems": [
+      "Load Bearing",
+      "RC Frame"
+    ],
+    "climate": [
+      "dry",
+      "wet",
+      "intermediate",
+      "highland"
+    ],
+    "budget": "Balanced",
+    "availability": "Medium",
+    "local_preference_stars": 3,
+    "eco_score": 0.3,
+    "maintenance": "Medium",
+    "service_life": 50,
+    "floor_range": [
+      "1-2",
+      "3-5"
+    ],
+    "structural_capacity": 72,
+    "moisture_resistance": 65,
+    "corrosion_resistance": 50,
+    "compatible_with": []
+  },
+  "Gr. 25 Standard Concrete Foundation": {
+    "category": "Foundation",
+    "sls_compliant": true,
+    "structural_systems": [
+      "Load Bearing",
+      "RC Frame"
+    ],
+    "climate": [
+      "wet",
+      "dry",
+      "intermediate",
+      "highland"
+    ],
+    "budget": "Balanced",
+    "availability": "High",
+    "local_preference_stars": 4,
+    "eco_score": 0.45,
+    "maintenance": "Medium",
+    "service_life": 50,
+    "floor_range": [
+      "1-2",
+      "3-5"
+    ],
+    "structural_capacity": 75,
+    "moisture_resistance": 65,
+    "corrosion_resistance": 45,
+    "compatible_with": []
+  },
+  "Gr. 30 Marine-Grade Concrete Foundation": {
+    "category": "Foundation",
+    "sls_compliant": true,
+    "structural_systems": [
+      "Load Bearing",
+      "RC Frame"
+    ],
+    "climate": [
+      "coastal",
+      "extreme coastal"
+    ],
+    "budget": "Premium",
+    "availability": "High",
+    "local_preference_stars": 4,
+    "eco_score": 0.68,
+    "maintenance": "Low",
+    "service_life": 100,
+    "floor_range": [
+      "1-2",
+      "3-5",
+      "6+"
+    ],
+    "structural_capacity": 88,
+    "moisture_resistance": 98,
+    "corrosion_resistance": 98,
+    "compatible_with": []
+  },
+  "Lime-Pozzolan Natural Foundation": {
+    "category": "Foundation",
+    "sls_compliant": true,
+    "structural_systems": [
+      "Load Bearing",
+      "RC Frame"
+    ],
+    "climate": [
+      "dry",
+      "intermediate",
+      "highland"
+    ],
+    "budget": "Balanced",
+    "availability": "Low",
+    "local_preference_stars": 2,
+    "eco_score": 0.12,
+    "maintenance": "Medium",
+    "service_life": 80,
+    "floor_range": [
+      "1-2"
+    ],
+    "structural_capacity": 60,
+    "moisture_resistance": 60,
+    "corrosion_resistance": 40,
+    "compatible_with": []
+  },
+  "Raft Foundation Assembly (RC Heavy)": {
+    "category": "Foundation",
+    "sls_compliant": true,
+    "structural_systems": [
+      "RC Frame"
+    ],
+    "climate": [
+      "wet",
+      "coastal",
+      "dry",
+      "intermediate"
+    ],
+    "budget": "Premium",
+    "availability": "Medium",
+    "local_preference_stars": 3,
+    "eco_score": 0.8,
+    "maintenance": "Low",
+    "service_life": 120,
+    "floor_range": [
+      "3-5",
+      "6+"
+    ],
+    "structural_capacity": 98,
+    "moisture_resistance": 92,
+    "corrosion_resistance": 85,
+    "compatible_with": []
+  },
+  "Green Intensive Roof System (Growing Medium)": {
+    "category": "Roofing",
+    "sls_compliant": true,
+    "structural_systems": [
+      "RC Frame"
+    ],
+    "climate": [
+      "wet",
+      "intermediate"
+    ],
+    "budget": "Premium",
+    "availability": "Low",
+    "local_preference_stars": 2,
+    "eco_score": 0.1,
+    "maintenance": "Medium",
+    "service_life": 50,
+    "floor_range": [
+      "3-5",
+      "6+"
+    ],
+    "structural_capacity": 15,
+    "moisture_resistance": 95,
+    "corrosion_resistance": 90,
+    "compatible_with": []
+  },
+  "Insulated Sandwich Roof Panel (PU Core)": {
+    "category": "Roofing",
+    "sls_compliant": true,
+    "structural_systems": [
+      "Load Bearing",
+      "RC Frame"
+    ],
+    "climate": [
+      "dry",
+      "intermediate",
+      "industrial"
+    ],
+    "budget": "Balanced",
+    "availability": "High",
+    "local_preference_stars": 4,
+    "eco_score": 0.58,
+    "maintenance": "Medium",
+    "service_life": 35,
+    "floor_range": [
+      "1-2",
+      "3-5"
+    ],
+    "structural_capacity": 20,
+    "moisture_resistance": 85,
+    "corrosion_resistance": 72,
+    "compatible_with": []
+  },
+  "Marine-Grade Aluminium Roofing (0.55mm)": {
+    "category": "Roofing",
+    "sls_compliant": true,
+    "structural_systems": [
+      "Load Bearing",
+      "RC Frame"
+    ],
+    "climate": [
+      "coastal",
+      "extreme coastal",
+      "wet"
+    ],
+    "budget": "Balanced",
+    "availability": "High",
+    "local_preference_stars": 4,
+    "eco_score": 0.48,
+    "maintenance": "Low",
+    "service_life": 45,
+    "floor_range": [
+      "1-2",
+      "3-5"
+    ],
+    "structural_capacity": 15,
+    "moisture_resistance": 98,
+    "corrosion_resistance": 98,
+    "compatible_with": []
+  },
+  "Polycarbonate Translucent Roofing": {
+    "category": "Roofing",
+    "sls_compliant": true,
+    "structural_systems": [
+      "Load Bearing",
+      "RC Frame"
+    ],
+    "climate": [
+      "wet",
+      "dry",
+      "intermediate"
+    ],
+    "budget": "Balanced",
+    "availability": "Medium",
+    "local_preference_stars": 3,
+    "eco_score": 0.55,
+    "maintenance": "Medium",
+    "service_life": 20,
+    "floor_range": [
+      "1-2",
+      "3-5"
+    ],
+    "structural_capacity": 8,
+    "moisture_resistance": 92,
+    "corrosion_resistance": 80,
+    "compatible_with": []
+  },
+  "Portuguese Clay Tile (Unglazed Terracotta)": {
+    "category": "Roofing",
+    "sls_compliant": true,
+    "structural_systems": [
+      "Load Bearing",
+      "RC Frame"
+    ],
+    "climate": [
+      "highland",
+      "intermediate",
+      "wet"
+    ],
+    "budget": "Balanced",
+    "availability": "High",
+    "local_preference_stars": 4,
+    "eco_score": 0.18,
+    "maintenance": "Low",
+    "service_life": 65,
+    "floor_range": [
+      "1-2"
+    ],
+    "structural_capacity": 10,
+    "moisture_resistance": 88,
+    "corrosion_resistance": 95,
+    "compatible_with": []
+  },
+  "Recycled Rubber Flat Roof Membrane": {
+    "category": "Roofing",
+    "sls_compliant": true,
+    "structural_systems": [
+      "Load Bearing",
+      "RC Frame"
+    ],
+    "climate": [
+      "wet",
+      "coastal",
+      "intermediate"
+    ],
+    "budget": "Balanced",
+    "availability": "Low",
+    "local_preference_stars": 2,
+    "eco_score": 0.3,
+    "maintenance": "Low",
+    "service_life": 35,
+    "floor_range": [
+      "1-2",
+      "3-5"
+    ],
+    "structural_capacity": 8,
+    "moisture_resistance": 98,
+    "corrosion_resistance": 80,
+    "compatible_with": []
+  },
+  "Standard Cement Tile (Concrete Interlocking)": {
+    "category": "Roofing",
+    "sls_compliant": true,
+    "structural_systems": [
+      "Load Bearing",
+      "RC Frame"
+    ],
+    "climate": [
+      "wet",
+      "dry",
+      "intermediate"
+    ],
+    "budget": "Economy",
+    "availability": "High",
+    "local_preference_stars": 4,
+    "eco_score": 0.45,
+    "maintenance": "Medium",
+    "service_life": 40,
+    "floor_range": [
+      "1-2"
+    ],
+    "structural_capacity": 10,
+    "moisture_resistance": 88,
+    "corrosion_resistance": 78,
+    "compatible_with": []
+  },
+  "Zinc-Aluminium Corrugated Sheet (55% Al-Zn)": {
+    "category": "Roofing",
+    "sls_compliant": true,
+    "structural_systems": [
+      "Load Bearing",
+      "RC Frame"
+    ],
+    "climate": [
+      "coastal",
+      "wet",
+      "intermediate",
+      "dry"
+    ],
+    "budget": "Balanced",
+    "availability": "High",
+    "local_preference_stars": 4,
+    "eco_score": 0.42,
+    "maintenance": "Low",
+    "service_life": 50,
+    "floor_range": [
+      "1-2",
+      "3-5"
+    ],
+    "structural_capacity": 12,
+    "moisture_resistance": 95,
+    "corrosion_resistance": 92,
+    "compatible_with": []
+  },
+  "Epoxy-Coated Rebar (ASTM A775)": {
+    "category": "Structural",
+    "sls_compliant": true,
+    "structural_systems": [
+      "Load Bearing",
+      "RC Frame"
+    ],
+    "climate": [
+      "coastal",
+      "extreme coastal"
+    ],
+    "budget": "Premium",
+    "availability": "Medium",
+    "local_preference_stars": 3,
+    "eco_score": 0.88,
+    "maintenance": "Low",
+    "service_life": 120,
+    "floor_range": [
+      "1-2",
+      "3-5",
+      "6+"
+    ],
+    "structural_capacity": 98,
+    "moisture_resistance": 98,
+    "corrosion_resistance": 100,
+    "compatible_with": []
+  },
+  "GFRP Rebar (Glass Fibre Reinforced Polymer)": {
+    "category": "Structural",
+    "sls_compliant": true,
+    "structural_systems": [
+      "Load Bearing",
+      "RC Frame"
+    ],
+    "climate": [
+      "coastal",
+      "extreme coastal",
+      "wet"
+    ],
+    "budget": "Premium",
+    "availability": "Low",
+    "local_preference_stars": 2,
+    "eco_score": 0.55,
+    "maintenance": "Low",
+    "service_life": 100,
+    "floor_range": [
+      "1-2",
+      "3-5"
+    ],
+    "structural_capacity": 80,
+    "moisture_resistance": 100,
+    "corrosion_resistance": 100,
+    "compatible_with": []
+  },
+  "Galvanized Steel Rebar (Hot-Dip)": {
+    "category": "Structural",
+    "sls_compliant": true,
+    "structural_systems": [
+      "Load Bearing",
+      "RC Frame"
+    ],
+    "climate": [
+      "coastal",
+      "wet",
+      "extreme coastal"
+    ],
+    "budget": "Premium",
+    "availability": "Low",
+    "local_preference_stars": 2,
+    "eco_score": 0.75,
+    "maintenance": "Low",
+    "service_life": 80,
+    "floor_range": [
+      "1-2",
+      "3-5"
+    ],
+    "structural_capacity": 90,
+    "moisture_resistance": 85,
+    "corrosion_resistance": 85,
+    "compatible_with": []
+  },
+  "Stainless Steel Rebar (Grade 316L)": {
+    "category": "Structural",
+    "sls_compliant": true,
+    "structural_systems": [
+      "RC Frame"
+    ],
+    "climate": [
+      "coastal",
+      "extreme coastal"
+    ],
+    "budget": "Premium",
+    "availability": "Low",
+    "local_preference_stars": 2,
+    "eco_score": 1.25,
+    "maintenance": "Low",
+    "service_life": 150,
+    "floor_range": [
+      "3-5",
+      "6+"
+    ],
+    "structural_capacity": 95,
+    "moisture_resistance": 100,
+    "corrosion_resistance": 100,
+    "compatible_with": []
+  },
+  "TMT High-Yield Rebar (SLS 375)": {
+    "category": "Structural",
+    "sls_compliant": true,
+    "structural_systems": [
+      "Load Bearing",
+      "RC Frame"
+    ],
+    "climate": [
+      "dry",
+      "wet",
+      "intermediate",
+      "highland"
+    ],
+    "budget": "Balanced",
+    "availability": "High",
+    "local_preference_stars": 4,
+    "eco_score": 0.55,
+    "maintenance": "Medium",
+    "service_life": 65,
+    "floor_range": [
+      "1-2",
+      "3-5",
+      "6+"
+    ],
+    "structural_capacity": 92,
+    "moisture_resistance": 68,
+    "corrosion_resistance": 42,
+    "compatible_with": []
+  },
+  "AAC Eco-Block G4 (Autoclaved Aerated Concrete)": {
+    "category": "Walling",
+    "sls_compliant": true,
+    "structural_systems": [
+      "Load Bearing",
+      "RC Frame"
+    ],
+    "climate": [
+      "dry",
+      "intermediate",
+      "highland"
+    ],
+    "budget": "Balanced",
+    "availability": "Medium",
+    "local_preference_stars": 3,
+    "eco_score": 0.15,
+    "maintenance": "Medium",
+    "service_life": 50,
+    "floor_range": [
+      "1-2",
+      "3-5"
+    ],
+    "structural_capacity": 48,
+    "moisture_resistance": 55,
+    "corrosion_resistance": 42,
+    "compatible_with": []
+  },
+  "CSEB Compressed Stabilized Earth Block": {
+    "category": "Walling",
+    "sls_compliant": true,
+    "structural_systems": [
+      "Load Bearing",
+      "RC Frame"
+    ],
+    "climate": [
+      "dry",
+      "intermediate",
+      "highland"
+    ],
+    "budget": "Balanced",
+    "availability": "Medium",
+    "local_preference_stars": 3,
+    "eco_score": 0.08,
+    "maintenance": "Medium",
+    "service_life": 60,
+    "floor_range": [
+      "1-2"
+    ],
+    "structural_capacity": 62,
+    "moisture_resistance": 58,
+    "corrosion_resistance": 48,
+    "compatible_with": []
+  },
+  "Fly-Ash Composite Block": {
+    "category": "Walling",
+    "sls_compliant": true,
+    "structural_systems": [
+      "Load Bearing",
+      "RC Frame"
+    ],
+    "climate": [
+      "dry",
+      "wet",
+      "intermediate"
+    ],
+    "budget": "Balanced",
+    "availability": "Medium",
+    "local_preference_stars": 3,
+    "eco_score": 0.2,
+    "maintenance": "Medium",
+    "service_life": 50,
+    "floor_range": [
+      "1-2",
+      "3-5"
+    ],
+    "structural_capacity": 60,
+    "moisture_resistance": 72,
+    "corrosion_resistance": 55,
+    "compatible_with": []
+  },
+  "High-Density Cement Block": {
+    "category": "Walling",
+    "sls_compliant": true,
+    "structural_systems": [
+      "Load Bearing",
+      "RC Frame"
+    ],
+    "climate": [
+      "dry",
+      "wet",
+      "intermediate"
+    ],
+    "budget": "Economy",
+    "availability": "High",
+    "local_preference_stars": 4,
+    "eco_score": 0.38,
+    "maintenance": "High",
+    "service_life": 40,
+    "floor_range": [
+      "1-2",
+      "3-5"
+    ],
+    "structural_capacity": 58,
+    "moisture_resistance": 78,
+    "corrosion_resistance": 58,
+    "compatible_with": []
+  },
+  "Hollow Clay Block (Perforated)": {
+    "category": "Walling",
+    "sls_compliant": true,
+    "structural_systems": [
+      "Load Bearing",
+      "RC Frame"
+    ],
+    "climate": [
+      "wet",
+      "intermediate",
+      "highland",
+      "dry"
+    ],
+    "budget": "Balanced",
+    "availability": "Medium",
+    "local_preference_stars": 3,
+    "eco_score": 0.18,
+    "maintenance": "Medium",
+    "service_life": 65,
+    "floor_range": [
+      "1-2",
+      "3-5"
+    ],
+    "structural_capacity": 55,
+    "moisture_resistance": 62,
+    "corrosion_resistance": 50,
+    "compatible_with": []
+  },
+  "Wire-Cut Clay Brick (Premium Grade)": {
+    "category": "Walling",
+    "sls_compliant": true,
+    "structural_systems": [
+      "Load Bearing",
+      "RC Frame"
+    ],
+    "climate": [
+      "highland",
+      "intermediate",
+      "dry",
+      "wet"
+    ],
+    "budget": "Balanced",
+    "availability": "High",
+    "local_preference_stars": 4,
+    "eco_score": 0.22,
+    "maintenance": "Low",
+    "service_life": 80,
+    "floor_range": [
+      "1-2"
+    ],
+    "structural_capacity": 68,
+    "moisture_resistance": 68,
+    "corrosion_resistance": 48,
+    "compatible_with": []
+  },
+  "Bentonite Clay Waterproofing Panel": {
+    "category": "Waterproofing",
+    "sls_compliant": true,
+    "structural_systems": [
+      "RC Frame"
+    ],
+    "climate": [
+      "wet",
+      "highland",
+      "intermediate"
+    ],
+    "budget": "Balanced",
+    "availability": "Low",
+    "local_preference_stars": 2,
+    "eco_score": 0.08,
+    "maintenance": "Low",
+    "service_life": 40,
+    "floor_range": [
+      "3-5",
+      "6+"
+    ],
+    "structural_capacity": 8,
+    "moisture_resistance": 98,
+    "corrosion_resistance": 88,
+    "compatible_with": []
+  },
+  "Bituminous Modified Membrane (Torch-Applied)": {
+    "category": "Waterproofing",
+    "sls_compliant": true,
+    "structural_systems": [
+      "Load Bearing",
+      "RC Frame"
+    ],
+    "climate": [
+      "wet",
+      "coastal",
+      "dry",
+      "intermediate"
+    ],
+    "budget": "Balanced",
+    "availability": "High",
+    "local_preference_stars": 4,
+    "eco_score": 0.45,
+    "maintenance": "Low",
+    "service_life": 20,
+    "floor_range": [
+      "1-2",
+      "3-5"
+    ],
+    "structural_capacity": 12,
+    "moisture_resistance": 92,
+    "corrosion_resistance": 82,
+    "compatible_with": []
+  },
+  "Crystalline Slurry Waterproofing (Penetrating)": {
+    "category": "Waterproofing",
+    "sls_compliant": true,
+    "structural_systems": [
+      "Load Bearing",
+      "RC Frame"
+    ],
+    "climate": [
+      "wet",
+      "coastal",
+      "extreme coastal",
+      "intermediate"
+    ],
+    "budget": "Balanced",
+    "availability": "High",
+    "local_preference_stars": 4,
+    "eco_score": 0.05,
+    "maintenance": "Low",
+    "service_life": 60,
+    "floor_range": [
+      "1-2",
+      "3-5",
+      "6+"
+    ],
+    "structural_capacity": 15,
+    "moisture_resistance": 100,
+    "corrosion_resistance": 95,
+    "compatible_with": []
+  },
+  "HDPE Sheet Waterproofing Barrier": {
+    "category": "Waterproofing",
+    "sls_compliant": true,
+    "structural_systems": [
+      "Load Bearing",
+      "RC Frame"
+    ],
+    "climate": [
+      "wet",
+      "coastal",
+      "extreme coastal",
+      "highland"
+    ],
+    "budget": "Premium",
+    "availability": "Medium",
+    "local_preference_stars": 3,
+    "eco_score": 0.38,
+    "maintenance": "Low",
+    "service_life": 50,
+    "floor_range": [
+      "1-2",
+      "3-5",
+      "6+"
+    ],
+    "structural_capacity": 10,
+    "moisture_resistance": 100,
+    "corrosion_resistance": 100,
+    "compatible_with": []
+  },
+  "Liquid Polyurethane Membrane (Seamless)": {
+    "category": "Waterproofing",
+    "sls_compliant": true,
+    "structural_systems": [
+      "Load Bearing",
+      "RC Frame"
+    ],
+    "climate": [
+      "wet",
+      "coastal",
+      "intermediate"
+    ],
+    "budget": "Balanced",
+    "availability": "High",
+    "local_preference_stars": 4,
+    "eco_score": 0.58,
+    "maintenance": "Low",
+    "service_life": 25,
+    "floor_range": [
+      "1-2",
+      "3-5"
+    ],
+    "structural_capacity": 10,
+    "moisture_resistance": 95,
+    "corrosion_resistance": 88,
+    "compatible_with": []
+  },
+  "Casement Aluminium Window (Powder-Coated)": {
+    "category": "Windows",
+    "sls_compliant": true,
+    "structural_systems": [
+      "Load Bearing",
+      "RC Frame"
+    ],
+    "climate": [
+      "coastal",
+      "wet",
+      "intermediate",
+      "dry",
+      "extreme coastal"
+    ],
+    "budget": "Balanced",
+    "availability": "High",
+    "local_preference_stars": 4,
+    "eco_score": 0.45,
+    "maintenance": "Low",
+    "service_life": 40,
+    "floor_range": [
+      "1-2",
+      "3-5",
+      "6+"
+    ],
+    "structural_capacity": 15,
+    "moisture_resistance": 92,
+    "corrosion_resistance": 92,
+    "compatible_with": []
+  },
+  "Commercial Double-Glazed Unit (DGU Low-E)": {
+    "category": "Windows",
+    "sls_compliant": true,
+    "structural_systems": [
+      "RC Frame"
+    ],
+    "climate": [
+      "coastal",
+      "urban",
+      "wet",
+      "intermediate"
+    ],
+    "budget": "Premium",
+    "availability": "High",
+    "local_preference_stars": 4,
+    "eco_score": 0.58,
+    "maintenance": "Low",
+    "service_life": 40,
+    "floor_range": [
+      "3-5",
+      "6+"
+    ],
+    "structural_capacity": 20,
+    "moisture_resistance": 92,
+    "corrosion_resistance": 88,
+    "compatible_with": []
+  },
+  "Fixed Aluminium Framed Glass Panel": {
+    "category": "Windows",
+    "sls_compliant": true,
+    "structural_systems": [
+      "Load Bearing",
+      "RC Frame"
+    ],
+    "climate": [
+      "coastal",
+      "wet",
+      "dry",
+      "intermediate"
+    ],
+    "budget": "Balanced",
+    "availability": "High",
+    "local_preference_stars": 4,
+    "eco_score": 0.42,
+    "maintenance": "Low",
+    "service_life": 35,
+    "floor_range": [
+      "1-2",
+      "3-5"
+    ],
+    "structural_capacity": 10,
+    "moisture_resistance": 92,
+    "corrosion_resistance": 90,
+    "compatible_with": []
+  },
+  "Sliding Aluminium Window (Impact-Resistant)": {
+    "category": "Windows",
+    "sls_compliant": true,
+    "structural_systems": [
+      "Load Bearing",
+      "RC Frame"
+    ],
+    "climate": [
+      "coastal",
+      "extreme coastal",
+      "wet"
+    ],
+    "budget": "Balanced",
+    "availability": "Medium",
+    "local_preference_stars": 3,
+    "eco_score": 0.4,
+    "maintenance": "Low",
+    "service_life": 38,
+    "floor_range": [
+      "1-2",
+      "3-5"
+    ],
+    "structural_capacity": 12,
+    "moisture_resistance": 95,
+    "corrosion_resistance": 95,
+    "compatible_with": []
+  },
+  "Timber Louvre Window (Treated Hardwood)": {
+    "category": "Windows",
+    "sls_compliant": true,
+    "structural_systems": [
+      "Load Bearing",
+      "RC Frame"
+    ],
+    "climate": [
+      "highland",
+      "intermediate",
+      "dry"
+    ],
+    "budget": "Balanced",
+    "availability": "Medium",
+    "local_preference_stars": 3,
+    "eco_score": 0.25,
+    "maintenance": "High",
+    "service_life": 40,
+    "floor_range": [
+      "1-2"
+    ],
+    "structural_capacity": 10,
+    "moisture_resistance": 62,
+    "corrosion_resistance": 55,
+    "compatible_with": []
+  },
+  "uPVC Multi-Chamber Window System": {
+    "category": "Windows",
+    "sls_compliant": true,
+    "structural_systems": [
+      "Load Bearing",
+      "RC Frame"
+    ],
+    "climate": [
+      "coastal",
+      "highland",
+      "wet",
+      "extreme coastal",
+      "intermediate"
+    ],
+    "budget": "Premium",
+    "availability": "High",
+    "local_preference_stars": 4,
+    "eco_score": 0.28,
+    "maintenance": "Low",
+    "service_life": 45,
+    "floor_range": [
+      "1-2",
+      "3-5",
+      "6+"
+    ],
+    "structural_capacity": 15,
+    "moisture_resistance": 98,
+    "corrosion_resistance": 100,
+    "compatible_with": []
+  }
+}

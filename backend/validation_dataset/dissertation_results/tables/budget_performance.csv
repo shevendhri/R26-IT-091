@@ -1,0 +1,4 @@
+budget,layout_score,engineering_score,ml_score,hybrid_score,runtime_ms,sustainability,placement_success,functional_coverage,space_utilization
+Balanced,41.86,51.69,24.5,44.89,5310.74,58.63,51.64,52.34,5.74
+Budget,40.63,48.52,24.62,42.54,5568.35,57.22,48.29,49.83,5.78
+Premium,40.57,49.26,26.19,43.47,5354.85,57.33,48.44,50.07,6.06

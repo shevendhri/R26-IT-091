@@ -1,0 +1,373 @@
+material_id,material_name,category,scenario,engineering_score,ml_score,hybrid_score,selected
+119,Gr. 25 Standard Concrete Foundation,Foundation,Residential - Colombo,82.0,0.34,57.5,No
+120,Gr. 30 Marine-Grade Concrete Foundation,Foundation,Residential - Colombo,85.2,0.66,59.84,No
+121,Eco-Concrete Foundation (30% Recycled Aggregate),Foundation,Residential - Colombo,83.7,0.54,58.75,No
+122,Raft Foundation Assembly (RC Heavy),Foundation,Residential - Colombo,64.8,2.55,46.12,No
+123,Lime-Pozzolan Natural Foundation,Foundation,Residential - Colombo,85.3,57.52,76.97,Yes
+124,Gr. 25 Standard Structural Concrete,Concrete,Residential - Colombo,78.1,2.33,55.37,No
+125,Gr. 30 Marine-Grade Concrete Mix,Concrete,Residential - Colombo,82.8,0.42,58.09,No
+126,Eco-Concrete (Recycled Aggregate + Fly-Ash),Concrete,Residential - Colombo,77.7,1.72,54.91,No
+127,Self-Compacting Concrete (SCC),Concrete,Residential - Colombo,61.2,19.8,48.78,No
+128,Epoxy-Coated Rebar (ASTM A775),Structural,Residential - Colombo,82.5,0.79,57.99,No
+129,TMT High-Yield Rebar (SLS 375),Structural,Residential - Colombo,81.6,0.72,57.34,No
+130,Galvanized Steel Rebar (Hot-Dip),Structural,Residential - Colombo,82.0,0.5,57.55,No
+131,Stainless Steel Rebar (Grade 316L),Structural,Residential - Colombo,62.1,1.74,43.99,No
+132,GFRP Rebar (Glass Fibre Reinforced Polymer),Structural,Residential - Colombo,83.2,10.07,61.26,No
+133,Wire-Cut Clay Brick (Premium Grade),Walling,Residential - Colombo,81.8,5.33,58.86,No
+134,AAC Eco-Block G4 (Autoclaved Aerated Concrete),Walling,Residential - Colombo,74.0,4.68,53.2,No
+135,High-Density Cement Block,Walling,Residential - Colombo,66.0,5.38,47.81,No
+136,CSEB Compressed Stabilized Earth Block,Walling,Residential - Colombo,79.9,68.92,76.61,No
+137,Hollow Clay Block (Perforated),Walling,Residential - Colombo,75.6,2.69,53.73,No
+138,Fly-Ash Composite Block,Walling,Residential - Colombo,73.4,2.83,52.23,No
+139,Marine-Grade Aluminium Roofing (0.55mm),Roofing,Residential - Colombo,56.3,4.24,40.68,No
+140,Portuguese Clay Tile (Unglazed Terracotta),Roofing,Residential - Colombo,63.1,3.3,45.16,No
+141,Insulated Sandwich Roof Panel (PU Core),Roofing,Residential - Colombo,38.4,5.74,28.6,No
+142,Standard Cement Tile (Concrete Interlocking),Roofing,Residential - Colombo,51.8,9.27,39.04,No
+143,Zinc-Aluminium Corrugated Sheet (55% Al-Zn),Roofing,Residential - Colombo,56.2,6.53,41.3,No
+144,Green Intensive Roof System (Growing Medium),Roofing,Residential - Colombo,43.8,61.27,49.04,No
+145,Polycarbonate Translucent Roofing,Roofing,Residential - Colombo,26.1,1.83,18.82,No
+146,Recycled Rubber Flat Roof Membrane,Roofing,Residential - Colombo,50.5,4.7,36.76,No
+147,uPVC Multi-Chamber Window System,Windows,Residential - Colombo,62.1,80.84,67.72,No
+148,Casement Aluminium Window (Powder-Coated),Windows,Residential - Colombo,55.4,1.36,39.19,No
+149,Timber Louvre Window (Treated Hardwood),Windows,Residential - Colombo,55.4,1.28,39.16,No
+150,Commercial Double-Glazed Unit (DGU Low-E),Windows,Residential - Colombo,40.9,1.03,28.94,No
+151,Fixed Aluminium Framed Glass Panel,Windows,Residential - Colombo,51.7,1.86,36.75,No
+152,Sliding Aluminium Window (Impact-Resistant),Windows,Residential - Colombo,54.3,0.75,38.23,No
+153,Solid Teak Timber Door (Premium),Doors,Residential - Colombo,67.6,1.02,47.63,No
+154,Aluminium Profile Glass Door (Heavy-Duty),Doors,Residential - Colombo,67.9,2.66,48.33,No
+155,FRP Fiberglass Reinforced Door,Doors,Residential - Colombo,67.2,2.08,47.66,No
+156,Standard Hollow-Core Flush Door (HDF Faced),Doors,Residential - Colombo,48.2,1.77,34.27,No
+157,Steel Security Door (Powder-Coated),Doors,Residential - Colombo,74.4,2.19,52.74,No
+158,Timber Louvre Door (Ventilated Hardwood),Doors,Residential - Colombo,63.0,0.78,44.34,No
+159,UPVC Sliding Door (Weather-Sealed),Doors,Residential - Colombo,61.3,3.64,44.0,No
+160,Polished Terrazzo Flooring (Marble Aggregate),Flooring,Residential - Colombo,73.2,1.97,51.83,No
+161,Porcelain GVT Slab (Full-Body Vitrified),Flooring,Residential - Colombo,67.3,0.99,47.41,No
+162,Standard Ceramic Floor Tile,Flooring,Residential - Colombo,57.4,1.09,40.51,No
+163,Timber Strip Flooring (Treated Hardwood),Flooring,Residential - Colombo,65.7,0.83,46.24,No
+164,Rubber Flooring (Recycled Automotive),Flooring,Residential - Colombo,44.1,0.5,31.02,No
+165,Micro-Cement Screed Flooring,Flooring,Residential - Colombo,61.2,1.35,43.24,No
+166,Recycled Composite Decking (WPC),Flooring,Residential - Colombo,61.9,21.52,49.79,No
+167,Bamboo-Fibre Acoustic Ceiling Panel,Ceiling,Residential - Colombo,51.7,67.43,56.42,No
+168,Standard Gypsum Board Ceiling (Suspended),Ceiling,Residential - Colombo,41.5,2.39,29.77,No
+169,PVC Laminated Ceiling Panel (Moisture-Proof),Ceiling,Residential - Colombo,43.1,0.28,30.25,No
+170,Calcium Silicate Board Ceiling,Ceiling,Residential - Colombo,52.0,0.24,36.47,No
+171,Suspended Metal Tile Ceiling (Aluminium),Ceiling,Residential - Colombo,32.0,1.37,22.81,No
+172,Acoustic Mineral Fibre Suspended Tile,Ceiling,Residential - Colombo,24.6,2.19,17.88,No
+173,Crystalline Slurry Waterproofing (Penetrating),Waterproofing,Residential - Colombo,55.3,2.81,39.55,No
+174,Liquid Polyurethane Membrane (Seamless),Waterproofing,Residential - Colombo,44.1,0.37,30.98,No
+175,Bituminous Modified Membrane (Torch-Applied),Waterproofing,Residential - Colombo,43.1,1.2,30.53,No
+176,HDPE Sheet Waterproofing Barrier,Waterproofing,Residential - Colombo,32.7,0.67,23.09,No
+177,Bentonite Clay Waterproofing Panel,Waterproofing,Residential - Colombo,30.3,0.88,21.48,No
+178,Advanced Nano-Exterior Paint,Finishing,Residential - Colombo,38.9,4.17,28.48,No
+179,Eco-Friendly Low VOC Emulsion,Finishing,Residential - Colombo,41.3,5.07,30.43,No
+180,Standard Exterior Emulsion,Finishing,Residential - Colombo,35.9,1.67,25.63,No
+119,Gr. 25 Standard Concrete Foundation,Foundation,Residential - Jaffna,82.0,1.0,57.7,No
+120,Gr. 30 Marine-Grade Concrete Foundation,Foundation,Residential - Jaffna,85.2,1.74,60.16,No
+121,Eco-Concrete Foundation (30% Recycled Aggregate),Foundation,Residential - Jaffna,83.7,1.2,58.95,No
+122,Raft Foundation Assembly (RC Heavy),Foundation,Residential - Jaffna,64.8,0.65,45.55,No
+123,Lime-Pozzolan Natural Foundation,Foundation,Residential - Jaffna,85.3,57.51,76.96,No
+124,Gr. 25 Standard Structural Concrete,Concrete,Residential - Jaffna,78.1,0.41,54.79,No
+125,Gr. 30 Marine-Grade Concrete Mix,Concrete,Residential - Jaffna,82.8,0.33,58.06,No
+126,Eco-Concrete (Recycled Aggregate + Fly-Ash),Concrete,Residential - Jaffna,77.7,1.25,54.76,No
+127,Self-Compacting Concrete (SCC),Concrete,Residential - Jaffna,61.2,26.8,50.88,No
+128,Epoxy-Coated Rebar (ASTM A775),Structural,Residential - Jaffna,82.5,1.03,58.06,No
+129,TMT High-Yield Rebar (SLS 375),Structural,Residential - Jaffna,81.6,0.58,57.29,No
+130,Galvanized Steel Rebar (Hot-Dip),Structural,Residential - Jaffna,82.0,0.71,57.61,No
+131,Stainless Steel Rebar (Grade 316L),Structural,Residential - Jaffna,62.1,0.89,43.74,No
+132,GFRP Rebar (Glass Fibre Reinforced Polymer),Structural,Residential - Jaffna,83.2,5.31,59.83,No
+133,Wire-Cut Clay Brick (Premium Grade),Walling,Residential - Jaffna,81.8,2.74,58.08,No
+134,AAC Eco-Block G4 (Autoclaved Aerated Concrete),Walling,Residential - Jaffna,74.0,4.69,53.21,No
+135,High-Density Cement Block,Walling,Residential - Jaffna,66.0,4.09,47.43,No
+136,CSEB Compressed Stabilized Earth Block,Walling,Residential - Jaffna,79.9,70.33,77.03,Yes
+137,Hollow Clay Block (Perforated),Walling,Residential - Jaffna,75.6,0.83,53.17,No
+138,Fly-Ash Composite Block,Walling,Residential - Jaffna,73.4,2.4,52.1,No
+139,Marine-Grade Aluminium Roofing (0.55mm),Roofing,Residential - Jaffna,56.3,9.59,42.29,No
+140,Portuguese Clay Tile (Unglazed Terracotta),Roofing,Residential - Jaffna,63.1,4.87,45.63,No
+141,Insulated Sandwich Roof Panel (PU Core),Roofing,Residential - Jaffna,38.4,6.6,28.86,No
+142,Standard Cement Tile (Concrete Interlocking),Roofing,Residential - Jaffna,51.8,5.69,37.97,No
+143,Zinc-Aluminium Corrugated Sheet (55% Al-Zn),Roofing,Residential - Jaffna,56.2,4.5,40.69,No
+144,Green Intensive Roof System (Growing Medium),Roofing,Residential - Jaffna,43.8,63.91,49.83,No
+145,Polycarbonate Translucent Roofing,Roofing,Residential - Jaffna,26.1,1.67,18.77,No
+146,Recycled Rubber Flat Roof Membrane,Roofing,Residential - Jaffna,50.5,3.16,36.3,No
+147,uPVC Multi-Chamber Window System,Windows,Residential - Jaffna,62.1,50.41,58.59,No
+148,Casement Aluminium Window (Powder-Coated),Windows,Residential - Jaffna,55.4,2.62,39.57,No
+149,Timber Louvre Window (Treated Hardwood),Windows,Residential - Jaffna,55.4,1.77,39.31,No
+150,Commercial Double-Glazed Unit (DGU Low-E),Windows,Residential - Jaffna,40.9,1.87,29.19,No
+151,Fixed Aluminium Framed Glass Panel,Windows,Residential - Jaffna,51.7,2.89,37.06,No
+152,Sliding Aluminium Window (Impact-Resistant),Windows,Residential - Jaffna,54.3,4.47,39.35,No
+153,Solid Teak Timber Door (Premium),Doors,Residential - Jaffna,67.6,2.48,48.06,No
+154,Aluminium Profile Glass Door (Heavy-Duty),Doors,Residential - Jaffna,67.9,6.49,49.48,No
+155,FRP Fiberglass Reinforced Door,Doors,Residential - Jaffna,67.2,4.97,48.53,No
+156,Standard Hollow-Core Flush Door (HDF Faced),Doors,Residential - Jaffna,48.2,4.84,35.19,No
+157,Steel Security Door (Powder-Coated),Doors,Residential - Jaffna,74.4,5.04,53.59,No
+158,Timber Louvre Door (Ventilated Hardwood),Doors,Residential - Jaffna,63.0,2.16,44.75,No
+159,UPVC Sliding Door (Weather-Sealed),Doors,Residential - Jaffna,61.3,7.15,45.06,No
+160,Polished Terrazzo Flooring (Marble Aggregate),Flooring,Residential - Jaffna,73.2,2.84,52.09,No
+161,Porcelain GVT Slab (Full-Body Vitrified),Flooring,Residential - Jaffna,67.3,5.34,48.71,No
+162,Standard Ceramic Floor Tile,Flooring,Residential - Jaffna,57.4,1.89,40.75,No
+163,Timber Strip Flooring (Treated Hardwood),Flooring,Residential - Jaffna,65.7,0.92,46.27,No
+164,Rubber Flooring (Recycled Automotive),Flooring,Residential - Jaffna,44.1,2.81,31.71,No
+165,Micro-Cement Screed Flooring,Flooring,Residential - Jaffna,61.2,1.25,43.21,No
+166,Recycled Composite Decking (WPC),Flooring,Residential - Jaffna,61.9,4.67,44.73,No
+167,Bamboo-Fibre Acoustic Ceiling Panel,Ceiling,Residential - Jaffna,51.7,58.16,53.64,No
+168,Standard Gypsum Board Ceiling (Suspended),Ceiling,Residential - Jaffna,41.5,5.35,30.66,No
+169,PVC Laminated Ceiling Panel (Moisture-Proof),Ceiling,Residential - Jaffna,43.1,2.93,31.05,No
+170,Calcium Silicate Board Ceiling,Ceiling,Residential - Jaffna,52.0,1.88,36.97,No
+171,Suspended Metal Tile Ceiling (Aluminium),Ceiling,Residential - Jaffna,32.0,1.1,22.73,No
+172,Acoustic Mineral Fibre Suspended Tile,Ceiling,Residential - Jaffna,24.6,1.41,17.64,No
+173,Crystalline Slurry Waterproofing (Penetrating),Waterproofing,Residential - Jaffna,55.3,3.62,39.8,No
+174,Liquid Polyurethane Membrane (Seamless),Waterproofing,Residential - Jaffna,44.1,0.63,31.06,No
+175,Bituminous Modified Membrane (Torch-Applied),Waterproofing,Residential - Jaffna,43.1,0.85,30.42,No
+176,HDPE Sheet Waterproofing Barrier,Waterproofing,Residential - Jaffna,32.7,2.94,23.77,No
+177,Bentonite Clay Waterproofing Panel,Waterproofing,Residential - Jaffna,30.3,0.72,21.43,No
+178,Advanced Nano-Exterior Paint,Finishing,Residential - Jaffna,38.9,3.89,28.4,No
+179,Eco-Friendly Low VOC Emulsion,Finishing,Residential - Jaffna,41.3,5.51,30.56,No
+180,Standard Exterior Emulsion,Finishing,Residential - Jaffna,35.9,2.74,25.95,No
+119,Gr. 25 Standard Concrete Foundation,Foundation,Residential - Nuwara Eliya,82.0,0.96,57.69,No
+120,Gr. 30 Marine-Grade Concrete Foundation,Foundation,Residential - Nuwara Eliya,85.2,1.54,60.1,No
+121,Eco-Concrete Foundation (30% Recycled Aggregate),Foundation,Residential - Nuwara Eliya,83.7,3.95,59.78,No
+122,Raft Foundation Assembly (RC Heavy),Foundation,Residential - Nuwara Eliya,64.8,0.59,45.54,No
+123,Lime-Pozzolan Natural Foundation,Foundation,Residential - Nuwara Eliya,85.3,74.21,81.97,No
+124,Gr. 25 Standard Structural Concrete,Concrete,Residential - Nuwara Eliya,78.1,0.41,54.79,No
+125,Gr. 30 Marine-Grade Concrete Mix,Concrete,Residential - Nuwara Eliya,82.8,0.39,58.08,No
+126,Eco-Concrete (Recycled Aggregate + Fly-Ash),Concrete,Residential - Nuwara Eliya,77.7,0.73,54.61,No
+127,Self-Compacting Concrete (SCC),Concrete,Residential - Nuwara Eliya,61.2,12.25,46.51,No
+128,Epoxy-Coated Rebar (ASTM A775),Structural,Residential - Nuwara Eliya,82.5,0.54,57.91,No
+129,TMT High-Yield Rebar (SLS 375),Structural,Residential - Nuwara Eliya,81.6,0.97,57.41,No
+130,Galvanized Steel Rebar (Hot-Dip),Structural,Residential - Nuwara Eliya,82.0,1.6,57.88,No
+131,Stainless Steel Rebar (Grade 316L),Structural,Residential - Nuwara Eliya,62.1,1.33,43.87,No
+132,GFRP Rebar (Glass Fibre Reinforced Polymer),Structural,Residential - Nuwara Eliya,83.2,1.41,58.66,No
+133,Wire-Cut Clay Brick (Premium Grade),Walling,Residential - Nuwara Eliya,81.8,2.59,58.04,No
+134,AAC Eco-Block G4 (Autoclaved Aerated Concrete),Walling,Residential - Nuwara Eliya,74.0,3.35,52.8,No
+135,High-Density Cement Block,Walling,Residential - Nuwara Eliya,66.0,0.39,46.32,No
+136,CSEB Compressed Stabilized Earth Block,Walling,Residential - Nuwara Eliya,79.9,87.02,82.04,Yes
+137,Hollow Clay Block (Perforated),Walling,Residential - Nuwara Eliya,75.6,2.06,53.54,No
+138,Fly-Ash Composite Block,Walling,Residential - Nuwara Eliya,73.4,0.88,51.64,No
+139,Marine-Grade Aluminium Roofing (0.55mm),Roofing,Residential - Nuwara Eliya,56.3,4.24,40.68,No
+140,Portuguese Clay Tile (Unglazed Terracotta),Roofing,Residential - Nuwara Eliya,63.1,3.49,45.22,No
+141,Insulated Sandwich Roof Panel (PU Core),Roofing,Residential - Nuwara Eliya,38.4,2.94,27.76,No
+142,Standard Cement Tile (Concrete Interlocking),Roofing,Residential - Nuwara Eliya,51.8,2.45,37.0,No
+143,Zinc-Aluminium Corrugated Sheet (55% Al-Zn),Roofing,Residential - Nuwara Eliya,56.2,4.55,40.7,No
+144,Green Intensive Roof System (Growing Medium),Roofing,Residential - Nuwara Eliya,43.8,71.38,52.07,No
+145,Polycarbonate Translucent Roofing,Roofing,Residential - Nuwara Eliya,26.1,11.39,21.69,No
+146,Recycled Rubber Flat Roof Membrane,Roofing,Residential - Nuwara Eliya,50.5,2.36,36.06,No
+147,uPVC Multi-Chamber Window System,Windows,Residential - Nuwara Eliya,62.1,64.87,62.93,No
+148,Casement Aluminium Window (Powder-Coated),Windows,Residential - Nuwara Eliya,55.4,3.22,39.75,No
+149,Timber Louvre Window (Treated Hardwood),Windows,Residential - Nuwara Eliya,55.4,1.44,39.21,No
+150,Commercial Double-Glazed Unit (DGU Low-E),Windows,Residential - Nuwara Eliya,40.9,3.17,29.58,No
+151,Fixed Aluminium Framed Glass Panel,Windows,Residential - Nuwara Eliya,51.7,5.02,37.7,No
+152,Sliding Aluminium Window (Impact-Resistant),Windows,Residential - Nuwara Eliya,54.3,6.38,39.92,No
+153,Solid Teak Timber Door (Premium),Doors,Residential - Nuwara Eliya,67.6,2.13,47.96,No
+154,Aluminium Profile Glass Door (Heavy-Duty),Doors,Residential - Nuwara Eliya,67.9,1.94,48.11,No
+155,FRP Fiberglass Reinforced Door,Doors,Residential - Nuwara Eliya,67.2,3.15,47.98,No
+156,Standard Hollow-Core Flush Door (HDF Faced),Doors,Residential - Nuwara Eliya,48.2,1.47,34.18,No
+157,Steel Security Door (Powder-Coated),Doors,Residential - Nuwara Eliya,74.4,2.12,52.72,No
+158,Timber Louvre Door (Ventilated Hardwood),Doors,Residential - Nuwara Eliya,63.0,2.68,44.9,No
+159,UPVC Sliding Door (Weather-Sealed),Doors,Residential - Nuwara Eliya,61.3,2.56,43.68,No
+160,Polished Terrazzo Flooring (Marble Aggregate),Flooring,Residential - Nuwara Eliya,73.2,1.15,51.59,No
+161,Porcelain GVT Slab (Full-Body Vitrified),Flooring,Residential - Nuwara Eliya,67.3,1.43,47.54,No
+162,Standard Ceramic Floor Tile,Flooring,Residential - Nuwara Eliya,57.4,0.35,40.29,No
+163,Timber Strip Flooring (Treated Hardwood),Flooring,Residential - Nuwara Eliya,65.7,1.58,46.46,No
+164,Rubber Flooring (Recycled Automotive),Flooring,Residential - Nuwara Eliya,44.1,0.16,30.92,No
+165,Micro-Cement Screed Flooring,Flooring,Residential - Nuwara Eliya,61.2,3.67,43.94,No
+166,Recycled Composite Decking (WPC),Flooring,Residential - Nuwara Eliya,61.9,3.29,44.32,No
+167,Bamboo-Fibre Acoustic Ceiling Panel,Ceiling,Residential - Nuwara Eliya,51.7,76.39,59.11,No
+168,Standard Gypsum Board Ceiling (Suspended),Ceiling,Residential - Nuwara Eliya,41.5,2.41,29.77,No
+169,PVC Laminated Ceiling Panel (Moisture-Proof),Ceiling,Residential - Nuwara Eliya,43.1,1.35,30.57,No
+170,Calcium Silicate Board Ceiling,Ceiling,Residential - Nuwara Eliya,52.0,0.96,36.69,No
+171,Suspended Metal Tile Ceiling (Aluminium),Ceiling,Residential - Nuwara Eliya,32.0,0.58,22.57,No
+172,Acoustic Mineral Fibre Suspended Tile,Ceiling,Residential - Nuwara Eliya,24.6,1.83,17.77,No
+173,Crystalline Slurry Waterproofing (Penetrating),Waterproofing,Residential - Nuwara Eliya,55.3,0.95,39.0,No
+174,Liquid Polyurethane Membrane (Seamless),Waterproofing,Residential - Nuwara Eliya,44.1,0.73,31.09,No
+175,Bituminous Modified Membrane (Torch-Applied),Waterproofing,Residential - Nuwara Eliya,43.1,0.49,30.32,No
+176,HDPE Sheet Waterproofing Barrier,Waterproofing,Residential - Nuwara Eliya,32.7,1.1,23.22,No
+177,Bentonite Clay Waterproofing Panel,Waterproofing,Residential - Nuwara Eliya,30.3,1.56,21.68,No
+178,Advanced Nano-Exterior Paint,Finishing,Residential - Nuwara Eliya,38.9,0.77,27.46,No
+179,Eco-Friendly Low VOC Emulsion,Finishing,Residential - Nuwara Eliya,41.3,0.69,29.12,No
+180,Standard Exterior Emulsion,Finishing,Residential - Nuwara Eliya,35.9,3.79,26.27,No
+119,Gr. 25 Standard Concrete Foundation,Foundation,Office - Colombo,62.0,0.34,43.5,No
+120,Gr. 30 Marine-Grade Concrete Foundation,Foundation,Office - Colombo,65.2,0.97,45.93,No
+121,Eco-Concrete Foundation (30% Recycled Aggregate),Foundation,Office - Colombo,63.7,0.54,44.75,No
+122,Raft Foundation Assembly (RC Heavy),Foundation,Office - Colombo,64.8,2.55,46.12,No
+123,Lime-Pozzolan Natural Foundation,Foundation,Office - Colombo,65.3,50.35,60.82,No
+124,Gr. 25 Standard Structural Concrete,Concrete,Office - Colombo,58.1,2.33,41.37,No
+125,Gr. 30 Marine-Grade Concrete Mix,Concrete,Office - Colombo,62.8,0.42,44.09,No
+126,Eco-Concrete (Recycled Aggregate + Fly-Ash),Concrete,Office - Colombo,57.7,1.72,40.91,No
+127,Self-Compacting Concrete (SCC),Concrete,Office - Colombo,61.2,19.8,48.78,No
+128,Epoxy-Coated Rebar (ASTM A775),Structural,Office - Colombo,62.5,0.79,43.99,No
+129,TMT High-Yield Rebar (SLS 375),Structural,Office - Colombo,61.6,0.72,43.34,No
+130,Galvanized Steel Rebar (Hot-Dip),Structural,Office - Colombo,62.0,0.5,43.55,No
+131,Stainless Steel Rebar (Grade 316L),Structural,Office - Colombo,62.1,1.74,43.99,No
+132,GFRP Rebar (Glass Fibre Reinforced Polymer),Structural,Office - Colombo,63.2,10.07,47.26,No
+133,Wire-Cut Clay Brick (Premium Grade),Walling,Office - Colombo,61.8,5.33,44.86,No
+134,AAC Eco-Block G4 (Autoclaved Aerated Concrete),Walling,Office - Colombo,54.0,4.68,39.2,No
+135,High-Density Cement Block,Walling,Office - Colombo,46.0,5.38,33.81,No
+136,CSEB Compressed Stabilized Earth Block,Walling,Office - Colombo,59.9,68.92,62.61,Yes
+137,Hollow Clay Block (Perforated),Walling,Office - Colombo,55.6,1.96,39.51,No
+138,Fly-Ash Composite Block,Walling,Office - Colombo,53.4,2.32,38.07,No
+139,Marine-Grade Aluminium Roofing (0.55mm),Roofing,Office - Colombo,36.3,7.36,27.62,No
+140,Portuguese Clay Tile (Unglazed Terracotta),Roofing,Office - Colombo,43.1,3.3,31.16,No
+141,Insulated Sandwich Roof Panel (PU Core),Roofing,Office - Colombo,38.4,5.74,28.6,No
+142,Standard Cement Tile (Concrete Interlocking),Roofing,Office - Colombo,31.8,9.27,25.04,No
+143,Zinc-Aluminium Corrugated Sheet (55% Al-Zn),Roofing,Office - Colombo,36.2,6.53,27.3,No
+144,Green Intensive Roof System (Growing Medium),Roofing,Office - Colombo,43.8,61.27,49.04,No
+145,Polycarbonate Translucent Roofing,Roofing,Office - Colombo,26.1,1.83,18.82,No
+146,Recycled Rubber Flat Roof Membrane,Roofing,Office - Colombo,30.5,4.7,22.76,No
+147,uPVC Multi-Chamber Window System,Windows,Office - Colombo,42.1,80.84,53.72,No
+148,Casement Aluminium Window (Powder-Coated),Windows,Office - Colombo,35.4,1.36,25.19,No
+149,Timber Louvre Window (Treated Hardwood),Windows,Office - Colombo,35.4,1.28,25.16,No
+150,Commercial Double-Glazed Unit (DGU Low-E),Windows,Office - Colombo,40.9,1.03,28.94,No
+151,Fixed Aluminium Framed Glass Panel,Windows,Office - Colombo,31.7,1.86,22.75,No
+152,Sliding Aluminium Window (Impact-Resistant),Windows,Office - Colombo,34.3,1.38,24.42,No
+153,Solid Teak Timber Door (Premium),Doors,Office - Colombo,47.6,1.16,33.67,No
+154,Aluminium Profile Glass Door (Heavy-Duty),Doors,Office - Colombo,47.9,2.8,34.37,No
+155,FRP Fiberglass Reinforced Door,Doors,Office - Colombo,47.2,2.08,33.66,No
+156,Standard Hollow-Core Flush Door (HDF Faced),Doors,Office - Colombo,28.2,0.38,19.85,No
+157,Steel Security Door (Powder-Coated),Doors,Office - Colombo,54.4,2.19,38.74,No
+158,Timber Louvre Door (Ventilated Hardwood),Doors,Office - Colombo,43.0,0.78,30.34,No
+159,UPVC Sliding Door (Weather-Sealed),Doors,Office - Colombo,41.3,3.64,30.0,No
+160,Polished Terrazzo Flooring (Marble Aggregate),Flooring,Office - Colombo,53.2,1.97,37.83,No
+161,Porcelain GVT Slab (Full-Body Vitrified),Flooring,Office - Colombo,47.3,0.99,33.41,No
+162,Standard Ceramic Floor Tile,Flooring,Office - Colombo,37.4,1.09,26.51,No
+163,Timber Strip Flooring (Treated Hardwood),Flooring,Office - Colombo,45.6,0.83,32.17,No
+164,Rubber Flooring (Recycled Automotive),Flooring,Office - Colombo,44.1,0.5,31.02,No
+165,Micro-Cement Screed Flooring,Flooring,Office - Colombo,41.2,1.35,29.24,No
+166,Recycled Composite Decking (WPC),Flooring,Office - Colombo,41.9,13.41,33.35,No
+167,Bamboo-Fibre Acoustic Ceiling Panel,Ceiling,Office - Colombo,31.7,56.81,39.23,No
+168,Standard Gypsum Board Ceiling (Suspended),Ceiling,Office - Colombo,21.5,2.39,15.77,No
+169,PVC Laminated Ceiling Panel (Moisture-Proof),Ceiling,Office - Colombo,23.1,0.28,16.25,No
+170,Calcium Silicate Board Ceiling,Ceiling,Office - Colombo,32.0,0.24,22.47,No
+171,Suspended Metal Tile Ceiling (Aluminium),Ceiling,Office - Colombo,32.0,1.37,22.81,No
+172,Acoustic Mineral Fibre Suspended Tile,Ceiling,Office - Colombo,24.6,2.19,17.88,No
+173,Crystalline Slurry Waterproofing (Penetrating),Waterproofing,Office - Colombo,35.3,2.81,25.55,No
+174,Liquid Polyurethane Membrane (Seamless),Waterproofing,Office - Colombo,24.1,0.37,16.98,No
+175,Bituminous Modified Membrane (Torch-Applied),Waterproofing,Office - Colombo,23.1,1.2,16.53,No
+176,HDPE Sheet Waterproofing Barrier,Waterproofing,Office - Colombo,32.7,0.69,23.1,No
+177,Bentonite Clay Waterproofing Panel,Waterproofing,Office - Colombo,30.3,0.88,21.48,No
+178,Advanced Nano-Exterior Paint,Finishing,Office - Colombo,18.9,4.17,14.48,No
+179,Eco-Friendly Low VOC Emulsion,Finishing,Office - Colombo,21.3,4.93,16.39,No
+180,Standard Exterior Emulsion,Finishing,Office - Colombo,15.9,1.67,11.63,No
+119,Gr. 25 Standard Concrete Foundation,Foundation,Hospital - Jaffna,62.0,1.15,43.75,No
+120,Gr. 30 Marine-Grade Concrete Foundation,Foundation,Hospital - Jaffna,65.2,1.99,46.24,No
+121,Eco-Concrete Foundation (30% Recycled Aggregate),Foundation,Hospital - Jaffna,63.7,1.31,44.98,No
+122,Raft Foundation Assembly (RC Heavy),Foundation,Hospital - Jaffna,64.8,0.65,45.55,No
+123,Lime-Pozzolan Natural Foundation,Foundation,Hospital - Jaffna,65.3,57.51,62.96,No
+124,Gr. 25 Standard Structural Concrete,Concrete,Hospital - Jaffna,58.1,0.41,40.79,No
+125,Gr. 30 Marine-Grade Concrete Mix,Concrete,Hospital - Jaffna,62.8,0.33,44.06,No
+126,Eco-Concrete (Recycled Aggregate + Fly-Ash),Concrete,Hospital - Jaffna,57.7,1.25,40.76,No
+127,Self-Compacting Concrete (SCC),Concrete,Hospital - Jaffna,61.2,26.8,50.88,No
+128,Epoxy-Coated Rebar (ASTM A775),Structural,Hospital - Jaffna,62.5,1.1,44.08,No
+129,TMT High-Yield Rebar (SLS 375),Structural,Hospital - Jaffna,61.6,0.67,43.32,No
+130,Galvanized Steel Rebar (Hot-Dip),Structural,Hospital - Jaffna,62.0,0.71,43.61,No
+131,Stainless Steel Rebar (Grade 316L),Structural,Hospital - Jaffna,62.1,0.89,43.74,No
+132,GFRP Rebar (Glass Fibre Reinforced Polymer),Structural,Hospital - Jaffna,63.2,5.31,45.83,No
+133,Wire-Cut Clay Brick (Premium Grade),Walling,Hospital - Jaffna,61.8,2.74,44.08,No
+134,AAC Eco-Block G4 (Autoclaved Aerated Concrete),Walling,Hospital - Jaffna,54.0,4.69,39.21,No
+135,High-Density Cement Block,Walling,Hospital - Jaffna,46.0,4.09,33.43,No
+136,CSEB Compressed Stabilized Earth Block,Walling,Hospital - Jaffna,59.9,70.33,63.03,Yes
+137,Hollow Clay Block (Perforated),Walling,Hospital - Jaffna,55.6,0.83,39.17,No
+138,Fly-Ash Composite Block,Walling,Hospital - Jaffna,53.4,2.4,38.1,No
+139,Marine-Grade Aluminium Roofing (0.55mm),Roofing,Hospital - Jaffna,36.3,9.59,28.29,No
+140,Portuguese Clay Tile (Unglazed Terracotta),Roofing,Hospital - Jaffna,43.1,4.87,31.63,No
+141,Insulated Sandwich Roof Panel (PU Core),Roofing,Hospital - Jaffna,38.4,6.6,28.86,No
+142,Standard Cement Tile (Concrete Interlocking),Roofing,Hospital - Jaffna,31.8,5.69,23.97,No
+143,Zinc-Aluminium Corrugated Sheet (55% Al-Zn),Roofing,Hospital - Jaffna,36.2,4.5,26.69,No
+144,Green Intensive Roof System (Growing Medium),Roofing,Hospital - Jaffna,43.8,63.91,49.83,No
+145,Polycarbonate Translucent Roofing,Roofing,Hospital - Jaffna,26.1,2.65,19.07,No
+146,Recycled Rubber Flat Roof Membrane,Roofing,Hospital - Jaffna,30.5,3.16,22.3,No
+147,uPVC Multi-Chamber Window System,Windows,Hospital - Jaffna,42.1,60.75,47.7,No
+148,Casement Aluminium Window (Powder-Coated),Windows,Hospital - Jaffna,35.4,2.5,25.53,No
+149,Timber Louvre Window (Treated Hardwood),Windows,Hospital - Jaffna,35.4,4.73,26.2,No
+150,Commercial Double-Glazed Unit (DGU Low-E),Windows,Hospital - Jaffna,40.9,1.87,29.19,No
+151,Fixed Aluminium Framed Glass Panel,Windows,Hospital - Jaffna,31.7,2.89,23.06,No
+152,Sliding Aluminium Window (Impact-Resistant),Windows,Hospital - Jaffna,34.3,4.47,25.35,No
+153,Solid Teak Timber Door (Premium),Doors,Hospital - Jaffna,47.6,2.48,34.06,No
+154,Aluminium Profile Glass Door (Heavy-Duty),Doors,Hospital - Jaffna,47.9,6.49,35.48,No
+155,FRP Fiberglass Reinforced Door,Doors,Hospital - Jaffna,47.2,4.97,34.53,No
+156,Standard Hollow-Core Flush Door (HDF Faced),Doors,Hospital - Jaffna,28.2,4.84,21.19,No
+157,Steel Security Door (Powder-Coated),Doors,Hospital - Jaffna,54.4,5.04,39.59,No
+158,Timber Louvre Door (Ventilated Hardwood),Doors,Hospital - Jaffna,43.0,2.16,30.75,No
+159,UPVC Sliding Door (Weather-Sealed),Doors,Hospital - Jaffna,41.3,7.15,31.06,No
+160,Polished Terrazzo Flooring (Marble Aggregate),Flooring,Hospital - Jaffna,53.2,2.84,38.09,No
+161,Porcelain GVT Slab (Full-Body Vitrified),Flooring,Hospital - Jaffna,47.3,5.34,34.71,No
+162,Standard Ceramic Floor Tile,Flooring,Hospital - Jaffna,37.4,2.59,26.96,No
+163,Timber Strip Flooring (Treated Hardwood),Flooring,Hospital - Jaffna,45.6,1.23,32.29,No
+164,Rubber Flooring (Recycled Automotive),Flooring,Hospital - Jaffna,44.1,2.14,31.51,No
+165,Micro-Cement Screed Flooring,Flooring,Hospital - Jaffna,41.2,1.25,29.21,No
+166,Recycled Composite Decking (WPC),Flooring,Hospital - Jaffna,41.9,4.67,30.73,No
+167,Bamboo-Fibre Acoustic Ceiling Panel,Ceiling,Hospital - Jaffna,31.7,58.16,39.64,No
+168,Standard Gypsum Board Ceiling (Suspended),Ceiling,Hospital - Jaffna,21.5,5.35,16.66,No
+169,PVC Laminated Ceiling Panel (Moisture-Proof),Ceiling,Hospital - Jaffna,23.1,3.15,17.12,No
+170,Calcium Silicate Board Ceiling,Ceiling,Hospital - Jaffna,32.0,1.88,22.97,No
+171,Suspended Metal Tile Ceiling (Aluminium),Ceiling,Hospital - Jaffna,32.0,1.1,22.73,No
+172,Acoustic Mineral Fibre Suspended Tile,Ceiling,Hospital - Jaffna,24.6,1.41,17.64,No
+173,Crystalline Slurry Waterproofing (Penetrating),Waterproofing,Hospital - Jaffna,35.3,3.62,25.8,No
+174,Liquid Polyurethane Membrane (Seamless),Waterproofing,Hospital - Jaffna,24.1,0.64,17.06,No
+175,Bituminous Modified Membrane (Torch-Applied),Waterproofing,Hospital - Jaffna,23.1,0.99,16.47,No
+176,HDPE Sheet Waterproofing Barrier,Waterproofing,Hospital - Jaffna,32.7,2.94,23.77,No
+177,Bentonite Clay Waterproofing Panel,Waterproofing,Hospital - Jaffna,30.3,0.72,21.43,No
+178,Advanced Nano-Exterior Paint,Finishing,Hospital - Jaffna,18.9,3.89,14.4,No
+179,Eco-Friendly Low VOC Emulsion,Finishing,Hospital - Jaffna,21.3,5.51,16.56,No
+180,Standard Exterior Emulsion,Finishing,Hospital - Jaffna,15.9,2.74,11.95,No
+119,Gr. 25 Standard Concrete Foundation,Foundation,Industrial - Hambantota,62.0,0.83,43.65,No
+120,Gr. 30 Marine-Grade Concrete Foundation,Foundation,Industrial - Hambantota,85.2,0.77,59.87,No
+121,Eco-Concrete Foundation (30% Recycled Aggregate),Foundation,Industrial - Hambantota,63.7,0.47,44.73,No
+122,Raft Foundation Assembly (RC Heavy),Foundation,Industrial - Hambantota,84.8,53.64,75.45,Yes
+123,Lime-Pozzolan Natural Foundation,Foundation,Industrial - Hambantota,65.3,33.43,55.74,No
+124,Gr. 25 Standard Structural Concrete,Concrete,Industrial - Hambantota,78.1,0.64,54.86,No
+125,Gr. 30 Marine-Grade Concrete Mix,Concrete,Industrial - Hambantota,82.8,1.32,58.36,No
+126,Eco-Concrete (Recycled Aggregate + Fly-Ash),Concrete,Industrial - Hambantota,57.7,2.61,41.17,No
+127,Self-Compacting Concrete (SCC),Concrete,Industrial - Hambantota,61.2,3.3,43.83,No
+128,Epoxy-Coated Rebar (ASTM A775),Structural,Industrial - Hambantota,82.5,0.75,57.97,No
+129,TMT High-Yield Rebar (SLS 375),Structural,Industrial - Hambantota,61.6,0.6,43.3,No
+130,Galvanized Steel Rebar (Hot-Dip),Structural,Industrial - Hambantota,62.0,0.45,43.54,No
+131,Stainless Steel Rebar (Grade 316L),Structural,Industrial - Hambantota,82.1,0.7,57.68,No
+132,GFRP Rebar (Glass Fibre Reinforced Polymer),Structural,Industrial - Hambantota,63.2,0.36,44.35,No
+133,Wire-Cut Clay Brick (Premium Grade),Walling,Industrial - Hambantota,61.8,1.37,43.67,No
+134,AAC Eco-Block G4 (Autoclaved Aerated Concrete),Walling,Industrial - Hambantota,54.0,0.51,37.95,No
+135,High-Density Cement Block,Walling,Industrial - Hambantota,66.0,1.23,46.57,No
+136,CSEB Compressed Stabilized Earth Block,Walling,Industrial - Hambantota,59.9,90.44,69.06,No
+137,Hollow Clay Block (Perforated),Walling,Industrial - Hambantota,55.6,1.98,39.51,No
+138,Fly-Ash Composite Block,Walling,Industrial - Hambantota,53.4,0.79,37.62,No
+139,Marine-Grade Aluminium Roofing (0.55mm),Roofing,Industrial - Hambantota,56.3,54.6,55.79,No
+140,Portuguese Clay Tile (Unglazed Terracotta),Roofing,Industrial - Hambantota,43.1,1.27,30.55,No
+141,Insulated Sandwich Roof Panel (PU Core),Roofing,Industrial - Hambantota,58.4,1.05,41.2,No
+142,Standard Cement Tile (Concrete Interlocking),Roofing,Industrial - Hambantota,31.8,2.85,23.11,No
+143,Zinc-Aluminium Corrugated Sheet (55% Al-Zn),Roofing,Industrial - Hambantota,56.2,1.08,39.67,No
+144,Green Intensive Roof System (Growing Medium),Roofing,Industrial - Hambantota,43.8,35.4,41.28,No
+145,Polycarbonate Translucent Roofing,Roofing,Industrial - Hambantota,26.1,1.81,18.81,No
+146,Recycled Rubber Flat Roof Membrane,Roofing,Industrial - Hambantota,30.5,1.33,21.75,No
+147,uPVC Multi-Chamber Window System,Windows,Industrial - Hambantota,42.1,42.23,42.14,No
+148,Casement Aluminium Window (Powder-Coated),Windows,Industrial - Hambantota,35.4,10.91,28.05,No
+149,Timber Louvre Window (Treated Hardwood),Windows,Industrial - Hambantota,35.4,4.34,26.08,No
+150,Commercial Double-Glazed Unit (DGU Low-E),Windows,Industrial - Hambantota,40.9,4.56,30.0,No
+151,Fixed Aluminium Framed Glass Panel,Windows,Industrial - Hambantota,31.7,4.17,23.44,No
+152,Sliding Aluminium Window (Impact-Resistant),Windows,Industrial - Hambantota,34.3,2.07,24.63,No
+153,Solid Teak Timber Door (Premium),Doors,Industrial - Hambantota,47.6,3.77,34.45,No
+154,Aluminium Profile Glass Door (Heavy-Duty),Doors,Industrial - Hambantota,67.9,2.47,48.27,No
+155,FRP Fiberglass Reinforced Door,Doors,Industrial - Hambantota,67.2,3.71,48.15,No
+156,Standard Hollow-Core Flush Door (HDF Faced),Doors,Industrial - Hambantota,28.2,2.98,20.63,No
+157,Steel Security Door (Powder-Coated),Doors,Industrial - Hambantota,54.4,9.74,41.0,No
+158,Timber Louvre Door (Ventilated Hardwood),Doors,Industrial - Hambantota,43.0,2.53,30.86,No
+159,UPVC Sliding Door (Weather-Sealed),Doors,Industrial - Hambantota,41.3,5.34,30.51,No
+160,Polished Terrazzo Flooring (Marble Aggregate),Flooring,Industrial - Hambantota,53.2,2.81,38.08,No
+161,Porcelain GVT Slab (Full-Body Vitrified),Flooring,Industrial - Hambantota,47.3,0.54,33.27,No
+162,Standard Ceramic Floor Tile,Flooring,Industrial - Hambantota,37.4,0.99,26.48,No
+163,Timber Strip Flooring (Treated Hardwood),Flooring,Industrial - Hambantota,45.6,0.16,31.97,No
+164,Rubber Flooring (Recycled Automotive),Flooring,Industrial - Hambantota,64.1,53.43,60.9,No
+165,Micro-Cement Screed Flooring,Flooring,Industrial - Hambantota,41.2,0.22,28.91,No
+166,Recycled Composite Decking (WPC),Flooring,Industrial - Hambantota,41.9,2.9,30.2,No
+167,Bamboo-Fibre Acoustic Ceiling Panel,Ceiling,Industrial - Hambantota,31.7,32.69,32.0,No
+168,Standard Gypsum Board Ceiling (Suspended),Ceiling,Industrial - Hambantota,21.5,0.4,15.17,No
+169,PVC Laminated Ceiling Panel (Moisture-Proof),Ceiling,Industrial - Hambantota,23.1,1.75,16.69,No
+170,Calcium Silicate Board Ceiling,Ceiling,Industrial - Hambantota,52.0,0.84,36.65,No
+171,Suspended Metal Tile Ceiling (Aluminium),Ceiling,Industrial - Hambantota,32.0,0.92,22.67,No
+172,Acoustic Mineral Fibre Suspended Tile,Ceiling,Industrial - Hambantota,24.6,0.27,17.3,No
+173,Crystalline Slurry Waterproofing (Penetrating),Waterproofing,Industrial - Hambantota,55.3,0.52,38.87,No
+174,Liquid Polyurethane Membrane (Seamless),Waterproofing,Industrial - Hambantota,24.1,0.78,17.1,No
+175,Bituminous Modified Membrane (Torch-Applied),Waterproofing,Industrial - Hambantota,43.1,0.42,30.3,No
+176,HDPE Sheet Waterproofing Barrier,Waterproofing,Industrial - Hambantota,52.7,0.34,36.99,No
+177,Bentonite Clay Waterproofing Panel,Waterproofing,Industrial - Hambantota,30.3,0.39,21.33,No
+178,Advanced Nano-Exterior Paint,Finishing,Industrial - Hambantota,38.9,1.26,27.61,No
+179,Eco-Friendly Low VOC Emulsion,Finishing,Industrial - Hambantota,21.3,0.92,15.18,No
+180,Standard Exterior Emulsion,Finishing,Industrial - Hambantota,35.9,2.35,25.83,No

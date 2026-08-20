@@ -1,0 +1,5 @@
+# Runtime Statistics
+
+|Metric|Minimum|Maximum|Mean|Median|Standard Deviation|
+|---|---|---|---|---|---|
+|Runtime (ms)|3243.00|9777.00|5409.35|5106.00|1409.56|

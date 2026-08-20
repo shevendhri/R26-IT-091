@@ -16,10 +16,8 @@ export function ProjectProvider({ children }) {
   const [feasibilityWarning, setFeasibilityWarning] = useState(null);
   const [floorDistribution, setFloorDistribution] = useState(null);
 
-  // Persistence removed to ensure a "Live" feel on every launch
-  useEffect(() => {
-    localStorage.removeItem('green_construct_project');
-  }, []);
+
+
 
   const value = {
     rooms, setRooms,

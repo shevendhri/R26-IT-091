@@ -1,0 +1,6 @@
+# Structural System Performance Summary
+
+|Structural System|Count|Avg Layout Score|Avg Engineering Score|Avg Hybrid Score|Avg Sustainability|Avg Runtime (ms)|
+|---|---|---|---|---|---|---|
+|Load-Bearing Masonry|40|41.32|49.83|43.63|57.90|5344.23|
+|Concrete Frame|40|40.72|49.84|43.66|57.56|5474.48|

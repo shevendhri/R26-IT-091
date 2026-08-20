@@ -1,0 +1,4776 @@
+[
+  {
+    "material": "Gr. 25 Standard Concrete Foundation",
+    "criterion_breakdown": {
+      "structural_safety": {
+        "score": 86.25,
+        "max": 25.0,
+        "contribution": 21.56,
+        "normalized_weight": 0.25,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "climate_compatibility": {
+        "score": 20.0,
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.15,
+        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.15,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "service_life": {
+        "score": 85.0,
+        "max": 5.0,
+        "contribution": 4.25,
+        "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "maintenance": {
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sustainability": {
+        "score": 58.33,
+        "max": 5.0,
+        "contribution": 2.92,
+        "normalized_weight": 0.05,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
+        "is_na": false
+      }
+    }
+  },
+  {
+    "material": "Gr. 30 Marine-Grade Concrete Foundation",
+    "criterion_breakdown": {
+      "structural_safety": {
+        "score": 100.0,
+        "max": 25.0,
+        "contribution": 25.0,
+        "normalized_weight": 0.25,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "climate_compatibility": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.15,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.15,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "service_life": {
+        "score": 95.0,
+        "max": 5.0,
+        "contribution": 4.75,
+        "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "maintenance": {
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sustainability": {
+        "score": 49.33,
+        "max": 5.0,
+        "contribution": 2.47,
+        "normalized_weight": 0.05,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
+        "is_na": false
+      }
+    }
+  },
+  {
+    "material": "Eco-Concrete Foundation (30% Recycled Aggregate)",
+    "criterion_breakdown": {
+      "structural_safety": {
+        "score": 82.8,
+        "max": 25.0,
+        "contribution": 20.7,
+        "normalized_weight": 0.25,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "climate_compatibility": {
+        "score": 20.0,
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.15,
+        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.15,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "service_life": {
+        "score": 85.0,
+        "max": 5.0,
+        "contribution": 4.25,
+        "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "maintenance": {
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sustainability": {
+        "score": 88.33,
+        "max": 5.0,
+        "contribution": 4.42,
+        "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      }
+    }
+  },
+  {
+    "material": "Raft Foundation Assembly (RC Heavy)",
+    "criterion_breakdown": {
+      "structural_safety": {
+        "score": 100.0,
+        "max": 25.0,
+        "contribution": 25.0,
+        "normalized_weight": 0.25,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "climate_compatibility": {
+        "score": 55.0,
+        "max": 15.0,
+        "contribution": 8.25,
+        "normalized_weight": 0.15,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 40.0,
+        "max": 15.0,
+        "contribution": 6.0,
+        "normalized_weight": 0.15,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "service_life": {
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "maintenance": {
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sustainability": {
+        "score": 45.67,
+        "max": 5.0,
+        "contribution": 2.28,
+        "normalized_weight": 0.05,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
+        "is_na": false
+      }
+    }
+  },
+  {
+    "material": "Lime-Pozzolan Natural Foundation",
+    "criterion_breakdown": {
+      "structural_safety": {
+        "score": 60.0,
+        "max": 25.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.25,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "climate_compatibility": {
+        "score": 20.0,
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.15,
+        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 80.0,
+        "max": 15.0,
+        "contribution": 12.0,
+        "normalized_weight": 0.15,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "service_life": {
+        "score": 95.0,
+        "max": 5.0,
+        "contribution": 4.75,
+        "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "maintenance": {
+        "score": 90.0,
+        "max": 5.0,
+        "contribution": 4.5,
+        "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sustainability": {
+        "score": 94.0,
+        "max": 5.0,
+        "contribution": 4.7,
+        "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      }
+    }
+  },
+  {
+    "material": "Gr. 25 Standard Structural Concrete",
+    "criterion_breakdown": {
+      "structural_safety": {
+        "score": 92.0,
+        "max": 25.0,
+        "contribution": 23.0,
+        "normalized_weight": 0.25,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "climate_compatibility": {
+        "score": 20.0,
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.15,
+        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.15,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "service_life": {
+        "score": 85.0,
+        "max": 5.0,
+        "contribution": 4.25,
+        "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "maintenance": {
+        "score": 90.0,
+        "max": 5.0,
+        "contribution": 4.5,
+        "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sustainability": {
+        "score": 57.33,
+        "max": 5.0,
+        "contribution": 2.87,
+        "normalized_weight": 0.05,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
+        "is_na": false
+      }
+    }
+  },
+  {
+    "material": "Gr. 30 Marine-Grade Concrete Mix",
+    "criterion_breakdown": {
+      "structural_safety": {
+        "score": 100.0,
+        "max": 25.0,
+        "contribution": 25.0,
+        "normalized_weight": 0.25,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "climate_compatibility": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.15,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.15,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "service_life": {
+        "score": 95.0,
+        "max": 5.0,
+        "contribution": 4.75,
+        "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "maintenance": {
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sustainability": {
+        "score": 48.67,
+        "max": 5.0,
+        "contribution": 2.43,
+        "normalized_weight": 0.05,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
+        "is_na": false
+      }
+    }
+  },
+  {
+    "material": "Eco-Concrete (Recycled Aggregate + Fly-Ash)",
+    "criterion_breakdown": {
+      "structural_safety": {
+        "score": 86.25,
+        "max": 25.0,
+        "contribution": 21.56,
+        "normalized_weight": 0.25,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "climate_compatibility": {
+        "score": 20.0,
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.15,
+        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.15,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "service_life": {
+        "score": 85.0,
+        "max": 5.0,
+        "contribution": 4.25,
+        "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "maintenance": {
+        "score": 90.0,
+        "max": 5.0,
+        "contribution": 4.5,
+        "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sustainability": {
+        "score": 90.0,
+        "max": 5.0,
+        "contribution": 4.5,
+        "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      }
+    }
+  },
+  {
+    "material": "Self-Compacting Concrete (SCC)",
+    "criterion_breakdown": {
+      "structural_safety": {
+        "score": 97.75,
+        "max": 25.0,
+        "contribution": 24.44,
+        "normalized_weight": 0.25,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "climate_compatibility": {
+        "score": 55.0,
+        "max": 15.0,
+        "contribution": 8.25,
+        "normalized_weight": 0.15,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 40.0,
+        "max": 15.0,
+        "contribution": 6.0,
+        "normalized_weight": 0.15,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "service_life": {
+        "score": 85.0,
+        "max": 5.0,
+        "contribution": 4.25,
+        "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "maintenance": {
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sustainability": {
+        "score": 56.67,
+        "max": 5.0,
+        "contribution": 2.83,
+        "normalized_weight": 0.05,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
+        "is_na": false
+      }
+    }
+  },
+  {
+    "material": "Epoxy-Coated Rebar (ASTM A775)",
+    "criterion_breakdown": {
+      "structural_safety": {
+        "score": 100.0,
+        "max": 25.0,
+        "contribution": 25.0,
+        "normalized_weight": 0.25,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "climate_compatibility": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.15,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.15,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "service_life": {
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "maintenance": {
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sustainability": {
+        "score": 44.0,
+        "max": 5.0,
+        "contribution": 2.2,
+        "normalized_weight": 0.05,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
+        "is_na": false
+      }
+    }
+  },
+  {
+    "material": "TMT High-Yield Rebar (SLS 375)",
+    "criterion_breakdown": {
+      "structural_safety": {
+        "score": 100.0,
+        "max": 25.0,
+        "contribution": 25.0,
+        "normalized_weight": 0.25,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "climate_compatibility": {
+        "score": 20.0,
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.15,
+        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.15,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "service_life": {
+        "score": 85.0,
+        "max": 5.0,
+        "contribution": 4.25,
+        "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "maintenance": {
+        "score": 90.0,
+        "max": 5.0,
+        "contribution": 4.5,
+        "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sustainability": {
+        "score": 56.67,
+        "max": 5.0,
+        "contribution": 2.83,
+        "normalized_weight": 0.05,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
+        "is_na": false
+      }
+    }
+  },
+  {
+    "material": "Galvanized Steel Rebar (Hot-Dip)",
+    "criterion_breakdown": {
+      "structural_safety": {
+        "score": 100.0,
+        "max": 25.0,
+        "contribution": 25.0,
+        "normalized_weight": 0.25,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "climate_compatibility": {
+        "score": 55.0,
+        "max": 15.0,
+        "contribution": 8.25,
+        "normalized_weight": 0.15,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.15,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "service_life": {
+        "score": 95.0,
+        "max": 5.0,
+        "contribution": 4.75,
+        "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "maintenance": {
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sustainability": {
+        "score": 55.0,
+        "max": 5.0,
+        "contribution": 2.75,
+        "normalized_weight": 0.05,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
+        "is_na": false
+      }
+    }
+  },
+  {
+    "material": "Stainless Steel Rebar (Grade 316L)",
+    "criterion_breakdown": {
+      "structural_safety": {
+        "score": 100.0,
+        "max": 25.0,
+        "contribution": 25.0,
+        "normalized_weight": 0.25,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "climate_compatibility": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.15,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 40.0,
+        "max": 15.0,
+        "contribution": 6.0,
+        "normalized_weight": 0.15,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "service_life": {
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "maintenance": {
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sustainability": {
+        "score": 55.0,
+        "max": 5.0,
+        "contribution": 2.75,
+        "normalized_weight": 0.05,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
+        "is_na": false
+      }
+    }
+  },
+  {
+    "material": "GFRP Rebar (Glass Fibre Reinforced Polymer)",
+    "criterion_breakdown": {
+      "structural_safety": {
+        "score": 92.0,
+        "max": 25.0,
+        "contribution": 23.0,
+        "normalized_weight": 0.25,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "climate_compatibility": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.15,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.15,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "service_life": {
+        "score": 95.0,
+        "max": 5.0,
+        "contribution": 4.75,
+        "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "maintenance": {
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sustainability": {
+        "score": 73.33,
+        "max": 5.0,
+        "contribution": 3.67,
+        "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      }
+    }
+  },
+  {
+    "material": "Wire-Cut Clay Brick (Premium Grade)",
+    "criterion_breakdown": {
+      "structural_safety": {
+        "score": 78.2,
+        "max": 25.0,
+        "contribution": 19.55,
+        "normalized_weight": 0.25,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "climate_compatibility": {
+        "score": 20.0,
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.15,
+        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 80.0,
+        "max": 15.0,
+        "contribution": 12.0,
+        "normalized_weight": 0.15,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "service_life": {
+        "score": 95.0,
+        "max": 5.0,
+        "contribution": 4.75,
+        "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "maintenance": {
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sustainability": {
+        "score": 83.33,
+        "max": 5.0,
+        "contribution": 4.17,
+        "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      }
+    }
+  },
+  {
+    "material": "AAC Eco-Block G4 (Autoclaved Aerated Concrete)",
+    "criterion_breakdown": {
+      "structural_safety": {
+        "score": 48.0,
+        "max": 25.0,
+        "contribution": 12.0,
+        "normalized_weight": 0.25,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
+        "is_na": false
+      },
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "climate_compatibility": {
+        "score": 20.0,
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.15,
+        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.15,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "service_life": {
+        "score": 85.0,
+        "max": 5.0,
+        "contribution": 4.25,
+        "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "maintenance": {
+        "score": 90.0,
+        "max": 5.0,
+        "contribution": 4.5,
+        "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sustainability": {
+        "score": 79.33,
+        "max": 5.0,
+        "contribution": 3.97,
+        "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      }
+    }
+  },
+  {
+    "material": "High-Density Cement Block",
+    "criterion_breakdown": {
+      "structural_safety": {
+        "score": 58.0,
+        "max": 25.0,
+        "contribution": 14.5,
+        "normalized_weight": 0.25,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
+        "is_na": false
+      },
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "climate_compatibility": {
+        "score": 20.0,
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.15,
+        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.15,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "service_life": {
+        "score": 70.0,
+        "max": 5.0,
+        "contribution": 3.5,
+        "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "maintenance": {
+        "score": 75.0,
+        "max": 5.0,
+        "contribution": 3.75,
+        "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sustainability": {
+        "score": 55.33,
+        "max": 5.0,
+        "contribution": 2.77,
+        "normalized_weight": 0.05,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
+        "is_na": false
+      }
+    }
+  },
+  {
+    "material": "CSEB Compressed Stabilized Earth Block",
+    "criterion_breakdown": {
+      "structural_safety": {
+        "score": 62.0,
+        "max": 25.0,
+        "contribution": 15.5,
+        "normalized_weight": 0.25,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "climate_compatibility": {
+        "score": 20.0,
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.15,
+        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 80.0,
+        "max": 15.0,
+        "contribution": 12.0,
+        "normalized_weight": 0.15,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "service_life": {
+        "score": 85.0,
+        "max": 5.0,
+        "contribution": 4.25,
+        "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "maintenance": {
+        "score": 90.0,
+        "max": 5.0,
+        "contribution": 4.5,
+        "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sustainability": {
+        "score": 96.67,
+        "max": 5.0,
+        "contribution": 4.83,
+        "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      }
+    }
+  },
+  {
+    "material": "Hollow Clay Block (Perforated)",
+    "criterion_breakdown": {
+      "structural_safety": {
+        "score": 55.0,
+        "max": 25.0,
+        "contribution": 13.75,
+        "normalized_weight": 0.25,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
+        "is_na": false
+      },
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "climate_compatibility": {
+        "score": 20.0,
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.15,
+        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.15,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "service_life": {
+        "score": 85.0,
+        "max": 5.0,
+        "contribution": 4.25,
+        "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "maintenance": {
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sustainability": {
+        "score": 79.33,
+        "max": 5.0,
+        "contribution": 3.97,
+        "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      }
+    }
+  },
+  {
+    "material": "Fly-Ash Composite Block",
+    "criterion_breakdown": {
+      "structural_safety": {
+        "score": 60.0,
+        "max": 25.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.25,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "climate_compatibility": {
+        "score": 20.0,
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.15,
+        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.15,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "service_life": {
+        "score": 85.0,
+        "max": 5.0,
+        "contribution": 4.25,
+        "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "maintenance": {
+        "score": 90.0,
+        "max": 5.0,
+        "contribution": 4.5,
+        "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sustainability": {
+        "score": 83.33,
+        "max": 5.0,
+        "contribution": 4.17,
+        "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      }
+    }
+  },
+  {
+    "material": "Marine-Grade Aluminium Roofing (0.55mm)",
+    "criterion_breakdown": {
+      "structural_safety": {
+        "score": 0.0,
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
+        "is_na": true
+      },
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "climate_compatibility": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "service_life": {
+        "score": 70.0,
+        "max": 5.0,
+        "contribution": 3.5,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "maintenance": {
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sustainability": {
+        "score": 73.33,
+        "max": 5.0,
+        "contribution": 3.67,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      }
+    }
+  },
+  {
+    "material": "Portuguese Clay Tile (Unglazed Terracotta)",
+    "criterion_breakdown": {
+      "structural_safety": {
+        "score": 0.0,
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
+        "is_na": true
+      },
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "climate_compatibility": {
+        "score": 20.0,
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.2,
+        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 80.0,
+        "max": 15.0,
+        "contribution": 12.0,
+        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "service_life": {
+        "score": 85.0,
+        "max": 5.0,
+        "contribution": 4.25,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "maintenance": {
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sustainability": {
+        "score": 85.67,
+        "max": 5.0,
+        "contribution": 4.28,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      }
+    }
+  },
+  {
+    "material": "Insulated Sandwich Roof Panel (PU Core)",
+    "criterion_breakdown": {
+      "structural_safety": {
+        "score": 0.0,
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
+        "is_na": true
+      },
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "climate_compatibility": {
+        "score": 20.0,
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.2,
+        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 40.0,
+        "max": 15.0,
+        "contribution": 6.0,
+        "normalized_weight": 0.2,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "service_life": {
+        "score": 70.0,
+        "max": 5.0,
+        "contribution": 3.5,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "maintenance": {
+        "score": 90.0,
+        "max": 5.0,
+        "contribution": 4.5,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sustainability": {
+        "score": 57.33,
+        "max": 5.0,
+        "contribution": 2.87,
+        "normalized_weight": 0.0667,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
+        "is_na": false
+      }
+    }
+  },
+  {
+    "material": "Standard Cement Tile (Concrete Interlocking)",
+    "criterion_breakdown": {
+      "structural_safety": {
+        "score": 0.0,
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
+        "is_na": true
+      },
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "climate_compatibility": {
+        "score": 20.0,
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.2,
+        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 80.0,
+        "max": 15.0,
+        "contribution": 12.0,
+        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "service_life": {
+        "score": 70.0,
+        "max": 5.0,
+        "contribution": 3.5,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "maintenance": {
+        "score": 90.0,
+        "max": 5.0,
+        "contribution": 4.5,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sustainability": {
+        "score": 53.33,
+        "max": 5.0,
+        "contribution": 2.67,
+        "normalized_weight": 0.0667,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
+        "is_na": false
+      }
+    }
+  },
+  {
+    "material": "Zinc-Aluminium Corrugated Sheet (55% Al-Zn)",
+    "criterion_breakdown": {
+      "structural_safety": {
+        "score": 0.0,
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
+        "is_na": true
+      },
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "climate_compatibility": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "service_life": {
+        "score": 85.0,
+        "max": 5.0,
+        "contribution": 4.25,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "maintenance": {
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sustainability": {
+        "score": 66.67,
+        "max": 5.0,
+        "contribution": 3.33,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      }
+    }
+  },
+  {
+    "material": "Green Intensive Roof System (Growing Medium)",
+    "criterion_breakdown": {
+      "structural_safety": {
+        "score": 0.0,
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
+        "is_na": true
+      },
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "climate_compatibility": {
+        "score": 20.0,
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.2,
+        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 40.0,
+        "max": 15.0,
+        "contribution": 6.0,
+        "normalized_weight": 0.2,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "service_life": {
+        "score": 85.0,
+        "max": 5.0,
+        "contribution": 4.25,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "maintenance": {
+        "score": 90.0,
+        "max": 5.0,
+        "contribution": 4.5,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sustainability": {
+        "score": 97.67,
+        "max": 5.0,
+        "contribution": 4.88,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      }
+    }
+  },
+  {
+    "material": "Polycarbonate Translucent Roofing",
+    "criterion_breakdown": {
+      "structural_safety": {
+        "score": 0.0,
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
+        "is_na": true
+      },
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "climate_compatibility": {
+        "score": 20.0,
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.2,
+        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 40.0,
+        "max": 15.0,
+        "contribution": 6.0,
+        "normalized_weight": 0.2,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "service_life": {
+        "score": 55.0,
+        "max": 5.0,
+        "contribution": 2.75,
+        "normalized_weight": 0.0667,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
+        "is_na": false
+      },
+      "maintenance": {
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sustainability": {
+        "score": 60.0,
+        "max": 5.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      }
+    }
+  },
+  {
+    "material": "Recycled Rubber Flat Roof Membrane",
+    "criterion_breakdown": {
+      "structural_safety": {
+        "score": 0.0,
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
+        "is_na": true
+      },
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "climate_compatibility": {
+        "score": 55.0,
+        "max": 15.0,
+        "contribution": 8.25,
+        "normalized_weight": 0.2,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "service_life": {
+        "score": 70.0,
+        "max": 5.0,
+        "contribution": 3.5,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "maintenance": {
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sustainability": {
+        "score": 83.33,
+        "max": 5.0,
+        "contribution": 4.17,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      }
+    }
+  },
+  {
+    "material": "uPVC Multi-Chamber Window System",
+    "criterion_breakdown": {
+      "structural_safety": {
+        "score": 0.0,
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
+        "is_na": true
+      },
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "climate_compatibility": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "service_life": {
+        "score": 70.0,
+        "max": 5.0,
+        "contribution": 3.5,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "maintenance": {
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sustainability": {
+        "score": 71.33,
+        "max": 5.0,
+        "contribution": 3.57,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      }
+    }
+  },
+  {
+    "material": "Casement Aluminium Window (Powder-Coated)",
+    "criterion_breakdown": {
+      "structural_safety": {
+        "score": 0.0,
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
+        "is_na": true
+      },
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "climate_compatibility": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "service_life": {
+        "score": 70.0,
+        "max": 5.0,
+        "contribution": 3.5,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "maintenance": {
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sustainability": {
+        "score": 61.67,
+        "max": 5.0,
+        "contribution": 3.08,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      }
+    }
+  },
+  {
+    "material": "Timber Louvre Window (Treated Hardwood)",
+    "criterion_breakdown": {
+      "structural_safety": {
+        "score": 0.0,
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
+        "is_na": true
+      },
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "climate_compatibility": {
+        "score": 20.0,
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.2,
+        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 80.0,
+        "max": 15.0,
+        "contribution": 12.0,
+        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "service_life": {
+        "score": 70.0,
+        "max": 5.0,
+        "contribution": 3.5,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "maintenance": {
+        "score": 75.0,
+        "max": 5.0,
+        "contribution": 3.75,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sustainability": {
+        "score": 78.33,
+        "max": 5.0,
+        "contribution": 3.92,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      }
+    }
+  },
+  {
+    "material": "Commercial Double-Glazed Unit (DGU Low-E)",
+    "criterion_breakdown": {
+      "structural_safety": {
+        "score": 0.0,
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
+        "is_na": true
+      },
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "climate_compatibility": {
+        "score": 55.0,
+        "max": 15.0,
+        "contribution": 8.25,
+        "normalized_weight": 0.2,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 40.0,
+        "max": 15.0,
+        "contribution": 6.0,
+        "normalized_weight": 0.2,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "service_life": {
+        "score": 70.0,
+        "max": 5.0,
+        "contribution": 3.5,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "maintenance": {
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sustainability": {
+        "score": 63.33,
+        "max": 5.0,
+        "contribution": 3.17,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      }
+    }
+  },
+  {
+    "material": "Fixed Aluminium Framed Glass Panel",
+    "criterion_breakdown": {
+      "structural_safety": {
+        "score": 0.0,
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
+        "is_na": true
+      },
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "climate_compatibility": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "service_life": {
+        "score": 70.0,
+        "max": 5.0,
+        "contribution": 3.5,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "maintenance": {
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sustainability": {
+        "score": 58.33,
+        "max": 5.0,
+        "contribution": 2.92,
+        "normalized_weight": 0.0667,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
+        "is_na": false
+      }
+    }
+  },
+  {
+    "material": "Sliding Aluminium Window (Impact-Resistant)",
+    "criterion_breakdown": {
+      "structural_safety": {
+        "score": 0.0,
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
+        "is_na": true
+      },
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "climate_compatibility": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "service_life": {
+        "score": 70.0,
+        "max": 5.0,
+        "contribution": 3.5,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "maintenance": {
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sustainability": {
+        "score": 60.0,
+        "max": 5.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      }
+    }
+  },
+  {
+    "material": "Solid Teak Timber Door (Premium)",
+    "criterion_breakdown": {
+      "structural_safety": {
+        "score": 0.0,
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
+        "is_na": true
+      },
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "climate_compatibility": {
+        "score": 20.0,
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.2,
+        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "service_life": {
+        "score": 95.0,
+        "max": 5.0,
+        "contribution": 4.75,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "maintenance": {
+        "score": 75.0,
+        "max": 5.0,
+        "contribution": 3.75,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sustainability": {
+        "score": 76.67,
+        "max": 5.0,
+        "contribution": 3.83,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      }
+    }
+  },
+  {
+    "material": "Aluminium Profile Glass Door (Heavy-Duty)",
+    "criterion_breakdown": {
+      "structural_safety": {
+        "score": 0.0,
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
+        "is_na": true
+      },
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "climate_compatibility": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "service_life": {
+        "score": 85.0,
+        "max": 5.0,
+        "contribution": 4.25,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "maintenance": {
+        "score": 90.0,
+        "max": 5.0,
+        "contribution": 4.5,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sustainability": {
+        "score": 61.33,
+        "max": 5.0,
+        "contribution": 3.07,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      }
+    }
+  },
+  {
+    "material": "FRP Fiberglass Reinforced Door",
+    "criterion_breakdown": {
+      "structural_safety": {
+        "score": 0.0,
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
+        "is_na": true
+      },
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "climate_compatibility": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "service_life": {
+        "score": 85.0,
+        "max": 5.0,
+        "contribution": 4.25,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "maintenance": {
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sustainability": {
+        "score": 66.67,
+        "max": 5.0,
+        "contribution": 3.33,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      }
+    }
+  },
+  {
+    "material": "Standard Hollow-Core Flush Door (HDF Faced)",
+    "criterion_breakdown": {
+      "structural_safety": {
+        "score": 0.0,
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
+        "is_na": true
+      },
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "climate_compatibility": {
+        "score": 20.0,
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.2,
+        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "service_life": {
+        "score": 55.0,
+        "max": 5.0,
+        "contribution": 2.75,
+        "normalized_weight": 0.0667,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
+        "is_na": false
+      },
+      "maintenance": {
+        "score": 75.0,
+        "max": 5.0,
+        "contribution": 3.75,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sustainability": {
+        "score": 50.67,
+        "max": 5.0,
+        "contribution": 2.53,
+        "normalized_weight": 0.0667,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
+        "is_na": false
+      }
+    }
+  },
+  {
+    "material": "Steel Security Door (Powder-Coated)",
+    "criterion_breakdown": {
+      "structural_safety": {
+        "score": 0.0,
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
+        "is_na": true
+      },
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "climate_compatibility": {
+        "score": 20.0,
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.2,
+        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "service_life": {
+        "score": 70.0,
+        "max": 5.0,
+        "contribution": 3.5,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "maintenance": {
+        "score": 90.0,
+        "max": 5.0,
+        "contribution": 4.5,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sustainability": {
+        "score": 48.33,
+        "max": 5.0,
+        "contribution": 2.42,
+        "normalized_weight": 0.0667,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
+        "is_na": false
+      }
+    }
+  },
+  {
+    "material": "Timber Louvre Door (Ventilated Hardwood)",
+    "criterion_breakdown": {
+      "structural_safety": {
+        "score": 0.0,
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
+        "is_na": true
+      },
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "climate_compatibility": {
+        "score": 20.0,
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.2,
+        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 80.0,
+        "max": 15.0,
+        "contribution": 12.0,
+        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "service_life": {
+        "score": 70.0,
+        "max": 5.0,
+        "contribution": 3.5,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "maintenance": {
+        "score": 90.0,
+        "max": 5.0,
+        "contribution": 4.5,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sustainability": {
+        "score": 76.67,
+        "max": 5.0,
+        "contribution": 3.83,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      }
+    }
+  },
+  {
+    "material": "UPVC Sliding Door (Weather-Sealed)",
+    "criterion_breakdown": {
+      "structural_safety": {
+        "score": 0.0,
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
+        "is_na": true
+      },
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "climate_compatibility": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "service_life": {
+        "score": 70.0,
+        "max": 5.0,
+        "contribution": 3.5,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "maintenance": {
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sustainability": {
+        "score": 67.33,
+        "max": 5.0,
+        "contribution": 3.37,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      }
+    }
+  },
+  {
+    "material": "Polished Terrazzo Flooring (Marble Aggregate)",
+    "criterion_breakdown": {
+      "structural_safety": {
+        "score": 0.0,
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
+        "is_na": true
+      },
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "climate_compatibility": {
+        "score": 20.0,
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.2,
+        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "service_life": {
+        "score": 85.0,
+        "max": 5.0,
+        "contribution": 4.25,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "maintenance": {
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sustainability": {
+        "score": 79.0,
+        "max": 5.0,
+        "contribution": 3.95,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      }
+    }
+  },
+  {
+    "material": "Porcelain GVT Slab (Full-Body Vitrified)",
+    "criterion_breakdown": {
+      "structural_safety": {
+        "score": 0.0,
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
+        "is_na": true
+      },
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "climate_compatibility": {
+        "score": 55.0,
+        "max": 15.0,
+        "contribution": 8.25,
+        "normalized_weight": 0.2,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "service_life": {
+        "score": 70.0,
+        "max": 5.0,
+        "contribution": 3.5,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "maintenance": {
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sustainability": {
+        "score": 61.67,
+        "max": 5.0,
+        "contribution": 3.08,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      }
+    }
+  },
+  {
+    "material": "Standard Ceramic Floor Tile",
+    "criterion_breakdown": {
+      "structural_safety": {
+        "score": 0.0,
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
+        "is_na": true
+      },
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "climate_compatibility": {
+        "score": 20.0,
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.2,
+        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "service_life": {
+        "score": 55.0,
+        "max": 5.0,
+        "contribution": 2.75,
+        "normalized_weight": 0.0667,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
+        "is_na": false
+      },
+      "maintenance": {
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sustainability": {
+        "score": 53.33,
+        "max": 5.0,
+        "contribution": 2.67,
+        "normalized_weight": 0.0667,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
+        "is_na": false
+      }
+    }
+  },
+  {
+    "material": "Timber Strip Flooring (Treated Hardwood)",
+    "criterion_breakdown": {
+      "structural_safety": {
+        "score": 0.0,
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
+        "is_na": true
+      },
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "climate_compatibility": {
+        "score": 20.0,
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.2,
+        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 80.0,
+        "max": 15.0,
+        "contribution": 12.0,
+        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "service_life": {
+        "score": 70.0,
+        "max": 5.0,
+        "contribution": 3.5,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "maintenance": {
+        "score": 75.0,
+        "max": 5.0,
+        "contribution": 3.75,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sustainability": {
+        "score": 76.67,
+        "max": 5.0,
+        "contribution": 3.83,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      }
+    }
+  },
+  {
+    "material": "Rubber Flooring (Recycled Automotive)",
+    "criterion_breakdown": {
+      "structural_safety": {
+        "score": 0.0,
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
+        "is_na": true
+      },
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "climate_compatibility": {
+        "score": 55.0,
+        "max": 15.0,
+        "contribution": 8.25,
+        "normalized_weight": 0.2,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 40.0,
+        "max": 15.0,
+        "contribution": 6.0,
+        "normalized_weight": 0.2,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "service_life": {
+        "score": 70.0,
+        "max": 5.0,
+        "contribution": 3.5,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "maintenance": {
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sustainability": {
+        "score": 87.33,
+        "max": 5.0,
+        "contribution": 4.37,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      }
+    }
+  },
+  {
+    "material": "Micro-Cement Screed Flooring",
+    "criterion_breakdown": {
+      "structural_safety": {
+        "score": 0.0,
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
+        "is_na": true
+      },
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "climate_compatibility": {
+        "score": 55.0,
+        "max": 15.0,
+        "contribution": 8.25,
+        "normalized_weight": 0.2,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "service_life": {
+        "score": 55.0,
+        "max": 5.0,
+        "contribution": 2.75,
+        "normalized_weight": 0.0667,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
+        "is_na": false
+      },
+      "maintenance": {
+        "score": 90.0,
+        "max": 5.0,
+        "contribution": 4.5,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sustainability": {
+        "score": 61.67,
+        "max": 5.0,
+        "contribution": 3.08,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      }
+    }
+  },
+  {
+    "material": "Recycled Composite Decking (WPC)",
+    "criterion_breakdown": {
+      "structural_safety": {
+        "score": 0.0,
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
+        "is_na": true
+      },
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "climate_compatibility": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 80.0,
+        "max": 15.0,
+        "contribution": 12.0,
+        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "service_life": {
+        "score": 70.0,
+        "max": 5.0,
+        "contribution": 3.5,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "maintenance": {
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sustainability": {
+        "score": 90.67,
+        "max": 5.0,
+        "contribution": 4.53,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      }
+    }
+  },
+  {
+    "material": "Bamboo-Fibre Acoustic Ceiling Panel",
+    "criterion_breakdown": {
+      "structural_safety": {
+        "score": 0.0,
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
+        "is_na": true
+      },
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "climate_compatibility": {
+        "score": 20.0,
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.2,
+        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "service_life": {
+        "score": 55.0,
+        "max": 5.0,
+        "contribution": 2.75,
+        "normalized_weight": 0.0667,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
+        "is_na": false
+      },
+      "maintenance": {
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sustainability": {
+        "score": 97.67,
+        "max": 5.0,
+        "contribution": 4.88,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      }
+    }
+  },
+  {
+    "material": "Standard Gypsum Board Ceiling (Suspended)",
+    "criterion_breakdown": {
+      "structural_safety": {
+        "score": 0.0,
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
+        "is_na": true
+      },
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "climate_compatibility": {
+        "score": 20.0,
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.2,
+        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "service_life": {
+        "score": 55.0,
+        "max": 5.0,
+        "contribution": 2.75,
+        "normalized_weight": 0.0667,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
+        "is_na": false
+      },
+      "maintenance": {
+        "score": 90.0,
+        "max": 5.0,
+        "contribution": 4.5,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sustainability": {
+        "score": 53.67,
+        "max": 5.0,
+        "contribution": 2.68,
+        "normalized_weight": 0.0667,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
+        "is_na": false
+      }
+    }
+  },
+  {
+    "material": "PVC Laminated Ceiling Panel (Moisture-Proof)",
+    "criterion_breakdown": {
+      "structural_safety": {
+        "score": 0.0,
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
+        "is_na": true
+      },
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "climate_compatibility": {
+        "score": 55.0,
+        "max": 15.0,
+        "contribution": 8.25,
+        "normalized_weight": 0.2,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "service_life": {
+        "score": 55.0,
+        "max": 5.0,
+        "contribution": 2.75,
+        "normalized_weight": 0.0667,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
+        "is_na": false
+      },
+      "maintenance": {
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sustainability": {
+        "score": 46.0,
+        "max": 5.0,
+        "contribution": 2.3,
+        "normalized_weight": 0.0667,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
+        "is_na": false
+      }
+    }
+  },
+  {
+    "material": "Calcium Silicate Board Ceiling",
+    "criterion_breakdown": {
+      "structural_safety": {
+        "score": 0.0,
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
+        "is_na": true
+      },
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "climate_compatibility": {
+        "score": 55.0,
+        "max": 15.0,
+        "contribution": 8.25,
+        "normalized_weight": 0.2,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "service_life": {
+        "score": 70.0,
+        "max": 5.0,
+        "contribution": 3.5,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "maintenance": {
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sustainability": {
+        "score": 69.0,
+        "max": 5.0,
+        "contribution": 3.45,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      }
+    }
+  },
+  {
+    "material": "Suspended Metal Tile Ceiling (Aluminium)",
+    "criterion_breakdown": {
+      "structural_safety": {
+        "score": 0.0,
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
+        "is_na": true
+      },
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "climate_compatibility": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 40.0,
+        "max": 15.0,
+        "contribution": 6.0,
+        "normalized_weight": 0.2,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "service_life": {
+        "score": 70.0,
+        "max": 5.0,
+        "contribution": 3.5,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "maintenance": {
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sustainability": {
+        "score": 67.67,
+        "max": 5.0,
+        "contribution": 3.38,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      }
+    }
+  },
+  {
+    "material": "Acoustic Mineral Fibre Suspended Tile",
+    "criterion_breakdown": {
+      "structural_safety": {
+        "score": 0.0,
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
+        "is_na": true
+      },
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "climate_compatibility": {
+        "score": 20.0,
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.2,
+        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 40.0,
+        "max": 15.0,
+        "contribution": 6.0,
+        "normalized_weight": 0.2,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "service_life": {
+        "score": 55.0,
+        "max": 5.0,
+        "contribution": 2.75,
+        "normalized_weight": 0.0667,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
+        "is_na": false
+      },
+      "maintenance": {
+        "score": 90.0,
+        "max": 5.0,
+        "contribution": 4.5,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sustainability": {
+        "score": 56.67,
+        "max": 5.0,
+        "contribution": 2.83,
+        "normalized_weight": 0.0667,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
+        "is_na": false
+      }
+    }
+  },
+  {
+    "material": "Crystalline Slurry Waterproofing (Penetrating)",
+    "criterion_breakdown": {
+      "structural_safety": {
+        "score": 0.0,
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
+        "is_na": true
+      },
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "climate_compatibility": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "service_life": {
+        "score": 85.0,
+        "max": 5.0,
+        "contribution": 4.25,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "maintenance": {
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sustainability": {
+        "score": 68.67,
+        "max": 5.0,
+        "contribution": 3.43,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      }
+    }
+  },
+  {
+    "material": "Liquid Polyurethane Membrane (Seamless)",
+    "criterion_breakdown": {
+      "structural_safety": {
+        "score": 0.0,
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
+        "is_na": true
+      },
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "climate_compatibility": {
+        "score": 55.0,
+        "max": 15.0,
+        "contribution": 8.25,
+        "normalized_weight": 0.2,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "service_life": {
+        "score": 55.0,
+        "max": 5.0,
+        "contribution": 2.75,
+        "normalized_weight": 0.0667,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
+        "is_na": false
+      },
+      "maintenance": {
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sustainability": {
+        "score": 52.33,
+        "max": 5.0,
+        "contribution": 2.62,
+        "normalized_weight": 0.0667,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
+        "is_na": false
+      }
+    }
+  },
+  {
+    "material": "Bituminous Modified Membrane (Torch-Applied)",
+    "criterion_breakdown": {
+      "structural_safety": {
+        "score": 0.0,
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
+        "is_na": true
+      },
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "climate_compatibility": {
+        "score": 55.0,
+        "max": 15.0,
+        "contribution": 8.25,
+        "normalized_weight": 0.2,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "service_life": {
+        "score": 55.0,
+        "max": 5.0,
+        "contribution": 2.75,
+        "normalized_weight": 0.0667,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
+        "is_na": false
+      },
+      "maintenance": {
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sustainability": {
+        "score": 49.33,
+        "max": 5.0,
+        "contribution": 2.47,
+        "normalized_weight": 0.0667,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
+        "is_na": false
+      }
+    }
+  },
+  {
+    "material": "HDPE Sheet Waterproofing Barrier",
+    "criterion_breakdown": {
+      "structural_safety": {
+        "score": 0.0,
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
+        "is_na": true
+      },
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "climate_compatibility": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 40.0,
+        "max": 15.0,
+        "contribution": 6.0,
+        "normalized_weight": 0.2,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "service_life": {
+        "score": 85.0,
+        "max": 5.0,
+        "contribution": 4.25,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "maintenance": {
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sustainability": {
+        "score": 66.67,
+        "max": 5.0,
+        "contribution": 3.33,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      }
+    }
+  },
+  {
+    "material": "Bentonite Clay Waterproofing Panel",
+    "criterion_breakdown": {
+      "structural_safety": {
+        "score": 0.0,
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
+        "is_na": true
+      },
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "climate_compatibility": {
+        "score": 20.0,
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.2,
+        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 40.0,
+        "max": 15.0,
+        "contribution": 6.0,
+        "normalized_weight": 0.2,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "service_life": {
+        "score": 70.0,
+        "max": 5.0,
+        "contribution": 3.5,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "maintenance": {
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sustainability": {
+        "score": 88.33,
+        "max": 5.0,
+        "contribution": 4.42,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      }
+    }
+  },
+  {
+    "material": "Advanced Nano-Exterior Paint",
+    "criterion_breakdown": {
+      "structural_safety": {
+        "score": 0.0,
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
+        "is_na": true
+      },
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "climate_compatibility": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "service_life": {
+        "score": 40.0,
+        "max": 5.0,
+        "contribution": 2.0,
+        "normalized_weight": 0.0667,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
+        "is_na": false
+      },
+      "maintenance": {
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sustainability": {
+        "score": 61.67,
+        "max": 5.0,
+        "contribution": 3.08,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      }
+    }
+  },
+  {
+    "material": "Eco-Friendly Low VOC Emulsion",
+    "criterion_breakdown": {
+      "structural_safety": {
+        "score": 0.0,
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
+        "is_na": true
+      },
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "climate_compatibility": {
+        "score": 20.0,
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.2,
+        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "service_life": {
+        "score": 55.0,
+        "max": 5.0,
+        "contribution": 2.75,
+        "normalized_weight": 0.0667,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
+        "is_na": false
+      },
+      "maintenance": {
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sustainability": {
+        "score": 93.33,
+        "max": 5.0,
+        "contribution": 4.67,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      }
+    }
+  },
+  {
+    "material": "Standard Exterior Emulsion",
+    "criterion_breakdown": {
+      "structural_safety": {
+        "score": 0.0,
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
+        "is_na": true
+      },
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "climate_compatibility": {
+        "score": 20.0,
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.2,
+        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "service_life": {
+        "score": 40.0,
+        "max": 5.0,
+        "contribution": 2.0,
+        "normalized_weight": 0.0667,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
+        "is_na": false
+      },
+      "maintenance": {
+        "score": 90.0,
+        "max": 5.0,
+        "contribution": 4.5,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sustainability": {
+        "score": 56.67,
+        "max": 5.0,
+        "contribution": 2.83,
+        "normalized_weight": 0.0667,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
+        "is_na": false
+      }
+    }
+  }
+]
