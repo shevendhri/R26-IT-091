@@ -62,8 +62,24 @@ export default function EngineeringCard({ label, material }) {
       {/* Header & Primary Score */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '1rem' }}>
         <div>
-          <div style={{ fontSize: '0.65rem', color: '#64748b', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '0.25rem' }}>
-            {label} Component
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.25rem' }}>
+            <span style={{ fontSize: '0.65rem', color: '#64748b', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+              {label} Component
+            </span>
+            {material.classification && (
+              <span style={{
+                fontSize: '0.62rem',
+                fontWeight: 700,
+                padding: '2px 6px',
+                borderRadius: '4px',
+                background: material.classification === 'ENGINEERING-LED RECOMMENDATION' ? 'rgba(56, 189, 248, 0.12)' : 'rgba(16, 185, 129, 0.12)',
+                border: material.classification === 'ENGINEERING-LED RECOMMENDATION' ? '1px solid rgba(56, 189, 248, 0.3)' : '1px solid rgba(16, 185, 129, 0.3)',
+                color: material.classification === 'ENGINEERING-LED RECOMMENDATION' ? '#38bdf8' : '#10b981',
+                textTransform: 'uppercase'
+              }}>
+                {material.classification}
+              </span>
+            )}
           </div>
           <h3 style={{ margin: 0, color: '#f8fafc', fontSize: '1.2rem', fontWeight: 600, lineHeight: 1.3, fontFamily: 'Space Grotesk' }}>
             {name}
@@ -100,6 +116,28 @@ export default function EngineeringCard({ label, material }) {
           <span style={{ fontSize: '0.85rem', fontWeight: 600, color: '#f8fafc' }}>{embodied_carbon != null ? `${embodied_carbon}` : 'N/A'} <span style={{ fontSize: '0.62rem', color: '#64748b' }}>kgCO₂/kg</span></span>
         </div>
       </div>
+
+      {/* Material Quantity Takeoff & Calculation Basis */}
+      {material.quantity != null && (
+        <div style={{ background: '#090d16', borderRadius: '6px', padding: '0.65rem 0.85rem', border: '1px solid #1e293b' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.25rem' }}>
+            <span style={{ fontSize: '0.62rem', color: '#38bdf8', textTransform: 'uppercase', fontWeight: 700, letterSpacing: '0.05em' }}>
+              Preliminary Quantity Takeoff
+            </span>
+            <span style={{ fontSize: '0.65rem', color: '#94a3b8' }}>
+              {material.standard_reference || 'SLS-Referenced'}
+            </span>
+          </div>
+          <div style={{ fontSize: '0.92rem', fontWeight: 700, color: '#f8fafc', fontFamily: 'Space Grotesk' }}>
+            {material.unit_count_label || `${material.quantity} ${material.unit || 'm²'}`}
+          </div>
+          {material.calculation_basis && (
+            <div style={{ fontSize: '0.68rem', color: '#94a3b8', marginTop: '0.2rem', lineHeight: 1.4 }}>
+              {material.calculation_basis}
+            </div>
+          )}
+        </div>
+      )}
 
       {/* Eng Validation vs ML Confidence Telemetry */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid #1e293b', paddingBottom: '0.75rem' }}>
@@ -222,7 +260,7 @@ export default function EngineeringCard({ label, material }) {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
             {[
               { key: 'structural_safety', label: 'Structural Safety' },
-              { key: 'sls_compliance', label: 'SLS Compliance' },
+              { key: 'sls_compliance', label: 'SLS-Referenced Rule Check' },
               { key: 'climate_compatibility', label: 'Climate Compatibility' },
               { key: 'occupancy_requirements', label: 'Occupancy Suitability' },
               { key: 'structural_system_compatibility', label: 'System Compatibility' },

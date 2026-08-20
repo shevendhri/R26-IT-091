@@ -962,10 +962,15 @@ async def api_analyze_blueprint(
                 "Structural frame column alignment validated for vertical load continuity."
             ]
 
+        validation_report = quantities.get("validation_report", {})
+        geometry_report = validation_report.get("geometry", {})
+
         return {
             "status": "success",
             "annotated_image": f"data:image/jpeg;base64,{encoded_img}",
             "structured_info": structured_info,
+            "geometry": geometry_report,
+            "validation": validation_report,
             "spatial": spatial_notes,
             "issues": structured_issues,
             "quantities": quantities,

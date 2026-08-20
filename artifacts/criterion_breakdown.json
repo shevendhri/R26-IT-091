@@ -7,6 +7,8 @@
         "max": 25.0,
         "contribution": 21.56,
         "normalized_weight": 0.25,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sls_compliance": {
@@ -14,20 +16,26 @@
         "max": 20.0,
         "contribution": 20.0,
         "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "climate_compatibility": {
+        "score": 20.0,
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.15,
+        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "is_na": false
+      },
+      "occupancy_requirements": {
         "score": 100.0,
         "max": 15.0,
         "contribution": 15.0,
         "normalized_weight": 0.15,
-        "is_na": false
-      },
-      "occupancy_requirements": {
-        "score": 40.0,
-        "max": 15.0,
-        "contribution": 6.0,
-        "normalized_weight": 0.15,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "structural_system_compatibility": {
@@ -35,6 +43,8 @@
         "max": 10.0,
         "contribution": 10.0,
         "normalized_weight": 0.1,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "service_life": {
@@ -42,6 +52,8 @@
         "max": 5.0,
         "contribution": 4.25,
         "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "maintenance": {
@@ -49,6 +61,8 @@
         "max": 5.0,
         "contribution": 5.0,
         "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sustainability": {
@@ -56,6 +70,8 @@
         "max": 5.0,
         "contribution": 2.92,
         "normalized_weight": 0.05,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
         "is_na": false
       }
     }
@@ -68,6 +84,8 @@
         "max": 25.0,
         "contribution": 25.0,
         "normalized_weight": 0.25,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sls_compliance": {
@@ -75,13 +93,17 @@
         "max": 20.0,
         "contribution": 20.0,
         "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 35.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 5.25,
+        "contribution": 15.0,
         "normalized_weight": 0.15,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -89,6 +111,8 @@
         "max": 15.0,
         "contribution": 15.0,
         "normalized_weight": 0.15,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "structural_system_compatibility": {
@@ -96,6 +120,8 @@
         "max": 10.0,
         "contribution": 10.0,
         "normalized_weight": 0.1,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "service_life": {
@@ -103,6 +129,8 @@
         "max": 5.0,
         "contribution": 4.75,
         "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "maintenance": {
@@ -110,6 +138,8 @@
         "max": 5.0,
         "contribution": 5.0,
         "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sustainability": {
@@ -117,6 +147,8 @@
         "max": 5.0,
         "contribution": 2.47,
         "normalized_weight": 0.05,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
         "is_na": false
       }
     }
@@ -129,6 +161,8 @@
         "max": 25.0,
         "contribution": 20.7,
         "normalized_weight": 0.25,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sls_compliance": {
@@ -136,20 +170,26 @@
         "max": 20.0,
         "contribution": 20.0,
         "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "climate_compatibility": {
+        "score": 20.0,
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.15,
+        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "is_na": false
+      },
+      "occupancy_requirements": {
         "score": 100.0,
         "max": 15.0,
         "contribution": 15.0,
         "normalized_weight": 0.15,
-        "is_na": false
-      },
-      "occupancy_requirements": {
-        "score": 40.0,
-        "max": 15.0,
-        "contribution": 6.0,
-        "normalized_weight": 0.15,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "structural_system_compatibility": {
@@ -157,6 +197,8 @@
         "max": 10.0,
         "contribution": 10.0,
         "normalized_weight": 0.1,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "service_life": {
@@ -164,6 +206,8 @@
         "max": 5.0,
         "contribution": 4.25,
         "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "maintenance": {
@@ -171,6 +215,8 @@
         "max": 5.0,
         "contribution": 5.0,
         "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sustainability": {
@@ -178,6 +224,8 @@
         "max": 5.0,
         "contribution": 4.42,
         "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       }
     }
@@ -190,6 +238,8 @@
         "max": 25.0,
         "contribution": 25.0,
         "normalized_weight": 0.25,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sls_compliance": {
@@ -197,20 +247,26 @@
         "max": 20.0,
         "contribution": 20.0,
         "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
+        "score": 55.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 8.25,
         "normalized_weight": 0.15,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 100.0,
+        "score": 40.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 6.0,
         "normalized_weight": 0.15,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
         "is_na": false
       },
       "structural_system_compatibility": {
@@ -218,6 +274,8 @@
         "max": 10.0,
         "contribution": 10.0,
         "normalized_weight": 0.1,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "service_life": {
@@ -225,6 +283,8 @@
         "max": 5.0,
         "contribution": 5.0,
         "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "maintenance": {
@@ -232,6 +292,8 @@
         "max": 5.0,
         "contribution": 5.0,
         "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sustainability": {
@@ -239,6 +301,8 @@
         "max": 5.0,
         "contribution": 2.28,
         "normalized_weight": 0.05,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
         "is_na": false
       }
     }
@@ -251,6 +315,8 @@
         "max": 25.0,
         "contribution": 15.0,
         "normalized_weight": 0.25,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sls_compliance": {
@@ -258,20 +324,26 @@
         "max": 20.0,
         "contribution": 20.0,
         "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
-        "max": 15.0,
-        "contribution": 15.0,
-        "normalized_weight": 0.15,
-        "is_na": false
-      },
-      "occupancy_requirements": {
         "score": 20.0,
         "max": 15.0,
         "contribution": 3.0,
         "normalized_weight": 0.15,
+        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 80.0,
+        "max": 15.0,
+        "contribution": 12.0,
+        "normalized_weight": 0.15,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "structural_system_compatibility": {
@@ -279,6 +351,8 @@
         "max": 10.0,
         "contribution": 10.0,
         "normalized_weight": 0.1,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "service_life": {
@@ -286,6 +360,8 @@
         "max": 5.0,
         "contribution": 4.75,
         "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "maintenance": {
@@ -293,6 +369,8 @@
         "max": 5.0,
         "contribution": 4.5,
         "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sustainability": {
@@ -300,6 +378,8 @@
         "max": 5.0,
         "contribution": 4.7,
         "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       }
     }
@@ -312,6 +392,8 @@
         "max": 25.0,
         "contribution": 23.0,
         "normalized_weight": 0.25,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sls_compliance": {
@@ -319,13 +401,17 @@
         "max": 20.0,
         "contribution": 20.0,
         "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
+        "score": 20.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 3.0,
         "normalized_weight": 0.15,
+        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -333,6 +419,8 @@
         "max": 15.0,
         "contribution": 15.0,
         "normalized_weight": 0.15,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "structural_system_compatibility": {
@@ -340,6 +428,8 @@
         "max": 10.0,
         "contribution": 10.0,
         "normalized_weight": 0.1,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "service_life": {
@@ -347,6 +437,8 @@
         "max": 5.0,
         "contribution": 4.25,
         "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "maintenance": {
@@ -354,6 +446,8 @@
         "max": 5.0,
         "contribution": 4.5,
         "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sustainability": {
@@ -361,6 +455,8 @@
         "max": 5.0,
         "contribution": 2.87,
         "normalized_weight": 0.05,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
         "is_na": false
       }
     }
@@ -373,6 +469,8 @@
         "max": 25.0,
         "contribution": 25.0,
         "normalized_weight": 0.25,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sls_compliance": {
@@ -380,13 +478,17 @@
         "max": 20.0,
         "contribution": 20.0,
         "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 35.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 5.25,
+        "contribution": 15.0,
         "normalized_weight": 0.15,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -394,6 +496,8 @@
         "max": 15.0,
         "contribution": 15.0,
         "normalized_weight": 0.15,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "structural_system_compatibility": {
@@ -401,6 +505,8 @@
         "max": 10.0,
         "contribution": 10.0,
         "normalized_weight": 0.1,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "service_life": {
@@ -408,6 +514,8 @@
         "max": 5.0,
         "contribution": 4.75,
         "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "maintenance": {
@@ -415,6 +523,8 @@
         "max": 5.0,
         "contribution": 5.0,
         "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sustainability": {
@@ -422,6 +532,8 @@
         "max": 5.0,
         "contribution": 2.43,
         "normalized_weight": 0.05,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
         "is_na": false
       }
     }
@@ -434,6 +546,8 @@
         "max": 25.0,
         "contribution": 21.56,
         "normalized_weight": 0.25,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sls_compliance": {
@@ -441,20 +555,26 @@
         "max": 20.0,
         "contribution": 20.0,
         "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "climate_compatibility": {
+        "score": 20.0,
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.15,
+        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "is_na": false
+      },
+      "occupancy_requirements": {
         "score": 100.0,
         "max": 15.0,
         "contribution": 15.0,
         "normalized_weight": 0.15,
-        "is_na": false
-      },
-      "occupancy_requirements": {
-        "score": 40.0,
-        "max": 15.0,
-        "contribution": 6.0,
-        "normalized_weight": 0.15,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "structural_system_compatibility": {
@@ -462,6 +582,8 @@
         "max": 10.0,
         "contribution": 10.0,
         "normalized_weight": 0.1,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "service_life": {
@@ -469,6 +591,8 @@
         "max": 5.0,
         "contribution": 4.25,
         "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "maintenance": {
@@ -476,6 +600,8 @@
         "max": 5.0,
         "contribution": 4.5,
         "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sustainability": {
@@ -483,6 +609,8 @@
         "max": 5.0,
         "contribution": 4.5,
         "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       }
     }
@@ -495,6 +623,8 @@
         "max": 25.0,
         "contribution": 24.44,
         "normalized_weight": 0.25,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sls_compliance": {
@@ -502,13 +632,17 @@
         "max": 20.0,
         "contribution": 20.0,
         "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
+        "score": 55.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 8.25,
         "normalized_weight": 0.15,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -516,6 +650,8 @@
         "max": 15.0,
         "contribution": 6.0,
         "normalized_weight": 0.15,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
         "is_na": false
       },
       "structural_system_compatibility": {
@@ -523,6 +659,8 @@
         "max": 10.0,
         "contribution": 10.0,
         "normalized_weight": 0.1,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "service_life": {
@@ -530,6 +668,8 @@
         "max": 5.0,
         "contribution": 4.25,
         "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "maintenance": {
@@ -537,6 +677,8 @@
         "max": 5.0,
         "contribution": 5.0,
         "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sustainability": {
@@ -544,6 +686,8 @@
         "max": 5.0,
         "contribution": 2.83,
         "normalized_weight": 0.05,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
         "is_na": false
       }
     }
@@ -556,6 +700,8 @@
         "max": 25.0,
         "contribution": 25.0,
         "normalized_weight": 0.25,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sls_compliance": {
@@ -563,13 +709,17 @@
         "max": 20.0,
         "contribution": 20.0,
         "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 35.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 5.25,
+        "contribution": 15.0,
         "normalized_weight": 0.15,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -577,6 +727,8 @@
         "max": 15.0,
         "contribution": 15.0,
         "normalized_weight": 0.15,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "structural_system_compatibility": {
@@ -584,6 +736,8 @@
         "max": 10.0,
         "contribution": 10.0,
         "normalized_weight": 0.1,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "service_life": {
@@ -591,6 +745,8 @@
         "max": 5.0,
         "contribution": 5.0,
         "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "maintenance": {
@@ -598,6 +754,8 @@
         "max": 5.0,
         "contribution": 5.0,
         "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sustainability": {
@@ -605,6 +763,8 @@
         "max": 5.0,
         "contribution": 2.2,
         "normalized_weight": 0.05,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
         "is_na": false
       }
     }
@@ -617,6 +777,8 @@
         "max": 25.0,
         "contribution": 25.0,
         "normalized_weight": 0.25,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sls_compliance": {
@@ -624,20 +786,26 @@
         "max": 20.0,
         "contribution": 20.0,
         "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "climate_compatibility": {
+        "score": 20.0,
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.15,
+        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "is_na": false
+      },
+      "occupancy_requirements": {
         "score": 100.0,
         "max": 15.0,
         "contribution": 15.0,
         "normalized_weight": 0.15,
-        "is_na": false
-      },
-      "occupancy_requirements": {
-        "score": 40.0,
-        "max": 15.0,
-        "contribution": 6.0,
-        "normalized_weight": 0.15,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "structural_system_compatibility": {
@@ -645,6 +813,8 @@
         "max": 10.0,
         "contribution": 10.0,
         "normalized_weight": 0.1,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "service_life": {
@@ -652,6 +822,8 @@
         "max": 5.0,
         "contribution": 4.25,
         "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "maintenance": {
@@ -659,6 +831,8 @@
         "max": 5.0,
         "contribution": 4.5,
         "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sustainability": {
@@ -666,6 +840,8 @@
         "max": 5.0,
         "contribution": 2.83,
         "normalized_weight": 0.05,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
         "is_na": false
       }
     }
@@ -678,6 +854,8 @@
         "max": 25.0,
         "contribution": 25.0,
         "normalized_weight": 0.25,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sls_compliance": {
@@ -685,20 +863,26 @@
         "max": 20.0,
         "contribution": 20.0,
         "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 55.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 8.25,
         "normalized_weight": 0.15,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 40.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 6.0,
+        "contribution": 15.0,
         "normalized_weight": 0.15,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "structural_system_compatibility": {
@@ -706,6 +890,8 @@
         "max": 10.0,
         "contribution": 10.0,
         "normalized_weight": 0.1,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "service_life": {
@@ -713,6 +899,8 @@
         "max": 5.0,
         "contribution": 4.75,
         "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "maintenance": {
@@ -720,6 +908,8 @@
         "max": 5.0,
         "contribution": 5.0,
         "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sustainability": {
@@ -727,6 +917,8 @@
         "max": 5.0,
         "contribution": 2.75,
         "normalized_weight": 0.05,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
         "is_na": false
       }
     }
@@ -739,6 +931,8 @@
         "max": 25.0,
         "contribution": 25.0,
         "normalized_weight": 0.25,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sls_compliance": {
@@ -746,20 +940,26 @@
         "max": 20.0,
         "contribution": 20.0,
         "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 35.0,
-        "max": 15.0,
-        "contribution": 5.25,
-        "normalized_weight": 0.15,
-        "is_na": false
-      },
-      "occupancy_requirements": {
         "score": 100.0,
         "max": 15.0,
         "contribution": 15.0,
         "normalized_weight": 0.15,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 40.0,
+        "max": 15.0,
+        "contribution": 6.0,
+        "normalized_weight": 0.15,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
         "is_na": false
       },
       "structural_system_compatibility": {
@@ -767,6 +967,8 @@
         "max": 10.0,
         "contribution": 10.0,
         "normalized_weight": 0.1,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "service_life": {
@@ -774,6 +976,8 @@
         "max": 5.0,
         "contribution": 5.0,
         "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "maintenance": {
@@ -781,6 +985,8 @@
         "max": 5.0,
         "contribution": 5.0,
         "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sustainability": {
@@ -788,6 +994,8 @@
         "max": 5.0,
         "contribution": 2.75,
         "normalized_weight": 0.05,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
         "is_na": false
       }
     }
@@ -800,6 +1008,8 @@
         "max": 25.0,
         "contribution": 23.0,
         "normalized_weight": 0.25,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sls_compliance": {
@@ -807,20 +1017,26 @@
         "max": 20.0,
         "contribution": 20.0,
         "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 35.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 5.25,
+        "contribution": 15.0,
         "normalized_weight": 0.15,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 40.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 6.0,
+        "contribution": 15.0,
         "normalized_weight": 0.15,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "structural_system_compatibility": {
@@ -828,6 +1044,8 @@
         "max": 10.0,
         "contribution": 10.0,
         "normalized_weight": 0.1,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "service_life": {
@@ -835,6 +1053,8 @@
         "max": 5.0,
         "contribution": 4.75,
         "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "maintenance": {
@@ -842,6 +1062,8 @@
         "max": 5.0,
         "contribution": 5.0,
         "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sustainability": {
@@ -849,6 +1071,8 @@
         "max": 5.0,
         "contribution": 3.67,
         "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       }
     }
@@ -861,6 +1085,8 @@
         "max": 25.0,
         "contribution": 19.55,
         "normalized_weight": 0.25,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sls_compliance": {
@@ -868,20 +1094,26 @@
         "max": 20.0,
         "contribution": 20.0,
         "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
-        "max": 15.0,
-        "contribution": 15.0,
-        "normalized_weight": 0.15,
-        "is_na": false
-      },
-      "occupancy_requirements": {
         "score": 20.0,
         "max": 15.0,
         "contribution": 3.0,
         "normalized_weight": 0.15,
+        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 80.0,
+        "max": 15.0,
+        "contribution": 12.0,
+        "normalized_weight": 0.15,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "structural_system_compatibility": {
@@ -889,6 +1121,8 @@
         "max": 10.0,
         "contribution": 10.0,
         "normalized_weight": 0.1,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "service_life": {
@@ -896,6 +1130,8 @@
         "max": 5.0,
         "contribution": 4.75,
         "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "maintenance": {
@@ -903,6 +1139,8 @@
         "max": 5.0,
         "contribution": 5.0,
         "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sustainability": {
@@ -910,6 +1148,8 @@
         "max": 5.0,
         "contribution": 4.17,
         "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       }
     }
@@ -922,6 +1162,8 @@
         "max": 25.0,
         "contribution": 12.0,
         "normalized_weight": 0.25,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
         "is_na": false
       },
       "sls_compliance": {
@@ -929,20 +1171,26 @@
         "max": 20.0,
         "contribution": 20.0,
         "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "climate_compatibility": {
+        "score": 20.0,
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.15,
+        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "is_na": false
+      },
+      "occupancy_requirements": {
         "score": 100.0,
         "max": 15.0,
         "contribution": 15.0,
         "normalized_weight": 0.15,
-        "is_na": false
-      },
-      "occupancy_requirements": {
-        "score": 40.0,
-        "max": 15.0,
-        "contribution": 6.0,
-        "normalized_weight": 0.15,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "structural_system_compatibility": {
@@ -950,6 +1198,8 @@
         "max": 10.0,
         "contribution": 10.0,
         "normalized_weight": 0.1,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "service_life": {
@@ -957,6 +1207,8 @@
         "max": 5.0,
         "contribution": 4.25,
         "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "maintenance": {
@@ -964,6 +1216,8 @@
         "max": 5.0,
         "contribution": 4.5,
         "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sustainability": {
@@ -971,6 +1225,8 @@
         "max": 5.0,
         "contribution": 3.97,
         "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       }
     }
@@ -983,6 +1239,8 @@
         "max": 25.0,
         "contribution": 14.5,
         "normalized_weight": 0.25,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
         "is_na": false
       },
       "sls_compliance": {
@@ -990,13 +1248,17 @@
         "max": 20.0,
         "contribution": 20.0,
         "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
+        "score": 20.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 3.0,
         "normalized_weight": 0.15,
+        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -1004,6 +1266,8 @@
         "max": 15.0,
         "contribution": 15.0,
         "normalized_weight": 0.15,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "structural_system_compatibility": {
@@ -1011,6 +1275,8 @@
         "max": 10.0,
         "contribution": 10.0,
         "normalized_weight": 0.1,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "service_life": {
@@ -1018,6 +1284,8 @@
         "max": 5.0,
         "contribution": 3.5,
         "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "maintenance": {
@@ -1025,6 +1293,8 @@
         "max": 5.0,
         "contribution": 3.75,
         "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sustainability": {
@@ -1032,6 +1302,8 @@
         "max": 5.0,
         "contribution": 2.77,
         "normalized_weight": 0.05,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
         "is_na": false
       }
     }
@@ -1044,6 +1316,8 @@
         "max": 25.0,
         "contribution": 15.5,
         "normalized_weight": 0.25,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sls_compliance": {
@@ -1051,20 +1325,26 @@
         "max": 20.0,
         "contribution": 20.0,
         "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
-        "max": 15.0,
-        "contribution": 15.0,
-        "normalized_weight": 0.15,
-        "is_na": false
-      },
-      "occupancy_requirements": {
         "score": 20.0,
         "max": 15.0,
         "contribution": 3.0,
         "normalized_weight": 0.15,
+        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 80.0,
+        "max": 15.0,
+        "contribution": 12.0,
+        "normalized_weight": 0.15,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "structural_system_compatibility": {
@@ -1072,6 +1352,8 @@
         "max": 10.0,
         "contribution": 10.0,
         "normalized_weight": 0.1,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "service_life": {
@@ -1079,6 +1361,8 @@
         "max": 5.0,
         "contribution": 4.25,
         "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "maintenance": {
@@ -1086,6 +1370,8 @@
         "max": 5.0,
         "contribution": 4.5,
         "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sustainability": {
@@ -1093,6 +1379,8 @@
         "max": 5.0,
         "contribution": 4.83,
         "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       }
     }
@@ -1105,6 +1393,8 @@
         "max": 25.0,
         "contribution": 13.75,
         "normalized_weight": 0.25,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
         "is_na": false
       },
       "sls_compliance": {
@@ -1112,20 +1402,26 @@
         "max": 20.0,
         "contribution": 20.0,
         "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "climate_compatibility": {
+        "score": 20.0,
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.15,
+        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "is_na": false
+      },
+      "occupancy_requirements": {
         "score": 100.0,
         "max": 15.0,
         "contribution": 15.0,
         "normalized_weight": 0.15,
-        "is_na": false
-      },
-      "occupancy_requirements": {
-        "score": 40.0,
-        "max": 15.0,
-        "contribution": 6.0,
-        "normalized_weight": 0.15,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "structural_system_compatibility": {
@@ -1133,6 +1429,8 @@
         "max": 10.0,
         "contribution": 10.0,
         "normalized_weight": 0.1,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "service_life": {
@@ -1140,6 +1438,8 @@
         "max": 5.0,
         "contribution": 4.25,
         "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "maintenance": {
@@ -1147,6 +1447,8 @@
         "max": 5.0,
         "contribution": 5.0,
         "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sustainability": {
@@ -1154,6 +1456,8 @@
         "max": 5.0,
         "contribution": 3.97,
         "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       }
     }
@@ -1166,6 +1470,8 @@
         "max": 25.0,
         "contribution": 15.0,
         "normalized_weight": 0.25,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sls_compliance": {
@@ -1173,20 +1479,26 @@
         "max": 20.0,
         "contribution": 20.0,
         "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "climate_compatibility": {
+        "score": 20.0,
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.15,
+        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "is_na": false
+      },
+      "occupancy_requirements": {
         "score": 100.0,
         "max": 15.0,
         "contribution": 15.0,
         "normalized_weight": 0.15,
-        "is_na": false
-      },
-      "occupancy_requirements": {
-        "score": 40.0,
-        "max": 15.0,
-        "contribution": 6.0,
-        "normalized_weight": 0.15,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "structural_system_compatibility": {
@@ -1194,6 +1506,8 @@
         "max": 10.0,
         "contribution": 10.0,
         "normalized_weight": 0.1,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "service_life": {
@@ -1201,6 +1515,8 @@
         "max": 5.0,
         "contribution": 4.25,
         "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "maintenance": {
@@ -1208,6 +1524,8 @@
         "max": 5.0,
         "contribution": 4.5,
         "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sustainability": {
@@ -1215,6 +1533,8 @@
         "max": 5.0,
         "contribution": 4.17,
         "normalized_weight": 0.05,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       }
     }
@@ -1227,6 +1547,8 @@
         "max": 25.0,
         "contribution": 0.0,
         "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
         "is_na": true
       },
       "sls_compliance": {
@@ -1234,13 +1556,17 @@
         "max": 20.0,
         "contribution": 20.0,
         "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 35.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 5.25,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -1248,6 +1574,8 @@
         "max": 15.0,
         "contribution": 15.0,
         "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "structural_system_compatibility": {
@@ -1255,6 +1583,8 @@
         "max": 10.0,
         "contribution": 10.0,
         "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "service_life": {
@@ -1262,6 +1592,8 @@
         "max": 5.0,
         "contribution": 3.5,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "maintenance": {
@@ -1269,6 +1601,8 @@
         "max": 5.0,
         "contribution": 5.0,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sustainability": {
@@ -1276,6 +1610,8 @@
         "max": 5.0,
         "contribution": 3.67,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       }
     }
@@ -1288,6 +1624,8 @@
         "max": 25.0,
         "contribution": 0.0,
         "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
         "is_na": true
       },
       "sls_compliance": {
@@ -1295,20 +1633,26 @@
         "max": 20.0,
         "contribution": 20.0,
         "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 35.0,
-        "max": 15.0,
-        "contribution": 5.25,
-        "normalized_weight": 0.2,
-        "is_na": false
-      },
-      "occupancy_requirements": {
         "score": 20.0,
         "max": 15.0,
         "contribution": 3.0,
         "normalized_weight": 0.2,
+        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 80.0,
+        "max": 15.0,
+        "contribution": 12.0,
+        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "structural_system_compatibility": {
@@ -1316,6 +1660,8 @@
         "max": 10.0,
         "contribution": 10.0,
         "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "service_life": {
@@ -1323,6 +1669,8 @@
         "max": 5.0,
         "contribution": 4.25,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "maintenance": {
@@ -1330,6 +1678,8 @@
         "max": 5.0,
         "contribution": 5.0,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sustainability": {
@@ -1337,6 +1687,8 @@
         "max": 5.0,
         "contribution": 4.28,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       }
     }
@@ -1349,6 +1701,8 @@
         "max": 25.0,
         "contribution": 0.0,
         "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
         "is_na": true
       },
       "sls_compliance": {
@@ -1356,20 +1710,26 @@
         "max": 20.0,
         "contribution": 20.0,
         "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
+        "score": 20.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 3.0,
         "normalized_weight": 0.2,
+        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 100.0,
+        "score": 40.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 6.0,
         "normalized_weight": 0.2,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
         "is_na": false
       },
       "structural_system_compatibility": {
@@ -1377,6 +1737,8 @@
         "max": 10.0,
         "contribution": 10.0,
         "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "service_life": {
@@ -1384,6 +1746,8 @@
         "max": 5.0,
         "contribution": 3.5,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "maintenance": {
@@ -1391,6 +1755,8 @@
         "max": 5.0,
         "contribution": 4.5,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sustainability": {
@@ -1398,6 +1764,8 @@
         "max": 5.0,
         "contribution": 2.87,
         "normalized_weight": 0.0667,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
         "is_na": false
       }
     }
@@ -1410,6 +1778,8 @@
         "max": 25.0,
         "contribution": 0.0,
         "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
         "is_na": true
       },
       "sls_compliance": {
@@ -1417,20 +1787,26 @@
         "max": 20.0,
         "contribution": 20.0,
         "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
-        "max": 15.0,
-        "contribution": 15.0,
-        "normalized_weight": 0.2,
-        "is_na": false
-      },
-      "occupancy_requirements": {
         "score": 20.0,
         "max": 15.0,
         "contribution": 3.0,
         "normalized_weight": 0.2,
+        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 80.0,
+        "max": 15.0,
+        "contribution": 12.0,
+        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "structural_system_compatibility": {
@@ -1438,6 +1814,8 @@
         "max": 10.0,
         "contribution": 10.0,
         "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "service_life": {
@@ -1445,6 +1823,8 @@
         "max": 5.0,
         "contribution": 3.5,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "maintenance": {
@@ -1452,6 +1832,8 @@
         "max": 5.0,
         "contribution": 4.5,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sustainability": {
@@ -1459,6 +1841,8 @@
         "max": 5.0,
         "contribution": 2.67,
         "normalized_weight": 0.0667,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
         "is_na": false
       }
     }
@@ -1471,6 +1855,8 @@
         "max": 25.0,
         "contribution": 0.0,
         "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
         "is_na": true
       },
       "sls_compliance": {
@@ -1478,13 +1864,17 @@
         "max": 20.0,
         "contribution": 20.0,
         "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 35.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 5.25,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -1492,6 +1882,8 @@
         "max": 15.0,
         "contribution": 15.0,
         "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "structural_system_compatibility": {
@@ -1499,6 +1891,8 @@
         "max": 10.0,
         "contribution": 10.0,
         "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "service_life": {
@@ -1506,6 +1900,8 @@
         "max": 5.0,
         "contribution": 4.25,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "maintenance": {
@@ -1513,6 +1909,8 @@
         "max": 5.0,
         "contribution": 5.0,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sustainability": {
@@ -1520,6 +1918,8 @@
         "max": 5.0,
         "contribution": 3.33,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       }
     }
@@ -1532,6 +1932,8 @@
         "max": 25.0,
         "contribution": 0.0,
         "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
         "is_na": true
       },
       "sls_compliance": {
@@ -1539,13 +1941,17 @@
         "max": 20.0,
         "contribution": 20.0,
         "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 35.0,
+        "score": 20.0,
         "max": 15.0,
-        "contribution": 5.25,
+        "contribution": 3.0,
         "normalized_weight": 0.2,
+        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -1553,6 +1959,8 @@
         "max": 15.0,
         "contribution": 6.0,
         "normalized_weight": 0.2,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
         "is_na": false
       },
       "structural_system_compatibility": {
@@ -1560,6 +1968,8 @@
         "max": 10.0,
         "contribution": 10.0,
         "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "service_life": {
@@ -1567,6 +1977,8 @@
         "max": 5.0,
         "contribution": 4.25,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "maintenance": {
@@ -1574,6 +1986,8 @@
         "max": 5.0,
         "contribution": 4.5,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sustainability": {
@@ -1581,6 +1995,8 @@
         "max": 5.0,
         "contribution": 4.88,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       }
     }
@@ -1593,6 +2009,8 @@
         "max": 25.0,
         "contribution": 0.0,
         "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
         "is_na": true
       },
       "sls_compliance": {
@@ -1600,13 +2018,17 @@
         "max": 20.0,
         "contribution": 20.0,
         "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
+        "score": 20.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 3.0,
         "normalized_weight": 0.2,
+        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -1614,6 +2036,8 @@
         "max": 15.0,
         "contribution": 6.0,
         "normalized_weight": 0.2,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
         "is_na": false
       },
       "structural_system_compatibility": {
@@ -1621,6 +2045,8 @@
         "max": 10.0,
         "contribution": 10.0,
         "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "service_life": {
@@ -1628,6 +2054,8 @@
         "max": 5.0,
         "contribution": 2.75,
         "normalized_weight": 0.0667,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
         "is_na": false
       },
       "maintenance": {
@@ -1635,6 +2063,8 @@
         "max": 5.0,
         "contribution": 5.0,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sustainability": {
@@ -1642,6 +2072,8 @@
         "max": 5.0,
         "contribution": 3.0,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       }
     }
@@ -1654,6 +2086,8 @@
         "max": 25.0,
         "contribution": 0.0,
         "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
         "is_na": true
       },
       "sls_compliance": {
@@ -1661,20 +2095,26 @@
         "max": 20.0,
         "contribution": 20.0,
         "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 55.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 8.25,
         "normalized_weight": 0.2,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 40.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 6.0,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "structural_system_compatibility": {
@@ -1682,6 +2122,8 @@
         "max": 10.0,
         "contribution": 10.0,
         "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "service_life": {
@@ -1689,6 +2131,8 @@
         "max": 5.0,
         "contribution": 3.5,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "maintenance": {
@@ -1696,6 +2140,8 @@
         "max": 5.0,
         "contribution": 5.0,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sustainability": {
@@ -1703,6 +2149,8 @@
         "max": 5.0,
         "contribution": 4.17,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       }
     }
@@ -1715,6 +2163,8 @@
         "max": 25.0,
         "contribution": 0.0,
         "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
         "is_na": true
       },
       "sls_compliance": {
@@ -1722,20 +2172,26 @@
         "max": 20.0,
         "contribution": 20.0,
         "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 35.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 5.25,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 40.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 6.0,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "structural_system_compatibility": {
@@ -1743,6 +2199,8 @@
         "max": 10.0,
         "contribution": 10.0,
         "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "service_life": {
@@ -1750,6 +2208,8 @@
         "max": 5.0,
         "contribution": 3.5,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "maintenance": {
@@ -1757,6 +2217,8 @@
         "max": 5.0,
         "contribution": 5.0,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sustainability": {
@@ -1764,6 +2226,8 @@
         "max": 5.0,
         "contribution": 3.57,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       }
     }
@@ -1776,6 +2240,8 @@
         "max": 25.0,
         "contribution": 0.0,
         "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
         "is_na": true
       },
       "sls_compliance": {
@@ -1783,20 +2249,26 @@
         "max": 20.0,
         "contribution": 20.0,
         "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 35.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 5.25,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 40.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 6.0,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "structural_system_compatibility": {
@@ -1804,6 +2276,8 @@
         "max": 10.0,
         "contribution": 10.0,
         "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "service_life": {
@@ -1811,6 +2285,8 @@
         "max": 5.0,
         "contribution": 3.5,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "maintenance": {
@@ -1818,6 +2294,8 @@
         "max": 5.0,
         "contribution": 5.0,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sustainability": {
@@ -1825,6 +2303,8 @@
         "max": 5.0,
         "contribution": 3.08,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       }
     }
@@ -1837,6 +2317,8 @@
         "max": 25.0,
         "contribution": 0.0,
         "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
         "is_na": true
       },
       "sls_compliance": {
@@ -1844,20 +2326,26 @@
         "max": 20.0,
         "contribution": 20.0,
         "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
-        "max": 15.0,
-        "contribution": 15.0,
-        "normalized_weight": 0.2,
-        "is_na": false
-      },
-      "occupancy_requirements": {
         "score": 20.0,
         "max": 15.0,
         "contribution": 3.0,
         "normalized_weight": 0.2,
+        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 80.0,
+        "max": 15.0,
+        "contribution": 12.0,
+        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "structural_system_compatibility": {
@@ -1865,6 +2353,8 @@
         "max": 10.0,
         "contribution": 10.0,
         "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "service_life": {
@@ -1872,6 +2362,8 @@
         "max": 5.0,
         "contribution": 3.5,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "maintenance": {
@@ -1879,6 +2371,8 @@
         "max": 5.0,
         "contribution": 3.75,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sustainability": {
@@ -1886,6 +2380,8 @@
         "max": 5.0,
         "contribution": 3.92,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       }
     }
@@ -1898,6 +2394,8 @@
         "max": 25.0,
         "contribution": 0.0,
         "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
         "is_na": true
       },
       "sls_compliance": {
@@ -1905,13 +2403,17 @@
         "max": 20.0,
         "contribution": 20.0,
         "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 55.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 8.25,
         "normalized_weight": 0.2,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -1919,6 +2421,8 @@
         "max": 15.0,
         "contribution": 6.0,
         "normalized_weight": 0.2,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
         "is_na": false
       },
       "structural_system_compatibility": {
@@ -1926,6 +2430,8 @@
         "max": 10.0,
         "contribution": 10.0,
         "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "service_life": {
@@ -1933,6 +2439,8 @@
         "max": 5.0,
         "contribution": 3.5,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "maintenance": {
@@ -1940,6 +2448,8 @@
         "max": 5.0,
         "contribution": 5.0,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sustainability": {
@@ -1947,6 +2457,8 @@
         "max": 5.0,
         "contribution": 3.17,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       }
     }
@@ -1959,6 +2471,8 @@
         "max": 25.0,
         "contribution": 0.0,
         "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
         "is_na": true
       },
       "sls_compliance": {
@@ -1966,20 +2480,26 @@
         "max": 20.0,
         "contribution": 20.0,
         "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 35.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 5.25,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 40.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 6.0,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "structural_system_compatibility": {
@@ -1987,6 +2507,8 @@
         "max": 10.0,
         "contribution": 10.0,
         "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "service_life": {
@@ -1994,6 +2516,8 @@
         "max": 5.0,
         "contribution": 3.5,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "maintenance": {
@@ -2001,6 +2525,8 @@
         "max": 5.0,
         "contribution": 5.0,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sustainability": {
@@ -2008,6 +2534,8 @@
         "max": 5.0,
         "contribution": 2.92,
         "normalized_weight": 0.0667,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
         "is_na": false
       }
     }
@@ -2020,6 +2548,8 @@
         "max": 25.0,
         "contribution": 0.0,
         "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
         "is_na": true
       },
       "sls_compliance": {
@@ -2027,20 +2557,26 @@
         "max": 20.0,
         "contribution": 20.0,
         "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 35.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 5.25,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 40.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 6.0,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "structural_system_compatibility": {
@@ -2048,6 +2584,8 @@
         "max": 10.0,
         "contribution": 10.0,
         "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "service_life": {
@@ -2055,6 +2593,8 @@
         "max": 5.0,
         "contribution": 3.5,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "maintenance": {
@@ -2062,6 +2602,8 @@
         "max": 5.0,
         "contribution": 5.0,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sustainability": {
@@ -2069,6 +2611,8 @@
         "max": 5.0,
         "contribution": 3.0,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       }
     }
@@ -2081,6 +2625,8 @@
         "max": 25.0,
         "contribution": 0.0,
         "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
         "is_na": true
       },
       "sls_compliance": {
@@ -2088,20 +2634,26 @@
         "max": 20.0,
         "contribution": 20.0,
         "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "climate_compatibility": {
+        "score": 20.0,
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.2,
+        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "is_na": false
+      },
+      "occupancy_requirements": {
         "score": 100.0,
         "max": 15.0,
         "contribution": 15.0,
         "normalized_weight": 0.2,
-        "is_na": false
-      },
-      "occupancy_requirements": {
-        "score": 40.0,
-        "max": 15.0,
-        "contribution": 6.0,
-        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "structural_system_compatibility": {
@@ -2109,6 +2661,8 @@
         "max": 10.0,
         "contribution": 10.0,
         "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "service_life": {
@@ -2116,6 +2670,8 @@
         "max": 5.0,
         "contribution": 4.75,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "maintenance": {
@@ -2123,6 +2679,8 @@
         "max": 5.0,
         "contribution": 3.75,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sustainability": {
@@ -2130,6 +2688,8 @@
         "max": 5.0,
         "contribution": 3.83,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       }
     }
@@ -2142,6 +2702,8 @@
         "max": 25.0,
         "contribution": 0.0,
         "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
         "is_na": true
       },
       "sls_compliance": {
@@ -2149,13 +2711,17 @@
         "max": 20.0,
         "contribution": 20.0,
         "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 35.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 5.25,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -2163,6 +2729,8 @@
         "max": 15.0,
         "contribution": 15.0,
         "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "structural_system_compatibility": {
@@ -2170,6 +2738,8 @@
         "max": 10.0,
         "contribution": 10.0,
         "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "service_life": {
@@ -2177,6 +2747,8 @@
         "max": 5.0,
         "contribution": 4.25,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "maintenance": {
@@ -2184,6 +2756,8 @@
         "max": 5.0,
         "contribution": 4.5,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sustainability": {
@@ -2191,6 +2765,8 @@
         "max": 5.0,
         "contribution": 3.07,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       }
     }
@@ -2203,6 +2779,8 @@
         "max": 25.0,
         "contribution": 0.0,
         "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
         "is_na": true
       },
       "sls_compliance": {
@@ -2210,13 +2788,17 @@
         "max": 20.0,
         "contribution": 20.0,
         "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 35.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 5.25,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -2224,6 +2806,8 @@
         "max": 15.0,
         "contribution": 15.0,
         "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "structural_system_compatibility": {
@@ -2231,6 +2815,8 @@
         "max": 10.0,
         "contribution": 10.0,
         "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "service_life": {
@@ -2238,6 +2824,8 @@
         "max": 5.0,
         "contribution": 4.25,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "maintenance": {
@@ -2245,6 +2833,8 @@
         "max": 5.0,
         "contribution": 5.0,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sustainability": {
@@ -2252,6 +2842,8 @@
         "max": 5.0,
         "contribution": 3.33,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       }
     }
@@ -2264,6 +2856,8 @@
         "max": 25.0,
         "contribution": 0.0,
         "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
         "is_na": true
       },
       "sls_compliance": {
@@ -2271,20 +2865,26 @@
         "max": 20.0,
         "contribution": 20.0,
         "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "climate_compatibility": {
+        "score": 20.0,
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.2,
+        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "is_na": false
+      },
+      "occupancy_requirements": {
         "score": 100.0,
         "max": 15.0,
         "contribution": 15.0,
         "normalized_weight": 0.2,
-        "is_na": false
-      },
-      "occupancy_requirements": {
-        "score": 40.0,
-        "max": 15.0,
-        "contribution": 6.0,
-        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "structural_system_compatibility": {
@@ -2292,6 +2892,8 @@
         "max": 10.0,
         "contribution": 10.0,
         "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "service_life": {
@@ -2299,6 +2901,8 @@
         "max": 5.0,
         "contribution": 2.75,
         "normalized_weight": 0.0667,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
         "is_na": false
       },
       "maintenance": {
@@ -2306,6 +2910,8 @@
         "max": 5.0,
         "contribution": 3.75,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sustainability": {
@@ -2313,6 +2919,8 @@
         "max": 5.0,
         "contribution": 2.53,
         "normalized_weight": 0.0667,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
         "is_na": false
       }
     }
@@ -2325,6 +2933,8 @@
         "max": 25.0,
         "contribution": 0.0,
         "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
         "is_na": true
       },
       "sls_compliance": {
@@ -2332,20 +2942,26 @@
         "max": 20.0,
         "contribution": 20.0,
         "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "climate_compatibility": {
+        "score": 20.0,
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.2,
+        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "is_na": false
+      },
+      "occupancy_requirements": {
         "score": 100.0,
         "max": 15.0,
         "contribution": 15.0,
         "normalized_weight": 0.2,
-        "is_na": false
-      },
-      "occupancy_requirements": {
-        "score": 40.0,
-        "max": 15.0,
-        "contribution": 6.0,
-        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "structural_system_compatibility": {
@@ -2353,6 +2969,8 @@
         "max": 10.0,
         "contribution": 10.0,
         "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "service_life": {
@@ -2360,6 +2978,8 @@
         "max": 5.0,
         "contribution": 3.5,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "maintenance": {
@@ -2367,6 +2987,8 @@
         "max": 5.0,
         "contribution": 4.5,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sustainability": {
@@ -2374,6 +2996,8 @@
         "max": 5.0,
         "contribution": 2.42,
         "normalized_weight": 0.0667,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
         "is_na": false
       }
     }
@@ -2386,6 +3010,8 @@
         "max": 25.0,
         "contribution": 0.0,
         "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
         "is_na": true
       },
       "sls_compliance": {
@@ -2393,20 +3019,26 @@
         "max": 20.0,
         "contribution": 20.0,
         "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
-        "max": 15.0,
-        "contribution": 15.0,
-        "normalized_weight": 0.2,
-        "is_na": false
-      },
-      "occupancy_requirements": {
         "score": 20.0,
         "max": 15.0,
         "contribution": 3.0,
         "normalized_weight": 0.2,
+        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 80.0,
+        "max": 15.0,
+        "contribution": 12.0,
+        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "structural_system_compatibility": {
@@ -2414,6 +3046,8 @@
         "max": 10.0,
         "contribution": 10.0,
         "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "service_life": {
@@ -2421,6 +3055,8 @@
         "max": 5.0,
         "contribution": 3.5,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "maintenance": {
@@ -2428,6 +3064,8 @@
         "max": 5.0,
         "contribution": 4.5,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sustainability": {
@@ -2435,6 +3073,8 @@
         "max": 5.0,
         "contribution": 3.83,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       }
     }
@@ -2447,6 +3087,8 @@
         "max": 25.0,
         "contribution": 0.0,
         "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
         "is_na": true
       },
       "sls_compliance": {
@@ -2454,20 +3096,26 @@
         "max": 20.0,
         "contribution": 20.0,
         "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 35.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 5.25,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 40.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 6.0,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "structural_system_compatibility": {
@@ -2475,6 +3123,8 @@
         "max": 10.0,
         "contribution": 10.0,
         "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "service_life": {
@@ -2482,6 +3132,8 @@
         "max": 5.0,
         "contribution": 3.5,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "maintenance": {
@@ -2489,6 +3141,8 @@
         "max": 5.0,
         "contribution": 5.0,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sustainability": {
@@ -2496,6 +3150,8 @@
         "max": 5.0,
         "contribution": 3.37,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       }
     }
@@ -2508,6 +3164,8 @@
         "max": 25.0,
         "contribution": 0.0,
         "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
         "is_na": true
       },
       "sls_compliance": {
@@ -2515,20 +3173,26 @@
         "max": 20.0,
         "contribution": 20.0,
         "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "climate_compatibility": {
+        "score": 20.0,
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.2,
+        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "is_na": false
+      },
+      "occupancy_requirements": {
         "score": 100.0,
         "max": 15.0,
         "contribution": 15.0,
         "normalized_weight": 0.2,
-        "is_na": false
-      },
-      "occupancy_requirements": {
-        "score": 40.0,
-        "max": 15.0,
-        "contribution": 6.0,
-        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "structural_system_compatibility": {
@@ -2536,6 +3200,8 @@
         "max": 10.0,
         "contribution": 10.0,
         "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "service_life": {
@@ -2543,6 +3209,8 @@
         "max": 5.0,
         "contribution": 4.25,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "maintenance": {
@@ -2550,6 +3218,8 @@
         "max": 5.0,
         "contribution": 5.0,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sustainability": {
@@ -2557,6 +3227,8 @@
         "max": 5.0,
         "contribution": 3.95,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       }
     }
@@ -2569,6 +3241,8 @@
         "max": 25.0,
         "contribution": 0.0,
         "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
         "is_na": true
       },
       "sls_compliance": {
@@ -2576,20 +3250,26 @@
         "max": 20.0,
         "contribution": 20.0,
         "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "climate_compatibility": {
+        "score": 55.0,
+        "max": 15.0,
+        "contribution": 8.25,
+        "normalized_weight": 0.2,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
+        "is_na": false
+      },
+      "occupancy_requirements": {
         "score": 100.0,
         "max": 15.0,
         "contribution": 15.0,
         "normalized_weight": 0.2,
-        "is_na": false
-      },
-      "occupancy_requirements": {
-        "score": 40.0,
-        "max": 15.0,
-        "contribution": 6.0,
-        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "structural_system_compatibility": {
@@ -2597,6 +3277,8 @@
         "max": 10.0,
         "contribution": 10.0,
         "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "service_life": {
@@ -2604,6 +3286,8 @@
         "max": 5.0,
         "contribution": 3.5,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "maintenance": {
@@ -2611,6 +3295,8 @@
         "max": 5.0,
         "contribution": 5.0,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sustainability": {
@@ -2618,6 +3304,8 @@
         "max": 5.0,
         "contribution": 3.08,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       }
     }
@@ -2630,6 +3318,8 @@
         "max": 25.0,
         "contribution": 0.0,
         "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
         "is_na": true
       },
       "sls_compliance": {
@@ -2637,20 +3327,26 @@
         "max": 20.0,
         "contribution": 20.0,
         "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "climate_compatibility": {
+        "score": 20.0,
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.2,
+        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "is_na": false
+      },
+      "occupancy_requirements": {
         "score": 100.0,
         "max": 15.0,
         "contribution": 15.0,
         "normalized_weight": 0.2,
-        "is_na": false
-      },
-      "occupancy_requirements": {
-        "score": 40.0,
-        "max": 15.0,
-        "contribution": 6.0,
-        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "structural_system_compatibility": {
@@ -2658,6 +3354,8 @@
         "max": 10.0,
         "contribution": 10.0,
         "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "service_life": {
@@ -2665,6 +3363,8 @@
         "max": 5.0,
         "contribution": 2.75,
         "normalized_weight": 0.0667,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
         "is_na": false
       },
       "maintenance": {
@@ -2672,6 +3372,8 @@
         "max": 5.0,
         "contribution": 5.0,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sustainability": {
@@ -2679,6 +3381,8 @@
         "max": 5.0,
         "contribution": 2.67,
         "normalized_weight": 0.0667,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
         "is_na": false
       }
     }
@@ -2691,6 +3395,8 @@
         "max": 25.0,
         "contribution": 0.0,
         "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
         "is_na": true
       },
       "sls_compliance": {
@@ -2698,20 +3404,26 @@
         "max": 20.0,
         "contribution": 20.0,
         "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
-        "max": 15.0,
-        "contribution": 15.0,
-        "normalized_weight": 0.2,
-        "is_na": false
-      },
-      "occupancy_requirements": {
         "score": 20.0,
         "max": 15.0,
         "contribution": 3.0,
         "normalized_weight": 0.2,
+        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 80.0,
+        "max": 15.0,
+        "contribution": 12.0,
+        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "structural_system_compatibility": {
@@ -2719,6 +3431,8 @@
         "max": 10.0,
         "contribution": 10.0,
         "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "service_life": {
@@ -2726,6 +3440,8 @@
         "max": 5.0,
         "contribution": 3.5,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "maintenance": {
@@ -2733,6 +3449,8 @@
         "max": 5.0,
         "contribution": 3.75,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sustainability": {
@@ -2740,6 +3458,8 @@
         "max": 5.0,
         "contribution": 3.83,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       }
     }
@@ -2752,6 +3472,8 @@
         "max": 25.0,
         "contribution": 0.0,
         "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
         "is_na": true
       },
       "sls_compliance": {
@@ -2759,20 +3481,26 @@
         "max": 20.0,
         "contribution": 20.0,
         "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 55.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 8.25,
         "normalized_weight": 0.2,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 100.0,
+        "score": 40.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 6.0,
         "normalized_weight": 0.2,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
         "is_na": false
       },
       "structural_system_compatibility": {
@@ -2780,6 +3508,8 @@
         "max": 10.0,
         "contribution": 10.0,
         "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "service_life": {
@@ -2787,6 +3517,8 @@
         "max": 5.0,
         "contribution": 3.5,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "maintenance": {
@@ -2794,6 +3526,8 @@
         "max": 5.0,
         "contribution": 5.0,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sustainability": {
@@ -2801,6 +3535,8 @@
         "max": 5.0,
         "contribution": 4.37,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       }
     }
@@ -2813,6 +3549,8 @@
         "max": 25.0,
         "contribution": 0.0,
         "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
         "is_na": true
       },
       "sls_compliance": {
@@ -2820,20 +3558,26 @@
         "max": 20.0,
         "contribution": 20.0,
         "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "climate_compatibility": {
+        "score": 55.0,
+        "max": 15.0,
+        "contribution": 8.25,
+        "normalized_weight": 0.2,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
+        "is_na": false
+      },
+      "occupancy_requirements": {
         "score": 100.0,
         "max": 15.0,
         "contribution": 15.0,
         "normalized_weight": 0.2,
-        "is_na": false
-      },
-      "occupancy_requirements": {
-        "score": 40.0,
-        "max": 15.0,
-        "contribution": 6.0,
-        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "structural_system_compatibility": {
@@ -2841,6 +3585,8 @@
         "max": 10.0,
         "contribution": 10.0,
         "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "service_life": {
@@ -2848,6 +3594,8 @@
         "max": 5.0,
         "contribution": 2.75,
         "normalized_weight": 0.0667,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
         "is_na": false
       },
       "maintenance": {
@@ -2855,6 +3603,8 @@
         "max": 5.0,
         "contribution": 4.5,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sustainability": {
@@ -2862,6 +3612,8 @@
         "max": 5.0,
         "contribution": 3.08,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       }
     }
@@ -2874,6 +3626,8 @@
         "max": 25.0,
         "contribution": 0.0,
         "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
         "is_na": true
       },
       "sls_compliance": {
@@ -2881,20 +3635,26 @@
         "max": 20.0,
         "contribution": 20.0,
         "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 35.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 5.25,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 20.0,
+        "score": 80.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 12.0,
         "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "structural_system_compatibility": {
@@ -2902,6 +3662,8 @@
         "max": 10.0,
         "contribution": 10.0,
         "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "service_life": {
@@ -2909,6 +3671,8 @@
         "max": 5.0,
         "contribution": 3.5,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "maintenance": {
@@ -2916,6 +3680,8 @@
         "max": 5.0,
         "contribution": 5.0,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sustainability": {
@@ -2923,6 +3689,8 @@
         "max": 5.0,
         "contribution": 4.53,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       }
     }
@@ -2935,6 +3703,8 @@
         "max": 25.0,
         "contribution": 0.0,
         "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
         "is_na": true
       },
       "sls_compliance": {
@@ -2942,20 +3712,26 @@
         "max": 20.0,
         "contribution": 20.0,
         "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "climate_compatibility": {
+        "score": 20.0,
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.2,
+        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "is_na": false
+      },
+      "occupancy_requirements": {
         "score": 100.0,
         "max": 15.0,
         "contribution": 15.0,
         "normalized_weight": 0.2,
-        "is_na": false
-      },
-      "occupancy_requirements": {
-        "score": 40.0,
-        "max": 15.0,
-        "contribution": 6.0,
-        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "structural_system_compatibility": {
@@ -2963,6 +3739,8 @@
         "max": 10.0,
         "contribution": 10.0,
         "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "service_life": {
@@ -2970,6 +3748,8 @@
         "max": 5.0,
         "contribution": 2.75,
         "normalized_weight": 0.0667,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
         "is_na": false
       },
       "maintenance": {
@@ -2977,6 +3757,8 @@
         "max": 5.0,
         "contribution": 5.0,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sustainability": {
@@ -2984,6 +3766,8 @@
         "max": 5.0,
         "contribution": 4.88,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       }
     }
@@ -2996,6 +3780,8 @@
         "max": 25.0,
         "contribution": 0.0,
         "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
         "is_na": true
       },
       "sls_compliance": {
@@ -3003,20 +3789,26 @@
         "max": 20.0,
         "contribution": 20.0,
         "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "climate_compatibility": {
+        "score": 20.0,
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.2,
+        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "is_na": false
+      },
+      "occupancy_requirements": {
         "score": 100.0,
         "max": 15.0,
         "contribution": 15.0,
         "normalized_weight": 0.2,
-        "is_na": false
-      },
-      "occupancy_requirements": {
-        "score": 40.0,
-        "max": 15.0,
-        "contribution": 6.0,
-        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "structural_system_compatibility": {
@@ -3024,6 +3816,8 @@
         "max": 10.0,
         "contribution": 10.0,
         "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "service_life": {
@@ -3031,6 +3825,8 @@
         "max": 5.0,
         "contribution": 2.75,
         "normalized_weight": 0.0667,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
         "is_na": false
       },
       "maintenance": {
@@ -3038,6 +3834,8 @@
         "max": 5.0,
         "contribution": 4.5,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sustainability": {
@@ -3045,6 +3843,8 @@
         "max": 5.0,
         "contribution": 2.68,
         "normalized_weight": 0.0667,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
         "is_na": false
       }
     }
@@ -3057,6 +3857,8 @@
         "max": 25.0,
         "contribution": 0.0,
         "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
         "is_na": true
       },
       "sls_compliance": {
@@ -3064,20 +3866,26 @@
         "max": 20.0,
         "contribution": 20.0,
         "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 55.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 8.25,
         "normalized_weight": 0.2,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 40.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 6.0,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "structural_system_compatibility": {
@@ -3085,6 +3893,8 @@
         "max": 10.0,
         "contribution": 10.0,
         "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "service_life": {
@@ -3092,6 +3902,8 @@
         "max": 5.0,
         "contribution": 2.75,
         "normalized_weight": 0.0667,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
         "is_na": false
       },
       "maintenance": {
@@ -3099,6 +3911,8 @@
         "max": 5.0,
         "contribution": 5.0,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sustainability": {
@@ -3106,6 +3920,8 @@
         "max": 5.0,
         "contribution": 2.3,
         "normalized_weight": 0.0667,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
         "is_na": false
       }
     }
@@ -3118,6 +3934,8 @@
         "max": 25.0,
         "contribution": 0.0,
         "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
         "is_na": true
       },
       "sls_compliance": {
@@ -3125,13 +3943,17 @@
         "max": 20.0,
         "contribution": 20.0,
         "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 55.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 8.25,
         "normalized_weight": 0.2,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -3139,6 +3961,8 @@
         "max": 15.0,
         "contribution": 15.0,
         "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "structural_system_compatibility": {
@@ -3146,6 +3970,8 @@
         "max": 10.0,
         "contribution": 10.0,
         "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "service_life": {
@@ -3153,6 +3979,8 @@
         "max": 5.0,
         "contribution": 3.5,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "maintenance": {
@@ -3160,6 +3988,8 @@
         "max": 5.0,
         "contribution": 5.0,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sustainability": {
@@ -3167,6 +3997,8 @@
         "max": 5.0,
         "contribution": 3.45,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       }
     }
@@ -3179,6 +4011,8 @@
         "max": 25.0,
         "contribution": 0.0,
         "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
         "is_na": true
       },
       "sls_compliance": {
@@ -3186,13 +4020,17 @@
         "max": 20.0,
         "contribution": 20.0,
         "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 35.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 5.25,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -3200,6 +4038,8 @@
         "max": 15.0,
         "contribution": 6.0,
         "normalized_weight": 0.2,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
         "is_na": false
       },
       "structural_system_compatibility": {
@@ -3207,6 +4047,8 @@
         "max": 10.0,
         "contribution": 10.0,
         "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "service_life": {
@@ -3214,6 +4056,8 @@
         "max": 5.0,
         "contribution": 3.5,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "maintenance": {
@@ -3221,6 +4065,8 @@
         "max": 5.0,
         "contribution": 5.0,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sustainability": {
@@ -3228,6 +4074,8 @@
         "max": 5.0,
         "contribution": 3.38,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       }
     }
@@ -3240,6 +4088,8 @@
         "max": 25.0,
         "contribution": 0.0,
         "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
         "is_na": true
       },
       "sls_compliance": {
@@ -3247,13 +4097,17 @@
         "max": 20.0,
         "contribution": 20.0,
         "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
+        "score": 20.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 3.0,
         "normalized_weight": 0.2,
+        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -3261,6 +4115,8 @@
         "max": 15.0,
         "contribution": 6.0,
         "normalized_weight": 0.2,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
         "is_na": false
       },
       "structural_system_compatibility": {
@@ -3268,6 +4124,8 @@
         "max": 10.0,
         "contribution": 10.0,
         "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "service_life": {
@@ -3275,6 +4133,8 @@
         "max": 5.0,
         "contribution": 2.75,
         "normalized_weight": 0.0667,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
         "is_na": false
       },
       "maintenance": {
@@ -3282,6 +4142,8 @@
         "max": 5.0,
         "contribution": 4.5,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sustainability": {
@@ -3289,6 +4151,8 @@
         "max": 5.0,
         "contribution": 2.83,
         "normalized_weight": 0.0667,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
         "is_na": false
       }
     }
@@ -3301,6 +4165,8 @@
         "max": 25.0,
         "contribution": 0.0,
         "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
         "is_na": true
       },
       "sls_compliance": {
@@ -3308,13 +4174,17 @@
         "max": 20.0,
         "contribution": 20.0,
         "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 35.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 5.25,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -3322,6 +4192,8 @@
         "max": 15.0,
         "contribution": 15.0,
         "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "structural_system_compatibility": {
@@ -3329,6 +4201,8 @@
         "max": 10.0,
         "contribution": 10.0,
         "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "service_life": {
@@ -3336,6 +4210,8 @@
         "max": 5.0,
         "contribution": 4.25,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "maintenance": {
@@ -3343,6 +4219,8 @@
         "max": 5.0,
         "contribution": 5.0,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sustainability": {
@@ -3350,6 +4228,8 @@
         "max": 5.0,
         "contribution": 3.43,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       }
     }
@@ -3362,6 +4242,8 @@
         "max": 25.0,
         "contribution": 0.0,
         "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
         "is_na": true
       },
       "sls_compliance": {
@@ -3369,20 +4251,26 @@
         "max": 20.0,
         "contribution": 20.0,
         "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 55.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 8.25,
         "normalized_weight": 0.2,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 40.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 6.0,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "structural_system_compatibility": {
@@ -3390,6 +4278,8 @@
         "max": 10.0,
         "contribution": 10.0,
         "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "service_life": {
@@ -3397,6 +4287,8 @@
         "max": 5.0,
         "contribution": 2.75,
         "normalized_weight": 0.0667,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
         "is_na": false
       },
       "maintenance": {
@@ -3404,6 +4296,8 @@
         "max": 5.0,
         "contribution": 5.0,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sustainability": {
@@ -3411,6 +4305,8 @@
         "max": 5.0,
         "contribution": 2.62,
         "normalized_weight": 0.0667,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
         "is_na": false
       }
     }
@@ -3423,6 +4319,8 @@
         "max": 25.0,
         "contribution": 0.0,
         "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
         "is_na": true
       },
       "sls_compliance": {
@@ -3430,13 +4328,17 @@
         "max": 20.0,
         "contribution": 20.0,
         "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
+        "score": 55.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 8.25,
         "normalized_weight": 0.2,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -3444,6 +4346,8 @@
         "max": 15.0,
         "contribution": 15.0,
         "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "structural_system_compatibility": {
@@ -3451,6 +4355,8 @@
         "max": 10.0,
         "contribution": 10.0,
         "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "service_life": {
@@ -3458,6 +4364,8 @@
         "max": 5.0,
         "contribution": 2.75,
         "normalized_weight": 0.0667,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
         "is_na": false
       },
       "maintenance": {
@@ -3465,6 +4373,8 @@
         "max": 5.0,
         "contribution": 5.0,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sustainability": {
@@ -3472,6 +4382,8 @@
         "max": 5.0,
         "contribution": 2.47,
         "normalized_weight": 0.0667,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
         "is_na": false
       }
     }
@@ -3484,6 +4396,8 @@
         "max": 25.0,
         "contribution": 0.0,
         "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
         "is_na": true
       },
       "sls_compliance": {
@@ -3491,20 +4405,26 @@
         "max": 20.0,
         "contribution": 20.0,
         "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 35.0,
-        "max": 15.0,
-        "contribution": 5.25,
-        "normalized_weight": 0.2,
-        "is_na": false
-      },
-      "occupancy_requirements": {
         "score": 100.0,
         "max": 15.0,
         "contribution": 15.0,
         "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 40.0,
+        "max": 15.0,
+        "contribution": 6.0,
+        "normalized_weight": 0.2,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
         "is_na": false
       },
       "structural_system_compatibility": {
@@ -3512,6 +4432,8 @@
         "max": 10.0,
         "contribution": 10.0,
         "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "service_life": {
@@ -3519,6 +4441,8 @@
         "max": 5.0,
         "contribution": 4.25,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "maintenance": {
@@ -3526,6 +4450,8 @@
         "max": 5.0,
         "contribution": 5.0,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sustainability": {
@@ -3533,6 +4459,8 @@
         "max": 5.0,
         "contribution": 3.33,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       }
     }
@@ -3545,6 +4473,8 @@
         "max": 25.0,
         "contribution": 0.0,
         "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
         "is_na": true
       },
       "sls_compliance": {
@@ -3552,6 +4482,8 @@
         "max": 20.0,
         "contribution": 20.0,
         "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "climate_compatibility": {
@@ -3559,6 +4491,8 @@
         "max": 15.0,
         "contribution": 3.0,
         "normalized_weight": 0.2,
+        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -3566,6 +4500,8 @@
         "max": 15.0,
         "contribution": 6.0,
         "normalized_weight": 0.2,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
         "is_na": false
       },
       "structural_system_compatibility": {
@@ -3573,6 +4509,8 @@
         "max": 10.0,
         "contribution": 10.0,
         "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "service_life": {
@@ -3580,6 +4518,8 @@
         "max": 5.0,
         "contribution": 3.5,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "maintenance": {
@@ -3587,6 +4527,8 @@
         "max": 5.0,
         "contribution": 5.0,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sustainability": {
@@ -3594,6 +4536,8 @@
         "max": 5.0,
         "contribution": 4.42,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       }
     }
@@ -3606,6 +4550,8 @@
         "max": 25.0,
         "contribution": 0.0,
         "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
         "is_na": true
       },
       "sls_compliance": {
@@ -3613,13 +4559,17 @@
         "max": 20.0,
         "contribution": 20.0,
         "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 35.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 5.25,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -3627,6 +4577,8 @@
         "max": 15.0,
         "contribution": 15.0,
         "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "structural_system_compatibility": {
@@ -3634,6 +4586,8 @@
         "max": 10.0,
         "contribution": 10.0,
         "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "service_life": {
@@ -3641,6 +4595,8 @@
         "max": 5.0,
         "contribution": 2.0,
         "normalized_weight": 0.0667,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
         "is_na": false
       },
       "maintenance": {
@@ -3648,6 +4604,8 @@
         "max": 5.0,
         "contribution": 5.0,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sustainability": {
@@ -3655,6 +4613,8 @@
         "max": 5.0,
         "contribution": 3.08,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       }
     }
@@ -3667,6 +4627,8 @@
         "max": 25.0,
         "contribution": 0.0,
         "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
         "is_na": true
       },
       "sls_compliance": {
@@ -3674,20 +4636,26 @@
         "max": 20.0,
         "contribution": 20.0,
         "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "climate_compatibility": {
+        "score": 20.0,
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.2,
+        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "is_na": false
+      },
+      "occupancy_requirements": {
         "score": 100.0,
         "max": 15.0,
         "contribution": 15.0,
         "normalized_weight": 0.2,
-        "is_na": false
-      },
-      "occupancy_requirements": {
-        "score": 40.0,
-        "max": 15.0,
-        "contribution": 6.0,
-        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "structural_system_compatibility": {
@@ -3695,6 +4663,8 @@
         "max": 10.0,
         "contribution": 10.0,
         "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "service_life": {
@@ -3702,6 +4672,8 @@
         "max": 5.0,
         "contribution": 2.75,
         "normalized_weight": 0.0667,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
         "is_na": false
       },
       "maintenance": {
@@ -3709,6 +4681,8 @@
         "max": 5.0,
         "contribution": 5.0,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sustainability": {
@@ -3716,6 +4690,8 @@
         "max": 5.0,
         "contribution": 4.67,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       }
     }
@@ -3728,6 +4704,8 @@
         "max": 25.0,
         "contribution": 0.0,
         "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
         "is_na": true
       },
       "sls_compliance": {
@@ -3735,13 +4713,17 @@
         "max": 20.0,
         "contribution": 20.0,
         "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
+        "score": 20.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 3.0,
         "normalized_weight": 0.2,
+        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -3749,6 +4731,8 @@
         "max": 15.0,
         "contribution": 15.0,
         "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "structural_system_compatibility": {
@@ -3756,6 +4740,8 @@
         "max": 10.0,
         "contribution": 10.0,
         "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "service_life": {
@@ -3763,6 +4749,8 @@
         "max": 5.0,
         "contribution": 2.0,
         "normalized_weight": 0.0667,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
         "is_na": false
       },
       "maintenance": {
@@ -3770,6 +4758,8 @@
         "max": 5.0,
         "contribution": 4.5,
         "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sustainability": {
@@ -3777,6 +4767,8 @@
         "max": 5.0,
         "contribution": 2.83,
         "normalized_weight": 0.0667,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
         "is_na": false
       }
     }

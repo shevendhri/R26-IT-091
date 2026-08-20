@@ -5,6 +5,7 @@ import Footer from '@/components/Footer';
 import { useState, useEffect } from 'react';
 
 import CompactSummaryStrip from '@/components/Report/CompactSummaryStrip';
+import ProjectValidationStrip from '@/components/Report/ProjectValidationStrip';
 import Accordion from '@/components/ui/Accordion';
 import BlueprintPanel from '@/components/Dashboard/BlueprintPanel';
 import ProjectOverview from '@/components/Dashboard/ProjectOverview';
@@ -176,6 +177,9 @@ export default function ReportPage() {
 
             {/* 1. Compact Project Context Telemetry Strip */}
             <CompactSummaryStrip data={reportData} />
+
+            {/* 1b. Project Validation Status Strip & Review Gate */}
+            <ProjectValidationStrip data={reportData} />
 
             {/* 2. Primary Recommendation — the main visual focus */}
             <div style={{

@@ -815,17 +815,51 @@ def get_all_materials():
     return rows
 
 
+def normalize_canonical_component(category: str, name: str) -> str:
+    cat_lc = (category or "").lower().strip()
+    name_lc = (name or "").lower().strip()
+    if cat_lc == "foundation":
+        return "Foundation"
+    elif cat_lc in ("concrete", "structural frame") or (cat_lc == "structural" and ("concrete" in name_lc or "mix" in name_lc or "scc" in name_lc)):
+        return "Structural Frame"
+    elif cat_lc in ("reinforcement", "rebar") or (cat_lc == "structural" and ("rebar" in name_lc or "steel" in name_lc or "gfrp" in name_lc or "ton" in name_lc)):
+        return "Reinforcement"
+    elif cat_lc in ("walling", "walls", "wall"):
+        return "Walling"
+    elif cat_lc in ("roofing", "roof"):
+        return "Roofing"
+    elif cat_lc == "windows" or (cat_lc in ("openings", "window", "opening") and ("window" in name_lc or "glass" in name_lc or "glazing" in name_lc or "glazed" in name_lc or "dgu" in name_lc or "louvre" in name_lc)):
+        return "Windows"
+    elif cat_lc == "doors" or (cat_lc in ("openings", "door", "opening") and "door" in name_lc):
+        return "Doors"
+    elif cat_lc in ("openings", "opening"):
+        return "Doors" if "door" in name_lc else "Windows"
+    elif cat_lc in ("flooring", "floor"):
+        return "Flooring"
+    elif cat_lc in ("ceiling", "ceilings"):
+        return "Ceiling"
+    elif cat_lc in ("finishing", "finishes", "paint"):
+        return "Finishes"
+    elif cat_lc in ("waterproofing", "waterproof"):
+        return "Waterproofing"
+    elif "rebar" in name_lc or "steel" in name_lc:
+        return "Reinforcement"
+    elif "concrete" in name_lc:
+        return "Structural Frame"
+    return "Structural Frame"
+
+
 def format_material(row):
     r = dict(row)
     name = r.get("Name", "")
     category = r.get("Category", "")
-    component = r.get("Component") or category
+    component = normalize_canonical_component(r.get("Component") or category, name)
     unit = r.get("Unit") or "m²"
     unit_rate = float(r.get("Unit_Rate") or 0.0)
-    rate_basis = r.get("Rate_Basis") or "Preliminary illustrative unit rate"
+    rate_basis = r.get("Rate_Basis") or "Rate unavailable / not included in baseline"
     data_quality = r.get("Data_Quality") or "Prototype / illustrative data"
-    standard_ref = r.get("Standard_Reference") or "SLS / Standard engineering reference check"
-    application = r.get("Application") or f"{component} element"
+    standard_ref = r.get("Standard_Reference") or "SLS-Referenced Rule Check"
+    application = r.get("Application") or f"{component} application"
 
     # Derive engineering properties
     structural_cap = int(r.get("Structural_Capacity") or 50)

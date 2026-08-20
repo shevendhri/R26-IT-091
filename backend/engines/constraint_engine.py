@@ -148,17 +148,17 @@ def evaluate_constraints(
         # Non-structural materials are Not Applicable for structural safety.
         validation_checks.append({"rule": "Structural Safety", "status": True, "message": "Not Applicable (Weight redistributed)"})
 
-    # 2. SLS Compliance (Weight: 20)
+    # 2. SLS-Referenced Rule Check (Weight: 20)
     sls_flag = profile_data.get("sls_compliant", True)
     sls_compliance_score = 100.0 if sls_flag else 0.0
     if not sls_flag:
-        rejection_reasons.append("FAIL: Material does not comply with SLS standards")
+        rejection_reasons.append("FAIL: Material does not meet SLS-referenced engineering rule thresholds")
         reason_codes.append("SLS_VETO")
         if category in ("Foundation", "Structural", "Concrete"):
             veto = True
-        validation_checks.append({"rule": "SLS Compliance", "status": False, "message": "Non-compliant with Sri Lanka Standards"})
+        validation_checks.append({"rule": "SLS-Referenced Rule Check", "status": False, "message": "Non-compliant with SLS-referenced engineering thresholds"})
     else:
-        validation_checks.append({"rule": "SLS Compliance", "status": True, "message": "Verified SLS Compliance"})
+        validation_checks.append({"rule": "SLS-Referenced Rule Check", "status": True, "message": "Verified SLS-Referenced Rule Check"})
 
     # 3. Climate Compatibility (Weight: 15)
     project_climate = climate.get("type", "intermediate").lower().strip()
@@ -193,7 +193,7 @@ def evaluate_constraints(
         climate.get("distance_km", 999.0),
     )
     corrosion_res = float(material.get("Corrosion_Resistance", 50))
-    is_marine_mat = corrosion_res >= 90
+    is_marine_mat = corrosion_res >= 90 or "marine" in name.lower() or "epoxy" in name.lower()
 
     salinity_val = str(climate.get("salinity", "Low")).lower() if climate else "low"
     dist_val = float(climate.get("distance_km", 999.0)) if climate else 999.0
@@ -206,13 +206,18 @@ def evaluate_constraints(
             climate_score = 90.0 if is_marine_mat else 85.0   # Moderate coastal: both eligible, slight marine edge
         else:
             # Low / inland salinity: standard materials get full preference (100); marine-grade over-specification score (35)
-            climate_score = 35.0 if is_marine_mat else 100.0
+            if is_marine_mat:
+                climate_score = 35.0
+                rejection_reasons.append("Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.")
+            else:
+                climate_score = 100.0
     elif mapped_climate == "extreme coastal" and "coastal" in allowed_climates:
         climate_score = 90.0 if is_marine_mat else 50.0
     else:
         # Purely coastal materials in inland zone remain eligible with over-specification rating
         if is_marine_mat and salinity_val == "low":
             climate_score = 35.0
+            rejection_reasons.append("Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.")
         else:
             climate_score = 20.0  # Unsuitable
 
@@ -231,7 +236,7 @@ def evaluate_constraints(
         rejection_reasons.append(f"FAIL: Unsuitable climate profile (Zone: {project_climate})")
         reason_codes.append("CLIMATE_MISMATCH")
     
-    climate_status_label = "Perfect" if climate_score == 100.0 else "Good" if climate_score >= 90.0 else "Acceptable" if climate_score >= 75.0 else "Marginal" if climate_score >= 50.0 else "Unsuitable"
+    climate_status_label = "Optimal" if climate_score == 100.0 else "Good" if climate_score >= 90.0 else "Acceptable" if climate_score >= 75.0 else "Marginal" if climate_score >= 50.0 else "Over-specified / Unsuitable"
     validation_checks.append({"rule": "Climate Compatibility", "status": climate_score >= 50, "message": f"{climate_status_label} climate compatibility verified"})
 
     # 4. Occupancy Suitability (Weight: 15)
@@ -427,11 +432,15 @@ def evaluate_constraints(
         if k in applicable_keys:
             normalized_weight = weight / applicable_weight_sum
             weighted_sum += val * normalized_weight
+            crit_reasons = [r for r in rejection_reasons if k.replace('_', ' ') in r.lower() or (k == 'climate_compatibility' and ('salin' in r.lower() or 'climate' in r.lower() or 'marine' in r.lower() or 'over-specification' in r.lower()))]
+            note_str = crit_reasons[0] if crit_reasons else ("Evaluated against preliminary engineering criteria" if not val or val >= 60 else "Marginal preliminary compliance")
             breakdown[k] = {
                 "score": round(val, 2),
                 "max": round(weight * 100, 2),
                 "contribution": round(val * weight, 2),
                 "normalized_weight": round(normalized_weight, 4),
+                "notes": note_str,
+                "reason": note_str,
                 "is_na": False
             }
         else:
@@ -440,6 +449,8 @@ def evaluate_constraints(
                 "max": round(weight * 100, 2),
                 "contribution": 0.0,
                 "normalized_weight": 0.0,
+                "notes": "Not applicable for this component",
+                "reason": "Not applicable for this component",
                 "is_na": True
             }
 

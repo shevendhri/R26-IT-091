@@ -1,5 +1,25 @@
 "use client";
-import React, { useMemo, Suspense, useEffect } from 'react';
+import React, { useMemo, Suspense, useEffect, useState, Component } from 'react';
+
+// ── Error boundary to catch R3F / Three.js render errors ────────────────────
+class WebGLErrorBoundary extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false };
+  }
+  static getDerivedStateFromError() {
+    return { hasError: true };
+  }
+  componentDidCatch(error) {
+    console.warn('[Building3DModel] WebGL render error caught by boundary:', error?.message);
+  }
+  render() {
+    if (this.state.hasError) {
+      return this.props.fallback || null;
+    }
+    return this.props.children;
+  }
+}
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Html, Sky, Environment, ContactShadows, Float } from '@react-three/drei';
 import * as THREE from 'three';
@@ -1665,46 +1685,155 @@ function Building3DModel({
     resolvedFov = 35;
   }
 
+  // ── WebGL pre-check (client-only, SSR-safe) ────────────────────────────────
+  // Start in 'checking' so neither Canvas nor fallback render during SSR/hydration.
+  // useEffect runs after hydration; the test is synchronous and near-instant.
+  const [webglState, setWebglState] = useState('checking');
+
+  useEffect(() => {
+    try {
+      const testCanvas = document.createElement('canvas');
+      const gl =
+        testCanvas.getContext('webgl2') ||
+        testCanvas.getContext('webgl') ||
+        testCanvas.getContext('experimental-webgl');
+      if (gl) {
+        // Release the test context immediately
+        const ext = gl.getExtension('WEBGL_lose_context');
+        if (ext) ext.loseContext();
+        setWebglState('ok');
+      } else {
+        setWebglState('failed');
+      }
+    } catch (e) {
+      setWebglState('failed');
+    }
+  }, []);
+
+  // ── Shared fallback UI ─────────────────────────────────────────────────────
+  const NoWebGLFallback = (
+    <div style={{
+      width: '100%', height: '100%',
+      display: 'flex', flexDirection: 'column',
+      alignItems: 'center', justifyContent: 'center',
+      background: 'linear-gradient(135deg, #0c1520 0%, #172032 100%)',
+      color: '#a0b4c8', fontFamily: 'Inter, sans-serif',
+      padding: '2rem', boxSizing: 'border-box', gap: '1.5rem',
+    }}>
+      {/* SVG blueprint schematic */}
+      <svg viewBox={`0 0 ${fpW * 10 + 40} ${fpH * 10 + 60}`}
+        width="min(460px, 88%)" height="min(280px, 55%)"
+        style={{ filter: 'drop-shadow(0 0 14px #00d4ff33)' }}>
+        <rect width={fpW * 10 + 40} height={fpH * 10 + 60} fill="#0a1828" rx="8"/>
+        {/* Building perimeter */}
+        <rect x="20" y="20" width={fpW * 10} height={fpH * 10}
+          fill="#132236" stroke="#00d4ff" strokeWidth="1.5" strokeDasharray="4 2"/>
+        {/* Room grid from floor 0 */}
+        {(blueprint.floors_data[0]?.rooms || []).slice(0, 10).map((room, i) => {
+          const rx = 20 + (room.x || 0) * 10;
+          const ry = 20 + (room.y || 0) * 10;
+          const rw = Math.max((room.w || 3) * 10, 8);
+          const rh = Math.max((room.h || 3) * 10, 8);
+          return (
+            <g key={i}>
+              <rect x={rx} y={ry} width={rw} height={rh}
+                fill="#1c3650" stroke="#3a7bbf" strokeWidth="0.8" opacity="0.85"/>
+              <text x={rx + rw / 2} y={ry + rh / 2 + 3}
+                textAnchor="middle" fill="#7ab4e8" fontSize="7" fontFamily="monospace">
+                {(room.name || room.type || 'Rm').slice(0, 6)}
+              </text>
+            </g>
+          );
+        })}
+        {/* Info bar */}
+        <text x={fpW * 5 + 20} y={fpH * 10 + 38}
+          textAnchor="middle" fill="#00d4ff99" fontSize="9" fontFamily="monospace">
+          {numFloors} FL · {fpW}×{fpH}m · BLUEPRINT VIEW
+        </text>
+        {/* North arrow */}
+        <text x={fpW * 10 + 14} y="30" textAnchor="middle" fill="#00d4ff" fontSize="10" fontWeight="bold">N</text>
+        <line x1={fpW * 10 + 14} y1="34" x2={fpW * 10 + 14} y2="46" stroke="#00d4ff" strokeWidth="1.5"/>
+        <polygon points={`${fpW * 10 + 14},34 ${fpW * 10 + 11},40 ${fpW * 10 + 17},40`} fill="#00d4ff"/>
+      </svg>
+
+      {/* Warning badge */}
+      <div style={{ textAlign: 'center', maxWidth: 400 }}>
+        <div style={{
+          display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
+          background: 'rgba(255,140,0,0.12)', border: '1px solid rgba(255,140,0,0.6)',
+          borderRadius: '8px', padding: '0.5rem 1rem',
+          fontSize: '0.75rem', color: '#ffb347', fontWeight: 700,
+          marginBottom: '0.75rem', letterSpacing: '0.05em',
+        }}>
+          ⚠ 3D Viewer Unavailable — WebGL Disabled
+        </div>
+        <p style={{ margin: '0 0 1rem', fontSize: '0.73rem', color: '#6a8ca8', lineHeight: 1.7 }}>
+          Hardware acceleration is disabled in your browser. The blueprint above
+          shows your building layout. To restore the 3D view:
+        </p>
+        <div style={{ fontSize: '0.7rem', color: '#4a7a9b', lineHeight: 1.9, textAlign: 'left',
+          background: '#0a1828', border: '1px solid #1e3a5a', borderRadius: '6px',
+          padding: '0.6rem 1rem', display: 'inline-block' }}>
+          <strong style={{ color: '#00d4ff', display: 'block', marginBottom: '0.3rem' }}>Fix in Chrome:</strong>
+          1. Open <code style={{ color: '#7ab4e8' }}>chrome://settings</code><br/>
+          2. Search <em>Hardware acceleration</em><br/>
+          3. Enable <strong style={{ color: '#a0c8e8' }}>"Use graphics acceleration when available"</strong><br/>
+          4. Relaunch Chrome
+        </div>
+      </div>
+    </div>
+  );
+
+  // During SSR / hydration check — render nothing to avoid flicker
+  if (webglState === 'checking') return null;
+
+  // WebGL unavailable — show blueprint fallback, never mount Canvas
+  if (webglState === 'failed') return NoWebGLFallback;
+
+  // WebGL available — mount the 3D canvas
   return (
-    <Canvas
-      key={`${presentationMode}_${threeDMode}`}
-      shadows="soft"
-      gl={{
-        antialias: true,
-        toneMapping: THREE.ACESFilmicToneMapping,
-        toneMappingExposure: 1.1,
-      }}
-      camera={{ position: resolvedCamPos, fov: resolvedFov, near: 0.1, far: 1000 }}
-      style={{ width: '100%', height: '100%' }}
-    >
-      <Suspense fallback={
-        <Html center>
-          <div style={{ color: '#00ff9d', fontWeight: 800, fontSize: '0.8rem', fontFamily: 'Space Grotesk' }}>LOADING 3D VECTOR MATRIX…</div>
-        </Html>
-      }>
-        <Scene
-          blueprint={blueprint}
-          threeDMode={threeDMode}
-          selections={resolvedSelections}
-          showLabels={showLabels}
-          showFurniture={showFurniture}
-          selectedRoom={selectedRoom}
-          onSelectRoom={onSelectRoom}
-          activeFloor={activeFloor}
-          presentationMode={presentationMode}
-          landscapeData={resolvedLandscapeData}
-          styleAnalysis={styleAnalysis}
-          buildingType={buildingType}
-          structuralSystem={structuralSystem}
-          location={location}
-          rainfall={rainfall}
-          salinity={salinity}
-        />
-      </Suspense>
-      <EffectComposer disableNormalPass multisampling={0}>
-        <Bloom luminanceThreshold={1.5} intensity={0.08} radius={0.5} />
-      </EffectComposer>
-    </Canvas>
+    <WebGLErrorBoundary fallback={NoWebGLFallback}>
+      <Canvas
+        key={`${presentationMode}_${threeDMode}`}
+        shadows="soft"
+        gl={{
+          antialias: true,
+          toneMapping: THREE.ACESFilmicToneMapping,
+          toneMappingExposure: 1.1,
+          failIfMajorPerformanceCaveat: false,
+        }}
+        camera={{ position: resolvedCamPos, fov: resolvedFov, near: 0.1, far: 1000 }}
+        style={{ width: '100%', height: '100%' }}
+      >
+        <Suspense fallback={
+          <Html center>
+            <div style={{ color: '#00ff9d', fontWeight: 800, fontSize: '0.8rem', fontFamily: 'Space Grotesk' }}>LOADING 3D VECTOR MATRIX…</div>
+          </Html>
+        }>
+          <Scene
+            blueprint={blueprint}
+            threeDMode={threeDMode}
+            selections={resolvedSelections}
+            showLabels={showLabels}
+            showFurniture={showFurniture}
+            selectedRoom={selectedRoom}
+            onSelectRoom={onSelectRoom}
+            activeFloor={activeFloor}
+            presentationMode={presentationMode}
+            landscapeData={resolvedLandscapeData}
+            styleAnalysis={styleAnalysis}
+            buildingType={buildingType}
+            structuralSystem={structuralSystem}
+            location={location}
+            rainfall={rainfall}
+            salinity={salinity}
+          />
+        </Suspense>
+        <EffectComposer disableNormalPass multisampling={0}>
+          <Bloom luminanceThreshold={1.5} intensity={0.08} radius={0.5} />
+        </EffectComposer>
+      </Canvas>
+    </WebGLErrorBoundary>
   );
 }
 

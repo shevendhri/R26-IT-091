@@ -386,6 +386,7 @@ class MaterialSpecificationEngine:
             "packages": packages_data,
             "blueprint": blueprint,
             "formula": "Final Score = 0.75 × Engineering (Constraint Engine) + 0.25 × ML",
+            "disclaimer": "GreenConstructAI provides preliminary decision support and does not replace detailed structural design, architectural approval, quantity surveying, or professional engineering certification.",
             "future_roadmap": {
                 "description": "3D Material Visualization Pipeline via Planner5D Integration",
                 "steps": [
