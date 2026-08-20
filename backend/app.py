@@ -59,6 +59,14 @@ from audit_engine import audit_engine
 from material_specification_engine import material_specification_engine as spec_engine
 from spatial_program_engine import generate_spatial_program
 from building_program_engine import generate_building_program
+
+# ── Auto-train ML models on first deploy (if .pkl files are missing) ─────────
+try:
+    from ml.ensure_models import ensure_models
+    ensure_models()
+except Exception as e:
+    print(f"[app] WARNING: Model auto-training skipped: {e}")
+
 # Initialize FastAPI app
 app = FastAPI(title="GreenConstructAI - Engineering Design Assistant v1.0")
 
