@@ -1,7 +1,13 @@
 import sys, os
-project_root = r"C:/Users/ASUS/Desktop/Material specification"
-if project_root not in sys.path:
-    sys.path.insert(0, project_root)
+from pathlib import Path
+
+backend_dir = Path(__file__).resolve().parent
+project_root = backend_dir.parent
+
+if str(backend_dir) not in sys.path:
+    sys.path.insert(0, str(backend_dir))
+if str(project_root) not in sys.path:
+    sys.path.insert(0, str(project_root))
 
 from fastapi import FastAPI, File, UploadFile, Form, HTTPException, Request, Query, Body
 from fastapi.middleware.cors import CORSMiddleware
