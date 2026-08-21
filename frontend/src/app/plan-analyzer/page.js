@@ -124,7 +124,7 @@ export default function PlanAnalyzer() {
     formData.append("building_type", buildingType);
     formData.append("structural_system", structuralSystem);
     formData.append("floor_count", floorCount);
-    const API_BASE = process.env.NEXT_PUBLIC_API_BASE || 'http://localhost:5000';
+    const API_BASE = process.env.NEXT_PUBLIC_API_BASE ?? (typeof window !== 'undefined' && window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1' ? '' : 'http://localhost:5000');
     try {
       const res = await fetch(`${API_BASE}/api/analyze-blueprint`, {
         method: "POST",

@@ -7,7 +7,7 @@ import XAIPanel from './Recommendation/XAIPanel';
  * - blueprint, location, profile: passed from workspace
  * - onComplete: called to proceed to Step 7 (3D Concept)
  */
-const API_BASE = process.env.NEXT_PUBLIC_API_BASE || 'http://localhost:5000';
+const API_BASE = process.env.NEXT_PUBLIC_API_BASE ?? (typeof window !== 'undefined' && window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1' ? '' : 'http://localhost:5000');
 
 export default function MaterialSelectionDashboard({ blueprint, location, profile, selections, setSelections, onComplete }) {
   const [alternatives, setAlternatives] = useState(null);
