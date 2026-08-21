@@ -227,49 +227,73 @@ def _explain_with_importance(feature_vec, project_features,
 # Agreement Level
 # ============================================================================
 def compute_agreement_level(engineering_score: float,
-                            ml_probability: float) -> Dict[str, Any]:
-    """Compute the Engineering-ML agreement level.
+                            ml_recommendation_score: float,
+                            ml_confidence: Optional[float] = None) -> Dict[str, Any]:
+    """Compute the Engineering-ML agreement level using comparable suitability scores.
 
     Parameters
     ----------
-    engineering_score : float (0-100)
-    ml_probability : float (0-100)
+    engineering_score : float (0-100 suitability)
+    ml_recommendation_score : float (0-100 ML suitability)
+    ml_confidence : float (0-100 ML confidence), optional
 
     Returns
     -------
     dict with:
         - agreement_level: 'High', 'Medium', or 'Low'
-        - score_difference: absolute difference
-        - description: human-readable explanation
+        - confidence_level: 'High', 'Medium', or 'Low'
+        - score_difference: absolute difference between suitability scores
+        - engineering_led: boolean fallback trigger flag
+        - description: context-aware explanation string
     """
-    diff = abs(engineering_score - ml_probability)
+    diff = abs(engineering_score - ml_recommendation_score)
 
-    if diff <= 15:
+    if diff <= 10.0:
         level = 'High'
-        description = (
-            f"Engineering rules ({engineering_score:.1f}) and ML prediction "
-            f"({ml_probability:.1f}) are in strong agreement. "
-            f"Both systems independently confirm this recommendation."
-        )
-    elif diff <= 30:
+    elif diff <= 25.0:
         level = 'Medium'
-        description = (
-            f"Moderate divergence ({diff:.1f} pts) between engineering "
-            f"({engineering_score:.1f}) and ML ({ml_probability:.1f}). "
-            f"This may indicate edge-case material-climate interaction."
-        )
     else:
         level = 'Low'
-        higher = 'Engineering' if engineering_score > ml_probability else 'ML'
+
+    conf = ml_confidence if ml_confidence is not None else ml_recommendation_score
+    if conf >= 70.0:
+        conf_level = 'High'
+    elif conf >= 40.0:
+        conf_level = 'Medium'
+    else:
+        conf_level = 'Low'
+
+    is_engineering_led = (conf < 40.0 or level == 'Low')
+
+    # Context-aware explanation text (CASE 1 - CASE 4)
+    if conf < 40.0 and engineering_score >= 70.0:
         description = (
-            f"Significant divergence ({diff:.1f} pts): {higher} scores higher. "
-            f"This may indicate limited training data for this material in "
-            f"this specific climate/structural configuration."
+            "Engineering-led recommendation: deterministic engineering criteria "
+            "strongly support this material. The ML model has low confidence, "
+            "so its influence is reduced."
+        )
+    elif level == 'High':
+        description = (
+            "High agreement: deterministic engineering evaluation and ML pattern "
+            "inference produce similar suitability assessments."
+        )
+    elif conf >= 40.0 and level == 'Low':
+        description = (
+            "Review recommended: the ML model strongly favours a different pattern, "
+            "but deterministic engineering evaluation differs. Engineering constraints "
+            "remain authoritative."
+        )
+    else:
+        description = (
+            "Hybrid recommendation: engineering validation and ML inference are "
+            "consistent, with sufficient ML confidence."
         )
 
     return {
         'agreement_level': level,
+        'confidence_level': conf_level,
         'score_difference': round(diff, 1),
+        'engineering_led': is_engineering_led,
         'description': description,
     }
 

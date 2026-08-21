@@ -124,8 +124,9 @@ export default function PlanAnalyzer() {
     formData.append("building_type", buildingType);
     formData.append("structural_system", structuralSystem);
     formData.append("floor_count", floorCount);
+    const API_BASE = process.env.NEXT_PUBLIC_API_BASE || 'http://localhost:5000';
     try {
-      const res = await fetch("http://localhost:5000/api/analyze-blueprint", {
+      const res = await fetch(`${API_BASE}/api/analyze-blueprint`, {
         method: "POST",
         body: formData
       });
@@ -137,7 +138,7 @@ export default function PlanAnalyzer() {
       }
     } catch (err) {
       console.error(err);
-      setError("Analysis Service Offline. Ensure backend is running at http://localhost:5000.");
+      setError(`Analysis Service Offline. Ensure backend is running at ${API_BASE}.`);
     } finally {
       setLoading(false);
     }

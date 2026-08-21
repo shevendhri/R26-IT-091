@@ -468,6 +468,62 @@ class RecommendationEngine:
         except Exception as e:
             print(f"Failed to load dataset: {e}")
 
+    @staticmethod
+    def _map_material_name_to_dataset(name: str, category: str) -> str:
+        """Map database material product names to dataset categorical feature strings."""
+        DATASET_MATERIAL_NAMES = {
+            'Paint Systems', 'Cement Plaster', 'Timber Window', 'Aluminium Sliding Door',
+            'ACP Panels', 'Ceramic Tile', 'Corrugated Aluminium Sheet', 'Curtain Wall Systems',
+            'Steel Rebar', 'Lime Cement Render', 'Insulated Sandwich Panels', 'Asphalt Shingles',
+            'AAC Block', 'Reinforced Concrete Grade 30', 'Clay Roof Tile', 'Timber Door',
+            'Reinforced Concrete Grade 25', 'Mass Concrete', 'Gypsum Board', 'Porcelain Tile',
+            'Aluminium Window', 'Concrete Roof Tile', 'Cement Block', 'uPVC Window',
+            'Fire Rated Door', 'Stabilized Earth Block', 'Color-Coated Steel Roofing',
+            'Reinforced Concrete Grade 20', 'Precast Concrete', 'Burnt Clay Brick',
+            'Terrazzo', 'Structural Steel', 'Interlocking Block'
+        }
+        if name in DATASET_MATERIAL_NAMES:
+            return name
+
+        n_lower = (name or '').lower()
+        c_lower = (category or '').lower()
+
+        if 'rebar' in n_lower or ('steel' in n_lower and 'structural' in c_lower):
+            return 'Steel Rebar'
+        if 'concrete' in n_lower or 'foundation' in c_lower or 'concrete' in c_lower:
+            if '25' in n_lower: return 'Reinforced Concrete Grade 25'
+            if '20' in n_lower: return 'Reinforced Concrete Grade 20'
+            return 'Reinforced Concrete Grade 30'
+        if 'brick' in n_lower or 'burnt' in n_lower:
+            return 'Burnt Clay Brick'
+        if 'block' in n_lower:
+            if 'aac' in n_lower: return 'AAC Block'
+            if 'earth' in n_lower or 'cseb' in n_lower: return 'Stabilized Earth Block'
+            return 'Cement Block'
+        if 'roof' in n_lower or 'tile' in n_lower or 'sheet' in n_lower or 'roofing' in c_lower:
+            if 'clay' in n_lower or 'terracotta' in n_lower: return 'Clay Roof Tile'
+            if 'aluminium' in n_lower or 'zinc' in n_lower: return 'Corrugated Aluminium Sheet'
+            return 'Concrete Roof Tile'
+        if 'window' in n_lower or 'windows' in c_lower:
+            if 'upvc' in n_lower: return 'uPVC Window'
+            if 'timber' in n_lower: return 'Timber Window'
+            return 'Aluminium Window'
+        if 'door' in n_lower or 'doors' in c_lower:
+            if 'timber' in n_lower or 'wood' in n_lower: return 'Timber Door'
+            if 'fire' in n_lower: return 'Fire Rated Door'
+            return 'Aluminium Sliding Door'
+        if 'tile' in n_lower or 'floor' in n_lower or 'flooring' in c_lower:
+            if 'porcelain' in n_lower or 'gvt' in n_lower: return 'Porcelain Tile'
+            if 'terrazzo' in n_lower: return 'Terrazzo'
+            return 'Ceramic Tile'
+        if 'ceiling' in c_lower or 'board' in n_lower:
+            return 'Gypsum Board'
+        if 'paint' in n_lower or 'emulsion' in n_lower or 'finishing' in c_lower:
+            return 'Paint Systems'
+        if 'waterproof' in c_lower:
+            return 'Cement Plaster'
+        return 'Reinforced Concrete Grade 30'
+
     def _get_ml_score(self, material_category: str, material_id: int, climate: Dict[str, Any], b_type: str, budget: float = 0.0,
                       floor_count: int = 1, total_area: float = 100.0, structural_system: str = "Concrete Frame",
                       sustainability_pref: str = "Medium", mat: Dict[str, Any] = None) -> tuple:
@@ -502,9 +558,12 @@ class RecommendationEngine:
                 'humidity_exposure': 1 if float(str(climate.get('humidity', 70)).replace('%', '')) > 75 else 0,
             }
 
+            # Map database material name to dataset category for encoder consistency
+            mapped_name = self._map_material_name_to_dataset(mat.get('Name', ''), mat.get('Category', material_category))
+
             # Build material features dict from the material row
             material_features = {
-                'material_name': mat.get('Name', ''),
+                'material_name': mapped_name,
                 'category': mat.get('Category', material_category),
                 'subcategory': mat.get('Subcategory', ''),
                 'building_phase': mat.get('Building_Phase', 'Superstructure'),
@@ -656,7 +715,7 @@ class RecommendationEngine:
                 weight_info = {'reason': 'ml_unavailable'}
             else:
                 final_score, weight_info = calculate_hybrid_score(
-                    eng_score, ml_score, vetoed=is_vetoed, ml_probability=ml_probability
+                    eng_score, ml_score, vetoed=is_vetoed, ml_probability=ml_probability, return_details=True
                 )
 
             if final_score is not None and not is_vetoed:
@@ -677,7 +736,7 @@ class RecommendationEngine:
                 
             if final_score is not None and ml_score is not None:
                 # Recalculate hybrid score to verify consistency
-                expected, _ = calculate_hybrid_score(eng_score, ml_score, vetoed=is_vetoed, ml_probability=ml_probability)
+                expected, _ = calculate_hybrid_score(eng_score, ml_score, vetoed=is_vetoed, ml_probability=ml_probability, return_details=True)
                 # If validation_severity caused a penalty, adjust expected so it matches
                 if validation_severity == "medium" and not is_vetoed:
                     expected = (expected or 0) * 0.8
@@ -770,42 +829,36 @@ class RecommendationEngine:
             sm["trade_offs"] = xai["trade_offs"]
             sm["why_not_comparison"] = xai["why_not_comparison"]
 
-            # Disagreement detection: flag if |eng_score - ml_score| >= 20
-            eng_s = sm.get("eng_score") or 0
-            ml_s = sm.get("ml_score") or 0
-            if sm.get("ml_score") is not None and abs(eng_s - ml_s) >= 20:
-                direction = "Engineering rules score higher than ML prediction" if eng_s > ml_s else "ML prediction score higher than Engineering validation"
-                sm["disagreement_explanation"] = (
-                    f"Score divergence detected ({abs(eng_s - ml_s):.1f} pts): {direction}. "
-                    f"This may indicate limited historical training data for this material in this climate zone, "
-                    f"or a novel specification not yet captured by the training dataset."
-                )
-            else:
-                sm["disagreement_explanation"] = None
+            # Disagreement detection using compute_agreement_level
+            from backend.inference.explainability import compute_agreement_level
+            eng_s = sm.get("eng_score") or 0.0
+            ml_s = sm.get("ml_score") or 0.0
+            ml_c = sm.get("ml_confidence") if sm.get("ml_confidence") is not None else ml_s
+
+            agreement_calc = compute_agreement_level(eng_s, ml_s, ml_c)
+            sm["agreement"] = agreement_calc["agreement_level"]
+            sm["disagreement_explanation"] = agreement_calc["description"]
             
             if is_vetoed:
                 public_rationale = f"VETOED by Engineering validation:\n" + "\n".join([f"- {r}" for r in cleaned_reasons])
                 global_reasoning.extend(cleaned_reasons)
             else:
-                eng_val = sm.get("eng_score") or 0.0
-                ml_val = sm.get("ml_score") or 0.0
-                diff = abs(eng_val - ml_val)
-                agreement_str = "HIGH" if diff < 15 else "MEDIUM" if diff < 30 else "LOW"
+                agreement_str = agreement_calc["agreement_level"].upper()
 
                 eng_points = []
                 if sel_reason.get("climate"):
-                    eng_points.append(f"\u2713 {sel_reason['climate']}")
+                    eng_points.append(f"✓ {sel_reason['climate']}")
                 if sel_reason.get("durability"):
-                    eng_points.append(f"\u2713 {sel_reason['durability']}")
+                    eng_points.append(f"✓ {sel_reason['durability']}")
                 if sel_reason.get("sustainability"):
-                    eng_points.append(f"\u2713 {sel_reason['sustainability']}")
+                    eng_points.append(f"✓ {sel_reason['sustainability']}")
                 eng_points_str = "\n".join(eng_points[:3])
 
                 public_rationale = (
                     f"Engineering selected this material because:\n"
                     f"{eng_points_str}\n"
                     f"Machine Learning confidence:\n"
-                    f"{round(ml_val)}%\n"
+                    f"{round(ml_c)}%\n"
                     f"Historical projects with similar characteristics frequently selected this specification.\n"
                     f"Agreement:\n"
                     f"{agreement_str}"
@@ -1324,21 +1377,21 @@ class RecommendationEngine:
                 quality = "Acceptable"
 
             # Determine Engineering-Led Recommendation & ML agreement status
-            diff = abs(eng_score_val - ml_score_val)
-            agreement_level = "High" if diff < 15 else "Medium" if diff < 30 else "Low"
+            from backend.inference.explainability import compute_agreement_level
+            eng_score_val = best["eng_score"] if best["eng_score"] is not None else 0.0
+            ml_score_val = best["ml_score"] if best["ml_score"] is not None else 0.0
+            ml_conf_val = best.get("ml_confidence") if best.get("ml_confidence") is not None else ml_score_val
 
-            if ml_score_val < 40 or diff >= 20:
+            agreement_calc = compute_agreement_level(eng_score_val, ml_score_val, ml_conf_val)
+            agreement_level = agreement_calc["agreement_level"]
+            disagreement_explanation = agreement_calc["description"]
+
+            if agreement_calc["engineering_led"]:
                 rec_type = "ENGINEERING-LED RECOMMENDATION"
                 rec_badge = "Engineering-Led Specification"
-                disagreement_explanation = (
-                    "The deterministic engineering rules strongly support this specification, "
-                    "while the ML model has lower confidence. The recommendation is therefore driven "
-                    "primarily by the SLS-referenced engineering-rule evaluation."
-                )
             else:
                 rec_type = "HYBRID RECOMMENDATION"
                 rec_badge = "Hybrid Validated"
-                disagreement_explanation = None
 
             # Resolve application-specific quantity takeoff
             takeoff = MaterialQuantityEngine.resolve_material_takeoff(
@@ -1349,7 +1402,7 @@ class RecommendationEngine:
 
             # Generate ML explainability for the chosen material
             try:
-                from backend.inference.explainability import explain_prediction, compute_agreement_level
+                from backend.inference.explainability import explain_prediction
                 
                 mat_row = best["material"]
                 proj_feat = {
@@ -1380,9 +1433,6 @@ class RecommendationEngine:
                 }
                 
                 ml_xai = explain_prediction(proj_feat, mat_feat, top_n=5)
-                agreement_calc = compute_agreement_level(best["eng_score"] or 0.0, best["ml_score"] or 0.0)
-                if agreement_calc and agreement_calc.get("agreement_level"):
-                    agreement_level = agreement_calc.get("agreement_level")
             except Exception as e:
                 ml_xai = {'ml_top_features': [], 'explanation_method': 'error'}
                 print(f"[XAI] Failed to generate explanation: {e}")

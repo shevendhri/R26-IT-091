@@ -46,7 +46,8 @@ def calculate_hybrid_score(
     ml_score: float | None,
     vetoed: bool = False,
     ml_probability: float | None = None,
-) -> tuple[float | None, dict]:
+    return_details: bool = False,
+) -> float | tuple[float | None, dict] | None:
     """Return the hybrid score using adaptive confidence-based weighting.
 
     Rules (v3.0):
@@ -63,18 +64,17 @@ def calculate_hybrid_score(
 
     * When ``ml_probability`` is None, falls back to the
       ``HYBRID_ENGINEERING_WEIGHT`` environment variable (default 0.70).
-    * Returns a tuple ``(score, weight_info)`` where ``weight_info`` is a
-      dict describing which weights were applied and why.
+    * If ``return_details`` is True, returns ``(score, weight_info)``. Otherwise returns ``score``.
     """
     if vetoed:
         weight_info = {
             'eng_weight': 1.0, 'ml_weight': 0.0,
             'reason': 'engineering_veto', 'ml_probability': ml_probability,
         }
-        return 0.0, weight_info
+        return (0.0, weight_info) if return_details else 0.0
 
     if eng_score is None or ml_score is None:
-        return None, {}
+        return (None, {}) if return_details else None
 
     # Adaptive weighting based on ML prediction confidence
     if ml_probability is not None:
@@ -109,7 +109,7 @@ def calculate_hybrid_score(
         'reason': reason,
         'ml_probability': ml_probability,
     }
-    return score, weight_info
+    return (score, weight_info) if return_details else score
 
 # ---------------------------------------------------------------------------
 # Marine‑grade need detection

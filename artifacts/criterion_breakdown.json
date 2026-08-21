@@ -21,12 +21,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 15.0,
         "normalized_weight": 0.15,
-        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
-        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -98,12 +98,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
+        "score": 35.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 5.25,
         "normalized_weight": 0.15,
-        "notes": "Evaluated against preliminary engineering criteria",
-        "reason": "Evaluated against preliminary engineering criteria",
+        "notes": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
+        "reason": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -175,12 +175,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 15.0,
         "normalized_weight": 0.15,
-        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
-        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -252,12 +252,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 55.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 8.25,
+        "contribution": 15.0,
         "normalized_weight": 0.15,
-        "notes": "Marginal preliminary compliance",
-        "reason": "Marginal preliminary compliance",
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -329,12 +329,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 15.0,
         "normalized_weight": 0.15,
-        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
-        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -406,12 +406,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 15.0,
         "normalized_weight": 0.15,
-        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
-        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -483,12 +483,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
+        "score": 35.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 5.25,
         "normalized_weight": 0.15,
-        "notes": "Evaluated against preliminary engineering criteria",
-        "reason": "Evaluated against preliminary engineering criteria",
+        "notes": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
+        "reason": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -560,12 +560,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 15.0,
         "normalized_weight": 0.15,
-        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
-        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -637,12 +637,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 55.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 8.25,
+        "contribution": 15.0,
         "normalized_weight": 0.15,
-        "notes": "Marginal preliminary compliance",
-        "reason": "Marginal preliminary compliance",
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -714,12 +714,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
+        "score": 35.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 5.25,
         "normalized_weight": 0.15,
-        "notes": "Evaluated against preliminary engineering criteria",
-        "reason": "Evaluated against preliminary engineering criteria",
+        "notes": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
+        "reason": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -791,12 +791,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 15.0,
         "normalized_weight": 0.15,
-        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
-        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -868,12 +868,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 55.0,
+        "score": 20.0,
         "max": 15.0,
-        "contribution": 8.25,
+        "contribution": 3.0,
         "normalized_weight": 0.15,
-        "notes": "Marginal preliminary compliance",
-        "reason": "Marginal preliminary compliance",
+        "notes": "FAIL: Unsuitable climate profile (Zone: dry zone tropical arid)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: dry zone tropical arid)",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -945,12 +945,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
+        "score": 35.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 5.25,
         "normalized_weight": 0.15,
-        "notes": "Evaluated against preliminary engineering criteria",
-        "reason": "Evaluated against preliminary engineering criteria",
+        "notes": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
+        "reason": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -1022,12 +1022,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
+        "score": 35.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 5.25,
         "normalized_weight": 0.15,
-        "notes": "Evaluated against preliminary engineering criteria",
-        "reason": "Evaluated against preliminary engineering criteria",
+        "notes": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
+        "reason": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -1099,12 +1099,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 15.0,
         "normalized_weight": 0.15,
-        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
-        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -1176,12 +1176,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 15.0,
         "normalized_weight": 0.15,
-        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
-        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -1253,12 +1253,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 15.0,
         "normalized_weight": 0.15,
-        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
-        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -1330,12 +1330,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 15.0,
         "normalized_weight": 0.15,
-        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
-        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -1407,12 +1407,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 15.0,
         "normalized_weight": 0.15,
-        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
-        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -1484,12 +1484,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 15.0,
         "normalized_weight": 0.15,
-        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
-        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -1561,12 +1561,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
+        "score": 35.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 5.25,
         "normalized_weight": 0.2,
-        "notes": "Evaluated against preliminary engineering criteria",
-        "reason": "Evaluated against preliminary engineering criteria",
+        "notes": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
+        "reason": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -1638,12 +1638,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 35.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 5.25,
         "normalized_weight": 0.2,
-        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
-        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "notes": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
+        "reason": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -1715,12 +1715,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
-        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
-        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -1792,12 +1792,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
-        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
-        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -1869,12 +1869,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
+        "score": 35.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 5.25,
         "normalized_weight": 0.2,
-        "notes": "Evaluated against preliminary engineering criteria",
-        "reason": "Evaluated against preliminary engineering criteria",
+        "notes": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
+        "reason": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -1946,12 +1946,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 35.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 5.25,
         "normalized_weight": 0.2,
-        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
-        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "notes": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
+        "reason": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -2023,12 +2023,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
-        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
-        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -2100,12 +2100,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 55.0,
+        "score": 20.0,
         "max": 15.0,
-        "contribution": 8.25,
+        "contribution": 3.0,
         "normalized_weight": 0.2,
-        "notes": "Marginal preliminary compliance",
-        "reason": "Marginal preliminary compliance",
+        "notes": "FAIL: Unsuitable climate profile (Zone: dry zone tropical arid)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: dry zone tropical arid)",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -2177,12 +2177,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
+        "score": 35.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 5.25,
         "normalized_weight": 0.2,
-        "notes": "Evaluated against preliminary engineering criteria",
-        "reason": "Evaluated against preliminary engineering criteria",
+        "notes": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
+        "reason": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -2254,12 +2254,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
+        "score": 35.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 5.25,
         "normalized_weight": 0.2,
-        "notes": "Evaluated against preliminary engineering criteria",
-        "reason": "Evaluated against preliminary engineering criteria",
+        "notes": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
+        "reason": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -2331,12 +2331,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
-        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
-        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -2408,12 +2408,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 55.0,
+        "score": 20.0,
         "max": 15.0,
-        "contribution": 8.25,
+        "contribution": 3.0,
         "normalized_weight": 0.2,
-        "notes": "Marginal preliminary compliance",
-        "reason": "Marginal preliminary compliance",
+        "notes": "FAIL: Unsuitable climate profile (Zone: dry zone tropical arid)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: dry zone tropical arid)",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -2485,12 +2485,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
+        "score": 35.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 5.25,
         "normalized_weight": 0.2,
-        "notes": "Evaluated against preliminary engineering criteria",
-        "reason": "Evaluated against preliminary engineering criteria",
+        "notes": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
+        "reason": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -2562,12 +2562,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
+        "score": 35.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 5.25,
         "normalized_weight": 0.2,
-        "notes": "Evaluated against preliminary engineering criteria",
-        "reason": "Evaluated against preliminary engineering criteria",
+        "notes": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
+        "reason": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -2639,12 +2639,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
-        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
-        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -2716,12 +2716,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
+        "score": 35.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 5.25,
         "normalized_weight": 0.2,
-        "notes": "Evaluated against preliminary engineering criteria",
-        "reason": "Evaluated against preliminary engineering criteria",
+        "notes": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
+        "reason": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -2793,12 +2793,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
+        "score": 35.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 5.25,
         "normalized_weight": 0.2,
-        "notes": "Evaluated against preliminary engineering criteria",
-        "reason": "Evaluated against preliminary engineering criteria",
+        "notes": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
+        "reason": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -2870,12 +2870,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
-        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
-        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -2947,12 +2947,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
-        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
-        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -3024,12 +3024,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
-        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
-        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -3101,12 +3101,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
+        "score": 35.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 5.25,
         "normalized_weight": 0.2,
-        "notes": "Evaluated against preliminary engineering criteria",
-        "reason": "Evaluated against preliminary engineering criteria",
+        "notes": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
+        "reason": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -3178,12 +3178,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
-        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
-        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -3255,12 +3255,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 55.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 8.25,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
-        "notes": "Marginal preliminary compliance",
-        "reason": "Marginal preliminary compliance",
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -3332,12 +3332,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
-        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
-        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -3409,12 +3409,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
-        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
-        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -3486,12 +3486,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 55.0,
+        "score": 20.0,
         "max": 15.0,
-        "contribution": 8.25,
+        "contribution": 3.0,
         "normalized_weight": 0.2,
-        "notes": "Marginal preliminary compliance",
-        "reason": "Marginal preliminary compliance",
+        "notes": "FAIL: Unsuitable climate profile (Zone: dry zone tropical arid)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: dry zone tropical arid)",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -3563,12 +3563,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 55.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 8.25,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
-        "notes": "Marginal preliminary compliance",
-        "reason": "Marginal preliminary compliance",
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -3640,12 +3640,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
+        "score": 35.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 5.25,
         "normalized_weight": 0.2,
-        "notes": "Evaluated against preliminary engineering criteria",
-        "reason": "Evaluated against preliminary engineering criteria",
+        "notes": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
+        "reason": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -3717,12 +3717,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
-        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
-        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -3794,12 +3794,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
-        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
-        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -3871,12 +3871,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 55.0,
+        "score": 20.0,
         "max": 15.0,
-        "contribution": 8.25,
+        "contribution": 3.0,
         "normalized_weight": 0.2,
-        "notes": "Marginal preliminary compliance",
-        "reason": "Marginal preliminary compliance",
+        "notes": "FAIL: Unsuitable climate profile (Zone: dry zone tropical arid)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: dry zone tropical arid)",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -3948,12 +3948,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 55.0,
+        "score": 20.0,
         "max": 15.0,
-        "contribution": 8.25,
+        "contribution": 3.0,
         "normalized_weight": 0.2,
-        "notes": "Marginal preliminary compliance",
-        "reason": "Marginal preliminary compliance",
+        "notes": "FAIL: Unsuitable climate profile (Zone: dry zone tropical arid)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: dry zone tropical arid)",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -4025,12 +4025,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
+        "score": 35.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 5.25,
         "normalized_weight": 0.2,
-        "notes": "Evaluated against preliminary engineering criteria",
-        "reason": "Evaluated against preliminary engineering criteria",
+        "notes": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
+        "reason": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -4102,12 +4102,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
-        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
-        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -4179,12 +4179,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
+        "score": 35.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 5.25,
         "normalized_weight": 0.2,
-        "notes": "Evaluated against preliminary engineering criteria",
-        "reason": "Evaluated against preliminary engineering criteria",
+        "notes": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
+        "reason": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -4256,12 +4256,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 55.0,
+        "score": 20.0,
         "max": 15.0,
-        "contribution": 8.25,
+        "contribution": 3.0,
         "normalized_weight": 0.2,
-        "notes": "Marginal preliminary compliance",
-        "reason": "Marginal preliminary compliance",
+        "notes": "FAIL: Unsuitable climate profile (Zone: dry zone tropical arid)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: dry zone tropical arid)",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -4333,12 +4333,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 55.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 8.25,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
-        "notes": "Marginal preliminary compliance",
-        "reason": "Marginal preliminary compliance",
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -4410,12 +4410,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
+        "score": 35.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 5.25,
         "normalized_weight": 0.2,
-        "notes": "Evaluated against preliminary engineering criteria",
-        "reason": "Evaluated against preliminary engineering criteria",
+        "notes": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
+        "reason": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -4491,8 +4491,8 @@
         "max": 15.0,
         "contribution": 3.0,
         "normalized_weight": 0.2,
-        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
-        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "notes": "FAIL: Unsuitable climate profile (Zone: dry zone tropical arid)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: dry zone tropical arid)",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -4564,12 +4564,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
+        "score": 35.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 5.25,
         "normalized_weight": 0.2,
-        "notes": "Evaluated against preliminary engineering criteria",
-        "reason": "Evaluated against preliminary engineering criteria",
+        "notes": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
+        "reason": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -4641,12 +4641,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
-        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
-        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -4718,12 +4718,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
-        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
-        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "occupancy_requirements": {
