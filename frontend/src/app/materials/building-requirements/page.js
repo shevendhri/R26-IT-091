@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from 'react';
+import LazyAiHint from '@/components/UI/LazyAiHint.jsx';
 import { useRouter } from 'next/navigation';
 import { useMaterial } from '@/context/MaterialContext';
 import Header from '@/components/Header';
@@ -160,21 +161,7 @@ function SectionHeader({ icon, title, subtitle }) {
   );
 }
 
-function AiHint({ color, children }) {
-  const colors = {
-    green:  { bg: 'rgba(0,255,157,0.06)', border: 'rgba(0,255,157,0.2)', text: 'rgba(0,255,157,0.9)' },
-    blue:   { bg: 'rgba(96,165,250,0.06)', border: 'rgba(96,165,250,0.2)', text: 'rgba(96,165,250,0.9)' },
-    amber:  { bg: 'rgba(245,158,11,0.06)', border: 'rgba(245,158,11,0.2)', text: 'rgba(245,158,11,0.9)' },
-    cyan:   { bg: 'rgba(6,182,212,0.06)',  border: 'rgba(6,182,212,0.2)',  text: 'rgba(6,182,212,0.9)' },
-    red:    { bg: 'rgba(239,68,68,0.07)',  border: 'rgba(239,68,68,0.25)', text: 'rgba(239,68,68,0.9)' },
-  };
-  const c = colors[color] || colors.green;
-  return (
-    <div style={{ marginTop: '0.5rem', marginBottom: '0.6rem', padding: '0.6rem 0.9rem', background: c.bg, border: `1px solid ${c.border}`, borderRadius: '8px', fontSize: '0.72rem', color: c.text }}>
-      {children}
-    </div>
-  );
-}
+
 
 /* ══════════════════════════════════════════════════════════════
    Dynamic section renderers (one per building group)
@@ -203,8 +190,8 @@ function ResidentialSections({ data, set }) {
           <Field label="Elderly Occupants"><input type="number" min="0" max="20" className={FS.input} value={data.elderly_occupants} onChange={e => set('elderly_occupants', +e.target.value)} /></Field>
           <Field label="Children (under 12)"><input type="number" min="0" max="20" className={FS.input} value={data.children_count} onChange={e => set('children_count', +e.target.value)} /></Field>
         </div>
-        {data.elderly_occupants > 0 && <AiHint color="green">💡 AI will recommend non-slip flooring and accessibility-friendly finishes.</AiHint>}
-        {data.children_count > 0 && <AiHint color="blue">💡 AI will prioritise rounded-edge finishes and low-VOC, child-safe materials.</AiHint>}
+        {data.elderly_occupants > 0 && <LazyAiHint color="green">💡 AI will recommend non-slip flooring and accessibility-friendly finishes.</LazyAiHint>}
+        {data.children_count > 0 && <LazyAiHint color="blue">💡 AI will prioritise rounded-edge finishes and low-VOC, child-safe materials.</LazyAiHint>}
       </div>
 
       <div className="glass-card" style={{ marginBottom: '1.25rem' }}>
@@ -217,8 +204,8 @@ function ResidentialSections({ data, set }) {
         <SectionHeader icon="⚡" title="Green Utilities" subtitle="Energy and water systems" />
         <Toggle label="Solar Panel Ready" value={data.solar_ready} onChange={v => set('solar_ready', v)} desc="Roof will be optimised for PV panel installation" />
         <Toggle label="Rainwater Harvesting" value={data.rainwater_harvesting} onChange={v => set('rainwater_harvesting', v)} desc="Roof material selected for water collection compatibility" />
-        {data.solar_ready && <AiHint color="amber">☀️ Roofing materials will be optimised for PV load bearing and thermal performance.</AiHint>}
-        {data.rainwater_harvesting && <AiHint color="cyan">💧 Roof material will be selected for water-collection compatibility and non-toxicity.</AiHint>}
+        {data.solar_ready && <LazyAiHint color="amber">☀️ Roofing materials will be optimised for PV load bearing and thermal performance.</LazyAiHint>}
+        {data.rainwater_harvesting && <LazyAiHint color="cyan">💧 Roof material will be selected for water-collection compatibility and non-toxicity.</LazyAiHint>}
       </div>
 
       <div className="glass-card" style={{ marginBottom: '1.25rem' }}>
@@ -242,7 +229,7 @@ function ResidentialSections({ data, set }) {
             </select>
           </Field>
         </div>
-        {data.cross_ventilation === 'High' && <AiHint color="cyan">🪟 Larger window apertures and louvre systems will be recommended.</AiHint>}
+        {data.cross_ventilation === 'High' && <LazyAiHint color="cyan">🪟 Larger window apertures and louvre systems will be recommended.</LazyAiHint>}
       </div>
 
       <div className="glass-card" style={{ marginBottom: '1.25rem' }}>
@@ -252,7 +239,7 @@ function ResidentialSections({ data, set }) {
             {['None', 'Add a Floor (Vertical)', 'Extend Outward (Horizontal)', 'Both'].map(o => <option key={o}>{o}</option>)}
           </select>
         </Field>
-        {data.future_expansion !== 'None' && <AiHint color="green">🏗️ Higher structural safety factor will be applied in material selection.</AiHint>}
+        {data.future_expansion !== 'None' && <LazyAiHint color="green">🏗️ Higher structural safety factor will be applied in material selection.</LazyAiHint>}
       </div>
     </>
   );
@@ -322,7 +309,7 @@ function IndustrialSections({ data, set }) {
         <Toggle label="Heavy Machinery" value={data.heavy_machinery} onChange={v => set('heavy_machinery', v)} desc="Reinforced slab and vibration-damping flooring" />
         <Toggle label="Heavy Vehicle Access" value={data.heavy_vehicle_access} onChange={v => set('heavy_vehicle_access', v)} />
         <Toggle label="Chemical / Hazmat Storage" value={data.chemical_storage} onChange={v => set('chemical_storage', v)} desc="Chemical-resistant flooring and coatings applied" />
-        {data.chemical_storage && <AiHint color="red">⚠️ Acid-resistant and anti-static coatings will be prioritised in recommendation.</AiHint>}
+        {data.chemical_storage && <LazyAiHint color="red">⚠️ Acid-resistant and anti-static coatings will be prioritised in recommendation.</LazyAiHint>}
       </div>
       <div className="glass-card" style={{ marginBottom: '1.25rem' }}>
         <SectionHeader icon="📐" title="Future Expansion" />

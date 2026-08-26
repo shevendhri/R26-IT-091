@@ -5,7 +5,7 @@ import json
 import traceback
 from typing import Dict, List, Any
 
-from backend.database import get_all_materials, format_material
+from backend.database import get_all_materials, format_material, validate_canonical_component, normalize_canonical_component
 from backend.weather_engine import get_climate_profile
 from backend.questionnaire_engine import UserProfile
 from backend.engines.constraint_engine import evaluate_constraints
@@ -854,12 +854,15 @@ class RecommendationEngine:
                     eng_points.append(f"✓ {sel_reason['sustainability']}")
                 eng_points_str = "\n".join(eng_points[:3])
 
+                if round(ml_c) < 30:
+                    ml_exp_str = f"Machine Learning confidence: {round(ml_c)}%\nEngineering rules dominate because ML confidence is low."
+                else:
+                    ml_exp_str = f"Machine Learning confidence: {round(ml_c)}%\nHistorical projects with similar characteristics support this specification."
+
                 public_rationale = (
                     f"Engineering selected this material because:\n"
                     f"{eng_points_str}\n"
-                    f"Machine Learning confidence:\n"
-                    f"{round(ml_c)}%\n"
-                    f"Historical projects with similar characteristics frequently selected this specification.\n"
+                    f"{ml_exp_str}\n"
                     f"Agreement:\n"
                     f"{agreement_str}"
                 )
@@ -1117,7 +1120,8 @@ class RecommendationEngine:
         }
 
         # ── Blueprint Geometry Analysis ──
-        footprint_area = total_area / max(num_floors, 1)
+        safe_total_area = max(1.0, float(total_area or 100.0))
+        footprint_area = safe_total_area / max(num_floors, 1)
         perimeter = 4 * math.sqrt(footprint_area)
         wall_height = 3.2
         gross_wall_area = perimeter * wall_height * num_floors
@@ -1354,16 +1358,124 @@ class RecommendationEngine:
 
     def _build_package(self, scored_mats: List[Dict], profile: UserProfile, b_type: str, quantities_calc: Dict[str, Any] = None) -> Dict[str, Any]:
         def get_best_filtered(canonical_component: str, filter_fn=None) -> Dict:
-            mats = [
-                m for m in scored_mats
-                if (m["material"].get("Component") == canonical_component or m["material"].get("Category") == canonical_component)
-                and m["score"] is not None and m["score"] > 0
-            ]
+            # Component-Category Strict Filter (TASK 1)
+            # Filter candidate materials BEFORE MCDM ranking strictly matching requested component
+            mats = []
+            for m in scored_mats:
+                mat_obj = m["material"]
+                if not validate_canonical_component(mat_obj, canonical_component):
+                    # Log validation rejection
+                    try:
+                        from backend.audit_engine import audit_engine
+                        reason = f"Canonical component mismatch: material component '{mat_obj.get('Component') or mat_obj.get('Category')}' does not match requested slot '{canonical_component}'"
+                        audit_engine.log_audit(
+                            category=canonical_component,
+                            item_name=mat_obj.get('Name', ''),
+                            dataset_source="materials.db",
+                            dataset_row=mat_obj.get('Material_ID'),
+                            ml_score=None,
+                            engineering_score=None,
+                            hybrid_score=None,
+                            ranking=None,
+                            explanation=reason,
+                            material_id=mat_obj.get('Material_ID'),
+                            confidence=None,
+                            prediction_source="VALIDATION",
+                            engineering_rank=None,
+                            ml_rank=None,
+                            hybrid_rank=None,
+                            selection_reason=None,
+                            recommendation_quality=None,
+                            engineering_confidence=None,
+                            climate_confidence=None,
+                        )
+                    except Exception:
+                        pass
+                    continue
+                if m["score"] is not None and m["score"] > 0:
+                    mats.append(m)
+
             if filter_fn:
                 mats = [m for m in mats if filter_fn(m["material"]["Name"])]
             if not mats:
+                return {
+                    "name": f"No valid material available in current catalog for {canonical_component}",
+                    "component": canonical_component,
+                    "score": 0.0,
+                    "relative_cost": "$$",
+                    "budget_compatibility": "N/A",
+                    "rationale": f"No valid material for component '{canonical_component}' in current catalog passed constraints.",
+                    "sustainability_rating": 0,
+                    "service_life": 0,
+                    "embodied_carbon": 0.0,
+                    "eng_score": 0.0,
+                    "ml_score": None,
+                    "engineering_validation": 0.0,
+                    "ml_confidence": 0.0,
+                    "hybrid_score": 0.0,
+                    "agreement": "Low",
+                    "classification": "ENGINEERING-LED RECOMMENDATION",
+                    "decision_mode": "ENGINEERING-LED RECOMMENDATION",
+                    "prediction_source": "FALLBACK",
+                    "performance_metrics": {},
+                    "why_this_material": [],
+                    "trade_offs": [],
+                    "why_not_comparison": None,
+                    "disagreement_explanation": f"No viable {canonical_component} material in catalog.",
+                    "ml_top_features": [],
+                    "explanation_method": "none",
+                    "engine_ml_agreement": "Low",
+                    "recommendation_type": "ENGINEERING-LED RECOMMENDATION",
+                    "recommendation_classification": "ENGINEERING-LED RECOMMENDATION",
+                    "recommendation_badge": "Engineering-Led Specification",
+                    "suitability_badge": "N/A",
+                    "suitability_color": "gray",
+                    "validation_warning": f"No valid material available in current catalog for {canonical_component}",
+                    "quantity": 0.0,
+                    "unit": "units",
+                    "quantity_status": "WARNING",
+                    "quantity_message": f"No valid material available in current catalog for {canonical_component}.",
+                    "unit_count_label": "0 units",
+                    "calculation_basis": "N/A",
+                    "data_quality": "N/A",
+                    "data_source": "N/A",
+                    "standard_reference": "N/A",
+                    "confidence": 0.0,
+                    "embodied_carbon_kg": 0.0,
+                    "embodied_carbon_tons": 0.0,
+                    "selection_reason": {
+                        "engineering_rank": "#0",
+                        "ml_rank": "#0",
+                        "hybrid_rank": "#0",
+                        "climate": "No catalog material available",
+                        "durability": "",
+                        "sustainability": "",
+                        "cost": ""
+                    },
+                    "engineering_metadata": {
+                        "engineering_score": 0.0,
+                        "criterion_breakdown": {},
+                        "engineering_confidence": {},
+                        "climate_confidence": {},
+                        "recommendation_quality": "Acceptable"
+                    }
+                }
+
+            # Sort ranked candidates by score descending
+            ranked_candidates = sorted(mats, key=lambda x: x["score"], reverse=True)
+
+            # Defensive post-ranking assertion: select first candidate strictly matching canonical component
+            best = None
+            for cand in ranked_candidates:
+                cand_mat = cand["material"]
+                if not validate_canonical_component(cand_mat, canonical_component):
+                    print(f"[DEFENSIVE COMPONENT REJECTION] Material '{cand_mat.get('Name')}' rejected for slot '{canonical_component}'. Selecting next ranked candidate.")
+                    continue
+                best = cand
+                break
+
+            if not best:
                 return None
-            best = max(mats, key=lambda x: x["score"])
             # Compute recommendation quality label
             eng_score_val = best["eng_score"] if best["eng_score"] is not None else 0
             ml_score_val = best["ml_score"] if best["ml_score"] is not None else 0
@@ -1376,21 +1488,20 @@ class RecommendationEngine:
             else:
                 quality = "Acceptable"
 
-            # Determine Engineering-Led Recommendation & ML agreement status
+            # Determine Engineering-Led Recommendation & ML agreement status using centralized logic (Issue 3)
             from backend.inference.explainability import compute_agreement_level
             eng_score_val = best["eng_score"] if best["eng_score"] is not None else 0.0
             ml_score_val = best["ml_score"] if best["ml_score"] is not None else 0.0
-            ml_conf_val = best.get("ml_confidence") if best.get("ml_confidence") is not None else ml_score_val
+            ml_conf_val = best.get("ml_confidence") if best.get("ml_confidence") is not None else (best.get("ml_probability") or ml_score_val)
 
             agreement_calc = compute_agreement_level(eng_score_val, ml_score_val, ml_conf_val)
             agreement_level = agreement_calc["agreement_level"]
             disagreement_explanation = agreement_calc["description"]
+            rec_type = agreement_calc.get("decision_mode", "HYBRID RECOMMENDATION")
 
-            if agreement_calc["engineering_led"]:
-                rec_type = "ENGINEERING-LED RECOMMENDATION"
+            if rec_type == "ENGINEERING-LED RECOMMENDATION":
                 rec_badge = "Engineering-Led Specification"
             else:
-                rec_type = "HYBRID RECOMMENDATION"
                 rec_badge = "Hybrid Validated"
 
             # Resolve application-specific quantity takeoff
@@ -1399,6 +1510,13 @@ class RecommendationEngine:
                 best["material"],
                 quantities_calc or {}
             )
+
+            # Post-ranking validation check (Issue 1 requirement)
+            validation_warning = None
+            resolved_comp = best["material"].get("Component") or best["material"].get("Category")
+            if resolved_comp != canonical_component:
+                validation_warning = f"Validation Warning: Material '{best['material']['Name']}' category '{resolved_comp}' does not strictly match requested component '{canonical_component}'."
+                print(f"[COMPONENT MAPPING WARNING] {validation_warning}")
 
             # Generate ML explainability for the chosen material
             try:
@@ -1443,17 +1561,18 @@ class RecommendationEngine:
                 "score": best["score"],
                 "relative_cost": best.get("relative_cost_tier", "$$"),
                 "budget_compatibility": best.get("budget_compatibility", "Balanced"),
-                "rationale": best["rationale"],
+                "rationale": disagreement_explanation or best["rationale"],
                 "sustainability_rating": best["material"].get("Sustainability_Rating", 50),
                 "service_life": best["material"].get("Service_Life", 30),
                 "embodied_carbon": best["material"].get("Embodied_Carbon", 0.35),
                 "eng_score": best["eng_score"],
                 "ml_score": best["ml_score"] if best["ml_score"] is not None else None,
                 "engineering_validation": best["eng_score"],
-                "ml_confidence": best["ml_score"] if best["ml_score"] is not None else None,
+                "ml_confidence": best.get("ml_probability") if best.get("ml_probability") is not None else (best["ml_score"] if best["ml_score"] is not None else None),
                 "hybrid_score": best["score"],
                 "agreement": agreement_level,
                 "classification": rec_type,
+                "decision_mode": rec_type,
                 "prediction_source": best["prediction_source"],
                 "performance_metrics": best.get("performance_metrics", {}),
                 "why_this_material": best.get("why_this_material", []),
@@ -1468,9 +1587,12 @@ class RecommendationEngine:
                 "recommendation_badge": rec_badge,
                 "suitability_badge": best.get("suitability_badge"),
                 "suitability_color": best.get("suitability_color"),
+                "validation_warning": validation_warning,
                 # Centralized Takeoff Integration
                 "quantity": takeoff.get("quantity"),
                 "unit": takeoff.get("unit"),
+                "quantity_status": takeoff.get("status", "PASS"),
+                "quantity_message": takeoff.get("message", "Preliminary quantity takeoff validated using parametric heuristics."),
                 "unit_count_label": takeoff.get("unit_count_label"),
                 "calculation_basis": takeoff.get("calculation_basis"),
                 "data_quality": takeoff.get("data_quality"),
@@ -1503,11 +1625,11 @@ class RecommendationEngine:
         best_reinforcement = get_best_filtered("Reinforcement") or get_best_filtered("Structural", lambda name: "rebar" in name.lower() or "steel" in name.lower() or "gfrp" in name.lower())
         best_walling = get_best_filtered("Walling")
         best_roofing = get_best_filtered("Roofing")
-        best_windows = get_best_filtered("Windows") or get_best_filtered("Openings", lambda name: "window" in name.lower() or "glass panel" in name.lower() or "glazing" in name.lower())
-        best_doors = get_best_filtered("Doors") or get_best_filtered("Openings", lambda name: "door" in name.lower())
+        best_windows = get_best_filtered("Windows")
+        best_doors = get_best_filtered("Doors")
         best_flooring = get_best_filtered("Flooring")
         best_ceiling = get_best_filtered("Ceiling")
-        best_finishes = get_best_filtered("Finishes") or get_best_filtered("Finishing")
+        best_finishes = get_best_filtered("Finishes")
         best_waterproofing = get_best_filtered("Waterproofing")
 
         return {

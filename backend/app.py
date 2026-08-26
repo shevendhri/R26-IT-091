@@ -10,6 +10,7 @@ if str(project_root) not in sys.path:
     sys.path.insert(0, str(project_root))
 
 from fastapi import FastAPI, File, UploadFile, Form, HTTPException, Request, Query, Body
+from backend.database import validate_canonical_component, insert_history, get_all_history, get_history_by_id, delete_history
 from fastapi.middleware.cors import CORSMiddleware
 from starlette.middleware.sessions import SessionMiddleware
 from pydantic import BaseModel
@@ -325,16 +326,29 @@ def api_recommendations(data: RecommendRequest):
 def recommend_materials(data: RecommendRequest):
     """Generate recommended material package and climate brief."""
     import logging
+    from datetime import datetime
     logger = logging.getLogger(__name__)
     try:
         profile_obj = UserProfile(**data.profile)
-        response = recommendation_engine.recommend_package(data.blueprint, data.location, profile_obj, getattr(data, 'validation_severity', 'low'))
+        response = recommendation_engine.recommend_package(
+            data.blueprint, data.location, profile_obj, getattr(data, 'validation_severity', 'low')
+        )
         
         # Add structured debugging logs
         logger.info(f"Generated Recommendation Package for Location: {data.location}")
         logger.info(f"Audit Log Count: {len(response.get('audit_log', []))}")
         logger.info(f"Metrics: {json.dumps(response.get('metrics', {}))}")
         logger.info(f"Climate Profile: {json.dumps(response.get('climate_profile', {}))}")
+
+        # Save recommendation snapshot to history (additive, after response ready)
+        try:
+            created_at = datetime.utcnow().isoformat()
+            project_info = json.dumps({"location": data.location, "blueprint": data.blueprint})
+            recommendation_json = json.dumps(response)
+            insert_history(created_at, project_info, recommendation_json)
+        except Exception as hist_err:
+            # Log but do not affect main flow
+            logger.error(f"Failed to save recommendation history: {hist_err}")
         
         return response
     except Exception as e:
@@ -498,10 +512,32 @@ def api_recommendations_generate(data: RecommendationsGenerateRequest = Body(def
                 reverse=True
             )
             top3_candidates[cat] = []
-            for i, l in enumerate(sorted_logs[:3]):
+            valid_rank = 0
+            for l in sorted_logs:
                 m_name = l["item_name"]
                 m_db = all_materials.get(m_name, {})
-                
+
+                # Ensure material's canonical component matches the category slot
+                if not validate_canonical_component(m_db, cat):
+                    # Log audit warning for mismatched material
+                    try:
+                        from backend.audit_engine import audit_engine
+                        reason = f"Top3 candidate validation rejection: material '{m_name}' does not match category '{cat}'"
+                        audit_engine.log_audit(
+                            category=cat,
+                            item_name=m_name,
+                            dataset_source="materials.db",
+                            dataset_row=m_db.get('Material_ID'),
+                            ml_score=None,
+                            engineering_score=None,
+                            hybrid_score=None,
+                            ranking=None,
+                            explanation=reason,
+                        )
+                    except Exception:
+                        pass
+                    continue
+
                 # Get dynamic criteria breakdown for this alternative candidate
                 eval_res = evaluate_constraints(
                     material=m_db,
@@ -512,8 +548,9 @@ def api_recommendations_generate(data: RecommendationsGenerateRequest = Body(def
                 )
                 breakdown = eval_res.get("constraint_breakdown", {})
 
+                valid_rank += 1
                 top3_candidates[cat].append({
-                    "rank": i + 1,
+                    "rank": valid_rank,
                     "material": m_name,
                     "hybrid_score": round(float(l.get("hybrid_score") or 0), 1),
                     "ml_score": (
@@ -530,6 +567,8 @@ def api_recommendations_generate(data: RecommendationsGenerateRequest = Body(def
                     "embodied_carbon": m_db.get("Embodied_Carbon", 0.35),
                     "engineering_breakdown": breakdown
                 })
+                if valid_rank >= 3:
+                    break
 
         response["top3_candidates"] = top3_candidates
 
@@ -539,6 +578,38 @@ def api_recommendations_generate(data: RecommendationsGenerateRequest = Body(def
             for n, val in response["feature_importance"].items():
                 feat_imp_list.append({"feature": n, "importance": round(val / 100.0, 4)})
             response["feature_importance"] = sorted(feat_imp_list, key=lambda x: x["importance"], reverse=True)
+
+        # Temporary runtime debugging required by viva preparation
+        pkg = response.get("recommended_package", {})
+        for slot, mat in pkg.items():
+            if isinstance(mat, dict):
+                mat_name = mat.get("Name") or mat.get("name")
+                mat_comp = mat.get("Component") or mat.get("component")
+                mat_cat = mat.get("Category") or mat.get("category")
+                is_valid = validate_canonical_component(mat, slot)
+                print(
+                    f"[FINAL VALIDATION] "
+                    f"slot={slot}, "
+                    f"name={mat_name}, "
+                    f"component={mat_comp}, "
+                    f"category={mat_cat}, "
+                    f"valid={is_valid}"
+                )
+
+        # ── Save history snapshot (additive, non-blocking) ──
+        try:
+            from datetime import datetime
+            _created_at = datetime.utcnow().isoformat()
+            _project_info = json.dumps({
+                "location": data.location,
+                "building_type": data.buildingType,
+                "floor_count": data.floorCount,
+                "total_area": data.totalArea,
+            })
+            insert_history(_created_at, _project_info, json.dumps(response))
+        except Exception as _hist_err:
+            print(f"[history] Failed to save snapshot: {_hist_err}")
+
         return response
 
     except Exception as e:
@@ -552,6 +623,43 @@ def api_packages(data: RecommendRequest):
         profile_obj = UserProfile(**data.profile)
         packages = build_packages(data.blueprint, profile_obj)
         return {"status": "success", "packages": packages}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+# ── RECOMMENDATION HISTORY ENDPOINTS ──
+
+@app.get("/api/history")
+def api_get_history():
+    """Return all saved recommendation history entries ordered newest first."""
+    try:
+        entries = get_all_history()
+        return {"status": "success", "history": entries}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@app.get("/api/history/{entry_id}")
+def api_get_history_entry(entry_id: int):
+    """Return a single history entry by its ID."""
+    try:
+        entry = get_history_by_id(entry_id)
+        if not entry:
+            raise HTTPException(status_code=404, detail="History entry not found")
+        return {"status": "success", "entry": entry}
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@app.delete("/api/history/{entry_id}")
+def api_delete_history(entry_id: int):
+    """Delete a history entry. Returns success flag."""
+    try:
+        deleted = delete_history(entry_id)
+        if not deleted:
+            raise HTTPException(status_code=404, detail="History entry not found")
+        return {"status": "success", "detail": "Deleted"}
+    except HTTPException:
+        raise
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 

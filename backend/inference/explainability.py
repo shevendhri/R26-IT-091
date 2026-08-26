@@ -229,7 +229,7 @@ def _explain_with_importance(feature_vec, project_features,
 def compute_agreement_level(engineering_score: float,
                             ml_recommendation_score: float,
                             ml_confidence: Optional[float] = None) -> Dict[str, Any]:
-    """Compute the Engineering-ML agreement level using comparable suitability scores.
+    """Compute the Engineering-ML agreement level and centralized decision mode.
 
     Parameters
     ----------
@@ -240,11 +240,13 @@ def compute_agreement_level(engineering_score: float,
     Returns
     -------
     dict with:
+        - decision_mode: 'ENGINEERING-LED RECOMMENDATION' or 'HYBRID RECOMMENDATION'
         - agreement_level: 'High', 'Medium', or 'Low'
         - confidence_level: 'High', 'Medium', or 'Low'
         - score_difference: absolute difference between suitability scores
-        - engineering_led: boolean fallback trigger flag
-        - description: context-aware explanation string
+        - engineering_led: boolean flag indicating if engineering rules dominate
+        - description: context-aware single source of truth explanation
+        - warning: warning message if score divergence occurs
     """
     diff = abs(engineering_score - ml_recommendation_score)
 
@@ -256,45 +258,41 @@ def compute_agreement_level(engineering_score: float,
         level = 'Low'
 
     conf = ml_confidence if ml_confidence is not None else ml_recommendation_score
-    if conf >= 70.0:
+    if conf >= 60.0:
         conf_level = 'High'
-    elif conf >= 40.0:
+    elif conf >= 30.0:
         conf_level = 'Medium'
     else:
         conf_level = 'Low'
 
-    is_engineering_led = (conf < 40.0 or level == 'Low')
-
-    # Context-aware explanation text (CASE 1 - CASE 4)
-    if conf < 40.0 and engineering_score >= 70.0:
-        description = (
-            "Engineering-led recommendation: deterministic engineering criteria "
-            "strongly support this material. The ML model has low confidence, "
-            "so its influence is reduced."
-        )
-    elif level == 'High':
-        description = (
-            "High agreement: deterministic engineering evaluation and ML pattern "
-            "inference produce similar suitability assessments."
-        )
-    elif conf >= 40.0 and level == 'Low':
-        description = (
-            "Review recommended: the ML model strongly favours a different pattern, "
-            "but deterministic engineering evaluation differs. Engineering constraints "
-            "remain authoritative."
-        )
+    # Centralized decision mode logic (Issue 3 requirements)
+    warning = None
+    if conf < 30.0:
+        decision_mode = "ENGINEERING-LED RECOMMENDATION"
+        is_engineering_led = True
+        description = "Deterministic engineering rules are the primary decision source. ML confidence is low, so ML influence is reduced."
+    elif diff > 25.0 or level == 'Low':
+        decision_mode = "ENGINEERING-LED RECOMMENDATION"
+        is_engineering_led = True
+        description = "Score divergence detected. Engineering constraints remain the primary decision layer."
+        warning = "Significant divergence between deterministic engineering evaluation and ML prediction."
+    elif conf >= 30.0 and level in ('Medium', 'High'):
+        decision_mode = "HYBRID RECOMMENDATION"
+        is_engineering_led = False
+        description = "Engineering evaluation and ML pattern inference contribute to the recommendation."
     else:
-        description = (
-            "Hybrid recommendation: engineering validation and ML inference are "
-            "consistent, with sufficient ML confidence."
-        )
+        decision_mode = "ENGINEERING-LED RECOMMENDATION"
+        is_engineering_led = True
+        description = "Deterministic engineering rules are the primary decision source."
 
     return {
+        'decision_mode': decision_mode,
         'agreement_level': level,
         'confidence_level': conf_level,
         'score_difference': round(diff, 1),
         'engineering_led': is_engineering_led,
         'description': description,
+        'warning': warning,
     }
 
 

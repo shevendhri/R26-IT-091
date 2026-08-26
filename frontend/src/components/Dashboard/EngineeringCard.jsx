@@ -30,8 +30,6 @@ export default function EngineeringCard({ label, material }) {
     why_this_material,
     trade_offs,
     why_not_comparison,
-    disagreement_explanation,
-    engine_ml_agreement,
     suitability_badge,
   } = material;
 
@@ -140,7 +138,7 @@ export default function EngineeringCard({ label, material }) {
       )}
 
       {/* Eng Validation vs ML Confidence Telemetry */}
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid #1e293b', paddingBottom: '0.75rem' }}>
+      <div style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center', borderBottom: '1px solid #1e293b', paddingBottom: '0.75rem' }}>
         <div style={{ display: 'flex', gap: '1.25rem' }}>
           <div style={{ display: 'flex', flexDirection: 'column' }}>
             <span style={{ fontSize: '0.62rem', color: '#64748b', textTransform: 'uppercase', fontWeight: 700, marginBottom: '0.1rem' }}>Eng Validation</span>
@@ -152,21 +150,7 @@ export default function EngineeringCard({ label, material }) {
             <span style={{ fontSize: '1rem', fontWeight: 600, color: '#f8fafc' }}>{mlVal}%</span>
           </div>
         </div>
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end' }}>
-          <span style={{ fontSize: '0.62rem', color: '#64748b', textTransform: 'uppercase', fontWeight: 700, marginBottom: '0.1rem' }}>Agreement</span>
-          <span style={{ fontSize: '0.75rem', fontWeight: 600, color: (engine_ml_agreement || '').toLowerCase() === 'high' ? '#10b981' : (engine_ml_agreement || '').toLowerCase() === 'medium' ? '#f59e0b' : '#ef4444' }}>
-            {engine_ml_agreement || 'Low'}
-          </span>
-        </div>
       </div>
-
-      {/* ML Disagreement Alert Block */}
-      {disagreement_explanation && (
-        <div style={{ background: 'rgba(245, 158, 11, 0.08)', borderLeft: '3px solid #f59e0b', borderRadius: '0 4px 4px 0', padding: '0.6rem 0.75rem', fontSize: '0.75rem', color: '#cbd5e1', lineHeight: 1.4 }}>
-          <strong style={{ color: '#f59e0b', display: 'block', marginBottom: '0.2rem', fontSize: '0.68rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Score Divergence Warning</strong>
-          {disagreement_explanation}
-        </div>
-      )}
 
       {/* Performance Metrics Profile */}
       {performance_metrics && Object.keys(performance_metrics).length > 0 && (

@@ -96,6 +96,15 @@ export default function Header() {
             MATERIAL RECOMMENDATIONS
             {pathname.startsWith('/materials') && <div style={{ position: 'absolute', bottom: 0, left: 0, width: '100%', height: '2px', background: '#10b981' }} />}
           </Link>
+          <Link href="/history" style={{
+            color: pathname.startsWith('/history') ? '#10b981' : '#94a3b8',
+            textDecoration: 'none',
+            position: 'relative',
+            padding: '4px 0'
+          }}>
+            RECOMMENDATION HISTORY
+            {pathname.startsWith('/history') && <div style={{ position: 'absolute', bottom: 0, left: 0, width: '100%', height: '2px', background: '#10b981' }} />}
+          </Link>
           <Link href="/feedback" style={{
             color: pathname === '/feedback' ? '#10b981' : '#94a3b8',
             textDecoration: 'none',

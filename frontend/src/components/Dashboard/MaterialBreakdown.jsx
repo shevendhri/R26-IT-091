@@ -38,6 +38,10 @@ export default function MaterialBreakdown({ data }) {
     }
     if (resolved) {
       const obj = Array.isArray(resolved) ? resolved[0] : typeof resolved === 'object' ? resolved : { name: resolved };
+      if (obj.canonical_component && obj.canonical_component !== comp.key) {
+        // Skip mismatched material
+        continue;
+      }
       const matName = obj?.name || '';
       // Only avoid duplicate if it's identical material in the same phase
       canonicalItems.push({

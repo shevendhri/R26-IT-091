@@ -17,8 +17,9 @@ export default function ProjectValidationStrip({ data }) {
   
   const blueprintData = projectValidation.blueprint_data || buildingQuantities.geometry_source || "Estimated";
   const dataQuality = projectValidation.data_quality || "Prototype / Research Dataset";
+  const rawMlAssessment = projectValidation.ml_assessment || (data.confidence ? `Confidence: ${data.confidence.confidence_score}%` : "N/A");
   const engineeringAssessment = projectValidation.engineering_assessment || "Preliminary Engineering Validation";
-  const mlAssessment = projectValidation.ml_assessment || (data.confidence ? `Confidence: ${data.confidence.confidence_score}% | Agreement: ${data.confidence.confidence_level}` : "N/A");
+  const mlAssessment = typeof rawMlAssessment === 'string' ? rawMlAssessment.replace(/\s*\|\s*Agreement:\s*\w+/i, '') : rawMlAssessment;
 
   const issues = projectValidation.geometry_issues || geomValidation.issues || [];
   const warnings = projectValidation.geometry_warnings || geomValidation.warnings || [];
