@@ -3,6 +3,7 @@ import React from 'react';
 
 /**
  * QuantityEstimationPanel – Displays building quantity estimations for engineering validation.
+ * Updated for high-contrast warm sustainable architecture theme.
  */
 export default function QuantityEstimationPanel({ data }) {
   const quantities = data?.building_quantities;
@@ -55,50 +56,52 @@ export default function QuantityEstimationPanel({ data }) {
 
   return (
     <div style={{
-      background: '#0f172a',
-      border: '1px solid #1e293b',
-      borderRadius: '8px',
-      padding: '1.25rem',
+      background: '#FFFFFF',
+      border: '1px solid #C8D3CA',
+      borderRadius: '16px',
+      padding: '1.4rem',
       display: 'flex',
       flexDirection: 'column',
-      gap: '1rem'
+      gap: '1rem',
+      boxShadow: '0 4px 12px rgba(24, 37, 31, 0.04)'
     }}>
-      <div style={{ borderBottom: '1px solid #1e293b', paddingBottom: '0.75rem' }}>
-        <h3 style={{ fontSize: '1.1rem', fontWeight: 600, color: '#f8fafc', margin: 0, fontFamily: 'Space Grotesk' }}>
+      <div style={{ borderBottom: '1px solid #C8D3CA', paddingBottom: '0.85rem' }}>
+        <h3 style={{ fontSize: '1.2rem', fontWeight: 800, color: '#18251F', margin: 0, fontFamily: 'Space Grotesk' }}>
           Building Quantity Takeoff & Material Estimates
         </h3>
-        <p style={{ fontSize: '0.78rem', color: '#94a3b8', margin: '0.2rem 0 0 0' }}>
+        <p style={{ fontSize: '0.85rem', color: '#526158', margin: '0.25rem 0 0 0', fontWeight: 500 }}>
           Computed from blueprint geometry strictly for engineering validation and load assessment.
         </p>
       </div>
 
       <div style={{
-        background: 'rgba(245, 158, 11, 0.08)',
-        border: '1px solid rgba(245, 158, 11, 0.25)',
-        borderRadius: '6px',
-        padding: '0.55rem 0.75rem',
-        fontSize: '0.72rem',
-        color: '#f59e0b',
-        lineHeight: 1.4
+        background: 'rgba(199, 122, 61, 0.08)',
+        border: '1px solid rgba(199, 122, 61, 0.3)',
+        borderRadius: '10px',
+        padding: '0.65rem 0.9rem',
+        fontSize: '0.78rem',
+        color: '#C77A3D',
+        lineHeight: 1.4,
+        fontWeight: 600
       }}>
         <strong>Engineering Validation Notice:</strong> Quantities are approximate structural engineering calculations for model evaluation, not for commercial QS procurement.
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '0.75rem' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '0.85rem' }}>
         {metrics.map((m, i) => (
           <div key={i} style={{
-            background: '#090d16',
-            border: '1px solid #1e293b',
-            borderRadius: '6px',
-            padding: '0.75rem'
+            background: '#F7F9F6',
+            border: '1px solid #C8D3CA',
+            borderRadius: '12px',
+            padding: '0.85rem'
           }}>
-            <div style={{ fontSize: '0.62rem', color: '#64748b', fontWeight: 700, textTransform: 'uppercase', marginBottom: '0.2rem' }}>
+            <div style={{ fontSize: '0.65rem', color: '#526158', fontWeight: 800, textTransform: 'uppercase', marginBottom: '0.2rem' }}>
               {m.label}
             </div>
-            <div style={{ fontSize: '1.1rem', fontWeight: 700, color: '#f8fafc', fontFamily: 'Space Grotesk' }}>
+            <div style={{ fontSize: '1.15rem', fontWeight: 800, color: '#18251F', fontFamily: 'Space Grotesk' }}>
               {m.value}
             </div>
-            <div style={{ fontSize: '0.68rem', color: '#94a3b8', marginTop: '0.2rem' }}>
+            <div style={{ fontSize: '0.74rem', color: '#748078', marginTop: '0.2rem', fontWeight: 500 }}>
               {m.desc}
             </div>
           </div>

@@ -5,10 +5,10 @@ import Link from 'next/link';
 
 export default function RoadmapPage() {
   const stages = [
-    { title: 'STAGE 01 📐', description: 'Plan Analyzer extracts architectural layers, room boundaries, and spatial parameters.' },
-    { title: 'STAGE 02 🔬', description: 'Material Specification Engine calculates construction quantities and applies MCDM decision scoring.' },
-    { title: 'STAGE 03 📋', description: 'Bill of Materials (BOM) is generated with component quantities, units, cost, embodied carbon, and service life.' },
-    { title: 'STAGE 04 🥫', description: 'Planner5D integration will render a 3D interior/exterior layout mapping material textures to coordinates.' },
+    { title: 'STAGE 01', description: 'Plan Analyzer extracts architectural layers, room boundaries, and spatial parameters.' },
+    { title: 'STAGE 02', description: 'Material Specification Engine calculates construction quantities and applies MCDM decision scoring.' },
+    { title: 'STAGE 03', description: 'Bill of Materials (BOM) is generated with component quantities, units, cost, embodied carbon, and service life.' },
+    { title: 'STAGE 04', description: 'Planner5D integration will render a 3D interior/exterior layout mapping material textures to coordinates.' },
   ];
 
   return (

@@ -3,7 +3,8 @@
 
 import React, { useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Html, Sky, Environment } from "@react-three/drei";
+import { OrbitControls, Html, Sky } from "@react-three/drei";
+import SafeEnvironment from "@/components/ui/SafeEnvironment";
 import { EffectComposer, Bloom, DepthOfField } from "@react-three/postprocessing";
 import { a } from "@react-spring/three";
 import { motion } from "framer-motion";
@@ -166,7 +167,7 @@ export default function VisualizationPage() {
       <Canvas shadows gl={{ antialias: true }} camera={{ position: [20, 15, 20], fov: 55 }}>
         {/* Atmospheric sky and environment */}
         <Sky sunPosition={[100, 20, 100]} />
-        <Environment preset="city" />
+        <SafeEnvironment preset="city" />
         {/* Lights */}
         <ambientLight intensity={0.6} />
         <directionalLight

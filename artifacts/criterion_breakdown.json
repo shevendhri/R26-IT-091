@@ -25,8 +25,8 @@
         "max": 15.0,
         "contribution": 3.0,
         "normalized_weight": 0.15,
-        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
-        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "notes": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -179,8 +179,8 @@
         "max": 15.0,
         "contribution": 3.0,
         "normalized_weight": 0.15,
-        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
-        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "notes": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -252,9 +252,9 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 55.0,
+        "score": 50.0,
         "max": 15.0,
-        "contribution": 8.25,
+        "contribution": 7.5,
         "normalized_weight": 0.15,
         "notes": "Marginal preliminary compliance",
         "reason": "Marginal preliminary compliance",
@@ -333,8 +333,8 @@
         "max": 15.0,
         "contribution": 3.0,
         "normalized_weight": 0.15,
-        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
-        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "notes": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -410,8 +410,8 @@
         "max": 15.0,
         "contribution": 3.0,
         "normalized_weight": 0.2,
-        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
-        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "notes": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -564,8 +564,8 @@
         "max": 15.0,
         "contribution": 3.0,
         "normalized_weight": 0.2,
-        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
-        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "notes": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -637,9 +637,9 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 55.0,
+        "score": 50.0,
         "max": 15.0,
-        "contribution": 8.25,
+        "contribution": 7.5,
         "normalized_weight": 0.2,
         "notes": "Marginal preliminary compliance",
         "reason": "Marginal preliminary compliance",
@@ -795,8 +795,8 @@
         "max": 15.0,
         "contribution": 3.0,
         "normalized_weight": 0.2,
-        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
-        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "notes": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -1103,8 +1103,8 @@
         "max": 15.0,
         "contribution": 3.0,
         "normalized_weight": 0.15,
-        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
-        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "notes": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -1180,8 +1180,8 @@
         "max": 15.0,
         "contribution": 3.0,
         "normalized_weight": 0.15,
-        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
-        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "notes": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -1257,8 +1257,8 @@
         "max": 15.0,
         "contribution": 3.0,
         "normalized_weight": 0.15,
-        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
-        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "notes": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -1334,8 +1334,8 @@
         "max": 15.0,
         "contribution": 3.0,
         "normalized_weight": 0.15,
-        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
-        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "notes": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -1411,8 +1411,8 @@
         "max": 15.0,
         "contribution": 3.0,
         "normalized_weight": 0.15,
-        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
-        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "notes": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -1488,8 +1488,8 @@
         "max": 15.0,
         "contribution": 3.0,
         "normalized_weight": 0.15,
-        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
-        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "notes": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -1642,8 +1642,8 @@
         "max": 15.0,
         "contribution": 3.0,
         "normalized_weight": 0.2,
-        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
-        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "notes": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -1719,8 +1719,8 @@
         "max": 15.0,
         "contribution": 3.0,
         "normalized_weight": 0.2,
-        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
-        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "notes": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -1796,8 +1796,8 @@
         "max": 15.0,
         "contribution": 3.0,
         "normalized_weight": 0.2,
-        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
-        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "notes": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -1869,9 +1869,9 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
+        "score": 90.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 13.5,
         "normalized_weight": 0.2,
         "notes": "Evaluated against preliminary engineering criteria",
         "reason": "Evaluated against preliminary engineering criteria",
@@ -1950,8 +1950,8 @@
         "max": 15.0,
         "contribution": 3.0,
         "normalized_weight": 0.2,
-        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
-        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "notes": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -2027,8 +2027,8 @@
         "max": 15.0,
         "contribution": 3.0,
         "normalized_weight": 0.2,
-        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
-        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "notes": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -2100,9 +2100,9 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 55.0,
+        "score": 50.0,
         "max": 15.0,
-        "contribution": 8.25,
+        "contribution": 7.5,
         "normalized_weight": 0.2,
         "notes": "Marginal preliminary compliance",
         "reason": "Marginal preliminary compliance",
@@ -2335,8 +2335,8 @@
         "max": 15.0,
         "contribution": 3.0,
         "normalized_weight": 0.2,
-        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
-        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "notes": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -2408,9 +2408,9 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 55.0,
+        "score": 50.0,
         "max": 15.0,
-        "contribution": 8.25,
+        "contribution": 7.5,
         "normalized_weight": 0.2,
         "notes": "Marginal preliminary compliance",
         "reason": "Marginal preliminary compliance",
@@ -2485,9 +2485,9 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
+        "score": 90.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 13.5,
         "normalized_weight": 0.2,
         "notes": "Evaluated against preliminary engineering criteria",
         "reason": "Evaluated against preliminary engineering criteria",
@@ -2643,8 +2643,8 @@
         "max": 15.0,
         "contribution": 3.0,
         "normalized_weight": 0.2,
-        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
-        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "notes": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -2874,8 +2874,8 @@
         "max": 15.0,
         "contribution": 3.0,
         "normalized_weight": 0.2,
-        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
-        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "notes": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -2951,8 +2951,8 @@
         "max": 15.0,
         "contribution": 3.0,
         "normalized_weight": 0.2,
-        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
-        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "notes": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -3028,8 +3028,8 @@
         "max": 15.0,
         "contribution": 3.0,
         "normalized_weight": 0.2,
-        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
-        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "notes": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -3182,8 +3182,8 @@
         "max": 15.0,
         "contribution": 3.0,
         "normalized_weight": 0.2,
-        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
-        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "notes": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -3255,9 +3255,9 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 55.0,
+        "score": 50.0,
         "max": 15.0,
-        "contribution": 8.25,
+        "contribution": 7.5,
         "normalized_weight": 0.2,
         "notes": "Marginal preliminary compliance",
         "reason": "Marginal preliminary compliance",
@@ -3336,8 +3336,8 @@
         "max": 15.0,
         "contribution": 3.0,
         "normalized_weight": 0.2,
-        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
-        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "notes": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -3413,8 +3413,8 @@
         "max": 15.0,
         "contribution": 3.0,
         "normalized_weight": 0.2,
-        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
-        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "notes": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -3486,9 +3486,9 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 55.0,
+        "score": 50.0,
         "max": 15.0,
-        "contribution": 8.25,
+        "contribution": 7.5,
         "normalized_weight": 0.2,
         "notes": "Marginal preliminary compliance",
         "reason": "Marginal preliminary compliance",
@@ -3563,9 +3563,9 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 55.0,
+        "score": 50.0,
         "max": 15.0,
-        "contribution": 8.25,
+        "contribution": 7.5,
         "normalized_weight": 0.2,
         "notes": "Marginal preliminary compliance",
         "reason": "Marginal preliminary compliance",
@@ -3721,8 +3721,8 @@
         "max": 15.0,
         "contribution": 3.0,
         "normalized_weight": 0.2,
-        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
-        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "notes": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -3798,8 +3798,8 @@
         "max": 15.0,
         "contribution": 3.0,
         "normalized_weight": 0.2,
-        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
-        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "notes": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -4025,9 +4025,9 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
+        "score": 90.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 13.5,
         "normalized_weight": 0.2,
         "notes": "Evaluated against preliminary engineering criteria",
         "reason": "Evaluated against preliminary engineering criteria",
@@ -4106,8 +4106,8 @@
         "max": 15.0,
         "contribution": 3.0,
         "normalized_weight": 0.2,
-        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
-        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "notes": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -4256,9 +4256,9 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 55.0,
+        "score": 50.0,
         "max": 15.0,
-        "contribution": 8.25,
+        "contribution": 7.5,
         "normalized_weight": 0.2,
         "notes": "Marginal preliminary compliance",
         "reason": "Marginal preliminary compliance",
@@ -4333,9 +4333,9 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 55.0,
+        "score": 50.0,
         "max": 15.0,
-        "contribution": 8.25,
+        "contribution": 7.5,
         "normalized_weight": 0.2,
         "notes": "Marginal preliminary compliance",
         "reason": "Marginal preliminary compliance",
@@ -4491,8 +4491,8 @@
         "max": 15.0,
         "contribution": 3.0,
         "normalized_weight": 0.2,
-        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
-        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "notes": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -4645,8 +4645,8 @@
         "max": 15.0,
         "contribution": 3.0,
         "normalized_weight": 0.2,
-        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
-        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "notes": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -4722,8 +4722,8 @@
         "max": 15.0,
         "contribution": 3.0,
         "normalized_weight": 0.2,
-        "notes": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
-        "reason": "FAIL: Unsuitable climate profile (Zone: moderate coastal humid)",
+        "notes": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
         "is_na": false
       },
       "occupancy_requirements": {

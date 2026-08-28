@@ -7,121 +7,134 @@ import { usePathname } from 'next/navigation';
 export default function Header() {
   const pathname = usePathname();
 
+  const navItems = [
+    { href: '/', label: 'HOME', active: pathname === '/' },
+    { href: '/plan-analyzer', label: 'PLAN ANALYZER', active: pathname === '/plan-analyzer' },
+    { href: '/materials', label: 'MATERIAL RECOMMENDATIONS', active: pathname.startsWith('/materials') },
+    { href: '/green-assessment', label: 'GREEN ASSESSMENT', active: pathname.startsWith('/green-assessment') },
+    { href: '/fire-safety', label: 'FIRE SAFETY', active: pathname.startsWith('/fire-safety') },
+    { href: '/history', label: 'RECOMMENDATION HISTORY', active: pathname.startsWith('/history') },
+    { href: '/feedback', label: 'USER FEEDBACK', active: pathname === '/feedback', isIcon: true },
+  ];
+
   return (
     <header style={{
-      padding: '0.85rem 2rem',
-      borderBottom: '1px solid #1e293b',
+      padding: '0.75rem 2rem',
+      borderBottom: '1px solid rgba(30, 84, 56, 0.12)',
       display: 'flex',
       justifyContent: 'space-between',
       alignItems: 'center',
-      background: '#0b0f19',
+      background: 'rgba(255, 255, 255, 0.88)',
+      backdropFilter: 'blur(16px)',
+      WebkitBackdropFilter: 'blur(16px)',
       zIndex: 2000,
       position: 'sticky',
       top: 0,
-      width: '100%'
+      width: '100%',
+      boxShadow: '0 2px 16px rgba(24, 37, 31, 0.04)'
     }}>
-      {/* Brand & Project Identity */}
-      <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-        <div style={{
-          width: '32px',
-          height: '32px',
-          borderRadius: '4px',
-          background: 'linear-gradient(135deg, #0f172a, #1e293b)',
-          border: '1px solid #334155',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          color: '#10b981',
-          fontWeight: 800,
-          fontSize: '0.85rem',
-          fontFamily: 'Space Grotesk'
-        }}>
-          GC
-        </div>
-        <Link href="/" style={{ textDecoration: 'none' }}>
+      <style>{`
+        .nav-link-item {
+          color: #536058;
+          text-decoration: none;
+          position: relative;
+          padding: 6px 10px;
+          border-radius: 8px;
+          transition: color 0.2s ease, background 0.2s ease;
+          font-size: 0.73rem;
+          font-weight: 700;
+          letter-spacing: 0.04em;
+          display: inline-flex;
+          align-items: center;
+          gap: 5px;
+        }
+        .nav-link-item:hover {
+          background: #EDF3ED;
+          color: #1E5438;
+        }
+        .nav-link-item.active {
+          color: #1E5438;
+          background: #EDF3ED;
+        }
+        .nav-active-bar {
+          position: absolute;
+          bottom: -1px;
+          left: 10px;
+          right: 10px;
+          height: 2.5px;
+          background: #1E5438;
+          border-radius: 2px 2px 0 0;
+        }
+      `}</style>
+
+      {/* Brand & Logo */}
+      <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
+        <Link href="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '12px' }}>
+          <div style={{
+            width: '38px',
+            height: '38px',
+            borderRadius: '9px',
+            background: 'linear-gradient(135deg, #1E5438 0%, #0F2D1E 100%)',
+            border: '1px solid rgba(30, 84, 56, 0.35)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            color: '#FFFFFF',
+            boxShadow: '0 3px 12px rgba(30, 84, 56, 0.25)',
+            flexShrink: 0
+          }}>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7EDAA0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+            </svg>
+          </div>
+
           <div>
-            <div style={{ fontWeight: 700, letterSpacing: '1px', fontSize: '1rem', color: '#f8fafc', fontFamily: 'Space Grotesk', display: 'flex', alignItems: 'center', gap: '8px' }}>
-              GREENCONSTRUCT<span style={{ color: '#10b981' }}>AI</span>
+            <div style={{
+              fontWeight: 800,
+              letterSpacing: '0.02em',
+              fontSize: '1.1rem',
+              fontFamily: 'Space Grotesk, sans-serif',
+              display: 'flex',
+              alignItems: 'center',
+              lineHeight: 1.1
+            }}>
+              <span style={{ color: '#1E5438' }}>GREEN</span>
+              <span style={{ color: '#18251F' }}>CONSTRUCT</span>
+              <span style={{ color: '#4A7A5C' }}>AI</span>
             </div>
-            <div style={{ fontSize: '0.62rem', letterSpacing: '0.05em', color: '#64748b', fontWeight: 600, textTransform: 'uppercase' }}>
-              Sri Lankan Construction Material Intelligence Platform
+            <div style={{
+              fontSize: '0.6rem',
+              letterSpacing: '0.07em',
+              color: '#7B877F',
+              fontWeight: 600,
+              textTransform: 'uppercase',
+              fontFamily: 'Inter, sans-serif',
+              marginTop: '1px'
+            }}>
+              Sri Lankan Construction Decision Support Platform
             </div>
           </div>
         </Link>
       </div>
 
-      {/* System Status Telemetry */}
-      <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
-        <div style={{
-          display: 'none',
-          alignItems: 'center',
-          gap: '8px',
-          background: '#0f172a',
-          padding: '4px 10px',
-          borderRadius: '4px',
-          border: '1px solid #1e293b',
-          fontSize: '0.68rem',
-          color: '#94a3b8'
-        }} className="md-flex">
-          <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#10b981' }} />
-          <span>ENGINEERING DECISION ENGINE</span>
-        </div>
-
-        {/* Navigation */}
-        <nav style={{ display: 'flex', gap: '1.75rem', fontSize: '0.72rem', fontWeight: 600, letterSpacing: '0.06em', alignItems: 'center', flexWrap: 'wrap' }}>
-          <Link href="/" style={{
-            color: pathname === '/' ? '#10b981' : '#94a3b8',
-            textDecoration: 'none',
-            position: 'relative',
-            padding: '4px 0'
-          }}>
-            PROJECT COMMAND
-            {pathname === '/' && <div style={{ position: 'absolute', bottom: 0, left: 0, width: '100%', height: '2px', background: '#10b981' }} />}
+      {/* Navigation Links */}
+      <nav style={{ display: 'flex', gap: '0.25rem', alignItems: 'center', flexWrap: 'wrap', fontFamily: 'Space Grotesk, sans-serif' }}>
+        {navItems.map((item) => (
+          <Link
+            key={item.href}
+            href={item.href}
+            className={`nav-link-item${item.active ? ' active' : ''}`}
+          >
+            {item.isIcon && (
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+              </svg>
+            )}
+            {item.label}
+            {item.active && <div className="nav-active-bar" />}
           </Link>
-          <Link href="/plan-analyzer" style={{
-            color: pathname === '/plan-analyzer' ? '#10b981' : '#94a3b8',
-            textDecoration: 'none',
-            position: 'relative',
-            padding: '4px 0'
-          }}>
-            PLAN ANALYZER
-            {pathname === '/plan-analyzer' && <div style={{ position: 'absolute', bottom: 0, left: 0, width: '100%', height: '2px', background: '#10b981' }} />}
-          </Link>
-          <Link href="/materials" style={{
-            color: pathname.startsWith('/materials') ? '#10b981' : '#94a3b8',
-            textDecoration: 'none',
-            position: 'relative',
-            padding: '4px 0'
-          }}>
-            MATERIAL RECOMMENDATIONS
-            {pathname.startsWith('/materials') && <div style={{ position: 'absolute', bottom: 0, left: 0, width: '100%', height: '2px', background: '#10b981' }} />}
-          </Link>
-          <Link href="/history" style={{
-            color: pathname.startsWith('/history') ? '#10b981' : '#94a3b8',
-            textDecoration: 'none',
-            position: 'relative',
-            padding: '4px 0'
-          }}>
-            RECOMMENDATION HISTORY
-            {pathname.startsWith('/history') && <div style={{ position: 'absolute', bottom: 0, left: 0, width: '100%', height: '2px', background: '#10b981' }} />}
-          </Link>
-          <Link href="/feedback" style={{
-            color: pathname === '/feedback' ? '#10b981' : '#94a3b8',
-            textDecoration: 'none',
-            position: 'relative',
-            padding: '4px 0',
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: '6px'
-          }}>
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ opacity: pathname === '/feedback' ? 1 : 0.8 }}>
-              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-            </svg>
-            USER FEEDBACK
-            {pathname === '/feedback' && <div style={{ position: 'absolute', bottom: 0, left: 0, width: '100%', height: '2px', background: '#10b981' }} />}
-          </Link>
-        </nav>
-      </div>
+        ))}
+      </nav>
     </header>
   );
 }
