@@ -161,12 +161,12 @@ function Model3DPage() {
   ];
 
   const paramCards = [
-    { label: 'Location',      value: city,         color: '#c084fc' },
-    { label: 'Building Type', value: bType,         color: '#60a5fa' },
-    { label: 'Floors',        value: floors,        color: '#34d399' },
-    { label: 'Total Area',    value: `${area} m²`,  color: '#f59e0b' },
-    { label: 'Structure',     value: struct,        color: '#f97316' },
-    { label: 'Climate Zone',  value: climateZone,   color: '#06b6d4' },
+    { label: 'Location',      value: city,         color: '#2B5C8A' },
+    { label: 'Building Type', value: bType,         color: '#1E5438' },
+    { label: 'Floors',        value: floors,        color: '#4A7A5C' },
+    { label: 'Total Area',    value: `${area} m²`,  color: '#A8492E' },
+    { label: 'Structure',     value: struct,        color: '#B8722E' },
+    { label: 'Climate Zone',  value: climateZone,   color: '#2B5C8A' },
   ];
 
   const keyMap = { Walls:'walls', Roof:'roofing', Flooring:'flooring', Doors:'doors', Windows:'windows' };
@@ -185,14 +185,14 @@ function Model3DPage() {
         <section className="viewer-hero">
           <div className="viewer-hero-eyebrow">
             <span className="viewer-hero-badge">● LIVE 3D ENGINE</span>
-            <span style={{ fontSize:'0.6rem', color:'#8892b0', letterSpacing:'1px' }}>
-              REAL-TIME RENDERING
+            <span style={{ fontSize:'0.65rem', color:'#4A5E52', letterSpacing:'1px', fontWeight:700, fontFamily:'Space Grotesk' }}>
+              REAL-TIME ARCHITECTURAL RENDERING
             </span>
           </div>
           <h1 className="viewer-hero-title">3D Building Visualizer</h1>
           <p className="viewer-hero-sub">
-            Procedurally generated model with climate-adaptive material mapping and
-            engineering-grade structural overlays.
+            Procedurally generated structural model with climate-adaptive material mapping and
+            engineering-grade specifications.
           </p>
         </section>
 
@@ -229,7 +229,7 @@ function Model3DPage() {
               {/* Package Selection Toolbar */}
               {reportData?.packages && (
                 <div style={{ display:'flex', gap:'0.4rem', alignItems:'center' }}>
-                  <span style={{ fontSize:'0.58rem', fontWeight:900, color:'#8892b0', letterSpacing:'1px' }}>SELECT PACKAGE:</span>
+                  <span style={{ fontSize:'0.62rem', fontWeight:800, color:'#4A5E52', letterSpacing:'0.06em', fontFamily:'Space Grotesk' }}>PACKAGE:</span>
                   {Object.keys(reportData.packages).map(pkgKey => (
                     <button
                       key={pkgKey}
@@ -315,26 +315,26 @@ function Model3DPage() {
                     <span className="viewer-side-label">ROOM INSPECTOR</span>
                     <button
                       onClick={() => setSelectedRoom(null)}
-                      style={{ background:'transparent', border:'none', color:'#8892b0', fontSize:'0.62rem', cursor:'pointer', fontWeight:700 }}
+                      style={{ background:'transparent', border:'none', color:'#4A5E52', fontSize:'0.65rem', cursor:'pointer', fontWeight:700 }}
                     >
                       RESET
                     </button>
                   </div>
-                  <h3 style={{ fontSize:'1.15rem', fontWeight:800, margin:'0 0 1rem', fontFamily:'Space Grotesk', color:'#f1f5f9' }}>
+                  <h3 style={{ fontSize:'1.15rem', fontWeight:800, margin:'0 0 1rem', fontFamily:'Space Grotesk', color:'#18251F' }}>
                     {selectedRoom.label.toUpperCase()}
                   </h3>
-                  <div style={{ display:'flex', flexDirection:'column', gap:'8px', fontSize:'0.78rem', color:'#8892b0' }}>
+                  <div style={{ display:'flex', flexDirection:'column', gap:'8px', fontSize:'0.78rem', color:'#4A5E52' }}>
                     <div style={{ display:'flex', justifyContent:'space-between' }}>
                       <span>Dimensions:</span>
-                      <span style={{ color:'#fff', fontWeight:700 }}>{selectedRoom.w}m × {selectedRoom.h}m</span>
+                      <span style={{ color:'#18251F', fontWeight:700 }}>{selectedRoom.w}m × {selectedRoom.h}m</span>
                     </div>
                     <div style={{ display:'flex', justifyContent:'space-between' }}>
                       <span>Floor Area:</span>
-                      <span style={{ color:'var(--eco-glow,#00ff9d)', fontWeight:700 }}>{selectedRoom.area} m²</span>
+                      <span style={{ color:'#1E5438', fontWeight:700 }}>{selectedRoom.area} m²</span>
                     </div>
                     <div style={{ display:'flex', justifyContent:'space-between' }}>
                       <span>Zoning:</span>
-                      <span style={{ color:'#fff', fontWeight:700 }}>{selectedRoom.type || 'HABITABLE'}</span>
+                      <span style={{ color:'#18251F', fontWeight:700 }}>{selectedRoom.type || 'HABITABLE'}</span>
                     </div>
                   </div>
                 </>
@@ -342,7 +342,7 @@ function Model3DPage() {
                 <>
                   <div className="viewer-side-label">BUILDING OVERVIEW</div>
                   <h3 className="viewer-side-h3">Model Summary</h3>
-                  <p style={{ fontSize:'0.75rem', color:'#8892b0', lineHeight:1.6, margin:0 }}>
+                  <p style={{ fontSize:'0.78rem', color:'#4A5E52', lineHeight:1.6, margin:0, fontWeight:500 }}>
                     Rendered utilizing procedurally generated textures and geometries mapping
                     engineering requirements to visual indicators.
                   </p>
@@ -356,15 +356,15 @@ function Model3DPage() {
                 <div className="viewer-side-label">HIGHLIGHT LEGEND</div>
                 <div style={{ display:'flex', flexDirection:'column', gap:'0.5rem' }}>
                   {[
-                    { label:'Walling Material',  color:'#f97316', desc:'Orange Highlight'  },
-                    { label:'Roofing Material',  color:'#10b981', desc:'Emerald Highlight' },
-                    { label:'Flooring Material', color:'#f59e0b', desc:'Amber Highlight'   },
-                    { label:'Doors & Windows',   color:'#06b6d4', desc:'Cyan Highlight'    },
+                    { label:'Walling Material',  color:'#A8492E', desc:'Terracotta Highlight'  },
+                    { label:'Roofing Material',  color:'#1E5438', desc:'Forest Green Highlight' },
+                    { label:'Flooring Material', color:'#B8722E', desc:'Amber Highlight'   },
+                    { label:'Doors & Windows',   color:'#2B5C8A', desc:'Blue Highlight'    },
                   ].map((item, idx) => (
-                    <div key={idx} style={{ display:'flex', alignItems:'center', gap:'10px', background:'rgba(255,255,255,0.02)', borderRadius:'8px', padding:'0.45rem 0.7rem', fontSize:'0.72rem' }}>
-                      <div style={{ width:'10px', height:'10px', borderRadius:'50%', backgroundColor:item.color, boxShadow:`0 0 8px ${item.color}`, flexShrink:0 }} />
-                      <span style={{ fontWeight:800, color:'#fff' }}>{item.label}</span>
-                      <span style={{ color:'#64748b', marginLeft:'auto', fontSize:'0.62rem' }}>{item.desc}</span>
+                    <div key={idx} style={{ display:'flex', alignItems:'center', gap:'10px', background:'#F5F7F3', borderRadius:'8px', padding:'0.45rem 0.7rem', fontSize:'0.74rem', border:'1px solid #C4CFC6' }}>
+                      <div style={{ width:'10px', height:'10px', borderRadius:'50%', backgroundColor:item.color, flexShrink:0 }} />
+                      <span style={{ fontWeight:700, color:'#18251F' }}>{item.label}</span>
+                      <span style={{ color:'#4A5E52', marginLeft:'auto', fontSize:'0.65rem', fontWeight:500 }}>{item.desc}</span>
                     </div>
                   ))}
                 </div>
@@ -376,14 +376,14 @@ function Model3DPage() {
               <div className="viewer-side-label">CLIMATE CONDITIONS</div>
               <div className="viewer-climate-grid">
                 {[
-                  { label:'Rainfall', val:rain,     color:'#60a5fa' },
-                  { label:'Humidity', val:humidity,  color:'#34d399' },
-                  { label:'Salinity', val:salinity,  color:'#f59e0b' },
-                  { label:'Zone',     val:city,      color:'#c084fc' },
+                  { label:'Rainfall', val:rain,     color:'#2B5C8A' },
+                  { label:'Humidity', val:humidity,  color:'#1E5438' },
+                  { label:'Salinity', val:salinity,  color:'#A8492E' },
+                  { label:'Zone',     val:city,      color:'#2B5C8A' },
                 ].map((item, idx) => (
                   <div key={idx} className="viewer-climate-card">
                     <div className="viewer-climate-label">{item.label}</div>
-                    <div style={{ fontSize:'0.85rem', fontWeight:800, color:item.color, marginTop:'2px' }}>{item.val}</div>
+                    <div style={{ fontSize:'0.9rem', fontWeight:800, color:item.color, marginTop:'2px', fontFamily:'Space Grotesk' }}>{item.val}</div>
                   </div>
                 ))}
               </div>
@@ -395,7 +395,7 @@ function Model3DPage() {
               <div style={{ display:'flex', flexDirection:'column', gap:'0.5rem' }}>
                 {insights.map((insight, idx) => (
                   <div key={idx} className="viewer-insight-row">
-                    <span style={{ flexShrink:0, fontSize:'0.8rem' }}>💡</span>
+                    <span style={{ flexShrink:0, fontSize:'0.85rem' }}>💡</span>
                     <span>{insight}</span>
                   </div>
                 ))}
@@ -411,8 +411,8 @@ function Model3DPage() {
                   const item  = pkg?.[keyMap[comp]] || {};
                   return (
                     <div key={idx} className="viewer-mat-row">
-                      <span style={{ color:'#4f6880', fontFamily:'Inter,sans-serif', fontSize:'0.7rem' }}>{label}</span>
-                      <span style={{ fontWeight:800, color:'#e2e8f0', maxWidth:'145px', overflow:'hidden', textOverflow:'ellipsis', whiteSpace:'nowrap', fontSize:'0.73rem', letterSpacing:'-0.01em' }}>
+                      <span style={{ color:'#4A5E52', fontFamily:'Inter,sans-serif', fontSize:'0.72rem', fontWeight:600 }}>{label}</span>
+                      <span style={{ fontWeight:700, color:'#18251F', maxWidth:'155px', overflow:'hidden', textOverflow:'ellipsis', whiteSpace:'nowrap', fontSize:'0.75rem', fontFamily:'Space Grotesk' }}>
                         {item.name || `Material #${val}`}
                       </span>
                     </div>

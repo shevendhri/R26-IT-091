@@ -3,6 +3,7 @@ import React from 'react';
 
 /**
  * DecisionFactorsPanel – Climate and structural decision drivers.
+ * Updated for high-contrast warm sustainable architecture theme.
  */
 export default function DecisionFactorsPanel({ data }) {
   const climate = data?.climate_profile || {};
@@ -98,38 +99,38 @@ export default function DecisionFactorsPanel({ data }) {
   }
 
   const getTypeStyle = (type) => {
-    if (type === 'positive') return { color: '#10b981', bg: 'rgba(16, 185, 129, 0.08)', border: 'rgba(16, 185, 129, 0.2)' };
-    if (type === 'caution') return { color: '#f59e0b', bg: 'rgba(245, 158, 11, 0.08)', border: 'rgba(245, 158, 11, 0.2)' };
-    return { color: '#94a3b8', bg: 'rgba(148, 163, 184, 0.08)', border: 'rgba(148, 163, 184, 0.12)' };
+    if (type === 'positive') return { color: '#245C43', bg: '#DDE8DE', border: 'rgba(36, 92, 67, 0.25)' };
+    if (type === 'caution') return { color: '#C77A3D', bg: 'rgba(199, 122, 61, 0.12)', border: 'rgba(199, 122, 61, 0.25)' };
+    return { color: '#526158', bg: '#FFFFFF', border: '#C8D3CA' };
   };
 
   if (drivers.length === 0) return null;
 
   return (
     <div style={{
-      background: '#0f172a',
-      border: '1px solid #1e293b',
-      borderRadius: '8px',
-      padding: '1.25rem',
+      background: '#FFFFFF',
+      border: '1px solid #C8D3CA',
+      borderRadius: '16px',
+      padding: '1.4rem',
       display: 'flex',
       flexDirection: 'column',
       gap: '1rem',
-      boxShadow: '0 4px 12px rgba(0,0,0,0.25)',
+      boxShadow: '0 4px 12px rgba(24, 37, 31, 0.04)',
     }}>
       {/* Header */}
       <div>
-        <div style={{ fontSize: '0.62rem', fontWeight: 700, color: '#64748b', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '0.2rem' }}>
+        <div style={{ fontSize: '0.72rem', fontWeight: 800, color: '#245C43', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '0.2rem', fontFamily: 'Space Grotesk' }}>
           Climate & Structural Context
         </div>
-        <h3 style={{ fontSize: '1.15rem', color: '#f8fafc', fontFamily: 'Space Grotesk', margin: 0, fontWeight: 600 }}>
+        <h3 style={{ fontSize: '1.2rem', color: '#18251F', fontFamily: 'Space Grotesk', margin: 0, fontWeight: 800 }}>
           Decision Drivers
         </h3>
-        <p style={{ color: '#94a3b8', fontSize: '0.78rem', marginTop: '0.2rem', lineHeight: 1.4, margin: 0 }}>
+        <p style={{ color: '#526158', fontSize: '0.85rem', marginTop: '0.25rem', lineHeight: 1.5, margin: 0, fontWeight: 500 }}>
           How each contextual input parameter influenced the final material selection.
         </p>
       </div>
 
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
         {drivers.map((driver, i) => {
           const style = getTypeStyle(driver.type);
           return (
@@ -137,30 +138,30 @@ export default function DecisionFactorsPanel({ data }) {
               display: 'flex',
               gap: '0.75rem',
               alignItems: 'flex-start',
-              padding: '0.6rem 0.75rem',
-              background: '#090d16',
-              border: '1px solid #1e293b',
-              borderRadius: '6px',
+              padding: '0.7rem 0.85rem',
+              background: '#F7F9F6',
+              border: '1px solid #C8D3CA',
+              borderRadius: '10px',
             }}>
               <div style={{ flex: 1, minWidth: 0 }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap', marginBottom: '0.2rem' }}>
-                  <span style={{ fontWeight: 600, fontSize: '0.8rem', color: '#f8fafc', fontFamily: 'Space Grotesk' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap', marginBottom: '0.25rem' }}>
+                  <span style={{ fontWeight: 800, fontSize: '0.88rem', color: '#18251F', fontFamily: 'Space Grotesk' }}>
                     {driver.factor}
                   </span>
                   <span style={{
-                    fontSize: '0.65rem',
+                    fontSize: '0.7rem',
                     fontWeight: 700,
                     color: style.color,
                     background: style.bg,
-                    padding: '2px 8px',
-                    borderRadius: '4px',
+                    padding: '3px 8px',
+                    borderRadius: '6px',
                     border: `1px solid ${style.border}`,
                     flexShrink: 0
                   }}>
                     {driver.value}
                   </span>
                 </div>
-                <div style={{ fontSize: '0.72rem', color: '#94a3b8', lineHeight: 1.4 }}>
+                <div style={{ fontSize: '0.78rem', color: '#526158', lineHeight: 1.5, fontWeight: 500 }}>
                   {driver.impact}
                 </div>
               </div>

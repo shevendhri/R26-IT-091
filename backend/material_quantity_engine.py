@@ -14,6 +14,17 @@ except ImportError:
     from geometry_validator import GeometryValidator
 
 
+MAX_OPENING_RATIO_BY_BUILDING_TYPE = {
+    "Residential": 0.40,
+    "Commercial": 0.60,
+    "Healthcare": 0.60,
+    "Industrial": 0.30,
+    "School": 0.45,
+    "Hotel": 0.55,
+    "Default": 0.50
+}
+
+
 class MaterialQuantityEngine:
     """
     Centralized Quantity Calculation Engine (Preliminary Engineering Takeoff).
@@ -41,6 +52,8 @@ class MaterialQuantityEngine:
         """
         Calculates preliminary component-specific quantities and attaches geometry validation telemetry.
         """
+        quantity_warnings: List[str] = []
+
         floor_count = max(1, int(floor_count or 1))
         total_floor_area = max(1.0, float(total_floor_area or 100.0))
         footprint_area = round(total_floor_area / floor_count, 2)
@@ -91,7 +104,7 @@ class MaterialQuantityEngine:
             wall_source = "Blueprint-extracted" if is_blueprint_derived else "Preliminary estimated quantity"
             wall_conf = 90.0 if is_blueprint_derived else 80.0
 
-        # 2. Openings Estimation
+        # 2. Openings Estimation with Configurable Sanity Validation
         if door_count_val is None:
             door_count_val = max(2, int(total_floor_area / 25.0) + floor_count)
             door_source = "Preliminary estimated quantity"
@@ -114,9 +127,25 @@ class MaterialQuantityEngine:
             win_source = "Blueprint-extracted" if is_blueprint_derived else "Preliminary estimated quantity"
             win_conf = 90.0 if is_blueprint_derived else 80.0
 
-        # Net wall area deducting window and door apertures
+        # Configurable maximum opening ratio by building type
+        b_type_key = building_type.strip().title() if building_type else "Default"
+        max_opening_ratio = MAX_OPENING_RATIO_BY_BUILDING_TYPE.get(b_type_key, MAX_OPENING_RATIO_BY_BUILDING_TYPE["Default"])
+
         total_openings = round(window_area_val + door_area_val, 2)
-        net_wall_area = max(1.0, round(gross_wall_area - total_openings, 2))
+        opening_ratio = (total_openings / gross_wall_area) if gross_wall_area > 0 else 0.0
+
+        # Sanity adjustment if opening ratio exceeds configurable maximum
+        if opening_ratio > max_opening_ratio and gross_wall_area > 0:
+            allowed_max_openings = round(gross_wall_area * max_opening_ratio, 2)
+            scale = allowed_max_openings / total_openings if total_openings > 0 else 1.0
+            window_area_val = round(window_area_val * scale, 2)
+            door_area_val = round(door_area_val * scale, 2)
+            total_openings = allowed_max_openings
+            quantity_warnings.append(
+                f"Preliminary quantity estimate adjusted by geometry sanity constraints: opening area capped at {max_opening_ratio*100:.0f}% of gross wall area ({gross_wall_area} m²) to ensure positive structural envelope plausibility."
+            )
+
+        net_wall_area = max(0.0, round(gross_wall_area - total_openings, 2))
 
         # 3. Roof Surface Area with pitch factor
         sys_lower = structural_system.lower()
@@ -459,9 +488,25 @@ class MaterialQuantityEngine:
         else:
             embodied_carbon_kg = round(quantity * 25.0 * embodied_carbon_factor, 2)
 
+        # Validation status check for preliminary quantity takeoff
+        status = "PASS"
+        msg = "Preliminary quantity takeoff validated using parametric heuristics."
+
+        if quantity < 0:
+            status = "FAIL"
+            msg = "Calculated quantity is negative, which is an invalid geometry error."
+        elif quantity == 0 and comp_lower not in ("waterproofing",):
+            status = "WARNING"
+            msg = "Calculated preliminary quantity is zero."
+        elif any("adjusted by geometry sanity constraints" in str(a) for a in quantities.get("assumptions", [])):
+            status = "WARNING"
+            msg = "Estimate adjusted using parametric sanity constraints."
+
         return {
             "quantity": round(quantity, 2),
             "unit": unit,
+            "status": status,
+            "message": msg,
             "unit_count_label": unit_count_label,
             "calculation_basis": calculation_basis,
             "source": source_label,

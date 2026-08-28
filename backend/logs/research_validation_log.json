@@ -1,0 +1,54 @@
+[
+  {
+    "timestamp": "2026-08-23T03:20:51.752278Z",
+    "questionnaire": {
+      "building_type": "Residential"
+    },
+    "validation_result": {
+      "validation_score": 100,
+      "severity": "low",
+      "warnings": [],
+      "recommendations": [],
+      "rule_results": []
+    }
+  },
+  {
+    "timestamp": "2026-08-24T13:27:20.857486Z",
+    "questionnaire": {
+      "building_type": "Residential"
+    },
+    "validation_result": {
+      "validation_score": 100,
+      "severity": "low",
+      "warnings": [],
+      "recommendations": [],
+      "rule_results": []
+    }
+  },
+  {
+    "timestamp": "2026-08-24T13:38:36.071686Z",
+    "questionnaire": {
+      "building_type": "Residential"
+    },
+    "validation_result": {
+      "validation_score": 100,
+      "severity": "low",
+      "warnings": [],
+      "recommendations": [],
+      "rule_results": []
+    }
+  },
+  {
+    "timestamp": "2026-08-24T13:44:12.007917Z",
+    "questionnaire": {
+      "building_type": "Residential"
+    },
+    "validation_result": {
+      "validation_score": 100,
+      "severity": "low",
+      "warnings": [],
+      "recommendations": [],
+      "rule_results": []
+    }
+  }
+]

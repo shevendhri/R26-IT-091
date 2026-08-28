@@ -6,7 +6,7 @@ import time
 import logging
 import copy
 from typing import Dict, List, Any, Tuple
-from database import get_all_materials, format_material
+from database import get_all_materials, format_material, validate_canonical_component
 from blueprint_engine import blueprint_engine
 from architectural_style_engine import style_engine
 from questionnaire_engine import UserProfile
@@ -218,6 +218,20 @@ class MaterialSpecificationEngine:
         for pkg_title, pkg_key in package_names_map.items():
             selected_items = []
 
+            comp_to_canonical = {
+                "Foundation Materials": "Foundation",
+                "Concrete": "Structural Frame",
+                "Reinforcement Steel": "Reinforcement",
+                "Walls": "Walling",
+                "Roofing": "Roofing",
+                "Windows": "Windows",
+                "Doors": "Doors",
+                "Flooring": "Flooring",
+                "Ceiling Systems": "Ceiling",
+                "Waterproofing": "Waterproofing",
+                "Surface Finishes": "Finishes"
+            }
+
             for comp in components:
                 best_mat = None
                 best_score = -1.0
@@ -225,8 +239,8 @@ class MaterialSpecificationEngine:
                 best_ml = 50.0
                 best_reasons = []
 
-                cats = component_category_map[comp]
-                mats = [m for m in catalog if m["Category"].lower() in cats]
+                target_canon = comp_to_canonical.get(comp, comp)
+                mats = [m for m in catalog if validate_canonical_component(m, target_canon)]
 
                 # Collect exclusions for this component
                 exclusions: List[str] = []

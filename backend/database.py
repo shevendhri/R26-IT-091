@@ -19,47 +19,29 @@ def ensure_table():
     if table_exists:
         cur.execute("PRAGMA table_info(materials)")
         columns = [row[1] for row in cur.fetchall()]
-        # Re-seed if new columns are missing
+        # Re-seed if new columns are missing or legacy Openings component exists
         if "Component" not in columns or "Unit" not in columns or "Unit_Rate" not in columns or "Standard_Reference" not in columns:
             print("[DB] Upgrading materials table schema with Component, Unit, Unit_Rate, and Standard_Reference...")
             cur.execute("DROP TABLE IF EXISTS materials")
             conn.commit()
+        else:
+            cur.execute("SELECT COUNT(*) FROM materials WHERE Component = 'Openings'")
+            if cur.fetchone()[0] > 0:
+                print("[DB] Re-seeding materials table with exact canonical Component values...")
+                cur.execute("DROP TABLE IF EXISTS materials")
+                conn.commit()
+
 
     cur.execute("""
-        CREATE TABLE IF NOT EXISTS materials (
-            Material_ID INTEGER PRIMARY KEY AUTOINCREMENT,
-            Name TEXT,
-            Component TEXT,
-            Application TEXT,
-            Category TEXT,
-            Unit TEXT,
-            Unit_Rate REAL,
-            Rate_Basis TEXT,
-            Data_Source TEXT,
-            Data_Quality TEXT,
-            Standard_Reference TEXT,
-            Thermal_Rating INTEGER,
-            Moisture_Resistance INTEGER,
-            Corrosion_Resistance INTEGER,
-            Structural_Capacity INTEGER,
-            Sustainability_Rating INTEGER,
-            Maintenance_Level INTEGER,
-            Embodied_Carbon REAL,
-            Suitable_Climates TEXT,
-            Budget_Level TEXT,
-            Building_Sectors TEXT,
-            Floor_Count_Range TEXT,
-            Service_Life INTEGER,
-            Description TEXT,
-            Local_Availability TEXT,
-            Supplier_Density TEXT,
-            Style_Compatibility TEXT,
-            Recyclability_Rating INTEGER,
-            Thermal_Performance_Rating INTEGER,
-            Climate_Risk_Score INTEGER
+        CREATE TABLE IF NOT EXISTS recommendation_history (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            created_at TEXT NOT NULL,
+            project_info TEXT NOT NULL,
+            recommendation TEXT NOT NULL
         )
     """)
     conn.commit()
+
 
     cur.execute("SELECT COUNT(*) FROM materials")
     if cur.fetchone()[0] == 0:
@@ -136,7 +118,7 @@ def ensure_table():
         # STRUCTURAL / CONCRETE & REBAR (9 materials)
         # ═══════════════════════════════════════════════════
         ("Gr. 25 Standard Structural Concrete",
-         "Structural", "Columns, beams, and suspended structural slabs", "Concrete",
+         "Structural Frame", "Columns, beams, and suspended structural slabs", "Structural Frame",
          "m³", 32500.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "SLS 614 / BS 8110 ref",
          40, 65, 50, 80, 52, 25, 0.45,
          "wet,dry,intermediate,highland",
@@ -147,7 +129,7 @@ def ensure_table():
          40, 40, 60),
 
         ("Gr. 30 Marine-Grade Concrete Mix",
-         "Structural", "Columns, beams & coastal superstructure within 1km coast", "Concrete",
+         "Structural Frame", "Columns, beams & coastal superstructure within 1km coast", "Structural Frame",
          "m³", 45000.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "SLS 614 Marine / BS 6349",
          45, 98, 98, 90, 46, 15, 0.68,
          "coastal,extreme coastal",
@@ -158,7 +140,7 @@ def ensure_table():
          35, 45, 98),
 
         ("Eco-Concrete (Recycled Aggregate + Fly-Ash)",
-         "Structural", "Low-carbon frame columns, beams and slabs", "Concrete",
+         "Structural Frame", "Low-carbon frame columns, beams and slabs", "Structural Frame",
          "m³", 35000.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "SLS 614 Blended / GREENSL Tier-1",
          42, 65, 48, 75, 92, 22, 0.28,
          "dry,wet,intermediate,highland",
@@ -169,7 +151,7 @@ def ensure_table():
          88, 40, 60),
 
         ("Self-Compacting Concrete (SCC)",
-         "Structural", "Heavily congested column-beam junctions & architectural concrete", "Concrete",
+         "Structural Frame", "Heavily congested column-beam junctions & architectural concrete", "Structural Frame",
          "m³", 42000.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "SLS 614 Special Mix",
          45, 80, 75, 85, 50, 15, 0.55,
          "wet,dry,coastal,intermediate",
@@ -180,7 +162,7 @@ def ensure_table():
          40, 45, 75),
 
         ("Epoxy-Coated Rebar (ASTM A775)",
-         "Structural", "Reinforcement steel for coastal/saline environments", "Structural",
+         "Reinforcement", "Reinforcement steel for coastal/saline environments", "Reinforcement",
          "ton", 545000.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "ASTM A775 / SLS 375 ref",
          10, 98, 100, 98, 42, 8, 0.88,
          "coastal,extreme coastal",
@@ -191,7 +173,7 @@ def ensure_table():
          25, 10, 98),
 
         ("TMT High-Yield Rebar (SLS 375)",
-         "Structural", "Standard reinforcement steel for inland concrete framing", "Structural",
+         "Reinforcement", "Standard reinforcement steel for inland concrete framing", "Reinforcement",
          "ton", 395000.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "SLS 375 Grade RB500",
          10, 68, 42, 92, 55, 28, 0.55,
          "dry,wet,intermediate,highland",
@@ -202,7 +184,7 @@ def ensure_table():
          35, 10, 55),
 
         ("Galvanized Steel Rebar (Hot-Dip)",
-         "Structural", "Corrosion-resistant reinforcement for moderate coastal zones", "Structural",
+         "Reinforcement", "Corrosion-resistant reinforcement for moderate coastal zones", "Reinforcement",
          "ton", 425000.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "ISO 1461 / SLS 375 ref",
          10, 85, 85, 90, 50, 15, 0.75,
          "coastal,wet,extreme coastal",
@@ -213,7 +195,7 @@ def ensure_table():
          50, 10, 80),
 
         ("Stainless Steel Rebar (Grade 316L)",
-         "Structural", "Ultra-durability reinforcement for critical marine infrastructure", "Structural",
+         "Reinforcement", "Ultra-durability reinforcement for critical marine infrastructure", "Reinforcement",
          "ton", 780000.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "BS 6744 / ASTM A955",
          10, 100, 100, 95, 35, 5, 1.25,
          "coastal,extreme coastal",
@@ -224,7 +206,7 @@ def ensure_table():
          65, 10, 100),
 
         ("GFRP Rebar (Glass Fibre Reinforced Polymer)",
-         "Structural", "Non-metallic non-corrosive reinforcement for saline concrete", "Structural",
+         "Reinforcement", "Non-metallic non-corrosive reinforcement for saline concrete", "Reinforcement",
          "ton", 490000.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "ACI 440.1R / CSA S806",
          10, 100, 100, 80, 80, 5, 0.55,
          "coastal,extreme coastal,wet",
@@ -398,7 +380,7 @@ def ensure_table():
         # OPENINGS / WINDOWS (6 materials)
         # ═══════════════════════════════════════════════════
         ("uPVC Multi-Chamber Window System",
-         "Openings", "High thermal insulation and saline corrosion-proof windows", "Windows",
+         "Windows", "High thermal insulation and saline corrosion-proof windows", "Windows",
          "m²", 72000.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "BS EN 12608 / SLS Ref",
          95, 98, 100, 15, 82, 8, 0.28,
          "coastal,highland,wet,extreme coastal,intermediate",
@@ -409,7 +391,7 @@ def ensure_table():
          42, 95, 90),
 
         ("Casement Aluminium Window (Powder-Coated)",
-         "Openings", "Weather-resistant operable window frames with thermal break", "Windows",
+         "Windows", "Weather-resistant operable window frames with thermal break", "Windows",
          "m²", 48000.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "SLS 1410 / BS 4873",
          60, 92, 92, 15, 55, 15, 0.45,
          "coastal,wet,intermediate,dry,extreme coastal",
@@ -420,7 +402,7 @@ def ensure_table():
          50, 60, 82),
 
         ("Timber Louvre Window (Treated Hardwood)",
-         "Openings", "Passive natural cross-ventilation adjustable louvre apertures", "Windows",
+         "Windows", "Passive natural cross-ventilation adjustable louvre apertures", "Windows",
          "m²", 35000.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "Traditional / SLS 263 ref",
          80, 62, 55, 10, 75, 42, 0.25,
          "highland,intermediate,dry",
@@ -431,7 +413,7 @@ def ensure_table():
          70, 82, 38),
 
         ("Commercial Double-Glazed Unit (DGU Low-E)",
-         "Openings", "Solar control acoustic curtain wall and vision glass", "Windows",
+         "Windows", "Solar control acoustic curtain wall and vision glass", "Windows",
          "m²", 95000.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "EN 1279 / ASTM E2190",
          92, 92, 88, 20, 72, 18, 0.58,
          "coastal,urban,wet,intermediate",
@@ -442,7 +424,7 @@ def ensure_table():
          38, 92, 80),
 
         ("Fixed Aluminium Framed Glass Panel",
-         "Openings", "Non-operable daylight vision apertures and façade panels", "Windows",
+         "Windows", "Non-operable daylight vision apertures and façade panels", "Windows",
          "m²", 28000.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "SLS 1410 / BS 6262",
          55, 92, 90, 10, 50, 10, 0.42,
          "coastal,wet,dry,intermediate",
@@ -453,7 +435,7 @@ def ensure_table():
          45, 55, 78),
 
         ("Sliding Aluminium Window (Impact-Resistant)",
-         "Openings", "Wind-load certified sliding windows for multi-storey & coastal", "Windows",
+         "Windows", "Wind-load certified sliding windows for multi-storey & coastal", "Windows",
          "m²", 42000.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "SLS 1410 / ASTM E1886",
          65, 95, 95, 12, 52, 12, 0.40,
          "coastal,extreme coastal,wet",
@@ -467,7 +449,7 @@ def ensure_table():
         # OPENINGS / DOORS (7 materials)
         # ═══════════════════════════════════════════════════
         ("Solid Teak Timber Door (Premium)",
-         "Openings", "Primary entrance and high-traffic interior hardwood door leaf", "Doors",
+         "Doors", "Primary entrance and high-traffic interior hardwood door leaf", "Doors",
          "units", 120000.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "SLS 263 / BS 4787",
          48, 82, 82, 42, 75, 42, 0.22,
          "wet,dry,highland,intermediate",
@@ -478,7 +460,7 @@ def ensure_table():
          65, 48, 42),
 
         ("Aluminium Profile Glass Door (Heavy-Duty)",
-         "Openings", "Commercial entrance & weather-resistant glazed sliding door", "Doors",
+         "Doors", "Commercial entrance & weather-resistant glazed sliding door", "Doors",
          "units", 85000.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "SLS 1410 / BS EN 14351",
          52, 95, 95, 48, 52, 22, 0.58,
          "coastal,wet,intermediate,extreme coastal,dry",
@@ -489,7 +471,7 @@ def ensure_table():
          52, 52, 88),
 
         ("FRP Fiberglass Reinforced Door",
-         "Openings", "100% moisture-proof and chemical-resistant door leaf for wet/coastal areas", "Doors",
+         "Doors", "100% moisture-proof and chemical-resistant door leaf for wet/coastal areas", "Doors",
          "units", 98000.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "ASTM D4024 / BS EN 14351",
          42, 98, 100, 42, 65, 12, 0.48,
          "coastal,wet,extreme coastal",
@@ -500,7 +482,7 @@ def ensure_table():
          55, 42, 98),
 
         ("Standard Hollow-Core Flush Door (HDF Faced)",
-         "Openings", "Interior bedroom and office dry partition door leaf", "Doors",
+         "Doors", "Interior bedroom and office dry partition door leaf", "Doors",
          "units", 22000.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "SLS 263 / BS 4787 Part 1",
          32, 42, 32, 28, 42, 48, 0.38,
          "dry,intermediate",
@@ -511,7 +493,7 @@ def ensure_table():
          30, 32, 28),
 
         ("Steel Security Door (Powder-Coated)",
-         "Openings", "High-security external and utility entrance door", "Doors",
+         "Doors", "High-security external and utility entrance door", "Doors",
          "units", 65000.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "BS EN 1627 / SLS Ref",
          35, 75, 70, 85, 40, 25, 0.72,
          "dry,intermediate,wet",
@@ -522,7 +504,7 @@ def ensure_table():
          40, 35, 55),
 
         ("Timber Louvre Door (Ventilated Hardwood)",
-         "Openings", "Passive airflow internal and veranda hardwood louvre door", "Doors",
+         "Doors", "Passive airflow internal and veranda hardwood louvre door", "Doors",
          "units", 45000.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "Traditional / SLS 263",
          75, 65, 58, 30, 72, 38, 0.20,
          "highland,intermediate,dry,wet",
@@ -533,7 +515,7 @@ def ensure_table():
          68, 78, 38),
 
         ("UPVC Sliding Door (Weather-Sealed)",
-         "Openings", "Thermal and acoustic weather-sealed patio and balcony sliding door", "Doors",
+         "Doors", "Thermal and acoustic weather-sealed patio and balcony sliding door", "Doors",
          "units", 78000.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "BS EN 12608 / PAS 24",
          88, 98, 100, 20, 80, 10, 0.32,
          "coastal,wet,highland,extreme coastal",
@@ -754,7 +736,7 @@ def ensure_table():
         # FINISHING / PAINT (3 materials)
         # ═══════════════════════════════════════════════════
         ("Advanced Nano-Exterior Paint",
-         "Finishing", "Self-cleaning weather and UV-resistant exterior wall coating", "Finishing",
+         "Finishes", "Self-cleaning weather and UV-resistant exterior wall coating", "Finishes",
          "m²", 2100.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "SLS 557 / ASTM D6904",
          10, 95, 90, 5, 65, 15, 0.25,
          "coastal,wet,dry,extreme coastal,highland,intermediate",
@@ -765,7 +747,7 @@ def ensure_table():
          30, 15, 80),
 
         ("Eco-Friendly Low VOC Emulsion",
-         "Finishing", "Indoor air quality focused low-emission wall paint", "Finishing",
+         "Finishes", "Indoor air quality focused low-emission wall paint", "Finishes",
          "m²", 1650.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "SLS 557 / GREENSL Tier-1",
          10, 55, 40, 5, 95, 15, 0.12,
          "dry,wet,intermediate,highland",
@@ -776,7 +758,7 @@ def ensure_table():
          85, 15, 40),
 
         ("Standard Exterior Emulsion",
-         "Finishing", "Economical weather-resistant exterior acrylic paint", "Finishing",
+         "Finishes", "Economical weather-resistant exterior acrylic paint", "Finishes",
          "m²", 1250.0, "Preliminary illustrative unit rate (Colombo baseline)", "GreenConstructAI Baseline", "Prototype / illustrative data", "SLS 557 Standard",
          10, 40, 35, 5, 40, 25, 0.25,
          "dry,wet,intermediate",
@@ -815,38 +797,122 @@ def get_all_materials():
     return rows
 
 
-def normalize_canonical_component(category: str, name: str) -> str:
+CANONICAL_COMPONENTS = {
+    "Foundation",
+    "Structural Frame",
+    "Reinforcement",
+    "Walling",
+    "Roofing",
+    "Windows",
+    "Doors",
+    "Flooring",
+    "Ceiling",
+    "Finishes",
+    "Waterproofing"
+}
+
+
+def normalize_canonical_component(category: str, name: str = "") -> str:
     cat_lc = (category or "").lower().strip()
     name_lc = (name or "").lower().strip()
-    if cat_lc == "foundation":
+
+    # Exact canonical component name matches on category
+    if cat_lc in ("waterproofing", "waterproof") or "waterproof" in name_lc or "crystalline slurry" in name_lc or "bentonite" in name_lc:
+        return "Waterproofing"
+
+    if "door" in name_lc and "window" not in name_lc:
+        return "Doors"
+    if any(k in name_lc for k in ("window", "glazing", "double-glazed", "double glazed", "dgu", "louvre window", "glass panel", "casement")) and "door" not in name_lc:
+        return "Windows"
+
+    if cat_lc in ("foundation",):
         return "Foundation"
-    elif cat_lc in ("concrete", "structural frame") or (cat_lc == "structural" and ("concrete" in name_lc or "mix" in name_lc or "scc" in name_lc)):
+    elif cat_lc in ("structural frame", "concrete") or (cat_lc == "structural" and ("concrete" in name_lc or "mix" in name_lc or "scc" in name_lc)):
         return "Structural Frame"
     elif cat_lc in ("reinforcement", "rebar") or (cat_lc == "structural" and ("rebar" in name_lc or "steel" in name_lc or "gfrp" in name_lc or "ton" in name_lc)):
         return "Reinforcement"
-    elif cat_lc in ("walling", "walls", "wall"):
+    elif cat_lc in ("walling", "walls", "wall") or ("brick" in name_lc or "block" in name_lc or "cseb" in name_lc):
         return "Walling"
-    elif cat_lc in ("roofing", "roof"):
+    elif cat_lc in ("roofing", "roof") or ("roof" in name_lc or "corrugated" in name_lc or "shingle" in name_lc or ("tile" in name_lc and "floor" not in name_lc and "ceiling" not in name_lc and "terrazzo" not in name_lc and "ceramic" not in name_lc and "porcelain" not in name_lc)):
         return "Roofing"
-    elif cat_lc == "windows" or (cat_lc in ("openings", "window", "opening") and ("window" in name_lc or "glass" in name_lc or "glazing" in name_lc or "glazed" in name_lc or "dgu" in name_lc or "louvre" in name_lc)):
+    elif cat_lc in ("windows", "window"):
+        if "door" in name_lc:
+            return "Doors"
         return "Windows"
-    elif cat_lc == "doors" or (cat_lc in ("openings", "door", "opening") and "door" in name_lc):
+    elif cat_lc in ("doors", "door"):
+        if any(k in name_lc for k in ("window", "glazing", "double-glazed", "double glazed", "dgu", "louvre window", "glass panel", "casement")) and "door" not in name_lc:
+            return "Windows"
         return "Doors"
     elif cat_lc in ("openings", "opening"):
         return "Doors" if "door" in name_lc else "Windows"
-    elif cat_lc in ("flooring", "floor"):
+    elif cat_lc in ("flooring", "floor") or ("tile" in name_lc and "roof" not in name_lc and "ceiling" not in name_lc) or "terrazzo" in name_lc or "screed" in name_lc:
         return "Flooring"
-    elif cat_lc in ("ceiling", "ceilings"):
+    elif cat_lc in ("ceiling", "ceilings") or "gypsum" in name_lc:
         return "Ceiling"
-    elif cat_lc in ("finishing", "finishes", "paint"):
+    elif cat_lc in ("finishing", "finishes", "paint") or "paint" in name_lc or "emulsion" in name_lc:
         return "Finishes"
-    elif cat_lc in ("waterproofing", "waterproof"):
-        return "Waterproofing"
     elif "rebar" in name_lc or "steel" in name_lc:
         return "Reinforcement"
     elif "concrete" in name_lc:
         return "Structural Frame"
-    return "Structural Frame"
+    return "Unknown"
+
+
+def validate_canonical_component(material: dict, requested_component: str) -> bool:
+    """Strict single canonical component validation function (TASK 1).
+
+    For every recommendation:
+    - The material's canonical component must exactly match the recommendation slot.
+    - Windows must only return materials categorized as Windows.
+    - Doors must only return materials categorized as Doors.
+    - Flooring must only return Flooring materials.
+    - Roofing must only return Roofing materials.
+    - Walling must only return Walling materials.
+    - Foundation must only return Foundation materials.
+    - Structural Frame must only return Structural Frame materials.
+    - Reinforcement must only return Reinforcement materials.
+    - Ceiling must only return Ceiling materials.
+    - Finishes must only return Finishes materials.
+    - Waterproofing must only return Waterproofing materials.
+
+    Specifically:
+    - A material containing 'Door' must NEVER be classified as Windows.
+    - A material containing 'Window', 'Glazing', 'DGU', 'Glass Panel', 'Casement',
+      or explicit window metadata must NEVER be classified as Doors.
+    """
+    if not material or not isinstance(material, dict):
+        return False
+    name = material.get("Name") or material.get("name", "")
+    if not name:
+        return False
+    name_lc = name.lower().strip()
+    raw_comp = material.get("Component") or material.get("component") or material.get("Category") or material.get("category", "")
+    canonical = normalize_canonical_component(raw_comp, name)
+
+    # Normalize requested slot
+    req_canonical = normalize_canonical_component(requested_component, requested_component)
+
+    if canonical not in CANONICAL_COMPONENTS or req_canonical not in CANONICAL_COMPONENTS:
+        return False
+
+    if canonical != req_canonical:
+        return False
+
+    # Strict anti-contamination rules
+    if req_canonical == "Windows":
+        if "door" in name_lc:
+            return False
+    elif req_canonical == "Doors":
+        if any(k in name_lc for k in ("window", "glazing", "double-glazed", "double glazed", "dgu", "glass panel", "casement")) and "door" not in name_lc:
+            return False
+    elif req_canonical == "Roofing":
+        if "waterproof" in name_lc or "waterproof" in (raw_comp or "").lower() or "bentonite" in name_lc or "crystalline" in name_lc:
+            return False
+    elif req_canonical == "Waterproofing":
+        if ("roof" in name_lc and "waterproof" not in name_lc) or ("roof" in (raw_comp or "").lower() and "waterproof" not in (raw_comp or "").lower()):
+            return False
+
+    return True
 
 
 def format_material(row):
@@ -854,6 +920,10 @@ def format_material(row):
     name = r.get("Name", "")
     category = r.get("Category", "")
     component = normalize_canonical_component(r.get("Component") or category, name)
+    r["Component"] = component
+    # Keep Category aligned with Component if Component is canonical
+    if r.get("Category") in ("Openings", "Structural", "Concrete", "Finishing") or not r.get("Category"):
+        r["Category"] = component
     unit = r.get("Unit") or "m²"
     unit_rate = float(r.get("Unit_Rate") or 0.0)
     rate_basis = r.get("Rate_Basis") or "Rate unavailable / not included in baseline"
@@ -988,12 +1058,43 @@ def format_material(row):
     }
 
 
-def get_material_by_id(material_id: int):
+def insert_history(created_at: str, project_info: str, recommendation: str) -> int:
+    """Insert a recommendation snapshot and return its new id."""
     conn = get_connection()
     cur = conn.cursor()
-    cur.execute("SELECT * FROM materials WHERE Material_ID = ?", (material_id,))
+    cur.execute(
+        "INSERT INTO recommendation_history (created_at, project_info, recommendation) VALUES (?, ?, ?)",
+        (created_at, project_info, recommendation)
+    )
+    conn.commit()
+    row_id = cur.lastrowid
+    conn.close()
+    return row_id
+
+def get_all_history() -> list[dict]:
+    """Return all history entries ordered newest first."""
+    conn = get_connection()
+    cur = conn.cursor()
+    cur.execute("SELECT * FROM recommendation_history ORDER BY created_at DESC")
+    rows = cur.fetchall()
+    conn.close()
+    return [dict(row) for row in rows]
+
+def get_history_by_id(entry_id: int) -> dict | None:
+    """Return a single history entry or None if not found."""
+    conn = get_connection()
+    cur = conn.cursor()
+    cur.execute("SELECT * FROM recommendation_history WHERE id = ?", (entry_id,))
     row = cur.fetchone()
     conn.close()
-    if row:
-        return format_material(row)
-    return None
+    return dict(row) if row else None
+
+def delete_history(entry_id: int) -> bool:
+    """Delete a history entry; returns True if a row was deleted."""
+    conn = get_connection()
+    cur = conn.cursor()
+    cur.execute("DELETE FROM recommendation_history WHERE id = ?", (entry_id,))
+    conn.commit()
+    deleted = cur.rowcount > 0
+    conn.close()
+    return deleted

@@ -21,7 +21,8 @@ class WebGLErrorBoundary extends Component {
   }
 }
 import { Canvas } from '@react-three/fiber';
-import { OrbitControls, Html, Sky, Environment, ContactShadows, Float } from '@react-three/drei';
+import { OrbitControls, Html, Sky, ContactShadows, Float } from '@react-three/drei';
+import SafeEnvironment from './ui/SafeEnvironment';
 import * as THREE from 'three';
 import { EffectComposer, Bloom } from '@react-three/postprocessing';
 import { getTexture, getWallMaterial, getRoofMaterial, getFloorMaterial, getDoorMaterial, getWindowFrameMaterial } from './ProceduralTextures';
@@ -1371,10 +1372,10 @@ function Scene({
         <Sky sunPosition={[fp.w + 20, 20, fp.h + 25]} turbidity={1.2} rayleigh={0.4} />
       )}
       {(presentationMode === 'architectural' || presentationMode === 'material') && (
-        <Environment preset="city" background={false} environmentIntensity={0.8} />
+        <SafeEnvironment preset="city" background={false} environmentIntensity={0.8} />
       )}
       {presentationMode === 'dollhouse' && (
-        <Environment preset="studio" background={false} environmentIntensity={0.5} />
+        <SafeEnvironment preset="studio" background={false} environmentIntensity={0.5} />
       )}
 
       {(presentationMode === 'architectural' || presentationMode === 'material') && (
@@ -1807,7 +1808,7 @@ function Building3DModel({
       >
         <Suspense fallback={
           <Html center>
-            <div style={{ color: '#00ff9d', fontWeight: 800, fontSize: '0.8rem', fontFamily: 'Space Grotesk' }}>LOADING 3D VECTOR MATRIX…</div>
+            <div style={{ color: '#1E5438', fontWeight: 800, fontSize: '0.8rem', fontFamily: 'Space Grotesk' }}>LOADING 3D ARCHITECTURAL MODEL…</div>
           </Html>
         }>
           <Scene

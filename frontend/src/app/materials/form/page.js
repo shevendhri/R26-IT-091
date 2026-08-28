@@ -17,36 +17,36 @@ const LOCATIONS = [
 
 // ── Section 3 option maps ──────────────────────────────────────────────────
 const BUILDING_USAGE_OPTIONS = [
-  { value: 'Single Family Residence', icon: '🏠' },
-  { value: 'Multi Family Residence',  icon: '🏘️' },
-  { value: 'Office Building',         icon: '🏢' },
-  { value: 'Retail / Commercial',     icon: '🏬' },
-  { value: 'Hotel / Hospitality',     icon: '🏨' },
-  { value: 'Educational Facility',    icon: '🎓' },
-  { value: 'Healthcare Facility',     icon: '🏥' },
-  { value: 'Industrial / Warehouse',  icon: '🏭' },
-  { value: 'Mixed Use',               icon: '🏙️' },
+  { value: 'Single Family Residence' },
+  { value: 'Multi Family Residence' },
+  { value: 'Office Building' },
+  { value: 'Retail / Commercial' },
+  { value: 'Hotel / Hospitality' },
+  { value: 'Educational Facility' },
+  { value: 'Healthcare Facility' },
+  { value: 'Industrial / Warehouse' },
+  { value: 'Mixed Use' },
 ];
 
 const PRIMARY_GOAL_OPTIONS = [
-  { value: 'Lowest Initial Cost',  icon: '💰' },
-  { value: 'Lowest Lifecycle Cost', icon: '📉' },
-  { value: 'Maximum Durability',   icon: '🔩' },
-  { value: 'Sustainability',       icon: '🌿' },
-  { value: 'Fast Construction',    icon: '⚡' },
-  { value: 'Premium Appearance',   icon: '✨' },
-  { value: 'Energy Efficiency',    icon: '☀️' },
-  { value: 'Climate Resilience',   icon: '🌊' },
+  { value: 'Lowest Initial Cost' },
+  { value: 'Lowest Lifecycle Cost' },
+  { value: 'Maximum Durability' },
+  { value: 'Sustainability' },
+  { value: 'Fast Construction' },
+  { value: 'Premium Appearance' },
+  { value: 'Energy Efficiency' },
+  { value: 'Climate Resilience' },
 ];
 
 const ARCH_STYLE_OPTIONS = [
-  { value: 'Modern',        icon: '🏛️' },
-  { value: 'Contemporary',  icon: '🔷' },
-  { value: 'Tropical',      icon: '🌴' },
-  { value: 'Minimalist',    icon: '⬜' },
-  { value: 'Traditional',   icon: '🏯' },
-  { value: 'Industrial',    icon: '⚙️' },
-  { value: 'Luxury',        icon: '💎' },
+  { value: 'Modern' },
+  { value: 'Contemporary' },
+  { value: 'Tropical' },
+  { value: 'Minimalist' },
+  { value: 'Traditional' },
+  { value: 'Industrial' },
+  { value: 'Luxury' },
 ];
 
 const MATERIAL_PREF_OPTIONS = [
@@ -78,7 +78,6 @@ function ChipSelector({ options, value, onChange, multi = false }) {
     <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
       {options.map(opt => {
         const label = typeof opt === 'string' ? opt : opt.value;
-        const icon  = typeof opt === 'string' ? null : opt.icon;
         const active = isActive(label);
         return (
           <button
@@ -86,12 +85,12 @@ function ChipSelector({ options, value, onChange, multi = false }) {
             type="button"
             onClick={() => handleClick(label)}
             style={{
-              padding: '0.45rem 0.9rem',
-              borderRadius: '8px',
-              border: active ? '1.5px solid var(--eco-glow)' : '1px solid rgba(255,255,255,0.12)',
-              background: active ? 'rgba(0,255,157,0.12)' : 'rgba(255,255,255,0.04)',
-              color: active ? 'var(--eco-glow)' : 'rgba(255,255,255,0.7)',
-              fontSize: '0.78rem',
+              padding: '0.5rem 1rem',
+              borderRadius: '10px',
+              border: active ? '1.5px solid #1E5438' : '1.5px solid #C9D4CB',
+              background: active ? '#D4E8D8' : '#F0F4F1',
+              color: active ? '#1E5438' : '#536058',
+              fontSize: '0.82rem',
               fontWeight: active ? 700 : 500,
               cursor: 'pointer',
               display: 'flex',
@@ -101,7 +100,7 @@ function ChipSelector({ options, value, onChange, multi = false }) {
               fontFamily: 'Inter, sans-serif',
             }}
           >
-            {icon && <span>{icon}</span>}
+            {active && <span style={{ width: '5px', height: '5px', borderRadius: '50%', background: '#1E5438', flexShrink: 0 }} />}
             {label}
           </button>
         );
@@ -114,9 +113,9 @@ function AestheticSlider({ value, onChange }) {
   return (
     <div>
       <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
-        <span style={{ fontSize: '0.72rem', color: 'rgba(255,255,255,0.4)' }}>Functional</span>
-        <span style={{ fontSize: '1rem', fontWeight: 800, color: 'var(--eco-glow)', minWidth: '2ch', textAlign: 'center' }}>{value}</span>
-        <span style={{ fontSize: '0.72rem', color: 'rgba(255,255,255,0.4)' }}>Premium Visual</span>
+        <span style={{ fontSize: '0.78rem', color: '#4A5E52', fontWeight: 600 }}>Functional</span>
+        <span style={{ fontSize: '1.05rem', fontWeight: 800, color: '#1E5438', minWidth: '2ch', textAlign: 'center' }}>{value}</span>
+        <span style={{ fontSize: '0.78rem', color: '#4A5E52', fontWeight: 600 }}>Premium Visual</span>
       </div>
       <input
         type="range"
@@ -124,11 +123,11 @@ function AestheticSlider({ value, onChange }) {
         max={10}
         value={value}
         onChange={e => onChange(Number(e.target.value))}
-        style={{ width: '100%', accentColor: 'var(--eco-glow)', cursor: 'pointer' }}
+        style={{ width: '100%', accentColor: '#1E5438', cursor: 'pointer' }}
       />
       <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '0.25rem' }}>
         {[1,2,3,4,5,6,7,8,9,10].map(n => (
-          <span key={n} style={{ fontSize: '0.6rem', color: n === value ? 'var(--eco-glow)' : 'rgba(255,255,255,0.2)', fontWeight: n === value ? 800 : 400 }}>{n}</span>
+          <span key={n} style={{ fontSize: '0.68rem', color: n === value ? '#1E5438' : '#7A8C80', fontWeight: n === value ? 800 : 500 }}>{n}</span>
         ))}
       </div>
     </div>
@@ -139,12 +138,13 @@ function QuestionBlock({ label, children, hint }) {
   return (
     <div style={{ marginBottom: '1.75rem' }}>
       <label style={{
-        fontSize: '0.62rem', fontWeight: 800, color: 'var(--text-dim)',
-        textTransform: 'uppercase', letterSpacing: '0.15em', display: 'block', marginBottom: '0.35rem'
+        fontSize: '0.7rem', fontWeight: 700, color: '#2E4035',
+        textTransform: 'uppercase', letterSpacing: '0.1em', display: 'block', marginBottom: '0.38rem',
+        fontFamily: 'Space Grotesk, sans-serif'
       }}>
         {label}
       </label>
-      {hint && <p style={{ fontSize: '0.72rem', color: 'rgba(255,255,255,0.35)', marginBottom: '0.6rem', fontStyle: 'italic' }}>{hint}</p>}
+      {hint && <p style={{ fontSize: '0.78rem', color: '#4A5E52', marginBottom: '0.6rem', fontStyle: 'italic' }}>{hint}</p>}
       {children}
     </div>
   );
@@ -154,23 +154,44 @@ function QuestionBlock({ label, children, hint }) {
 function ProgressBar({ sections, current }) {
   return (
     <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '2.5rem', alignItems: 'center' }}>
-      {sections.map((s, i) => (
-        <div key={i} style={{ display: 'flex', alignItems: 'center', flex: 1 }}>
-          <div style={{
-            width: '28px', height: '28px', borderRadius: '50%', flexShrink: 0,
-            background: i <= current ? 'var(--eco-glow)' : 'rgba(255,255,255,0.1)',
-            color: i <= current ? '#000' : 'rgba(255,255,255,0.4)',
-            display: 'flex', alignItems: 'center', justifyContent: 'center',
-            fontSize: '0.7rem', fontWeight: 900, transition: 'all 0.3s ease',
-          }}>{i + 1}</div>
-          <div style={{ marginLeft: '0.4rem', flex: 1 }}>
-            <div style={{ fontSize: '0.62rem', fontWeight: 700, color: i === current ? '#fff' : 'rgba(255,255,255,0.35)', letterSpacing: '0.05em' }}>{s}</div>
+      {sections.map((s, i) => {
+        const isComplete = i < current;
+        const isActive = i === current;
+        return (
+          <div key={i} style={{ display: 'flex', alignItems: 'center', flex: 1 }}>
+            <div style={{
+              width: '30px', height: '30px', borderRadius: '50%', flexShrink: 0,
+              background: isComplete ? '#1E5438' : isActive ? '#3A7057' : '#D4DDD5',
+              color: isComplete || isActive ? '#FFFFFF' : '#4A5E52',
+              boxShadow: isActive ? '0 0 0 5px rgba(30, 84, 56, 0.14)' : 'none',
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+              fontSize: '0.78rem', fontWeight: 800, transition: 'all 0.3s ease',
+            }}>
+              {isComplete ? '✓' : i + 1}
+            </div>
+            <div style={{ marginLeft: '0.5rem', flex: 1 }}>
+              <div style={{
+                fontSize: '0.75rem',
+                fontWeight: isActive || isComplete ? 700 : 600,
+                color: isActive || isComplete ? '#18251F' : '#748078',
+                letterSpacing: '0.02em'
+              }}>
+                {s}
+              </div>
+            </div>
+            {i < sections.length - 1 && (
+              <div style={{
+                width: '28px',
+                height: '2px',
+                background: isComplete ? '#1E5438' : '#C4CFC6',
+                borderRadius: '2px',
+                flexShrink: 0,
+                marginLeft: '0.4rem'
+              }} />
+            )}
           </div>
-          {i < sections.length - 1 && (
-            <div style={{ width: '24px', height: '2px', background: i < current ? 'var(--eco-glow)' : 'rgba(255,255,255,0.1)', borderRadius: '2px', flexShrink: 0, marginLeft: '0.4rem' }} />
-          )}
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 }
@@ -232,40 +253,115 @@ export default function FormPage() {
   const SECTION_LABELS = ['Building Information', 'Project Preferences', 'Requirements & Priorities'];
 
   return (
-    <div style={{ minHeight: '100vh', background: 'var(--eco-black)', color: '#fff' }}>
-      <div className="premium-bg"><div className="gradient-mesh" /><div className="blueprint-grid" /></div>
+    <div style={{
+      minHeight: '100vh',
+      background: '#F3F5F1',
+      color: '#18251F',
+      fontFamily: 'Inter, sans-serif'
+    }}>
       <Header />
 
-      <main style={{ padding: '3rem 2rem', maxWidth: '960px', margin: '0 auto', position: 'relative', zIndex: 10 }}>
+      <main style={{ padding: '3.5rem 2rem', maxWidth: '1000px', margin: '0 auto', position: 'relative', zIndex: 10 }}>
 
-        {/* Page Title */}
-        <div style={{ marginBottom: '2rem' }}>
-          <div style={{ fontSize: '0.65rem', fontWeight: 900, color: 'var(--eco-glow)', letterSpacing: '6px', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
-            AI RECOMMENDATION ENGINE
+        {/* Module Header Card with Image Banner */}
+        <div style={{
+          background: 'rgba(255, 255, 255, 0.94)',
+          border: '1px solid rgba(30, 84, 56, 0.2)',
+          borderRadius: '20px',
+          overflow: 'hidden',
+          boxShadow: '0 4px 12px rgba(24, 37, 31, 0.05), 0 16px 40px rgba(24, 37, 31, 0.07)',
+          marginBottom: '2.5rem'
+        }}>
+          <div style={{ position: 'relative', height: '220px', overflow: 'hidden' }}>
+            <img
+              src="/materials_samples.png"
+              alt="Sustainable Material Samples"
+              style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+            />
+            <div style={{
+              position: 'absolute',
+              inset: 0,
+              background: 'linear-gradient(to top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.45) 60%, rgba(255, 255, 255, 0.1) 100%)'
+            }} />
+
+            <div style={{ position: 'absolute', top: '1.5rem', left: '2rem', display: 'flex', alignItems: 'center', gap: '12px' }}>
+              <span style={{
+                background: '#DCE9DC',
+                color: '#1E5438',
+                border: '1px solid rgba(30, 84, 56, 0.3)',
+                borderRadius: '20px',
+                padding: '4px 14px',
+                fontSize: '0.72rem',
+                fontWeight: 800,
+                letterSpacing: '0.08em',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '6px',
+                fontFamily: 'Space Grotesk'
+              }}>
+                <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#1E5438', display: 'inline-block' }} />
+                MATERIAL INTELLIGENCE
+              </span>
+              <span style={{ fontSize: '0.75rem', color: '#4A5E52', fontFamily: 'Space Grotesk', fontWeight: 800, letterSpacing: '0.05em' }}>
+                SYSTEM MODULE 02
+              </span>
+            </div>
           </div>
-          <h1 style={{ fontSize: 'clamp(1.8rem, 4vw, 2.8rem)', fontFamily: 'Space Grotesk', fontWeight: 800, lineHeight: 1.1 }}>
-            Building <span style={{ color: 'var(--eco-glow)' }}>Specification</span> Input
-          </h1>
-          <p style={{ color: 'var(--text-secondary)', marginTop: '0.75rem', fontSize: '0.95rem' }}>
-            Provide your building parameters and project requirements to generate a full AI + Engineering material recommendation with XAI explanations.
-          </p>
+
+          <div style={{ padding: '0.5rem 2.5rem 2.2rem' }}>
+            <h1 style={{
+              fontFamily: 'Space Grotesk, sans-serif',
+              fontSize: 'clamp(1.8rem, 3.5vw, 2.5rem)',
+              fontWeight: 800,
+              color: '#18251F',
+              margin: '0 0 0.8rem',
+              lineHeight: 1.15,
+              letterSpacing: '-0.02em'
+            }}>
+              Sustainable Material Recommendations Module
+            </h1>
+
+            <p style={{
+              fontSize: '1rem',
+              color: '#1E5438',
+              fontWeight: 700,
+              margin: '0 0 1rem',
+              lineHeight: 1.5,
+              maxWidth: '820px'
+            }}>
+              AI-powered decision support for selecting optimal, climate-resilient, and cost-effective construction materials.
+            </p>
+
+            <p style={{
+              fontSize: '0.86rem',
+              color: '#4A5E52',
+              lineHeight: 1.7,
+              margin: 0,
+              maxWidth: '840px',
+              fontWeight: 500
+            }}>
+              Evaluate structural load suitability, thermal performance, embodied carbon footprint, lifecycle durability,
+              and cost metrics across walling, roofing, flooring, doors, and windows tailored to Sri Lanka&apos;s 14 climatic zones.
+            </p>
+          </div>
         </div>
 
         {/* Progress indicator */}
-        <ProgressBar sections={SECTION_LABELS} current={activeSection} />
+        <div style={{ background: '#FFFFFF', borderRadius: '16px', padding: '1.2rem 1.5rem', marginBottom: '2rem', border: '1px solid #D5DED6', boxShadow: '0 2px 8px rgba(24,37,31,0.04)' }}>
+          <ProgressBar sections={SECTION_LABELS} current={activeSection} />
+        </div>
 
         <form onSubmit={handleSubmit}>
 
           {/* ── Section 1: Building Information ─────────────────────────── */}
           <div
             id="section-building"
-            className="glass-card"
-            style={{ marginBottom: '1.5rem', cursor: 'pointer' }}
+            style={{ marginBottom: '1.5rem', cursor: 'pointer', borderTop: '3px solid #2F6FA3', background: '#EAF0F5', border: '1px solid rgba(47,111,163,0.20)', borderRadius: '18px', padding: '1.5rem', boxShadow: '0 4px 12px rgba(47,111,163,0.05)' }}
             onClick={() => setActiveSection(0)}
           >
-            <h2 style={{ fontSize: '1rem', fontFamily: 'Space Grotesk', fontWeight: 700, color: 'var(--eco-glow)', marginBottom: activeSection === 0 ? '1.5rem' : 0, textTransform: 'uppercase', letterSpacing: '2px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              🏗️ Building Information
-              <span style={{ fontSize: '0.7rem', color: 'rgba(255,255,255,0.3)', fontWeight: 500 }}>{activeSection === 0 ? '▲' : '▼'}</span>
+            <h2 style={{ fontSize: '1.05rem', fontFamily: 'Space Grotesk', fontWeight: 800, color: '#1E5438', marginBottom: activeSection === 0 ? '1.5rem' : 0, textTransform: 'uppercase', letterSpacing: '0.06em', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+              Building Information
+              <span style={{ fontSize: '0.8rem', color: '#526158', fontWeight: 600 }}>{activeSection === 0 ? '▲' : '▼'}</span>
             </h2>
             {activeSection === 0 && (
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1.25rem' }} onClick={e => e.stopPropagation()}>
@@ -306,13 +402,12 @@ export default function FormPage() {
           {/* ── Section 2: Project Preferences ──────────────────────────── */}
           <div
             id="section-preferences"
-            className="glass-card"
-            style={{ marginBottom: '1.5rem', cursor: 'pointer' }}
+            style={{ marginBottom: '1.5rem', cursor: 'pointer', borderTop: '3px solid #1E5438', background: '#EDF3ED', border: '1px solid rgba(30,84,56,0.18)', borderRadius: '18px', padding: '1.5rem', boxShadow: '0 4px 12px rgba(30,84,56,0.04)' }}
             onClick={() => setActiveSection(1)}
           >
-            <h2 style={{ fontSize: '1rem', fontFamily: 'Space Grotesk', fontWeight: 700, color: 'var(--blueprint-blue)', marginBottom: activeSection === 1 ? '1.5rem' : 0, textTransform: 'uppercase', letterSpacing: '2px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              🎯 Project Preferences
-              <span style={{ fontSize: '0.7rem', color: 'rgba(255,255,255,0.3)', fontWeight: 500 }}>{activeSection === 1 ? '▲' : '▼'}</span>
+            <h2 style={{ fontSize: '1.05rem', fontFamily: 'Space Grotesk', fontWeight: 800, color: '#3A7057', marginBottom: activeSection === 1 ? '1.5rem' : 0, textTransform: 'uppercase', letterSpacing: '0.06em', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+              Project Preferences
+              <span style={{ fontSize: '0.8rem', color: '#526158', fontWeight: 600 }}>{activeSection === 1 ? '▲' : '▼'}</span>
             </h2>
             {activeSection === 1 && (
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1.25rem' }} onClick={e => e.stopPropagation()}>
@@ -347,29 +442,31 @@ export default function FormPage() {
           {/* ── Section 3: Project Requirements & Priorities ─────────────── */}
           <div
             id="section-requirements"
-            className="glass-card glow-border"
             style={{
               marginBottom: '2rem',
               cursor: 'pointer',
+              borderTop: '3px solid #C58A1C',
+              background: '#F6F1E9',
+              border: '1px solid rgba(197,138,28,0.20)',
+              borderRadius: '18px',
+              padding: '1.5rem',
+              boxShadow: '0 4px 12px rgba(197,138,28,0.04)'
             }}
             onClick={() => setActiveSection(2)}
           >
-            {/* Accent bar */}
-            <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '3px', background: 'linear-gradient(90deg, var(--eco-glow), var(--blueprint-blue))' }} />
-
             <h2 style={{
-              fontSize: '1rem', fontFamily: 'Space Grotesk', fontWeight: 700,
-              color: 'var(--eco-glow)', marginBottom: activeSection === 2 ? '0.5rem' : 0,
-              textTransform: 'uppercase', letterSpacing: '2px',
+              fontSize: '1.05rem', fontFamily: 'Space Grotesk', fontWeight: 800,
+              color: '#1E5438', marginBottom: activeSection === 2 ? '0.5rem' : 0,
+              textTransform: 'uppercase', letterSpacing: '0.06em',
               display: 'flex', justifyContent: 'space-between', alignItems: 'center'
             }}>
-              📋 Project Requirements & Priorities
-              <span style={{ fontSize: '0.7rem', color: 'rgba(255,255,255,0.3)', fontWeight: 500 }}>{activeSection === 2 ? '▲' : '▼'}</span>
+              Project Requirements & Priorities
+              <span style={{ fontSize: '0.8rem', color: '#4A5E52', fontWeight: 600 }}>{activeSection === 2 ? '▲' : '▼'}</span>
             </h2>
 
             {activeSection === 2 && (
               <div onClick={e => e.stopPropagation()}>
-                <p style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.4)', marginBottom: '2rem', fontStyle: 'italic' }}>
+                <p style={{ fontSize: '0.84rem', color: '#4A5E52', marginBottom: '2rem', fontStyle: 'italic', fontWeight: 500 }}>
                   These engineering signals shape your material recommendation profile — think of this as your project brief.
                 </p>
 
@@ -414,8 +511,8 @@ export default function FormPage() {
                 </QuestionBlock>
 
                 {/* Divider */}
-                <div style={{ height: '1px', background: 'rgba(255,255,255,0.06)', margin: '1.5rem 0' }} />
-                <div style={{ fontSize: '0.62rem', fontWeight: 900, color: 'rgba(255,255,255,0.25)', letterSpacing: '4px', textTransform: 'uppercase', marginBottom: '1.5rem' }}>Performance Requirements</div>
+                <div style={{ height: '1px', background: '#C4CFC6', margin: '1.5rem 0' }} />
+                <div style={{ fontSize: '0.68rem', fontWeight: 800, color: '#1E5438', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '1.5rem', fontFamily: 'Space Grotesk' }}>Performance Requirements</div>
 
                 {/* 5–8: Priority level questions in 2-column grid */}
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem 2rem' }}>
@@ -434,8 +531,8 @@ export default function FormPage() {
                 </div>
 
                 {/* Divider */}
-                <div style={{ height: '1px', background: 'rgba(255,255,255,0.06)', margin: '1.5rem 0' }} />
-                <div style={{ fontSize: '0.62rem', fontWeight: 900, color: 'rgba(255,255,255,0.25)', letterSpacing: '4px', textTransform: 'uppercase', marginBottom: '1.5rem' }}>Sourcing, Compliance & Longevity</div>
+                <div style={{ height: '1px', background: '#C4CFC6', margin: '1.5rem 0' }} />
+                <div style={{ fontSize: '0.68rem', fontWeight: 800, color: '#1E5438', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '1.5rem', fontFamily: 'Space Grotesk' }}>Sourcing, Compliance & Longevity</div>
 
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem 2rem' }}>
                   <QuestionBlock label="Local Material Preference">
@@ -453,7 +550,7 @@ export default function FormPage() {
                 </div>
 
                 {/* Divider */}
-                <div style={{ height: '1px', background: 'rgba(255,255,255,0.06)', margin: '1.5rem 0' }} />
+                <div style={{ height: '1px', background: '#C4CFC6', margin: '1.5rem 0' }} />
 
                 {/* 12. Aesthetic Importance Slider */}
                 <QuestionBlock label="Aesthetic Importance" hint="How important is the visual appearance relative to functional performance?">
@@ -462,8 +559,6 @@ export default function FormPage() {
                     onChange={v => setProjPref('aesthetic_importance', v)}
                   />
                 </QuestionBlock>
-
-                {/* Future: Operational Constraints — reserved for Version 2 */}
               </div>
             )}
           </div>

@@ -3,7 +3,7 @@ import EngineeringCard from '@/components/Dashboard/EngineeringCard';
 
 /**
  * MaterialBreakdown – Renders exactly ONE primary recommended card per canonical component.
- * Eliminates duplicate cards and standardizes taxonomy.
+ * Updated for high-contrast warm sustainable architecture theme.
  */
 const CANONICAL_COMPONENTS = [
   { key: 'foundation', label: 'Foundation', fallbackKeys: ['foundation'] },
@@ -25,7 +25,6 @@ export default function MaterialBreakdown({ data }) {
   const pkg = data?.recommended_package || {};
 
   // Resolve unique canonical list
-  const seenMaterialNames = new Set();
   const canonicalItems = [];
 
   for (const comp of CANONICAL_COMPONENTS) {
@@ -38,8 +37,9 @@ export default function MaterialBreakdown({ data }) {
     }
     if (resolved) {
       const obj = Array.isArray(resolved) ? resolved[0] : typeof resolved === 'object' ? resolved : { name: resolved };
-      const matName = obj?.name || '';
-      // Only avoid duplicate if it's identical material in the same phase
+      if (obj.canonical_component && obj.canonical_component !== comp.key) {
+        continue;
+      }
       canonicalItems.push({
         key: comp.key,
         label: comp.label,
@@ -50,20 +50,20 @@ export default function MaterialBreakdown({ data }) {
 
   if (canonicalItems.length === 0) {
     return (
-      <section style={{ padding: '1rem', color: '#64748b' }}>
-        <p style={{ margin: 0, fontSize: '0.85rem' }}>No material specification data available.</p>
+      <section style={{ padding: '1rem', color: '#526158' }}>
+        <p style={{ margin: 0, fontSize: '0.88rem' }}>No material specification data available.</p>
       </section>
     );
   }
 
   return (
-    <section style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.75rem', borderBottom: '1px solid #1e293b', paddingBottom: '0.75rem' }}>
+    <section style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.75rem', borderBottom: '1px solid #C8D3CA', paddingBottom: '0.85rem' }}>
         <div>
-          <h2 style={{ fontSize: '1.2rem', fontWeight: 600, color: '#f8fafc', margin: 0, fontFamily: 'Space Grotesk' }}>
+          <h2 style={{ fontSize: '1.35rem', fontWeight: 800, color: '#18251F', margin: 0, fontFamily: 'Space Grotesk' }}>
             Primary Recommended Material Package
           </h2>
-          <p style={{ fontSize: '0.78rem', color: '#94a3b8', margin: '0.2rem 0 0 0' }}>
+          <p style={{ fontSize: '0.85rem', color: '#526158', margin: '0.25rem 0 0 0', fontWeight: 500 }}>
             Engineered specifications selected by the Hybrid Recommendation Engine for Sri Lankan climate and SLS-referenced rule checks.
           </p>
         </div>
@@ -72,7 +72,7 @@ export default function MaterialBreakdown({ data }) {
         </span>
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(360px, 1fr))', gap: '1.25rem' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(360px, 1fr))', gap: '1.4rem' }}>
         {canonicalItems.map((item) => (
           <EngineeringCard key={item.key} label={item.label} material={item.material} />
         ))}

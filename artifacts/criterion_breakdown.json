@@ -3,9 +3,9 @@
     "material": "Gr. 25 Standard Concrete Foundation",
     "criterion_breakdown": {
       "structural_safety": {
-        "score": 86.25,
+        "score": 100.0,
         "max": 25.0,
-        "contribution": 21.56,
+        "contribution": 25.0,
         "normalized_weight": 0.25,
         "notes": "Evaluated against preliminary engineering criteria",
         "reason": "Evaluated against preliminary engineering criteria",
@@ -21,12 +21,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
+        "score": 20.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 3.0,
         "normalized_weight": 0.15,
-        "notes": "Evaluated against preliminary engineering criteria",
-        "reason": "Evaluated against preliminary engineering criteria",
+        "notes": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -98,12 +98,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 35.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 5.25,
+        "contribution": 15.0,
         "normalized_weight": 0.15,
-        "notes": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
-        "reason": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -157,9 +157,9 @@
     "material": "Eco-Concrete Foundation (30% Recycled Aggregate)",
     "criterion_breakdown": {
       "structural_safety": {
-        "score": 82.8,
+        "score": 97.2,
         "max": 25.0,
-        "contribution": 20.7,
+        "contribution": 24.3,
         "normalized_weight": 0.25,
         "notes": "Evaluated against preliminary engineering criteria",
         "reason": "Evaluated against preliminary engineering criteria",
@@ -175,12 +175,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
+        "score": 20.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 3.0,
         "normalized_weight": 0.15,
-        "notes": "Evaluated against preliminary engineering criteria",
-        "reason": "Evaluated against preliminary engineering criteria",
+        "notes": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -252,18 +252,18 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
+        "score": 50.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 7.5,
         "normalized_weight": 0.15,
-        "notes": "Evaluated against preliminary engineering criteria",
-        "reason": "Evaluated against preliminary engineering criteria",
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 40.0,
+        "score": 20.0,
         "max": 15.0,
-        "contribution": 6.0,
+        "contribution": 3.0,
         "normalized_weight": 0.15,
         "notes": "Marginal preliminary compliance",
         "reason": "Marginal preliminary compliance",
@@ -311,9 +311,9 @@
     "material": "Lime-Pozzolan Natural Foundation",
     "criterion_breakdown": {
       "structural_safety": {
-        "score": 60.0,
+        "score": 81.0,
         "max": 25.0,
-        "contribution": 15.0,
+        "contribution": 20.25,
         "normalized_weight": 0.25,
         "notes": "Evaluated against preliminary engineering criteria",
         "reason": "Evaluated against preliminary engineering criteria",
@@ -329,18 +329,18 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
+        "score": 20.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 3.0,
         "normalized_weight": 0.15,
-        "notes": "Evaluated against preliminary engineering criteria",
-        "reason": "Evaluated against preliminary engineering criteria",
+        "notes": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 80.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 12.0,
+        "contribution": 15.0,
         "normalized_weight": 0.15,
         "notes": "Evaluated against preliminary engineering criteria",
         "reason": "Evaluated against preliminary engineering criteria",
@@ -388,37 +388,37 @@
     "material": "Gr. 25 Standard Structural Concrete",
     "criterion_breakdown": {
       "structural_safety": {
-        "score": 92.0,
+        "score": 0.0,
         "max": 25.0,
-        "contribution": 23.0,
-        "normalized_weight": 0.25,
-        "notes": "Evaluated against preliminary engineering criteria",
-        "reason": "Evaluated against preliminary engineering criteria",
-        "is_na": false
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
+        "is_na": true
       },
       "sls_compliance": {
         "score": 100.0,
         "max": 20.0,
         "contribution": 20.0,
-        "normalized_weight": 0.2,
+        "normalized_weight": 0.2667,
         "notes": "Evaluated against preliminary engineering criteria",
         "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
+        "score": 20.0,
         "max": 15.0,
-        "contribution": 15.0,
-        "normalized_weight": 0.15,
-        "notes": "Evaluated against preliminary engineering criteria",
-        "reason": "Evaluated against preliminary engineering criteria",
+        "contribution": 3.0,
+        "normalized_weight": 0.2,
+        "notes": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
         "is_na": false
       },
       "occupancy_requirements": {
         "score": 100.0,
         "max": 15.0,
         "contribution": 15.0,
-        "normalized_weight": 0.15,
+        "normalized_weight": 0.2,
         "notes": "Evaluated against preliminary engineering criteria",
         "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
@@ -427,7 +427,7 @@
         "score": 100.0,
         "max": 10.0,
         "contribution": 10.0,
-        "normalized_weight": 0.1,
+        "normalized_weight": 0.1333,
         "notes": "Evaluated against preliminary engineering criteria",
         "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
@@ -436,7 +436,7 @@
         "score": 85.0,
         "max": 5.0,
         "contribution": 4.25,
-        "normalized_weight": 0.05,
+        "normalized_weight": 0.0667,
         "notes": "Evaluated against preliminary engineering criteria",
         "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
@@ -445,7 +445,7 @@
         "score": 90.0,
         "max": 5.0,
         "contribution": 4.5,
-        "normalized_weight": 0.05,
+        "normalized_weight": 0.0667,
         "notes": "Evaluated against preliminary engineering criteria",
         "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
@@ -454,7 +454,7 @@
         "score": 57.33,
         "max": 5.0,
         "contribution": 2.87,
-        "normalized_weight": 0.05,
+        "normalized_weight": 0.0667,
         "notes": "Marginal preliminary compliance",
         "reason": "Marginal preliminary compliance",
         "is_na": false
@@ -465,37 +465,37 @@
     "material": "Gr. 30 Marine-Grade Concrete Mix",
     "criterion_breakdown": {
       "structural_safety": {
-        "score": 100.0,
+        "score": 0.0,
         "max": 25.0,
-        "contribution": 25.0,
-        "normalized_weight": 0.25,
-        "notes": "Evaluated against preliminary engineering criteria",
-        "reason": "Evaluated against preliminary engineering criteria",
-        "is_na": false
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
+        "is_na": true
       },
       "sls_compliance": {
         "score": 100.0,
         "max": 20.0,
         "contribution": 20.0,
-        "normalized_weight": 0.2,
+        "normalized_weight": 0.2667,
         "notes": "Evaluated against preliminary engineering criteria",
         "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 35.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 5.25,
-        "normalized_weight": 0.15,
-        "notes": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
-        "reason": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "occupancy_requirements": {
         "score": 100.0,
         "max": 15.0,
         "contribution": 15.0,
-        "normalized_weight": 0.15,
+        "normalized_weight": 0.2,
         "notes": "Evaluated against preliminary engineering criteria",
         "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
@@ -504,7 +504,7 @@
         "score": 100.0,
         "max": 10.0,
         "contribution": 10.0,
-        "normalized_weight": 0.1,
+        "normalized_weight": 0.1333,
         "notes": "Evaluated against preliminary engineering criteria",
         "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
@@ -513,7 +513,7 @@
         "score": 95.0,
         "max": 5.0,
         "contribution": 4.75,
-        "normalized_weight": 0.05,
+        "normalized_weight": 0.0667,
         "notes": "Evaluated against preliminary engineering criteria",
         "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
@@ -522,7 +522,7 @@
         "score": 100.0,
         "max": 5.0,
         "contribution": 5.0,
-        "normalized_weight": 0.05,
+        "normalized_weight": 0.0667,
         "notes": "Evaluated against preliminary engineering criteria",
         "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
@@ -531,7 +531,7 @@
         "score": 48.67,
         "max": 5.0,
         "contribution": 2.43,
-        "normalized_weight": 0.05,
+        "normalized_weight": 0.0667,
         "notes": "Marginal preliminary compliance",
         "reason": "Marginal preliminary compliance",
         "is_na": false
@@ -542,37 +542,37 @@
     "material": "Eco-Concrete (Recycled Aggregate + Fly-Ash)",
     "criterion_breakdown": {
       "structural_safety": {
-        "score": 86.25,
+        "score": 0.0,
         "max": 25.0,
-        "contribution": 21.56,
-        "normalized_weight": 0.25,
-        "notes": "Evaluated against preliminary engineering criteria",
-        "reason": "Evaluated against preliminary engineering criteria",
-        "is_na": false
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
+        "is_na": true
       },
       "sls_compliance": {
         "score": 100.0,
         "max": 20.0,
         "contribution": 20.0,
-        "normalized_weight": 0.2,
+        "normalized_weight": 0.2667,
         "notes": "Evaluated against preliminary engineering criteria",
         "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
+        "score": 20.0,
         "max": 15.0,
-        "contribution": 15.0,
-        "normalized_weight": 0.15,
-        "notes": "Evaluated against preliminary engineering criteria",
-        "reason": "Evaluated against preliminary engineering criteria",
+        "contribution": 3.0,
+        "normalized_weight": 0.2,
+        "notes": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
         "is_na": false
       },
       "occupancy_requirements": {
         "score": 100.0,
         "max": 15.0,
         "contribution": 15.0,
-        "normalized_weight": 0.15,
+        "normalized_weight": 0.2,
         "notes": "Evaluated against preliminary engineering criteria",
         "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
@@ -581,7 +581,7 @@
         "score": 100.0,
         "max": 10.0,
         "contribution": 10.0,
-        "normalized_weight": 0.1,
+        "normalized_weight": 0.1333,
         "notes": "Evaluated against preliminary engineering criteria",
         "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
@@ -590,7 +590,7 @@
         "score": 85.0,
         "max": 5.0,
         "contribution": 4.25,
-        "normalized_weight": 0.05,
+        "normalized_weight": 0.0667,
         "notes": "Evaluated against preliminary engineering criteria",
         "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
@@ -599,7 +599,7 @@
         "score": 90.0,
         "max": 5.0,
         "contribution": 4.5,
-        "normalized_weight": 0.05,
+        "normalized_weight": 0.0667,
         "notes": "Evaluated against preliminary engineering criteria",
         "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
@@ -608,7 +608,7 @@
         "score": 90.0,
         "max": 5.0,
         "contribution": 4.5,
-        "normalized_weight": 0.05,
+        "normalized_weight": 0.0667,
         "notes": "Evaluated against preliminary engineering criteria",
         "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
@@ -619,37 +619,37 @@
     "material": "Self-Compacting Concrete (SCC)",
     "criterion_breakdown": {
       "structural_safety": {
-        "score": 97.75,
+        "score": 0.0,
         "max": 25.0,
-        "contribution": 24.44,
-        "normalized_weight": 0.25,
-        "notes": "Evaluated against preliminary engineering criteria",
-        "reason": "Evaluated against preliminary engineering criteria",
-        "is_na": false
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
+        "is_na": true
       },
       "sls_compliance": {
         "score": 100.0,
         "max": 20.0,
         "contribution": 20.0,
-        "normalized_weight": 0.2,
+        "normalized_weight": 0.2667,
         "notes": "Evaluated against preliminary engineering criteria",
         "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
+        "score": 50.0,
         "max": 15.0,
-        "contribution": 15.0,
-        "normalized_weight": 0.15,
-        "notes": "Evaluated against preliminary engineering criteria",
-        "reason": "Evaluated against preliminary engineering criteria",
+        "contribution": 7.5,
+        "normalized_weight": 0.2,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 40.0,
+        "score": 20.0,
         "max": 15.0,
-        "contribution": 6.0,
-        "normalized_weight": 0.15,
+        "contribution": 3.0,
+        "normalized_weight": 0.2,
         "notes": "Marginal preliminary compliance",
         "reason": "Marginal preliminary compliance",
         "is_na": false
@@ -658,7 +658,7 @@
         "score": 100.0,
         "max": 10.0,
         "contribution": 10.0,
-        "normalized_weight": 0.1,
+        "normalized_weight": 0.1333,
         "notes": "Evaluated against preliminary engineering criteria",
         "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
@@ -667,7 +667,7 @@
         "score": 85.0,
         "max": 5.0,
         "contribution": 4.25,
-        "normalized_weight": 0.05,
+        "normalized_weight": 0.0667,
         "notes": "Evaluated against preliminary engineering criteria",
         "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
@@ -676,7 +676,7 @@
         "score": 100.0,
         "max": 5.0,
         "contribution": 5.0,
-        "normalized_weight": 0.05,
+        "normalized_weight": 0.0667,
         "notes": "Evaluated against preliminary engineering criteria",
         "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
@@ -685,7 +685,7 @@
         "score": 56.67,
         "max": 5.0,
         "contribution": 2.83,
-        "normalized_weight": 0.05,
+        "normalized_weight": 0.0667,
         "notes": "Marginal preliminary compliance",
         "reason": "Marginal preliminary compliance",
         "is_na": false
@@ -696,37 +696,37 @@
     "material": "Epoxy-Coated Rebar (ASTM A775)",
     "criterion_breakdown": {
       "structural_safety": {
-        "score": 100.0,
+        "score": 0.0,
         "max": 25.0,
-        "contribution": 25.0,
-        "normalized_weight": 0.25,
-        "notes": "Evaluated against preliminary engineering criteria",
-        "reason": "Evaluated against preliminary engineering criteria",
-        "is_na": false
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
+        "is_na": true
       },
       "sls_compliance": {
         "score": 100.0,
         "max": 20.0,
         "contribution": 20.0,
-        "normalized_weight": 0.2,
+        "normalized_weight": 0.2667,
         "notes": "Evaluated against preliminary engineering criteria",
         "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 35.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 5.25,
-        "normalized_weight": 0.15,
-        "notes": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
-        "reason": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "occupancy_requirements": {
         "score": 100.0,
         "max": 15.0,
         "contribution": 15.0,
-        "normalized_weight": 0.15,
+        "normalized_weight": 0.2,
         "notes": "Evaluated against preliminary engineering criteria",
         "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
@@ -735,7 +735,7 @@
         "score": 100.0,
         "max": 10.0,
         "contribution": 10.0,
-        "normalized_weight": 0.1,
+        "normalized_weight": 0.1333,
         "notes": "Evaluated against preliminary engineering criteria",
         "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
@@ -744,7 +744,7 @@
         "score": 100.0,
         "max": 5.0,
         "contribution": 5.0,
-        "normalized_weight": 0.05,
+        "normalized_weight": 0.0667,
         "notes": "Evaluated against preliminary engineering criteria",
         "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
@@ -753,7 +753,7 @@
         "score": 100.0,
         "max": 5.0,
         "contribution": 5.0,
-        "normalized_weight": 0.05,
+        "normalized_weight": 0.0667,
         "notes": "Evaluated against preliminary engineering criteria",
         "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
@@ -762,7 +762,7 @@
         "score": 44.0,
         "max": 5.0,
         "contribution": 2.2,
-        "normalized_weight": 0.05,
+        "normalized_weight": 0.0667,
         "notes": "Marginal preliminary compliance",
         "reason": "Marginal preliminary compliance",
         "is_na": false
@@ -773,37 +773,37 @@
     "material": "TMT High-Yield Rebar (SLS 375)",
     "criterion_breakdown": {
       "structural_safety": {
-        "score": 100.0,
+        "score": 0.0,
         "max": 25.0,
-        "contribution": 25.0,
-        "normalized_weight": 0.25,
-        "notes": "Evaluated against preliminary engineering criteria",
-        "reason": "Evaluated against preliminary engineering criteria",
-        "is_na": false
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
+        "is_na": true
       },
       "sls_compliance": {
         "score": 100.0,
         "max": 20.0,
         "contribution": 20.0,
-        "normalized_weight": 0.2,
+        "normalized_weight": 0.2667,
         "notes": "Evaluated against preliminary engineering criteria",
         "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
+        "score": 20.0,
         "max": 15.0,
-        "contribution": 15.0,
-        "normalized_weight": 0.15,
-        "notes": "Evaluated against preliminary engineering criteria",
-        "reason": "Evaluated against preliminary engineering criteria",
+        "contribution": 3.0,
+        "normalized_weight": 0.2,
+        "notes": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
         "is_na": false
       },
       "occupancy_requirements": {
         "score": 100.0,
         "max": 15.0,
         "contribution": 15.0,
-        "normalized_weight": 0.15,
+        "normalized_weight": 0.2,
         "notes": "Evaluated against preliminary engineering criteria",
         "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
@@ -812,7 +812,7 @@
         "score": 100.0,
         "max": 10.0,
         "contribution": 10.0,
-        "normalized_weight": 0.1,
+        "normalized_weight": 0.1333,
         "notes": "Evaluated against preliminary engineering criteria",
         "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
@@ -821,7 +821,7 @@
         "score": 85.0,
         "max": 5.0,
         "contribution": 4.25,
-        "normalized_weight": 0.05,
+        "normalized_weight": 0.0667,
         "notes": "Evaluated against preliminary engineering criteria",
         "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
@@ -830,7 +830,7 @@
         "score": 90.0,
         "max": 5.0,
         "contribution": 4.5,
-        "normalized_weight": 0.05,
+        "normalized_weight": 0.0667,
         "notes": "Evaluated against preliminary engineering criteria",
         "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
@@ -839,7 +839,7 @@
         "score": 56.67,
         "max": 5.0,
         "contribution": 2.83,
-        "normalized_weight": 0.05,
+        "normalized_weight": 0.0667,
         "notes": "Marginal preliminary compliance",
         "reason": "Marginal preliminary compliance",
         "is_na": false
@@ -850,9 +850,240 @@
     "material": "Galvanized Steel Rebar (Hot-Dip)",
     "criterion_breakdown": {
       "structural_safety": {
-        "score": 100.0,
+        "score": 0.0,
         "max": 25.0,
-        "contribution": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
+        "is_na": true
+      },
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "climate_compatibility": {
+        "score": 55.0,
+        "max": 15.0,
+        "contribution": 8.25,
+        "normalized_weight": 0.2,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "service_life": {
+        "score": 95.0,
+        "max": 5.0,
+        "contribution": 4.75,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "maintenance": {
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sustainability": {
+        "score": 55.0,
+        "max": 5.0,
+        "contribution": 2.75,
+        "normalized_weight": 0.0667,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
+        "is_na": false
+      }
+    }
+  },
+  {
+    "material": "Stainless Steel Rebar (Grade 316L)",
+    "criterion_breakdown": {
+      "structural_safety": {
+        "score": 0.0,
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
+        "is_na": true
+      },
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "climate_compatibility": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 20.0,
+        "max": 15.0,
+        "contribution": 3.0,
+        "normalized_weight": 0.2,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "service_life": {
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "maintenance": {
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sustainability": {
+        "score": 55.0,
+        "max": 5.0,
+        "contribution": 2.75,
+        "normalized_weight": 0.0667,
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
+        "is_na": false
+      }
+    }
+  },
+  {
+    "material": "GFRP Rebar (Glass Fibre Reinforced Polymer)",
+    "criterion_breakdown": {
+      "structural_safety": {
+        "score": 0.0,
+        "max": 25.0,
+        "contribution": 0.0,
+        "normalized_weight": 0.0,
+        "notes": "Not applicable for this component",
+        "reason": "Not applicable for this component",
+        "is_na": true
+      },
+      "sls_compliance": {
+        "score": 100.0,
+        "max": 20.0,
+        "contribution": 20.0,
+        "normalized_weight": 0.2667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "climate_compatibility": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "occupancy_requirements": {
+        "score": 100.0,
+        "max": 15.0,
+        "contribution": 15.0,
+        "normalized_weight": 0.2,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "structural_system_compatibility": {
+        "score": 100.0,
+        "max": 10.0,
+        "contribution": 10.0,
+        "normalized_weight": 0.1333,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "service_life": {
+        "score": 95.0,
+        "max": 5.0,
+        "contribution": 4.75,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "maintenance": {
+        "score": 100.0,
+        "max": 5.0,
+        "contribution": 5.0,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      },
+      "sustainability": {
+        "score": 73.33,
+        "max": 5.0,
+        "contribution": 3.67,
+        "normalized_weight": 0.0667,
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
+        "is_na": false
+      }
+    }
+  },
+  {
+    "material": "Wire-Cut Clay Brick (Premium Grade)",
+    "criterion_breakdown": {
+      "structural_safety": {
+        "score": 91.8,
+        "max": 25.0,
+        "contribution": 22.95,
         "normalized_weight": 0.25,
         "notes": "Evaluated against preliminary engineering criteria",
         "reason": "Evaluated against preliminary engineering criteria",
@@ -872,245 +1103,14 @@
         "max": 15.0,
         "contribution": 3.0,
         "normalized_weight": 0.15,
-        "notes": "FAIL: Unsuitable climate profile (Zone: dry zone tropical arid)",
-        "reason": "FAIL: Unsuitable climate profile (Zone: dry zone tropical arid)",
+        "notes": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
         "is_na": false
       },
       "occupancy_requirements": {
         "score": 100.0,
         "max": 15.0,
         "contribution": 15.0,
-        "normalized_weight": 0.15,
-        "notes": "Evaluated against preliminary engineering criteria",
-        "reason": "Evaluated against preliminary engineering criteria",
-        "is_na": false
-      },
-      "structural_system_compatibility": {
-        "score": 100.0,
-        "max": 10.0,
-        "contribution": 10.0,
-        "normalized_weight": 0.1,
-        "notes": "Evaluated against preliminary engineering criteria",
-        "reason": "Evaluated against preliminary engineering criteria",
-        "is_na": false
-      },
-      "service_life": {
-        "score": 95.0,
-        "max": 5.0,
-        "contribution": 4.75,
-        "normalized_weight": 0.05,
-        "notes": "Evaluated against preliminary engineering criteria",
-        "reason": "Evaluated against preliminary engineering criteria",
-        "is_na": false
-      },
-      "maintenance": {
-        "score": 100.0,
-        "max": 5.0,
-        "contribution": 5.0,
-        "normalized_weight": 0.05,
-        "notes": "Evaluated against preliminary engineering criteria",
-        "reason": "Evaluated against preliminary engineering criteria",
-        "is_na": false
-      },
-      "sustainability": {
-        "score": 55.0,
-        "max": 5.0,
-        "contribution": 2.75,
-        "normalized_weight": 0.05,
-        "notes": "Marginal preliminary compliance",
-        "reason": "Marginal preliminary compliance",
-        "is_na": false
-      }
-    }
-  },
-  {
-    "material": "Stainless Steel Rebar (Grade 316L)",
-    "criterion_breakdown": {
-      "structural_safety": {
-        "score": 100.0,
-        "max": 25.0,
-        "contribution": 25.0,
-        "normalized_weight": 0.25,
-        "notes": "Evaluated against preliminary engineering criteria",
-        "reason": "Evaluated against preliminary engineering criteria",
-        "is_na": false
-      },
-      "sls_compliance": {
-        "score": 100.0,
-        "max": 20.0,
-        "contribution": 20.0,
-        "normalized_weight": 0.2,
-        "notes": "Evaluated against preliminary engineering criteria",
-        "reason": "Evaluated against preliminary engineering criteria",
-        "is_na": false
-      },
-      "climate_compatibility": {
-        "score": 35.0,
-        "max": 15.0,
-        "contribution": 5.25,
-        "normalized_weight": 0.15,
-        "notes": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
-        "reason": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
-        "is_na": false
-      },
-      "occupancy_requirements": {
-        "score": 40.0,
-        "max": 15.0,
-        "contribution": 6.0,
-        "normalized_weight": 0.15,
-        "notes": "Marginal preliminary compliance",
-        "reason": "Marginal preliminary compliance",
-        "is_na": false
-      },
-      "structural_system_compatibility": {
-        "score": 100.0,
-        "max": 10.0,
-        "contribution": 10.0,
-        "normalized_weight": 0.1,
-        "notes": "Evaluated against preliminary engineering criteria",
-        "reason": "Evaluated against preliminary engineering criteria",
-        "is_na": false
-      },
-      "service_life": {
-        "score": 100.0,
-        "max": 5.0,
-        "contribution": 5.0,
-        "normalized_weight": 0.05,
-        "notes": "Evaluated against preliminary engineering criteria",
-        "reason": "Evaluated against preliminary engineering criteria",
-        "is_na": false
-      },
-      "maintenance": {
-        "score": 100.0,
-        "max": 5.0,
-        "contribution": 5.0,
-        "normalized_weight": 0.05,
-        "notes": "Evaluated against preliminary engineering criteria",
-        "reason": "Evaluated against preliminary engineering criteria",
-        "is_na": false
-      },
-      "sustainability": {
-        "score": 55.0,
-        "max": 5.0,
-        "contribution": 2.75,
-        "normalized_weight": 0.05,
-        "notes": "Marginal preliminary compliance",
-        "reason": "Marginal preliminary compliance",
-        "is_na": false
-      }
-    }
-  },
-  {
-    "material": "GFRP Rebar (Glass Fibre Reinforced Polymer)",
-    "criterion_breakdown": {
-      "structural_safety": {
-        "score": 92.0,
-        "max": 25.0,
-        "contribution": 23.0,
-        "normalized_weight": 0.25,
-        "notes": "Evaluated against preliminary engineering criteria",
-        "reason": "Evaluated against preliminary engineering criteria",
-        "is_na": false
-      },
-      "sls_compliance": {
-        "score": 100.0,
-        "max": 20.0,
-        "contribution": 20.0,
-        "normalized_weight": 0.2,
-        "notes": "Evaluated against preliminary engineering criteria",
-        "reason": "Evaluated against preliminary engineering criteria",
-        "is_na": false
-      },
-      "climate_compatibility": {
-        "score": 35.0,
-        "max": 15.0,
-        "contribution": 5.25,
-        "normalized_weight": 0.15,
-        "notes": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
-        "reason": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
-        "is_na": false
-      },
-      "occupancy_requirements": {
-        "score": 100.0,
-        "max": 15.0,
-        "contribution": 15.0,
-        "normalized_weight": 0.15,
-        "notes": "Evaluated against preliminary engineering criteria",
-        "reason": "Evaluated against preliminary engineering criteria",
-        "is_na": false
-      },
-      "structural_system_compatibility": {
-        "score": 100.0,
-        "max": 10.0,
-        "contribution": 10.0,
-        "normalized_weight": 0.1,
-        "notes": "Evaluated against preliminary engineering criteria",
-        "reason": "Evaluated against preliminary engineering criteria",
-        "is_na": false
-      },
-      "service_life": {
-        "score": 95.0,
-        "max": 5.0,
-        "contribution": 4.75,
-        "normalized_weight": 0.05,
-        "notes": "Evaluated against preliminary engineering criteria",
-        "reason": "Evaluated against preliminary engineering criteria",
-        "is_na": false
-      },
-      "maintenance": {
-        "score": 100.0,
-        "max": 5.0,
-        "contribution": 5.0,
-        "normalized_weight": 0.05,
-        "notes": "Evaluated against preliminary engineering criteria",
-        "reason": "Evaluated against preliminary engineering criteria",
-        "is_na": false
-      },
-      "sustainability": {
-        "score": 73.33,
-        "max": 5.0,
-        "contribution": 3.67,
-        "normalized_weight": 0.05,
-        "notes": "Evaluated against preliminary engineering criteria",
-        "reason": "Evaluated against preliminary engineering criteria",
-        "is_na": false
-      }
-    }
-  },
-  {
-    "material": "Wire-Cut Clay Brick (Premium Grade)",
-    "criterion_breakdown": {
-      "structural_safety": {
-        "score": 78.2,
-        "max": 25.0,
-        "contribution": 19.55,
-        "normalized_weight": 0.25,
-        "notes": "Evaluated against preliminary engineering criteria",
-        "reason": "Evaluated against preliminary engineering criteria",
-        "is_na": false
-      },
-      "sls_compliance": {
-        "score": 100.0,
-        "max": 20.0,
-        "contribution": 20.0,
-        "normalized_weight": 0.2,
-        "notes": "Evaluated against preliminary engineering criteria",
-        "reason": "Evaluated against preliminary engineering criteria",
-        "is_na": false
-      },
-      "climate_compatibility": {
-        "score": 100.0,
-        "max": 15.0,
-        "contribution": 15.0,
-        "normalized_weight": 0.15,
-        "notes": "Evaluated against preliminary engineering criteria",
-        "reason": "Evaluated against preliminary engineering criteria",
-        "is_na": false
-      },
-      "occupancy_requirements": {
-        "score": 80.0,
-        "max": 15.0,
-        "contribution": 12.0,
         "normalized_weight": 0.15,
         "notes": "Evaluated against preliminary engineering criteria",
         "reason": "Evaluated against preliminary engineering criteria",
@@ -1176,12 +1176,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
+        "score": 20.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 3.0,
         "normalized_weight": 0.15,
-        "notes": "Evaluated against preliminary engineering criteria",
-        "reason": "Evaluated against preliminary engineering criteria",
+        "notes": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -1235,12 +1235,12 @@
     "material": "High-Density Cement Block",
     "criterion_breakdown": {
       "structural_safety": {
-        "score": 58.0,
+        "score": 78.3,
         "max": 25.0,
-        "contribution": 14.5,
+        "contribution": 19.58,
         "normalized_weight": 0.25,
-        "notes": "Marginal preliminary compliance",
-        "reason": "Marginal preliminary compliance",
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sls_compliance": {
@@ -1253,12 +1253,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
+        "score": 20.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 3.0,
         "normalized_weight": 0.15,
-        "notes": "Evaluated against preliminary engineering criteria",
-        "reason": "Evaluated against preliminary engineering criteria",
+        "notes": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -1312,9 +1312,9 @@
     "material": "CSEB Compressed Stabilized Earth Block",
     "criterion_breakdown": {
       "structural_safety": {
-        "score": 62.0,
+        "score": 83.7,
         "max": 25.0,
-        "contribution": 15.5,
+        "contribution": 20.93,
         "normalized_weight": 0.25,
         "notes": "Evaluated against preliminary engineering criteria",
         "reason": "Evaluated against preliminary engineering criteria",
@@ -1330,18 +1330,18 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
+        "score": 20.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 3.0,
         "normalized_weight": 0.15,
-        "notes": "Evaluated against preliminary engineering criteria",
-        "reason": "Evaluated against preliminary engineering criteria",
+        "notes": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 80.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 12.0,
+        "contribution": 15.0,
         "normalized_weight": 0.15,
         "notes": "Evaluated against preliminary engineering criteria",
         "reason": "Evaluated against preliminary engineering criteria",
@@ -1389,12 +1389,12 @@
     "material": "Hollow Clay Block (Perforated)",
     "criterion_breakdown": {
       "structural_safety": {
-        "score": 55.0,
+        "score": 74.25,
         "max": 25.0,
-        "contribution": 13.75,
+        "contribution": 18.56,
         "normalized_weight": 0.25,
-        "notes": "Marginal preliminary compliance",
-        "reason": "Marginal preliminary compliance",
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "sls_compliance": {
@@ -1407,12 +1407,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
+        "score": 20.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 3.0,
         "normalized_weight": 0.15,
-        "notes": "Evaluated against preliminary engineering criteria",
-        "reason": "Evaluated against preliminary engineering criteria",
+        "notes": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -1466,9 +1466,9 @@
     "material": "Fly-Ash Composite Block",
     "criterion_breakdown": {
       "structural_safety": {
-        "score": 60.0,
+        "score": 81.0,
         "max": 25.0,
-        "contribution": 15.0,
+        "contribution": 20.25,
         "normalized_weight": 0.25,
         "notes": "Evaluated against preliminary engineering criteria",
         "reason": "Evaluated against preliminary engineering criteria",
@@ -1484,12 +1484,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
+        "score": 20.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 3.0,
         "normalized_weight": 0.15,
-        "notes": "Evaluated against preliminary engineering criteria",
-        "reason": "Evaluated against preliminary engineering criteria",
+        "notes": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -1561,12 +1561,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 35.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 5.25,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
-        "notes": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
-        "reason": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -1638,18 +1638,18 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 35.0,
+        "score": 20.0,
         "max": 15.0,
-        "contribution": 5.25,
+        "contribution": 3.0,
         "normalized_weight": 0.2,
-        "notes": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
-        "reason": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
+        "notes": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 80.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 12.0,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
         "notes": "Evaluated against preliminary engineering criteria",
         "reason": "Evaluated against preliminary engineering criteria",
@@ -1715,12 +1715,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
+        "score": 20.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 3.0,
         "normalized_weight": 0.2,
-        "notes": "Evaluated against preliminary engineering criteria",
-        "reason": "Evaluated against preliminary engineering criteria",
+        "notes": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -1792,18 +1792,18 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
+        "score": 20.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 3.0,
         "normalized_weight": 0.2,
-        "notes": "Evaluated against preliminary engineering criteria",
-        "reason": "Evaluated against preliminary engineering criteria",
+        "notes": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 80.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 12.0,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
         "notes": "Evaluated against preliminary engineering criteria",
         "reason": "Evaluated against preliminary engineering criteria",
@@ -1869,12 +1869,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 35.0,
+        "score": 90.0,
         "max": 15.0,
-        "contribution": 5.25,
+        "contribution": 13.5,
         "normalized_weight": 0.2,
-        "notes": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
-        "reason": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -1946,18 +1946,18 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 35.0,
+        "score": 20.0,
         "max": 15.0,
-        "contribution": 5.25,
+        "contribution": 3.0,
         "normalized_weight": 0.2,
-        "notes": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
-        "reason": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
+        "notes": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 40.0,
+        "score": 20.0,
         "max": 15.0,
-        "contribution": 6.0,
+        "contribution": 3.0,
         "normalized_weight": 0.2,
         "notes": "Marginal preliminary compliance",
         "reason": "Marginal preliminary compliance",
@@ -2023,12 +2023,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
+        "score": 20.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 3.0,
         "normalized_weight": 0.2,
-        "notes": "Evaluated against preliminary engineering criteria",
-        "reason": "Evaluated against preliminary engineering criteria",
+        "notes": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -2100,12 +2100,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 50.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 7.5,
         "normalized_weight": 0.2,
-        "notes": "FAIL: Unsuitable climate profile (Zone: dry zone tropical arid)",
-        "reason": "FAIL: Unsuitable climate profile (Zone: dry zone tropical arid)",
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -2177,12 +2177,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 35.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 5.25,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
-        "notes": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
-        "reason": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -2254,12 +2254,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 35.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 5.25,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
-        "notes": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
-        "reason": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -2331,18 +2331,18 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
+        "score": 20.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 3.0,
         "normalized_weight": 0.2,
-        "notes": "Evaluated against preliminary engineering criteria",
-        "reason": "Evaluated against preliminary engineering criteria",
+        "notes": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 80.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 12.0,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
         "notes": "Evaluated against preliminary engineering criteria",
         "reason": "Evaluated against preliminary engineering criteria",
@@ -2408,18 +2408,18 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 50.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 7.5,
         "normalized_weight": 0.2,
-        "notes": "FAIL: Unsuitable climate profile (Zone: dry zone tropical arid)",
-        "reason": "FAIL: Unsuitable climate profile (Zone: dry zone tropical arid)",
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 40.0,
+        "score": 20.0,
         "max": 15.0,
-        "contribution": 6.0,
+        "contribution": 3.0,
         "normalized_weight": 0.2,
         "notes": "Marginal preliminary compliance",
         "reason": "Marginal preliminary compliance",
@@ -2485,12 +2485,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 35.0,
+        "score": 90.0,
         "max": 15.0,
-        "contribution": 5.25,
+        "contribution": 13.5,
         "normalized_weight": 0.2,
-        "notes": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
-        "reason": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -2562,12 +2562,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 35.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 5.25,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
-        "notes": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
-        "reason": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -2639,12 +2639,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
+        "score": 20.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 3.0,
         "normalized_weight": 0.2,
-        "notes": "Evaluated against preliminary engineering criteria",
-        "reason": "Evaluated against preliminary engineering criteria",
+        "notes": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -2716,12 +2716,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 35.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 5.25,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
-        "notes": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
-        "reason": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -2793,12 +2793,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 35.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 5.25,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
-        "notes": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
-        "reason": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -2870,12 +2870,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
+        "score": 20.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 3.0,
         "normalized_weight": 0.2,
-        "notes": "Evaluated against preliminary engineering criteria",
-        "reason": "Evaluated against preliminary engineering criteria",
+        "notes": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -2947,12 +2947,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
+        "score": 20.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 3.0,
         "normalized_weight": 0.2,
-        "notes": "Evaluated against preliminary engineering criteria",
-        "reason": "Evaluated against preliminary engineering criteria",
+        "notes": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -3024,18 +3024,18 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
+        "score": 20.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 3.0,
         "normalized_weight": 0.2,
-        "notes": "Evaluated against preliminary engineering criteria",
-        "reason": "Evaluated against preliminary engineering criteria",
+        "notes": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 80.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 12.0,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
         "notes": "Evaluated against preliminary engineering criteria",
         "reason": "Evaluated against preliminary engineering criteria",
@@ -3101,12 +3101,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 35.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 5.25,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
-        "notes": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
-        "reason": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -3178,12 +3178,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
+        "score": 20.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 3.0,
         "normalized_weight": 0.2,
-        "notes": "Evaluated against preliminary engineering criteria",
-        "reason": "Evaluated against preliminary engineering criteria",
+        "notes": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -3255,12 +3255,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
+        "score": 50.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 7.5,
         "normalized_weight": 0.2,
-        "notes": "Evaluated against preliminary engineering criteria",
-        "reason": "Evaluated against preliminary engineering criteria",
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -3332,12 +3332,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
+        "score": 20.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 3.0,
         "normalized_weight": 0.2,
-        "notes": "Evaluated against preliminary engineering criteria",
-        "reason": "Evaluated against preliminary engineering criteria",
+        "notes": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -3409,18 +3409,18 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
+        "score": 20.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 3.0,
         "normalized_weight": 0.2,
-        "notes": "Evaluated against preliminary engineering criteria",
-        "reason": "Evaluated against preliminary engineering criteria",
+        "notes": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 80.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 12.0,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
         "notes": "Evaluated against preliminary engineering criteria",
         "reason": "Evaluated against preliminary engineering criteria",
@@ -3486,12 +3486,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 50.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 7.5,
         "normalized_weight": 0.2,
-        "notes": "FAIL: Unsuitable climate profile (Zone: dry zone tropical arid)",
-        "reason": "FAIL: Unsuitable climate profile (Zone: dry zone tropical arid)",
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -3563,12 +3563,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
+        "score": 50.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 7.5,
         "normalized_weight": 0.2,
-        "notes": "Evaluated against preliminary engineering criteria",
-        "reason": "Evaluated against preliminary engineering criteria",
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -3640,18 +3640,18 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 35.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 5.25,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
-        "notes": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
-        "reason": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 80.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 12.0,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
         "notes": "Evaluated against preliminary engineering criteria",
         "reason": "Evaluated against preliminary engineering criteria",
@@ -3717,12 +3717,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
+        "score": 20.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 3.0,
         "normalized_weight": 0.2,
-        "notes": "Evaluated against preliminary engineering criteria",
-        "reason": "Evaluated against preliminary engineering criteria",
+        "notes": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -3794,12 +3794,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
+        "score": 20.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 3.0,
         "normalized_weight": 0.2,
-        "notes": "Evaluated against preliminary engineering criteria",
-        "reason": "Evaluated against preliminary engineering criteria",
+        "notes": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -3871,12 +3871,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 55.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 8.25,
         "normalized_weight": 0.2,
-        "notes": "FAIL: Unsuitable climate profile (Zone: dry zone tropical arid)",
-        "reason": "FAIL: Unsuitable climate profile (Zone: dry zone tropical arid)",
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -3948,12 +3948,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 55.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 8.25,
         "normalized_weight": 0.2,
-        "notes": "FAIL: Unsuitable climate profile (Zone: dry zone tropical arid)",
-        "reason": "FAIL: Unsuitable climate profile (Zone: dry zone tropical arid)",
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -4025,12 +4025,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 35.0,
+        "score": 90.0,
         "max": 15.0,
-        "contribution": 5.25,
+        "contribution": 13.5,
         "normalized_weight": 0.2,
-        "notes": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
-        "reason": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -4102,12 +4102,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
+        "score": 20.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 3.0,
         "normalized_weight": 0.2,
-        "notes": "Evaluated against preliminary engineering criteria",
-        "reason": "Evaluated against preliminary engineering criteria",
+        "notes": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -4179,12 +4179,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 35.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 5.25,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
-        "notes": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
-        "reason": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -4256,12 +4256,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 20.0,
+        "score": 50.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 7.5,
         "normalized_weight": 0.2,
-        "notes": "FAIL: Unsuitable climate profile (Zone: dry zone tropical arid)",
-        "reason": "FAIL: Unsuitable climate profile (Zone: dry zone tropical arid)",
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -4333,12 +4333,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
+        "score": 50.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 7.5,
         "normalized_weight": 0.2,
-        "notes": "Evaluated against preliminary engineering criteria",
-        "reason": "Evaluated against preliminary engineering criteria",
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -4410,12 +4410,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 35.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 5.25,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
-        "notes": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
-        "reason": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -4491,14 +4491,14 @@
         "max": 15.0,
         "contribution": 3.0,
         "normalized_weight": 0.2,
-        "notes": "FAIL: Unsuitable climate profile (Zone: dry zone tropical arid)",
-        "reason": "FAIL: Unsuitable climate profile (Zone: dry zone tropical arid)",
+        "notes": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 40.0,
+        "score": 20.0,
         "max": 15.0,
-        "contribution": 6.0,
+        "contribution": 3.0,
         "normalized_weight": 0.2,
         "notes": "Marginal preliminary compliance",
         "reason": "Marginal preliminary compliance",
@@ -4564,12 +4564,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 35.0,
+        "score": 100.0,
         "max": 15.0,
-        "contribution": 5.25,
+        "contribution": 15.0,
         "normalized_weight": 0.2,
-        "notes": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
-        "reason": "Marine-grade specification is not required solely due to climate. It is retained only if corrosion exposure or project-specific requirements justify the additional specification.",
+        "notes": "Evaluated against preliminary engineering criteria",
+        "reason": "Evaluated against preliminary engineering criteria",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -4641,12 +4641,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
+        "score": 20.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 3.0,
         "normalized_weight": 0.2,
-        "notes": "Evaluated against preliminary engineering criteria",
-        "reason": "Evaluated against preliminary engineering criteria",
+        "notes": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
         "is_na": false
       },
       "occupancy_requirements": {
@@ -4718,12 +4718,12 @@
         "is_na": false
       },
       "climate_compatibility": {
-        "score": 100.0,
+        "score": 20.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 3.0,
         "normalized_weight": 0.2,
-        "notes": "Evaluated against preliminary engineering criteria",
-        "reason": "Evaluated against preliminary engineering criteria",
+        "notes": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
+        "reason": "FAIL: Unsuitable climate profile (Zone: extreme coastal saline)",
         "is_na": false
       },
       "occupancy_requirements": {

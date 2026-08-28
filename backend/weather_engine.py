@@ -83,8 +83,9 @@ CITY_COORDS = {
 }
 
 def get_climate_profile(city: str):
-    city_lc = city.lower()
+    city_lc = (city or "").lower()
     profile_data = None
+    is_fallback = False
     
     # 1. Base default from CLIMATE_ZONES
     for zone, cfg in CLIMATE_ZONES.items():
@@ -94,8 +95,10 @@ def get_climate_profile(city: str):
             
     if not profile_data:
         profile_data = CLIMATE_ZONES["INTERMEDIATE"]["data"].copy()
+        is_fallback = True
         
-    profile_data["city"] = city.capitalize()
+    profile_data["city"] = (city or "Colombo").capitalize()
+    profile_data["is_fallback"] = is_fallback
     profile_data["status"] = "AI Climate Intelligence Active"
     
     # Distance logic for salinity
