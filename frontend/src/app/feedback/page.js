@@ -53,9 +53,9 @@ const FEEDBACK_MODULES = [
     accent: "#3E7452",
     accentLight: "#C6E5CF",
     accentBg: "linear-gradient(135deg, #FFFFFF 45%, #DCF2E2 100%)",
-    status: "COMING SOON",
-    formUrl: "",
-    embedUrl: "",
+    status: "ACTIVE",
+    formUrl: "https://docs.google.com/forms/d/e/1FAIpQLSc7QqG-Z1sZGVqL9zpr1HvaUvfoKNi190mfSz2z5Dpchue0Xw/viewform?usp=header",
+    embedUrl: "https://docs.google.com/forms/d/e/1FAIpQLSc7QqG-Z1sZGVqL9zpr1HvaUvfoKNi190mfSz2z5Dpchue0Xw/viewform?embedded=true",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 2c2.5 3 4 6.5 4 10"/><path d="M12 2C9.5 5 8 8.5 8 12"/>
