@@ -209,10 +209,10 @@ export default function Footer() {
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.7rem' }}>
                 <div style={{ fontSize: '0.74rem', fontWeight: 800, color: '#1E5438', textTransform: 'uppercase', letterSpacing: '0.08em', fontFamily: 'Space Grotesk' }}>
-                  Project Analytics
+                  Analytics & Feedback
                 </div>
                 <Link href="/history" style={{ color: '#42554A', fontSize: '0.8rem', fontWeight: 500, textDecoration: 'none', transition: 'color 0.2s' }}>Recommendation History</Link>
-                <Link href="/plan-analyzer" style={{ color: '#42554A', fontSize: '0.8rem', fontWeight: 500, textDecoration: 'none', transition: 'color 0.2s' }}>Plan Audit Tool</Link>
+                <Link href="/feedback" style={{ color: '#42554A', fontSize: '0.8rem', fontWeight: 500, textDecoration: 'none', transition: 'color 0.2s' }}>User Feedback Hub</Link>
               </div>
             </div>
           </div>
