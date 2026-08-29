@@ -128,10 +128,6 @@ export default function ProjectValidationStrip({ data }) {
         </div>
       )}
 
-      {/* System-wide Legal / Academic Disclaimer */}
-      <div style={{ fontSize: '0.75rem', color: '#748078', fontStyle: 'italic', lineHeight: 1.5 }}>
-        <strong style={{ color: '#18251F' }}>Academic Disclaimer:</strong> {data.disclaimer || "GreenConstructAI provides preliminary decision support and does not replace detailed structural design, architectural approval, quantity surveying, or professional engineering certification."}
-      </div>
     </section>
   );
 }

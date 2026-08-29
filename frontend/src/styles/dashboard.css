@@ -1,12 +1,12 @@
 :root {
-  /* Light sustainable architecture theme */
-  --bg-dark: #F7F8F5;
-  --card-bg: rgba(255, 255, 255, 0.78);
-  --card-border: #DDE5DF;
-  --accent-eco: #2F6B4F;
-  --text-primary: #1F2933;
-  --text-dim: #667085;
-  --bg-light: #EEF3EE;
+  /* Architectural sage green theme */
+  --bg-dark: #E1E9E2;
+  --card-bg: rgba(255, 255, 255, 0.95);
+  --card-border: #BDCEBF;
+  --accent-eco: #1E5438;
+  --text-primary: #14221B;
+  --text-dim: #506458;
+  --bg-light: #DCE8DF;
   
   /* Layout Spacing */
   --dashboard-gap: 24px;

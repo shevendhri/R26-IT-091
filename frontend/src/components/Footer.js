@@ -174,8 +174,8 @@ export default function Footer() {
       {/* ═════════════════════ FOOTER LINKS & DISCLAIMER ════ */}
       <div style={{
         padding: '3.5rem 2.5rem 2rem',
-        borderTop: '1px solid #C4CFC6',
-        background: '#DEE6DF'
+        borderTop: '1px solid #BDCEBF',
+        background: '#C7D7CA'
       }}>
         <div style={{ maxWidth: '1440px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '2.5rem' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '2.5rem' }}>
@@ -211,8 +211,8 @@ export default function Footer() {
                 <div style={{ fontSize: '0.74rem', fontWeight: 800, color: '#1E5438', textTransform: 'uppercase', letterSpacing: '0.08em', fontFamily: 'Space Grotesk' }}>
                   Analytics & Feedback
                 </div>
-                <Link href="/history" style={{ color: '#4A5E52', fontSize: '0.8rem', fontWeight: 500, textDecoration: 'none', transition: 'color 0.2s' }}>Recommendation History</Link>
-                <Link href="/feedback" style={{ color: '#4A5E52', fontSize: '0.8rem', fontWeight: 500, textDecoration: 'none', transition: 'color 0.2s' }}>User Feedback</Link>
+                <Link href="/history" style={{ color: '#42554A', fontSize: '0.8rem', fontWeight: 500, textDecoration: 'none', transition: 'color 0.2s' }}>Recommendation History</Link>
+                <Link href="/feedback" style={{ color: '#42554A', fontSize: '0.8rem', fontWeight: 500, textDecoration: 'none', transition: 'color 0.2s' }}>User Feedback Hub</Link>
               </div>
             </div>
           </div>

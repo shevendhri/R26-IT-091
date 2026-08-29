@@ -17,7 +17,7 @@ export default function Home() {
       <style>{`
         /* ── Hero Section ── */
         .hero-section {
-          background: #F3F5F1;
+          background: linear-gradient(180deg, #E1E9E2 0%, #D8E5DA 100%);
           position: relative;
           overflow: hidden;
         }
@@ -38,8 +38,8 @@ export default function Home() {
           position: absolute;
           inset: 0;
           background-image:
-            linear-gradient(rgba(30, 84, 56, 0.04) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(30, 84, 56, 0.04) 1px, transparent 1px);
+            linear-gradient(rgba(30, 84, 56, 0.05) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(30, 84, 56, 0.05) 1px, transparent 1px);
           background-size: 56px 56px;
           pointer-events: none;
         }
@@ -47,24 +47,24 @@ export default function Home() {
           position: absolute;
           top: 0; left: 50%;
           transform: translateX(-50%);
-          width: 700px;
-          height: 400px;
-          background: radial-gradient(ellipse at center top, rgba(30, 84, 56, 0.09) 0%, transparent 70%);
+          width: 800px;
+          height: 480px;
+          background: radial-gradient(ellipse at center top, rgba(62, 116, 82, 0.20) 0%, rgba(143, 182, 156, 0.12) 50%, transparent 75%);
           pointer-events: none;
         }
         .hero-geo-lines {
           position: absolute;
           inset: 0;
           pointer-events: none;
-          opacity: 0.035;
+          opacity: 0.045;
         }
 
         /* ── Module Cards Section ── */
         .modules-section {
-          background: #E8EDE7;
-          border-top: 1px solid #D5DED6;
-          border-bottom: 1px solid #D5DED6;
-          padding: 4rem 3rem 4.5rem;
+          background: #D4E1D6;
+          border-top: 1px solid #BDCEBF;
+          border-bottom: 1px solid #BDCEBF;
+          padding: 4.5rem 3rem 5rem;
         }
         .module-row-grid {
           display: grid;
@@ -88,37 +88,37 @@ export default function Home() {
           display: flex;
           flex-direction: column;
           position: relative;
-          box-shadow: 0 4px 12px rgba(24,37,31,0.05), 0 12px 32px rgba(24,37,31,0.06);
+          box-shadow: 0 4px 14px rgba(20,34,27,0.06), 0 12px 32px rgba(20,34,27,0.08);
           transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
           min-height: 340px;
-          border: 1px solid #D5DED6;
+          border: 1px solid #BDCEBF;
         }
         .card-plan-lp {
-          background: linear-gradient(135deg, #FFFFFF 55%, #E7F0F7 100%);
-          border-top: 4px solid #2F6FA3;
+          background: linear-gradient(135deg, #FFFFFF 48%, #DDECF8 100%);
+          border-top: 4px solid #245D8C;
         }
         .card-mat-lp {
-          background: linear-gradient(135deg, #FFFFFF 55%, #E7F0E9 100%);
+          background: linear-gradient(135deg, #FFFFFF 48%, #DCEFE2 100%);
           border-top: 4px solid #1E5438;
         }
         .card-green-lp {
-          background: linear-gradient(135deg, #FFFFFF 55%, #EDF5EE 100%);
-          border-top: 4px solid #4A7A5C;
+          background: linear-gradient(135deg, #FFFFFF 48%, #DCF2E2 100%);
+          border-top: 4px solid #3E7452;
         }
         .card-fire-lp {
-          background: linear-gradient(135deg, #FFFFFF 55%, #F9EAE4 100%);
-          border-top: 4px solid #C65D35;
+          background: linear-gradient(135deg, #FFFFFF 48%, #F9E7E0 100%);
+          border-top: 4px solid #C0542C;
         }
         .mockup-module-card:hover {
           transform: translateY(-5px);
-          box-shadow: 0 8px 20px rgba(24,37,31,0.09), 0 20px 48px rgba(30,84,56,0.10);
+          box-shadow: 0 8px 24px rgba(20,34,27,0.12), 0 20px 48px rgba(30,84,56,0.15);
         }
 
         /* ── How It Works Section ── */
         .hiw-section {
-          background: #FFFFFF;
-          border-bottom: 1px solid #D5DED6;
-          padding: 4rem 3rem 4.5rem;
+          background: #E8F1E9;
+          border-bottom: 1px solid #BDCEBF;
+          padding: 4.5rem 3rem 5rem;
         }
         .hiw-container {
           max-width: 1440px;
@@ -553,52 +553,52 @@ export default function Home() {
 
           <div className="hiw-flow">
             {/* Step 1 */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '14px', flex: 1, minWidth: '200px', background: '#F3F5F1', borderRadius: '12px', padding: '1rem 1.1rem', border: '1px solid #D5DED6' }}>
-              <div style={{ width: '44px', height: '44px', borderRadius: '10px', background: '#DDEBDF', color: '#1E5438', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, border: '1px solid rgba(30,84,56,0.18)' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '14px', flex: 1, minWidth: '200px', background: '#FFFFFF', borderRadius: '14px', padding: '1.1rem 1.2rem', border: '1px solid #BDCEBF', boxShadow: '0 2px 10px rgba(20,34,27,0.04)' }}>
+              <div style={{ width: '44px', height: '44px', borderRadius: '10px', background: '#CCE3D2', color: '#1E5438', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, border: '1px solid rgba(30,84,56,0.2)' }}>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
               </div>
               <div>
-                <div style={{ fontSize: '0.78rem', fontWeight: 800, color: '#18251F', textTransform: 'uppercase', fontFamily: 'Space Grotesk' }}>PROJECT INPUT</div>
-                <div style={{ fontSize: '0.74rem', color: '#536058', fontWeight: 500, lineHeight: 1.4 }}>Upload plans and project information</div>
+                <div style={{ fontSize: '0.78rem', fontWeight: 800, color: '#14221B', textTransform: 'uppercase', fontFamily: 'Space Grotesk' }}>PROJECT INPUT</div>
+                <div style={{ fontSize: '0.74rem', color: '#42554A', fontWeight: 500, lineHeight: 1.4 }}>Upload plans and project information</div>
               </div>
             </div>
 
-            <div style={{ color: '#B9C8BC', fontSize: '1.4rem', padding: '0 0.5rem', flexShrink: 0 }}>→</div>
+            <div style={{ color: '#9EB5A1', fontSize: '1.4rem', padding: '0 0.5rem', flexShrink: 0 }}>→</div>
 
             {/* Step 2 */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '14px', flex: 1, minWidth: '200px', background: '#EAF0F5', borderRadius: '12px', padding: '1rem 1.1rem', border: '1px solid rgba(47,111,163,0.18)' }}>
-              <div style={{ width: '44px', height: '44px', borderRadius: '10px', background: '#D0E4F2', color: '#2F6FA3', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, border: '1px solid rgba(47,111,163,0.2)' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '14px', flex: 1, minWidth: '200px', background: '#DEE9EF', borderRadius: '14px', padding: '1.1rem 1.2rem', border: '1px solid rgba(36,93,140,0.22)', boxShadow: '0 2px 10px rgba(36,93,140,0.04)' }}>
+              <div style={{ width: '44px', height: '44px', borderRadius: '10px', background: '#C8DDF0', color: '#245D8C', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, border: '1px solid rgba(36,93,140,0.25)' }}>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
               </div>
               <div>
-                <div style={{ fontSize: '0.78rem', fontWeight: 800, color: '#18251F', textTransform: 'uppercase', fontFamily: 'Space Grotesk' }}>PLAN ANALYSIS</div>
-                <div style={{ fontSize: '0.74rem', color: '#536058', fontWeight: 500, lineHeight: 1.4 }}>AI analyzes building geometry and data</div>
+                <div style={{ fontSize: '0.78rem', fontWeight: 800, color: '#14221B', textTransform: 'uppercase', fontFamily: 'Space Grotesk' }}>PLAN ANALYSIS</div>
+                <div style={{ fontSize: '0.74rem', color: '#42554A', fontWeight: 500, lineHeight: 1.4 }}>AI analyzes building geometry and data</div>
               </div>
             </div>
 
-            <div style={{ color: '#B9C8BC', fontSize: '1.4rem', padding: '0 0.5rem', flexShrink: 0 }}>→</div>
+            <div style={{ color: '#9EB5A1', fontSize: '1.4rem', padding: '0 0.5rem', flexShrink: 0 }}>→</div>
 
             {/* Step 3 */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '14px', flex: 1, minWidth: '200px', background: '#EDF5EE', borderRadius: '12px', padding: '1rem 1.1rem', border: '1px solid rgba(74,122,92,0.18)' }}>
-              <div style={{ width: '44px', height: '44px', borderRadius: '10px', background: '#D0E8D6', color: '#4A7A5C', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, border: '1px solid rgba(74,122,92,0.2)' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '14px', flex: 1, minWidth: '200px', background: '#DCE9DF', borderRadius: '14px', padding: '1.1rem 1.2rem', border: '1px solid rgba(62,116,82,0.22)', boxShadow: '0 2px 10px rgba(62,116,82,0.04)' }}>
+              <div style={{ width: '44px', height: '44px', borderRadius: '10px', background: '#C6E5CF', color: '#3E7452', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, border: '1px solid rgba(62,116,82,0.25)' }}>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 2c2.5 3 4 6.5 4 10"/><path d="M12 2C9.5 5 8 8.5 8 12"/></svg>
               </div>
               <div>
-                <div style={{ fontSize: '0.78rem', fontWeight: 800, color: '#18251F', textTransform: 'uppercase', fontFamily: 'Space Grotesk' }}>INTELLIGENT ASSESSMENT</div>
-                <div style={{ fontSize: '0.74rem', color: '#536058', fontWeight: 500, lineHeight: 1.4 }}>Multi-domain AI engines evaluate</div>
+                <div style={{ fontSize: '0.78rem', fontWeight: 800, color: '#14221B', textTransform: 'uppercase', fontFamily: 'Space Grotesk' }}>INTELLIGENT ASSESSMENT</div>
+                <div style={{ fontSize: '0.74rem', color: '#42554A', fontWeight: 500, lineHeight: 1.4 }}>Multi-domain AI engines evaluate</div>
               </div>
             </div>
 
-            <div style={{ color: '#B9C8BC', fontSize: '1.4rem', padding: '0 0.5rem', flexShrink: 0 }}>→</div>
+            <div style={{ color: '#9EB5A1', fontSize: '1.4rem', padding: '0 0.5rem', flexShrink: 0 }}>→</div>
 
             {/* Step 4 */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '14px', flex: 1, minWidth: '200px', background: '#F3F5F1', borderRadius: '12px', padding: '1rem 1.1rem', border: '1px solid #D5DED6' }}>
-              <div style={{ width: '44px', height: '44px', borderRadius: '10px', background: '#DDEBDF', color: '#1E5438', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, border: '1px solid rgba(30,84,56,0.18)' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '14px', flex: 1, minWidth: '200px', background: '#FFFFFF', borderRadius: '14px', padding: '1.1rem 1.2rem', border: '1px solid #BDCEBF', boxShadow: '0 2px 10px rgba(20,34,27,0.04)' }}>
+              <div style={{ width: '44px', height: '44px', borderRadius: '10px', background: '#CCE3D2', color: '#1E5438', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, border: '1px solid rgba(30,84,56,0.2)' }}>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
               </div>
               <div>
-                <div style={{ fontSize: '0.78rem', fontWeight: 800, color: '#18251F', textTransform: 'uppercase', fontFamily: 'Space Grotesk' }}>INTEGRATED INSIGHTS</div>
-                <div style={{ fontSize: '0.74rem', color: '#536058', fontWeight: 500, lineHeight: 1.4 }}>Actionable recommendations & compliance</div>
+                <div style={{ fontSize: '0.78rem', fontWeight: 800, color: '#14221B', textTransform: 'uppercase', fontFamily: 'Space Grotesk' }}>INTEGRATED INSIGHTS</div>
+                <div style={{ fontSize: '0.74rem', color: '#42554A', fontWeight: 500, lineHeight: 1.4 }}>Actionable recommendations & compliance</div>
               </div>
             </div>
           </div>

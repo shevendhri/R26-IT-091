@@ -4,340 +4,437 @@ import React, { useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
-const EVALUATION_MODULES = [
+const FEEDBACK_MODULES = [
   {
     id: 1,
-    title: "Material Recommendation & Blueprint Generation",
-    description: "Hybrid AI and SLS-compliant multi-criteria specification of structural and finishing materials.",
+    num: "01",
+    title: "Building Plan Analyzer",
+    shortTitle: "Plan Analyzer",
+    category: "SPATIAL & REGULATORY AUDIT",
+    description: "Floor plan interpretation, room dimensioning, setbacks, and UDA compliance verification.",
+    accent: "#245D8C",
+    accentLight: "#C8DDF0",
+    accentBg: "linear-gradient(135deg, #FFFFFF 45%, #E2EEF8 100%)",
+    status: "ACTIVE",
+    formUrl: "https://docs.google.com/forms/d/e/1FAIpQLSeQE97l7m0IcbBybFpldZGTF8ovvJpwk4XZP9qvBZiNRGXY0g/viewform?usp=header",
+    embedUrl: "https://docs.google.com/forms/d/e/1FAIpQLSeQE97l7m0IcbBybFpldZGTF8ovvJpwk4XZP9qvBZiNRGXY0g/viewform?embedded=true",
     icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
-        <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
-        <line x1="12" y1="22.08" x2="12" y2="12" />
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/>
       </svg>
-    ),
-    accent: "#10b981",
+    )
   },
   {
     id: 2,
-    title: "GREENSL Certification Pre-Assessment",
-    description: "Sustainability benchmarking, embodied carbon scoring, and green building standard compatibility.",
+    num: "02",
+    title: "Material Recommendations",
+    shortTitle: "Materials",
+    category: "MCDM & ML SELECTION",
+    description: "Multi-criteria material scoring, climate zone adaptation, and structural package feasibility.",
+    accent: "#1E5438",
+    accentLight: "#C6E2CD",
+    accentBg: "linear-gradient(135deg, #FFFFFF 45%, #DEEFE2 100%)",
+    status: "ACTIVE",
+    formUrl: "https://docs.google.com/forms/d/e/1FAIpQLSdDr5VrYMSK1rY-kMCD5LRCFD6NDlJXLA5nRAGruQrSihD5Rw/viewform?usp=publish-editor",
+    embedUrl: "https://docs.google.com/forms/d/e/1FAIpQLSdDr5VrYMSK1rY-kMCD5LRCFD6NDlJXLA5nRAGruQrSihD5Rw/viewform?embedded=true",
     icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-        <path d="M9 12l2 2 4-4" />
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/>
       </svg>
-    ),
-    accent: "#34d399",
+    )
   },
   {
     id: 3,
-    title: "Fire-Safety Compliance Assessment",
-    description: "Automated verification against Sri Lankan building fire regulations and material combustibility standards.",
+    num: "03",
+    title: "Green Building Pre-Assessment",
+    shortTitle: "Green Assessment",
+    category: "GREENSL & SUSTAINABILITY",
+    description: "Sustainability benchmarking, carbon footprint analysis, and green rating pre-certification.",
+    accent: "#3E7452",
+    accentLight: "#C6E5CF",
+    accentBg: "linear-gradient(135deg, #FFFFFF 45%, #DCF2E2 100%)",
+    status: "ACTIVE",
+    formUrl: "https://docs.google.com/forms/d/e/1FAIpQLSc7QqG-Z1sZGVqL9zpr1HvaUvfoKNi190mfSz2z5Dpchue0Xw/viewform?usp=header",
+    embedUrl: "https://docs.google.com/forms/d/e/1FAIpQLSc7QqG-Z1sZGVqL9zpr1HvaUvfoKNi190mfSz2z5Dpchue0Xw/viewform?embedded=true",
     icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z" />
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 2c2.5 3 4 6.5 4 10"/><path d="M12 2C9.5 5 8 8.5 8 12"/>
       </svg>
-    ),
-    accent: "#f59e0b",
+    )
   },
   {
     id: 4,
-    title: "Floor-Plan Regulatory Compliance Checking",
-    description: "Computer vision spatial auditing for setbacks, room ventilation, UDA regulations, and gazette rules.",
+    num: "04",
+    title: "Fire-Safety Compliance",
+    shortTitle: "Fire Safety",
+    category: "FIRE CODE VALIDATION",
+    description: "Fire resistance rating, travel distance checks, egress sizing, and safety regulation validation.",
+    accent: "#C0542C",
+    accentLight: "#F2D4C7",
+    accentBg: "linear-gradient(135deg, #FFFFFF 45%, #F9E7E0 100%)",
+    status: "ACTIVE",
+    formUrl: "https://docs.google.com/forms/d/e/1FAIpQLSdqeQ-Ky_TN2jfipHPoT9Y19rU4DznfM4jEaUEyWnxyXNmXrA/viewform?usp=publish-editor",
+    embedUrl: "https://docs.google.com/forms/d/e/1FAIpQLSdqeQ-Ky_TN2jfipHPoT9Y19rU4DznfM4jEaUEyWnxyXNmXrA/viewform?embedded=true",
     icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="3" y="3" width="18" height="18" rx="2" />
-        <line x1="3" y1="9" x2="21" y2="9" />
-        <line x1="9" y1="21" x2="9" y2="9" />
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
       </svg>
-    ),
-    accent: "#38bdf8",
-  },
+    )
+  }
 ];
 
-const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSc-Zv2dc--1lVOG33Y0KDSEVycfLpYHllZbgzNfH0Wf27j8NQ/viewform?embedded=true";
-const GOOGLE_FORM_DIRECT_URL = "https://docs.google.com/forms/d/e/1FAIpQLSc-Zv2dc--1lVOG33Y0KDSEVycfLpYHllZbgzNfH0Wf27j8NQ/viewform?usp=publish-editor";
-
 export default function FeedbackPage() {
-  const [iframeLoaded, setIframeLoaded] = useState(false);
+  const [selectedModuleId, setSelectedModuleId] = useState(1);
+  const [iframeLoading, setIframeLoading] = useState(true);
+
+  const currentModule = FEEDBACK_MODULES.find(m => m.id === selectedModuleId) || FEEDBACK_MODULES[0];
 
   return (
-    <div style={{ minHeight: '100vh', background: 'var(--eco-black, #070b13)', color: '#f0f4f8', position: 'relative' }}>
-      {/* Visual background layers */}
-      <div className="premium-bg">
-        <div className="gradient-mesh" />
-        <div className="blueprint-grid" />
-      </div>
-
+    <div style={{ minHeight: '100vh', background: '#E1E9E2', color: '#14221B', fontFamily: 'Inter, sans-serif' }}>
       <Header />
 
       <main style={{
-        padding: '2.5rem 1.5rem 4rem',
-        maxWidth: '980px',
+        maxWidth: '1280px',
         margin: '0 auto',
-        position: 'relative',
-        zIndex: 10,
+        padding: '3.5rem 1.5rem 5rem',
         display: 'flex',
         flexDirection: 'column',
-        gap: '1.75rem',
-        boxSizing: 'border-box',
-        width: '100%'
+        gap: '2.5rem'
       }}>
-        {/* Page Header Card */}
+        {/* ═════════════════════════════════════ HERO BANNER ════ */}
         <section style={{
-          background: 'linear-gradient(135deg, rgba(15, 26, 46, 0.95), rgba(12, 20, 32, 0.95))',
-          border: '1px solid #1e2d48',
-          borderRadius: '12px',
-          padding: '2rem',
-          boxShadow: '0 4px 20px rgba(0,0,0,0.35)',
+          background: 'linear-gradient(135deg, #FFFFFF 60%, #E8F1E9 100%)',
+          border: '1px solid #BDCEBF',
+          borderTop: '4px solid #1E5438',
+          borderRadius: '20px',
+          padding: '2.2rem 2.5rem',
+          boxShadow: '0 4px 18px rgba(20, 34, 27, 0.06)',
           position: 'relative',
           overflow: 'hidden'
         }}>
-          {/* Subtle accent glow top border */}
           <div style={{
             position: 'absolute',
-            top: 0,
-            left: 0,
-            right: 0,
-            height: '2px',
-            background: 'linear-gradient(90deg, transparent, #10b981, #38bdf8, transparent)'
+            right: '-40px',
+            top: '-40px',
+            width: '240px',
+            height: '240px',
+            background: 'radial-gradient(circle, rgba(101, 210, 138, 0.15) 0%, transparent 70%)',
+            pointerEvents: 'none'
           }} />
 
-          <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: '1rem', flexWrap: 'wrap' }}>
-            <div style={{ flex: '1 1 500px' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '0.75rem' }}>
-                <div style={{
-                  width: '28px',
-                  height: '28px',
-                  borderRadius: '6px',
-                  background: 'rgba(16, 185, 129, 0.12)',
-                  border: '1px solid rgba(16, 185, 129, 0.3)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  color: '#10b981'
-                }}>
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-                  </svg>
-                </div>
-                <span className="telemetry-badge telemetry-badge-info" style={{ letterSpacing: '0.06em', fontSize: '0.65rem' }}>
-                  ACADEMIC RESEARCH & SYSTEM EVALUATION
-                </span>
-              </div>
-
-              <h1 style={{
-                fontFamily: 'Space Grotesk, sans-serif',
-                fontSize: 'clamp(1.6rem, 3.5vw, 2.2rem)',
-                fontWeight: 700,
-                color: '#ffffff',
-                margin: '0 0 0.5rem 0',
-                letterSpacing: '-0.02em',
-                lineHeight: 1.2
-              }}>
-                User <span style={{ color: '#10b981' }}>Feedback</span>
-              </h1>
-
-              <div style={{
-                fontFamily: 'Space Grotesk, sans-serif',
-                fontSize: '1rem',
-                fontWeight: 600,
-                color: '#cbd5e1',
-                marginBottom: '0.85rem'
-              }}>
-                Help us evaluate and improve GreenConstructAI.
-              </div>
-
-              <p style={{
-                color: '#8fa3bc',
-                fontSize: '0.86rem',
-                lineHeight: 1.65,
-                margin: 0,
-                maxWidth: '780px'
-              }}>
-                Your feedback helps us evaluate the usability and effectiveness of GreenConstructAI&apos;s building decision-support functions. This questionnaire is intended for academic research and system evaluation.
-              </p>
-            </div>
-
-            <a
-              href={GOOGLE_FORM_DIRECT_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-secondary"
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '8px',
-                padding: '0.55rem 0.95rem',
-                fontSize: '0.75rem',
-                fontWeight: 600,
-                borderRadius: '6px',
-                border: '1px solid #2a3d5c',
-                background: '#0c1420',
-                color: '#94a3b8',
-                textDecoration: 'none',
-                transition: 'all 0.2s ease',
-                flexShrink: 0
-              }}
-              title="Open Google Form in a new tab if required"
-            >
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                <polyline points="15 3 21 3 21 9" />
-                <line x1="10" y1="14" x2="21" y2="3" />
-              </svg>
-              Open in New Window
-            </a>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: '#CDE2D2', border: '1px solid rgba(30, 84, 56, 0.25)', borderRadius: '20px', padding: '4px 14px', marginBottom: '1rem' }}>
+            <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#1E5438' }} />
+            <span style={{ fontSize: '0.72rem', fontWeight: 800, color: '#1E5438', letterSpacing: '0.08em', fontFamily: 'Space Grotesk' }}>
+              STAKEHOLDER & USER EVALUATION
+            </span>
           </div>
+
+          <h1 style={{
+            fontFamily: 'Space Grotesk, sans-serif',
+            fontSize: 'clamp(1.8rem, 3.2vw, 2.4rem)',
+            fontWeight: 800,
+            color: '#14221B',
+            margin: '0 0 0.6rem',
+            letterSpacing: '-0.02em',
+            lineHeight: 1.2
+          }}>
+            GreenConstructAI User Feedback Hub
+          </h1>
+
+          <p style={{
+            fontSize: '0.92rem',
+            color: '#42554A',
+            maxWidth: '780px',
+            margin: 0,
+            lineHeight: 1.6,
+            fontWeight: 500
+          }}>
+            Select a system module below to provide targeted evaluation feedback. Each feedback form is tailored to assess AI accuracy, code compliance, decision usability, and engineering reliability.
+          </p>
         </section>
 
-        {/* Academic Scope: 4 Major Decision-Support Functions */}
-        <section style={{
-          background: 'rgba(15, 26, 46, 0.5)',
-          border: '1px solid #1e2d48',
-          borderRadius: '10px',
-          padding: '1.25rem 1.5rem',
-        }}>
+        {/* ═════════════════════════════════════ 4 MODULE SELECTOR CARDS ════ */}
+        <section>
           <div style={{
-            fontSize: '0.68rem',
-            fontWeight: 700,
-            letterSpacing: '0.08em',
-            textTransform: 'uppercase',
-            color: '#38bdf8',
-            marginBottom: '0.85rem',
             display: 'flex',
+            justifyContent: 'space-between',
             alignItems: 'center',
-            gap: '6px'
+            marginBottom: '1.2rem',
+            flexWrap: 'wrap',
+            gap: '0.5rem'
           }}>
-            <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#38bdf8' }} />
-            Platform Scope Evaluated in this Questionnaire
+            <div style={{ fontSize: '0.78rem', fontWeight: 800, color: '#1E5438', letterSpacing: '0.1em', textTransform: 'uppercase', fontFamily: 'Space Grotesk' }}>
+              Select System Module to Evaluate
+            </div>
+            <div style={{ fontSize: '0.75rem', color: '#6D8174', fontWeight: 600 }}>
+              Showing 4 Specialized Evaluation Tracks
+            </div>
           </div>
 
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(210px, 1fr))',
-            gap: '0.85rem'
+            gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+            gap: '1.25rem'
           }}>
-            {EVALUATION_MODULES.map((mod) => (
-              <div
-                key={mod.id}
-                style={{
-                  background: '#090d16',
-                  border: '1px solid #1a2540',
-                  borderRadius: '8px',
-                  padding: '0.85rem 1rem',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: '0.4rem',
-                  transition: 'border-color 0.2s ease, transform 0.2s ease'
-                }}
-              >
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <div style={{ color: mod.accent, flexShrink: 0 }}>
-                    {mod.icon}
+            {FEEDBACK_MODULES.map((mod) => {
+              const isSelected = mod.id === selectedModuleId;
+              return (
+                <div
+                  key={mod.id}
+                  onClick={() => {
+                    setSelectedModuleId(mod.id);
+                    setIframeLoading(true);
+                  }}
+                  style={{
+                    background: mod.accentBg,
+                    borderTop: `4px solid ${mod.accent}`,
+                    borderRight: isSelected ? `2px solid ${mod.accent}` : '1px solid #BDCEBF',
+                    borderBottom: isSelected ? `2px solid ${mod.accent}` : '1px solid #BDCEBF',
+                    borderLeft: isSelected ? `2px solid ${mod.accent}` : '1px solid #BDCEBF',
+                    borderRadius: '16px',
+                    padding: '1.4rem',
+                    cursor: 'pointer',
+                    position: 'relative',
+                    boxShadow: isSelected
+                      ? `0 8px 24px rgba(20, 34, 27, 0.12), 0 0 0 3px ${mod.accentLight}`
+                      : '0 3px 12px rgba(20, 34, 27, 0.05)',
+                    transform: isSelected ? 'translateY(-3px)' : 'none',
+                    transition: 'all 0.22s ease',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'space-between',
+                    minHeight: '220px'
+                  }}
+                >
+                  <div>
+                    {/* Header Row */}
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.9rem' }}>
+                      <div style={{
+                        width: '42px',
+                        height: '42px',
+                        borderRadius: '10px',
+                        background: mod.accent,
+                        color: '#FFFFFF',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        boxShadow: `0 3px 10px rgba(0,0,0,0.15)`
+                      }}>
+                        {mod.icon}
+                      </div>
+
+                      <span style={{
+                        fontSize: '0.65rem',
+                        fontWeight: 800,
+                        padding: '3px 10px',
+                        borderRadius: '20px',
+                        background: mod.status === 'ACTIVE' ? mod.accentLight : '#E8F1E9',
+                        color: mod.status === 'ACTIVE' ? mod.accent : '#6D8174',
+                        border: `1px solid ${mod.status === 'ACTIVE' ? mod.accent : '#BDCEBF'}`,
+                        fontFamily: 'Space Grotesk'
+                      }}>
+                        ● {mod.status}
+                      </span>
+                    </div>
+
+                    <div style={{ fontSize: '0.68rem', fontWeight: 800, color: mod.accent, letterSpacing: '0.08em', fontFamily: 'Space Grotesk', marginBottom: '0.2rem' }}>
+                      MODULE {mod.num}
+                    </div>
+
+                    <h3 style={{
+                      fontFamily: 'Space Grotesk, sans-serif',
+                      fontSize: '1rem',
+                      fontWeight: 800,
+                      color: '#14221B',
+                      margin: '0 0 0.5rem',
+                      lineHeight: 1.25
+                    }}>
+                      {mod.title}
+                    </h3>
+
+                    <p style={{
+                      fontSize: '0.78rem',
+                      color: '#42554A',
+                      lineHeight: 1.5,
+                      margin: 0,
+                      fontWeight: 500
+                    }}>
+                      {mod.description}
+                    </p>
                   </div>
+
+                  {/* Select Indicator */}
                   <div style={{
-                    fontFamily: 'Space Grotesk, sans-serif',
-                    fontSize: '0.8rem',
-                    fontWeight: 700,
-                    color: '#f0f4f8',
-                    lineHeight: 1.3
+                    marginTop: '1.2rem',
+                    paddingTop: '0.75rem',
+                    borderTop: '1px solid rgba(0,0,0,0.06)',
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    fontSize: '0.75rem',
+                    fontWeight: 800,
+                    color: mod.accent,
+                    fontFamily: 'Space Grotesk'
                   }}>
-                    {mod.title}
+                    <span>{isSelected ? '✓ SELECTED MODULE' : 'CLICK TO EVALUATE'}</span>
+                    <span>→</span>
                   </div>
                 </div>
-                <div style={{
-                  fontSize: '0.72rem',
-                  color: '#64748b',
-                  lineHeight: 1.45
-                }}>
-                  {mod.description}
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </section>
 
-        {/* Embedded Google Form Card */}
+        {/* ═════════════════════════════════════ ACTIVE FORM CONTAINER ════ */}
         <section style={{
-          background: '#0b111e',
-          border: '1px solid #1e2d48',
-          borderRadius: '12px',
-          padding: '0.5rem',
-          boxShadow: '0 8px 32px rgba(0,0,0,0.4)',
-          position: 'relative',
+          background: '#FFFFFF',
+          border: `1px solid #BDCEBF`,
+          borderTop: `4px solid ${currentModule.accent}`,
+          borderRadius: '20px',
           overflow: 'hidden',
-          minHeight: '920px',
-          display: 'flex',
-          flexDirection: 'column'
+          boxShadow: '0 6px 24px rgba(20, 34, 27, 0.07)'
         }}>
-          {/* Iframe Loading Placeholder */}
-          {!iframeLoaded && (
+          {/* Header Strip */}
+          <div style={{
+            padding: '1.6rem 2rem',
+            background: 'linear-gradient(180deg, #F8FAF9 0%, #EEF4F0 100%)',
+            borderBottom: '1px solid #BDCEBF',
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            flexWrap: 'wrap',
+            gap: '1rem'
+          }}>
+            <div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '0.35rem' }}>
+                <span style={{
+                  background: currentModule.accentLight,
+                  color: currentModule.accent,
+                  borderRadius: '6px',
+                  padding: '2px 8px',
+                  fontSize: '0.68rem',
+                  fontWeight: 800,
+                  fontFamily: 'Space Grotesk'
+                }}>
+                  MODULE {currentModule.num}
+                </span>
+                <span style={{ fontSize: '0.72rem', color: '#6D8174', fontWeight: 700, textTransform: 'uppercase', fontFamily: 'Space Grotesk' }}>
+                  {currentModule.category}
+                </span>
+              </div>
+
+              <h2 style={{
+                fontFamily: 'Space Grotesk, sans-serif',
+                fontSize: '1.25rem',
+                fontWeight: 800,
+                color: '#14221B',
+                margin: 0
+              }}>
+                {currentModule.title} — Evaluation Form
+              </h2>
+            </div>
+
+            {/* External Form Link Button */}
+            {currentModule.formUrl ? (
+              <a
+                href={currentModule.formUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  background: currentModule.accent,
+                  color: '#FFFFFF',
+                  border: 'none',
+                  borderRadius: '10px',
+                  padding: '0.75rem 1.4rem',
+                  fontFamily: 'Space Grotesk',
+                  fontWeight: 700,
+                  fontSize: '0.82rem',
+                  textDecoration: 'none',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                  boxShadow: '0 4px 14px rgba(0,0,0,0.15)',
+                  transition: 'all 0.2s ease'
+                }}
+              >
+                Open in Google Forms
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            ) : null}
+          </div>
+
+          {/* Form Viewer Body */}
+          {currentModule.embedUrl ? (
+            <div style={{ position: 'relative', minHeight: '820px', background: '#FFFFFF' }}>
+              {iframeLoading && (
+                <div style={{
+                  position: 'absolute',
+                  inset: 0,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  background: '#FFFFFF',
+                  zIndex: 5,
+                  gap: '1rem'
+                }}>
+                  <div className="spinner" style={{ borderTopColor: currentModule.accent }} />
+                  <div style={{ fontSize: '0.88rem', color: '#42554A', fontWeight: 600, fontFamily: 'Space Grotesk' }}>
+                    Loading {currentModule.title} Feedback Form…
+                  </div>
+                </div>
+              )}
+
+              <iframe
+                src={currentModule.embedUrl}
+                width="100%"
+                height="900"
+                frameBorder="0"
+                marginHeight="0"
+                marginWidth="0"
+                style={{ display: 'block', border: 'none' }}
+                title={`${currentModule.title} User Feedback`}
+                onLoad={() => setIframeLoading(false)}
+              >
+                Loading Evaluation Form…
+              </iframe>
+            </div>
+          ) : (
+            /* Coming Soon Placeholder for modules 2, 3, 4 */
             <div style={{
-              position: 'absolute',
-              inset: 0,
+              padding: '5rem 2rem',
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
               justifyContent: 'center',
-              gap: '1rem',
-              background: '#0b111e',
-              zIndex: 5,
-              padding: '2rem'
+              textAlign: 'center',
+              gap: '1.2rem',
+              background: '#FFFFFF'
             }}>
               <div style={{
-                width: '40px',
-                height: '40px',
-                border: '3px solid #1e293b',
-                borderTopColor: '#10b981',
-                borderRadius: '50%',
-                animation: 'spin 0.8s linear infinite'
-              }} />
-              <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
-              <div style={{ textAlign: 'center' }}>
-                <div style={{ fontSize: '0.85rem', fontWeight: 600, color: '#f0f4f8', fontFamily: 'Space Grotesk' }}>
-                  Loading System Evaluation Questionnaire...
-                </div>
-                <div style={{ fontSize: '0.72rem', color: '#64748b', marginTop: '0.25rem' }}>
-                  Connecting securely to Google Form service
-                </div>
+                width: '64px',
+                height: '64px',
+                borderRadius: '16px',
+                background: currentModule.accentLight,
+                color: currentModule.accent,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center'
+              }}>
+                {currentModule.icon}
+              </div>
+
+              <div style={{ maxWidth: '460px' }}>
+                <h3 style={{ fontFamily: 'Space Grotesk', fontSize: '1.2rem', fontWeight: 800, color: '#14221B', marginBottom: '0.5rem' }}>
+                  {currentModule.title} Form Integration Ready
+                </h3>
+                <p style={{ fontSize: '0.86rem', color: '#42554A', lineHeight: 1.6, margin: 0 }}>
+                  The dedicated evaluation form for <strong>Module {currentModule.num}</strong> is ready to be linked. Provide the Google Form URL and it will appear here automatically.
+                </p>
               </div>
             </div>
           )}
-
-          <iframe
-            src={GOOGLE_FORM_URL}
-            title="GreenConstructAI User Evaluation Form"
-            width="100%"
-            height="1250"
-            frameBorder="0"
-            marginHeight="0"
-            marginWidth="0"
-            onLoad={() => setIframeLoaded(true)}
-            style={{
-              width: '100%',
-              minHeight: '920px',
-              border: 'none',
-              borderRadius: '8px',
-              background: '#ffffff',
-              display: 'block'
-            }}
-          >
-            Loading form...
-          </iframe>
         </section>
-
-        {/* Evaluation Footer Note */}
-        <div style={{
-          textAlign: 'center',
-          padding: '1rem',
-          fontSize: '0.82rem',
-          color: '#8fa3bc',
-          borderTop: '1px solid #172034'
-        }}>
-          Thank you for participating in the GreenConstructAI system evaluation.
-        </div>
       </main>
 
       <Footer />

@@ -18,7 +18,7 @@ function ErrorContent() {
   }, [router]);
 
   return (
-    <div style={{ minHeight: '100vh', background: '#F3F5F1', color: '#18251F', fontFamily: 'Inter, sans-serif' }}>
+    <div style={{ minHeight: '100vh', background: '#E1E9E2', color: '#14221B', fontFamily: 'Inter, sans-serif' }}>
       <Header />
       <main style={{ maxWidth: '820px', margin: '3.5rem auto 5rem', padding: '0 1.5rem' }}>
         <div style={{
