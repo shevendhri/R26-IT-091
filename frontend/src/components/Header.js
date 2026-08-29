@@ -20,18 +20,19 @@ export default function Header() {
   return (
     <header style={{
       padding: '0.75rem 2rem',
-      borderBottom: '1px solid rgba(74, 122, 92, 0.25)',
+      borderTop: '3.5px solid #1E5438',
+      borderBottom: '1px solid rgba(30, 84, 56, 0.22)',
       display: 'flex',
       justifyContent: 'space-between',
       alignItems: 'center',
-      background: 'rgba(242, 247, 243, 0.94)',
+      background: 'linear-gradient(180deg, rgba(230, 242, 234, 0.96) 0%, rgba(222, 236, 227, 0.94) 100%)',
       backdropFilter: 'blur(16px)',
       WebkitBackdropFilter: 'blur(16px)',
       zIndex: 2000,
       position: 'sticky',
       top: 0,
       width: '100%',
-      boxShadow: '0 2px 16px rgba(20, 34, 27, 0.05)'
+      boxShadow: '0 4px 20px rgba(30, 84, 56, 0.08)'
     }}>
       <style>{`
         .nav-link-item {
