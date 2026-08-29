@@ -187,8 +187,10 @@ export default function FeedbackPage() {
                   }}
                   style={{
                     background: mod.accentBg,
-                    border: isSelected ? `2px solid ${mod.accent}` : '1px solid #BDCEBF',
                     borderTop: `4px solid ${mod.accent}`,
+                    borderRight: isSelected ? `2px solid ${mod.accent}` : '1px solid #BDCEBF',
+                    borderBottom: isSelected ? `2px solid ${mod.accent}` : '1px solid #BDCEBF',
+                    borderLeft: isSelected ? `2px solid ${mod.accent}` : '1px solid #BDCEBF',
                     borderRadius: '16px',
                     padding: '1.4rem',
                     cursor: 'pointer',

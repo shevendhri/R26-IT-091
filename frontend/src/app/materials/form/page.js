@@ -356,7 +356,18 @@ export default function FormPage() {
           {/* ── Section 1: Building Information ─────────────────────────── */}
           <div
             id="section-building"
-            style={{ marginBottom: '1.5rem', cursor: 'pointer', borderTop: '3px solid #245D8C', background: '#DEE9EF', border: '1px solid rgba(36,93,140,0.22)', borderRadius: '18px', padding: '1.5rem', boxShadow: '0 4px 14px rgba(36,93,140,0.06)' }}
+            style={{
+              marginBottom: '1.5rem',
+              cursor: 'pointer',
+              borderTop: '3px solid #245D8C',
+              borderRight: '1px solid rgba(36,93,140,0.22)',
+              borderBottom: '1px solid rgba(36,93,140,0.22)',
+              borderLeft: '1px solid rgba(36,93,140,0.22)',
+              background: '#DEE9EF',
+              borderRadius: '18px',
+              padding: '1.5rem',
+              boxShadow: '0 4px 14px rgba(36,93,140,0.06)'
+            }}
             onClick={() => setActiveSection(0)}
           >
             <h2 style={{ fontSize: '1.05rem', fontFamily: 'Space Grotesk', fontWeight: 800, color: '#1E5438', marginBottom: activeSection === 0 ? '1.5rem' : 0, textTransform: 'uppercase', letterSpacing: '0.06em', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
@@ -402,7 +413,18 @@ export default function FormPage() {
           {/* ── Section 2: Project Preferences ──────────────────────────── */}
           <div
             id="section-preferences"
-            style={{ marginBottom: '1.5rem', cursor: 'pointer', borderTop: '3px solid #1E5438', background: '#DCE9DF', border: '1px solid rgba(30,84,56,0.22)', borderRadius: '18px', padding: '1.5rem', boxShadow: '0 4px 14px rgba(30,84,56,0.06)' }}
+            style={{
+              marginBottom: '1.5rem',
+              cursor: 'pointer',
+              borderTop: '3px solid #1E5438',
+              borderRight: '1px solid rgba(30,84,56,0.22)',
+              borderBottom: '1px solid rgba(30,84,56,0.22)',
+              borderLeft: '1px solid rgba(30,84,56,0.22)',
+              background: '#DCE9DF',
+              borderRadius: '18px',
+              padding: '1.5rem',
+              boxShadow: '0 4px 14px rgba(30,84,56,0.06)'
+            }}
             onClick={() => setActiveSection(1)}
           >
             <h2 style={{ fontSize: '1.05rem', fontFamily: 'Space Grotesk', fontWeight: 800, color: '#1E5438', marginBottom: activeSection === 1 ? '1.5rem' : 0, textTransform: 'uppercase', letterSpacing: '0.06em', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
@@ -446,8 +468,10 @@ export default function FormPage() {
               marginBottom: '2rem',
               cursor: 'pointer',
               borderTop: '3px solid #BC8116',
+              borderRight: '1px solid rgba(188,129,22,0.24)',
+              borderBottom: '1px solid rgba(188,129,22,0.24)',
+              borderLeft: '1px solid rgba(188,129,22,0.24)',
               background: '#F4ECE0',
-              border: '1px solid rgba(188,129,22,0.24)',
               borderRadius: '18px',
               padding: '1.5rem',
               boxShadow: '0 4px 14px rgba(188,129,22,0.06)'

@@ -187,8 +187,10 @@ export default function ReportPage() {
           {/* 2. Primary Recommendation — the main visual focus */}
           <div className="glass-card" style={{
             background: 'linear-gradient(145deg, #FFFFFF 60%, #F6F8F5 100%)',
-            border: '1px solid #D5DED6',
             borderTop: '4px solid #1E5438',
+            borderRight: '1px solid #BDCEBF',
+            borderBottom: '1px solid #BDCEBF',
+            borderLeft: '1px solid #BDCEBF',
             borderRadius: '20px',
             padding: '1.6rem',
             boxShadow: '0 4px 16px rgba(24, 37, 31, 0.07), 0 18px 48px rgba(24, 37, 31, 0.08)',

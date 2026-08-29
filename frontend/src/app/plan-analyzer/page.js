@@ -563,8 +563,10 @@ export default function PlanAnalyzer() {
         <div style={{
           marginTop: '3.5rem',
           background: 'linear-gradient(135deg, #FFFFFF 50%, #E2EEF8 100%)',
-          border: '1px solid rgba(36, 93, 140, 0.25)',
           borderTop: '4px solid #245D8C',
+          borderRight: '1px solid rgba(36, 93, 140, 0.25)',
+          borderBottom: '1px solid rgba(36, 93, 140, 0.25)',
+          borderLeft: '1px solid rgba(36, 93, 140, 0.25)',
           borderRadius: '20px',
           padding: '2rem 2.2rem',
           boxShadow: '0 4px 18px rgba(36, 93, 140, 0.08), 0 1px 3px rgba(20, 34, 27, 0.05)',
