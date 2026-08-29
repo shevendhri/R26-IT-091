@@ -276,26 +276,15 @@ def format_rule_trace(rule_trace: List[Dict[str, Any]]) -> List[Dict[str, str]]:
 def build_disagreement_explanation(
     eng_score: float,
     ml_score: Optional[float],
-    material_name: str,
+    material_name: str = "",
+    ml_confidence: Optional[float] = None,
 ) -> Optional[str]:
     """Explain score divergence between engineering rules and ML prediction."""
     if ml_score is None:
         return None
-    diff = abs(eng_score - ml_score)
-    if diff < 20:
-        return None
-
-    direction = (
-        "Engineering rules score higher than ML prediction"
-        if eng_score > ml_score
-        else "ML prediction score higher than Engineering validation"
-    )
-    return (
-        f"Score divergence detected ({diff:.1f} pts): {direction}. "
-        f"This may indicate limited historical training data for {material_name} "
-        f"in this climate zone, or a novel specification not yet captured by "
-        f"the training dataset."
-    )
+    from backend.inference.explainability import compute_agreement_level
+    info = compute_agreement_level(eng_score, ml_score, ml_confidence)
+    return info["description"]
 
 
 # ===================================================================

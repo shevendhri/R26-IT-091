@@ -4,6 +4,7 @@ import { getTopCandidates } from '@/lib/reportHelpers';
 
 /**
  * AlternativesTable – Candidate material matrix with rank #1 spotlighting and expandable criteria.
+ * Updated for high-contrast warm sustainable architecture theme.
  */
 export default function AlternativesTable({ data }) {
   const candidates = data?.top3_candidates || getTopCandidates(data);
@@ -32,11 +33,11 @@ export default function AlternativesTable({ data }) {
   };
 
   const getClimateColor = (label) => {
-    if (label === 'Optimal') return '#10b981';
-    if (label === 'Good') return '#38bdf8';
-    if (label === 'Moderate') return '#f59e0b';
-    if (label === 'Limited') return '#ef4444';
-    return '#64748b';
+    if (label === 'Optimal') return '#245C43';
+    if (label === 'Good') return '#3E6F8E';
+    if (label === 'Moderate') return '#C77A3D';
+    if (label === 'Limited') return '#B94A48';
+    return '#526158';
   };
 
   if (categories.length === 0) return null;
@@ -44,10 +45,10 @@ export default function AlternativesTable({ data }) {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
       <div style={{ marginBottom: '0.25rem' }}>
-        <h3 style={{ fontSize: '1.1rem', color: '#f8fafc', fontFamily: 'Space Grotesk', margin: '0 0 0.2rem 0', fontWeight: 600 }}>
+        <h3 style={{ fontSize: '1.2rem', color: '#18251F', fontFamily: 'Space Grotesk', margin: '0 0 0.25rem 0', fontWeight: 800 }}>
           Candidate Material Evaluation Matrix
         </h3>
-        <p style={{ color: '#94a3b8', fontSize: '0.78rem', margin: 0, lineHeight: 1.4 }}>
+        <p style={{ color: '#526158', fontSize: '0.85rem', margin: 0, lineHeight: 1.5, fontWeight: 500 }}>
           Full candidate matrix ranked by Hybrid Score. Select any row to inspect individual engineering criteria scores.
         </p>
       </div>
@@ -57,52 +58,53 @@ export default function AlternativesTable({ data }) {
         const displayName = cat.charAt(0).toUpperCase() + cat.slice(1).replace(/_/g, ' ');
         return (
           <div key={cat} style={{ 
-            border: '1px solid #1e293b',
-            borderRadius: '6px',
-            background: '#0f172a',
+            border: '1px solid #C8D3CA',
+            borderRadius: '12px',
+            background: '#FFFFFF',
             overflow: 'hidden',
+            boxShadow: '0 4px 12px rgba(24, 37, 31, 0.04)'
           }}>
             <div
               onClick={() => toggleExpand(cat)}
               style={{
                 display: 'flex',
-                justifyContent: 'space-between',
+                justify: 'space-between',
                 alignItems: 'center',
-                padding: '0.65rem 0.85rem',
+                padding: '0.75rem 1rem',
                 cursor: 'pointer',
-                background: '#0b0f19',
-                borderBottom: isExpanded ? '1px solid #1e293b' : 'none',
+                background: '#F7F9F6',
+                borderBottom: isExpanded ? '1px solid #C8D3CA' : 'none',
               }}
             >
               <strong style={{ 
-                color: '#f8fafc', 
-                fontSize: '0.82rem', 
+                color: '#18251F', 
+                fontSize: '0.9rem', 
                 fontFamily: 'Space Grotesk',
-                fontWeight: 600
+                fontWeight: 800
               }}>
                 {displayName} Category Options
               </strong>
               <span style={{ 
-                color: '#64748b', 
-                fontSize: '0.68rem',
-                fontWeight: 600
+                color: '#526158', 
+                fontSize: '0.75rem',
+                fontWeight: 700
               }}>
                 {isExpanded ? 'Collapse ▲' : 'Expand ▶'}
               </span>
             </div>
             {isExpanded && (
-              <div style={{ padding: '0.5rem', background: '#090d16' }}>
+              <div style={{ padding: '0.75rem', background: '#FFFFFF' }}>
                 <div style={{ overflowX: 'auto' }}>
-                  <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.75rem' }}>
+                  <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.8rem' }}>
                     <thead>
-                      <tr style={{ borderBottom: '1px solid #1e293b' }}>
+                      <tr style={{ borderBottom: '1px solid #C8D3CA' }}>
                         {['Rank', 'Material Specification', 'Hybrid Score', 'Eng. Val', 'ML Conf', 'Eco', 'Carbon', 'Service Life', 'Climate Match'].map((h, i) => (
                           <th key={i} style={{
                             textAlign: 'left',
-                            padding: '6px 8px',
-                            color: '#64748b',
-                            fontWeight: 700,
-                            fontSize: '0.62rem',
+                            padding: '8px 10px',
+                            color: '#526158',
+                            fontWeight: 800,
+                            fontSize: '0.68rem',
                             textTransform: 'uppercase',
                             letterSpacing: '0.05em',
                             whiteSpace: 'nowrap'
@@ -123,84 +125,78 @@ export default function AlternativesTable({ data }) {
                             <tr 
                               onClick={() => setExpandedRow(prev => prev === `${cat}_${i}` ? null : `${cat}_${i}`)}
                               style={{
-                                borderBottom: '1px solid #1e293b',
-                                background: isTop ? 'rgba(16, 185, 129, 0.04)' : isRowExpanded ? '#0f172a' : 'transparent',
+                                borderBottom: '1px solid #C8D3CA',
+                                background: isTop ? '#DDE8DE' : isRowExpanded ? '#F7F9F6' : '#FFFFFF',
                                 cursor: 'pointer',
                               }}
                             >
-                              <td style={{ padding: '6px 8px', fontWeight: 700, color: isTop ? '#10b981' : '#64748b', fontFamily: 'Space Grotesk' }}>
+                              <td style={{ padding: '8px 10px', fontWeight: 800, color: isTop ? '#245C43' : '#526158', fontFamily: 'Space Grotesk' }}>
                                 {isTop ? 'Rank #1' : `#${c.rank || (i + 1)}`}
                               </td>
-                              <td style={{ padding: '6px 8px', color: isTop ? '#ffffff' : '#cbd5e1', fontWeight: isTop ? 600 : 400 }}>
+                              <td style={{ padding: '8px 10px', color: '#18251F', fontWeight: isTop ? 700 : 600 }}>
                                 {c.material} {isRowExpanded ? '▼' : '▶'}
                               </td>
-                              <td style={{ padding: '6px 8px', color: isTop ? '#10b981' : '#f8fafc', fontWeight: 700, fontFamily: 'Space Grotesk' }}>
+                              <td style={{ padding: '8px 10px', color: isTop ? '#245C43' : '#18251F', fontWeight: 800, fontFamily: 'Space Grotesk' }}>
                                 {typeof c.hybrid_score === 'number' ? c.hybrid_score.toFixed(1) : '—'}
                               </td>
-                              <td style={{ padding: '6px 8px', color: '#38bdf8', fontWeight: 500 }}>
+                              <td style={{ padding: '8px 10px', color: '#3E6F8E', fontWeight: 700 }}>
                                 {typeof c.engineering_score === 'number' ? c.engineering_score.toFixed(1) : '—'}
                               </td>
-                              <td style={{ padding: '6px 8px', color: '#cbd5e1', fontWeight: 500 }}>
+                              <td style={{ padding: '8px 10px', color: '#18251F', fontWeight: 600 }}>
                                 {typeof c.ml_score === 'number' ? c.ml_score.toFixed(1) : '—'}
                               </td>
-                              <td style={{ padding: '6px 8px' }}>
+                              <td style={{ padding: '8px 10px' }}>
                                 <span style={{
-                                  fontSize: '0.72rem',
-                                  fontWeight: 600,
-                                  color: (c.sustainability_rating >= 70) ? '#10b981' : (c.sustainability_rating >= 50) ? '#f59e0b' : '#64748b',
-                                  fontFamily: 'Space Grotesk'
+                                  fontSize: '0.75rem',
+                                  fontWeight: 700,
+                                  color: (c.sustainability_rating >= 70) ? '#245C43' : (c.sustainability_rating >= 50) ? '#C77A3D' : '#526158',
                                 }}>
                                   {c.sustainability_rating != null ? `${c.sustainability_rating}/100` : '—'}
                                 </span>
                               </td>
-                              <td style={{ padding: '6px 8px', color: '#94a3b8' }}>
-                                {c.embodied_carbon != null ? `${c.embodied_carbon.toFixed(2)} kg` : '—'}
+                              <td style={{ padding: '8px 10px', color: '#526158', fontWeight: 500 }}>
+                                {c.embodied_carbon != null ? `${c.embodied_carbon}` : '—'}
                               </td>
-                              <td style={{ padding: '6px 8px', color: '#94a3b8' }}>
-                                {c.service_life ? `${c.service_life} yrs` : '—'}
+                              <td style={{ padding: '8px 10px', color: '#526158', fontWeight: 500 }}>
+                                {c.service_life ? `${c.service_life}y` : '—'}
                               </td>
-                              <td style={{ padding: '6px 8px', color: getClimateColor(climMatch), fontWeight: 600 }}>
-                                {climMatch}
+                              <td style={{ padding: '8px 10px' }}>
+                                <span style={{
+                                  fontSize: '0.7rem',
+                                  fontWeight: 700,
+                                  color: getClimateColor(climMatch),
+                                  background: '#FFFFFF',
+                                  padding: '2px 8px',
+                                  borderRadius: '4px',
+                                  border: '1px solid #C8D3CA'
+                                }}>
+                                  {climMatch}
+                                </span>
                               </td>
                             </tr>
-                            {isRowExpanded && (
-                              <tr style={{ background: '#0f172a' }}>
-                                <td colSpan={9} style={{ padding: '0.75rem', borderBottom: '1px solid #1e293b' }}>
-                                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
-                                    <div style={{ fontSize: '0.62rem', fontWeight: 700, color: '#38bdf8', letterSpacing: '0.05em', textTransform: 'uppercase' }}>
-                                      Engineering Evaluation Criteria Breakdown
-                                    </div>
-                                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '0.4rem' }}>
-                                      {[
-                                        { key: 'structural_safety', label: 'Structural Safety', weight: 25 },
-                                        { key: 'sls_compliance', label: 'SLS Compliance', weight: 20 },
-                                        { key: 'climate_compatibility', label: 'Climate Compatibility', weight: 15 },
-                                        { key: 'occupancy_requirements', label: 'Occupancy Suitability', weight: 15 },
-                                        { key: 'structural_system_compatibility', label: 'System Compatibility', weight: 10 },
-                                        { key: 'service_life', label: 'Service Life', weight: 5 },
-                                        { key: 'maintenance', label: 'Maintenance', weight: 5 },
-                                        { key: 'sustainability', label: 'Sustainability', weight: 5 },
-                                      ].map(({ key, label, weight }) => {
-                                        const breakdown = c.engineering_breakdown || {};
-                                        const crit = breakdown[key] || {};
-                                        const isNa = crit.is_na === true;
-                                        const score = crit.score || 0;
-                                        const normalizedWeight = crit.normalized_weight || (weight / 100);
-                                        const maxContrib = (normalizedWeight * 100).toFixed(1);
-                                        const actualContrib = (score * normalizedWeight).toFixed(1);
-                                        
-                                        const color = isNa ? '#64748b' : score >= 70 ? '#10b981' : score >= 50 ? '#f59e0b' : '#ef4444';
 
-                                        return (
-                                          <div key={key} style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.68rem', background: '#090d16', padding: '0.3rem 0.5rem', borderRadius: '4px', border: '1px solid #1e293b' }}>
-                                            <span style={{ color: '#94a3b8' }}>{label}</span>
-                                            <span style={{ color: color, fontWeight: 700 }}>
-                                              {isNa ? 'N/A' : `${score.toFixed(0)}/100 (${actualContrib}/${maxContrib})`}
-                                            </span>
-                                          </div>
-                                        );
-                                      })}
+                            {/* Collapsible Row Details */}
+                            {isRowExpanded && (
+                              <tr style={{ background: '#F7F9F6' }}>
+                                <td colSpan={9} style={{ padding: '0.85rem 1rem', borderBottom: '1px solid #C8D3CA' }}>
+                                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                                    <div style={{ fontSize: '0.72rem', fontWeight: 800, color: '#245C43', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                                      Engineering Criteria Scores ({c.material})
                                     </div>
+                                    {c.engineering_breakdown ? (
+                                      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '0.5rem' }}>
+                                        {Object.entries(c.engineering_breakdown).map(([k, v]) => (
+                                          <div key={k} style={{ background: '#FFFFFF', padding: '0.45rem 0.65rem', borderRadius: '6px', border: '1px solid #C8D3CA' }}>
+                                            <div style={{ fontSize: '0.68rem', color: '#526158', textTransform: 'capitalize', fontWeight: 600 }}>{k.replace(/_/g, ' ')}</div>
+                                            <div style={{ fontSize: '0.88rem', fontWeight: 800, color: '#18251F' }}>
+                                              {typeof v?.score === 'number' ? v.score.toFixed(1) : typeof v === 'number' ? v.toFixed(1) : 'N/A'}
+                                            </div>
+                                          </div>
+                                        ))}
+                                      </div>
+                                    ) : (
+                                      <div style={{ fontSize: '0.75rem', color: '#526158' }}>No detailed criterion breakdown available.</div>
+                                    )}
                                   </div>
                                 </td>
                               </tr>

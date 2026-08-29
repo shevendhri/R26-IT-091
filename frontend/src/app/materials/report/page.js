@@ -43,43 +43,42 @@ function DecisionTimeline() {
 
   return (
     <section>
-      <div style={{ fontSize: '0.62rem', fontWeight: 700, color: '#38bdf8', letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
+      <div style={{ fontSize: '0.72rem', fontWeight: 800, color: '#245C43', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '0.65rem', fontFamily: 'Space Grotesk' }}>
         AI Execution Trace — Decision Stages
       </div>
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.35rem' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.45rem' }}>
         {TIMELINE_STAGES.map((stage, i) => {
           const isDone = i <= active;
           return (
             <div key={stage.id} style={{
               display: 'flex',
-              gap: '0.65rem',
+              gap: '0.75rem',
               alignItems: 'center',
-              background: isDone ? 'rgba(16, 185, 129, 0.04)' : '#090d16',
-              padding: '0.4rem 0.65rem',
-              borderRadius: '4px',
-              border: isDone ? '1px solid rgba(16, 185, 129, 0.2)' : '1px solid #1e293b'
+              background: isDone ? '#DDE8DE' : '#F7F9F6',
+              padding: '0.5rem 0.85rem',
+              borderRadius: '8px',
+              border: isDone ? '1px solid rgba(36, 92, 67, 0.3)' : '1px solid #C8D3CA'
             }}>
               <div style={{
-                width: '20px',
-                height: '20px',
+                width: '22px',
+                height: '22px',
                 borderRadius: '50%',
-                background: isDone ? 'rgba(16, 185, 129, 0.15)' : 'rgba(255,255,255,0.03)',
-                border: isDone ? '1px solid #10b981' : '1px solid #334155',
+                background: isDone ? '#245C43' : '#DCE5DC',
+                color: isDone ? '#FFFFFF' : '#526158',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                fontSize: '0.62rem',
-                color: isDone ? '#10b981' : '#64748b',
-                fontWeight: 700,
+                fontSize: '0.68rem',
+                fontWeight: 800,
                 flexShrink: 0
               }}>
                 {isDone ? '✓' : stage.id}
               </div>
               <div style={{ flex: 1, display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.25rem' }}>
-                <span style={{ fontSize: '0.78rem', fontWeight: 600, color: isDone ? '#f8fafc' : '#64748b' }}>
+                <span style={{ fontSize: '0.82rem', fontWeight: 700, color: isDone ? '#18251F' : '#526158' }}>
                   {stage.label}
                 </span>
-                <span style={{ fontSize: '0.68rem', color: '#64748b' }}>
+                <span style={{ fontSize: '0.72rem', color: '#526158', fontWeight: 500 }}>
                   {stage.desc}
                 </span>
               </div>
@@ -110,27 +109,27 @@ function ProjectProfileCard({ data }) {
 
   return (
     <div style={{
-      background: '#090d16',
-      border: '1px solid #1e293b',
-      borderRadius: '6px',
-      padding: '0.85rem 1rem',
+      background: '#F7F9F6',
+      border: '1px solid #C8D3CA',
+      borderRadius: '12px',
+      padding: '1rem 1.2rem',
     }}>
-      <div style={{ fontSize: '0.62rem', fontWeight: 700, color: '#38bdf8', letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
+      <div style={{ fontSize: '0.72rem', fontWeight: 800, color: '#245C43', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '0.75rem', fontFamily: 'Space Grotesk' }}>
         Personalized Specification Profile
       </div>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '0.4rem' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '0.5rem' }}>
         {rows.map((row, i) => (
           <div key={i} style={{
             display: 'flex',
-            justifyContent: 'space-between',
+            justify: 'space-between',
             alignItems: 'center',
-            padding: '0.35rem 0.5rem',
-            background: 'rgba(255,255,255,0.02)',
-            borderRadius: '4px',
-            border: '1px solid rgba(255,255,255,0.04)'
+            padding: '0.45rem 0.75rem',
+            background: '#FFFFFF',
+            borderRadius: '6px',
+            border: '1px solid #C8D3CA'
           }}>
-            <span style={{ fontSize: '0.7rem', color: '#94a3b8' }}>{row.label}</span>
-            <span style={{ fontSize: '0.75rem', fontWeight: 600, color: '#f8fafc', fontFamily: 'Space Grotesk' }}>{row.value}</span>
+            <span style={{ fontSize: '0.74rem', color: '#526158', fontWeight: 600 }}>{row.label}</span>
+            <span style={{ fontSize: '0.8rem', fontWeight: 700, color: '#18251F', fontFamily: 'Space Grotesk' }}>{row.value}</span>
           </div>
         ))}
       </div>
@@ -145,10 +144,14 @@ export default function ReportPage() {
 
   if (!mounted) {
     return (
-      <div style={{ minHeight: '100vh', background: '#090d16', color: '#f8fafc' }}>
+      <div style={{
+        minHeight: '100vh',
+        background: 'radial-gradient(circle at 15% 10%, rgba(47, 107, 79, 0.10), transparent 30%), radial-gradient(circle at 85% 20%, rgba(120, 184, 147, 0.12), transparent 25%), #EEF1EC',
+        color: '#18251F'
+      }}>
         <Header />
-        <div style={{ padding: '3rem', color: '#64748b', textAlign: 'center', marginTop: '10vh' }}>
-          <div style={{ fontFamily: 'Space Grotesk', fontSize: '1.1rem' }}>Initializing Engineering Decision Support System...</div>
+        <div style={{ padding: '3rem', color: '#526158', textAlign: 'center', marginTop: '10vh' }}>
+          <div style={{ fontFamily: 'Space Grotesk', fontSize: '1.1rem', fontWeight: 700 }}>Initializing Engineering Decision Support System...</div>
         </div>
         <Footer />
       </div>
@@ -156,89 +159,168 @@ export default function ReportPage() {
   }
 
   return (
-    <div style={{ minHeight: '100vh', color: '#f8fafc' }}>
-      <div className="premium-bg">
-        <div className="gradient-mesh" />
-        <div className="blueprint-grid" />
-      </div>
-      <div style={{ position: 'relative', zIndex: 10 }}>
-        <Header />
-        {!reportData ? (
-          <div style={{ padding: '3rem', color: '#94a3b8', textAlign: 'center', marginTop: '10vh', minHeight: '60vh' }}>
-            <div style={{ fontFamily: 'Space Grotesk', fontSize: '1.1rem', marginBottom: '0.5rem' }}>
-              No Report Data Available
-            </div>
-            <div style={{ fontSize: '0.85rem', color: '#64748b' }}>
-              Please complete the material recommendation questionnaire to generate a report.
-            </div>
+    <div style={{
+      minHeight: '100vh',
+      background: 'linear-gradient(160deg, #DCE7DF 0%, #E7EFE9 45%, #DCE6ED 100%)',
+      color: '#14221B',
+      fontFamily: 'Inter, sans-serif'
+    }}>
+      <Header />
+      {!reportData ? (
+        <div style={{ padding: '3rem', color: '#526158', textAlign: 'center', marginTop: '10vh', minHeight: '60vh' }}>
+          <div style={{ fontFamily: 'Space Grotesk', fontSize: '1.2rem', fontWeight: 800, marginBottom: '0.5rem', color: '#18251F' }}>
+            No Report Data Available
           </div>
-        ) : (
-          <main style={{ maxWidth: '1400px', margin: '0 auto', padding: '1.5rem 1.25rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+          <div style={{ fontSize: '0.9rem', color: '#526158', fontWeight: 500 }}>
+            Please complete the material recommendation questionnaire to generate a report.
+          </div>
+        </div>
+      ) : (
+        <main style={{ maxWidth: '1400px', margin: '0 auto', padding: '2rem 1.5rem', display: 'flex', flexDirection: 'column', gap: '1.25rem', position: 'relative', zIndex: 10 }}>
 
-            {/* 1. Compact Project Context Telemetry Strip */}
-            <CompactSummaryStrip data={reportData} />
+          {/* 1. Compact Project Context Telemetry Strip */}
+          <CompactSummaryStrip data={reportData} />
 
-            {/* 1b. Project Validation Status Strip & Review Gate */}
-            <ProjectValidationStrip data={reportData} />
+          {/* 1b. Project Validation Status Strip & Review Gate */}
+          <ProjectValidationStrip data={reportData} />
 
-            {/* 2. Primary Recommendation — the main visual focus */}
-            <div style={{
-              background: '#0f172a',
-              border: '1px solid #1e293b',
-              borderRadius: '8px',
-              padding: '1.25rem',
-              boxShadow: '0 4px 12px rgba(0, 0, 0, 0.25)',
-            }}>
-              <MaterialBreakdown data={reportData} />
+          {/* 2. Primary Recommendation — the main visual focus */}
+          <div className="glass-card" style={{
+            background: 'linear-gradient(145deg, #FFFFFF 60%, #F6F8F5 100%)',
+            borderTop: '4px solid #1E5438',
+            borderRight: '1px solid #BDCEBF',
+            borderBottom: '1px solid #BDCEBF',
+            borderLeft: '1px solid #BDCEBF',
+            borderRadius: '20px',
+            padding: '1.6rem',
+            boxShadow: '0 4px 16px rgba(24, 37, 31, 0.07), 0 18px 48px rgba(24, 37, 31, 0.08)',
+          }}>
+            <MaterialBreakdown data={reportData} />
+          </div>
+
+          {/* 3. Supporting Analysis — All Collapsed by Default */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+
+            <Accordion title="Hybrid Score Breakdown & Decision Factors" subtitle="Engineering Rules + ML Weighting Methodology">
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '1.25rem' }}>
+                <HybridScorePanel data={reportData} />
+                <DecisionFactorsPanel data={reportData} />
+              </div>
+            </Accordion>
+
+            <Accordion title="Alternative Material Evaluation Matrix" subtitle="Ranked Candidate Comparison by Component">
+              <AlternativesTable data={reportData} />
+            </Accordion>
+
+            <Accordion title="Blueprint Geometry & Floorplan Parameters" subtitle="11 Structural Dimensions & Schematic Layout">
+              <BlueprintPanel data={reportData} />
+            </Accordion>
+
+            <Accordion title="Quantity Takeoff & Material Estimates" subtitle="Structural Unit Volumes from Geometry Computation">
+              <QuantityEstimationPanel data={reportData} />
+            </Accordion>
+
+            <Accordion title="Project Specification & Sri Lankan Climate Profile" subtitle="Environmental Constraints & Sustainability Context">
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+                <ProjectProfileCard data={reportData} />
+                <ProjectOverview data={reportData} />
+                <SustainabilityDashboard data={reportData} />
+              </div>
+            </Accordion>
+
+            <Accordion title="Explainable AI — Feature Importance (XAI)" subtitle="ML Model Feature Weights & Contribution Profile">
+              <FeatureImportance data={reportData} />
+            </Accordion>
+
+            <Accordion title="AI Execution Trace & System Audit Log" subtitle="Decision Stage Timeline & Full Evaluation Stream">
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '1.25rem' }}>
+                <DecisionTimeline />
+                <AuditLogPanel data={reportData} />
+              </div>
+            </Accordion>
+
+          </div>
+
+          {/* ══════════════════════════════════════════════════════════════
+              MODULE 02: MATERIAL SPECIFICATION USER EVALUATION CARD
+          ══════════════════════════════════════════════════════════════ */}
+          <div style={{
+            marginTop: '1.5rem',
+            background: 'linear-gradient(135deg, #FFFFFF 50%, #DEEFE2 100%)',
+            borderTop: '4px solid #1E5438',
+            borderRight: '1px solid #BDCEBF',
+            borderBottom: '1px solid #BDCEBF',
+            borderLeft: '1px solid #BDCEBF',
+            borderRadius: '20px',
+            padding: '1.8rem 2.2rem',
+            boxShadow: '0 4px 18px rgba(30, 84, 56, 0.08)',
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            flexWrap: 'wrap',
+            gap: '1.25rem'
+          }}>
+            <div style={{ maxWidth: '720px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '0.4rem' }}>
+                <span style={{
+                  background: '#C6E2CD',
+                  color: '#1E5438',
+                  borderRadius: '20px',
+                  padding: '2px 10px',
+                  fontSize: '0.68rem',
+                  fontWeight: 800,
+                  fontFamily: 'Space Grotesk'
+                }}>
+                  ● MODULE 02 EVALUATION
+                </span>
+                <span style={{ fontSize: '0.72rem', color: '#42554A', fontWeight: 700, fontFamily: 'Space Grotesk' }}>
+                  USER FEEDBACK
+                </span>
+              </div>
+
+              <h3 style={{
+                fontFamily: 'Space Grotesk, sans-serif',
+                fontSize: '1.2rem',
+                fontWeight: 800,
+                color: '#14221B',
+                margin: '0 0 0.35rem'
+              }}>
+                Evaluate Material Recommendations
+              </h3>
+
+              <p style={{ fontSize: '0.84rem', color: '#42554A', margin: 0, lineHeight: 1.5, fontWeight: 500 }}>
+                How accurate and feasible were these material recommendations? Share your feedback to help us refine the hybrid MCDM and machine learning models.
+              </p>
             </div>
 
-            {/* 3. Supporting Analysis — All Collapsed by Default */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSdDr5VrYMSK1rY-kMCD5LRCFD6NDlJXLA5nRAGruQrSihD5Rw/viewform?usp=publish-editor"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                background: '#1E5438',
+                color: '#FFFFFF',
+                borderRadius: '10px',
+                padding: '0.8rem 1.5rem',
+                fontFamily: 'Space Grotesk',
+                fontWeight: 700,
+                fontSize: '0.82rem',
+                textDecoration: 'none',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '6px',
+                boxShadow: '0 4px 14px rgba(30, 84, 56, 0.25)',
+                transition: 'all 0.2s ease'
+              }}
+            >
+              Provide Material Feedback
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
 
-              <Accordion title="Hybrid Score Breakdown & Decision Factors" subtitle="Engineering Rules + ML Weighting Methodology">
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '1rem' }}>
-                  <HybridScorePanel data={reportData} />
-                  <DecisionFactorsPanel data={reportData} />
-                </div>
-              </Accordion>
-
-              <Accordion title="Alternative Material Evaluation Matrix" subtitle="Ranked Candidate Comparison by Component">
-                <AlternativesTable data={reportData} />
-              </Accordion>
-
-              <Accordion title="Blueprint Geometry & Floorplan Parameters" subtitle="11 Structural Dimensions & Schematic Layout">
-                <BlueprintPanel data={reportData} />
-              </Accordion>
-
-              <Accordion title="Quantity Takeoff & Material Estimates" subtitle="Structural Unit Volumes from Geometry Computation">
-                <QuantityEstimationPanel data={reportData} />
-              </Accordion>
-
-              <Accordion title="Project Specification & Sri Lankan Climate Profile" subtitle="Environmental Constraints & Sustainability Context">
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                  <ProjectProfileCard data={reportData} />
-                  <ProjectOverview data={reportData} />
-                  <SustainabilityDashboard data={reportData} />
-                </div>
-              </Accordion>
-
-              <Accordion title="Explainable AI — Feature Importance (XAI)" subtitle="ML Model Feature Weights & Contribution Profile">
-                <FeatureImportance data={reportData} />
-              </Accordion>
-
-              <Accordion title="AI Execution Trace & System Audit Log" subtitle="Decision Stage Timeline & Full Evaluation Stream">
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '1rem' }}>
-                  <DecisionTimeline />
-                  <AuditLogPanel data={reportData} />
-                </div>
-              </Accordion>
-
-            </div>
-
-          </main>
-        )}
-        <Footer />
-      </div>
+        </main>
+      )}
+      <Footer />
     </div>
   );
 }

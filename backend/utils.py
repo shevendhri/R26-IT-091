@@ -46,46 +46,40 @@ def calculate_hybrid_score(
     ml_score: float | None,
     vetoed: bool = False,
     ml_probability: float | None = None,
-) -> tuple[float | None, dict]:
+    return_details: bool = False,
+) -> float | tuple[float | None, dict] | None:
     """Return the hybrid score using adaptive confidence-based weighting.
 
-    Rules (v3.0):
+    Rules:
     * Engineering veto is unconditional — if ``vetoed`` is True the score
       is forced to ``0.0`` regardless of ML confidence.
     * If either component score is ``None`` the hybrid score cannot be
       computed and ``None`` is returned.
-    * When ``ml_probability`` is supplied, an adaptive weight schedule fires:
+    * Adaptive weighting schedule based on ML prediction confidence:
 
-        ML prob ≥ 90%  →  Engineering 40% / ML 60%  (high ML confidence)
-        ML prob ≥ 70%  →  Engineering 60% / ML 40%  (good ML confidence)
-        ML prob ≥ 50%  →  Engineering 70% / ML 30%  (moderate)
-        ML prob  < 50%  →  Engineering 85% / ML 15%  (low ML confidence)
+        ML prob < 30%  →  Engineering 85% / ML 15%  (low ML confidence)
+        30% ≤ ML prob < 60% → Engineering 70% / ML 30% (moderate ML confidence)
+        ML prob ≥ 60%  →  Engineering 60% / ML 40%  (good/high ML confidence)
 
-    * When ``ml_probability`` is None, falls back to the
-      ``HYBRID_ENGINEERING_WEIGHT`` environment variable (default 0.70).
-    * Returns a tuple ``(score, weight_info)`` where ``weight_info`` is a
-      dict describing which weights were applied and why.
+    * Final score is normalized to [0, 100].
     """
     if vetoed:
         weight_info = {
             'eng_weight': 1.0, 'ml_weight': 0.0,
             'reason': 'engineering_veto', 'ml_probability': ml_probability,
         }
-        return 0.0, weight_info
+        return (0.0, weight_info) if return_details else 0.0
 
     if eng_score is None or ml_score is None:
-        return None, {}
+        return (None, {}) if return_details else None
 
-    # Adaptive weighting based on ML prediction confidence
+    # Adaptive weighting based on ML prediction confidence (Issue 4 threshold spec)
     if ml_probability is not None:
         p = float(ml_probability)
-        if p >= 90:
-            eng_weight = 0.40
-            reason = 'high_ml_confidence'
-        elif p >= 70:
+        if p >= 60.0:
             eng_weight = 0.60
-            reason = 'good_ml_confidence'
-        elif p >= 50:
+            reason = 'high_ml_confidence'
+        elif p >= 30.0:
             eng_weight = 0.70
             reason = 'moderate_ml_confidence'
         else:
@@ -101,15 +95,16 @@ def calculate_hybrid_score(
             eng_weight = 0.70
         reason = 'default_fixed'
 
-    ml_weight = 1.0 - eng_weight
-    score = round((eng_weight * eng_score) + (ml_weight * ml_score), 2)
+    ml_weight = round(1.0 - eng_weight, 2)
+    raw_score = (eng_weight * float(eng_score)) + (ml_weight * float(ml_score))
+    score = round(max(0.0, min(100.0, raw_score)), 2)
     weight_info = {
         'eng_weight': round(eng_weight, 2),
-        'ml_weight': round(ml_weight, 2),
+        'ml_weight': ml_weight,
         'reason': reason,
         'ml_probability': ml_probability,
     }
-    return score, weight_info
+    return (score, weight_info) if return_details else score
 
 # ---------------------------------------------------------------------------
 # Marine‑grade need detection

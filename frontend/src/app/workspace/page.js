@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Building3DModel from '@/components/Building3DModel';
-import MaterialSelectionDashboard from '@/components/MaterialSelectionDashboard';
+const API_BASE = process.env.NEXT_PUBLIC_API_BASE ?? (typeof window !== 'undefined' && window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1' ? '' : 'http://localhost:5000');
 
 const getWallMaterialName = (id) => {
   const wallMap = {
@@ -60,7 +60,7 @@ export default function EngineeringWorkspace() {
   useEffect(() => {
     async function fetchSchema() {
       try {
-        const res = await fetch(`http://localhost:5000/api/questionnaire-schema?building_type=${setup.building_type}`);
+        const res = await fetch(`${API_BASE}/api/questionnaire-schema?building_type=${setup.building_type}`);
         if (!res.ok) throw new Error('Schema fetch failed');
         const data = await res.json();
         if (data.status === 'success') {
@@ -179,7 +179,7 @@ export default function EngineeringWorkspace() {
       // Step 1: Submit questionnaire
       let profile = null;
       try {
-        const res = await fetch('http://localhost:5000/api/questionnaire', {
+        const res = await fetch(`${API_BASE}/api/questionnaire`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ ...questionnaire, building_type: setup.building_type })
@@ -202,7 +202,7 @@ export default function EngineeringWorkspace() {
       // Step 2: Generate building program
       setLoadingStep("Synthesizing Architectural Space Requirements");
       try {
-        const progRes = await fetch('http://localhost:5000/api/building-program', {
+        const progRes = await fetch(`${API_BASE}/api/building-program`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
@@ -256,7 +256,7 @@ export default function EngineeringWorkspace() {
     setApiError(null);
     setLoadingStep("Compiling 2D Floor Plan Matrices");
     try {
-      const res = await fetch('http://localhost:5000/api/generate-blueprint', {
+      const res = await fetch(`${API_BASE}/api/generate-blueprint`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -304,7 +304,7 @@ export default function EngineeringWorkspace() {
     try {
       let styleData = null;
       try {
-        const res = await fetch('http://localhost:5000/api/architectural-style', {
+        const res = await fetch(`${API_BASE}/api/architectural-style`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
@@ -352,7 +352,7 @@ export default function EngineeringWorkspace() {
       setStyleAnalysis(styleData);
 
       // Fetch landscape in background (optional — never blocks step advance)
-      fetch('http://localhost:5000/api/landscape-design', {
+      fetch(`${API_BASE}/api/landscape-design`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -385,7 +385,7 @@ export default function EngineeringWorkspace() {
     try {
       let pkgData = null;
       try {
-        const res = await fetch('http://localhost:5000/recommend-materials', {
+        const res = await fetch(`${API_BASE}/recommend-materials`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
@@ -575,7 +575,6 @@ export default function EngineeringWorkspace() {
           {currentStep === 2 && (
             <div className="glass-panel glow-border animate-fade-in" style={{ padding: '3rem', maxWidth: '800px', margin: '0 auto' }}>
               <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
-                <div style={{ fontSize: '2.5rem', marginBottom: '0.75rem' }}>📋</div>
                 <h2 style={{ fontSize: '1.75rem', fontFamily: 'Space Grotesk' }}>AI DESIGN QUESTIONNAIRE</h2>
                 <p style={{ color: 'var(--text-secondary)', fontSize: '0.8rem' }}>Specify design traits and sustainability goals for your {setup.building_type} project.</p>
               </div>
@@ -1656,13 +1655,12 @@ export default function EngineeringWorkspace() {
                       const avgCarbon = metrics.average_carbon !== undefined && metrics.average_carbon !== null ? metrics.average_carbon : 'N/A';
                       const avgScore = metrics.overall_hybrid_score !== undefined && metrics.overall_hybrid_score !== null ? metrics.overall_hybrid_score : 'N/A';
                       return [
-                        { label: 'AVG. SUSTAINABILITY RATING', value: avgSus !== 'N/A' ? `${avgSus}/100` : 'N/A', icon: '🌱', color: avgSus !== 'N/A' && avgSus >= 65 ? 'var(--eco-glow)' : 'var(--warn-amber)' },
-                        { label: 'AVG. SERVICE LIFE', value: avgLife !== 'N/A' ? `${avgLife} Years` : 'N/A', icon: '⏱️', color: '#fff' },
-                        { label: 'AVG. EMBODIED CARBON', value: avgCarbon !== 'N/A' ? `${avgCarbon} kgCO₂/kg` : 'N/A', icon: '🌍', color: avgCarbon !== 'N/A' && parseFloat(avgCarbon) < 0.5 ? 'var(--eco-glow)' : 'var(--warn-amber)' },
-                        { label: 'AVG. HYBRID SCORE', value: avgScore !== 'N/A' ? `${avgScore}/100` : 'N/A', icon: '🧠', color: avgScore !== 'N/A' && avgScore >= 75 ? 'var(--eco-glow)' : 'var(--blueprint-blue)' }
+                        { label: 'AVG. SUSTAINABILITY RATING', value: avgSus !== 'N/A' ? `${avgSus}/100` : 'N/A', color: avgSus !== 'N/A' && avgSus >= 65 ? 'var(--eco-glow)' : 'var(--warn-amber)' },
+                        { label: 'AVG. SERVICE LIFE', value: avgLife !== 'N/A' ? `${avgLife} Years` : 'N/A', color: '#fff' },
+                        { label: 'AVG. EMBODIED CARBON', value: avgCarbon !== 'N/A' ? `${avgCarbon} kgCO₂/kg` : 'N/A', color: avgCarbon !== 'N/A' && parseFloat(avgCarbon) < 0.5 ? 'var(--eco-glow)' : 'var(--warn-amber)' },
+                        { label: 'AVG. HYBRID SCORE', value: avgScore !== 'N/A' ? `${avgScore}/100` : 'N/A', color: avgScore !== 'N/A' && avgScore >= 75 ? 'var(--eco-glow)' : 'var(--blueprint-blue)' }
                       ].map((m, i) => (
                         <div key={i} style={{ background: 'rgba(0,0,0,0.25)', border: '1px solid var(--glass-border)', borderRadius: '12px', padding: '1.5rem', textAlign: 'center' }}>
-                          <div style={{ fontSize: '1.8rem', marginBottom: '8px' }}>{m.icon}</div>
                           <div style={{ fontSize: '1.4rem', fontWeight: 900, color: m.color }}>{m.value}</div>
                           <div style={{ fontSize: '0.6rem', color: 'var(--text-dim)', letterSpacing: '1px', marginTop: '6px' }}>{m.label}</div>
                         </div>

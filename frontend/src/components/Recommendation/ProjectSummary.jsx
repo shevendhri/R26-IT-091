@@ -50,7 +50,7 @@ export default function ProjectSummary() {
   return (
     <section className="glass-panel" style={{ padding: '1.75rem', marginBottom: '2rem' }}>
       <h2 style={{ fontSize: '1rem', fontWeight: 700, color: 'var(--eco-glow)', marginBottom: '1rem', fontFamily: 'Space Grotesk' }}>
-        📋 Project Requirements Summary
+        Project Requirements Summary
       </h2>
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.8rem' }}>
         <Badge label="Usage" value={building_usage} />

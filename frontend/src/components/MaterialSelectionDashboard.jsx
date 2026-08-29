@@ -7,6 +7,8 @@ import XAIPanel from './Recommendation/XAIPanel';
  * - blueprint, location, profile: passed from workspace
  * - onComplete: called to proceed to Step 7 (3D Concept)
  */
+const API_BASE = process.env.NEXT_PUBLIC_API_BASE ?? (typeof window !== 'undefined' && window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1' ? '' : 'http://localhost:5000');
+
 export default function MaterialSelectionDashboard({ blueprint, location, profile, selections, setSelections, onComplete }) {
   const [alternatives, setAlternatives] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -15,7 +17,7 @@ export default function MaterialSelectionDashboard({ blueprint, location, profil
   useEffect(() => {
     async function fetchAlternatives() {
       try {
-        const res = await fetch('http://localhost:5000/api/recommendations', {
+        const res = await fetch(`${API_BASE}/api/recommendations`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ blueprint, location, profile })
@@ -50,7 +52,7 @@ export default function MaterialSelectionDashboard({ blueprint, location, profil
 
   const handleSelect = async (component, material) => {
     try {
-      await fetch('http://localhost:5000/api/user-selection', {
+      await fetch(`${API_BASE}/api/user-selection`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ component, material_id: material.id })

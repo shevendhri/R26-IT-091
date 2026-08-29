@@ -1,6 +1,7 @@
 import React, { Suspense, useMemo } from 'react';
 import { Canvas } from '@react-three/fiber';
-import { ContactShadows, PerspectiveCamera, OrbitControls, Environment } from '@react-three/drei';
+import { ContactShadows, PerspectiveCamera, OrbitControls } from '@react-three/drei';
+import SafeEnvironment from './ui/SafeEnvironment';
 import { EffectComposer, SMAA, Vignette, Bloom } from '@react-three/postprocessing';
 import Furniture from './Furniture';
 
@@ -167,7 +168,7 @@ export default function ArchVizScene() {
   const lights = useMemo(() => (
     <>
       {/* HDRI environment */}
-      <Environment files="https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/royal_esplanade_1k.hdr" background={false} />
+      <SafeEnvironment files="https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/royal_esplanade_1k.hdr" background={false} />
       {/* Soft directional sunlight */}
       <directionalLight color="#ffdfaa" intensity={2.0} position={[5, 12, 5]} castShadow shadow-mapSize-width={1024} shadow-mapSize-height={1024} shadow-camera-far={60} shadow-camera-left={-20} shadow-camera-right={20} shadow-camera-top={20} shadow-camera-bottom={-20} />
       {/* Warm ambient fill */}

@@ -6,6 +6,7 @@ import { useMaterial } from '@/context/MaterialContext';
 /**
  * ProjectOverview – Structured overview of project specifications and climate profiles.
  * Separates inputs into Recommendation Drivers and Building Configuration.
+ * Updated for high-contrast warm sustainable architecture theme.
  */
 export default function ProjectOverview({ data }) {
   const { preferences, buildingInfo, buildingRequirements } = useMaterial() || {};
@@ -56,20 +57,20 @@ export default function ProjectOverview({ data }) {
   ];
 
   const MetricGrid = ({ items }) => (
-    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '0.5rem' }}>
+    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '0.6rem' }}>
       {items.map(({ label, value }) => (
         <div key={label} style={{
-          background: '#090d16',
-          border: '1px solid #1e293b',
-          borderRadius: '4px',
-          padding: '0.55rem 0.75rem',
+          background: '#F7F9F6',
+          border: '1px solid #C8D3CA',
+          borderRadius: '8px',
+          padding: '0.65rem 0.85rem',
           display: 'flex',
-          justifyContent: 'space-between',
+          justify: 'space-between',
           alignItems: 'center',
           gap: '0.5rem'
         }}>
-          <span style={{ fontSize: '0.68rem', color: '#94a3b8' }}>{label}</span>
-          <span style={{ fontSize: '0.78rem', fontWeight: 600, color: '#f8fafc', fontFamily: 'Space Grotesk' }}>{value}</span>
+          <span style={{ fontSize: '0.74rem', color: '#526158', fontWeight: 600 }}>{label}</span>
+          <span style={{ fontSize: '0.82rem', fontWeight: 800, color: '#18251F', fontFamily: 'Space Grotesk' }}>{value}</span>
         </div>
       ))}
     </div>
@@ -78,19 +79,20 @@ export default function ProjectOverview({ data }) {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
       <div style={{
-        background: '#0f172a',
-        border: '1px solid #1e293b',
-        borderRadius: '8px',
-        padding: '1.25rem',
+        background: '#FFFFFF',
+        border: '1px solid #C8D3CA',
+        borderRadius: '16px',
+        padding: '1.4rem',
         display: 'flex',
         flexDirection: 'column',
-        gap: '0.85rem'
+        gap: '1rem',
+        boxShadow: '0 4px 12px rgba(24, 37, 31, 0.04)'
       }}>
-        <div style={{ borderBottom: '1px solid #1e293b', paddingBottom: '0.6rem' }}>
-          <h4 style={{ fontSize: '0.95rem', fontWeight: 600, color: '#f8fafc', margin: 0, fontFamily: 'Space Grotesk' }}>
+        <div style={{ borderBottom: '1px solid #C8D3CA', paddingBottom: '0.75rem' }}>
+          <h4 style={{ fontSize: '1.05rem', fontWeight: 800, color: '#18251F', margin: 0, fontFamily: 'Space Grotesk' }}>
             Recommendation Drivers
           </h4>
-          <p style={{ color: '#94a3b8', fontSize: '0.72rem', marginTop: '0.15rem', lineHeight: 1.4, margin: 0 }}>
+          <p style={{ color: '#526158', fontSize: '0.8rem', marginTop: '0.2rem', lineHeight: 1.4, margin: 0, fontWeight: 500 }}>
             Parameters that directly influence constraint-engine filters, MCDM suitability scores, and ML model predictions.
           </p>
         </div>
@@ -98,19 +100,20 @@ export default function ProjectOverview({ data }) {
       </div>
 
       <div style={{
-        background: '#0f172a',
-        border: '1px solid #1e293b',
-        borderRadius: '8px',
-        padding: '1.25rem',
+        background: '#FFFFFF',
+        border: '1px solid #C8D3CA',
+        borderRadius: '16px',
+        padding: '1.4rem',
         display: 'flex',
         flexDirection: 'column',
-        gap: '0.85rem'
+        gap: '1rem',
+        boxShadow: '0 4px 12px rgba(24, 37, 31, 0.04)'
       }}>
-        <div style={{ borderBottom: '1px solid #1e293b', paddingBottom: '0.6rem' }}>
-          <h4 style={{ fontSize: '0.95rem', fontWeight: 600, color: '#f8fafc', margin: 0, fontFamily: 'Space Grotesk' }}>
+        <div style={{ borderBottom: '1px solid #C8D3CA', paddingBottom: '0.75rem' }}>
+          <h4 style={{ fontSize: '1.05rem', fontWeight: 800, color: '#18251F', margin: 0, fontFamily: 'Space Grotesk' }}>
             Building Configuration
           </h4>
-          <p style={{ color: '#94a3b8', fontSize: '0.72rem', marginTop: '0.15rem', lineHeight: 1.4, margin: 0 }}>
+          <p style={{ color: '#526158', fontSize: '0.8rem', marginTop: '0.2rem', lineHeight: 1.4, margin: 0, fontWeight: 500 }}>
             Spatial program parameters used to generate the 2D layout blueprint and 3D visualization.
           </p>
         </div>

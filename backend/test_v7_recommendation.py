@@ -19,7 +19,7 @@ def _patched_get_ml_score(self, material_category, material_id, climate, b_type,
                            structural_system="Concrete Frame",
                            sustainability_pref="Medium", mat=None):
     if not self.model:
-        return None, "HEURISTIC_FALLBACK"
+        return None, None, "HEURISTIC_FALLBACK"
     try:
         b_type_map   = {"residential": 0, "commercial": 1, "industrial": 2}
         c_zone_map   = {"extreme coastal": 0, "moderate coastal": 1, "highland": 2,
@@ -64,7 +64,8 @@ def _patched_get_ml_score(self, material_category, material_id, climate, b_type,
                 # ── ML PATH HIT ───────────────────────────────────────────
                 _ml_path_count["count"] += 1
                 idx = list(classes).index(material_id)
-                return float(probs[idx] * 100), "ML_MODEL"
+                prob_val = float(probs[idx] * 100)
+                return prob_val, prob_val, "ML_MODEL"
             else:
                 # ── FALLBACK HIT — count it ───────────────────────────────
                 _fallback_hits["count"] += 1
@@ -72,11 +73,12 @@ def _patched_get_ml_score(self, material_category, material_id, climate, b_type,
                 s_rating  = float(mat.get("Sustainability_Rating", 50)) if mat else 50.0
                 carbon    = float(mat.get("Embodied_Carbon", 0.5)) if mat else 0.5
                 heuristic = (s_rating * 0.6) + ((1.0 - min(1.0, carbon)) * 40.0)
-                return max(30.0, min(100.0, heuristic)), "HEURISTIC_FALLBACK"
-        return 50.0, "HEURISTIC_FALLBACK"
+                heuristic_score = max(30.0, min(100.0, heuristic))
+                return heuristic_score, heuristic_score, "HEURISTIC_FALLBACK"
+        return 50.0, 50.0, "HEURISTIC_FALLBACK"
     except Exception as e:
         print(f"ML error: {e}")
-        return 50.0, "HEURISTIC_FALLBACK"
+        return 50.0, 50.0, "HEURISTIC_FALLBACK"
 
 re_module.RecommendationEngine._get_ml_score = _patched_get_ml_score
 
