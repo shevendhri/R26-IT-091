@@ -5,15 +5,15 @@ WORKDIR /app
 # Install system dependencies for image/ML libraries
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
-    libgl1-mesa-glx \
+    libgl1 \
     libglib2.0-0 \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy dependencies and install
 COPY requirements.txt .
+
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy application code
 COPY . .
 
 # Set default port if not provided by cloud platform
