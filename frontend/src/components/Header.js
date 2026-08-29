@@ -14,7 +14,6 @@ export default function Header() {
     { href: '/green-assessment', label: 'GREEN ASSESSMENT', active: pathname.startsWith('/green-assessment') },
     { href: '/fire-safety', label: 'FIRE SAFETY', active: pathname.startsWith('/fire-safety') },
     { href: '/history', label: 'RECOMMENDATION HISTORY', active: pathname.startsWith('/history') },
-    { href: '/feedback', label: 'USER FEEDBACK', active: pathname === '/feedback', isIcon: true },
   ];
 
   return (
