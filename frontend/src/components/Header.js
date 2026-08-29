@@ -20,22 +20,22 @@ export default function Header() {
   return (
     <header style={{
       padding: '0.75rem 2rem',
-      borderBottom: '1px solid rgba(30, 84, 56, 0.12)',
+      borderBottom: '1px solid rgba(74, 122, 92, 0.25)',
       display: 'flex',
       justifyContent: 'space-between',
       alignItems: 'center',
-      background: 'rgba(255, 255, 255, 0.88)',
+      background: 'rgba(242, 247, 243, 0.94)',
       backdropFilter: 'blur(16px)',
       WebkitBackdropFilter: 'blur(16px)',
       zIndex: 2000,
       position: 'sticky',
       top: 0,
       width: '100%',
-      boxShadow: '0 2px 16px rgba(24, 37, 31, 0.04)'
+      boxShadow: '0 2px 16px rgba(20, 34, 27, 0.05)'
     }}>
       <style>{`
         .nav-link-item {
-          color: #536058;
+          color: #42554A;
           text-decoration: none;
           position: relative;
           padding: 6px 10px;
@@ -49,18 +49,18 @@ export default function Header() {
           gap: 5px;
         }
         .nav-link-item:hover {
-          background: #EDF3ED;
+          background: #D7E7DC;
           color: #1E5438;
         }
         .nav-link-item.active {
           color: #1E5438;
-          background: #EDF3ED;
+          background: #D7E7DC;
         }
         .nav-active-bar {
           position: absolute;
           bottom: -1px;
-          left: 10px;
-          right: 10px;
+          left: 8px;
+          right: 8px;
           height: 2.5px;
           background: #1E5438;
           border-radius: 2px 2px 0 0;

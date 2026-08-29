@@ -161,8 +161,8 @@ export default function ReportPage() {
   return (
     <div style={{
       minHeight: '100vh',
-      background: 'linear-gradient(160deg, #E8EFE9 0%, #F5F7F4 40%, #EAF0F5 100%)',
-      color: '#18251F',
+      background: 'linear-gradient(160deg, #DCE7DF 0%, #E7EFE9 45%, #DCE6ED 100%)',
+      color: '#14221B',
       fontFamily: 'Inter, sans-serif'
     }}>
       <Header />

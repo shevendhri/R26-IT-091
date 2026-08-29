@@ -174,8 +174,8 @@ export default function Footer() {
       {/* ═════════════════════ FOOTER LINKS & DISCLAIMER ════ */}
       <div style={{
         padding: '3.5rem 2.5rem 2rem',
-        borderTop: '1px solid #C4CFC6',
-        background: '#DEE6DF'
+        borderTop: '1px solid #BDCEBF',
+        background: '#C7D7CA'
       }}>
         <div style={{ maxWidth: '1440px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '2.5rem' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '2.5rem' }}>

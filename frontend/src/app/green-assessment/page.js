@@ -7,7 +7,7 @@ import Footer from '@/components/Footer';
 
 export default function GreenAssessmentPage() {
   return (
-    <div style={{ minHeight: '100vh', background: '#EDF5EE', color: '#18251F', fontFamily: 'Inter, sans-serif', display: 'flex', flexDirection: 'column' }}>
+    <div style={{ minHeight: '100vh', background: '#D9E6DC', color: '#14221B', fontFamily: 'Inter, sans-serif', display: 'flex', flexDirection: 'column' }}>
       <Header />
 
       <main style={{ flex: 1, maxWidth: '1200px', width: '100%', margin: '0 auto', padding: '4rem 2rem' }}>

@@ -87,9 +87,9 @@ function ChipSelector({ options, value, onChange, multi = false }) {
             style={{
               padding: '0.5rem 1rem',
               borderRadius: '10px',
-              border: active ? '1.5px solid #1E5438' : '1.5px solid #C9D4CB',
-              background: active ? '#D4E8D8' : '#F0F4F1',
-              color: active ? '#1E5438' : '#536058',
+              border: active ? '1.5px solid #1E5438' : '1.5px solid #BDCEBF',
+              background: active ? '#CDE5D3' : '#E8F1EA',
+              color: active ? '#1E5438' : '#42554A',
               fontSize: '0.82rem',
               fontWeight: active ? 700 : 500,
               cursor: 'pointer',
@@ -255,8 +255,8 @@ export default function FormPage() {
   return (
     <div style={{
       minHeight: '100vh',
-      background: '#F3F5F1',
-      color: '#18251F',
+      background: '#E1E9E2',
+      color: '#14221B',
       fontFamily: 'Inter, sans-serif'
     }}>
       <Header />
@@ -347,7 +347,7 @@ export default function FormPage() {
         </div>
 
         {/* Progress indicator */}
-        <div style={{ background: '#FFFFFF', borderRadius: '16px', padding: '1.2rem 1.5rem', marginBottom: '2rem', border: '1px solid #D5DED6', boxShadow: '0 2px 8px rgba(24,37,31,0.04)' }}>
+        <div style={{ background: '#FFFFFF', borderRadius: '16px', padding: '1.2rem 1.5rem', marginBottom: '2rem', border: '1px solid #BDCEBF', boxShadow: '0 2px 10px rgba(20,34,27,0.05)' }}>
           <ProgressBar sections={SECTION_LABELS} current={activeSection} />
         </div>
 
@@ -356,7 +356,7 @@ export default function FormPage() {
           {/* ── Section 1: Building Information ─────────────────────────── */}
           <div
             id="section-building"
-            style={{ marginBottom: '1.5rem', cursor: 'pointer', borderTop: '3px solid #2F6FA3', background: '#EAF0F5', border: '1px solid rgba(47,111,163,0.20)', borderRadius: '18px', padding: '1.5rem', boxShadow: '0 4px 12px rgba(47,111,163,0.05)' }}
+            style={{ marginBottom: '1.5rem', cursor: 'pointer', borderTop: '3px solid #245D8C', background: '#DEE9EF', border: '1px solid rgba(36,93,140,0.22)', borderRadius: '18px', padding: '1.5rem', boxShadow: '0 4px 14px rgba(36,93,140,0.06)' }}
             onClick={() => setActiveSection(0)}
           >
             <h2 style={{ fontSize: '1.05rem', fontFamily: 'Space Grotesk', fontWeight: 800, color: '#1E5438', marginBottom: activeSection === 0 ? '1.5rem' : 0, textTransform: 'uppercase', letterSpacing: '0.06em', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
@@ -402,12 +402,12 @@ export default function FormPage() {
           {/* ── Section 2: Project Preferences ──────────────────────────── */}
           <div
             id="section-preferences"
-            style={{ marginBottom: '1.5rem', cursor: 'pointer', borderTop: '3px solid #1E5438', background: '#EDF3ED', border: '1px solid rgba(30,84,56,0.18)', borderRadius: '18px', padding: '1.5rem', boxShadow: '0 4px 12px rgba(30,84,56,0.04)' }}
+            style={{ marginBottom: '1.5rem', cursor: 'pointer', borderTop: '3px solid #1E5438', background: '#DCE9DF', border: '1px solid rgba(30,84,56,0.22)', borderRadius: '18px', padding: '1.5rem', boxShadow: '0 4px 14px rgba(30,84,56,0.06)' }}
             onClick={() => setActiveSection(1)}
           >
-            <h2 style={{ fontSize: '1.05rem', fontFamily: 'Space Grotesk', fontWeight: 800, color: '#3A7057', marginBottom: activeSection === 1 ? '1.5rem' : 0, textTransform: 'uppercase', letterSpacing: '0.06em', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <h2 style={{ fontSize: '1.05rem', fontFamily: 'Space Grotesk', fontWeight: 800, color: '#1E5438', marginBottom: activeSection === 1 ? '1.5rem' : 0, textTransform: 'uppercase', letterSpacing: '0.06em', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
               Project Preferences
-              <span style={{ fontSize: '0.8rem', color: '#526158', fontWeight: 600 }}>{activeSection === 1 ? '▲' : '▼'}</span>
+              <span style={{ fontSize: '0.8rem', color: '#42554A', fontWeight: 600 }}>{activeSection === 1 ? '▲' : '▼'}</span>
             </h2>
             {activeSection === 1 && (
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1.25rem' }} onClick={e => e.stopPropagation()}>
@@ -445,12 +445,12 @@ export default function FormPage() {
             style={{
               marginBottom: '2rem',
               cursor: 'pointer',
-              borderTop: '3px solid #C58A1C',
-              background: '#F6F1E9',
-              border: '1px solid rgba(197,138,28,0.20)',
+              borderTop: '3px solid #BC8116',
+              background: '#F4ECE0',
+              border: '1px solid rgba(188,129,22,0.24)',
               borderRadius: '18px',
               padding: '1.5rem',
-              boxShadow: '0 4px 12px rgba(197,138,28,0.04)'
+              boxShadow: '0 4px 14px rgba(188,129,22,0.06)'
             }}
             onClick={() => setActiveSection(2)}
           >

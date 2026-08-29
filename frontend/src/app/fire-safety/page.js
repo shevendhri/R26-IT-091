@@ -7,7 +7,7 @@ import Footer from '@/components/Footer';
 
 export default function FireSafetyPage() {
   return (
-    <div style={{ minHeight: '100vh', background: '#F3F5F1', color: '#18251F', fontFamily: 'Inter, sans-serif', display: 'flex', flexDirection: 'column' }}>
+    <div style={{ minHeight: '100vh', background: '#E2E9E3', color: '#14221B', fontFamily: 'Inter, sans-serif', display: 'flex', flexDirection: 'column' }}>
       <Header />
 
       <main style={{ flex: 1, maxWidth: '1200px', width: '100%', margin: '0 auto', padding: '4rem 2rem' }}>
