@@ -1,11 +1,15 @@
 "use client";
 
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
 export default function FireSafetyPage() {
+  const [showFeedbackIframe, setShowFeedbackIframe] = useState(false);
+
+  const FIRE_SAFETY_FEEDBACK_URL = "https://docs.google.com/forms/d/e/1FAIpQLSdqeQ-Ky_TN2jfipHPoT9Y19rU4DznfM4jEaUEyWnxyXNmXrA/viewform?usp=publish-editor";
+  const FIRE_SAFETY_EMBED_URL = "https://docs.google.com/forms/d/e/1FAIpQLSdqeQ-Ky_TN2jfipHPoT9Y19rU4DznfM4jEaUEyWnxyXNmXrA/viewform?embedded=true";
   return (
     <div style={{ minHeight: '100vh', background: '#E2E9E3', color: '#14221B', fontFamily: 'Inter, sans-serif', display: 'flex', flexDirection: 'column' }}>
       <Header />
@@ -219,6 +223,169 @@ export default function FireSafetyPage() {
               VIEW MATERIALS →
             </Link>
           </div>
+        </div>
+
+        {/* ══════════════════════════════════════════════════════════════
+            MODULE 04: DEDICATED USER EVALUATION & FEEDBACK SECTION
+        ══════════════════════════════════════════════════════════════ */}
+        <div style={{
+          marginTop: '2.5rem',
+          background: 'linear-gradient(135deg, #FFFFFF 50%, #F9E7E0 100%)',
+          borderTop: '4px solid #C0542C',
+          borderRight: '1px solid #BDCEBF',
+          borderBottom: '1px solid #BDCEBF',
+          borderLeft: '1px solid #BDCEBF',
+          borderRadius: '20px',
+          padding: '2rem 2.2rem',
+          boxShadow: '0 4px 18px rgba(192, 84, 44, 0.08), 0 1px 3px rgba(20, 34, 27, 0.05)',
+          position: 'relative',
+          overflow: 'hidden'
+        }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '1.5rem' }}>
+            <div style={{ maxWidth: '680px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '0.75rem' }}>
+                <span style={{
+                  background: '#F2D4C7',
+                  color: '#C0542C',
+                  border: '1px solid rgba(192, 84, 44, 0.3)',
+                  borderRadius: '20px',
+                  padding: '3px 12px',
+                  fontSize: '0.7rem',
+                  fontWeight: 800,
+                  letterSpacing: '0.08em',
+                  fontFamily: 'Space Grotesk'
+                }}>
+                  ● MODULE 04 EVALUATION
+                </span>
+                <span style={{ fontSize: '0.72rem', color: '#42554A', fontWeight: 700, fontFamily: 'Space Grotesk' }}>
+                  USER FEEDBACK
+                </span>
+              </div>
+
+              <h2 style={{
+                fontFamily: 'Space Grotesk, sans-serif',
+                fontSize: '1.4rem',
+                fontWeight: 800,
+                color: '#14221B',
+                margin: '0 0 0.5rem',
+                lineHeight: 1.2
+              }}>
+                Fire-Safety Compliance — User Feedback & Evaluation
+              </h2>
+
+              <p style={{
+                fontSize: '0.86rem',
+                color: '#42554A',
+                lineHeight: 1.6,
+                margin: 0,
+                fontWeight: 500
+              }}>
+                Help us evaluate the Fire-Safety Compliance module. Please share your insights on fire rating verification, travel distance calculations, egress validation, and regulatory code accuracy.
+              </p>
+            </div>
+
+            {/* Action Buttons */}
+            <div style={{ display: 'flex', gap: '0.85rem', flexWrap: 'wrap', alignItems: 'center' }}>
+              <button
+                type="button"
+                onClick={() => setShowFeedbackIframe(prev => !prev)}
+                style={{
+                  background: '#FFFFFF',
+                  color: '#C0542C',
+                  border: '1.5px solid rgba(192, 84, 44, 0.35)',
+                  borderRadius: '10px',
+                  padding: '0.75rem 1.25rem',
+                  fontFamily: 'Space Grotesk',
+                  fontWeight: 700,
+                  fontSize: '0.8rem',
+                  cursor: 'pointer',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                  transition: 'all 0.2s ease'
+                }}
+              >
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/></svg>
+                {showFeedbackIframe ? 'Hide Embedded Form' : 'Fill Form on Page'}
+              </button>
+
+              <a
+                href={FIRE_SAFETY_FEEDBACK_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  background: '#C0542C',
+                  color: '#FFFFFF',
+                  border: '1px solid #C0542C',
+                  borderRadius: '10px',
+                  padding: '0.75rem 1.4rem',
+                  fontFamily: 'Space Grotesk',
+                  fontWeight: 700,
+                  fontSize: '0.8rem',
+                  textDecoration: 'none',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                  boxShadow: '0 4px 14px rgba(192, 84, 44, 0.25)',
+                  transition: 'all 0.2s ease'
+                }}
+              >
+                Open Google Form
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            </div>
+          </div>
+
+          {/* Embedded Google Form Iframe View */}
+          {showFeedbackIframe && (
+            <div style={{
+              marginTop: '1.75rem',
+              background: '#FFFFFF',
+              borderRadius: '14px',
+              border: '1px solid rgba(192, 84, 44, 0.22)',
+              overflow: 'hidden',
+              boxShadow: '0 4px 16px rgba(20, 34, 27, 0.06)'
+            }}>
+              <div style={{
+                padding: '0.75rem 1.25rem',
+                background: '#F9E7E0',
+                borderBottom: '1px solid rgba(192, 84, 44, 0.2)',
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center'
+              }}>
+                <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#C0542C', fontFamily: 'Space Grotesk' }}>
+                  Google Forms Live Evaluation Window
+                </span>
+                <button
+                  type="button"
+                  onClick={() => setShowFeedbackIframe(false)}
+                  style={{
+                    background: 'transparent',
+                    border: 'none',
+                    color: '#42554A',
+                    fontSize: '0.85rem',
+                    cursor: 'pointer',
+                    fontWeight: 700
+                  }}
+                >
+                  ✕ Close
+                </button>
+              </div>
+              <iframe
+                src={FIRE_SAFETY_EMBED_URL}
+                width="100%"
+                height="800"
+                frameBorder="0"
+                marginHeight="0"
+                marginWidth="0"
+                style={{ display: 'block', border: 'none' }}
+                title="Fire-Safety Compliance Feedback Form"
+              >
+                Loading Feedback Form…
+              </iframe>
+            </div>
+          )}
         </div>
       </main>
 
