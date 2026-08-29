@@ -34,9 +34,9 @@ const FEEDBACK_MODULES = [
     accent: "#1E5438",
     accentLight: "#C6E2CD",
     accentBg: "linear-gradient(135deg, #FFFFFF 45%, #DEEFE2 100%)",
-    status: "COMING SOON",
-    formUrl: "",
-    embedUrl: "",
+    status: "ACTIVE",
+    formUrl: "https://docs.google.com/forms/d/e/1FAIpQLSdDr5VrYMSK1rY-kMCD5LRCFD6NDlJXLA5nRAGruQrSihD5Rw/viewform?usp=publish-editor",
+    embedUrl: "https://docs.google.com/forms/d/e/1FAIpQLSdDr5VrYMSK1rY-kMCD5LRCFD6NDlJXLA5nRAGruQrSihD5Rw/viewform?embedded=true",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/>

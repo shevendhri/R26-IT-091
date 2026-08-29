@@ -241,6 +241,83 @@ export default function ReportPage() {
 
           </div>
 
+          {/* ══════════════════════════════════════════════════════════════
+              MODULE 02: MATERIAL SPECIFICATION USER EVALUATION CARD
+          ══════════════════════════════════════════════════════════════ */}
+          <div style={{
+            marginTop: '1.5rem',
+            background: 'linear-gradient(135deg, #FFFFFF 50%, #DEEFE2 100%)',
+            borderTop: '4px solid #1E5438',
+            borderRight: '1px solid #BDCEBF',
+            borderBottom: '1px solid #BDCEBF',
+            borderLeft: '1px solid #BDCEBF',
+            borderRadius: '20px',
+            padding: '1.8rem 2.2rem',
+            boxShadow: '0 4px 18px rgba(30, 84, 56, 0.08)',
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            flexWrap: 'wrap',
+            gap: '1.25rem'
+          }}>
+            <div style={{ maxWidth: '720px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '0.4rem' }}>
+                <span style={{
+                  background: '#C6E2CD',
+                  color: '#1E5438',
+                  borderRadius: '20px',
+                  padding: '2px 10px',
+                  fontSize: '0.68rem',
+                  fontWeight: 800,
+                  fontFamily: 'Space Grotesk'
+                }}>
+                  ● MODULE 02 EVALUATION
+                </span>
+                <span style={{ fontSize: '0.72rem', color: '#42554A', fontWeight: 700, fontFamily: 'Space Grotesk' }}>
+                  USER FEEDBACK
+                </span>
+              </div>
+
+              <h3 style={{
+                fontFamily: 'Space Grotesk, sans-serif',
+                fontSize: '1.2rem',
+                fontWeight: 800,
+                color: '#14221B',
+                margin: '0 0 0.35rem'
+              }}>
+                Evaluate Material Recommendations
+              </h3>
+
+              <p style={{ fontSize: '0.84rem', color: '#42554A', margin: 0, lineHeight: 1.5, fontWeight: 500 }}>
+                How accurate and feasible were these material recommendations? Share your feedback to help us refine the hybrid MCDM and machine learning models.
+              </p>
+            </div>
+
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSdDr5VrYMSK1rY-kMCD5LRCFD6NDlJXLA5nRAGruQrSihD5Rw/viewform?usp=publish-editor"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                background: '#1E5438',
+                color: '#FFFFFF',
+                borderRadius: '10px',
+                padding: '0.8rem 1.5rem',
+                fontFamily: 'Space Grotesk',
+                fontWeight: 700,
+                fontSize: '0.82rem',
+                textDecoration: 'none',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '6px',
+                boxShadow: '0 4px 14px rgba(30, 84, 56, 0.25)',
+                transition: 'all 0.2s ease'
+              }}
+            >
+              Provide Material Feedback
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+
         </main>
       )}
       <Footer />
