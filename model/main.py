@@ -1,3 +1,9 @@
+import approval_checklist
+import compliance
+from pydantic import BaseModel
+from typing import Optional, List
+import json
+import re
 from fastapi import FastAPI, UploadFile, File
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
@@ -8,12 +14,6 @@ import os
 from dotenv import load_dotenv
 load_dotenv(os.path.join(os.path.dirname(__file__), '.env'))
 
-import re
-import json
-from typing import Optional, List
-from pydantic import BaseModel
-import compliance
-import approval_checklist
 
 # CubiCasa-style plans sometimes label a room with its size instead of a name,
 # e.g. "8'11\" x 9'7\"" — these are typically unlabeled bedrooms in the source data.
@@ -35,6 +35,7 @@ def _dim_label_to_sqft(text: str):
         return None
     ft1, in1, ft2, in2 = (int(x) for x in m.groups())
     return (ft1 + in1 / 12.0) * (ft2 + in2 / 12.0)
+
 
 app = FastAPI()
 
@@ -74,7 +75,8 @@ _genai_types = None
 try:
     from google import genai as _genai
     from google.genai import types as _genai_types
-    _gemini_api_key = os.environ.get('GEMINI_API_KEY') or os.environ.get('GOOGLE_API_KEY')
+    _gemini_api_key = os.environ.get(
+        'GEMINI_API_KEY') or os.environ.get('GOOGLE_API_KEY')
     # gemini-3.6-pro reasons more carefully about spatial detail (door swing
     # arcs, thin window lines) than flash, at lower free-tier request limits —
     # set GEMINI_MODEL=gemini-3.6-pro in model/.env to try it if flash keeps
@@ -82,7 +84,7 @@ try:
     _gemini_model_name = os.environ.get('GEMINI_MODEL', 'gemini-3.6-flash')
     if _gemini_api_key:
         _gemini_client = _genai.Client(api_key=_gemini_api_key)
-        print("[INFO] Gemini vision analysis enabled")
+        print("[INFO] vision analysis enabled")
     else:
         print("[WARN] GEMINI_API_KEY not set — falling back to YOLO-derived counts")
 except ImportError:
@@ -152,8 +154,10 @@ def _ocr_room_labels(png_bytes: bytes, rooms: list) -> list:
             continue
         x1, y1, x2, y2 = bbox
         pad = 10
-        x1 = max(0, int(x1) - pad); y1 = max(0, int(y1) - pad)
-        x2 = min(img_w, int(x2) + pad); y2 = min(img_h, int(y2) + pad)
+        x1 = max(0, int(x1) - pad)
+        y1 = max(0, int(y1) - pad)
+        x2 = min(img_w, int(x2) + pad)
+        y2 = min(img_h, int(y2) + pad)
         if x2 - x1 < 20 or y2 - y1 < 20:
             continue
         crop = img.crop((x1, y1, x2, y2))
@@ -197,7 +201,8 @@ def _yolo_predict(png_bytes: bytes, conf: float = 0.25):
 
     for box in results.boxes:
         cls_id = int(box.cls.item())
-        cls_name = _YOLO_CLASSES[cls_id] if cls_id < len(_YOLO_CLASSES) else 'other'
+        cls_name = _YOLO_CLASSES[cls_id] if cls_id < len(
+            _YOLO_CLASSES) else 'other'
         if cls_name in counts:
             counts[cls_name] += 1
         x1, y1, x2, y2 = box.xyxy[0].tolist()
@@ -310,7 +315,8 @@ def _gemini_analyze(png_bytes: bytes, room_count_hint: int | None = None):
         response = _gemini_client.models.generate_content(
             model=_gemini_model_name,
             contents=[
-                _genai_types.Part.from_bytes(data=png_bytes, mime_type="image/png"),
+                _genai_types.Part.from_bytes(
+                    data=png_bytes, mime_type="image/png"),
                 prompt,
             ],
             config=_genai_types.GenerateContentConfig(
@@ -318,8 +324,9 @@ def _gemini_analyze(png_bytes: bytes, room_count_hint: int | None = None):
                 response_schema=_GeminiAnalysis,
             ),
         )
-        result = response.parsed.model_dump() if response.parsed is not None else json.loads(response.text)
-        print(f"[INFO] Gemini ({_gemini_model_name}) counts: {result.get('counts')}")
+        result = response.parsed.model_dump(
+        ) if response.parsed is not None else json.loads(response.text)
+
         return result
     except Exception as e:
         print(f"[WARN] Gemini analysis failed, falling back to YOLO: {e}")
@@ -341,10 +348,10 @@ def _assign_rooms_from_boxes(boxes: list) -> list:
     windows, wall count/thickness, and pixel area, plus an internal '_bbox'
     used for OCR-based room naming — callers must pop it before returning.
     """
-    room_boxes  = [b for b in boxes if b['cls'] == 'room']
-    door_boxes  = [b for b in boxes if b['cls'] == 'door']
-    win_boxes   = [b for b in boxes if b['cls'] == 'window']
-    wall_boxes  = [b for b in boxes if b['cls'] == 'wall']
+    room_boxes = [b for b in boxes if b['cls'] == 'room']
+    door_boxes = [b for b in boxes if b['cls'] == 'door']
+    win_boxes = [b for b in boxes if b['cls'] == 'window']
+    wall_boxes = [b for b in boxes if b['cls'] == 'wall']
 
     rooms = []
     for rb in room_boxes:
@@ -365,7 +372,7 @@ def _assign_rooms_from_boxes(boxes: list) -> list:
         pad = 6  # px tolerance — walls sit exactly on the room boundary
         padded = (rx1 - pad, ry1 - pad, rx2 + pad, ry2 + pad)
         touching_walls = [w for w in wall_boxes
-                           if _bboxes_overlap(padded, (w['x1'], w['y1'], w['x2'], w['y2']))]
+                          if _bboxes_overlap(padded, (w['x1'], w['y1'], w['x2'], w['y2']))]
         wall_thickness_px = None
         for w in touching_walls:
             thickness = min(w['x2'] - w['x1'], w['y2'] - w['y1'])
@@ -405,7 +412,8 @@ def _estimate_scale(rooms: list, door_boxes: list):
         return sum(scale_samples) / len(scale_samples), 'dimension_label'
 
     if door_boxes:
-        door_widths_px = [min(d['x2'] - d['x1'], d['y2'] - d['y1']) for d in door_boxes]
+        door_widths_px = [min(d['x2'] - d['x1'], d['y2'] - d['y1'])
+                          for d in door_boxes]
         if door_widths_px:
             avg_door_px = sum(door_widths_px) / len(door_widths_px)
             px_per_ft = avg_door_px / _ASSUMED_DOOR_WIDTH_FT
@@ -489,24 +497,31 @@ def _opencv_analyze(png_bytes: bytes) -> dict:
 
     _, thresh = cv2.threshold(gray, 80, 255, cv2.THRESH_BINARY_INV)
     kernel = np.ones((3, 3), np.uint8)
-    walls_mask = cv2.morphologyEx(thresh, cv2.MORPH_CLOSE, kernel, iterations=2)
+    walls_mask = cv2.morphologyEx(
+        thresh, cv2.MORPH_CLOSE, kernel, iterations=2)
 
-    wall_contours, _ = cv2.findContours(walls_mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
-    wall_count = sum(1 for c in wall_contours if cv2.contourArea(c) > (h * w) * 0.0003)
+    wall_contours, _ = cv2.findContours(
+        walls_mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    wall_count = sum(
+        1 for c in wall_contours if cv2.contourArea(c) > (h * w) * 0.0003)
 
     inv = cv2.bitwise_not(walls_mask)
     inv_eroded = cv2.erode(inv, np.ones((5, 5), np.uint8), iterations=1)
-    num_labels, _, stats, _ = cv2.connectedComponentsWithStats(inv_eroded, connectivity=8)
+    num_labels, _, stats, _ = cv2.connectedComponentsWithStats(
+        inv_eroded, connectivity=8)
     min_area = (h * w) * 0.008
     max_area = (h * w) * 0.80
-    room_count = sum(1 for i in range(1, num_labels) if min_area < stats[i, cv2.CC_STAT_AREA] < max_area)
+    room_count = sum(1 for i in range(1, num_labels)
+                     if min_area < stats[i, cv2.CC_STAT_AREA] < max_area)
 
     blur = cv2.GaussianBlur(gray, (5, 5), 0)
-    circles = cv2.HoughCircles(blur, cv2.HOUGH_GRADIENT, 1, 20, param1=60, param2=18, minRadius=8, maxRadius=50)
+    circles = cv2.HoughCircles(
+        blur, cv2.HOUGH_GRADIENT, 1, 20, param1=60, param2=18, minRadius=8, maxRadius=50)
     door_count = int(len(circles[0])) if circles is not None else 0
 
     edges = cv2.Canny(gray, 40, 120)
-    lines = cv2.HoughLinesP(edges, 1, 3.14159 / 180, threshold=25, minLineLength=12, maxLineGap=4)
+    lines = cv2.HoughLinesP(edges, 1, 3.14159 / 180,
+                            threshold=25, minLineLength=12, maxLineGap=4)
     line_count = len(lines) if lines is not None else 0
     window_count = max(0, (line_count - wall_count * 4) // 7)
 
@@ -569,11 +584,13 @@ async def predict(image: UploadFile = File(...)):
     for i, room in enumerate(rooms):
         if not room.get('name'):
             # Bedrooms in this dataset are frequently unlabeled except for a size hint.
-            room['type'] = 'bedroom' if room.get('dimension_label') else 'other'
+            room['type'] = 'bedroom' if room.get(
+                'dimension_label') else 'other'
             room['name'] = f"Bedroom {i + 1}" if room['type'] == 'bedroom' else f"Room {i + 1}"
         else:
             room['type'] = _normalize_room_type(room['name'])
-        room['area_sqft'] = round(room['area_px2'] / px2_per_sqft, 1) if px2_per_sqft else None
+        room['area_sqft'] = round(
+            room['area_px2'] / px2_per_sqft, 1) if px2_per_sqft else None
         room['compliance'] = compliance.check_room(room, room['type'])
         room.pop('_bbox', None)
         room.pop('dimension_label', None)
@@ -596,11 +613,13 @@ async def predict(image: UploadFile = File(...)):
     # plans outside that dataset, so Gemini's own room count is now
     # authoritative too — YOLO's count is passed along only as an advisory
     # cross-check inside the prompt, not force-applied afterward.
-    gemini_result = _gemini_analyze(png_bytes, room_count_hint=yolo_room_count or None)
+    gemini_result = _gemini_analyze(
+        png_bytes, room_count_hint=yolo_room_count or None)
     if gemini_result:
         analysis_source = 'gemini'
         counts = dict(gemini_result['counts'])
-        checklist_scale_source = 'gemini_estimate' if gemini_result.get('scale_established') else 'none'
+        checklist_scale_source = 'gemini_estimate' if gemini_result.get(
+            'scale_established') else 'none'
         counts['scale_source'] = checklist_scale_source
 
         rooms = []
@@ -637,6 +656,6 @@ async def predict(image: UploadFile = File(...)):
 
 
 if __name__ == "__main__":
-   
+
     port = int(os.environ.get("PORT", 8010))
     uvicorn.run(app, host="0.0.0.0", port=port)
