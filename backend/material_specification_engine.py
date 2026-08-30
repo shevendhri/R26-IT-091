@@ -19,7 +19,7 @@ from material_quantity_engine import MaterialQuantityEngine
 # Configure logger for debugging ML model interactions
 logger = logging.getLogger(__name__)
 if not logger.handlers:
-    log_path = Path(__file__).resolve().parent / 'scratch' / 'ml_debug.log'
+    log_path = Path(__file__).resolve().parent / "scratch" / "ml_debug.log"
     log_path.parent.mkdir(parents=True, exist_ok=True)
     handler = logging.FileHandler(log_path)
     formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')

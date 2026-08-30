@@ -1,9 +1,9 @@
 # ML model files (too large for GitHub)
-backend/ml/*.pkl
-backend/ml/*.h5
-backend/ml/*.pt
-backend/ml/*.pth
-backend/ml/*.onnx
+# backend/ml/*.pkl
+# backend/ml/*.h5
+# backend/ml/*.pt
+# backend/ml/*.pth
+# backend/ml/*.onnx
 
 # Python
 __pycache__/
