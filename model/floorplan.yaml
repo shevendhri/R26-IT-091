@@ -1,0 +1,11 @@
+# Ultralytics YOLO dataset config — Floor Plan Analyzer
+# Edit `path` to match where convert_dataset.py wrote your dataset.
+# The convert_dataset.py script also auto-writes this file next to the dataset.
+
+path: /content/drive/MyDrive/floorplan_v2/dataset   # absolute path to dataset root
+train: images/train
+val:   images/val
+test:  images/test
+
+nc: 4
+names: [room, wall, door, window]
