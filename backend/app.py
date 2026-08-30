@@ -67,6 +67,8 @@ from material_specification_engine import material_specification_engine as spec_
 from spatial_program_engine import generate_spatial_program
 from building_program_engine import generate_building_program
 
+from green_assessment.api import init_green_assessment, router as green_assessment_router
+
 # ── Auto-train ML models on first deploy (if .pkl files are missing) ─────────
 try:
     from ml.ensure_models import ensure_models
@@ -89,6 +91,10 @@ app.add_middleware(
     allow_headers=["*"],
     allow_origin_regex=r".*",
 )
+
+# Green Assessment is mounted under an API prefix to avoid collisions with team modules.
+init_green_assessment()
+app.include_router(green_assessment_router, prefix="/api/green-assessment")
 
 # CSV Material List Endpoint
 @app.get("/api/materials")

@@ -38,3 +38,17 @@ Thumbs.db
 # Scratch/debug
 scratch/
 *.log
+
+# Green Assessment runtime data
+backend/green_assessment/venv/
+backend/green_assessment/uploads/
+backend/green_assessment/extracted_text/
+backend/green_assessment/dataset_extracted_text/
+backend/green_assessment/dataset_exports/
+backend/green_assessment/demo_outputs/
+backend/green_assessment/ml_outputs/
+backend/green_assessment/green_assessment.db
+
+# Green Assessment trained models
+backend/green_assessment/models/
+*.safetensors
