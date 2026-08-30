@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const FormData = require('form-data');
 
-const MODEL_SERVICE_URL = 'http://localhost:8000';
+const MODEL_SERVICE_URL = 'http://localhost:8010';
 
 async function analyzePNG(filePath) {
     console.log(`\n--- Analyzing PNG: ${filePath} ---`);

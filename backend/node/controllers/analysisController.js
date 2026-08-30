@@ -3,7 +3,7 @@ const FormData = require('form-data');
 const sharp = require('sharp');
 const Analysis = require('../models/Analysis');
 
-const MODEL_SERVICE_URL = process.env.MODEL_SERVICE_URL || 'http://localhost:8000';
+const MODEL_SERVICE_URL = process.env.MODEL_SERVICE_URL || 'http://localhost:8010';
 
 async function pdfToPngBuffer(pdfBuffer) {
     // Convert first page of a PDF to PNG using pdf2pic
