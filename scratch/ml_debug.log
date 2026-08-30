@@ -376,3 +376,15 @@
 2026-08-26 14:27:11,658 - INFO - [OK] MaterialSpecificationEngine loaded ML model.
 2026-08-26 14:27:11,668 - DEBUG - Model details: RandomForestClassifier(class_weight='balanced_subsample', max_depth=15,
                        n_estimators=300, n_jobs=-1, random_state=42)
+2026-08-29 16:59:55,867 - INFO - [OK] MaterialSpecificationEngine loaded ML model.
+2026-08-29 16:59:55,871 - DEBUG - Model details: RandomForestClassifier(class_weight='balanced_subsample', max_depth=15,
+                       n_estimators=300, n_jobs=-1, random_state=42)
+2026-08-29 17:24:00,033 - INFO - [OK] MaterialSpecificationEngine loaded ML model.
+2026-08-29 17:24:00,044 - DEBUG - Model details: RandomForestClassifier(class_weight='balanced_subsample', max_depth=15,
+                       n_estimators=300, n_jobs=-1, random_state=42)
+2026-08-29 17:44:30,616 - INFO - [OK] MaterialSpecificationEngine loaded ML model.
+2026-08-29 17:44:30,625 - DEBUG - Model details: RandomForestClassifier(class_weight='balanced_subsample', max_depth=15,
+                       n_estimators=300, n_jobs=-1, random_state=42)
+2026-08-30 14:47:49,366 - INFO - [OK] MaterialSpecificationEngine loaded ML model.
+2026-08-30 14:47:49,498 - DEBUG - Model details: RandomForestClassifier(class_weight='balanced_subsample', max_depth=15,
+                       n_estimators=300, n_jobs=-1, random_state=42)
