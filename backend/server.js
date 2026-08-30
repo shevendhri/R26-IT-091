@@ -21,9 +21,13 @@ app.get('/', (req, res) => {
 app.use('/api', analysisRoutes);
 
 // MongoDB Connection
-mongoose.connect(process.env.MONGODB_URI)
-    .then(() => console.log('Connected to MongoDB Atlas'))
-    .catch(err => console.error('MongoDB Connection Error:', err));
+if (process.env.MONGODB_URI) {
+    mongoose.connect(process.env.MONGODB_URI)
+        .then(() => console.log('Connected to MongoDB Atlas'))
+        .catch(err => console.error('MongoDB Connection Error:', err.message));
+} else {
+    console.warn('MONGODB_URI is not set. History saving/fetching will not work until it is configured.');
+}
 
 app.listen(PORT, () => {
     console.log(`Backend Server listening on port ${PORT}`);
