@@ -1,0 +1,173 @@
+{
+  "source_file": "20260509181148921.pdf",
+  "overview": {
+    "plan_type": "Architectural sheet with floor plans, elevations, sections, and construction details",
+    "project_name": "Proposed Student Girls Hostel Development",
+    "building_use_text": "Student girls hostel",
+    "storey_count": 7,
+    "schedules_visible": [
+      "Doors and Windows Opening Schedule",
+      "Schedule of Piles"
+    ],
+    "important_regions": [
+      "Ground Floor Plan",
+      "First to Sixth Floor Plan",
+      "Elevation Front Side A",
+      "Elevation Front Side B",
+      "Elevation Front Side C",
+      "Section A-A",
+      "Section Y-Y",
+      "Doors and Windows Opening Schedule",
+      "Title block and consultant information"
+    ]
+  },
+  "detail": {
+    "schedule_found": true,
+    "project_name": null,
+    "building_use_text": null,
+    "drawing_title": null,
+    "door_rows": [
+      {
+        "mark": "D1",
+        "width_m": 1.2192,
+        "height_m": 2.4384,
+        "door_type": "TIMBER FRAMED SOLID SIDE HUNG DOOR",
+        "raw_text": "D1 | 4'-0\" x 8'-0\" | TIMBER FRAMED SOLID SIDE HUNG DOOR",
+        "confidence": 0.99
+      },
+      {
+        "mark": "D2",
+        "width_m": 1.143,
+        "height_m": 2.4384,
+        "door_type": "GLASS SIDE HUNG DOOR",
+        "raw_text": "D2 | 3'-9\" x 8'-0\" | GLASS SIDE HUNG DOOR",
+        "confidence": 0.99
+      },
+      {
+        "mark": "D3",
+        "width_m": 0.9144,
+        "height_m": 2.4384,
+        "door_type": "TIMBER FRAMED SOLID SIDE HUNG DOOR",
+        "raw_text": "D3 | 3'-0\" x 8'-0\" | TIMBER FRAMED SOLID SIDE HUNG DOOR",
+        "confidence": 0.99
+      },
+      {
+        "mark": "D4",
+        "width_m": 0.8128,
+        "height_m": 2.4384,
+        "door_type": "TIMBER FRAMED SOLID SIDE HUNG DOOR",
+        "raw_text": "D4 | 2'-8\" x 8'-0\" | TIMBER FRAMED SOLID SIDE HUNG DOOR",
+        "confidence": 0.99
+      }
+    ],
+    "window_rows": [
+      {
+        "mark": "W1",
+        "width_m": 3.9624,
+        "height_m": 1.524,
+        "window_type": "ALUMINIUM FRAMED GLAZED WINDOW",
+        "raw_text": "W1 | 13'-0\" x 5'-0\" | ALUMINIUM FRAMED GLAZED WINDOW",
+        "confidence": 0.99
+      },
+      {
+        "mark": "W2",
+        "width_m": 1.2954,
+        "height_m": 1.2192,
+        "window_type": "ALUMINIUM FRAMED GLAZED WINDOW",
+        "raw_text": "W2 | 4'-3\" x 4'-0\" | ALUMINIUM FRAMED GLAZED WINDOW",
+        "confidence": 0.99
+      },
+      {
+        "mark": "W3",
+        "width_m": 3.6068,
+        "height_m": 1.524,
+        "window_type": "ALUMINIUM FRAMED GLAZED WINDOW",
+        "raw_text": "W3 | 11'-10\" x 5'-0\" | ALUMINIUM FRAMED GLAZED WINDOW",
+        "confidence": 0.99
+      },
+      {
+        "mark": "W4",
+        "width_m": 3.7338,
+        "height_m": 1.8288,
+        "window_type": "ALUMINIUM FRAMED GLAZED WINDOW",
+        "raw_text": "W4 | 12'-3\" x 6'-0\" | ALUMINIUM FRAMED GLAZED WINDOW",
+        "confidence": 0.99
+      },
+      {
+        "mark": "W5",
+        "width_m": 3.9878,
+        "height_m": 1.8288,
+        "window_type": "ALUMINIUM FRAMED GLAZED WINDOW",
+        "raw_text": "W5 | 13'-1\" x 6'-0\" | ALUMINIUM FRAMED GLAZED WINDOW",
+        "confidence": 0.99
+      },
+      {
+        "mark": "W6",
+        "width_m": 0.7366,
+        "height_m": 1.2192,
+        "window_type": "ALUMINIUM FRAMED GLAZED WINDOW",
+        "raw_text": "W6 | 2'-5\" x 4'-0\" | ALUMINIUM FRAMED GLAZED WINDOW",
+        "confidence": 0.99
+      },
+      {
+        "mark": "DW1",
+        "width_m": 1.524,
+        "height_m": 2.4384,
+        "window_type": "ALUMINIUM FRAMED GLAZED DOOR WINDOW",
+        "raw_text": "DW1 | 5'-0\" x 8'-0\" | ALUMINIUM FRAMED GLAZED DOOR WINDOW",
+        "confidence": 0.99
+      },
+      {
+        "mark": "DW2",
+        "width_m": 1.2192,
+        "height_m": 2.4384,
+        "window_type": "ALUMINIUM FRAMED GLAZED DOOR WINDOW",
+        "raw_text": "DW2 | 4'-0\" x 8'-0\" | ALUMINIUM FRAMED GLAZED DOOR WINDOW",
+        "confidence": 0.99
+      },
+      {
+        "mark": "DW3",
+        "width_m": 2.6924,
+        "height_m": 2.4384,
+        "window_type": "ALUMINIUM FRAMED GLAZED DOOR WINDOW",
+        "raw_text": "DW3 | 8'-10\" x 8'-0\" | ALUMINIUM FRAMED GLAZED DOOR WINDOW",
+        "confidence": 0.99
+      },
+      {
+        "mark": "DW4",
+        "width_m": 1.9558,
+        "height_m": 2.4384,
+        "window_type": "ALUMINIUM FRAMED GLAZED DOOR WINDOW",
+        "raw_text": "DW4 | 6'-5\" x 8'-0\" | ALUMINIUM FRAMED GLAZED DOOR WINDOW",
+        "confidence": 0.99
+      },
+      {
+        "mark": "FL1",
+        "width_m": 0.6096,
+        "height_m": 1.2192,
+        "window_type": "ALUMINIUM FRAMED GLAZED WINDOW",
+        "raw_text": "FL1 | 2'-0\" x 4'-0\" | ALUMINIUM FRAMED GLAZED WINDOW",
+        "confidence": 0.99
+      }
+    ],
+    "evidence_text": "DOORS AND WINDOWS OPENING SCHEDULE. Columns: OPENING, SIZE, SILL HEIGHT, LINTEL HEIGHT, DESCRIPTION. Visible openings: D1-D4, W1-W6, DW1-DW4, FL1."
+  },
+  "selected_tile": {
+    "tile_id": "schedule_bottom_right_rotated",
+    "bbox": {
+      "x": 0.72,
+      "y": 0.82,
+      "width": 0.28,
+      "height": 0.18
+    },
+    "dimensions": [
+      1678,
+      1855
+    ],
+    "format": "image/jpeg",
+    "raw_image_bytes": 21701881,
+    "final_encoded_bytes": 386559,
+    "below_configured_limit": true,
+    "reason_selected": "Bottom-right sheet region contains the visible Doors and Windows Opening Schedule in the overview grid; crop is rotated 90 degrees for readable diagnostic extraction."
+  }
+}

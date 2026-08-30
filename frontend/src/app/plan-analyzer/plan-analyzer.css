@@ -7,7 +7,7 @@
  * (see tailwind.config.js), so this reuses the existing theme rather than
  * introducing a second one.
  */
-@tailwind utilities;
+@import "tailwindcss/utilities" layer(utilities);
 
 .plan-analyzer-scope .input-premium {
   background: var(--eco-mid);
