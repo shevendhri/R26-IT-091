@@ -90,6 +90,24 @@ app.add_middleware(
     allow_origin_regex=r".*",
 )
 
+# FireGuard is maintained as its own backend module. Reuse its existing
+# route handlers without changing the deterministic ICTAD rule engine.
+try:
+    from backend.fire.main import app as fireguard_app
+
+    existing_routes = {
+        (route.path, tuple(sorted(getattr(route, "methods", []) or [])))
+        for route in app.router.routes
+    }
+    for route in fireguard_app.router.routes:
+        route_key = (route.path, tuple(sorted(getattr(route, "methods", []) or [])))
+        if route.path.startswith("/api/fireguard") or route.path == "/health":
+            if route_key not in existing_routes:
+                app.router.routes.append(route)
+                existing_routes.add(route_key)
+except Exception as e:
+    print(f"[app] WARNING: FireGuard routes were not registered: {e}")
+
 # CSV Material List Endpoint
 @app.get("/api/materials")
 def get_materials():
