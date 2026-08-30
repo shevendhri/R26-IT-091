@@ -7,6 +7,7 @@
  * (see tailwind.config.js), so this reuses the existing theme rather than
  * introducing a second one.
  */
+@config "../../../tailwind.config.js";
 @import "tailwindcss/utilities" layer(utilities);
 
 .plan-analyzer-scope .input-premium {
