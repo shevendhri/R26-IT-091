@@ -277,7 +277,7 @@ def plot_learning_curve(model, X, y, model_name):
         cv=5,
         scoring='roc_auc',
         train_sizes=np.linspace(0.1, 1.0, 6),
-        n_jobs=-1,
+        n_jobs=1,
         random_state=RANDOM_STATE,
     )
 

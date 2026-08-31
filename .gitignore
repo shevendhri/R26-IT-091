@@ -1,4 +1,4 @@
-# ML model files (too large for GitHub)
+﻿# ML model files (too large for GitHub)
 # backend/ml/*.pkl
 # backend/ml/*.h5
 # backend/ml/*.pt
@@ -16,25 +16,58 @@ build/
 .venv/
 venv/
 env/
+*.pyc
 
 # Node
 node_modules/
 .next/
 out/
+dist/
+dist-ssr/
+*.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 
 # Environment
 .env
 .env.local
 .env.*.local
+*.env
+!.env.example
 
 # IDE
 .vscode/
 .idea/
+.vscode/*
+!.vscode/extensions.json
 
 # OS
 .DS_Store
 Thumbs.db
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
 
 # Scratch/debug
 scratch/
 *.log
+
+# Green Assessment runtime data
+backend/green_assessment/venv/
+backend/green_assessment/uploads/
+backend/green_assessment/extracted_text/
+backend/green_assessment/dataset_extracted_text/
+backend/green_assessment/dataset_exports/
+backend/green_assessment/demo_outputs/
+backend/green_assessment/ml_outputs/
+backend/green_assessment/green_assessment.db
+
+# Green Assessment trained models
+backend/green_assessment/models/
+*.safetensors
+model/venv/

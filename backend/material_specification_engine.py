@@ -1,10 +1,11 @@
-import os
+﻿import os
 import pickle
 import joblib
 import math
 import time
 import logging
 import copy
+from pathlib import Path
 from typing import Dict, List, Any, Tuple
 from database import get_all_materials, format_material, validate_canonical_component
 from blueprint_engine import blueprint_engine
@@ -18,9 +19,9 @@ from material_quantity_engine import MaterialQuantityEngine
 # Configure logger for debugging ML model interactions
 logger = logging.getLogger(__name__)
 if not logger.handlers:
-    scratch_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "scratch")
-    os.makedirs(scratch_dir, exist_ok=True)
-    handler = logging.FileHandler(os.path.join(scratch_dir, "ml_debug.log"))
+    log_path = Path(__file__).resolve().parent / "scratch" / "ml_debug.log"
+    log_path.parent.mkdir(parents=True, exist_ok=True)
+    handler = logging.FileHandler(log_path)
     formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
     handler.setFormatter(formatter)
     logger.addHandler(handler)
@@ -50,12 +51,12 @@ class MaterialSpecificationEngine:
         """Generate a professional material specification report.
 
         The function now:
-        • Measures computation time.
-        • Provides realistic ML scores (fallback uses sustainability & carbon).
-        • Returns detailed metadata (app version, environment, ML model, material registry).
-        • Adds `cost_per_unit_lkr` field and clarifies units.
-        • Supplies `recommendation_notes` explaining excluded materials.
-        • Highlights sustainability metrics in the summary.
+        â€¢ Measures computation time.
+        â€¢ Provides realistic ML scores (fallback uses sustainability & carbon).
+        â€¢ Returns detailed metadata (app version, environment, ML model, material registry).
+        â€¢ Adds `cost_per_unit_lkr` field and clarifies units.
+        â€¢ Supplies `recommendation_notes` explaining excluded materials.
+        â€¢ Highlights sustainability metrics in the summary.
         """
         start_time = time.time()  # start timing
         # 1. Parse building info and preferences
@@ -248,7 +249,7 @@ class MaterialSpecificationEngine:
                 exclusions: List[str] = []
 
                 for mat in mats:
-                    # ── TASK 1: Use constraint_engine as single source of truth ──
+                    # â”€â”€ TASK 1: Use constraint_engine as single source of truth â”€â”€
                     from backend.engines.constraint_engine import evaluate_constraints
                     try:
                         profile_obj = UserProfile(**{
@@ -272,7 +273,7 @@ class MaterialSpecificationEngine:
                     reasons = eval_res["rejection_reasons"]
                     veto = eval_res["veto"]
 
-                    # ── Package-specific sustainability/climate weight boost ──
+                    # â”€â”€ Package-specific sustainability/climate weight boost â”€â”€
                     if not veto:
                         s_rating = float(mat.get("Sustainability_Rating", 50))
                         carbon = float(mat.get("Embodied_Carbon", 0.5))
@@ -401,7 +402,7 @@ class MaterialSpecificationEngine:
             "recommendation_notes": recommendation_notes,
             "packages": packages_data,
             "blueprint": blueprint,
-            "formula": "Final Score = 0.75 × Engineering (Constraint Engine) + 0.25 × ML",
+            "formula": "Final Score = 0.75 Ã— Engineering (Constraint Engine) + 0.25 Ã— ML",
             "disclaimer": "GreenConstructAI provides preliminary decision support and does not replace detailed structural design, architectural approval, quantity surveying, or professional engineering certification.",
             "future_roadmap": {
                 "description": "3D Material Visualization Pipeline via Planner5D Integration",
@@ -435,7 +436,7 @@ class MaterialSpecificationEngine:
         return max(10.0, min(100.0, enriched))
 
     def _get_ml_score(self, component: str, material_id: int, ml_probs: List[Any], ml_classes: List[Any], mat: Dict[str, Any]) -> float:
-        """Map component to model output index and return probability × 100.
+        """Map component to model output index and return probability Ã— 100.
         If model inference fails, a heuristic based on sustainability rating and carbon footprint is used.
         """
         target_idx = {
@@ -473,10 +474,10 @@ class MaterialSpecificationEngine:
     def _resolve_qty_details(self, component: str, name: str, quantities: Dict[str, float]) -> Tuple[float, str, str]:
         """Resolves specific quantity, unit, and piece counts based on material choice."""
         if component == "Foundation Materials":
-            return quantities["foundation_volume"], "m³", f"Soil volume: {quantities['foundation_volume'] * 1.25:.1f} m³ (bulking factored)"
+            return quantities["foundation_volume"], "mÂ³", f"Soil volume: {quantities['foundation_volume'] * 1.25:.1f} mÂ³ (bulking factored)"
         
         elif component == "Concrete":
-            return quantities["concrete_volume"], "m³", f"Ready-mix delivery: {math.ceil(quantities['concrete_volume'] / 6.0)} truck(s) (6m³ capacity)"
+            return quantities["concrete_volume"], "mÂ³", f"Ready-mix delivery: {math.ceil(quantities['concrete_volume'] / 6.0)} truck(s) (6mÂ³ capacity)"
         
         elif component == "Reinforcement Steel":
             return quantities["steel_tonnage"], "Tons", f"Standard 12m rebars: ~{int(quantities['steel_tonnage'] * 80)} nos (weighted average)"
@@ -484,35 +485,36 @@ class MaterialSpecificationEngine:
         elif component == "Walls":
             net_area = quantities["net_wall_area"]
             count = MaterialQuantityEngine.calculate_block_count(name, net_area)
-            return net_area, "m²", f"Masonry units: {count:,} blocks/bricks required"
+            return net_area, "mÂ²", f"Masonry units: {count:,} blocks/bricks required"
         
         elif component == "Roofing":
             area = quantities["roof_area"]
             count = MaterialQuantityEngine.calculate_roof_count(name, area)
-            return area, "m²", f"Roofing units: {count:,} tiles/sheets required"
+            return area, "mÂ²", f"Roofing units: {count:,} tiles/sheets required"
         
         elif component == "Windows":
-            return quantities["window_area"], "m²", f"Standard frame size (1.2m × 1.2m): ~{max(1, int(quantities['window_area'] / 1.44))} opening(s)"
+            return quantities["window_area"], "mÂ²", f"Standard frame size (1.2m Ã— 1.2m): ~{max(1, int(quantities['window_area'] / 1.44))} opening(s)"
         
         elif component == "Doors":
             return float(quantities["door_count"]), "Nos", f"Door leaves + frames: {quantities['door_count']} sets"
         
         elif component == "Flooring":
-            return quantities["floor_finish_area"], "m²", f"Tile coverage (600×600): ~{int(quantities['floor_finish_area'] * 3.1)} tiles (incl. 10% wastage)"
+            return quantities["floor_finish_area"], "mÂ²", f"Tile coverage (600Ã—600): ~{int(quantities['floor_finish_area'] * 3.1)} tiles (incl. 10% wastage)"
         
         elif component == "Ceiling Systems":
-            return quantities["ceiling_area"], "m²", f"Ceiling panels (1.2m × 0.6m): ~{int(quantities['ceiling_area'] / 0.72)} sheets"
+            return quantities["ceiling_area"], "mÂ²", f"Ceiling panels (1.2m Ã— 0.6m): ~{int(quantities['ceiling_area'] / 0.72)} sheets"
         
         elif component == "Waterproofing":
-            return quantities["waterproofing_area"], "m²", f"Liquid coverage (2 coats): ~{math.ceil(quantities['waterproofing_area'] / 4.0)} buckets (20L cap.)"
+            return quantities["waterproofing_area"], "mÂ²", f"Liquid coverage (2 coats): ~{math.ceil(quantities['waterproofing_area'] / 4.0)} buckets (20L cap.)"
         
         elif component == "Surface Finishes":
             # Paint area = all walls (interior) + ceiling
             paint_area = quantities.get("net_wall_area", 0) + quantities.get("ceiling_area", 0)
-            litres = math.ceil(paint_area / 8.0 * 2)  # 8m²/L, 2 coats
-            return paint_area, "m²", f"Paint requirement: ~{litres} litres (2 finish coats + 1 primer coat)"
+            litres = math.ceil(paint_area / 8.0 * 2)  # 8mÂ²/L, 2 coats
+            return paint_area, "mÂ²", f"Paint requirement: ~{litres} litres (2 finish coats + 1 primer coat)"
         
         return 1.0, "units", "Standard specs apply."
 
 
 material_specification_engine = MaterialSpecificationEngine()
+
