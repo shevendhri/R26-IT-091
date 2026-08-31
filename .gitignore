@@ -70,3 +70,4 @@ backend/green_assessment/green_assessment.db
 # Green Assessment trained models
 backend/green_assessment/models/
 *.safetensors
+model/venv/

@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from 'react';
+﻿import { useRef, useState, useEffect } from 'react';
 
 export default function FloorUploadCard({ floor, index, onLabelChange, onResult, onRemove }) {
   const [loading, setLoading] = useState(false);
@@ -7,7 +7,7 @@ export default function FloorUploadCard({ floor, index, onLabelChange, onResult,
   const [preview, setPreview] = useState(null);
   const inputRef = useRef();
 
-  // PNG/JPG → object URL preview; PDF → show PDF icon
+  // PNG/JPG â†’ object URL preview; PDF â†’ show PDF icon
   useEffect(() => {
     if (!file) { setPreview(null); return; }
     if (file.type === 'application/pdf') {
@@ -29,7 +29,7 @@ export default function FloorUploadCard({ floor, index, onLabelChange, onResult,
       form.append(isSvg ? 'svg' : 'png', file);   // backend accepts 'svg' field for SVG, 'png' for PNG/JPG/PDF
 
       // Hit the backend directly rather than through Next's dev-server rewrite
-      // proxy — the Gemini vision call plus YOLO inference can take well over
+      // proxy â€” the Gemini vision call plus YOLO inference can take well over
       // Next's proxy timeout, which resets the connection ("socket hang up")
       // even though the backend and model service both finish successfully.
       const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
@@ -64,7 +64,7 @@ export default function FloorUploadCard({ floor, index, onLabelChange, onResult,
           placeholder="Floor name"
         />
         {index > 0 && (
-          <button onClick={() => onRemove(index)} className="text-ink-muted hover:text-brand-red text-lg leading-none transition-colors">✕</button>
+          <button onClick={() => onRemove(index)} className="text-ink-muted hover:text-brand-red text-lg leading-none transition-colors">âœ•</button>
         )}
       </div>
 
@@ -76,10 +76,10 @@ export default function FloorUploadCard({ floor, index, onLabelChange, onResult,
       )}
       {preview === 'pdf' && (
         <div className="mb-3 rounded-inner border border-eco-border bg-eco-mid/30 flex items-center gap-3 px-4 py-3">
-          <span className="text-3xl">📄</span>
+          <span className="text-3xl">ðŸ“„</span>
           <div>
             <p className="text-sm font-medium text-ink-secondary truncate max-w-[200px]">{file.name}</p>
-            <p className="text-xs text-ink-muted">PDF — page 1 will be analysed</p>
+            <p className="text-xs text-ink-muted">PDF â€” page 1 will be analysed</p>
           </div>
         </div>
       )}
@@ -103,9 +103,9 @@ export default function FloorUploadCard({ floor, index, onLabelChange, onResult,
         {loading ? (
           <span className="flex items-center justify-center gap-2">
             <span className="w-4 h-4 border-2 border-white/40 border-t-white rounded-full animate-spin" />
-            Analyzing…
+            Analyzingâ€¦
           </span>
-        ) : done ? '✓ Re-analyze' : 'Analyze Floor Plan'}
+        ) : done ? 'âœ“ Re-analyze' : 'Analyze Floor Plan'}
       </button>
     </div>
   );
@@ -141,16 +141,16 @@ function FileDropZone({ file, inputRef, onChange }) {
         />
         {file ? (
           <span className="flex items-center justify-center gap-2 text-sm text-ink-secondary">
-            <span className="text-brand-green">✓</span>
+            <span className="text-brand-green">âœ“</span>
             <span className="truncate max-w-xs">{file.name}</span>
             <button
               className="text-ink-muted hover:text-brand-red text-xs ml-1"
               onClick={e => { e.stopPropagation(); onChange(null); }}
-            >✕</button>
+            >âœ•</button>
           </span>
         ) : (
           <div>
-            <p className="text-2xl mb-1">🖼️</p>
+            <p className="text-2xl mb-1">ðŸ–¼ï¸</p>
             <p className="text-sm text-ink-secondary">Click or drag PNG / JPG / PDF / SVG here</p>
           </div>
         )}
@@ -158,3 +158,7 @@ function FileDropZone({ file, inputRef, onChange }) {
     </div>
   );
 }
+
+
+
+

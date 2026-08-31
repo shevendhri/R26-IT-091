@@ -1,15 +1,20 @@
-const axios = require('axios');
+﻿const axios = require('axios');
 const FormData = require('form-data');
 const sharp = require('sharp');
+const mongoose = require('mongoose');
 const Analysis = require('../models/Analysis');
 
-const MODEL_SERVICE_URL = process.env.MODEL_SERVICE_URL || 'http://localhost:8010';
+const MODEL_SERVICE_URL = process.env.MODEL_SERVICE_URL || 'http://127.0.0.1:8081';
+
+function isMongoConnected() {
+    return mongoose.connection.readyState === 1;
+}
 
 async function pdfToPngBuffer(pdfBuffer) {
-    // Convert first page of a PDF to PNG using pdf2pic
+    // Convert the first page of a PDF to PNG using pdf2pic.
     const { fromBuffer } = require('pdf2pic');
     const converter = fromBuffer(pdfBuffer, {
-        density: 200,        // DPI — higher = better quality for floor plans
+        density: 200,
         format: 'png',
         width: 2000,
         height: 2000,
@@ -27,7 +32,7 @@ async function svgToPngBuffer(svgBuffer) {
 exports.analyzePlan = async (req, res) => {
     try {
         const { files } = req;
-        // Accept field names: svg, png, image (legacy)
+        // Accept field names: svg, png, image (legacy).
         if (!files || (!files.svg && !files.png && !files.image)) {
             return res.status(400).json({ error: 'A floor plan image (PNG, JPG, PDF, or SVG) is required.' });
         }
@@ -40,7 +45,7 @@ exports.analyzePlan = async (req, res) => {
         const isSvg = !!files.svg || imageName.toLowerCase().endsWith('.svg') ||
                       imageFile.mimetype === 'image/svg+xml';
 
-        // Convert PDF page 1 → PNG buffer
+        // Convert PDF page 1 to a PNG buffer.
         if (isPdf) {
             try {
                 imageBuffer = await pdfToPngBuffer(imageBuffer);
@@ -54,10 +59,8 @@ exports.analyzePlan = async (req, res) => {
             }
         }
 
-        // Every upload — SVG, PNG, JPEG/JPG, or a PDF already converted above —
-        // goes through real YOLO detection on the pixels. An SVG is rasterized
-        // first (sharp/librsvg, which also neutralizes any embedded scripts);
-        // nothing reads pre-existing vector labels out of it anymore.
+        // Every upload - SVG, PNG, JPEG/JPG, or a PDF converted above - goes
+        // through real YOLO detection on the pixels.
         if (isSvg) {
             const rawSvgBuffer = imageFile.buffer;
             const text = rawSvgBuffer.slice(0, 200).toString('utf8').trimStart();
@@ -84,9 +87,9 @@ exports.analyzePlan = async (req, res) => {
             maxBodyLength: Infinity,
         });
         const result = response.data;
-        const mode = isSvg ? 'svg' : 'yolo';  // records the original file type, not the analysis method — both use YOLO now
+        const mode = isSvg ? 'svg' : 'yolo';
 
-        // Map per-room data from ML response
+        // Map per-room data from ML response.
         const rooms = (result.rooms || []).map((r, i) => ({
             name:        r.name      || `Room ${i + 1}`,
             type:        r.type      || 'other',
@@ -98,8 +101,7 @@ exports.analyzePlan = async (req, res) => {
             compliance:  r.compliance || undefined,
         }));
 
-        // Save to MongoDB
-        const analysis = new Analysis({
+        const analysisPayload = {
             fileName:         imageName,
             mode,
             counts:           result.counts || {},
@@ -108,13 +110,25 @@ exports.analyzePlan = async (req, res) => {
             lowConfidence:    result.low_confidence || false,
             compliance:       result.compliance || undefined,
             approvalChecklist: result.approval_checklist || undefined,
-        });
+        };
 
-        await analysis.save();
+        if (isMongoConnected()) {
+            const analysis = new Analysis(analysisPayload);
+            await analysis.save();
 
-        res.status(201).json({
-            message: 'Analysis completed and saved',
-            data:    analysis,
+            return res.status(201).json({
+                message: 'Analysis completed and saved',
+                data:    analysis,
+                overlay: result.overlay,
+                rooms,
+                compliance: result.compliance,
+                approvalChecklist: result.approval_checklist,
+            });
+        }
+
+        return res.status(200).json({
+            message: 'Analysis completed',
+            data: analysisPayload,
             overlay: result.overlay,
             rooms,
             compliance: result.compliance,
@@ -129,6 +143,10 @@ exports.analyzePlan = async (req, res) => {
 
 exports.getHistory = async (req, res) => {
     try {
+        if (!isMongoConnected()) {
+            return res.json([]);
+        }
+
         const history = await Analysis.find().sort({ createdAt: -1 });
         res.json(history);
     } catch (error) {
