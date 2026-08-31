@@ -80,3 +80,21 @@ export async function rerunWithUserConfirmations(projectSchema, confirmations) {
   }
   return response.json();
 }
+
+export async function analyzeFirePlan(files) {
+  const form = new FormData();
+  appendFiles(form, { files });
+  const response = await fetch(`${API_URL}/api/fireguard/model/analyze`, { method: 'POST', body: form });
+  if (!response.ok) throw new Error((await response.json().catch(() => ({}))).detail || 'Fire plan analysis failed.');
+  return response.json();
+}
+
+export async function runFireGuardAssessment(buildingData, modelResult, files) {
+  const documents = files.map((file) => ({ filename: file.name, media_type: file.mediaType, page_count: 1 }));
+  const response = await fetch(`${API_URL}/api/fireguard/assessment`, {
+    method: 'POST', headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ building_data: buildingData, model_result: modelResult, documents }),
+  });
+  if (!response.ok) throw new Error((await response.json().catch(() => ({}))).detail || 'Fire-safety assessment failed.');
+  return response.json();
+}

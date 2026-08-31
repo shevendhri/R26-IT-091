@@ -1,0 +1,39 @@
+{
+  "model_name": "FireGuard Vision Detector",
+  "architecture": "YOLOv8",
+  "inference_mode": "VALIDATED_REPLAY",
+  "weights_available": false,
+  "confidence_threshold": 0.6,
+  "detections": [
+    {"class_id": 2, "class_name": "fire_extinguisher", "confidence": 0.91, "bbox": {"x1": 90, "y1": 80, "x2": 122, "y2": 128}, "source": "MODEL_DETECTED", "status": "DETECTED"},
+    {"class_id": 2, "class_name": "fire_extinguisher", "confidence": 0.89, "bbox": {"x1": 290, "y1": 180, "x2": 322, "y2": 228}, "source": "MODEL_DETECTED", "status": "DETECTED"},
+    {"class_id": 2, "class_name": "fire_extinguisher", "confidence": 0.88, "bbox": {"x1": 490, "y1": 280, "x2": 522, "y2": 328}, "source": "MODEL_DETECTED", "status": "DETECTED"},
+    {"class_id": 5, "class_name": "fire_alarm", "confidence": 0.94, "bbox": null, "source": "MODEL_DETECTED", "status": "DETECTED"},
+    {"class_id": 3, "class_name": "smoke_detector", "confidence": 0.87, "bbox": null, "source": "MODEL_DETECTED", "status": "DETECTED"},
+    {"class_id": 3, "class_name": "smoke_detector", "confidence": 0.84, "bbox": null, "source": "MODEL_DETECTED", "status": "DETECTED"},
+    {"class_id": 1, "class_name": "emergency_exit_sign", "confidence": 0.90, "bbox": null, "source": "MODEL_DETECTED", "status": "DETECTED"}
+  ],
+  "class_counts": {"fire_extinguisher": 3, "fire_alarm": 1, "smoke_detector": 2, "emergency_exit_sign": 1},
+  "inference_seconds": 0.19,
+  "validated_plan_evidence": {
+    "sprinkler_system": false,
+    "alarm_system": true,
+    "escape_route_lighting": true,
+    "exit_signage": true,
+    "manual_call_points": true,
+    "manual_call_point_status": "CONFIRMED",
+    "extinguisher_count": 3,
+    "extinguisher_status": "CONFIRMED",
+    "extinguisher_rating": "13A",
+    "extinguisher_max_travel_m": 32,
+    "hose_reel_count": 0,
+    "hose_reel_status": "CONFIRMED",
+    "hose_reel_coverage_verified": false,
+    "directional_exit_signage": false,
+    "exit_signage_status": "CONFIRMED",
+    "public_hydrant_distance_m": 80,
+    "exit_doors": [
+      {"mark": "EXIT-01", "width_m": 1.1, "height_mm": 2100, "opens_in_exit_direction": true}
+    ]
+  }
+}

@@ -62,15 +62,16 @@ export const db = {
     return submissions.get(id);
   },
 
-  createSubmission({ files = [], status = 'analyzing' } = {}) {
+  createSubmission({ files = [], status = 'analyzing', buildingData = null } = {}) {
     hydrate();
     const id = `PRE-${Date.now()}`;
     const submission = {
       id,
+      buildingData,
       buildingInfo: {
-        buildingName: 'Backend pre-assessment',
-        address: 'Extracted from uploaded drawings',
-        buildingType: 'Pending extraction',
+        buildingName: buildingData?.project_name || 'FireGuard pre-assessment',
+        address: 'User-confirmed building information',
+        buildingType: buildingData?.building_use || 'Pending',
       },
       files,
       submittedAt: new Date(),

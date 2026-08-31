@@ -1,0 +1,16 @@
+{
+  "model_name": "FireGuard Vision Detector",
+  "architecture": "YOLOv8",
+  "inference_mode": "VALIDATED_REPLAY",
+  "weights_available": false,
+  "confidence_threshold": 0.6,
+  "detections": [
+    {"class_id": 2, "class_name": "fire_extinguisher", "confidence": 0.91, "bbox": {"x1": 142.0, "y1": 88.0, "x2": 174.0, "y2": 136.0}, "source": "MODEL_DETECTED", "status": "DETECTED"},
+    {"class_id": 2, "class_name": "fire_extinguisher", "confidence": 0.87, "bbox": {"x1": 418.0, "y1": 203.0, "x2": 451.0, "y2": 251.0}, "source": "MODEL_DETECTED", "status": "DETECTED"},
+    {"class_id": 1, "class_name": "emergency_exit_sign", "confidence": 0.89, "bbox": {"x1": 506.0, "y1": 72.0, "x2": 579.0, "y2": 98.0}, "source": "MODEL_DETECTED", "status": "DETECTED"},
+    {"class_id": 3, "class_name": "smoke_detector", "confidence": 0.84, "bbox": {"x1": 225.0, "y1": 151.0, "x2": 244.0, "y2": 170.0}, "source": "MODEL_DETECTED", "status": "DETECTED"},
+    {"class_id": 7, "class_name": "staircase", "confidence": 0.82, "bbox": {"x1": 301.0, "y1": 244.0, "x2": 392.0, "y2": 332.0}, "source": "MODEL_DETECTED", "status": "DETECTED"}
+  ],
+  "class_counts": {"fire_extinguisher": 2, "emergency_exit_sign": 1, "smoke_detector": 1, "staircase": 1},
+  "inference_seconds": 0.18
+}
