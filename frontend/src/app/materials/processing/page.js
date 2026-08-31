@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import LoadingOverlay from '@/components/LoadingOverlay';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
@@ -24,9 +24,9 @@ export default function ProcessingPage() {
 
     const fetchRecommendations = async () => {
       try {
-        // Map MaterialContext fields → API request schema
+        // Map MaterialContext fields â†’ API request schema
         console.log('Payload:', {
-          // ── Core building parameters (existing — do not remove) ────────
+          // â”€â”€ Core building parameters (existing â€” do not remove) â”€â”€â”€â”€â”€â”€â”€â”€
           buildingType:            buildingInfo.building_type      || 'Residential',
           location:                 buildingInfo.location           || 'Colombo',
           floorCount:               parseInt(buildingInfo.floor_count)  || 2,
@@ -34,11 +34,11 @@ export default function ProcessingPage() {
           structuralSystem:         buildingInfo.structural_system  || 'Concrete Frame',
           sustainabilityPreference: preferences.sustainability_level || 'Medium',
           budgetLevel:              preferences.budget_tier          || 'Balanced',
-          // ── Project Requirements ... omitted for brevity ...
+          // â”€â”€ Project Requirements ... omitted for brevity ...
         });
         console.log('Payload object constructed');
         const payload = {
-          // ── Core building parameters (existing — do not remove) ────────
+          // â”€â”€ Core building parameters (existing â€” do not remove) â”€â”€â”€â”€â”€â”€â”€â”€
           buildingType:            buildingInfo.building_type      || 'Residential',
           location:                 buildingInfo.location           || 'Colombo',
           floorCount:               parseInt(buildingInfo.floor_count)  || 2,
@@ -47,7 +47,7 @@ export default function ProcessingPage() {
           sustainabilityPreference: preferences.sustainability_level || 'Medium',
           budgetLevel:              preferences.budget_tier          || 'Balanced',
 
-          // ── Project Requirements & Priorities (enrichment fields) ──────
+          // â”€â”€ Project Requirements & Priorities (enrichment fields) â”€â”€â”€â”€â”€â”€
           // These are passed as-is; current backend ignores unknown keys.
           // Future recommendation models can consume them without UI changes.
           architectural_style:      projectPreferences?.architectural_style       || 'Modern',
@@ -62,11 +62,11 @@ export default function ProcessingPage() {
           maintenance_tolerance:    projectPreferences?.maintenance_tolerance     || 'Medium',
           aesthetic_importance:     projectPreferences?.aesthetic_importance      ?? 5,
 
-          // ── New Dynamic Requirements Fields ──
+          // â”€â”€ New Dynamic Requirements Fields â”€â”€
           buildingRequirements:     buildingRequirements                          || {},
         };
 
-        const apiBase = process.env.NEXT_PUBLIC_API_BASE ?? (typeof window !== 'undefined' && window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1' ? '' : 'http://localhost:5000');
+        const apiBase = process.env.NEXT_PUBLIC_API_BASE ?? (typeof window !== 'undefined' && window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1' ? '' : 'http://127.0.0.1:8000');
     const res = await fetch(`${apiBase}/api/recommendations/generate`, {
           method:  'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -120,3 +120,4 @@ export default function ProcessingPage() {
 
   return <LoadingOverlay step={loadingStep} />;
 }
+
