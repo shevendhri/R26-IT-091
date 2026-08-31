@@ -21,6 +21,9 @@ from .rules.applicability import purpose_group_for_project
 from .rules.models import RuleStatus,Severity
 from .schemas import Document, FireEquipment
 from .schemas import ProjectSchema
+from .ml.model_schema import ModelInferenceResult
+from .ml.model_service import FireGuardModelService
+from .model_evidence import build_fireguard_project_schema
 
 logger=logging.getLogger("fireguard")
 settings=get_settings()
@@ -87,6 +90,27 @@ MISSING_EVIDENCE_FIELD_MAP={
 class UserConfirmationPayload(BaseModel):
     project_schema: ProjectSchema
     confirmations: dict[str,str|int|float|bool|None] = Field(default_factory=dict)
+
+class FireGuardBuildingData(BaseModel):
+    project_name: str
+    building_use: str
+    purpose_group: str
+    storey_count: int = Field(ge=1)
+    highest_habitable_floor_level_m: float = Field(ge=0)
+    building_height_m: float = Field(ge=0)
+    total_floor_area_m2: float = Field(gt=0)
+    independent_exit_count: int = Field(ge=0)
+    escape_arrangement: str
+    travel_distance_m: float = Field(ge=0)
+    corridor_width_m: float = Field(gt=0)
+    staircase_count: int = Field(ge=0)
+    stair_width_m: float = Field(gt=0)
+    protected_stair: bool
+
+class FireGuardAssessmentPayload(BaseModel):
+    building_data: FireGuardBuildingData
+    model_result: ModelInferenceResult
+    documents: list[Document] = Field(default_factory=list)
 
 def _git_commit() -> str | None:
     cwd=os.getcwd()
@@ -527,6 +551,24 @@ async def panel_manual(files:list[UploadFile]|None=File(default=None)):
     documents=await _documents_from_uploads(files)
     project=manual_project(documents)
     return panel_review_response(project,source="manual_assessment",required_fields=[],include_all_fields=True)
+
+@app.post("/api/fireguard/model/analyze")
+async def analyze_fireguard_model(files:list[UploadFile]=File(...), replay: bool=True):
+    if not files:
+        raise HTTPException(400,"At least one fire-safety plan is required")
+    data=await files[0].read()
+    service=FireGuardModelService()
+    result=service.analyze(data,allow_replay=replay)
+    return {"model_result":result.model_dump(mode="json"),"model_metrics":service.metrics()}
+
+@app.post("/api/fireguard/assessment")
+async def run_fireguard_assessment(payload: FireGuardAssessmentPayload):
+    project=build_fireguard_project_schema(payload.building_data.model_dump(mode="json"),payload.model_result,payload.documents)
+    # Compliance is evaluated separately by the deterministic ICTAD engine
+    results=evaluate_project(project)
+    response=_assessment_response(project,results,source="user_and_model_evidence")
+    response["model_result"]=payload.model_result.model_dump(mode="json")
+    return response
 
 @app.post("/api/fireguard/analyze")
 async def analyze(files:list[UploadFile]=File(...), experimental: bool=False):

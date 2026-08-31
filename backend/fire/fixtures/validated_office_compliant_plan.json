@@ -1,0 +1,43 @@
+{
+  "model_name": "FireGuard Vision Detector",
+  "architecture": "YOLOv8",
+  "inference_mode": "VALIDATED_REPLAY",
+  "weights_available": false,
+  "confidence_threshold": 0.6,
+  "detections": [
+    {"class_id": 2, "class_name": "fire_extinguisher", "confidence": 0.93, "bbox": null, "source": "MODEL_DETECTED", "status": "DETECTED"},
+    {"class_id": 2, "class_name": "fire_extinguisher", "confidence": 0.92, "bbox": null, "source": "MODEL_DETECTED", "status": "DETECTED"},
+    {"class_id": 2, "class_name": "fire_extinguisher", "confidence": 0.91, "bbox": null, "source": "MODEL_DETECTED", "status": "DETECTED"},
+    {"class_id": 2, "class_name": "fire_extinguisher", "confidence": 0.90, "bbox": null, "source": "MODEL_DETECTED", "status": "DETECTED"},
+    {"class_id": 9, "class_name": "hose_reel", "confidence": 0.92, "bbox": null, "source": "MODEL_DETECTED", "status": "DETECTED"},
+    {"class_id": 9, "class_name": "hose_reel", "confidence": 0.91, "bbox": null, "source": "MODEL_DETECTED", "status": "DETECTED"},
+    {"class_id": 9, "class_name": "hose_reel", "confidence": 0.90, "bbox": null, "source": "MODEL_DETECTED", "status": "DETECTED"},
+    {"class_id": 9, "class_name": "hose_reel", "confidence": 0.89, "bbox": null, "source": "MODEL_DETECTED", "status": "DETECTED"},
+    {"class_id": 5, "class_name": "fire_alarm", "confidence": 0.94, "bbox": null, "source": "MODEL_DETECTED", "status": "DETECTED"},
+    {"class_id": 1, "class_name": "emergency_exit_sign", "confidence": 0.92, "bbox": null, "source": "MODEL_DETECTED", "status": "DETECTED"}
+  ],
+  "class_counts": {"fire_extinguisher": 4, "hose_reel": 4, "fire_alarm": 1, "emergency_exit_sign": 1},
+  "inference_seconds": 0.19,
+  "validated_plan_evidence": {
+    "sprinkler_system": false,
+    "alarm_system": true,
+    "escape_route_lighting": true,
+    "exit_signage": true,
+    "manual_call_points": true,
+    "manual_call_point_status": "CONFIRMED",
+    "extinguisher_count": 4,
+    "extinguisher_status": "CONFIRMED",
+    "extinguisher_rating": "13A",
+    "extinguisher_max_travel_m": 28,
+    "hose_reel_count": 4,
+    "hose_reel_status": "CONFIRMED",
+    "hose_reel_coverage_verified": true,
+    "directional_exit_signage": true,
+    "exit_signage_status": "CONFIRMED",
+    "public_hydrant_distance_m": 80,
+    "exit_doors": [
+      {"mark": "EXIT-01", "width_m": 1.1, "height_mm": 2100, "opens_in_exit_direction": true},
+      {"mark": "EXIT-02", "width_m": 1.1, "height_mm": 2100, "opens_in_exit_direction": true}
+    ]
+  }
+}

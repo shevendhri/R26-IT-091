@@ -750,3 +750,20 @@
     flex-direction: column;
   }
 }
+
+.resultsContainer { width: 100%; max-width: 1160px; margin: 0 auto; display: flex; flex-direction: column; gap: 1.5rem; }
+.processingCard { min-height: 360px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2rem; }
+.processingStages { width: min(100%, 520px); display: grid; gap: 1rem; }
+.processingStage { display: flex; align-items: center; gap: 0.8rem; min-height: 28px; }
+.resultsSummaryGrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.violationCard { padding: 1.75rem; min-height: 360px; }
+.violationHeading { display: flex; align-items: center; gap: 1rem; padding-bottom: 1.25rem; border-bottom: 1px solid rgba(176, 32, 22, 0.14); }
+.violationTitle { color: #18251f; font-family: Space Grotesk, sans-serif; font-size: clamp(1.15rem, 2vw, 1.45rem); font-weight: 800; line-height: 1.3; margin-top: 0.25rem; }
+.violationContent { display: grid; grid-template-columns: minmax(0, 1fr) minmax(320px, 0.9fr); gap: 1.5rem; margin-top: 1.5rem; }
+.violationProblem { color: #35473d; font-size: 1rem; line-height: 1.7; margin-top: 0.5rem; }
+.conditionValue { color: #18251f; font-family: Space Grotesk, sans-serif; font-size: 1.2rem; font-weight: 800; line-height: 1.4; margin-top: 0.35rem; }
+.recommendationPanel { background: #edf7f0; border: 1px solid rgba(30, 84, 56, 0.22); border-radius: 12px; color: #294437; font-size: 0.95rem; line-height: 1.7; padding: 1.25rem; }
+.recommendationHeading { display: flex; align-items: center; gap: 0.65rem; color: var(--primary-green); font-family: Space Grotesk, sans-serif; font-weight: 800; margin-bottom: 0.75rem; }
+.regulationLine { border-top: 1px solid rgba(30, 84, 56, 0.15); margin-top: 1rem; padding-top: 0.85rem; }
+.noViolationCard { min-height: 220px; display: flex; flex-direction: column; justify-content: center; padding: 2rem; }
+@media (max-width: 760px) { .resultsSummaryGrid, .violationContent { grid-template-columns: 1fr; } .violationCard { min-height: 0; padding: 1.25rem; } }

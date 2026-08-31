@@ -1,0 +1,16 @@
+{
+  "project_name": "FireGuard Compliant Demo School",
+  "building_use": "School",
+  "purpose_group": "2(a)",
+  "storey_count": 2,
+  "highest_habitable_floor_level_m": 9,
+  "building_height_m": 12,
+  "total_floor_area_m2": 500,
+  "independent_exit_count": 2,
+  "escape_arrangement": "TWO_WAY",
+  "travel_distance_m": 35,
+  "corridor_width_m": 1.2,
+  "staircase_count": 2,
+  "stair_width_m": 1.2,
+  "protected_stair": true
+}
