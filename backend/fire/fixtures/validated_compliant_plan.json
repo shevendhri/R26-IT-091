@@ -12,9 +12,10 @@
     {"class_id": 9, "class_name": "hose_reel", "confidence": 0.92, "bbox": {"x1": 150, "y1": 110, "x2": 192, "y2": 155}, "source": "MODEL_DETECTED", "status": "DETECTED"},
     {"class_id": 9, "class_name": "hose_reel", "confidence": 0.90, "bbox": {"x1": 150, "y1": 310, "x2": 192, "y2": 355}, "source": "MODEL_DETECTED", "status": "DETECTED"},
     {"class_id": 5, "class_name": "fire_alarm", "confidence": 0.94, "bbox": null, "source": "MODEL_DETECTED", "status": "DETECTED"},
-    {"class_id": 1, "class_name": "emergency_exit_sign", "confidence": 0.91, "bbox": null, "source": "MODEL_DETECTED", "status": "DETECTED"}
+    {"class_id": 1, "class_name": "emergency_exit_sign", "confidence": 0.91, "bbox": null, "source": "MODEL_DETECTED", "status": "DETECTED"},
+    {"class_id": 7, "class_name": "staircase", "confidence": 0.88, "bbox": {"x1": 220, "y1": 180, "x2": 300, "y2": 270}, "source": "MODEL_DETECTED", "status": "DETECTED"}
   ],
-  "class_counts": {"fire_extinguisher": 4, "hose_reel": 2, "fire_alarm": 1, "emergency_exit_sign": 1},
+  "class_counts": {"fire_extinguisher": 4, "hose_reel": 2, "fire_alarm": 1, "emergency_exit_sign": 1, "staircase": 1},
   "inference_seconds": 0.18,
   "validated_plan_evidence": {
     "sprinkler_system": false,

@@ -95,6 +95,15 @@ export async function runFireGuardAssessment(buildingData, modelResult, files) {
     method: 'POST', headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ building_data: buildingData, model_result: modelResult, documents }),
   });
-  if (!response.ok) throw new Error((await response.json().catch(() => ({}))).detail || 'Fire-safety assessment failed.');
+  if (!response.ok) {
+    const payload = await response.json().catch(() => ({}));
+    const detail = Array.isArray(payload.detail)
+      ? payload.detail.map((item) => {
+          const field = (item.loc || []).filter((part) => part !== 'body').join(' → ');
+          return `${field || 'Assessment data'}: ${item.msg}`;
+        }).join('. ')
+      : payload.detail;
+    throw new Error(detail || 'Fire-safety assessment failed.');
+  }
   return response.json();
 }

@@ -13,23 +13,35 @@ const INITIAL={project_name:'',building_use:'',purpose_group:'',storey_count:'',
 const PURPOSES=['1(a)','1(b)','1(c)','2(a)','2(b)','3','4','5','6','7(a)','7(b)'];
 const FIELDS=[['project_name','Project / Building Name','text'],['building_use','Building Use','text'],['storey_count','Number of Storeys','number'],['highest_habitable_floor_level_m','Highest Habitable Floor Level (m)','number'],['building_height_m','Building Height (m)','number'],['total_floor_area_m2','Total Floor Area (m²)','number'],['independent_exit_count','Independent Exits','number'],['travel_distance_m','Maximum Travel Distance (m)','number'],['corridor_width_m','Corridor Width (m)','number'],['staircase_count','Number of Staircases','number'],['stair_width_m','Minimum Stair Width (m)','number']];
 const PROCESSING_STAGES=['Building information prepared','Analyzing submitted fire plan','Normalizing fire-safety evidence','Evaluating ICTAD requirements'];
+const POSITIVE_FIELDS=['storey_count','total_floor_area_m2','corridor_width_m','stair_width_m'];
 
 export default function NewSubmissionPage(){
  const router=useRouter();
  const [step,setStep]=useState(1); const [stage,setStage]=useState(0); const [form,setForm]=useState(INITIAL); const [files,setFiles]=useState([]); const [busy,setBusy]=useState(false);
  const update=(event)=>setForm((current)=>({...current,[event.target.name]:event.target.value}));
  const {getRootProps,getInputProps,isDragActive}=useDropzone({onDrop:(accepted)=>setFiles(accepted.map((rawFile)=>({id:`${rawFile.name}-${rawFile.lastModified}`,name:rawFile.name,size:rawFile.size,mediaType:rawFile.type||'application/octet-stream',rawFile}))),accept:{'application/pdf':['.pdf'],'image/*':['.png','.jpg','.jpeg']},maxSize:25*1024*1024});
- const normalized=()=>Object.fromEntries(Object.entries(form).map(([key,value])=>[key,key==='protected_stair'?value==='true':FIELDS.some(([field,,type])=>field===key&&type==='number')?Number(value):value]));
+ const normalized=()=>Object.fromEntries(Object.entries(form).map(([key,value])=>[key,key==='protected_stair'?value==='true':FIELDS.some(([field,,type])=>field===key&&type==='number')?Number(value):typeof value==='string'?value.trim():value]));
+ const validateBuildingData=(data)=>{
+  const invalidNumber=FIELDS.find(([field,,type])=>type==='number'&&!Number.isFinite(data[field]));
+  if(invalidNumber)return `${invalidNumber[1]} must be a valid number.`;
+  const invalidPositive=POSITIVE_FIELDS.find((field)=>data[field]<=0);
+  if(invalidPositive)return `${FIELDS.find(([field])=>field===invalidPositive)?.[1]||invalidPositive} must be greater than zero.`;
+  if(!data.project_name||!data.building_use||!data.purpose_group)return 'Complete the project name, building use, and purpose group.';
+  return null;
+ };
  const analyze=async()=>{
-  if(!files.length)return toast.error('Upload a fire-safety plan first.');
+ if(!files.length)return toast.error('Upload a fire-safety plan first.');
+  const buildingData=normalized();
+  const validationError=validateBuildingData(buildingData);
+  if(validationError)return toast.error(validationError);
   setBusy(true); setStep(3); setStage(1);
-  const submission=db.createSubmission({files,buildingData:normalized(),status:'analyzing'});
+  const submission=db.createSubmission({files,buildingData,status:'analyzing'});
   try{
    const evidence=await analyzeFirePlan(files);
    setStage(2);
    await new Promise((resolve)=>setTimeout(resolve,350));
    setStage(3);
-   const results=await runFireGuardAssessment(normalized(),evidence.model_result,files);
+   const results=await runFireGuardAssessment(buildingData,evidence.model_result,files);
    db.updateSubmission(submission.id,{status:'complete',analysisResults:results});
    router.push(`/fire-safety/results/${submission.id}`);
   }catch(error){db.updateSubmission(submission.id,{status:'failed',analysisError:error.message});toast.error(error.message);setBusy(false);setStep(2);}

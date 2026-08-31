@@ -16,5 +16,5 @@ class FireGuardModelConfig:
     confidence_threshold: float = float(os.getenv("FIREGUARD_YOLO_CONFIDENCE", "0.60"))
     iou_threshold: float = float(os.getenv("FIREGUARD_YOLO_IOU", "0.45"))
     weights_path: Path = Path(os.getenv("FIREGUARD_YOLO_WEIGHTS", Path(__file__).parent / "weights" / "best.pt"))
-    replay_path: Path = Path(__file__).parents[1] / "fixtures" / "validated_office_violation_plan.json"
+    replay_path: Path = Path(__file__).parents[1] / "fixtures" / "validated_compliant_plan.json"
     metrics_path: Path = Path(__file__).parents[1] / "model_metrics" / "fireguard_metrics.json"
