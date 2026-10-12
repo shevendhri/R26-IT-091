@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import ModuleHeroBanner from "@/components/ui/ModuleHeroBanner";
 
 const workflowCards = [
   {
@@ -26,17 +27,20 @@ const workflowCards = [
 export default function GreenAssessmentPage() {
   return (
     <main className="page-shell">
-      <header className="page-header hero-panel">
-        <span className="module-kicker">03 Green Assessment</span>
-        <h1>Green Building Certification Pre-Assessment</h1>
-        <p className="lede">
-          UDA Blue Green Sri Lanka design-stage pre-assessment for uploaded building documents, evidence review, deterministic scoring, and recommendation support.
-        </p>
-        <div className="hero-actions">
-          <Link className="button primary" href="/green-assessment/projects">View Projects</Link>
-          <Link className="button" href="/green-assessment/projects/create">Create Project</Link>
-        </div>
-      </header>
+      <ModuleHeroBanner
+        track="02 / SUSTAINABILITY BENCHMARK"
+        kicker="GREENSL & UDA BLUE-GREEN CERTIFICATION"
+        title="GREEN BUILDING PRE-ASSESSMENT & SUSTAINABILITY AUDIT"
+        subtitle="UDA Blue Green Sri Lanka design-stage pre-assessment for uploaded building documents, evidence review, deterministic scoring, and recommendation support."
+        imageSrc="/green_architecture.jpg"
+        imageAlt="Green Building Architecture & Biophilic Design"
+        actions={
+          <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+            <Link className="button primary" href="/green-assessment/projects">View Projects</Link>
+            <Link className="button" href="/green-assessment/projects/create">Create Project</Link>
+          </div>
+        }
+      />
 
       <section className="card-grid three-column">
         {workflowCards.map((card) => (

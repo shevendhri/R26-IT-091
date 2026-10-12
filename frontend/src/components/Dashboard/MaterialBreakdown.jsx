@@ -57,22 +57,35 @@ export default function MaterialBreakdown({ data }) {
   }
 
   return (
-    <section style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.75rem', borderBottom: '1px solid #C8D3CA', paddingBottom: '0.85rem' }}>
+    <section style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem', borderBottom: '1px solid #E2DCD0', paddingBottom: '1.1rem' }}>
         <div>
-          <h2 style={{ fontSize: '1.35rem', fontWeight: 800, color: '#18251F', margin: 0, fontFamily: 'Space Grotesk' }}>
+          <h2 style={{ fontSize: '1.30rem', fontWeight: 800, color: '#143825', margin: 0, fontFamily: 'Outfit, Space Grotesk, sans-serif', textTransform: 'uppercase', letterSpacing: '-0.01em' }}>
             Primary Recommended Material Package
           </h2>
-          <p style={{ fontSize: '0.85rem', color: '#526158', margin: '0.25rem 0 0 0', fontWeight: 500 }}>
+          <p style={{ fontSize: '0.86rem', color: '#526158', margin: '0.35rem 0 0 0', fontWeight: 500, lineHeight: 1.5 }}>
             Engineered specifications selected by the Hybrid Recommendation Engine for Sri Lankan climate and SLS-referenced rule checks.
           </p>
         </div>
-        <span className="telemetry-badge telemetry-badge-success">
-          Rank #1 Specification Package
+        <span style={{
+          fontSize: '0.72rem',
+          fontWeight: 800,
+          padding: '6px 14px',
+          borderRadius: '4px',
+          background: '#EBF3ED',
+          border: '1px solid #D2E4D6',
+          color: '#143825',
+          textTransform: 'uppercase',
+          letterSpacing: '0.08em',
+          fontFamily: 'Space Grotesk, sans-serif',
+          whiteSpace: 'nowrap',
+          boxShadow: '0 1px 3px rgba(20, 56, 37, 0.04)',
+        }}>
+          ✓ Rank #1 Specification Package
         </span>
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(360px, 1fr))', gap: '1.4rem' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(360px, 1fr))', gap: '1.5rem' }}>
         {canonicalItems.map((item) => (
           <EngineeringCard key={item.key} label={item.label} material={item.material} />
         ))}

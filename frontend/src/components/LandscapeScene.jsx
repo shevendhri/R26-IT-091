@@ -297,22 +297,22 @@ export default function LandscapeScene({
           {/* Patio Table */}
           <mesh position={[0, 0.3, 0]} castShadow>
             <cylinderGeometry args={[0.42, 0.42, 0.04, 12]} />
-            <meshStandardMaterial color="#b45309" roughness={0.6} />
+            <meshStandardMaterial color="#6B4F3A" roughness={0.65} />
           </mesh>
           <mesh position={[0, 0.15, 0]} castShadow>
             <cylinderGeometry args={[0.025, 0.025, 0.3, 8]} />
-            <meshStandardMaterial color="#475569" />
+            <meshStandardMaterial color="#334155" metalness={0.7} roughness={0.35} />
           </mesh>
           {/* Chairs */}
           {[[-0.55, 0], [0.55, 0]].map((posVal, idx) => (
             <group key={idx} position={[posVal[0], 0, posVal[1]]}>
               <mesh position={[0, 0.18, 0]} castShadow>
                 <boxGeometry args={[0.3, 0.04, 0.3]} />
-                <meshStandardMaterial color="#7c2d12" roughness={0.7} />
+                <meshStandardMaterial color="#334155" roughness={0.7} />
               </mesh>
               <mesh position={[0.13 * (idx === 0 ? 1 : -1), 0.38, 0]} castShadow>
                 <boxGeometry args={[0.04, 0.36, 0.3]} />
-                <meshStandardMaterial color="#7c2d12" roughness={0.7} />
+                <meshStandardMaterial color="#334155" roughness={0.7} />
               </mesh>
             </group>
           ))}

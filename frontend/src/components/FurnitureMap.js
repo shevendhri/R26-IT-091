@@ -21,6 +21,12 @@ export const furnitureMap = {
   Cafeteria: ["dining_table", "dining_chairs", "kitchen_counter"],
   ServerRoom: ["storage_rack"],
 
+  // Educational
+  Classroom: ["whiteboard", "office_desk", "office_chair"],
+
+  // Healthcare
+  Healthcare: ["bed", "office_desk", "reception_desk"],
+
   // Industrial
   Warehouse: ["storage_rack", "storage_rack"],
   ProductionArea: ["office_desk", "storage_rack"],
@@ -42,10 +48,12 @@ export const getRoomTypeFromLabel = (label) => {
   if (lbl.includes("study")) return "Study";
   if (lbl.includes("gym") || lbl.includes("recreation") || lbl.includes("fitness")) return "Gym";
   if (lbl.includes("store") || lbl.includes("storage") || lbl.includes("utility") || lbl.includes("closet")) return "StoreRoom";
+  if (lbl.includes("classroom") || lbl.includes("lecture") || lbl.includes("training") || lbl.includes("teaching")) return "Classroom";
+  if (lbl.includes("health") || lbl.includes("clinic") || lbl.includes("ward") || lbl.includes("exam") || lbl.includes("medical") || lbl.includes("triage")) return "Healthcare";
   if (lbl.includes("reception") || lbl.includes("lobby") || lbl.includes("entrance")) return "Reception";
   if (lbl.includes("meeting") || lbl.includes("conference") || lbl.includes("board")) return "MeetingRoom";
   if (lbl.includes("warehouse")) return "Warehouse";
-  if (lbl.includes("production") || lbl.includes("factory") || lbl.includes("assembly")) return "ProductionArea";
+  if (lbl.includes("production") || lbl.includes("factory") || lbl.includes("assembly") || lbl.includes("workshop")) return "ProductionArea";
   if (lbl.includes("loading") || lbl.includes("dock") || lbl.includes("receiving")) return "LoadingDock";
   return null;
 };
@@ -83,7 +91,33 @@ export const isFurnitureAllowedForBuilding = (item, buildingType) => {
     ].includes(item);
   }
 
-  if (bType === "commercial" || bType === "educational" || bType === "healthcare" || bType === "hotel") {
+  if (bType === "educational") {
+    return [
+      "office_desk",
+      "office_chair",
+      "whiteboard",
+      "bookshelf",
+      "storage_rack",
+      "toilet",
+      "sink",
+      "plant"
+    ].includes(item);
+  }
+
+  if (bType === "healthcare") {
+    return [
+      "bed",
+      "office_desk",
+      "office_chair",
+      "reception_desk",
+      "storage_rack",
+      "toilet",
+      "sink",
+      "plant"
+    ].includes(item);
+  }
+
+  if (bType === "commercial" || bType === "hotel") {
     return [
       "sofa",
       "coffee_table",
@@ -105,6 +139,7 @@ export const isFurnitureAllowedForBuilding = (item, buildingType) => {
   }
 
   if (bType === "industrial") {
+    // Industrial buildings should NOT have residential beds or living sofas
     return [
       "office_desk",
       "office_chair",

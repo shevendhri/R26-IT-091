@@ -67,7 +67,12 @@ from material_specification_engine import material_specification_engine as spec_
 from spatial_program_engine import generate_spatial_program
 from building_program_engine import generate_building_program
 
-from green_assessment.api import init_green_assessment, router as green_assessment_router
+try:
+    from green_assessment.api import init_green_assessment, router as green_assessment_router
+    has_green_assessment = True
+except Exception as e:
+    has_green_assessment = False
+    print(f"[app] WARNING: Green Assessment module unavailable: {e}")
 
 # ── Auto-train ML models on first deploy (if .pkl files are missing) ─────────
 try:
@@ -93,8 +98,12 @@ app.add_middleware(
 )
 
 # Green Assessment is mounted under an API prefix to avoid collisions with team modules.
-init_green_assessment()
-app.include_router(green_assessment_router, prefix="/api/green-assessment")
+if has_green_assessment:
+    try:
+        init_green_assessment()
+        app.include_router(green_assessment_router, prefix="/api/green-assessment")
+    except Exception as e:
+        print(f"[app] WARNING: Green Assessment initialization failed: {e}")
 
 # FireGuard is maintained as its own backend module. Reuse its existing
 # route handlers without changing the deterministic ICTAD rule engine.

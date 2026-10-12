@@ -1,6 +1,6 @@
 "use client";
 
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState } from 'react';
 
 const ProjectContext = createContext();
 
@@ -16,20 +16,27 @@ export function ProjectProvider({ children }) {
   const [feasibilityWarning, setFeasibilityWarning] = useState(null);
   const [floorDistribution, setFloorDistribution] = useState(null);
 
-
-
-
   const value = {
-    rooms, setRooms,
-    totalArea, setTotalArea,
-    zones, setZones,
-    workflowRanking, setWorkflowRanking,
-    justification, setJustification,
-    impactNotes, setImpactNotes,
-    aiStrategy, setAiStrategy,
-    feasibilityReview, setFeasibilityReview,
-    feasibilityWarning, setFeasibilityWarning,
-    floorDistribution, setFloorDistribution
+    rooms,
+    setRooms,
+    totalArea,
+    setTotalArea,
+    zones,
+    setZones,
+    workflowRanking,
+    setWorkflowRanking,
+    justification,
+    setJustification,
+    impactNotes,
+    setImpactNotes,
+    aiStrategy,
+    setAiStrategy,
+    feasibilityReview,
+    setFeasibilityReview,
+    feasibilityWarning,
+    setFeasibilityWarning,
+    floorDistribution,
+    setFloorDistribution,
   };
 
   return (

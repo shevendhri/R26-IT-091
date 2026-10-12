@@ -453,38 +453,49 @@ export default function EngineeringWorkspace() {
         position: 'fixed',
         inset: 0,
         zIndex: 5000,
-        background: 'rgba(4, 13, 10, 0.98)',
-        backdropFilter: 'blur(30px)',
+        background: 'rgba(245, 241, 232, 0.96)',
+        backdropFilter: 'blur(20px)',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        gap: '2.5rem'
+        gap: '2rem'
       }}>
-        <div className="neural-core-v2" style={{ width: '150px', height: '150px' }}>
-          <div className="core-ring core-ring-1"></div>
-          <div className="core-ring core-ring-2"></div>
-          <div className="core-ring core-ring-3"></div>
-          <div style={{ fontSize: '4.5rem' }}>🧬</div>
-        </div>
+        <div style={{
+          width: '64px',
+          height: '64px',
+          borderRadius: '50%',
+          border: '3px solid #E2DCD0',
+          borderTopColor: '#143825',
+          animation: 'spin 0.9s linear infinite',
+        }} />
         <div style={{ textAlign: 'center' }}>
-          <div style={{ fontSize: '0.65rem', fontWeight: 900, color: 'var(--eco-glow)', letterSpacing: '10px', textTransform: 'uppercase', marginBottom: '15px' }}>SYSTEM MIGRATING</div>
-          <div style={{ fontSize: '1.25rem', fontWeight: 700, color: '#fff', fontFamily: 'Space Grotesk' }}>{loadingStep}...</div>
+          <div style={{ fontSize: '0.68rem', fontWeight: 800, color: '#143825', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '8px', fontFamily: 'Space Grotesk' }}>
+            ENGINEERING WORKSPACE PIPELINE
+          </div>
+          <div style={{ fontSize: '1.25rem', fontWeight: 800, color: '#143825', fontFamily: 'Space Grotesk' }}>
+            {loadingStep}...
+          </div>
         </div>
       </div>
     );
   }
 
   return (
-    <div style={{ minHeight: '100vh', background: 'var(--eco-black)', color: '#fff', position: 'relative' }}>
-      <div className="premium-bg"><div className="gradient-mesh"></div><div className="blueprint-grid"></div></div>
-
+    <div className="arch-page-canvas" style={{ minHeight: '100vh', background: '#FAF7F0', color: '#143825', position: 'relative' }}>
       <Header />
 
       <main style={{ padding: '2rem 3rem', position: 'relative', zIndex: 10 }}>
 
         {/* ── STEPPER HEADER ── */}
-        <section className="glass-panel" style={{ padding: '1.5rem', marginBottom: '2.5rem', background: 'rgba(255,255,255,0.01)' }}>
+        <section style={{
+          padding: '1.25rem 1.75rem',
+          marginBottom: '2.5rem',
+          background: '#FAF7F0',
+          border: '1px solid #E2DCD0',
+          borderRadius: '4px',
+          boxShadow: '0 2px 10px rgba(23, 58, 43, 0.03)',
+        }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', overflowX: 'auto', gap: '1.5rem' }}>
             {[
               "1. SETUP", "2. QUESTIONNAIRE", "3. PROGRAM", "4. BLUEPRINT",
@@ -502,25 +513,34 @@ export default function EngineeringWorkspace() {
                     display: 'flex',
                     alignItems: 'center',
                     gap: '8px',
-                    opacity: active ? 1 : (completed ? 0.8 : 0.35),
-                    transition: 'all 0.3s'
+                    opacity: active ? 1 : (completed ? 0.85 : 0.45),
+                    transition: 'all 0.2s'
                   }}
                 >
                   <div style={{
                     width: '24px',
                     height: '24px',
-                    borderRadius: '50%',
-                    background: active ? 'var(--eco-glow)' : (completed ? 'var(--blueprint-blue)' : 'rgba(255,255,255,0.05)'),
-                    color: active ? '#000' : '#fff',
+                    borderRadius: '3px',
+                    background: active ? '#143825' : (completed ? '#718C77' : '#EFECE4'),
+                    color: active || completed ? '#FCFAF6' : '#697068',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     fontSize: '0.7rem',
-                    fontWeight: 900
+                    fontWeight: 800,
+                    fontFamily: 'Space Grotesk',
                   }}>
                     {completed ? "✓" : (stepNum === 5 ? "5" : Math.round(stepNum))}
                   </div>
-                  <span style={{ fontSize: '0.6rem', fontWeight: 800, letterSpacing: '1px', whiteSpace: 'nowrap', color: active ? 'var(--eco-glow)' : '#fff' }}>
+                  <span style={{
+                    fontSize: '0.65rem',
+                    fontWeight: 800,
+                    letterSpacing: '0.06em',
+                    whiteSpace: 'nowrap',
+                    color: active ? '#143825' : '#697068',
+                    fontFamily: 'Space Grotesk',
+                    textTransform: 'uppercase',
+                  }}>
                     {label}
                   </span>
                 </div>
@@ -1455,7 +1475,13 @@ export default function EngineeringWorkspace() {
                 {/* ── REPORT HEADER ── */}
                 <div style={{ background: 'linear-gradient(135deg, rgba(0,255,157,0.08) 0%, rgba(56,189,248,0.06) 100%)', border: '1px solid rgba(0,255,157,0.2)', borderRadius: '24px', padding: '3rem', marginBottom: '2.5rem', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
                   <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '3px', background: 'linear-gradient(90deg, var(--eco-glow), var(--blueprint-blue), var(--eco-glow))' }} />
-                  <div style={{ fontSize: '0.6rem', fontWeight: 900, color: 'var(--eco-glow)', letterSpacing: '8px', marginBottom: '12px' }}>GREENCONSTRUCTAI · ENGINEERING INTELLIGENCE PLATFORM</div>
+                  <div style={{ fontSize: '0.65rem', fontWeight: 900, letterSpacing: '6px', marginBottom: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '5px' }}>
+                    <span style={{ color: '#4ADE80' }}>GREEN</span>
+                    <span style={{ color: '#FFFFFF' }}>CONSTRUCT</span>
+                    <span style={{ color: '#071810', background: 'linear-gradient(135deg, #4ADE80, #22c55e)', borderRadius: '4px', padding: '1px 6px', fontSize: '0.75em' }}>AI</span>
+                    <span style={{ color: 'rgba(255,255,255,0.35)', margin: '0 4px' }}>·</span>
+                    <span style={{ color: 'var(--eco-glow)' }}>ENGINEERING INTELLIGENCE PLATFORM</span>
+                  </div>
                   <h1 style={{ fontFamily: 'Space Grotesk', fontSize: '2rem', letterSpacing: '2px', color: '#fff', margin: '0 0 8px 0' }}>PRELIMINARY MATERIAL FEASIBILITY REPORT</h1>
                   <div style={{ fontSize: '0.7rem', color: 'var(--blueprint-blue)', letterSpacing: '4px', fontWeight: 900 }}>SRI LANKA ENGINEERING STANDARDS AUDIT // CONCEPT LEVEL // REF: {setup.city.toUpperCase()}-{setup.building_type.toUpperCase().slice(0, 3)}-{setup.num_floors}FL</div>
 
@@ -2005,7 +2031,7 @@ export default function EngineeringWorkspace() {
                   <div style={{ fontSize: '0.6rem', fontWeight: 900, color: 'var(--eco-glow)', letterSpacing: '3px', marginBottom: '1.25rem' }}>§13 RECOMMENDATION CONCLUSION</div>
                   <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', lineHeight: 1.8, marginBottom: '1rem' }}>
                     Based on the multi-criteria decision analysis (MCDM) combining an 8-criteria engineering validation engine (75% weight) with a trained
-                    machine learning suitability model (25% weight), the GreenConstructAI system recommends the above material package for the proposed
+                    machine learning suitability model (25% weight), the GreenConstruct AI system recommends the above material package for the proposed
                     <strong style={{ color: '#fff' }}> {setup.building_type} </strong> project in
                     <strong style={{ color: '#fff' }}> {setup.city}</strong>,
                     comprising <strong style={{ color: '#fff' }}>{setup.num_floors} floor(s)</strong> with a
@@ -2057,7 +2083,7 @@ export default function EngineeringWorkspace() {
                       <div style={{ fontSize: '0.55rem', fontWeight: 900, color: 'var(--text-dim)', letterSpacing: '2px', marginBottom: '0.75rem' }}>SYSTEM INFORMATION</div>
                       <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                         {[
-                          { l: 'Platform', v: 'GreenConstructAI Engineering Intelligence' },
+                          { l: 'Platform', v: 'GreenConstruct AI Engineering Intelligence' },
                           { l: 'App Version', v: materialPackage.api_metadata?.version || 'N/A' },
                           { l: 'ML Model', v: materialPackage.api_metadata?.ml_model_version || 'N/A' },
                           { l: 'Data Registry', v: materialPackage.api_metadata?.dataset_version || 'N/A' },
@@ -2078,7 +2104,7 @@ export default function EngineeringWorkspace() {
                 <div style={{ borderTop: '1px solid var(--glass-border)', paddingTop: '1.5rem', marginBottom: '2rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.65rem', color: 'var(--text-dim)' }}>
                   <span>Report Date: {new Date().toLocaleDateString('en-LK', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
                   <span>Standard: SLS 1226:2023 / SLS 735:2017</span>
-                  <span>GreenConstructAI © {new Date().getFullYear()}</span>
+                  <span>GreenConstruct AI © {new Date().getFullYear()}</span>
                 </div>
 
                 {/* ── ACTION BUTTONS ── */}

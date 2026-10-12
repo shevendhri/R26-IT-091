@@ -40,6 +40,10 @@ from typing import Dict, Any, Optional, List
 
 import numpy as np
 import joblib
+try:
+    import pandas as pd
+except ImportError:
+    pd = None
 
 # ============================================================================
 # Module-level artefact loading (happens ONCE at import)
@@ -268,7 +272,16 @@ def _build_feature_vector(project_features: Dict[str, Any],
         if cat_indices:
             cat_data = row_array[:, cat_indices]
             try:
-                encoded = _encoder.transform(cat_data)
+                col_names = getattr(_encoder, "feature_names_in_", None)
+                if col_names is not None and pd is not None:
+                    cat_input = pd.DataFrame(cat_data, columns=col_names)
+                else:
+                    cat_input = cat_data
+                with warnings.catch_warnings():
+                    warnings.filterwarnings("ignore", category=UserWarning, message=".*valid feature names.*")
+                    encoded = _encoder.transform(cat_input)
+                if hasattr(encoded, "values"):
+                    encoded = encoded.values
                 for j, idx in enumerate(cat_indices):
                     row_array[0, idx] = encoded[0, j]
             except Exception as e:
@@ -288,7 +301,17 @@ def _build_feature_vector(project_features: Dict[str, Any],
         if num_indices:
             try:
                 num_data = row_float[:, num_indices]
-                row_float[:, num_indices] = _scaler.transform(num_data)
+                col_names = getattr(_scaler, "feature_names_in_", None)
+                if col_names is not None and pd is not None:
+                    num_input = pd.DataFrame(num_data, columns=col_names)
+                else:
+                    num_input = num_data
+                with warnings.catch_warnings():
+                    warnings.filterwarnings("ignore", category=UserWarning, message=".*valid feature names.*")
+                    scaled = _scaler.transform(num_input)
+                    if hasattr(scaled, "values"):
+                        scaled = scaled.values
+                    row_float[:, num_indices] = scaled
             except Exception as e:
                 warnings.warn(f"[Predictor] Scaling error: {e}")
 

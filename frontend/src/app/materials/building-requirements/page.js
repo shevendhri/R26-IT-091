@@ -1,10 +1,13 @@
 "use client";
 import { useState, useEffect } from 'react';
-import LazyAiHint from '@/components/UI/LazyAiHint.jsx';
+import LazyAiHint from '@/components/ui/LazyAiHint.jsx';
 import { useRouter } from 'next/navigation';
 import { useMaterial } from '@/context/MaterialContext';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import MaterialSubNav from '@/components/Materials/MaterialSubNav';
+import ProjectContextStrip from '@/components/ui/ProjectContextStrip';
+import ModuleHeroBanner from '@/components/ui/ModuleHeroBanner';
 
 /* ══════════════════════════════════════════════════════════════
    Static option data
@@ -121,27 +124,30 @@ function Toggle({ label, value, onChange, desc }) {
       onClick={() => onChange(!value)}
       style={{
         display: 'flex', alignItems: 'center', gap: '0.75rem',
-        background: value ? '#DDE8DE' : '#F7F9F6',
-        border: `1px solid ${value ? '#245C43' : '#C8D3CA'}`,
-        borderRadius: '10px', padding: '0.7rem 1rem', cursor: 'pointer',
-        transition: 'all 0.15s', marginBottom: '0.6rem',
+        background: value ? 'rgba(46, 99, 67, 0.12)' : '#FAF7F2',
+        border: `1.5px solid ${value ? '#2E6343' : 'rgba(181, 126, 68, 0.28)'}`,
+        boxShadow: value ? '0 0 12px rgba(46, 99, 67, 0.15)' : 'none',
+        borderRadius: '12px', padding: '0.75rem 1rem', cursor: 'pointer',
+        transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)', marginBottom: '0.65rem',
       }}
     >
       <div style={{
         width: '36px', height: '20px', borderRadius: '10px', flexShrink: 0,
-        background: value ? '#245C43' : '#C8D3CA',
+        background: value ? '#2E6343' : 'rgba(181, 126, 68, 0.35)',
+        boxShadow: value ? '0 0 10px rgba(46, 99, 67, 0.35)' : 'none',
         position: 'relative', transition: 'background 0.2s',
       }}>
         <div style={{
           position: 'absolute', top: '3px',
           left: value ? '19px' : '3px',
           width: '14px', height: '14px', borderRadius: '50%',
-          background: '#fff', transition: 'left 0.2s',
+          background: '#FFFFFF',
+          transition: 'left 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
         }} />
       </div>
       <div>
-        <div style={{ fontSize: '0.85rem', fontWeight: 700, color: value ? '#245C43' : '#18251F' }}>{label}</div>
-        {desc && <div style={{ fontSize: '0.74rem', color: '#526158', marginTop: '1px', fontWeight: 500 }}>{desc}</div>}
+        <div style={{ fontSize: '0.85rem', fontWeight: 700, color: value ? '#2E6343' : '#20150D' }}>{label}</div>
+        {desc && <div style={{ fontSize: '0.74rem', color: '#6A5646', marginTop: '2px', fontWeight: 500 }}>{desc}</div>}
       </div>
     </div>
   );
@@ -149,11 +155,11 @@ function Toggle({ label, value, onChange, desc }) {
 
 function SectionHeader({ title, subtitle }) {
   return (
-    <div style={{ marginBottom: '1.5rem', paddingBottom: '0.75rem', borderBottom: '1px solid #C8D3CA' }}>
+    <div style={{ marginBottom: '1.5rem', paddingBottom: '0.75rem', borderBottom: '1px solid rgba(181, 126, 68, 0.20)' }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
         <div>
-          <div style={{ fontSize: '0.85rem', fontWeight: 800, color: '#245C43', letterSpacing: '2px', textTransform: 'uppercase', fontFamily: 'Space Grotesk' }}>{title}</div>
-          {subtitle && <div style={{ fontSize: '0.78rem', color: '#526158', marginTop: '2px', fontWeight: 500 }}>{subtitle}</div>}
+          <div style={{ fontSize: '0.85rem', fontWeight: 800, color: '#2E6343', letterSpacing: '2px', textTransform: 'uppercase', fontFamily: 'Space Grotesk' }}>{title}</div>
+          {subtitle && <div style={{ fontSize: '0.78rem', color: '#6A5646', marginTop: '2px', fontWeight: 500 }}>{subtitle}</div>}
         </div>
       </div>
     </div>
@@ -404,30 +410,35 @@ function HotelSections({ data, set }) {
    AI Priority Ranking Card
 ══════════════════════════════════════════════════════════════ */
 function PriorityCard({ item, rank, onUp, onDown, isFirst, isLast }) {
+  const isTop3 = rank <= 3;
   return (
     <div style={{
       display: 'flex', alignItems: 'center', gap: '0.75rem',
-      background: rank <= 3 ? '#DDE8DE' : '#F7F9F6',
-      border: `1px solid ${rank <= 3 ? 'rgba(36,92,67,0.3)' : '#C8D3CA'}`,
+      background: isTop3 ? 'rgba(46, 99, 67, 0.08)' : '#FAF7F2',
+      border: `1.5px solid ${isTop3 ? 'rgba(46, 99, 67, 0.40)' : 'rgba(181, 126, 68, 0.25)'}`,
+      boxShadow: isTop3 ? '0 0 15px rgba(46, 99, 67, 0.12)' : 'none',
       borderRadius: '12px', padding: '0.85rem 1rem',
       transition: 'all 0.2s',
     }}>
       <div style={{
         width: '28px', height: '28px', borderRadius: '50%', flexShrink: 0,
-        background: rank <= 3 ? '#245C43' : '#DCE5DC',
-        color: rank <= 3 ? '#ffffff' : '#526158',
+        background: isTop3 ? 'linear-gradient(135deg, #2E6343 0%, #1A402A 100%)' : '#FAF7F2',
+        color: isTop3 ? '#FFFFFF' : '#8A7666',
+        border: isTop3 ? 'none' : '1px solid rgba(181, 126, 68, 0.3)',
+        boxShadow: isTop3 ? '0 0 10px rgba(46, 99, 67, 0.35)' : 'none',
         display: 'flex', alignItems: 'center', justifyContent: 'center',
         fontSize: '0.75rem', fontWeight: 900,
       }}>{rank}</div>
       <div style={{ flex: 1 }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-          <span style={{ fontSize: '0.88rem', fontWeight: 700, color: '#18251F' }}>{item.label}</span>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+          <span style={{ fontSize: '0.88rem', fontWeight: 700, color: '#20150D' }}>{item.label}</span>
+          {isTop3 && <span style={{ fontSize: '0.65rem', background: 'rgba(46, 99, 67, 0.15)', color: '#2E6343', padding: '2px 7px', borderRadius: '4px', fontWeight: 800, letterSpacing: '0.5px' }}>HIGH WEIGHT</span>}
         </div>
-        <div style={{ fontSize: '0.72rem', color: '#526158', marginTop: '1px', fontWeight: 500 }}>{item.desc}</div>
+        <div style={{ fontSize: '0.74rem', color: '#6A5646', marginTop: '2px', fontWeight: 500 }}>{item.desc}</div>
       </div>
       <div style={{ display: 'flex', flexDirection: 'column', gap: '3px' }}>
-        <button type="button" onClick={onUp} disabled={isFirst} style={{ background: '#FFFFFF', border: '1px solid #C8D3CA', borderRadius: '6px', color: isFirst ? '#C8D3CA' : '#18251F', width: '28px', height: '24px', cursor: isFirst ? 'default' : 'pointer', fontSize: '0.65rem' }}>▲</button>
-        <button type="button" onClick={onDown} disabled={isLast} style={{ background: '#FFFFFF', border: '1px solid #C8D3CA', borderRadius: '6px', color: isLast ? '#C8D3CA' : '#18251F', width: '28px', height: '24px', cursor: isLast ? 'default' : 'pointer', fontSize: '0.65rem' }}>▼</button>
+        <button type="button" onClick={onUp} disabled={isFirst} style={{ background: '#FFFFFF', border: '1px solid rgba(181, 126, 68, 0.30)', borderRadius: '6px', color: isFirst ? 'rgba(0,0,0,0.2)' : '#20150D', width: '28px', height: '24px', cursor: isFirst ? 'default' : 'pointer', fontSize: '0.65rem', transition: 'all 0.15s' }}>▲</button>
+        <button type="button" onClick={onDown} disabled={isLast} style={{ background: '#FFFFFF', border: '1px solid rgba(181, 126, 68, 0.30)', borderRadius: '6px', color: isLast ? 'rgba(0,0,0,0.2)' : '#20150D', width: '28px', height: '24px', cursor: isLast ? 'default' : 'pointer', fontSize: '0.65rem', transition: 'all 0.15s' }}>▼</button>
       </div>
     </div>
   );
@@ -438,7 +449,7 @@ function PriorityCard({ item, rank, onUp, onDown, isFirst, isLast }) {
 ══════════════════════════════════════════════════════════════ */
 export default function BuildingRequirementsPage() {
   const router = useRouter();
-  const { buildingInfo, buildingRequirements, setBuildingRequirements } = useMaterial();
+  const { buildingInfo, setBuildingInfo, buildingRequirements, setBuildingRequirements } = useMaterial();
 
   const buildingType = buildingInfo?.building_type || 'Residential';
   const group = getGroup(buildingType);
@@ -485,6 +496,7 @@ export default function BuildingRequirementsPage() {
     const payload = {
       ...data,
       _group: group,
+      building_type: buildingType,
       ai_priorities: priorities.map(p => p.key),
       ai_priority_weights: Object.fromEntries(
         priorities.map((p, i) => [p.key, parseFloat(((priorities.length - i) / priorities.length).toFixed(3))])
@@ -492,97 +504,149 @@ export default function BuildingRequirementsPage() {
     };
     setBuildingRequirements(payload);
     localStorage.setItem('buildingRequirements', JSON.stringify(payload));
+
+    const floorsCount = parseInt(data.floor_count || data.floors || data.stories || data.num_floors || buildingInfo?.floor_count || 2, 10);
+    const updatedInfo = {
+      ...buildingInfo,
+      building_type: buildingType,
+      floor_count: floorsCount,
+    };
+    if (setBuildingInfo) {
+      setBuildingInfo(updatedInfo);
+    }
+    localStorage.setItem('buildingInfo', JSON.stringify(updatedInfo));
+
     router.push('/materials/processing');
   };
 
   const stepDot = (active, done) => ({
-    width: '32px', height: '32px', borderRadius: '50%',
-    background: done ? '#245C43' : active ? '#3F7D5C' : '#DCE5DC',
-    color: done || active ? '#ffffff' : '#526158',
-    boxShadow: active ? '0 0 0 6px rgba(63, 125, 92, 0.12)' : 'none',
+    width: '28px', height: '28px', borderRadius: '3px',
+    background: done ? '#143825' : active ? '#B8583B' : '#FFFFFF',
+    color: done || active ? '#FCFAF6' : '#7C8681',
+    border: active ? '1px solid #B8583B' : done ? '1px solid #143825' : '1px solid rgba(25, 30, 27, 0.16)',
     display: 'flex', alignItems: 'center', justifyContent: 'center',
-    fontSize: '0.78rem', fontWeight: 900,
+    fontSize: '0.72rem', fontWeight: 800,
+    fontFamily: 'Space Grotesk, sans-serif',
   });
 
   return (
-    <div style={{
-      minHeight: '100vh',
-      background: 'radial-gradient(circle at 15% 10%, rgba(47, 107, 79, 0.10), transparent 30%), radial-gradient(circle at 85% 20%, rgba(120, 184, 147, 0.12), transparent 25%), #EEF1EC',
-      color: '#18251F',
-      fontFamily: 'Inter, sans-serif'
-    }}>
+    <div className="arch-page-canvas" style={{ background: '#FAF7F0', minHeight: '100vh' }}>
       <Header />
+      <MaterialSubNav />
 
-      <main style={{ padding: '3.5rem 2rem', maxWidth: '900px', margin: '0 auto', position: 'relative', zIndex: 10 }}>
-
-        {/* Page header */}
-        <div style={{ marginBottom: '2.5rem' }}>
-          <div style={{ fontSize: '0.72rem', fontWeight: 800, color: '#245C43', letterSpacing: '4px', textTransform: 'uppercase', marginBottom: '0.75rem', fontFamily: 'Space Grotesk' }}>
-            AI RECOMMENDATION ENGINE
-          </div>
-          <h1 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontFamily: 'Space Grotesk', fontWeight: 800, lineHeight: 1.1, margin: 0, color: '#18251F' }}>
-            Building <span style={{ color: '#245C43' }}>Requirements</span>
-          </h1>
-          <p style={{ color: '#526158', marginTop: '0.75rem', fontSize: '1rem', maxWidth: '560px', fontWeight: 500 }}>
-            Tell the AI about your <strong style={{ color: '#18251F' }}>{buildingType}</strong> project. Every answer directly shapes the material recommendations.
-          </p>
-        </div>
+      <main style={{ maxWidth: '1120px', margin: '0 auto', padding: '1rem 2rem 5rem', position: 'relative', zIndex: 10 }}>
+        <ModuleHeroBanner
+          track="03 / MATERIAL INTELLIGENCE"
+          kicker="SLS ENGINEERING RULE CONSTRAINTS"
+          title="BUILDING REQUIREMENTS & PERFORMANCE"
+          subtitle={`Configure spatial parameters, occupancy profiles, and engineering priorities for your ${buildingType} project.`}
+          imageSrc="/materials_samples.png"
+          imageAlt="Sustainable Material Samples and Testing"
+        />
 
         {/* Progress stepper */}
-        <div style={{ display: 'flex', alignItems: 'center', marginBottom: '2.5rem', flexWrap: 'wrap', gap: '0.25rem' }}>
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(4, 1fr)',
+          gap: '1rem',
+          marginBottom: '2rem',
+          background: '#FFFFFF',
+          border: '1px solid rgba(25, 30, 27, 0.12)',
+          padding: '1rem 1.25rem',
+          borderRadius: '4px',
+        }}>
           {[
-            { n: '1', label: 'Building Specification', done: true },
+            { n: '1', label: 'Brief Specification', done: true },
             { n: '2', label: 'Building Requirements', active: true },
-            { n: '3', label: 'AI Processing' },
-            { n: '4', label: 'Recommendations' },
+            { n: '3', label: 'Rule Engine Check' },
+            { n: '4', label: 'Material Decisions' },
           ].map((s, i) => (
-            <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+            <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
               <div style={stepDot(s.active, s.done)}>{s.done ? '✓' : s.n}</div>
-              <span style={{ fontSize: '0.75rem', fontWeight: s.active || s.done ? 700 : 500, color: s.active || s.done ? '#18251F' : '#748078', letterSpacing: '0.02em' }}>{s.label}</span>
-              {i < 3 && <div style={{ width: '24px', height: '2px', background: s.done ? '#245C43' : '#C8D3CA', borderRadius: '2px', margin: '0 0.35rem' }} />}
+              <div style={{ display: 'flex', flexDirection: 'column' }}>
+                <span style={{ fontSize: '0.62rem', fontFamily: 'Space Grotesk', color: '#7C8681', textTransform: 'uppercase', letterSpacing: '0.08em' }}>STAGE 0{i + 1}</span>
+                <span style={{ fontSize: '0.74rem', fontWeight: s.active || s.done ? 700 : 500, color: s.active ? '#181B1A' : s.done ? '#143825' : '#7C8681', fontFamily: 'Space Grotesk' }}>{s.label}</span>
+              </div>
             </div>
           ))}
         </div>
 
         <form onSubmit={handleSubmit}>
 
-          {group === 'residential'  && <ResidentialSections  data={data} set={set} />}
-          {group === 'commercial'   && <CommercialSections   data={data} set={set} />}
-          {group === 'industrial'   && <IndustrialSections   data={data} set={set} />}
-          {group === 'educational'  && <EducationalSections  data={data} set={set} />}
-          {group === 'healthcare'   && <HealthcareSections   data={data} set={set} />}
-          {group === 'hotel'        && <HotelSections        data={data} set={set} />}
-
-          {/* AI Design Priorities */}
-          <div className="glass-panel" style={{ padding: '1.75rem', marginBottom: '2rem', border: '1px solid rgba(36,92,67,0.2)', position: 'relative', overflow: 'hidden' }}>
-            <SectionHeader title="AI Design Priorities" subtitle="Rank what matters most — these become weights in the recommendation algorithm" />
-            <p style={{ fontSize: '0.8rem', color: '#526158', marginBottom: '1.25rem', fontStyle: 'italic', fontWeight: 500 }}>
-              Use ▲▼ arrows to re-rank. Top 3 (highlighted) receive the highest weighting.
-            </p>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-              {priorities.map((item, idx) => (
-                <PriorityCard key={item.key} item={item} rank={idx + 1} onUp={() => moveUp(idx)} onDown={() => moveDown(idx)} isFirst={idx === 0} isLast={idx === priorities.length - 1} />
-              ))}
+            <div style={{ background: '#FFFFFF', border: '1.5px solid rgba(181, 126, 68, 0.28)', borderRadius: '20px', padding: '1.8rem', marginBottom: '1.8rem', boxShadow: '0 8px 24px rgba(45, 30, 20, 0.06)' }}>
+              {group === 'residential'  && <ResidentialSections  data={data} set={set} />}
+              {group === 'commercial'   && <CommercialSections   data={data} set={set} />}
+              {group === 'industrial'   && <IndustrialSections   data={data} set={set} />}
+              {group === 'educational'  && <EducationalSections  data={data} set={set} />}
+              {group === 'healthcare'   && <HealthcareSections   data={data} set={set} />}
+              {group === 'hotel'        && <HotelSections        data={data} set={set} />}
             </div>
-            <div style={{ marginTop: '1rem', padding: '0.75rem 1rem', background: '#DDE8DE', borderRadius: '8px', fontSize: '0.78rem', color: '#245C43', fontWeight: 600 }}>
-              📊 These priorities are converted to numerical weights (1.0 → 0.125) and passed into the Multi-Criteria Decision Making engine.
+
+            {/* AI Design Priorities */}
+            <div style={{ background: '#FFFFFF', border: '1.5px solid rgba(181, 126, 68, 0.28)', borderRadius: '20px', padding: '1.8rem', marginBottom: '2rem', boxShadow: '0 8px 24px rgba(45, 30, 20, 0.06)' }}>
+              <SectionHeader title="AI Design Priorities" subtitle="Rank what matters most — these become weights in the recommendation algorithm" />
+              <p style={{ fontSize: '0.8rem', color: '#6A5646', marginBottom: '1.25rem', fontStyle: 'italic', fontWeight: 500 }}>
+                Use ▲▼ arrows to re-rank. Top 3 (highlighted) receive the highest weighting.
+              </p>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                {priorities.map((item, idx) => (
+                  <PriorityCard key={item.key} item={item} rank={idx + 1} onUp={() => moveUp(idx)} onDown={() => moveDown(idx)} isFirst={idx === 0} isLast={idx === priorities.length - 1} />
+                ))}
+              </div>
+              <div style={{ marginTop: '1.25rem', padding: '0.85rem 1.25rem', background: 'rgba(46, 99, 67, 0.08)', border: '1px solid rgba(46, 99, 67, 0.25)', borderRadius: '10px', fontSize: '0.8rem', color: '#2E6343', fontWeight: 600 }}>
+                📊 These priorities are converted to numerical weights (1.0 → 0.125) and passed into the Multi-Criteria Decision Making engine.
+              </div>
             </div>
-          </div>
 
-          {/* Nav buttons */}
-          <div style={{ display: 'flex', gap: '1rem', justifyContent: 'space-between', flexWrap: 'wrap' }}>
-            <button type="button" onClick={() => router.push('/materials/form')} style={{ padding: '0.9rem 1.75rem', background: '#FFFFFF', border: '1px solid #C8D3CA', borderRadius: '12px', color: '#18251F', fontSize: '0.85rem', fontWeight: 700, cursor: 'pointer', transition: 'all 0.2s' }}>
-              ← Back to Specification
-            </button>
-            <button type="submit" className="btn-premium" style={{ flex: 1, maxWidth: '400px', fontSize: '0.9rem', padding: '1rem' }}>
-              Generate AI Recommendations →
-            </button>
-          </div>
+            {/* Nav buttons */}
+            <div style={{ display: 'flex', gap: '1rem', justifyContent: 'space-between', flexWrap: 'wrap', marginTop: '2rem' }}>
+              <button
+                type="button"
+                onClick={() => router.push('/materials/form')}
+                style={{
+                  padding: '0.85rem 1.6rem',
+                  background: '#FFFFFF',
+                  border: '1px solid rgba(25, 30, 27, 0.20)',
+                  borderRadius: '4px',
+                  color: '#181B1A',
+                  fontSize: '0.78rem',
+                  fontWeight: 700,
+                  cursor: 'pointer',
+                  transition: 'all 0.2s',
+                  fontFamily: 'Space Grotesk',
+                  letterSpacing: '0.06em',
+                  textTransform: 'uppercase'
+                }}
+              >
+                ← Back to Specification
+              </button>
+              <button
+                type="submit"
+                style={{
+                  flex: 1,
+                  maxWidth: '380px',
+                  fontSize: '0.82rem',
+                  padding: '0.95rem 1.8rem',
+                  background: '#143825',
+                  color: '#FFFFFF',
+                  border: '1px solid #143825',
+                  borderRadius: '4px',
+                  fontWeight: 800,
+                  cursor: 'pointer',
+                  boxShadow: '0 4px 14px rgba(26, 56, 43, 0.25)',
+                  fontFamily: 'Space Grotesk',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.08em'
+                }}
+              >
+                Generate AI Recommendations →
+              </button>
+            </div>
 
-        </form>
-      </main>
+          </form>
+        </main>
 
-      <Footer />
-    </div>
+        <Footer />
+      </div>
   );
 }

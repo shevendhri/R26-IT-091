@@ -5,8 +5,8 @@ import { ProjectProvider } from '@/context/ProjectContext';
 import { MaterialProvider } from '@/context/MaterialContext';
 
 export const metadata = {
-  title: 'IntelliBuild AI - Blueprint & Material System',
-  description: 'AI-powered web application for intelligent building layout analysis and sustainable material specification.',
+  title: 'GreenConstruct AI — Biophilic Architecture & Material Intelligence Platform',
+  description: 'AI-powered biophilic architectural decision-support platform for intelligent plan analysis, sustainable material specification, GreenSL pre-assessment, and fire compliance in Sri Lanka.',
 };
 
 export default function RootLayout({ children }) {

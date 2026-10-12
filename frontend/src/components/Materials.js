@@ -1,4 +1,5 @@
 // src/components/Materials.js
+'use client';
 
 import * as THREE from 'three';
 import { useMemo } from 'react';

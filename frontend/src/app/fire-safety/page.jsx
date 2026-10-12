@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { db } from './lib/db';
 import { Activity, AlertCircle, CheckCircle, Clock, Eye, FileText, Flame, Plus } from 'lucide-react';
 import styles from './FireGuard.module.css';
+import ModuleHeroBanner from '@/components/ui/ModuleHeroBanner';
 
 export default function Dashboard() {
   const [showAllAssessments, setShowAllAssessments] = useState(false);
@@ -129,26 +130,38 @@ export default function Dashboard() {
     <div className={styles.page}>
       <main className={styles.main}>
         <div className={styles.container}>
-        <section className={styles.header}>
-          <div>
-            <div className="max-w-3xl">
-              <p className={styles.eyebrow}>ICTAD Fire Compliance</p>
-              <h1 className={styles.title}>
-                Fire Safety Assessment
-              </h1>
-              <p className={styles.description}>
-                Assess architectural and fire-safety drawings against Sri Lankan ICTAD fire regulations.
-              </p>
-            </div>
-          </div>
+        <ModuleHeroBanner
+          track="04 / FIRE CODE VALIDATION"
+          kicker="ICTAD & LIFE SAFETY EGRESS AUDIT"
+          title="FIREGUARD LIFE SAFETY & COMPLIANCE ENGINE"
+          subtitle="Assess architectural and fire-safety drawings against Sri Lankan ICTAD fire regulations, egress geometry, and travel distance standards."
+          imageSrc="/fire_safety_architecture.jpg"
+          imageAlt="Fire Safety Engineering & Architectural Compliance"
+          actions={
             <Link
               href="/fire-safety/submission/new"
               className={styles.primaryButton}
+              style={{
+                background: '#143825',
+                color: '#FCFAF6',
+                padding: '0.75rem 1.4rem',
+                borderRadius: '4px',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                textDecoration: 'none',
+                fontWeight: 700,
+                fontFamily: "'Space Grotesk', sans-serif",
+                fontSize: '0.74rem',
+                letterSpacing: '0.08em',
+                textTransform: 'uppercase',
+              }}
             >
-              <Plus size={18} />
+              <Plus size={16} />
               New Assessment
             </Link>
-        </section>
+          }
+        />
 
         <section className={styles.statsGrid}>
           {statCards.map((stat) => {

@@ -1,4 +1,5 @@
 // src/components/Furniture.jsx
+'use client';
 
 import React from 'react';
 import { useWoodMaterial, useFabricMaterial, useStoneMaterial, useFloorMaterial, useWallMaterial } from './Materials';
@@ -8,7 +9,8 @@ const Sofa = ({ position }) => {
   const fabricMat = useFabricMaterial('#e8e0d6');
   return (
     <group position={position} castShadow>
-      <mesh geometry={new THREE.BoxGeometry(2.2, 0.6, 0.9)}>
+      <mesh>
+        <boxGeometry args={[2.2, 0.6, 0.9]} />
         <primitive object={fabricMat} attach="material" />
       </mesh>
       {/* Cushions */}

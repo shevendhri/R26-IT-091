@@ -1,681 +1,809 @@
 "use client";
 
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import ArchitecturalHeroPortal from '@/components/ArchitecturalHeroPortal';
 
 export default function Home() {
-  const scrollToModules = (e) => {
+  const [activeMaterialTab, setActiveMaterialTab] = useState('aac');
+
+  const scrollToExplore = (e) => {
     e.preventDefault();
-    const target = document.getElementById('systems-grid');
-    if (target) target.scrollIntoView({ behavior: 'smooth' });
+    const el = document.getElementById('core-components');
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const coreComponents = [
+    {
+      num: '01',
+      title: 'Plan & Blueprint Analyzer',
+      category: 'SPATIAL & CAD EXTRACTION',
+      desc: 'Computer vision boundary parsing, automated floor plan telemetry, wall/floor area computations, opening ratios, and spatial coordinate vector generation.',
+      href: '/plan-analyzer',
+      cta: 'Open Plan Analyzer →',
+      accent: '#173A2B',
+      tag: 'VISION AI',
+      img: '/blueprint_desk.png',
+      features: ['Automated Wall & Slab Takeoff', 'Boundary Vector Geometry', 'Opening & Fenestration Ratio', 'CAD DXF / PDF Extraction'],
+    },
+    {
+      num: '02',
+      title: 'Material Specification & 3D Intelligence',
+      category: 'MATERIAL INTELLIGENCE & 3D BIM',
+      desc: 'The central research engine synthesizing MCDM TOPSIS, SLS structural checks, and Random Forest models. Unites the intake brief, 3D cutaway model, specification monograph, and project history.',
+      href: '/materials/form',
+      cta: 'Open Material Specification →',
+      accent: '#8D6A4F',
+      tag: 'CORE ENGINE',
+      isPrimaryFocus: true,
+      img: '/materials_samples.png',
+      sublinks: [
+        { label: 'Project Intake Brief', href: '/materials/form' },
+        { label: 'SLS Building Requirements', href: '/materials/building-requirements' },
+        { label: '3D BIM Cutaway Studio', href: '/materials/3d' },
+        { label: 'Specification Report', href: '/materials/report' },
+        { label: 'Project Archives & History', href: '/history' },
+      ],
+      features: ['Hybrid MCDM + Random Forest', 'Embedded 3D BIM Cutaway Studio', 'SLS 107/614 Engineering Audits', 'Full Decision Trace Monograph'],
+    },
+    {
+      num: '03',
+      title: 'Fire Safety Compliance',
+      category: 'STATUTORY & LIFE SAFETY',
+      desc: 'Preliminary engineering verification of structural fire resistance ratings under SLS 139 and British Standard BS 476, non-combustibility of envelope partitions, and egress travel distances.',
+      href: '/fire-safety',
+      cta: 'Open Fire Safety Module →',
+      accent: '#B85C43',
+      tag: 'SLS 139 · BS 476',
+      img: '/fire_safety_architecture.jpg',
+      features: ['2-Hour Frame Fire Rating', 'Envelope Flame Spread Index', 'Compartment Area Boundaries', 'ICTAD Regulation Audits'],
+    },
+    {
+      num: '04',
+      title: 'Green Building Pre-Assessment',
+      category: 'SUSTAINABILITY & GREENSL',
+      desc: 'Environmental performance scorecard aligned with Green Building Council of Sri Lanka (GBCSL) criteria, calculating embodied carbon intensity (kg CO₂e/m²) and local sourcing indices.',
+      href: '/green-assessment',
+      cta: 'Open Green Assessment →',
+      accent: '#718C77',
+      tag: 'GREENSL · GBCSL',
+      img: '/biophilic_building.jpg',
+      features: ['Embodied Carbon Benchmarking', 'Regional Material Extraction (500km)', 'GBCSL Rating Tier Prediction', 'UDA Blue-Green Compliance'],
+    },
+  ];
+
+
+  const sampleProjects = [
+    {
+      title: 'Tropical Biophilic Villa',
+      location: 'Colombo 07 · Wet Lowland',
+      area: '170 m² · 2 Floors',
+      score: '88.4 / 100',
+      tag: 'RESIDENTIAL',
+      spec: 'AAC Blocks + Timber Louvers + Clay Tile Roof',
+      href: '/materials/form',
+    },
+    {
+      title: 'Bio-Climatic Head Office',
+      location: 'Kandy · Hill Country Wet',
+      area: '520 m² · 4 Floors',
+      score: '91.2 / 100',
+      tag: 'COMMERCIAL',
+      spec: 'Low-Carbon RC Frame + Terrazzo + Glass Facade',
+      href: '/materials/form',
+    },
+    {
+      title: 'Coastal Eco-Resort Pavilion',
+      location: 'Galle · High Salinity Coastal',
+      area: '240 m² · 1 Floor',
+      score: '86.8 / 100',
+      tag: 'HOSPITALITY',
+      spec: 'CSEB Earth Blocks + Treated Teak + Micro-Concrete',
+      href: '/materials/form',
+    },
+  ];
+
+  const materialSwatches = [
+    { id: 'aac', name: 'AAC Eco-Block', category: 'Envelope Partition', density: '550 kg/m³', uValue: '0.16 W/m²K', carbon: '142 kg CO₂/t', sls: 'SLS 107 Class A' },
+    { id: 'cseb', name: 'Compressed Earth (CSEB)', category: 'Masonry Unit', density: '1850 kg/m³', uValue: '0.65 W/m²K', carbon: '48 kg CO₂/t', sls: 'SLS 1382 Pass' },
+    { id: 'teak', name: 'Sustainably Sourced Teak', category: 'Timber Millwork', density: '650 kg/m³', uValue: '0.14 W/m²K', carbon: '-720 kg CO₂/t', sls: 'Grade 1 Hardwood' },
+    { id: 'clay', name: 'Sinhala Terracotta Tile', category: 'Roof Cladding', density: '1900 kg/m³', uValue: '0.85 W/m²K', carbon: '210 kg CO₂/t', sls: 'SLS 614 Standard' },
+  ];
+
+  const currentSwatch = materialSwatches.find(m => m.id === activeMaterialTab) || materialSwatches[0];
+
   return (
-    <div style={{ minHeight: '100vh', color: '#18251F', fontFamily: 'Inter, sans-serif' }}>
-      <style>{`
-        /* ── Hero Section ── */
-        .hero-section {
-          background: linear-gradient(180deg, #E1E9E2 0%, #D8E5DA 100%);
-          position: relative;
-          overflow: hidden;
-        }
-        .hero-container {
-          max-width: 960px;
-          margin: 0 auto;
-          padding: 5.5rem 1.5rem 4.5rem;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          text-align: center;
-          position: relative;
-          z-index: 10;
-        }
-
-        /* Hero subtle architectural decorations */
-        .hero-grid {
-          position: absolute;
-          inset: 0;
-          background-image:
-            linear-gradient(rgba(30, 84, 56, 0.05) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(30, 84, 56, 0.05) 1px, transparent 1px);
-          background-size: 56px 56px;
-          pointer-events: none;
-        }
-        .hero-radial-glow {
-          position: absolute;
-          top: 0; left: 50%;
-          transform: translateX(-50%);
-          width: 800px;
-          height: 480px;
-          background: radial-gradient(ellipse at center top, rgba(62, 116, 82, 0.20) 0%, rgba(143, 182, 156, 0.12) 50%, transparent 75%);
-          pointer-events: none;
-        }
-        .hero-geo-lines {
-          position: absolute;
-          inset: 0;
-          pointer-events: none;
-          opacity: 0.045;
-        }
-
-        /* ── Module Cards Section ── */
-        .modules-section {
-          background: #D4E1D6;
-          border-top: 1px solid #BDCEBF;
-          border-bottom: 1px solid #BDCEBF;
-          padding: 4.5rem 3rem 5rem;
-        }
-        .module-row-grid {
-          display: grid;
-          grid-template-columns: repeat(4, 1fr);
-          gap: 1.3rem;
-          max-width: 1440px;
-          margin: 0 auto;
-        }
-        @media (max-width: 1200px) {
-          .module-row-grid { grid-template-columns: repeat(2, 1fr); }
-          .modules-section { padding: 3rem 2rem 3.5rem; }
-        }
-        @media (max-width: 640px) {
-          .module-row-grid { grid-template-columns: 1fr; }
-          .modules-section { padding: 2.5rem 1.5rem 3rem; }
-        }
-
-        .mockup-module-card {
-          border-radius: 18px;
-          overflow: hidden;
-          display: flex;
-          flex-direction: column;
-          position: relative;
-          box-shadow: 0 4px 14px rgba(20,34,27,0.06), 0 12px 32px rgba(20,34,27,0.08);
-          transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-          min-height: 340px;
-          border: 1px solid #BDCEBF;
-        }
-        .card-plan-lp {
-          background: linear-gradient(135deg, #FFFFFF 48%, #DDECF8 100%);
-          border-top: 4px solid #245D8C;
-        }
-        .card-mat-lp {
-          background: linear-gradient(135deg, #FFFFFF 48%, #DCEFE2 100%);
-          border-top: 4px solid #1E5438;
-        }
-        .card-green-lp {
-          background: linear-gradient(135deg, #FFFFFF 48%, #DCF2E2 100%);
-          border-top: 4px solid #3E7452;
-        }
-        .card-fire-lp {
-          background: linear-gradient(135deg, #FFFFFF 48%, #F9E7E0 100%);
-          border-top: 4px solid #C0542C;
-        }
-        .mockup-module-card:hover {
-          transform: translateY(-5px);
-          box-shadow: 0 8px 24px rgba(20,34,27,0.12), 0 20px 48px rgba(30,84,56,0.15);
-        }
-
-        /* ── How It Works Section ── */
-        .hiw-section {
-          background: #E8F1E9;
-          border-bottom: 1px solid #BDCEBF;
-          padding: 4.5rem 3rem 5rem;
-        }
-        .hiw-container {
-          max-width: 1440px;
-          margin: 0 auto;
-        }
-        .hiw-flow {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          gap: 1rem;
-          flex-wrap: wrap;
-        }
-        @media (max-width: 900px) {
-          .hiw-flow { flex-direction: column; align-items: stretch; }
-          .hiw-section { padding: 3rem 1.5rem 3.5rem; }
-        }
-
-        /* ── Platform Architecture Dark Section ── */
-        .platform-arch-section {
-          background: linear-gradient(135deg, #143C29 0%, #0F2B1E 60%, #091A10 100%);
-          color: #FFFFFF;
-          position: relative;
-          overflow: hidden;
-          padding: 5rem 3rem;
-        }
-        .platform-arch-grid {
-          position: absolute;
-          inset: 0;
-          background-image:
-            linear-gradient(rgba(143, 182, 156, 0.12) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(143, 182, 156, 0.12) 1px, transparent 1px);
-          background-size: 64px 64px;
-          pointer-events: none;
-        }
-        .platform-arch-glow-left {
-          position: absolute;
-          left: -100px; top: 50%;
-          transform: translateY(-50%);
-          width: 400px; height: 400px;
-          background: radial-gradient(circle, rgba(30, 84, 56, 0.35) 0%, transparent 70%);
-          pointer-events: none;
-        }
-        .platform-arch-glow-right {
-          position: absolute;
-          right: -80px; top: 50%;
-          transform: translateY(-50%);
-          width: 360px; height: 360px;
-          background: radial-gradient(circle, rgba(143, 182, 156, 0.15) 0%, transparent 70%);
-          pointer-events: none;
-        }
-        .platform-arch-inner {
-          max-width: 1100px;
-          margin: 0 auto;
-          position: relative;
-          z-index: 10;
-          text-align: center;
-        }
-        .platform-flow-grid {
-          display: grid;
-          grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr auto 1fr;
-          align-items: center;
-          gap: 0;
-          margin: 2.5rem auto 0;
-          max-width: 1000px;
-        }
-        @media (max-width: 900px) {
-          .platform-flow-grid {
-            grid-template-columns: 1fr;
-            gap: 0.75rem;
-            max-width: 360px;
-          }
-          .platform-flow-arrow { display: none; }
-        }
-
-        /* ── Buttons ── */
-        .btn-primary-dark {
-          display: inline-flex;
-          align-items: center;
-          gap: 10px;
-          background: #1E5438;
-          color: #FFFFFF;
-          border: 1px solid #1E5438;
-          border-radius: 10px;
-          padding: 0.85rem 1.8rem;
-          font-family: 'Space Grotesk', sans-serif;
-          font-weight: 700;
-          font-size: 0.82rem;
-          letter-spacing: 0.05em;
-          text-decoration: none;
-          text-transform: uppercase;
-          transition: all 0.22s ease;
-          box-shadow: 0 4px 16px rgba(30, 84, 56, 0.28);
-        }
-        .btn-primary-dark:hover {
-          background: #16422C;
-          transform: translateY(-2px);
-          box-shadow: 0 8px 26px rgba(30, 84, 56, 0.38);
-        }
-
-        .btn-secondary-white {
-          display: inline-flex;
-          align-items: center;
-          gap: 10px;
-          background: #FFFFFF;
-          color: #18251F;
-          border: 1.5px solid #D5DED6;
-          border-radius: 10px;
-          padding: 0.85rem 1.8rem;
-          font-family: 'Space Grotesk', sans-serif;
-          font-weight: 700;
-          font-size: 0.82rem;
-          letter-spacing: 0.05em;
-          text-decoration: none;
-          text-transform: uppercase;
-          transition: all 0.22s ease;
-          box-shadow: 0 2px 8px rgba(24, 37, 31, 0.04);
-        }
-        .btn-secondary-white:hover {
-          background: #F6F8F5;
-          border-color: #1E5438;
-          color: #1E5438;
-          transform: translateY(-2px);
-        }
-
-        /* ── Section Header ── */
-        .section-header-label {
-          display: inline-flex;
-          align-items: center;
-          gap: 6px;
-          font-size: 0.68rem;
-          font-weight: 800;
-          color: #1E5438;
-          letter-spacing: 0.12em;
-          text-transform: uppercase;
-          margin-bottom: 0.6rem;
-          font-family: 'Space Grotesk', sans-serif;
-        }
-      `}</style>
-
+    <div className="arch-page-canvas" style={{ background: '#FAF7F0', minHeight: '100vh', color: '#173A2B' }}>
       <Header />
 
-      {/* ══════════════════════════════════════════ HERO SECTION ════ */}
-      <section className="hero-section">
-        {/* Atmospheric decorations */}
-        <div className="hero-grid" />
-        <div className="hero-radial-glow" />
-        {/* Subtle geometric SVG lines */}
-        <svg className="hero-geo-lines" viewBox="0 0 1440 500" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', opacity: 0.06 }}>
-          <line x1="720" y1="0" x2="0" y2="500" stroke="#1E5438" strokeWidth="1"/>
-          <line x1="720" y1="0" x2="1440" y2="500" stroke="#1E5438" strokeWidth="1"/>
-          <line x1="360" y1="0" x2="0" y2="250" stroke="#1E5438" strokeWidth="0.5"/>
-          <line x1="1080" y1="0" x2="1440" y2="250" stroke="#1E5438" strokeWidth="0.5"/>
-          <rect x="610" y="120" width="220" height="260" rx="2" stroke="#1E5438" strokeWidth="0.75"/>
-          <line x1="0" y1="200" x2="1440" y2="200" stroke="#1E5438" strokeWidth="0.4"/>
-        </svg>
+      <main style={{ maxWidth: '1600px', margin: '0 auto', padding: '1rem 2rem 5rem' }}>
 
-        <div className="hero-container">
-          {/* Eyebrow badge */}
+        {/* ═══════════════════════════════════════════════════════
+            HERO MASTER SECTION — BIOPHILIC ARCHITECTURAL COMMAND CENTER
+        ═══════════════════════════════════════════════════════ */}
+        <section style={{
+          position: 'relative',
+          overflow: 'hidden',
+          marginBottom: '3.5rem',
+          paddingTop: '0.5rem',
+        }}>
+
+          {/* Layer 1: Ambient High-Key Architectural Backdrop Wash */}
           <div style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: '8px',
-            background: '#DDEBDF',
-            border: '1px solid rgba(30, 84, 56, 0.28)',
-            borderRadius: '100px',
-            padding: '0.42rem 1.1rem',
-            marginBottom: '1.8rem',
-            fontFamily: 'Space Grotesk, sans-serif',
-            fontSize: '0.68rem',
-            fontWeight: 700,
-            color: '#1E5438',
-            letterSpacing: '0.10em',
-            textTransform: 'uppercase'
-          }}>
-            <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#1E5438', flexShrink: 0 }} />
-            Sri Lanka Integrated Construction Intelligence Platform
-          </div>
-
-          {/* Main Title */}
-          <h1 style={{
-            fontFamily: 'Space Grotesk, sans-serif',
-            fontSize: 'clamp(2.8rem, 5.5vw, 4.5rem)',
-            fontWeight: 800,
-            lineHeight: 1.05,
-            letterSpacing: '-0.03em',
-            color: '#1E5438',
-            margin: '0 0 0.8rem',
-            textShadow: '0 2px 12px rgba(30, 84, 56, 0.08)'
-          }}>
-            GREENCONSTRUCT<span style={{ color: '#4A7A5C' }}>AI</span>
-          </h1>
-
-          {/* Accent bar */}
-          <div style={{
-            width: '72px',
-            height: '4px',
-            background: 'linear-gradient(90deg, #1E5438, #4A7A5C)',
-            borderRadius: '2px',
-            margin: '0 auto 1.6rem'
+            position: 'absolute',
+            inset: 0,
+            backgroundImage: 'url(/green_architecture.jpg)',
+            backgroundPosition: 'center right',
+            backgroundSize: 'cover',
+            filter: 'blur(20px)',
+            opacity: 0.32,
+            transform: 'scale(1.08)',
+            pointerEvents: 'none',
           }} />
 
-          {/* Subtitle */}
-          <h2 style={{
-            fontFamily: 'Space Grotesk, sans-serif',
-            fontSize: 'clamp(1.2rem, 2.2vw, 1.55rem)',
-            fontWeight: 700,
-            color: '#18251F',
-            lineHeight: 1.3,
-            margin: '0 0 1.2rem',
-            letterSpacing: '-0.015em'
-          }}>
-            Intelligent Decision Support for Sustainable Construction
-          </h2>
+          {/* Layer 2: Warm Natural Cream Gradient Wash for Crisp Typography Legibility */}
+          <div style={{
+            position: 'absolute',
+            inset: 0,
+            background: 'linear-gradient(90deg, rgba(250, 247, 240, 0.98) 0%, rgba(250, 247, 240, 0.93) 40%, rgba(250, 247, 240, 0.65) 65%, rgba(250, 247, 240, 0.25) 100%)',
+            pointerEvents: 'none',
+          }} />
 
-          {/* Paragraph */}
-          <p style={{
-            fontSize: '0.95rem',
-            color: '#536058',
-            lineHeight: 1.75,
-            fontWeight: 500,
-            maxWidth: '720px',
-            margin: '0 auto 2.4rem'
-          }}>
-            GreenConstructAI brings together intelligent building plan analysis, sustainable material recommendations,
-            green building pre-assessment, and fire-safety compliance assessment into one integrated construction
-            decision-support platform for Sri Lanka.
-          </p>
+          {/* Layer 3: Foreground Interactive Content */}
+          <div style={{ position: 'relative', zIndex: 1 }}>
 
-          {/* Actions */}
-          <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', justifyContent: 'center' }}>
-            <a href="#systems-grid" onClick={scrollToModules} className="btn-primary-dark">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <polyline points="6 9 12 15 18 9" />
-              </svg>
-              Explore Platform
-            </a>
-            <Link href="/plan-analyzer" className="btn-secondary-white">
-              Analyze a Project
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />
-              </svg>
+            {/* Top Telemetry / Compliance Status Ticker */}
+            <div style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              padding: '0.5rem 0.5rem 1.5rem',
+              fontSize: '0.66rem',
+              fontFamily: 'Space Grotesk, sans-serif',
+              letterSpacing: '0.08em',
+              textTransform: 'uppercase',
+              flexWrap: 'wrap',
+              gap: '0.75rem',
+            }}>
+              {/* Left: Engine Tag */}
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <span style={{
+                  display: 'inline-block',
+                  width: '7px',
+                  height: '7px',
+                  borderRadius: '50%',
+                  background: '#6E8A74',
+                  boxShadow: '0 0 8px rgba(110, 138, 116, 0.7)',
+                }} />
+                <span style={{ fontWeight: 700, color: '#4B5A50', letterSpacing: '0.08em' }}>
+                  DISSERTATION RESEARCH ENGINE · R26-IT-091
+                </span>
+              </div>
+
+              {/* Right: Regulatory Badges */}
+              <div style={{ display: 'flex', alignItems: 'center', gap: '14px', flexWrap: 'wrap' }}>
+                <span style={{
+                  background: '#D2E4D6',
+                  color: '#153E28',
+                  padding: '4px 11px',
+                  borderRadius: '9999px',
+                  fontWeight: 800,
+                  fontSize: '0.64rem',
+                  letterSpacing: '0.04em',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '4px',
+                  boxShadow: '0 1px 3px rgba(0,0,0,0.02)',
+                }}>
+                  ✓ SLS 107 · 614 · 139 COMPLIANT
+                </span>
+                <span style={{ color: '#C8BEAE' }}>|</span>
+                <span style={{ fontWeight: 700, color: '#2B3B30', fontSize: '0.64rem', letterSpacing: '0.06em' }}>
+                  GBCSL GREEN RATING READY
+                </span>
+                <span style={{ color: '#C8BEAE' }}>|</span>
+                <span style={{
+                  fontWeight: 700,
+                  color: '#9E5638',
+                  fontSize: '0.64rem',
+                  letterSpacing: '0.06em',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '5px',
+                }}>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <line x1="2" y1="12" x2="22" y2="12" />
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z" />
+                  </svg>
+                  SRI LANKA BIOCLIMATIC AI
+                </span>
+              </div>
+            </div>
+
+            {/* 2-Column Hero Body */}
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: '1.05fr 1.2fr',
+              alignItems: 'center',
+              padding: '0.5rem 0.5rem 2.5rem',
+              gap: '2.5rem',
+            }}>
+              {/* Left: Monumental Typography & Vision Controls */}
+              <div style={{
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+              }}>
+                <div>
+                  {/* Brand Kicker */}
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '1.5rem', flexWrap: 'wrap' }}>
+                    <span style={{
+                      background: '#12261B',
+                      color: '#FCFAF6',
+                      fontFamily: 'Space Grotesk, sans-serif',
+                      fontSize: '0.62rem',
+                      fontWeight: 800,
+                      padding: '4px 9px',
+                      borderRadius: '3px',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.08em',
+                    }}>
+                      CIVIL & ARCHITECTURAL AI
+                    </span>
+                    <span style={{
+                      fontSize: '0.68rem',
+                      color: '#687E70',
+                      fontFamily: 'Space Grotesk, sans-serif',
+                      fontWeight: 700,
+                      letterSpacing: '0.08em',
+                      textTransform: 'uppercase',
+                    }}>
+                      MCDM DECISION MATRIX + 3D BIM
+                    </span>
+                  </div>
+
+                  {/* Monumental Architectural Title */}
+                  <h1 style={{
+                    fontFamily: 'Outfit, Space Grotesk, sans-serif',
+                    fontSize: 'clamp(3rem, 4.6vw, 4.8rem)',
+                    fontWeight: 900,
+                    lineHeight: 0.96,
+                    letterSpacing: '-0.035em',
+                    color: '#133523',
+                    margin: '0 0 1.6rem',
+                    textTransform: 'uppercase',
+                  }}>
+                    SRI LANKAN<br />
+                    <span style={{ color: '#5E836E' }}>CONSTRUCTION</span><br />
+                    INTELLIGENCE
+                  </h1>
+
+                  {/* Platform Overview Paragraph */}
+                  <p style={{
+                    fontSize: '1.05rem',
+                    color: '#364A3E',
+                    lineHeight: '1.7',
+                    margin: 0,
+                    maxWidth: '540px',
+                    fontFamily: 'Inter, sans-serif',
+                  }}>
+                    An architectural decision-support platform synthesizing CAD boundary geometry, multi-criteria material specification, structural deflection checks, and GBCSL green pre-assessments for Sri Lankan building projects.
+                  </p>
+                </div>
+              </div>
+
+              {/* Right: Featured Biophilic Portal Frame */}
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <ArchitecturalHeroPortal />
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        {/* ═══════════════════════════════════════════════════════
+            THE 4 CORE COMPONENTS (BENTO WORKSTATION)
+        ═══════════════════════════════════════════════════════ */}
+        <section id="core-components" style={{ marginBottom: '4.5rem' }}>
+          {/* Section header */}
+          <div style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'baseline',
+            marginBottom: '1.75rem',
+            borderBottom: '1px solid #D8D1C5',
+            paddingBottom: '0.85rem',
+          }}>
+            <div>
+              <span style={{
+                background: '#173A2B',
+                color: '#FCFAF6',
+                fontFamily: 'Space Grotesk, sans-serif',
+                fontSize: '0.60rem',
+                fontWeight: 800,
+                padding: '2px 8px',
+                borderRadius: '2px',
+                textTransform: 'uppercase',
+                display: 'inline-block',
+                marginBottom: '0.4rem',
+                letterSpacing: '0.08em',
+              }}>
+                RESEARCH SYSTEM ARCHITECTURE
+              </span>
+              <h2 style={{
+                fontFamily: 'Outfit, Space Grotesk, sans-serif',
+                fontSize: '2rem',
+                fontWeight: 800,
+                color: '#173A2B',
+                margin: 0,
+                letterSpacing: '-0.02em',
+                textTransform: 'uppercase',
+              }}>
+                The 4 Core Research Pillars
+              </h2>
+            </div>
+            <span style={{ fontSize: '0.72rem', color: '#697068', fontFamily: 'Space Grotesk, sans-serif', fontWeight: 600 }}>
+              INTEGRATED ENGINEERING PIPELINE
+            </span>
+          </div>
+
+          {/* Bento Grid Layout */}
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(12, 1fr)',
+            gap: '1.5rem',
+          }}>
+            {/* PILLAR 01: Plan Analyzer (5 Columns) */}
+            <div style={{
+              gridColumn: 'span 5',
+              background: '#FFFFFF',
+              border: '1px solid #D8D1C5',
+              borderTop: '4px solid #173A2B',
+              borderRadius: '4px',
+              padding: '2rem',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+              boxShadow: '0 4px 20px rgba(23, 58, 43, 0.03)',
+            }}>
+              <div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
+                  <span style={{ fontSize: '1.2rem', fontFamily: 'Space Grotesk', fontWeight: 900, color: '#173A2B' }}>01</span>
+                  <span style={{ fontSize: '0.60rem', fontFamily: 'Space Grotesk', fontWeight: 800, background: 'rgba(23, 58, 43, 0.08)', color: '#173A2B', padding: '2px 8px', borderRadius: '2px' }}>
+                    VISION AI
+                  </span>
+                </div>
+                <div style={{ fontSize: '0.62rem', fontWeight: 800, color: '#697068', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '4px' }}>
+                  SPATIAL & CAD EXTRACTION
+                </div>
+                <h3 style={{ fontFamily: 'Outfit, Space Grotesk', fontSize: '1.4rem', fontWeight: 800, color: '#173A2B', margin: '0 0 0.75rem' }}>
+                  Plan & Blueprint Analyzer
+                </h3>
+                <p style={{ fontSize: '0.85rem', color: '#697068', lineHeight: 1.65, margin: '0 0 1.25rem' }}>
+                  Computer vision boundary parsing, automated floor plan telemetry, wall/floor area computations, opening ratios, and spatial coordinate vector generation.
+                </p>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '1.5rem' }}>
+                  {coreComponents[0].features.map((f, i) => (
+                    <span key={i} style={{ fontSize: '0.65rem', fontFamily: 'Space Grotesk', background: '#FBF9F4', border: '1px solid #D8D1C5', padding: '3px 8px', borderRadius: '3px' }}>
+                      ✓ {f}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <Link
+                href="/plan-analyzer"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  background: '#173A2B',
+                  color: '#FCFAF6',
+                  padding: '0.8rem 1.5rem',
+                  borderRadius: '4px',
+                  fontFamily: 'Space Grotesk',
+                  fontSize: '0.74rem',
+                  fontWeight: 700,
+                  textDecoration: 'none',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.06em',
+                }}
+              >
+                Open Plan Analyzer →
+              </Link>
+            </div>
+
+            {/* PILLAR 02: Material Specification & 3D Intelligence (7 Columns - FEATURED HERO) */}
+            <div style={{
+              gridColumn: 'span 7',
+              background: '#FBF9F4',
+              border: '2px solid #8D6A4F',
+              borderTop: '5px solid #8D6A4F',
+              borderRadius: '4px',
+              padding: '2rem 2.25rem',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+              boxShadow: '0 8px 30px rgba(141, 106, 79, 0.08)',
+              position: 'relative',
+            }}>
+              <div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
+                  <span style={{ fontSize: '1.2rem', fontFamily: 'Space Grotesk', fontWeight: 900, color: '#8D6A4F' }}>02</span>
+                  <span style={{ fontSize: '0.62rem', fontFamily: 'Space Grotesk', fontWeight: 800, background: '#8D6A4F', color: '#FCFAF6', padding: '3px 10px', borderRadius: '2px', letterSpacing: '0.06em' }}>
+                    CENTRAL RESEARCH CORE
+                  </span>
+                </div>
+                <div style={{ fontSize: '0.62rem', fontWeight: 800, color: '#8D6A4F', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '4px' }}>
+                  MATERIAL INTELLIGENCE & 3D BIM
+                </div>
+                <h3 style={{ fontFamily: 'Outfit, Space Grotesk', fontSize: '1.65rem', fontWeight: 900, color: '#173A2B', margin: '0 0 0.75rem' }}>
+                  Material Specification & 3D Studio
+                </h3>
+                <p style={{ fontSize: '0.88rem', color: '#697068', lineHeight: 1.7, margin: '0 0 1.25rem' }}>
+                  The research engine synthesizing MCDM TOPSIS, SLS structural rules, and Random Forest models. Unites the intake brief, 3D cutaway model, specification monograph, and project history.
+                </p>
+
+                {/* Sublink Workspaces */}
+                <div style={{
+                  background: '#FFFFFF',
+                  border: '1px solid #D8D1C5',
+                  borderRadius: '4px',
+                  padding: '0.85rem 1rem',
+                  marginBottom: '1.5rem',
+                }}>
+                  <div style={{ fontSize: '0.60rem', fontWeight: 800, color: '#8D6A4F', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '0.5rem', fontFamily: 'Space Grotesk' }}>
+                    Direct Research Workspaces:
+                  </div>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+                    {coreComponents[1].sublinks.map((sub, sIdx) => (
+                      <Link
+                        key={sIdx}
+                        href={sub.href}
+                        style={{
+                          fontSize: '0.70rem',
+                          fontFamily: 'Space Grotesk, sans-serif',
+                          fontWeight: 700,
+                          color: '#173A2B',
+                          background: '#FBF9F4',
+                          border: '1px solid #D8D1C5',
+                          padding: '4px 10px',
+                          borderRadius: '3px',
+                          textDecoration: 'none',
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: '4px',
+                        }}
+                      >
+                        <span>→</span> {sub.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: '1rem', borderTop: '1px solid #D8D1C5' }}>
+                <Link
+                  href="/materials/form"
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    background: '#8D6A4F',
+                    color: '#FCFAF6',
+                    padding: '0.85rem 1.75rem',
+                    borderRadius: '4px',
+                    fontFamily: 'Space Grotesk',
+                    fontSize: '0.78rem',
+                    fontWeight: 800,
+                    textDecoration: 'none',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.06em',
+                  }}
+                >
+                  Start Project Brief & Spec →
+                </Link>
+                <span style={{ fontSize: '0.65rem', color: '#697068', fontFamily: 'Space Grotesk' }}>
+                  SLS 107/614 Audited
+                </span>
+              </div>
+            </div>
+
+            {/* PILLAR 03: Fire Safety (6 Columns) */}
+            <div style={{
+              gridColumn: 'span 6',
+              background: '#FFFFFF',
+              border: '1px solid #D8D1C5',
+              borderTop: '4px solid #B85C43',
+              borderRadius: '4px',
+              padding: '2rem',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+              boxShadow: '0 4px 20px rgba(23, 58, 43, 0.03)',
+            }}>
+              <div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
+                  <span style={{ fontSize: '1.2rem', fontFamily: 'Space Grotesk', fontWeight: 900, color: '#B85C43' }}>03</span>
+                  <span style={{ fontSize: '0.60rem', fontFamily: 'Space Grotesk', fontWeight: 800, background: 'rgba(184, 92, 67, 0.08)', color: '#B85C43', padding: '2px 8px', borderRadius: '2px' }}>
+                    SLS 139 · BS 476
+                  </span>
+                </div>
+                <div style={{ fontSize: '0.62rem', fontWeight: 800, color: '#697068', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '4px' }}>
+                  STATUTORY & LIFE SAFETY
+                </div>
+                <h3 style={{ fontFamily: 'Outfit, Space Grotesk', fontSize: '1.4rem', fontWeight: 800, color: '#173A2B', margin: '0 0 0.75rem' }}>
+                  Fire Safety Compliance
+                </h3>
+                <p style={{ fontSize: '0.85rem', color: '#697068', lineHeight: 1.65, margin: '0 0 1.25rem' }}>
+                  Preliminary engineering verification of structural fire resistance ratings under SLS 139 and British Standard BS 476, non-combustibility of envelope partitions, and egress travel distances.
+                </p>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '1.5rem' }}>
+                  {coreComponents[2].features.map((f, i) => (
+                    <span key={i} style={{ fontSize: '0.65rem', fontFamily: 'Space Grotesk', background: '#FBF9F4', border: '1px solid #D8D1C5', padding: '3px 8px', borderRadius: '3px' }}>
+                      ✓ {f}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <Link
+                href="/fire-safety"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  background: '#B85C43',
+                  color: '#FCFAF6',
+                  padding: '0.8rem 1.5rem',
+                  borderRadius: '4px',
+                  fontFamily: 'Space Grotesk',
+                  fontSize: '0.74rem',
+                  fontWeight: 700,
+                  textDecoration: 'none',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.06em',
+                }}
+              >
+                Open Fire Safety Module →
+              </Link>
+            </div>
+
+            {/* PILLAR 04: Green Building Pre-Assessment (6 Columns) */}
+            <div style={{
+              gridColumn: 'span 6',
+              background: '#FFFFFF',
+              border: '1px solid #D8D1C5',
+              borderTop: '4px solid #718C77',
+              borderRadius: '4px',
+              padding: '2rem',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+              boxShadow: '0 4px 20px rgba(23, 58, 43, 0.03)',
+            }}>
+              <div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
+                  <span style={{ fontSize: '1.2rem', fontFamily: 'Space Grotesk', fontWeight: 900, color: '#718C77' }}>04</span>
+                  <span style={{ fontSize: '0.60rem', fontFamily: 'Space Grotesk', fontWeight: 800, background: 'rgba(113, 140, 119, 0.12)', color: '#718C77', padding: '2px 8px', borderRadius: '2px' }}>
+                    GREENSL · GBCSL
+                  </span>
+                </div>
+                <div style={{ fontSize: '0.62rem', fontWeight: 800, color: '#697068', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '4px' }}>
+                  SUSTAINABILITY & GREENSL
+                </div>
+                <h3 style={{ fontFamily: 'Outfit, Space Grotesk', fontSize: '1.4rem', fontWeight: 800, color: '#173A2B', margin: '0 0 0.75rem' }}>
+                  Green Building Pre-Assessment
+                </h3>
+                <p style={{ fontSize: '0.85rem', color: '#697068', lineHeight: 1.65, margin: '0 0 1.25rem' }}>
+                  Environmental performance scorecard aligned with Green Building Council of Sri Lanka (GBCSL) criteria, calculating embodied carbon intensity (kg CO₂e/m²) and local sourcing indices.
+                </p>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '1.5rem' }}>
+                  {coreComponents[3].features.map((f, i) => (
+                    <span key={i} style={{ fontSize: '0.65rem', fontFamily: 'Space Grotesk', background: '#FBF9F4', border: '1px solid #D8D1C5', padding: '3px 8px', borderRadius: '3px' }}>
+                      ✓ {f}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <Link
+                href="/green-assessment"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  background: '#718C77',
+                  color: '#FCFAF6',
+                  padding: '0.8rem 1.5rem',
+                  borderRadius: '4px',
+                  fontFamily: 'Space Grotesk',
+                  fontSize: '0.74rem',
+                  fontWeight: 700,
+                  textDecoration: 'none',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.06em',
+                }}
+              >
+                Open Green Assessment →
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* ═══════════════════════════════════════════════════════
+            SAMPLE CASE STUDIES & LIVE BENCHMARKS
+        ═══════════════════════════════════════════════════════ */}
+        <section style={{ marginBottom: '4.5rem' }}>
+          <div style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'baseline',
+            marginBottom: '1.5rem',
+            borderBottom: '1px solid #D8D1C5',
+            paddingBottom: '0.75rem',
+          }}>
+            <div>
+              <span style={{
+                background: '#8D6A4F',
+                color: '#FCFAF6',
+                fontFamily: 'Space Grotesk, sans-serif',
+                fontSize: '0.60rem',
+                fontWeight: 800,
+                padding: '2px 8px',
+                borderRadius: '2px',
+                textTransform: 'uppercase',
+                display: 'inline-block',
+                marginBottom: '0.4rem',
+                letterSpacing: '0.08em',
+              }}>
+                DISSERTATION CASE STUDIES
+              </span>
+              <h2 style={{
+                fontFamily: 'Outfit, Space Grotesk, sans-serif',
+                fontSize: '1.75rem',
+                fontWeight: 800,
+                color: '#173A2B',
+                margin: 0,
+                letterSpacing: '-0.02em',
+                textTransform: 'uppercase',
+              }}>
+                Sri Lankan Architectural Benchmarks
+              </h2>
+            </div>
+            <Link href="/history" style={{ fontSize: '0.72rem', color: '#173A2B', fontWeight: 700, fontFamily: 'Space Grotesk', textDecoration: 'none' }}>
+              View All Historical Archives →
             </Link>
           </div>
-        </div>
-      </section>
 
-      {/* ═══════════════════════════════════ 4 MODULE CARDS ════ */}
-      <section id="systems-grid" className="modules-section">
-        <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
-          <div className="section-header-label">
-            <span style={{ width: '5px', height: '5px', borderRadius: '50%', background: '#1E5438', display: 'inline-block' }} />
-            Intelligent System Modules
-          </div>
-          <h2 style={{
-            fontFamily: 'Space Grotesk, sans-serif',
-            fontSize: 'clamp(1.25rem, 2.5vw, 1.75rem)',
-            fontWeight: 800,
-            color: '#18251F',
-            letterSpacing: '-0.02em',
-            margin: 0
-          }}>
-            Four Integrated Intelligence Systems
-          </h2>
-        </div>
-
-        <div className="module-row-grid">
-          {/* Card 1: Building Plan Analyzer */}
-          <div className="mockup-module-card card-plan-lp">
-            <div style={{
-              padding: '1.6rem 1.5rem',
-              backgroundImage: 'url("/blueprint_desk.png")',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              backgroundBlendMode: 'luminosity',
-              opacity: 0.08,
-              position: 'absolute',
-              inset: 0,
-              borderRadius: '18px'
-            }} />
-            <div style={{ position: 'relative', zIndex: 2, padding: '1.6rem 1.5rem', display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'space-between' }}>
-              <div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '1.1rem' }}>
-                  <div style={{
-                    width: '40px', height: '40px', borderRadius: '10px',
-                    background: '#2F6FA3', color: '#FFFFFF',
-                    display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    boxShadow: '0 4px 14px rgba(47, 111, 163, 0.28)'
-                  }}>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0, 1fr))', gap: '1.25rem' }}>
+            {sampleProjects.map((p, idx) => (
+              <div key={idx} style={{
+                background: '#FFFFFF',
+                border: '1px solid #D8D1C5',
+                borderRadius: '4px',
+                padding: '1.5rem',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+                boxShadow: '0 2px 10px rgba(23, 58, 43, 0.03)',
+              }}>
+                <div>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
+                    <span style={{ fontSize: '0.60rem', fontFamily: 'Space Grotesk', fontWeight: 800, color: '#8D6A4F', background: 'rgba(141, 106, 79, 0.08)', padding: '2px 6px', borderRadius: '2px' }}>
+                      {p.tag}
+                    </span>
+                    <span style={{ fontSize: '0.85rem', fontFamily: 'Space Grotesk', fontWeight: 900, color: '#173A2B' }}>
+                      {p.score}
+                    </span>
                   </div>
-                  <div>
-                    <div style={{ fontSize: '0.7rem', fontWeight: 800, color: '#2F6FA3', fontFamily: 'Space Grotesk' }}>01</div>
-                    <div style={{ fontSize: '0.88rem', fontWeight: 800, color: '#18251F', fontFamily: 'Space Grotesk', lineHeight: 1.2 }}>BUILDING PLAN ANALYZER</div>
+                  <h3 style={{ fontFamily: 'Outfit, Space Grotesk', fontSize: '1.15rem', fontWeight: 800, color: '#173A2B', margin: '0 0 0.25rem' }}>
+                    {p.title}
+                  </h3>
+                  <div style={{ fontSize: '0.74rem', color: '#697068', marginBottom: '0.75rem' }}>
+                    {p.location} • {p.area}
+                  </div>
+                  <div style={{ fontSize: '0.76rem', color: '#252823', background: '#FBF9F4', padding: '0.65rem 0.85rem', borderRadius: '4px', border: '1px solid #EFECE4', lineHeight: 1.5 }}>
+                    <strong>Specified Package:</strong> {p.spec}
                   </div>
                 </div>
-                <p style={{ fontSize: '0.82rem', color: '#536058', lineHeight: 1.6, fontWeight: 500, margin: '0 0 1.5rem' }}>
-                  Analyze building geometry, spaces, and project data with intelligent insights.
-                </p>
-              </div>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: '1rem', borderTop: '1px solid rgba(47, 111, 163, 0.18)' }}>
-                <span style={{ fontSize: '0.62rem', fontWeight: 800, color: '#2F6FA3', background: '#D0E4F2', padding: '3px 10px', borderRadius: '20px' }}>
-                  ● ACTIVE
-                </span>
-                <Link href="/plan-analyzer" style={{ fontSize: '0.74rem', fontWeight: 800, color: '#2F6FA3', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '4px', fontFamily: 'Space Grotesk' }}>
-                  OPEN ANALYZER →
+                <Link
+                  href={p.href}
+                  style={{
+                    marginTop: '1.25rem',
+                    paddingTop: '0.85rem',
+                    borderTop: '1px solid #EFECE4',
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    fontSize: '0.72rem',
+                    fontWeight: 700,
+                    fontFamily: 'Space Grotesk',
+                    color: '#173A2B',
+                    textDecoration: 'none',
+                  }}
+                >
+                  <span>Load into Specification Engine</span>
+                  <span>→</span>
                 </Link>
               </div>
+            ))}
+          </div>
+        </section>
+
+        {/* ═══════════════════════════════════════════════════════
+            MATERIAL MATRIX & SPECIFICATION TELEMETRY
+        ═══════════════════════════════════════════════════════ */}
+        <section style={{
+          background: '#FFFFFF',
+          border: '1px solid #D8D1C5',
+          borderTop: '4px solid #173A2B',
+          borderRadius: '4px',
+          padding: '2.5rem 3rem',
+          boxShadow: '0 4px 20px rgba(23, 58, 43, 0.04)',
+        }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '1.5rem', marginBottom: '2rem' }}>
+            <div>
+              <span style={{ fontSize: '0.62rem', fontWeight: 800, color: '#173A2B', letterSpacing: '0.12em', textTransform: 'uppercase', fontFamily: 'Space Grotesk' }}>
+                MATERIAL INTELLIGENCE DATASET
+              </span>
+              <h2 style={{ fontFamily: 'Outfit, Space Grotesk', fontSize: '1.85rem', fontWeight: 900, color: '#173A2B', margin: '0.25rem 0 0.5rem', textTransform: 'uppercase' }}>
+                Sri Lankan Sustainable Material Matrix
+              </h2>
+              <p style={{ color: '#697068', fontSize: '0.88rem', margin: 0, maxWidth: '600px' }}>
+                Calibrated against Sri Lankan Standards (SLS), regional quarry extraction points, and embodied carbon life-cycle databases.
+              </p>
+            </div>
+
+            {/* Material selector tabs */}
+            <div style={{ display: 'flex', gap: '6px', background: '#F5F1E8', padding: '4px', borderRadius: '4px', border: '1px solid #D8D1C5' }}>
+              {materialSwatches.map(m => (
+                <button
+                  key={m.id}
+                  onClick={() => setActiveMaterialTab(m.id)}
+                  style={{
+                    background: activeMaterialTab === m.id ? '#173A2B' : 'transparent',
+                    color: activeMaterialTab === m.id ? '#FCFAF6' : '#697068',
+                    border: 'none',
+                    padding: '6px 14px',
+                    borderRadius: '3px',
+                    fontFamily: 'Space Grotesk',
+                    fontSize: '0.72rem',
+                    fontWeight: activeMaterialTab === m.id ? 800 : 600,
+                    cursor: 'pointer',
+                    transition: 'all 0.15s ease',
+                  }}
+                >
+                  {m.name}
+                </button>
+              ))}
             </div>
           </div>
 
-          {/* Card 2: Material Recommendations */}
-          <div className="mockup-module-card card-mat-lp">
-            <div style={{ position: 'relative', zIndex: 2, padding: '1.6rem 1.5rem', display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'space-between' }}>
-              <div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '1.1rem' }}>
-                  <div style={{
-                    width: '40px', height: '40px', borderRadius: '10px',
-                    background: '#1E5438', color: '#FFFFFF',
-                    display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    boxShadow: '0 4px 14px rgba(30, 84, 56, 0.28)'
-                  }}>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
-                  </div>
-                  <div>
-                    <div style={{ fontSize: '0.7rem', fontWeight: 800, color: '#1E5438', fontFamily: 'Space Grotesk' }}>02</div>
-                    <div style={{ fontSize: '0.88rem', fontWeight: 800, color: '#18251F', fontFamily: 'Space Grotesk', lineHeight: 1.2 }}>MATERIAL RECOMMENDATIONS</div>
-                  </div>
-                </div>
-                <p style={{ fontSize: '0.82rem', color: '#536058', lineHeight: 1.6, fontWeight: 500, margin: '0 0 1.5rem' }}>
-                  Get AI-powered sustainable material recommendations based on performance, cost and availability.
-                </p>
-              </div>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: '1rem', borderTop: '1px solid rgba(30, 84, 56, 0.18)' }}>
-                <span style={{ fontSize: '0.62rem', fontWeight: 800, color: '#1E5438', background: '#D4E8D8', padding: '3px 10px', borderRadius: '20px' }}>
-                  ● ACTIVE
-                </span>
-                <Link href="/materials" style={{ fontSize: '0.74rem', fontWeight: 800, color: '#1E5438', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '4px', fontFamily: 'Space Grotesk' }}>
-                  VIEW RECOMMENDATIONS →
-                </Link>
-              </div>
+          {/* Current Material Telemetry Grid */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, minmax(0, 1fr))', gap: '1.25rem', background: '#FBF9F4', padding: '1.5rem', borderRadius: '4px', border: '1px solid #D8D1C5' }}>
+            <div>
+              <div style={{ fontSize: '0.60rem', color: '#697068', textTransform: 'uppercase', fontFamily: 'Space Grotesk', fontWeight: 700 }}>MATERIAL APPLICATION</div>
+              <div style={{ fontSize: '1.05rem', fontWeight: 800, color: '#173A2B', fontFamily: 'Space Grotesk', marginTop: '4px' }}>{currentSwatch.category}</div>
+            </div>
+            <div>
+              <div style={{ fontSize: '0.60rem', color: '#697068', textTransform: 'uppercase', fontFamily: 'Space Grotesk', fontWeight: 700 }}>BULK DENSITY</div>
+              <div style={{ fontSize: '1.05rem', fontWeight: 800, color: '#173A2B', fontFamily: 'Space Grotesk', marginTop: '4px' }}>{currentSwatch.density}</div>
+            </div>
+            <div>
+              <div style={{ fontSize: '0.60rem', color: '#697068', textTransform: 'uppercase', fontFamily: 'Space Grotesk', fontWeight: 700 }}>THERMAL TRANSMITTANCE</div>
+              <div style={{ fontSize: '1.05rem', fontWeight: 800, color: '#173A2B', fontFamily: 'Space Grotesk', marginTop: '4px' }}>{currentSwatch.uValue}</div>
+            </div>
+            <div>
+              <div style={{ fontSize: '0.60rem', color: '#697068', textTransform: 'uppercase', fontFamily: 'Space Grotesk', fontWeight: 700 }}>EMBODIED CARBON</div>
+              <div style={{ fontSize: '1.05rem', fontWeight: 800, color: '#718C77', fontFamily: 'Space Grotesk', marginTop: '4px' }}>{currentSwatch.carbon}</div>
+            </div>
+            <div>
+              <div style={{ fontSize: '0.60rem', color: '#697068', textTransform: 'uppercase', fontFamily: 'Space Grotesk', fontWeight: 700 }}>SLS STANDARD AUDIT</div>
+              <div style={{ fontSize: '1.05rem', fontWeight: 800, color: '#8D6A4F', fontFamily: 'Space Grotesk', marginTop: '4px' }}>{currentSwatch.sls}</div>
             </div>
           </div>
-
-          {/* Card 3: Green Building Pre-Assessment */}
-          <div className="mockup-module-card card-green-lp">
-            <div style={{ position: 'relative', zIndex: 2, padding: '1.6rem 1.5rem', display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'space-between' }}>
-              <div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '1.1rem' }}>
-                  <div style={{
-                    width: '40px', height: '40px', borderRadius: '10px',
-                    background: '#4A7A5C', color: '#FFFFFF',
-                    display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    boxShadow: '0 4px 14px rgba(74, 122, 92, 0.28)'
-                  }}>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 2c2.5 3 4 6.5 4 10"/><path d="M12 2C9.5 5 8 8.5 8 12"/></svg>
-                  </div>
-                  <div>
-                    <div style={{ fontSize: '0.7rem', fontWeight: 800, color: '#4A7A5C', fontFamily: 'Space Grotesk' }}>03</div>
-                    <div style={{ fontSize: '0.88rem', fontWeight: 800, color: '#18251F', fontFamily: 'Space Grotesk', lineHeight: 1.2 }}>GREEN BUILDING PRE-ASSESSMENT</div>
-                  </div>
-                </div>
-                <p style={{ fontSize: '0.82rem', color: '#536058', lineHeight: 1.6, fontWeight: 500, margin: '0 0 1.5rem' }}>
-                  Pre-assess your project for green building compliance and sustainability metrics.
-                </p>
-              </div>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: '1rem', borderTop: '1px solid rgba(74, 122, 92, 0.18)' }}>
-                <span style={{ fontSize: '0.62rem', fontWeight: 800, color: '#4A7A5C', background: '#D0E8D6', padding: '3px 10px', borderRadius: '20px' }}>
-                  ● INTEGRATION READY
-                </span>
-                <Link href="/green-assessment" style={{ fontSize: '0.74rem', fontWeight: 800, color: '#4A7A5C', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '4px', fontFamily: 'Space Grotesk' }}>
-                  COMING SOON →
-                </Link>
-              </div>
-            </div>
-          </div>
-
-          {/* Card 4: Fire-Safety Compliance */}
-          <div className="mockup-module-card card-fire-lp">
-            <div style={{ position: 'relative', zIndex: 2, padding: '1.6rem 1.5rem', display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'space-between' }}>
-              <div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '1.1rem' }}>
-                  <div style={{
-                    width: '40px', height: '40px', borderRadius: '10px',
-                    background: '#C65D35', color: '#FFFFFF',
-                    display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    boxShadow: '0 4px 14px rgba(198, 93, 53, 0.28)'
-                  }}>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                  </div>
-                  <div>
-                    <div style={{ fontSize: '0.7rem', fontWeight: 800, color: '#C65D35', fontFamily: 'Space Grotesk' }}>04</div>
-                    <div style={{ fontSize: '0.88rem', fontWeight: 800, color: '#18251F', fontFamily: 'Space Grotesk', lineHeight: 1.2 }}>FIRE-SAFETY COMPLIANCE</div>
-                  </div>
-                </div>
-                <p style={{ fontSize: '0.82rem', color: '#536058', lineHeight: 1.6, fontWeight: 500, margin: '0 0 1.5rem' }}>
-                  Ensure fire-safety compliance with intelligent checks and code-based validation.
-                </p>
-              </div>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: '1rem', borderTop: '1px solid rgba(198, 93, 53, 0.18)' }}>
-                <span style={{ fontSize: '0.62rem', fontWeight: 800, color: '#C65D35', background: '#F2D8CC', padding: '3px 10px', borderRadius: '20px' }}>
-                  ● INTEGRATION READY
-                </span>
-                <Link href="/fire-safety" style={{ fontSize: '0.74rem', fontWeight: 800, color: '#C65D35', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '4px', fontFamily: 'Space Grotesk' }}>
-                  COMING SOON →
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ════════════════════════════════════ HOW IT WORKS ════ */}
-      <section className="hiw-section">
-        <div className="hiw-container">
-          <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
-            <div className="section-header-label">
-              <span style={{ width: '5px', height: '5px', borderRadius: '50%', background: '#1E5438', display: 'inline-block' }} />
-              Workflow
-            </div>
-            <h2 style={{
-              fontSize: 'clamp(1.1rem, 2vw, 1.5rem)',
-              fontWeight: 800,
-              color: '#18251F',
-              letterSpacing: '-0.015em',
-              textTransform: 'uppercase',
-              fontFamily: 'Space Grotesk, sans-serif',
-              margin: 0
-            }}>
-              How It Works
-            </h2>
-          </div>
-
-          <div className="hiw-flow">
-            {/* Step 1 */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '14px', flex: 1, minWidth: '200px', background: '#FFFFFF', borderRadius: '14px', padding: '1.1rem 1.2rem', border: '1px solid #BDCEBF', boxShadow: '0 2px 10px rgba(20,34,27,0.04)' }}>
-              <div style={{ width: '44px', height: '44px', borderRadius: '10px', background: '#CCE3D2', color: '#1E5438', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, border: '1px solid rgba(30,84,56,0.2)' }}>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
-              </div>
-              <div>
-                <div style={{ fontSize: '0.78rem', fontWeight: 800, color: '#14221B', textTransform: 'uppercase', fontFamily: 'Space Grotesk' }}>PROJECT INPUT</div>
-                <div style={{ fontSize: '0.74rem', color: '#42554A', fontWeight: 500, lineHeight: 1.4 }}>Upload plans and project information</div>
-              </div>
-            </div>
-
-            <div style={{ color: '#9EB5A1', fontSize: '1.4rem', padding: '0 0.5rem', flexShrink: 0 }}>→</div>
-
-            {/* Step 2 */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '14px', flex: 1, minWidth: '200px', background: '#DEE9EF', borderRadius: '14px', padding: '1.1rem 1.2rem', border: '1px solid rgba(36,93,140,0.22)', boxShadow: '0 2px 10px rgba(36,93,140,0.04)' }}>
-              <div style={{ width: '44px', height: '44px', borderRadius: '10px', background: '#C8DDF0', color: '#245D8C', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, border: '1px solid rgba(36,93,140,0.25)' }}>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
-              </div>
-              <div>
-                <div style={{ fontSize: '0.78rem', fontWeight: 800, color: '#14221B', textTransform: 'uppercase', fontFamily: 'Space Grotesk' }}>PLAN ANALYSIS</div>
-                <div style={{ fontSize: '0.74rem', color: '#42554A', fontWeight: 500, lineHeight: 1.4 }}>AI analyzes building geometry and data</div>
-              </div>
-            </div>
-
-            <div style={{ color: '#9EB5A1', fontSize: '1.4rem', padding: '0 0.5rem', flexShrink: 0 }}>→</div>
-
-            {/* Step 3 */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '14px', flex: 1, minWidth: '200px', background: '#DCE9DF', borderRadius: '14px', padding: '1.1rem 1.2rem', border: '1px solid rgba(62,116,82,0.22)', boxShadow: '0 2px 10px rgba(62,116,82,0.04)' }}>
-              <div style={{ width: '44px', height: '44px', borderRadius: '10px', background: '#C6E5CF', color: '#3E7452', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, border: '1px solid rgba(62,116,82,0.25)' }}>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 2c2.5 3 4 6.5 4 10"/><path d="M12 2C9.5 5 8 8.5 8 12"/></svg>
-              </div>
-              <div>
-                <div style={{ fontSize: '0.78rem', fontWeight: 800, color: '#14221B', textTransform: 'uppercase', fontFamily: 'Space Grotesk' }}>INTELLIGENT ASSESSMENT</div>
-                <div style={{ fontSize: '0.74rem', color: '#42554A', fontWeight: 500, lineHeight: 1.4 }}>Multi-domain AI engines evaluate</div>
-              </div>
-            </div>
-
-            <div style={{ color: '#9EB5A1', fontSize: '1.4rem', padding: '0 0.5rem', flexShrink: 0 }}>→</div>
-
-            {/* Step 4 */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '14px', flex: 1, minWidth: '200px', background: '#FFFFFF', borderRadius: '14px', padding: '1.1rem 1.2rem', border: '1px solid #BDCEBF', boxShadow: '0 2px 10px rgba(20,34,27,0.04)' }}>
-              <div style={{ width: '44px', height: '44px', borderRadius: '10px', background: '#CCE3D2', color: '#1E5438', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, border: '1px solid rgba(30,84,56,0.2)' }}>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-              </div>
-              <div>
-                <div style={{ fontSize: '0.78rem', fontWeight: 800, color: '#14221B', textTransform: 'uppercase', fontFamily: 'Space Grotesk' }}>INTEGRATED INSIGHTS</div>
-                <div style={{ fontSize: '0.74rem', color: '#42554A', fontWeight: 500, lineHeight: 1.4 }}>Actionable recommendations & compliance</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ══════════════════════════ PLATFORM ARCHITECTURE DARK SECTION ════ */}
-      <section className="platform-arch-section">
-        <div className="platform-arch-grid" />
-        <div className="platform-arch-glow-left" />
-        <div className="platform-arch-glow-right" />
-
-        <div className="platform-arch-inner">
-          <div style={{
-            display: 'inline-flex', alignItems: 'center', gap: '6px',
-            fontSize: '0.68rem', fontWeight: 800, color: '#8FB69C',
-            letterSpacing: '0.12em', textTransform: 'uppercase',
-            marginBottom: '0.75rem', fontFamily: 'Space Grotesk, sans-serif'
-          }}>
-            BUILT FOR A SUSTAINABLE FUTURE
-          </div>
-
-          <h2 style={{
-            fontFamily: 'Space Grotesk, sans-serif',
-            fontSize: 'clamp(1.7rem, 3.2vw, 2.4rem)',
-            fontWeight: 800,
-            color: '#F4F7F3',
-            margin: '0 0 0.8rem',
-            letterSpacing: '-0.02em'
-          }}>
-            Integrated Decision Support Architecture
-          </h2>
-
-          <p style={{
-            fontSize: '0.92rem', color: '#9AB8A3',
-            maxWidth: '680px', margin: '0 auto 3rem',
-            lineHeight: 1.65, fontWeight: 400
-          }}>
-            Four intelligent systems working in sequence to deliver accurate, sustainable,
-            and code-compliant construction decisions across Sri Lanka&apos;s unique climate zones.
-          </p>
-
-          {/* Platform flow */}
-          <div className="platform-flow-grid">
-            {[
-              { icon: '📐', label: 'PLAN INTELLIGENCE', sub: 'Geometry & Blueprint Analysis', color: '#2F6FA3', bg: 'rgba(47,111,163,0.15)' },
-              null,
-              { icon: '🧱', label: 'MATERIAL INTELLIGENCE', sub: 'Sustainable Material Selection', color: '#4A7A5C', bg: 'rgba(74,122,92,0.15)' },
-              null,
-              { icon: '🌿', label: 'SUSTAINABILITY ASSESSMENT', sub: 'Green Building Evaluation', color: '#8FB69C', bg: 'rgba(143,182,156,0.15)' },
-              null,
-              { icon: '🛡', label: 'FIRE-SAFETY ASSESSMENT', sub: 'Code Compliance Validation', color: '#C65D35', bg: 'rgba(198,93,53,0.18)' },
-              null,
-              { icon: '✦', label: 'INTEGRATED DECISION SUPPORT', sub: 'Unified Engineering Intelligence', color: '#F4F7F3', bg: 'rgba(255,255,255,0.10)', highlight: true }
-            ].map((item, i) => {
-              if (item === null) {
-                return (
-                  <div key={i} className="platform-flow-arrow" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'rgba(143,182,156,0.5)', fontSize: '1.2rem' }}>→</div>
-                );
-              }
-              return (
-                <div key={i} style={{
-                  background: item.bg,
-                  border: `1px solid ${item.highlight ? 'rgba(255,255,255,0.2)' : 'rgba(255,255,255,0.1)'}`,
-                  borderRadius: '12px',
-                  padding: '1rem 0.9rem',
-                  textAlign: 'center'
-                }}>
-                  <div style={{ fontSize: '1.3rem', marginBottom: '0.4rem' }}>{item.icon}</div>
-                  <div style={{ fontSize: '0.68rem', fontWeight: 800, color: item.color, letterSpacing: '0.06em', fontFamily: 'Space Grotesk', marginBottom: '0.2rem' }}>{item.label}</div>
-                  <div style={{ fontSize: '0.63rem', color: 'rgba(164,196,176,0.8)', lineHeight: 1.4 }}>{item.sub}</div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+        </section>
+      </main>
 
       <Footer />
     </div>

@@ -18,28 +18,29 @@ function ErrorContent() {
   }, [router]);
 
   return (
-    <div style={{ minHeight: '100vh', background: '#E1E9E2', color: '#14221B', fontFamily: 'Inter, sans-serif' }}>
+    <div className="arch-page-canvas" style={{ minHeight: '100vh', background: '#F5F1E8', color: '#173A2B', fontFamily: 'Inter, sans-serif' }}>
       <Header />
       <main style={{ maxWidth: '820px', margin: '3.5rem auto 5rem', padding: '0 1.5rem' }}>
         <div style={{
           background: '#FFFFFF',
-          border: '1px solid #C4CFC6',
-          borderRadius: '20px',
+          border: '1px solid #D8D1C5',
+          borderTop: '4px solid #B85C43',
+          borderRadius: '4px',
           padding: '2.5rem 3rem',
-          boxShadow: '0 8px 30px rgba(24, 37, 31, 0.06)',
+          boxShadow: '0 4px 20px rgba(23, 58, 43, 0.04)',
           textAlign: 'center'
         }}>
           {/* Error icon badge */}
           <div style={{
             width: '56px',
             height: '56px',
-            borderRadius: '16px',
-            background: '#FDF2EE',
-            border: '1px solid rgba(217, 91, 50, 0.3)',
+            borderRadius: '4px',
+            background: 'rgba(184, 92, 67, 0.08)',
+            border: '1px solid rgba(184, 92, 67, 0.25)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            color: '#D95B32',
+            color: '#B85C43',
             fontSize: '1.6rem',
             margin: '0 auto 1.2rem'
           }}>

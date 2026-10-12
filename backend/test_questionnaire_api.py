@@ -1,6 +1,15 @@
+import sys
+import os
 import pytest
 from fastapi.testclient import TestClient
-from app import app
+
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+sys.path.insert(0, os.path.abspath(os.path.dirname(__file__)))
+
+try:
+    from backend.app import app
+except ImportError:
+    from app import app
 
 client = TestClient(app)
 

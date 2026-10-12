@@ -1,8 +1,20 @@
+import sys
+import os
 import pytest
-from blueprint_engine import blueprint_engine
-from questionnaire_engine import UserProfile
-from spatial_program_engine import generate_spatial_program
-from building_program_engine import generate_building_program
+
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+sys.path.insert(0, os.path.abspath(os.path.dirname(__file__)))
+
+try:
+    from backend.blueprint_engine import blueprint_engine
+    from backend.questionnaire_engine import UserProfile
+    from backend.spatial_program_engine import generate_spatial_program
+    from backend.building_program_engine import generate_building_program
+except ImportError:
+    from blueprint_engine import blueprint_engine
+    from questionnaire_engine import UserProfile
+    from spatial_program_engine import generate_spatial_program
+    from building_program_engine import generate_building_program
 
 
 def test_generate_blueprint():

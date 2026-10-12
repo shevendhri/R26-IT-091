@@ -70,9 +70,17 @@ export default function FloorResultPanel({ floor }) {
         <h2 className="font-heading text-xl font-bold text-ink-primary flex items-center gap-2">
           🏠 {label}
         </h2>
-        <span className={`text-xs font-heading font-semibold px-3 py-1 rounded-full border uppercase tracking-wide ${badgeClass}`}>
-          {badgeLabel}
-        </span>
+        <div className="flex items-center gap-2">
+          <a
+            href="/visualization"
+            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-heading font-bold bg-brand-green-dim text-brand-green border border-brand-green-border hover:bg-brand-green/20 transition-all"
+          >
+            <span>📐</span> Open in 2D/3D Space Planner →
+          </a>
+          <span className={`text-xs font-heading font-semibold px-3 py-1 rounded-full border uppercase tracking-wide ${badgeClass}`}>
+            {badgeLabel}
+          </span>
+        </div>
       </div>
 
       {/* Building-level compliance — only present on SVG-parsed plans */}
