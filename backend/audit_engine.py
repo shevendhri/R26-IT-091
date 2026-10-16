@@ -30,6 +30,7 @@ class RecommendationAuditEngine:
         recommendation_quality: str = None,
         engineering_confidence: Dict[str, Any] = None,
         climate_confidence: Dict[str, Any] = None,
+        **kwargs: Any,
     ) -> None:
         """
         Logs a recommendation audit trail.
@@ -54,6 +55,7 @@ class RecommendationAuditEngine:
             "recommendation_quality": recommendation_quality,
             "engineering_confidence": engineering_confidence,
             "climate_confidence": climate_confidence,
+            **kwargs,
         }
 
         # Avoid duplicate logs for the same item/category

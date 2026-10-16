@@ -31,21 +31,24 @@ export default function ProjectContextStrip({ customData = null }) {
   const structuralSystem = info.structural_system || 'Concrete Frame (SLS 614)';
 
   return (
-    <div style={{
-      background: '#FFFFFF',
-      border: '1px solid #E2DCD0',
-      borderRadius: '4px',
-      padding: '0.65rem 1.25rem',
-      marginBottom: '1.5rem',
-      display: 'flex',
-      justifyContent: 'space-between',
-      alignItems: 'center',
-      flexWrap: 'wrap',
-      gap: '0.75rem',
-      fontSize: '0.70rem',
-      fontFamily: 'Space Grotesk, sans-serif',
-      boxShadow: '0 1px 4px rgba(20, 56, 37, 0.02)',
-    }}>
+    <div
+      suppressHydrationWarning
+      style={{
+        background: '#FFFFFF',
+        border: '1px solid #E2DCD0',
+        borderRadius: '4px',
+        padding: '0.65rem 1.25rem',
+        marginBottom: '1.5rem',
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        flexWrap: 'wrap',
+        gap: '0.75rem',
+        fontSize: '0.70rem',
+        fontFamily: 'Space Grotesk, sans-serif',
+        boxShadow: '0 1px 4px rgba(20, 56, 37, 0.02)',
+      }}
+    >
       <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
         <span style={{
           width: '6px',

@@ -1,7 +1,6 @@
 "use client";
 
 import React from 'react';
-import ProjectContextStrip from './ProjectContextStrip';
 
 export default function ModuleHeroBanner({
   track = "01 / ARCHITECTURAL INTELLIGENCE",
@@ -17,7 +16,7 @@ export default function ModuleHeroBanner({
 }) {
   return (
     <div style={{ marginBottom: '2rem', ...style }}>
-      {showContextStrip && <ProjectContextStrip customData={customContextData} />}
+
 
       <div
         className="arch-board-card"

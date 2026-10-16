@@ -184,70 +184,47 @@ export default function PlanAnalyzer() {
           {/* ── CENTER COLUMN: Blueprint / Plan Visualization ── */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
             {/* Quick Component Inventory Strip */}
-            <div style={{
-              background: '#FFFFFF',
-              border: '1px solid rgba(25, 30, 27, 0.14)',
-              borderRadius: '4px',
-              padding: '1.25rem 1.5rem',
-              display: 'grid',
-              gridTemplateColumns: 'repeat(4, 1fr)',
-              gap: '1rem',
-            }}>
+            <div className="plan-inventory-strip">
               <div className="plan-stat-card">
                 <span className="plan-stat-value">{roomCountDisp}</span>
-                <span className="plan-stat-label">Rooms</span>
+                <span className="plan-stat-label">Detected Rooms</span>
               </div>
               <div className="plan-stat-card">
                 <span className="plan-stat-value">{doorCountDisp}</span>
-                <span className="plan-stat-label">Doors</span>
+                <span className="plan-stat-label">Door Openings</span>
               </div>
               <div className="plan-stat-card">
                 <span className="plan-stat-value">{windowCountDisp}</span>
-                <span className="plan-stat-label">Windows</span>
+                <span className="plan-stat-label">Window Apertures</span>
               </div>
               <div className="plan-stat-card">
                 <span className="plan-stat-value">{wallCountDisp}</span>
-                <span className="plan-stat-label">Walls</span>
+                <span className="plan-stat-label">Wall Segments</span>
               </div>
             </div>
 
             {/* Main Plan Results Panel or Empty State Drafting Board */}
             {analyzedFloors.length === 0 ? (
-              <div style={{
-                background: '#FFFFFF',
-                border: '1px dashed rgba(25, 30, 27, 0.25)',
-                borderRadius: '4px',
-                padding: '4.5rem 2rem',
-                textAlign: 'center',
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                justifyContent: 'center',
-                minHeight: '420px',
-              }}>
+              <div className="plan-drafting-empty">
                 <div style={{
-                  width: '56px',
-                  height: '56px',
+                  width: '64px',
+                  height: '64px',
                   borderRadius: '50%',
-                  background: 'rgba(26, 56, 43, 0.06)',
-                  border: '1px solid rgba(26, 56, 43, 0.15)',
+                  background: 'rgba(20, 56, 37, 0.06)',
+                  border: '1px solid rgba(20, 56, 37, 0.15)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   marginBottom: '1.25rem',
-                  color: '#1A382B',
+                  fontSize: '1.8rem',
                 }}>
-                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-                    <rect x="3" y="3" width="18" height="18" rx="2" />
-                    <line x1="3" y1="9" x2="21" y2="9" />
-                    <line x1="9" y1="21" x2="9" y2="9" />
-                  </svg>
+                  📐
                 </div>
-                <h3 style={{ fontFamily: 'Space Grotesk', fontSize: '1.1rem', fontWeight: 800, margin: '0 0 0.5rem', color: '#181B1A' }}>
-                  No Floor Plan Analyzed Yet
+                <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '1.2rem', fontWeight: 800, margin: '0 0 0.5rem', color: '#143825' }}>
+                  No Floor Plan Drawing Analyzed Yet
                 </h3>
-                <p style={{ fontSize: '0.82rem', color: '#7C8681', maxWidth: '380px', margin: 0, lineHeight: 1.5 }}>
-                  Select an architectural drawing in the left panel and click &ldquo;Analyze&rdquo; to compute room contours and structural dimensions.
+                <p style={{ fontSize: '0.84rem', color: '#697068', maxWidth: '420px', margin: 0, lineHeight: 1.6 }}>
+                  Upload an architectural drawing (PNG, JPG, Vector SVG, or PDF) in the left panel and click &ldquo;Analyze Drawing&rdquo; to extract spatial boundaries, component counts, and envelope metrics.
                 </p>
               </div>
             ) : (
@@ -263,18 +240,42 @@ export default function PlanAnalyzer() {
           <div className="plan-ws-column">
             <div className="plan-col-title">
               <span>PLAN ANALYSIS FINDINGS</span>
-              <span style={{ color: '#1A382B', fontSize: '0.68rem', fontWeight: 700 }}>LIVE</span>
+              {analyzedFloors.length > 0 ? (
+                <span style={{ color: '#065F46', fontSize: '0.68rem', fontWeight: 800, background: 'rgba(16, 185, 129, 0.12)', padding: '2px 8px', borderRadius: '3px', border: '1px solid rgba(16, 185, 129, 0.35)' }}>
+                  LIVE EXTRACTION
+                </span>
+              ) : (
+                <span style={{ color: '#697068', fontSize: '0.68rem', fontWeight: 700, background: '#FAF7F0', padding: '2px 8px', borderRadius: '3px', border: '1px solid #E2DCD0' }}>
+                  AWAITING ANALYSIS
+                </span>
+              )}
             </div>
+
+            {/* Empty state guidance when no plan analyzed */}
+            {analyzedFloors.length === 0 && (
+              <div style={{
+                background: '#FAF7F0',
+                border: '1px solid #E2DCD0',
+                borderRadius: '4px',
+                padding: '0.85rem 1rem',
+                marginBottom: '1.25rem',
+                fontSize: '0.78rem',
+                color: '#526158',
+                lineHeight: 1.5,
+              }}>
+                <span style={{ fontWeight: 700, color: '#143825' }}>No measurements yet:</span> Upload a drawing and click &ldquo;Analyze Drawing&rdquo; on the left to extract live spatial geometry and structural take-offs.
+              </div>
+            )}
 
             {/* 01 GEOMETRY */}
             <div style={{ marginBottom: '1.75rem' }}>
               <div style={{
                 fontSize: '0.70rem',
-                fontFamily: 'Space Grotesk',
+                fontFamily: "'Space Grotesk', sans-serif",
                 fontWeight: 800,
                 letterSpacing: '0.12em',
                 textTransform: 'uppercase',
-                color: '#1A382B',
+                color: '#143825',
                 marginBottom: '0.65rem',
               }}>
                 01 / GEOMETRY BREAKDOWN
@@ -283,21 +284,21 @@ export default function PlanAnalyzer() {
                 <span className="label">Total Floor Area</span>
                 <span className="dots" />
                 <span className="value">
-                  {totals.totalRoomArea > 0 ? `${totals.totalRoomArea.toFixed(1)} m²` : '170.0 m²'}
+                  {totals.totalRoomArea > 0 ? `${totals.totalRoomArea.toFixed(1)} m²` : '—'}
                 </span>
               </div>
               <div className="plan-annotation-item">
                 <span className="label">Gross Wall Area</span>
                 <span className="dots" />
                 <span className="value">
-                  {totals.wallArea > 0 ? `${totals.wallArea.toFixed(1)} m²` : '117.3 m²'}
+                  {totals.wallArea > 0 ? `${totals.wallArea.toFixed(1)} m²` : '—'}
                 </span>
               </div>
               <div className="plan-annotation-item">
                 <span className="label">Projected Roof Area</span>
                 <span className="dots" />
                 <span className="value">
-                  {totals.totalRoomArea > 0 ? `${(totals.totalRoomArea * 0.55).toFixed(1)} m²` : '93.5 m²'}
+                  {totals.totalRoomArea > 0 ? `${(totals.totalRoomArea * 0.55).toFixed(1)} m²` : '—'}
                 </span>
               </div>
             </div>
@@ -306,11 +307,11 @@ export default function PlanAnalyzer() {
             <div style={{ marginBottom: '1.75rem' }}>
               <div style={{
                 fontSize: '0.70rem',
-                fontFamily: 'Space Grotesk',
+                fontFamily: "'Space Grotesk', sans-serif",
                 fontWeight: 800,
                 letterSpacing: '0.12em',
                 textTransform: 'uppercase',
-                color: '#1A382B',
+                color: '#143825',
                 marginBottom: '0.65rem',
               }}>
                 02 / OPENING APERTURES
@@ -319,21 +320,29 @@ export default function PlanAnalyzer() {
                 <span className="label">Window Aperture Area</span>
                 <span className="dots" />
                 <span className="value">
-                  {totals.windowArea > 0 ? `${totals.windowArea.toFixed(1)} m²` : (totals.windows > 0 ? `${(totals.windows * 2.2).toFixed(1)} m²` : '17.6 m²')}
+                  {totals.windowArea > 0
+                    ? `${totals.windowArea.toFixed(1)} m²`
+                    : totals.windows > 0
+                    ? `${(totals.windows * 2.2).toFixed(1)} m²`
+                    : '—'}
                 </span>
               </div>
               <div className="plan-annotation-item">
                 <span className="label">Door Aperture Area</span>
                 <span className="dots" />
                 <span className="value">
-                  {totals.doorArea > 0 ? `${totals.doorArea.toFixed(1)} m²` : (totals.doors > 0 ? `${(totals.doors * 1.9).toFixed(1)} m²` : '4.7 m²')}
+                  {totals.doorArea > 0
+                    ? `${totals.doorArea.toFixed(1)} m²`
+                    : totals.doors > 0
+                    ? `${(totals.doors * 1.9).toFixed(1)} m²`
+                    : '—'}
                 </span>
               </div>
               <div className="plan-annotation-item">
                 <span className="label">Envelope Opening Ratio</span>
                 <span className="dots" />
-                <span className="value" style={{ color: openingRatio >= 15 ? '#1A382B' : '#B8583B' }}>
-                  {openingRatio}%
+                <span className="value" style={{ color: openingRatio >= 15 ? '#065F46' : '#B85C43' }}>
+                  {analyzedFloors.length > 0 ? `${openingRatio}%` : '—'}
                 </span>
               </div>
             </div>
@@ -342,11 +351,11 @@ export default function PlanAnalyzer() {
             <div style={{ marginBottom: '1.75rem' }}>
               <div style={{
                 fontSize: '0.70rem',
-                fontFamily: 'Space Grotesk',
+                fontFamily: "'Space Grotesk', sans-serif",
                 fontWeight: 800,
                 letterSpacing: '0.12em',
                 textTransform: 'uppercase',
-                color: '#1A382B',
+                color: '#143825',
                 marginBottom: '0.65rem',
               }}>
                 03 / PRELIMINARY STRUCTURE
@@ -355,35 +364,37 @@ export default function PlanAnalyzer() {
                 <span className="label">Estimated Concrete Volume</span>
                 <span className="dots" />
                 <span className="value">
-                  {totals.concreteVolume > 0 ? `${totals.concreteVolume.toFixed(1)} m³` : '42.5 m³'}
+                  {totals.concreteVolume > 0 ? `${totals.concreteVolume.toFixed(1)} m³` : '—'}
                 </span>
               </div>
               <div className="plan-annotation-item">
                 <span className="label">Foundation Excavation</span>
                 <span className="dots" />
                 <span className="value">
-                  {totals.foundationVolume > 0 ? `${totals.foundationVolume.toFixed(1)} m³` : '38.0 m³'}
+                  {totals.foundationVolume > 0 ? `${totals.foundationVolume.toFixed(1)} m³` : '—'}
                 </span>
               </div>
               <div className="plan-annotation-item">
                 <span className="label">Structural Frame Span</span>
                 <span className="dots" />
-                <span className="value">4.2 m bays</span>
+                <span className="value">
+                  {analyzedFloors.length > 0 ? '4.2 m bays' : '—'}
+                </span>
               </div>
             </div>
 
             {/* Pipeline Step Link */}
             <div style={{
-              background: '#FBF9F5',
-              border: '1px solid rgba(25, 30, 27, 0.12)',
-              padding: '1rem',
+              background: '#FAF7F0',
+              border: '1px solid #E2DCD0',
+              padding: '1.15rem',
               borderRadius: '4px',
             }}>
-              <div style={{ fontSize: '0.66rem', fontFamily: 'Space Grotesk', fontWeight: 800, color: '#7C8681', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.35rem' }}>
+              <div style={{ fontSize: '0.66rem', fontFamily: "'Space Grotesk', sans-serif", fontWeight: 800, color: '#718C77', textTransform: 'uppercase', letterSpacing: '0.10em', marginBottom: '0.35rem' }}>
                 NEXT WORKFLOW STEP
               </div>
-              <div style={{ fontSize: '0.80rem', fontWeight: 700, color: '#181B1A', marginBottom: '0.65rem' }}>
-                Pass Extracted Geometry to Material Intelligence Engine
+              <div style={{ fontSize: '0.82rem', fontWeight: 800, color: '#143825', marginBottom: '0.65rem', fontFamily: "'Space Grotesk', sans-serif" }}>
+                Transfer Extracted Geometry to Material Intelligence Engine
               </div>
               <Link
                 href="/materials/form"
@@ -391,10 +402,10 @@ export default function PlanAnalyzer() {
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: '6px',
-                  color: '#1A382B',
+                  color: '#143825',
                   fontSize: '0.74rem',
                   fontWeight: 800,
-                  fontFamily: 'Space Grotesk',
+                  fontFamily: "'Space Grotesk', sans-serif",
                   textDecoration: 'none',
                   textTransform: 'uppercase',
                   letterSpacing: '0.06em',

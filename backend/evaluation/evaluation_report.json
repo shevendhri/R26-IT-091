@@ -1,7 +1,7 @@
 {
   "model": "GradientBoosting",
   "pipeline_version": "3.0",
-  "evaluation_date": "2026-08-05T10:58:41.065797+00:00",
+  "evaluation_date": "2026-10-15T02:41:59.207875+00:00",
   "test_set_size": 2200,
   "feature_count": 38,
   "interaction_features": [
@@ -22,7 +22,7 @@
       1148
     ]
   ],
-  "test_roc_auc": 0.9980251218435957,
+  "test_roc_auc": 0.9980159980889882,
   "top_10_features": {
     "floor_to_limit_ratio": 0.25880714353881523,
     "sector_match": 0.225899197543845,
@@ -38,7 +38,7 @@
   "shap_available": false,
   "learning_curve": {
     "train_final": 1.0,
-    "val_final": 0.9979212253580225
+    "val_final": 0.9978215365783534
   },
   "cv_summary": {
     "RandomForest": {
@@ -129,7 +129,7 @@
     },
     {
       "Scenario": "Industrial Sector",
-      "ML Probability (%)": 57.11
+      "ML Probability (%)": 53.42
     },
     {
       "Scenario": "Industrial + Material-Suited",

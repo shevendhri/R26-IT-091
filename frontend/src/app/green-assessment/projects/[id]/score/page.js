@@ -64,6 +64,28 @@ export default function ProjectScorePage({ params }) {
 
   return (
     <main className="page-shell">
+      {/* ── UNIFIED PROJECT SUB-NAVIGATION ── */}
+      <nav className="project-subnav-bar" aria-label="Project Sub Navigation">
+        <Link className="project-subnav-link" href={`/green-assessment/projects/${id}`}>
+          01 / Overview
+        </Link>
+        <Link className="project-subnav-link" href={`/green-assessment/projects/${id}/documents`}>
+          02 / Documents
+        </Link>
+        <Link className="project-subnav-link" href={`/green-assessment/projects/${id}/analysis`}>
+          03 / Evidence Analysis
+        </Link>
+        <Link className="project-subnav-link" href={`/green-assessment/projects/${id}/assessment`}>
+          04 / Manual Assessment
+        </Link>
+        <Link className="project-subnav-link active" href={`/green-assessment/projects/${id}/score`}>
+          05 / Score Summary ★
+        </Link>
+        <Link className="project-subnav-link" href={`/green-assessment/projects/${id}/recommendations`}>
+          06 / Recommendations
+        </Link>
+      </nav>
+
       <header className="page-header">
         <Link className="back-link" href={`/green-assessment/projects/${id}`}>
           Back to Project Details

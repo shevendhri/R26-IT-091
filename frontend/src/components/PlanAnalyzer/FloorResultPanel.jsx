@@ -15,29 +15,39 @@ function useCountUp(target, duration = 800) {
     const timer = setInterval(() => {
       step++;
       setValue(Math.round((target / steps) * step));
-      if (step >= steps) { clearInterval(timer); setValue(target); }
+      if (step >= steps) {
+        clearInterval(timer);
+        setValue(target);
+      }
     }, interval);
   }
 
   return [value, start];
 }
 
-function AnimatedBadge({ icon, label, value, color, onVisible }) {
+function AnimatedStatBadge({ icon, label, value }) {
   const [count, startCount] = useCountUp(value);
   const [triggered, setTriggered] = useState(false);
 
   function trigger() {
-    if (!triggered) { setTriggered(true); startCount(); }
+    if (!triggered) {
+      setTriggered(true);
+      startCount();
+    }
   }
 
   return (
     <div
-      className={`flex flex-col items-center justify-center rounded-2xl p-4 min-w-[90px] ${color} border border-eco-border shadow-sm`}
-      ref={el => { if (el && !triggered) { trigger(); } }}
+      className="animated-stat-tile"
+      ref={(el) => {
+        if (el && !triggered) {
+          trigger();
+        }
+      }}
     >
-      <span className="text-2xl mb-1">{icon}</span>
-      <span className="font-heading text-2xl font-extrabold leading-none">{count}</span>
-      <span className="text-xs opacity-70 mt-0.5 font-medium">{label}</span>
+      <span className="animated-stat-icon">{icon}</span>
+      <span className="animated-stat-num">{count}</span>
+      <span className="animated-stat-name">{label}</span>
     </div>
   );
 }
@@ -56,172 +66,192 @@ export default function FloorResultPanel({ floor }) {
   const doorCount = counts.door ?? 0;
   const windowCount = counts.window ?? 0;
   const wallCount = counts.wall ?? 0;
-  // 'mode' only records the original upload's file type now — every upload
-  // (SVG included) runs through the same real YOLO detection, so there's no
-  // more "exact ground truth" path to distinguish in the badge.
-  const badgeLabel = '~ AI Detection';
-  const badgeClass = 'bg-brand-blue-dim border-brand-blue-border text-brand-blue';
 
   return (
     <>
-    <div className="bg-eco-card backdrop-blur border border-eco-border rounded-card shadow-card p-6 mb-6 animate-fade-in">
-      {/* Panel header */}
-      <div className="flex flex-wrap items-center justify-between gap-3 mb-5">
-        <h2 className="font-heading text-xl font-bold text-ink-primary flex items-center gap-2">
-          🏠 {label}
-        </h2>
-        <div className="flex items-center gap-2">
-          <a
-            href="/visualization"
-            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-heading font-bold bg-brand-green-dim text-brand-green border border-brand-green-border hover:bg-brand-green/20 transition-all"
-          >
-            <span>📐</span> Open in 2D/3D Space Planner →
-          </a>
-          <span className={`text-xs font-heading font-semibold px-3 py-1 rounded-full border uppercase tracking-wide ${badgeClass}`}>
-            {badgeLabel}
-          </span>
+      <div className="floor-result-container">
+        {/* Header Panel */}
+        <div className="floor-result-header">
+          <h3 className="floor-result-title">
+            <span>🏠</span>
+            <span>{label}</span>
+          </h3>
+
+          <div className="floor-header-actions">
+            <a href="/visualization" className="floor-space-planner-btn">
+              <span>📐</span>
+              <span>Open in 2D/3D Space Planner →</span>
+            </a>
+            <span className="floor-badge-tag">
+              ⚡ AI CAD Detection
+            </span>
+          </div>
         </div>
-      </div>
 
-      {/* Building-level compliance — only present on SVG-parsed plans */}
-      {buildingCompliance && (
-        <div className="flex flex-wrap gap-2 mb-5">
-          <BuildingComplianceBadge ok={buildingCompliance.has_toilet} label="Toilet present" />
-          <BuildingComplianceBadge ok={buildingCompliance.scale_established} label="Scale established" />
+        {/* Building-level compliance */}
+        {buildingCompliance && (
+          <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', marginBottom: '1.25rem' }}>
+            <BuildingComplianceBadge ok={buildingCompliance.has_toilet} label="Toilet Present" />
+            <BuildingComplianceBadge ok={buildingCompliance.scale_established} label="Scale Established" />
+          </div>
+        )}
+
+        {/* 4 Animated Stat Tiles */}
+        <div className="animated-stat-grid">
+          <AnimatedStatBadge icon="🏠" label="Rooms" value={roomCount} />
+          <AnimatedStatBadge icon="🚪" label="Doors" value={doorCount} />
+          <AnimatedStatBadge icon="🪟" label="Windows" value={windowCount} />
+          <AnimatedStatBadge icon="🧱" label="Walls" value={wallCount} />
         </div>
-      )}
 
-      {/* Animated stat badges */}
-      <div className="flex flex-wrap gap-3 mb-6">
-        <AnimatedBadge icon="🏠" label="Rooms" value={roomCount} color="bg-brand-green-dim text-brand-green" />
-        <AnimatedBadge icon="🚪" label="Doors" value={doorCount} color="bg-brand-amber-dim text-brand-amber" />
-        <AnimatedBadge icon="🪟" label="Windows" value={windowCount} color="bg-brand-blue-dim text-brand-blue" />
-        <AnimatedBadge icon="🧱" label="Walls" value={wallCount} color="bg-brand-red-dim text-brand-red" />
-      </div>
+        {/* Main Floor Content: Left Overlay, Right Rooms */}
+        <div className="floor-layout-split">
+          {/* Overlay Image */}
+          {overlay && (
+            <div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
+                <span style={{ fontSize: '0.68rem', fontFamily: "'Space Grotesk', sans-serif", fontWeight: 800, textTransform: 'uppercase', color: '#143825', letterSpacing: '0.08em' }}>
+                  Annotated CAD Plan
+                </span>
+                <button
+                  onClick={() => setZoomOpen(true)}
+                  style={{
+                    background: 'none',
+                    border: 'none',
+                    color: '#3B82F6',
+                    fontFamily: "'Space Grotesk', sans-serif",
+                    fontSize: '0.72rem',
+                    fontWeight: 700,
+                    cursor: 'pointer',
+                    textTransform: 'uppercase',
+                  }}
+                  type="button"
+                >
+                  ⤢ Full Screen
+                </button>
+              </div>
 
-      {/* Mobile tab switcher */}
-      {overlay && rooms.length > 0 && (
-        <div className="flex lg:hidden gap-2 mb-4">
-          {['overlay', 'rooms'].map(t => (
-            <button
-              key={t}
-              onClick={() => setTab(t)}
-              className={`flex-1 py-1.5 rounded-lg font-heading text-sm font-semibold transition-colors ${
-                tab === t ? 'bg-brand-green text-white' : 'bg-eco-mid/70 text-ink-secondary hover:bg-eco-mid'
-              }`}
-            >
-              {t === 'overlay' ? '🗺️ Overlay' : '🏠 Rooms'}
-            </button>
-          ))}
-        </div>
-      )}
-
-      <div className="flex flex-col lg:flex-row gap-6">
-        {/* Overlay image */}
-        {overlay && (tab === 'overlay' || window.innerWidth >= 1024) && (
-          <div className="lg:w-1/2">
-            <div className="flex items-center justify-between mb-2">
-              <p className="text-xs font-heading text-ink-muted font-medium uppercase tracking-widest">Annotated Floor Plan</p>
-              <button
+              <div
+                className="floor-overlay-box"
+                style={{ cursor: 'zoom-in' }}
                 onClick={() => setZoomOpen(true)}
-                className="text-xs font-heading font-semibold text-brand-blue hover:brightness-125 transition-colors"
               >
-                ⤢ Full screen
-              </button>
+                <img
+                  src={overlay}
+                  alt={`${label} annotated overlay`}
+                  className="floor-overlay-img"
+                />
+              </div>
+
+              {/* Legend Dots */}
+              <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginTop: '0.75rem', fontSize: '0.72rem', fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, color: '#526158' }}>
+                <LegendDot color="#FBBF24" label="Rooms" />
+                <LegendDot color="#EF4444" label="Walls" />
+                <LegendDot color="#10B981" label="Doors" />
+                <LegendDot color="#3B82F6" label="Windows" />
+              </div>
             </div>
+          )}
+
+          {/* Room Breakdown Grid */}
+          {rooms.length > 0 ? (
+            <div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
+                <span style={{ fontSize: '0.68rem', fontFamily: "'Space Grotesk', sans-serif", fontWeight: 800, textTransform: 'uppercase', color: '#143825', letterSpacing: '0.08em' }}>
+                  Room Breakdown — {rooms.length} Detected
+                </span>
+              </div>
+
+              <div className="room-cards-scroll-container">
+                {rooms.map((room, i) => (
+                  <RoomCard
+                    key={i}
+                    room={room}
+                    index={i}
+                    totalArea={Math.max(...rooms.map((r) => r.wallAreaPx2 || 0))}
+                  />
+                ))}
+              </div>
+            </div>
+          ) : (
+            <div style={{ padding: '2rem', background: '#FAF7F0', border: '1px solid #E2DCD0', borderRadius: '4px', textAlign: 'center', color: '#697068', fontSize: '0.82rem' }}>
+              No individual room contours extracted from this drawing.
+            </div>
+          )}
+        </div>
+
+        {/* Fullscreen Zoom Modal */}
+        {zoomOpen && overlay && (
+          <div
+            style={{
+              position: 'fixed',
+              inset: 0,
+              zIndex: 9999,
+              background: 'rgba(20, 56, 37, 0.88)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              padding: '1.5rem',
+            }}
+            onClick={() => setZoomOpen(false)}
+          >
             <div
-              className="relative group cursor-zoom-in rounded-inner overflow-hidden border border-eco-border"
-              onClick={() => setZoomOpen(true)}
+              style={{ position: 'relative', maxWidth: '1200px', width: '100%', textAlign: 'center' }}
+              onClick={(e) => e.stopPropagation()}
             >
+              <button
+                onClick={() => setZoomOpen(false)}
+                style={{
+                  position: 'absolute',
+                  top: '-40px',
+                  right: '0',
+                  color: '#FAF7F0',
+                  background: 'none',
+                  border: 'none',
+                  fontSize: '1.75rem',
+                  cursor: 'pointer',
+                }}
+                type="button"
+              >
+                ✕
+              </button>
               <img
                 src={overlay}
-                alt={`${label} overlay`}
-                className="w-full object-contain max-h-96 transition-transform duration-300 group-hover:scale-105"
+                alt={`${label} full resolution`}
+                style={{
+                  width: '100%',
+                  maxHeight: '85vh',
+                  objectFit: 'contain',
+                  borderRadius: '4px',
+                  background: '#FFFFFF',
+                  boxShadow: '0 10px 40px rgba(0,0,0,0.4)',
+                }}
               />
-              <div className="absolute inset-0 bg-[#14221B]/0 group-hover:bg-[#14221B]/10 transition-colors rounded-inner" />
-            </div>
-            {/* Legend — colors match the overlay image's own fixed palette (drawn server-side), not the app's brand tokens */}
-            <div className="flex flex-wrap gap-3 mt-3 text-xs font-heading text-ink-secondary">
-              <LegendDot color="bg-yellow-400" label="Rooms" />
-              <LegendDot color="bg-red-500" label="Walls" />
-              <LegendDot color="bg-green-400" label="Doors" />
-              <LegendDot color="bg-blue-400" label="Windows" />
-            </div>
-          </div>
-        )}
-
-        {/* Room cards */}
-        {rooms.length > 0 && (tab === 'rooms' || window.innerWidth >= 1024) && (
-          <div className={overlay ? 'lg:w-1/2' : 'w-full'}>
-            <p className="text-xs font-heading text-ink-muted mb-3 font-medium uppercase tracking-widest">
-              Room Breakdown — {rooms.length} room{rooms.length !== 1 ? 's' : ''}
-            </p>
-            <div className={`grid gap-3 ${rooms.length <= 2 ? 'grid-cols-1' : 'grid-cols-1 sm:grid-cols-2'} ${rooms.length > 6 ? 'max-h-[520px] overflow-y-auto pr-1 scrollbar-thin' : ''}`}>
-              {rooms.map((room, i) => (
-                <RoomCard
-                  key={i}
-                  room={room}
-                  index={i}
-                  totalArea={Math.max(...rooms.map(r => r.wallAreaPx2 || 0))}
-                />
-              ))}
-            </div>
-          </div>
-        )}
-
-        {/* No rooms detected */}
-        {rooms.length === 0 && (
-          <div className="w-full">
-            <div className="bg-eco-mid/60 border border-eco-border rounded-inner px-4 py-3 text-ink-secondary text-sm">
-              No individual rooms detected. Train the model for per-room breakdown (see guideline Section 7).
             </div>
           </div>
         )}
       </div>
 
-      {/* Zoom modal */}
-      {zoomOpen && overlay && (
-        <div
-          className="fixed inset-0 z-50 bg-[#14221B]/90 flex items-center justify-center p-4 animate-fade-in"
-          onClick={() => setZoomOpen(false)}
-        >
-          <div className="relative max-w-5xl w-full" onClick={e => e.stopPropagation()}>
-            <button
-              onClick={() => setZoomOpen(false)}
-              className="absolute -top-10 right-0 text-white/60 hover:text-white text-2xl transition-colors"
-            >✕</button>
-            <img
-              src={overlay}
-              alt={`${label} overlay full`}
-              className="w-full rounded-card border border-eco-border-strong shadow-2xl object-contain max-h-[85vh]"
-            />
-          </div>
-        </div>
-      )}
-    </div>
-
-    {approvalChecklist.length > 0 && <ApprovalChecklist items={approvalChecklist} />}
+      {/* Approval Checklist */}
+      {approvalChecklist.length > 0 && <ApprovalChecklist items={approvalChecklist} />}
     </>
   );
 }
 
 function LegendDot({ color, label }) {
   return (
-    <span className="flex items-center gap-1.5">
-      <span className={`inline-block w-3 h-3 rounded-sm ${color}`} />
-      {label}
+    <span style={{ display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
+      <span style={{ display: 'inline-block', width: '10px', height: '10px', borderRadius: '2px', background: color }} />
+      <span>{label}</span>
     </span>
   );
 }
 
 function BuildingComplianceBadge({ ok, label }) {
   return (
-    <span className={`text-xs font-heading font-semibold px-3 py-1 rounded-full border uppercase tracking-wide ${
-      ok
-        ? 'bg-brand-green-dim border-brand-green-border text-brand-green'
-        : 'bg-brand-red-dim border-brand-red-border text-brand-red'
-    }`}>
-      {ok ? '✓' : '✗'} {label}
+    <span className={`compliance-badge-pill ${ok ? 'is-ok' : 'is-fail'}`}>
+      <span>{ok ? '✓' : '✗'}</span>
+      <span>{label}</span>
     </span>
   );
 }

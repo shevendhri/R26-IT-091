@@ -1,78 +1,68 @@
-/* Plan Analyzer Route Styles — Architectural Workstation Aesthetic */
+/* ══════════════════════════════════════════════════════════════════════════
+   PLAN ANALYZER ROUTE STYLES — ARCHITECTURAL CAD WORKSTATION AESTHETIC
+   Harmonized with the Warm Ivory (#FAF7F0) & Forest Green (#143825) Design System
+══════════════════════════════════════════════════════════════════════════ */
 
 .plan-analyzer-scope {
   min-height: 100vh;
   background-color: #FAF7F0;
   background-image: 
-    linear-gradient(to right, rgba(20, 56, 37, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(20, 56, 37, 0.03) 1px, transparent 1px);
-  background-size: 32px 32px;
+    linear-gradient(to right, rgba(20, 56, 37, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(20, 56, 37, 0.035) 1px, transparent 1px);
+  background-size: 28px 28px;
   color: #1A2E22;
-  font-family: 'Inter', sans-serif;
-  padding: 0 0 3.5rem;
+  font-family: 'Inter', -apple-system, sans-serif;
+  padding: 0 0 4rem;
 }
 
 .plan-page-shell {
-  max-width: 1560px;
+  max-width: 1600px;
   margin: 1.5rem auto;
-  padding: 2rem 2.5rem;
+  padding: 1.5rem 2.5rem 3rem;
 }
 
-.plan-workstation-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  border-bottom: 1px solid #E2DCD0;
-  padding-bottom: 1.25rem;
-  margin-bottom: 2rem;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-}
-
-.plan-hero-title {
-  margin: 0 0 6px;
-  color: #143825;
-  font-family: 'Outfit, Space Grotesk', sans-serif;
-  font-size: clamp(2rem, 3.5vw, 2.6rem);
-  font-weight: 800;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-  text-transform: uppercase;
-}
-
-.plan-hero-subtitle {
-  margin: 0;
-  max-width: 680px;
-  color: #555E59;
-  font-size: 0.92rem;
-  line-height: 1.6;
-}
-
+/* 3-Column Architectural Workstation Grid */
 .plan-workstation-grid {
   display: grid;
-  grid-template-columns: 360px 1fr 380px;
+  grid-template-columns: 370px minmax(0, 1fr) 390px;
   gap: 1.75rem;
   align-items: start;
 }
 
-@media (max-width: 1280px) {
+@media (max-width: 1320px) {
   .plan-workstation-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 340px minmax(0, 1fr);
+  }
+  .plan-workstation-grid > div:last-child {
+    grid-column: span 2;
   }
 }
 
-/* Architectural Workstation Column Cards */
+@media (max-width: 900px) {
+  .plan-workstation-grid {
+    grid-template-columns: 1fr;
+  }
+  .plan-workstation-grid > div:last-child {
+    grid-column: span 1;
+  }
+  .plan-page-shell {
+    padding: 1rem 1.25rem;
+  }
+}
+
+/* Workstation Column Container */
 .plan-ws-column {
   background: #FFFFFF;
   border: 1px solid #E2DCD0;
   border-radius: 4px;
   box-shadow: 0 4px 20px rgba(20, 56, 37, 0.03);
-  padding: 1.5rem;
+  padding: 1.5rem 1.75rem;
+  position: relative;
 }
 
 .plan-col-title {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 0.76rem;
+  font-size: 0.74rem;
   font-weight: 800;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -85,44 +75,54 @@
   margin-bottom: 1.25rem;
 }
 
-.plan-annotation-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 0.82rem;
-  padding: 0.5rem 0;
-  border-bottom: 1px dashed rgba(25, 30, 27, 0.08);
+/* ── COMPONENT INVENTORY METRIC CARDS ── */
+.plan-inventory-strip {
+  background: #FFFFFF;
+  border: 1px solid #E2DCD0;
+  border-radius: 4px;
+  padding: 1.25rem 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  box-shadow: 0 2px 12px rgba(20, 56, 37, 0.03);
 }
 
-.plan-annotation-item .label {
-  color: #555E59;
-}
-
-.plan-annotation-item .dots {
-  flex: 1;
-  border-bottom: 1px dotted rgba(25, 30, 27, 0.2);
-  margin: 0 8px;
-}
-
-.plan-annotation-item .value {
-  font-weight: 700;
-  color: #181B1A;
+@media (max-width: 640px) {
+  .plan-inventory-strip {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .plan-stat-card {
-  background: #FFFFFF;
+  background: #FAF7F0;
   border: 1px solid #E2DCD0;
-  padding: 1rem;
+  padding: 1rem 1.15rem;
   border-radius: 4px;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 0.35rem;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.15s ease;
+}
+
+.plan-stat-card:hover {
+  border-color: #143825;
+}
+
+.plan-stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: #143825;
 }
 
 .plan-stat-value {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 1.75rem;
+  font-size: 1.85rem;
   font-weight: 800;
   color: #143825;
   line-height: 1;
@@ -131,21 +131,169 @@
 .plan-stat-label {
   font-size: 0.68rem;
   font-family: 'Space Grotesk', sans-serif;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: 0.10em;
   text-transform: uppercase;
-  color: #7C8681;
+  color: #697068;
+}
+
+/* ── FLOOR UPLOAD CARD ── */
+.plan-level-card {
+  background: #FFFFFF;
+  border: 1px solid #E2DCD0;
+  border-radius: 4px;
+  padding: 1.25rem;
+  box-shadow: 0 2px 10px rgba(20, 56, 37, 0.02);
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.plan-level-card:hover {
+  border-color: #143825;
+}
+
+.plan-level-card.is-done {
+  border-left: 3px solid #10B981;
+}
+
+.plan-level-card.is-loading {
+  border-left: 3px solid #3B82F6;
+}
+
+.plan-level-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.85rem;
+}
+
+.plan-level-input {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #143825;
+  border: 1px solid #E2DCD0;
+  border-radius: 3px;
+  padding: 0.4rem 0.65rem;
+  width: 100%;
+  max-width: 220px;
+  background: #FAF7F0;
+  transition: border-color 0.15s ease;
+}
+
+.plan-level-input:focus {
+  outline: none;
+  border-color: #143825;
+  background: #FFFFFF;
+}
+
+.plan-remove-btn {
+  background: transparent;
+  border: none;
+  color: #9AAA9B;
+  font-size: 1.25rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0.2rem 0.4rem;
+  transition: color 0.15s ease;
+}
+
+.plan-remove-btn:hover {
+  color: #B85C43;
+}
+
+/* Dropzone */
+.plan-dropzone {
+  border: 1px dashed rgba(20, 56, 37, 0.35);
+  border-radius: 4px;
+  padding: 1.25rem 1rem;
+  text-align: center;
+  background: #FAF7F0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.plan-dropzone:hover {
+  border-color: #143825;
+  background: rgba(20, 56, 37, 0.02);
+}
+
+.plan-dropzone.is-dragging {
+  border-color: #143825;
+  background: rgba(20, 56, 37, 0.06);
+  border-style: solid;
+}
+
+.plan-dropzone-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #143825;
+  margin: 0.4rem 0 0.15rem;
+}
+
+.plan-dropzone-sub {
+  font-size: 0.68rem;
+  color: #718C77;
+  margin: 0;
+}
+
+/* File Selected Pill */
+.plan-file-pill {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #FFFFFF;
+  border: 1px solid #E2DCD0;
+  padding: 0.45rem 0.75rem;
+  border-radius: 3px;
+  font-size: 0.78rem;
+  color: #143825;
+  font-weight: 600;
+}
+
+/* Primary Action Button */
+.plan-action-btn {
+  width: 100%;
+  margin-top: 0.85rem;
+  padding: 0.65rem 1rem;
+  border-radius: 3px;
+  background: #143825;
+  color: #FCFAF6;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1px solid #143825;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.plan-action-btn:hover:not(:disabled) {
+  background: #204C39;
+  border-color: #204C39;
+  box-shadow: 0 2px 8px rgba(20, 56, 37, 0.18);
+}
+
+.plan-action-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 .plan-add-floor-button {
   width: 100%;
   padding: 0.85rem;
   border: 1px dashed rgba(20, 56, 37, 0.35);
-  background: rgba(20, 56, 37, 0.02);
+  background: #FFFFFF;
   color: #143825;
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 0.76rem;
-  font-weight: 700;
+  font-size: 0.74rem;
+  font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   border-radius: 4px;
@@ -155,6 +303,418 @@
 }
 
 .plan-add-floor-button:hover {
-  background: rgba(20, 56, 37, 0.06);
+  background: #FAF7F0;
   border-color: #143825;
 }
+
+/* ── RIGHT COLUMN: ANNOTATIONS BREAKDOWN ── */
+.plan-annotation-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.80rem;
+  padding: 0.55rem 0;
+  border-bottom: 1px dashed rgba(20, 56, 37, 0.12);
+}
+
+.plan-annotation-item .label {
+  color: #526158;
+  font-weight: 600;
+}
+
+.plan-annotation-item .dots {
+  flex: 1;
+  border-bottom: 1px dotted rgba(20, 56, 37, 0.25);
+  margin: 0 8px;
+}
+
+.plan-annotation-item .value {
+  font-weight: 800;
+  color: #143825;
+}
+
+/* Empty Drafting Board */
+.plan-drafting-empty {
+  background: #FFFFFF;
+  border: 1px dashed rgba(20, 56, 37, 0.25);
+  border-radius: 4px;
+  padding: 5rem 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 440px;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   FLOOR RESULT PANEL STYLES
+══════════════════════════════════════════════════════════════ */
+.floor-result-container {
+  background: #FFFFFF;
+  border: 1px solid #E2DCD0;
+  border-radius: 4px;
+  padding: 1.5rem 1.75rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 18px rgba(20, 56, 37, 0.03);
+}
+
+.floor-result-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #E2DCD0;
+  margin-bottom: 1.25rem;
+}
+
+.floor-result-title {
+  font-family: 'Outfit', 'Space Grotesk', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #143825;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.floor-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.floor-space-planner-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.85rem;
+  border-radius: 4px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: rgba(20, 56, 37, 0.08);
+  color: #143825;
+  border: 1px solid rgba(20, 56, 37, 0.25);
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+
+.floor-space-planner-btn:hover {
+  background: #143825;
+  color: #FCFAF6;
+}
+
+.floor-badge-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.75rem;
+  border-radius: 4px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: rgba(59, 130, 246, 0.10);
+  border: 1px solid rgba(59, 130, 246, 0.35);
+  color: #1E40AF;
+}
+
+/* Compliance Badges */
+.compliance-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.65rem;
+  border-radius: 3px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+}
+
+.compliance-badge-pill.is-ok {
+  background: rgba(16, 185, 129, 0.10);
+  border-color: rgba(16, 185, 129, 0.35);
+  color: #065F46;
+}
+
+.compliance-badge-pill.is-fail {
+  background: rgba(184, 92, 67, 0.10);
+  border-color: rgba(184, 92, 67, 0.35);
+  color: #B85C43;
+}
+
+/* 4 Animated Stat Badges */
+.animated-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.85rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 600px) {
+  .animated-stat-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.animated-stat-tile {
+  background: #FAF7F0;
+  border: 1px solid #E2DCD0;
+  border-radius: 4px;
+  padding: 0.85rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: all 0.18s ease;
+}
+
+.animated-stat-tile:hover {
+  border-color: #143825;
+  background: #FFFFFF;
+}
+
+.animated-stat-icon {
+  font-size: 1.4rem;
+  line-height: 1;
+  margin-bottom: 0.35rem;
+}
+
+.animated-stat-num {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #143825;
+  line-height: 1;
+}
+
+.animated-stat-name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #697068;
+  margin-top: 0.25rem;
+}
+
+/* Overlay & Room Layout */
+.floor-layout-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+@media (max-width: 1024px) {
+  .floor-layout-split {
+    grid-template-columns: 1fr;
+  }
+}
+
+.floor-overlay-box {
+  background: #FAF7F0;
+  border: 1px solid #E2DCD0;
+  border-radius: 4px;
+  padding: 0.85rem;
+  overflow: hidden;
+}
+
+.floor-overlay-img {
+  width: 100%;
+  max-height: 480px;
+  object-fit: contain;
+  display: block;
+  border-radius: 3px;
+  background: #FFFFFF;
+}
+
+/* Room Cards Grid & Scroll Container */
+.room-cards-scroll-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.85rem;
+  max-height: 520px;
+  overflow-y: auto;
+  padding-right: 0.35rem;
+  scrollbar-width: thin;
+}
+
+/* Individual Room Card */
+.room-card-box {
+  background: #FFFFFF;
+  border: 1px solid #E2DCD0;
+  border-radius: 4px;
+  padding: 0.85rem 1rem;
+  box-shadow: 0 1px 6px rgba(20, 56, 37, 0.03);
+  transition: all 0.15s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.room-card-box:hover {
+  border-color: #143825;
+  box-shadow: 0 4px 12px rgba(20, 56, 37, 0.08);
+}
+
+.room-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.65rem;
+}
+
+.room-card-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: #143825;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.room-card-type {
+  font-size: 0.68rem;
+  color: #697068;
+  text-transform: capitalize;
+  margin: 2px 0 0;
+}
+
+/* 4-Column Room Stats Grid — NEVER COLLIDES */
+.room-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.35rem;
+  margin-bottom: 0.65rem;
+}
+
+.room-stat-tile {
+  background: #FAF7F0;
+  border: 1px solid #E2DCD0;
+  border-radius: 3px;
+  padding: 0.4rem 0.2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+}
+
+.room-stat-icon {
+  font-size: 0.85rem;
+  line-height: 1;
+  margin-bottom: 2px;
+}
+
+.room-stat-val {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.84rem;
+  font-weight: 800;
+  color: #143825;
+  line-height: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.room-stat-lbl {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.58rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #718C77;
+  letter-spacing: 0.04em;
+  margin-top: 2px;
+  white-space: nowrap;
+}
+
+/* Relative Size Progress Bar */
+.room-relative-bar-wrap {
+  margin-top: 0.35rem;
+}
+
+.room-relative-bar-label {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.68rem;
+  color: #697068;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.room-relative-bar-track {
+  height: 4px;
+  background: #E2DCD0;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.room-relative-bar-fill {
+  height: 100%;
+  background: #143825;
+  border-radius: 2px;
+}
+
+/* ════ APPROVAL CHECKLIST ════ */
+.approval-checklist-container {
+  background: #FFFFFF;
+  border: 1px solid #E2DCD0;
+  border-radius: 4px;
+  padding: 1.5rem 1.75rem;
+  margin-top: 1.5rem;
+  box-shadow: 0 4px 18px rgba(20, 56, 37, 0.03);
+}
+
+.approval-checklist-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid #E2DCD0;
+  margin-bottom: 1rem;
+}
+
+.approval-check-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-radius: 3px;
+  border: 1px solid #E2DCD0;
+  margin-bottom: 0.5rem;
+  font-size: 0.82rem;
+}
+
+.approval-check-item.pass {
+  background: rgba(16, 185, 129, 0.06);
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+.approval-check-item.fail {
+  background: rgba(184, 92, 67, 0.06);
+  border-color: rgba(184, 92, 67, 0.3);
+}
+
+.approval-check-item.review {
+  background: rgba(245, 158, 11, 0.06);
+  border-color: rgba(245, 158, 11, 0.3);
+}
+

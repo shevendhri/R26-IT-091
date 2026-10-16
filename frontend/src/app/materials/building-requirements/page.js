@@ -6,7 +6,7 @@ import { useMaterial } from '@/context/MaterialContext';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import MaterialSubNav from '@/components/Materials/MaterialSubNav';
-import ProjectContextStrip from '@/components/ui/ProjectContextStrip';
+
 import ModuleHeroBanner from '@/components/ui/ModuleHeroBanner';
 
 /* ══════════════════════════════════════════════════════════════

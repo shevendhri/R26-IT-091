@@ -7,7 +7,7 @@ import Footer from '@/components/Footer';
 import { useState, useEffect } from 'react';
 
 import CompactSummaryStrip from '@/components/Report/CompactSummaryStrip';
-import ProjectContextStrip from '@/components/ui/ProjectContextStrip';
+
 import ProjectValidationStrip from '@/components/Report/ProjectValidationStrip';
 import Accordion from '@/components/ui/Accordion';
 import DisclaimerBanner from '@/components/ui/DisclaimerBanner';
@@ -106,49 +106,7 @@ function DecisionTimeline() {
   );
 }
 
-function ProjectProfileCard({ data }) {
-  const bp = data?.blueprint || {};
-  const climate = data?.climate_profile || {};
-  const conf = data?.confidence || {};
 
-  const rows = [
-    { label: 'Building Type',       value: data?.building_type || 'Residential' },
-    { label: 'Location',            value: data?.location || 'Colombo' },
-    { label: 'Floors',              value: data?.floors || 2 },
-    { label: 'Total Floor Area',    value: bp.total_floor_area ? `${bp.total_floor_area} m²` : '170.0 m²' },
-    { label: 'Structural System',   value: data?.structural_system || 'RC Frame (SLS 614)' },
-    { label: 'Climate Zone',        value: climate.zone || 'Wet Zone (Maritime)' },
-    { label: 'Relative Humidity',   value: climate.relative_humidity != null ? `${climate.relative_humidity}%` : '80%' },
-    { label: 'Salinity Exposure',   value: climate.salinity_zone || 'High (Coastal / Marine)' },
-    { label: 'Data Provenance',     value: conf.source || 'Hybrid Engineering + ML' },
-  ];
-
-  return (
-    <div style={{
-      background: '#FFFFFF',
-      border: '1px solid #D8D2C8',
-      borderRadius: '4px',
-      padding: '1.25rem 1.5rem',
-    }}>
-      <div style={{ fontSize: '0.72rem', fontWeight: 800, color: '#173A2B', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '0.85rem', fontFamily: 'Space Grotesk' }}>
-        PROJECT PROFILE &amp; CLIMATIC CONTEXT PARAMETERS
-      </div>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '0.65rem' }}>
-        {rows.map(row => (
-          <div key={row.label} style={{
-            padding: '0.55rem 0.85rem',
-            background: '#FBF9F4',
-            borderRadius: '3px',
-            border: '1px solid #D8D2C8'
-          }}>
-            <span style={{ fontSize: '0.62rem', color: '#687068', fontWeight: 600, display: 'block', textTransform: 'uppercase', letterSpacing: '0.06em' }}>{row.label}</span>
-            <span style={{ fontSize: '0.82rem', fontWeight: 700, color: '#252823', fontFamily: 'Space Grotesk', marginTop: '2px', display: 'block' }}>{row.value}</span>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
 
 export default function ReportPage() {
   const { reportData } = useMaterial();
@@ -173,7 +131,7 @@ export default function ReportPage() {
       <MaterialSubNav />
 
       <main style={{ maxWidth: '1600px', margin: '0 auto', padding: '1rem 2.5rem 5rem' }}>
-        <ProjectContextStrip customData={reportData?.project_info} />
+
 
         {/* Monograph Top Architectural Header */}
         <div style={{
@@ -274,9 +232,8 @@ export default function ReportPage() {
                   Project Overview &amp; Climatic Context
                 </span>
               </div>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+              <div>
                 <CompactSummaryStrip data={reportData} />
-                <ProjectProfileCard data={reportData} />
               </div>
             </section>
 
