@@ -1,0 +1,4 @@
+# Optional OCR extras for scanned plans.
+# Install this in addition to backend/requirements.txt when you need raster OCR.
+paddleocr==2.10.0
+paddlepaddle==3.3.0

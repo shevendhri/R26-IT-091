@@ -1,0 +1,4 @@
+constraint,pass,fail,pass_rate_pct
+Structural Compatibility,50,0,100.0
+Climate Compatibility,50,0,100.0
+SLS Compliance,50,0,100.0

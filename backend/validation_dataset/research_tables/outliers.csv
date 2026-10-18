@@ -1,0 +1,21 @@
+scenario_id,building_type,climate,budget,area,floors,rooms,layout_score,engineering_score,ml_score,hybrid_score,placement_success_rate,functional_coverage,space_utilization,constraint_compliance,circulation_score,estimated_sustainability,runtime_ms,sustainability_priority,structural_system
+scenario_041,Hospital,Intermediate Tropical,Budget,968.7,4,35,41.2,0.0,26.8,6.7,48.1,60.2,5.2,32.0,65.2,78.2,9663,Low,Unknown
+scenario_042,Hospital,Intermediate Tropical,Premium,974.2,4,32,40.8,0.0,31.2,7.8,47.9,58.9,5.5,30.4,65.5,76.7,5287,High,Unknown
+scenario_043,Hospital,Extreme Coastal Saline,Balanced,660.4,4,31,40.6,0.0,35.1,8.8,47.9,58.3,5.1,30.3,65.1,78.5,5144,Medium,Unknown
+scenario_044,Hospital,Moderate Coastal Humid,Budget,863.6,2,18,44.4,0.0,32.5,8.1,58.3,68.1,9.1,27.1,69.1,83.2,5058,Low,Unknown
+scenario_045,Hospital,Intermediate Tropical,Premium,1411.4,2,28,45.8,0.0,29.1,7.3,55.4,70.5,9.4,35.3,69.4,75.7,5350,High,Unknown
+scenario_046,Hospital,Intermediate Tropical,Balanced,636.7,2,28,45.8,0.0,30.1,7.5,55.4,70.5,9.4,35.3,69.4,77.4,4871,Medium,Unknown
+scenario_047,Hospital,Extreme Coastal Saline,Budget,1635.5,2,25,45.2,0.0,34.5,8.6,56.0,70.0,8.8,33.5,68.8,80.5,5130,Low,Unknown
+scenario_048,Hospital,Moderate Coastal Humid,Premium,927.1,2,19,44.5,0.0,34.1,8.5,57.9,68.4,8.8,28.3,68.8,73.0,9385,High,Unknown
+scenario_049,Hospital,Intermediate Tropical,Balanced,1470.5,4,30,40.6,0.0,26.6,6.7,47.8,57.8,5.8,29.0,65.8,84.7,4962,Medium,Unknown
+scenario_050,Hospital,Intermediate Tropical,Budget,1340.2,2,23,45.2,0.0,23.8,6.0,56.5,69.6,9.3,32.1,69.3,77.7,5020,Low,Unknown
+scenario_051,Hospital,Extreme Coastal Saline,Premium,1103.1,2,18,44.4,0.0,36.6,9.2,58.3,68.1,9.1,27.1,69.1,78.5,5162,High,Unknown
+scenario_052,Hospital,Moderate Coastal Humid,Balanced,771.4,2,21,44.5,0.0,34.9,8.7,57.1,69.0,8.3,30.4,68.3,75.5,5311,Medium,Unknown
+scenario_053,Hospital,Intermediate Tropical,Budget,999.4,2,19,44.5,0.0,23.9,6.0,57.9,68.4,8.8,28.3,68.8,80.9,4999,Low,Unknown
+scenario_054,Hospital,Intermediate Tropical,Premium,779.9,2,26,45.8,0.0,29.0,7.2,55.8,70.2,9.9,34.1,69.9,79.2,4939,High,Unknown
+scenario_055,Hospital,Extreme Coastal Saline,Balanced,1549.6,2,22,45.2,0.0,35.1,8.8,56.8,69.3,9.5,31.3,69.5,81.0,5023,Medium,Unknown
+scenario_056,Hospital,Moderate Coastal Humid,Budget,983.2,4,23,38.3,0.0,31.5,7.9,47.1,52.5,4.2,23.5,64.2,87.0,5295,Low,Unknown
+scenario_057,Hospital,Intermediate Tropical,Premium,719.5,2,18,44.4,0.0,27.3,6.8,58.3,68.1,9.1,27.1,69.1,86.0,4792,High,Unknown
+scenario_058,Hospital,Intermediate Tropical,Balanced,847.5,6,38,39.1,0.0,24.3,6.1,43.0,53.5,4.7,28.7,64.7,69.3,5237,Medium,Unknown
+scenario_059,Hospital,Extreme Coastal Saline,Budget,1030.7,6,32,37.2,0.0,32.8,8.2,41.7,49.5,3.3,24.7,63.3,78.3,5229,Low,Unknown
+scenario_060,Hospital,Moderate Coastal Humid,Premium,1627.5,2,17,47.1,0.0,35.2,8.8,70.6,75.5,8.0,37.5,68.0,72.7,5098,High,Unknown

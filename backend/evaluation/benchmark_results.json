@@ -1,0 +1,96 @@
+{
+  "benchmark_timestamp": "2026-08-06T10:28:56.832451+00:00",
+  "dataset_size": 11000,
+  "approaches": {
+    "engineering_only": {
+      "approach": "Engineering Only",
+      "accuracy": 0.7410909090909091,
+      "precision": 0.9321345707656613,
+      "recall": 0.5514756348661634,
+      "f1_score": 0.6929711082363088,
+      "balanced_accuracy": 0.7531160076883021,
+      "roc_auc": 0.7698234773217913,
+      "confusion_matrix": [
+        [
+          4938,
+          234
+        ],
+        [
+          2614,
+          3214
+        ]
+      ],
+      "diversity": {
+        "shannon_diversity_index": 3.3432958483064796,
+        "recommended_materials_count": 31,
+        "top1_distribution": {
+          "Aluminium Window": 194,
+          "Cement Block": 173,
+          "Precast Concrete": 173,
+          "Mass Concrete": 171,
+          "Reinforced Concrete Grade 30": 165
+        }
+      }
+    },
+    "ml_only": {
+      "approach": "ML Only",
+      "accuracy": 0.9958181818181818,
+      "precision": 0.9945261717413616,
+      "recall": 0.9975978037062457,
+      "f1_score": 0.9960596196676375,
+      "balanced_accuracy": 0.995705321033324,
+      "roc_auc": 0.9997803427568646,
+      "confusion_matrix": [
+        [
+          5140,
+          32
+        ],
+        [
+          14,
+          5814
+        ]
+      ],
+      "diversity": {
+        "shannon_diversity_index": 3.367533330524881,
+        "recommended_materials_count": 33,
+        "top1_distribution": {
+          "Terrazzo": 324,
+          "Aluminium Window": 322,
+          "Cement Plaster": 314,
+          "Precast Concrete": 310,
+          "Reinforced Concrete Grade 30": 263
+        }
+      }
+    },
+    "hybrid_engine": {
+      "approach": "Hybrid Engine",
+      "accuracy": 0.7668181818181818,
+      "precision": 0.9819793205317577,
+      "recall": 0.5703500343170899,
+      "f1_score": 0.7215890589384565,
+      "balanced_accuracy": 0.7792778787208032,
+      "roc_auc": 0.7724334704955303,
+      "confusion_matrix": [
+        [
+          5111,
+          61
+        ],
+        [
+          2504,
+          3324
+        ]
+      ],
+      "diversity": {
+        "shannon_diversity_index": 3.3542249313417316,
+        "recommended_materials_count": 33,
+        "top1_distribution": {
+          "Aluminium Window": 194,
+          "Cement Block": 173,
+          "Precast Concrete": 173,
+          "Mass Concrete": 171,
+          "Reinforced Concrete Grade 30": 165
+        }
+      }
+    }
+  }
+}

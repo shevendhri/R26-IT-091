@@ -1,0 +1,372 @@
+{
+  "source_file": "20260509181148921.pdf",
+  "overview": {
+    "plan_type": "Architectural sheet with floor plans, elevations, sections, and construction details",
+    "project_name": "Proposed Student Girls Hostel Development",
+    "building_use_text": "Student girls hostel",
+    "storey_count": 7,
+    "schedules_visible": [
+      "Doors and Windows Opening Schedule",
+      "Schedule of Piles"
+    ],
+    "important_regions": [
+      "Ground Floor Plan",
+      "First to Sixth Floor Plan",
+      "Elevation Front Side A",
+      "Elevation Front Side B",
+      "Elevation Front Side C",
+      "Section A-A",
+      "Section Y-Y",
+      "Doors and Windows Opening Schedule",
+      "Title block and consultant information"
+    ]
+  },
+  "door_window_schedule": {
+    "schedule_found": true,
+    "project_name": null,
+    "building_use_text": null,
+    "drawing_title": null,
+    "door_rows": [
+      {
+        "mark": "D1",
+        "width_m": 1.2192,
+        "height_m": 2.4384,
+        "door_type": "TIMBER FRAMED SOLID SIDE HUNG DOOR",
+        "raw_text": "D1 | 4'-0\" x 8'-0\" | TIMBER FRAMED SOLID SIDE HUNG DOOR",
+        "confidence": 0.99
+      },
+      {
+        "mark": "D2",
+        "width_m": 1.143,
+        "height_m": 2.4384,
+        "door_type": "GLASS SIDE HUNG DOOR",
+        "raw_text": "D2 | 3'-9\" x 8'-0\" | GLASS SIDE HUNG DOOR",
+        "confidence": 0.99
+      },
+      {
+        "mark": "D3",
+        "width_m": 0.9144,
+        "height_m": 2.4384,
+        "door_type": "TIMBER FRAMED SOLID SIDE HUNG DOOR",
+        "raw_text": "D3 | 3'-0\" x 8'-0\" | TIMBER FRAMED SOLID SIDE HUNG DOOR",
+        "confidence": 0.99
+      },
+      {
+        "mark": "D4",
+        "width_m": 0.8128,
+        "height_m": 2.4384,
+        "door_type": "TIMBER FRAMED SOLID SIDE HUNG DOOR",
+        "raw_text": "D4 | 2'-8\" x 8'-0\" | TIMBER FRAMED SOLID SIDE HUNG DOOR",
+        "confidence": 0.99
+      }
+    ],
+    "window_rows": [
+      {
+        "mark": "W1",
+        "width_m": 3.9624,
+        "height_m": 1.524,
+        "window_type": "ALUMINIUM FRAMED GLAZED WINDOW",
+        "raw_text": "W1 | 13'-0\" x 5'-0\" | ALUMINIUM FRAMED GLAZED WINDOW",
+        "confidence": 0.99
+      },
+      {
+        "mark": "W2",
+        "width_m": 1.2954,
+        "height_m": 1.2192,
+        "window_type": "ALUMINIUM FRAMED GLAZED WINDOW",
+        "raw_text": "W2 | 4'-3\" x 4'-0\" | ALUMINIUM FRAMED GLAZED WINDOW",
+        "confidence": 0.99
+      },
+      {
+        "mark": "W3",
+        "width_m": 3.6068,
+        "height_m": 1.524,
+        "window_type": "ALUMINIUM FRAMED GLAZED WINDOW",
+        "raw_text": "W3 | 11'-10\" x 5'-0\" | ALUMINIUM FRAMED GLAZED WINDOW",
+        "confidence": 0.99
+      },
+      {
+        "mark": "W4",
+        "width_m": 3.7338,
+        "height_m": 1.8288,
+        "window_type": "ALUMINIUM FRAMED GLAZED WINDOW",
+        "raw_text": "W4 | 12'-3\" x 6'-0\" | ALUMINIUM FRAMED GLAZED WINDOW",
+        "confidence": 0.99
+      },
+      {
+        "mark": "W5",
+        "width_m": 3.9878,
+        "height_m": 1.8288,
+        "window_type": "ALUMINIUM FRAMED GLAZED WINDOW",
+        "raw_text": "W5 | 13'-1\" x 6'-0\" | ALUMINIUM FRAMED GLAZED WINDOW",
+        "confidence": 0.99
+      },
+      {
+        "mark": "W6",
+        "width_m": 0.7366,
+        "height_m": 1.2192,
+        "window_type": "ALUMINIUM FRAMED GLAZED WINDOW",
+        "raw_text": "W6 | 2'-5\" x 4'-0\" | ALUMINIUM FRAMED GLAZED WINDOW",
+        "confidence": 0.99
+      },
+      {
+        "mark": "DW1",
+        "width_m": 1.524,
+        "height_m": 2.4384,
+        "window_type": "ALUMINIUM FRAMED GLAZED DOOR WINDOW",
+        "raw_text": "DW1 | 5'-0\" x 8'-0\" | ALUMINIUM FRAMED GLAZED DOOR WINDOW",
+        "confidence": 0.99
+      },
+      {
+        "mark": "DW2",
+        "width_m": 1.2192,
+        "height_m": 2.4384,
+        "window_type": "ALUMINIUM FRAMED GLAZED DOOR WINDOW",
+        "raw_text": "DW2 | 4'-0\" x 8'-0\" | ALUMINIUM FRAMED GLAZED DOOR WINDOW",
+        "confidence": 0.99
+      },
+      {
+        "mark": "DW3",
+        "width_m": 2.6924,
+        "height_m": 2.4384,
+        "window_type": "ALUMINIUM FRAMED GLAZED DOOR WINDOW",
+        "raw_text": "DW3 | 8'-10\" x 8'-0\" | ALUMINIUM FRAMED GLAZED DOOR WINDOW",
+        "confidence": 0.99
+      },
+      {
+        "mark": "DW4",
+        "width_m": 1.9558,
+        "height_m": 2.4384,
+        "window_type": "ALUMINIUM FRAMED GLAZED DOOR WINDOW",
+        "raw_text": "DW4 | 6'-5\" x 8'-0\" | ALUMINIUM FRAMED GLAZED DOOR WINDOW",
+        "confidence": 0.99
+      },
+      {
+        "mark": "FL1",
+        "width_m": 0.6096,
+        "height_m": 1.2192,
+        "window_type": "ALUMINIUM FRAMED GLAZED WINDOW",
+        "raw_text": "FL1 | 2'-0\" x 4'-0\" | ALUMINIUM FRAMED GLAZED WINDOW",
+        "confidence": 0.99
+      }
+    ],
+    "evidence_text": "DOORS AND WINDOWS OPENING SCHEDULE. Columns: OPENING, SIZE, SILL HEIGHT, LINTEL HEIGHT, DESCRIPTION. Visible openings: D1-D4, W1-W6, DW1-DW4, FL1."
+  },
+  "selected_tile": {
+    "tile_id": "schedule_bottom_right_rotated",
+    "bbox": {
+      "x": 0.72,
+      "y": 0.82,
+      "width": 0.28,
+      "height": 0.18
+    },
+    "dimensions": [
+      1678,
+      1855
+    ],
+    "format": "image/jpeg",
+    "raw_image_bytes": 21701881,
+    "final_encoded_bytes": 386559,
+    "below_configured_limit": true,
+    "reason_selected": "Bottom-right sheet region contains the visible Doors and Windows Opening Schedule in the overview grid; crop is rotated 90 degrees for readable diagnostic extraction."
+  },
+  "targeted_regions": [
+    {
+      "region_id": "section_elevation",
+      "bbox": {
+        "x": 0.2,
+        "y": 0.0,
+        "width": 0.53,
+        "height": 0.37
+      },
+      "dimensions": [
+        3510,
+        3447
+      ],
+      "bytes": 868187,
+      "reason": "Section A-A/elevations show floor levels and height dimensions."
+    },
+    {
+      "region_id": "floor_area_schedule",
+      "bbox": {
+        "x": 0.72,
+        "y": 0.82,
+        "width": 0.28,
+        "height": 0.18
+      },
+      "dimensions": [
+        1678,
+        1855
+      ],
+      "bytes": 386559,
+      "reason": "Bottom-right floor-area schedule shows per-floor and total floor areas."
+    },
+    {
+      "region_id": "stair_escape_region",
+      "bbox": {
+        "x": 0.72,
+        "y": 0.18,
+        "width": 0.28,
+        "height": 0.62
+      },
+      "dimensions": [
+        5777,
+        1855
+      ],
+      "bytes": 1167026,
+      "reason": "Right-side floor plans show stair core, corridor, rooms, and visible fire/exit annotations."
+    }
+  ],
+  "section_elevation": {
+    "floor_levels": [
+      {
+        "floor_name": "Ground Floor",
+        "level_m": null,
+        "raw_text": "GROUND FLOOR PLAN",
+        "confidence": 0.99
+      },
+      {
+        "floor_name": "Roof Terrace",
+        "level_m": null,
+        "raw_text": "ROOF TERRACE; Floor + [numeric level not legible]",
+        "confidence": 0.72
+      },
+      {
+        "floor_name": "Corridor floor levels",
+        "level_m": null,
+        "raw_text": "Multiple CORRIDOR labels with Floor + [numeric levels not legible]",
+        "confidence": 0.65
+      }
+    ],
+    "highest_habitable_floor_level_m": null,
+    "building_height_m": null,
+    "roof_level_m": null,
+    "evidence_text": "Visible drawing is a GROUND FLOOR PLAN. ROOF TERRACE labels and several CORRIDOR labels include Floor + level annotations, but the numeric values are not legible. Visible dimensions such as 78'-0\", 69'-0\", and 59'-6\" are plan dimensions, not height evidence. No readable section/elevation height or roof RL is shown."
+  },
+  "section_elevation_validation_status": "UNKNOWN",
+  "floor_area_schedule": {
+    "rows": [
+      {
+        "floor_name": "GROUND FLOOR",
+        "area_value": 2743.0,
+        "area_unit": "sqft",
+        "raw_text": "GROUND FLOOR \u2014 2743 sqft",
+        "confidence": 0.99
+      },
+      {
+        "floor_name": "FIRST FLOOR",
+        "area_value": 2600.0,
+        "area_unit": "sqft",
+        "raw_text": "FIRST FLOOR \u2014 2600 sqft",
+        "confidence": 0.99
+      },
+      {
+        "floor_name": "SECOND FLOOR",
+        "area_value": 2600.0,
+        "area_unit": "sqft",
+        "raw_text": "SECOND FLOOR \u2014 2600 sqft",
+        "confidence": 0.99
+      },
+      {
+        "floor_name": "THIRD FLOOR",
+        "area_value": 2600.0,
+        "area_unit": "sqft",
+        "raw_text": "THIRD FLOOR \u2014 2600 sqft",
+        "confidence": 0.8
+      },
+      {
+        "floor_name": "FORTH FLOOR",
+        "area_value": 2600.0,
+        "area_unit": "sqft",
+        "raw_text": "FORTH FLOOR \u2014 2600 sqft",
+        "confidence": 0.99
+      },
+      {
+        "floor_name": "FIFTH FLOOR",
+        "area_value": 2600.0,
+        "area_unit": "sqft",
+        "raw_text": "FIFTH FLOOR \u2014 2600 sqft",
+        "confidence": 0.99
+      },
+      {
+        "floor_name": "SIXTH FLOOR",
+        "area_value": 2600.0,
+        "area_unit": "sqft",
+        "raw_text": "SIXTH FLOOR \u2014 2600 sqft",
+        "confidence": 0.99
+      },
+      {
+        "floor_name": "ROOF TERRACE",
+        "area_value": 2600.0,
+        "area_unit": "sqft",
+        "raw_text": "ROOF TERRACE \u2014 2600 sqft",
+        "confidence": 0.99
+      }
+    ],
+    "total_area_value": 20943.0,
+    "total_area_unit": "sqft",
+    "evidence_text": "TOTAL FLOOR AREA \u2014 20943 sqft"
+  },
+  "floor_area_validation_status": "CONFIRMED",
+  "stair_escape": {
+    "staircase_count": 1,
+    "stair_widths": [],
+    "corridor_widths": [],
+    "protected_stairs": [
+      {
+        "label": "UP",
+        "floor_name": "First to sixth floor plan",
+        "protected_stair": null,
+        "clear_width_m": null,
+        "raw_text": "UP",
+        "confidence": 0.86
+      }
+    ],
+    "visible_exit_count": null,
+    "exit_labels": [],
+    "route_topology_confirmed": false,
+    "travel_distance_m": null,
+    "rooms_or_occupancies": [
+      "Lobby",
+      "Toilet with disabled facilities",
+      "Generator room",
+      "Panel room",
+      "Common kitchen",
+      "Dormitory for four person",
+      "Single person room 01",
+      "Single person room 02",
+      "Single person room 01",
+      "Single person room 02",
+      "Pantry",
+      "Laundry room"
+    ],
+    "fire_features": [],
+    "evidence_text": "Ground floor plan and first-to-sixth floor plan are visible. One stair flight marked \"UP\" is visible near the common kitchen on the first-to-sixth floor plan. No explicit exit labels, independent-exit topology, travel-distance dimension, protected-stair designation, or fire-feature notation is legible."
+  },
+  "openai_usage": [
+    {
+      "region_id": "floor_area_schedule",
+      "usage": {
+        "input_tokens": 3265,
+        "cached_input_tokens": 0,
+        "output_tokens": 498,
+        "total_tokens": 3763
+      }
+    },
+    {
+      "region_id": "section_elevation",
+      "usage": {
+        "input_tokens": 3298,
+        "cached_input_tokens": 0,
+        "output_tokens": 1249,
+        "total_tokens": 4547
+      }
+    }
+  ],
+  "live_call_durations": {
+    "floor_area_schedule": 9.537,
+    "section_elevation": 16.56
+  },
+  "new_live_calls": 2,
+  "openai_model": "gpt-5.6-luna"
+}

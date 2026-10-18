@@ -1,0 +1,1 @@
+scenario_id,building_type,floors,climate_type,budget,profile_flags,material_id,material_name,eng_score,ml_score,hybrid_score,response_ms,recommendation_rank,rejected_materials,constraint_reasons,explanations_json

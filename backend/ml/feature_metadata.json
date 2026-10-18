@@ -1,0 +1,387 @@
+[
+  {
+    "feature": "material_name",
+    "datatype": "str",
+    "encoding": "ordinal",
+    "allowed_values": [
+      "AAC Block",
+      "ACP Panels",
+      "Aluminium Sliding Door",
+      "Aluminium Window",
+      "Asphalt Shingles",
+      "Burnt Clay Brick",
+      "Cement Block",
+      "Cement Plaster",
+      "Ceramic Tile",
+      "Clay Roof Tile",
+      "Color-Coated Steel Roofing",
+      "Concrete Roof Tile",
+      "Corrugated Aluminium Sheet",
+      "Curtain Wall Systems",
+      "Fire Rated Door",
+      "Gypsum Board",
+      "Insulated Sandwich Panels",
+      "Interlocking Block",
+      "Lime Cement Render",
+      "Mass Concrete",
+      "Paint Systems",
+      "Porcelain Tile",
+      "Precast Concrete",
+      "Reinforced Concrete Grade 20",
+      "Reinforced Concrete Grade 25",
+      "Reinforced Concrete Grade 30",
+      "Stabilized Earth Block",
+      "Steel Rebar",
+      "Structural Steel",
+      "Terrazzo",
+      "Timber Door",
+      "Timber Window",
+      "uPVC Window"
+    ]
+  },
+  {
+    "feature": "category",
+    "datatype": "str",
+    "encoding": "ordinal",
+    "allowed_values": [
+      "Envelope Systems",
+      "Finishing",
+      "Openings",
+      "Roofing",
+      "Structural",
+      "Wall Systems"
+    ]
+  },
+  {
+    "feature": "subcategory",
+    "datatype": "str",
+    "encoding": "ordinal",
+    "allowed_values": [
+      "Bituminous",
+      "Cast-in-situ Concrete",
+      "Ceramic Floor/Wall",
+      "Ceramic Tile",
+      "Cladding",
+      "Concrete Block",
+      "Concrete Tile",
+      "Door",
+      "Dry Lining",
+      "Earth Block",
+      "Ferrous Metal",
+      "Floor Finish",
+      "Glazed Facade",
+      "Lightweight Block",
+      "Masonry Unit",
+      "Metal Sheet",
+      "Plain Concrete",
+      "Precast",
+      "Reinforcement",
+      "Render",
+      "Surface Coating",
+      "Wall Panel",
+      "Window Frame"
+    ]
+  },
+  {
+    "feature": "building_phase",
+    "datatype": "str",
+    "encoding": "ordinal",
+    "allowed_values": [
+      "Facade",
+      "Finishing",
+      "Foundation",
+      "Roof",
+      "Structure",
+      "Superstructure"
+    ]
+  },
+  {
+    "feature": "climate_zone",
+    "datatype": "str",
+    "encoding": "ordinal",
+    "allowed_values": [
+      "Coastal",
+      "Dry Zone",
+      "Highland",
+      "Intermediate",
+      "Wet Zone"
+    ]
+  },
+  {
+    "feature": "sector",
+    "datatype": "str",
+    "encoding": "ordinal",
+    "allowed_values": [
+      "Commercial",
+      "Industrial",
+      "Residential"
+    ]
+  },
+  {
+    "feature": "actual_floor_count",
+    "datatype": "int64",
+    "encoding": "scaled_numeric",
+    "min": 1.0,
+    "max": 42.0,
+    "is_interaction": false
+  },
+  {
+    "feature": "building_area_m2",
+    "datatype": "int64",
+    "encoding": "scaled_numeric",
+    "min": 80.0,
+    "max": 10000.0,
+    "is_interaction": false
+  },
+  {
+    "feature": "budget_tier",
+    "datatype": "str",
+    "encoding": "ordinal",
+    "allowed_values": [
+      "Low",
+      "Medium",
+      "Premium"
+    ]
+  },
+  {
+    "feature": "maintenance_preference",
+    "datatype": "str",
+    "encoding": "ordinal",
+    "allowed_values": [
+      "Balanced",
+      "Low Maintenance",
+      "Premium Finish"
+    ]
+  },
+  {
+    "feature": "sustainability_priority",
+    "datatype": "str",
+    "encoding": "ordinal",
+    "allowed_values": [
+      "High",
+      "Low",
+      "Medium"
+    ]
+  },
+  {
+    "feature": "user_priority",
+    "datatype": "str",
+    "encoding": "ordinal",
+    "allowed_values": [
+      "Cost",
+      "Durability",
+      "Performance",
+      "Sustainability"
+    ]
+  },
+  {
+    "feature": "climate_exposure_level",
+    "datatype": "str",
+    "encoding": "ordinal",
+    "allowed_values": [
+      "High",
+      "Low",
+      "Medium"
+    ]
+  },
+  {
+    "feature": "coastal_exposure",
+    "datatype": "int64",
+    "encoding": "scaled_numeric",
+    "min": 0.0,
+    "max": 1.0,
+    "is_interaction": false
+  },
+  {
+    "feature": "humidity_exposure",
+    "datatype": "int64",
+    "encoding": "scaled_numeric",
+    "min": 0.0,
+    "max": 1.0,
+    "is_interaction": false
+  },
+  {
+    "feature": "max_recommended_floors",
+    "datatype": "int64",
+    "encoding": "scaled_numeric",
+    "min": 2.0,
+    "max": 40.0,
+    "is_interaction": false
+  },
+  {
+    "feature": "compressive_strength_mpa",
+    "datatype": "int64",
+    "encoding": "scaled_numeric",
+    "min": 0.0,
+    "max": 500.0,
+    "is_interaction": false
+  },
+  {
+    "feature": "thermal_performance_score",
+    "datatype": "int64",
+    "encoding": "scaled_numeric",
+    "min": 15.0,
+    "max": 91.0,
+    "is_interaction": false
+  },
+  {
+    "feature": "moisture_resistance_score",
+    "datatype": "int64",
+    "encoding": "scaled_numeric",
+    "min": 25.0,
+    "max": 95.0,
+    "is_interaction": false
+  },
+  {
+    "feature": "corrosion_resistance_score",
+    "datatype": "int64",
+    "encoding": "scaled_numeric",
+    "min": 18.0,
+    "max": 92.0,
+    "is_interaction": false
+  },
+  {
+    "feature": "fire_resistance_score",
+    "datatype": "int64",
+    "encoding": "scaled_numeric",
+    "min": 32.0,
+    "max": 98.0,
+    "is_interaction": false
+  },
+  {
+    "feature": "durability_score",
+    "datatype": "int64",
+    "encoding": "scaled_numeric",
+    "min": 40.0,
+    "max": 96.0,
+    "is_interaction": false
+  },
+  {
+    "feature": "maintenance_score",
+    "datatype": "int64",
+    "encoding": "scaled_numeric",
+    "min": 40.0,
+    "max": 94.0,
+    "is_interaction": false
+  },
+  {
+    "feature": "sustainability_score",
+    "datatype": "int64",
+    "encoding": "scaled_numeric",
+    "min": 28.0,
+    "max": 92.0,
+    "is_interaction": false
+  },
+  {
+    "feature": "carbon_footprint_kgco2e",
+    "datatype": "int64",
+    "encoding": "scaled_numeric",
+    "min": 20.0,
+    "max": 1800.0,
+    "is_interaction": false
+  },
+  {
+    "feature": "service_life_years",
+    "datatype": "int64",
+    "encoding": "scaled_numeric",
+    "min": 7.0,
+    "max": 60.0,
+    "is_interaction": false
+  },
+  {
+    "feature": "suitable_for_coastal",
+    "datatype": "int64",
+    "encoding": "scaled_numeric",
+    "min": 0.0,
+    "max": 1.0,
+    "is_interaction": false
+  },
+  {
+    "feature": "suitable_for_wet_zone",
+    "datatype": "int64",
+    "encoding": "scaled_numeric",
+    "min": 0.0,
+    "max": 1.0,
+    "is_interaction": false
+  },
+  {
+    "feature": "suitable_for_highland",
+    "datatype": "int64",
+    "encoding": "scaled_numeric",
+    "min": 0.0,
+    "max": 1.0,
+    "is_interaction": false
+  },
+  {
+    "feature": "recommended_for_residential",
+    "datatype": "int64",
+    "encoding": "scaled_numeric",
+    "min": 0.0,
+    "max": 1.0,
+    "is_interaction": false
+  },
+  {
+    "feature": "recommended_for_commercial",
+    "datatype": "int64",
+    "encoding": "scaled_numeric",
+    "min": 0.0,
+    "max": 1.0,
+    "is_interaction": false
+  },
+  {
+    "feature": "recommended_for_industrial",
+    "datatype": "int64",
+    "encoding": "scaled_numeric",
+    "min": 0.0,
+    "max": 1.0,
+    "is_interaction": false
+  },
+  {
+    "feature": "floor_to_limit_ratio",
+    "datatype": "float64",
+    "encoding": "scaled_numeric",
+    "min": 0.025,
+    "max": 15.0,
+    "is_interaction": true
+  },
+  {
+    "feature": "sector_match",
+    "datatype": "int64",
+    "encoding": "scaled_numeric",
+    "min": 0.0,
+    "max": 1.0,
+    "is_interaction": true
+  },
+  {
+    "feature": "zone_match",
+    "datatype": "int64",
+    "encoding": "scaled_numeric",
+    "min": 0.0,
+    "max": 1.0,
+    "is_interaction": true
+  },
+  {
+    "feature": "coastal_corrosion_match",
+    "datatype": "float64",
+    "encoding": "scaled_numeric",
+    "min": 0.0,
+    "max": 0.8,
+    "is_interaction": true
+  },
+  {
+    "feature": "humidity_moisture_match",
+    "datatype": "float64",
+    "encoding": "scaled_numeric",
+    "min": 0.0,
+    "max": 0.95,
+    "is_interaction": true
+  },
+  {
+    "feature": "budget_sustainability_fit",
+    "datatype": "int64",
+    "encoding": "scaled_numeric",
+    "min": 0.0,
+    "max": 1.0,
+    "is_interaction": true
+  }
+]

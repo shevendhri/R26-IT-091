@@ -1,0 +1,4196 @@
+{
+  "scenario_id": "scenario_072",
+  "status": "success",
+  "failed_stage": null,
+  "failure_reason": null,
+  "timestamp": "2026-07-06T03:27:02.959469Z",
+  "system_version": "1.0.0",
+  "evaluation_version": "v1.1",
+  "dataset_version": "v1.0-research",
+  "generation_timestamp": "2026-07-06T03:27:02.959501Z",
+  "random_seed": 12345,
+  "scenario_definition": {
+    "building_type": "Office",
+    "location": "Hambantota",
+    "budget": "Budget",
+    "climate_zone": "Intermediate Tropical",
+    "floors": 2,
+    "area": 1428.1,
+    "occupancy": 59,
+    "sustainability_priority": "Low",
+    "structural_system": "Concrete Frame",
+    "office_count": 14,
+    "meeting_rooms": 2,
+    "reception_required": true,
+    "commercial_parking_capacity": 20
+  },
+  "building_context": {
+    "building_type": "Commercial",
+    "sustainability_pref": "Low",
+    "budget_tier": "Budget",
+    "location": "Hambantota",
+    "style_pref": "Modern",
+    "future_expansion": "None",
+    "office_count": 14,
+    "meeting_rooms": 2,
+    "reception_required": true,
+    "commercial_parking_capacity": 20
+  },
+  "blueprint": {
+    "building_type": "Commercial",
+    "num_floors": 2,
+    "total_area": 316.2,
+    "net_area": 253.0,
+    "footprint": {
+      "w": 16.0,
+      "h": 12.0
+    },
+    "floors_data": [
+      {
+        "level": 0,
+        "label": "GROUND FLOOR",
+        "rooms": [
+          {
+            "id": "reception_0_0",
+            "label": "Reception",
+            "type": "RECEPTION",
+            "zone": "public",
+            "x": 0.0,
+            "y": 0.0,
+            "w": 7.6,
+            "h": 11.4,
+            "area": 86.6,
+            "furniture": [
+              {
+                "name": "Sofa",
+                "w": 2.4,
+                "d": 0.95,
+                "h": 0.42,
+                "px": 0.5,
+                "pz": 0.28,
+                "rotY": 0.0,
+                "color": "#7C5C4E",
+                "shape": "box",
+                "functions": [
+                  "seating",
+                  "lounging"
+                ],
+                "material": "Fabric + Foam + Wood Frame",
+                "carbon_score": 0.44,
+                "upper": false,
+                "parts": [
+                  {
+                    "dx": 0,
+                    "dy": 0,
+                    "dz": 0,
+                    "w": 2.4,
+                    "h": 0.42,
+                    "d": 0.95,
+                    "color": "#7C5C4E",
+                    "shape": "box"
+                  },
+                  {
+                    "dx": 0,
+                    "dy": 0.45,
+                    "dz": -0.38,
+                    "w": 2.4,
+                    "h": 0.48,
+                    "d": 0.18,
+                    "color": "#6B4C42",
+                    "shape": "box"
+                  },
+                  {
+                    "dx": -1.11,
+                    "dy": 0.3,
+                    "dz": 0,
+                    "w": 0.18,
+                    "h": 0.3,
+                    "d": 0.95,
+                    "color": "#6B4C42",
+                    "shape": "box"
+                  },
+                  {
+                    "dx": 1.11,
+                    "dy": 0.3,
+                    "dz": 0,
+                    "w": 0.18,
+                    "h": 0.3,
+                    "d": 0.95,
+                    "color": "#6B4C42",
+                    "shape": "box"
+                  },
+                  {
+                    "dx": -0.6,
+                    "dy": 0.22,
+                    "dz": 0.1,
+                    "w": 0.75,
+                    "h": 0.08,
+                    "d": 0.65,
+                    "color": "#9A7060",
+                    "shape": "box"
+                  },
+                  {
+                    "dx": 0.6,
+                    "dy": 0.22,
+                    "dz": 0.1,
+                    "w": 0.75,
+                    "h": 0.08,
+                    "d": 0.65,
+                    "color": "#9A7060",
+                    "shape": "box"
+                  }
+                ]
+              },
+              {
+                "name": "Coffee Table",
+                "w": 1.1,
+                "d": 0.6,
+                "h": 0.42,
+                "px": 0.5,
+                "pz": 0.4050000000000001,
+                "rotY": 0.0,
+                "color": "#A0855B",
+                "shape": "box",
+                "functions": [
+                  "surface",
+                  "display"
+                ],
+                "material": "Wood",
+                "carbon_score": 0.2,
+                "upper": false,
+                "parts": [
+                  {
+                    "dx": 0,
+                    "dy": 0,
+                    "dz": 0,
+                    "w": 1.1,
+                    "h": 0.05,
+                    "d": 0.6,
+                    "color": "#8B6914",
+                    "shape": "box"
+                  },
+                  {
+                    "dx": -0.45,
+                    "dy": -0.18,
+                    "dz": -0.22,
+                    "w": 0.06,
+                    "h": 0.35,
+                    "d": 0.06,
+                    "color": "#7A5C2E",
+                    "shape": "box"
+                  },
+                  {
+                    "dx": 0.45,
+                    "dy": -0.18,
+                    "dz": -0.22,
+                    "w": 0.06,
+                    "h": 0.35,
+                    "d": 0.06,
+                    "color": "#7A5C2E",
+                    "shape": "box"
+                  },
+                  {
+                    "dx": -0.45,
+                    "dy": -0.18,
+                    "dz": 0.22,
+                    "w": 0.06,
+                    "h": 0.35,
+                    "d": 0.06,
+                    "color": "#7A5C2E",
+                    "shape": "box"
+                  },
+                  {
+                    "dx": 0.45,
+                    "dy": -0.18,
+                    "dz": 0.22,
+                    "w": 0.06,
+                    "h": 0.35,
+                    "d": 0.06,
+                    "color": "#7A5C2E",
+                    "shape": "box"
+                  }
+                ]
+              }
+            ],
+            "layout_evaluation": {
+              "placement_success_rate": 100.0,
+              "space_utilization": 3.4,
+              "circulation_score": 63.4,
+              "functional_coverage": 66.7,
+              "constraint_compliance": 100.0,
+              "furniture_density": 0.23,
+              "estimated_sustainability": 68.0,
+              "collision_count": 0,
+              "runtime_ms": 0.04,
+              "items_placed": 2,
+              "items_considered": 2,
+              "functions_required": [
+                "entertainment",
+                "lounging",
+                "seating"
+              ],
+              "functions_covered": [
+                "lounging",
+                "seating"
+              ],
+              "material_note": "Lowest embodied carbon item: 'Coffee Table' (Wood, carbon_score=0.20)",
+              "layout_score": {
+                "overall": 55.4,
+                "space_utilization": 0.8,
+                "circulation": 12.7,
+                "functional_coverage": 13.3,
+                "constraint_compliance": 15.0,
+                "sustainability": 13.6
+              },
+              "score_breakdown": {
+                "space_utilization": {
+                  "raw": 3.4,
+                  "weight": 0.25,
+                  "contribution": 0.8
+                },
+                "circulation": {
+                  "raw": 63.4,
+                  "weight": 0.2,
+                  "contribution": 12.7
+                },
+                "functional_coverage": {
+                  "raw": 66.7,
+                  "weight": 0.2,
+                  "contribution": 13.3
+                },
+                "constraint_compliance": {
+                  "raw": 100.0,
+                  "weight": 0.15,
+                  "contribution": 15.0
+                },
+                "sustainability": {
+                  "raw": 68.0,
+                  "weight": 0.2,
+                  "contribution": 13.6
+                },
+                "overall": {
+                  "raw": 55.4,
+                  "weight": 1.0,
+                  "contribution": 55.4
+                }
+              },
+              "explanation": {
+                "space_utilization": "Space utilization 3.4% weighted 25% => 0.8",
+                "circulation": "Circulation score 63.4% weighted 20% => 12.7",
+                "functional_coverage": "Functional coverage 66.7% weighted 20% => 13.3",
+                "constraint_compliance": "Constraint compliance 100.0% weighted 15% => 15.0",
+                "sustainability": "Sustainability 68.0% weighted 20% => 13.6",
+                "overall": "Overall design score 55.4 (sum of weighted sub\u2011scores)"
+              },
+              "evaluation_version": "v1.0"
+            }
+          }
+        ]
+      },
+      {
+        "level": 1,
+        "label": "MEZZANINE",
+        "rooms": [
+          {
+            "id": "private_office_1_1_0",
+            "label": "Private Office 1",
+            "type": "OFFICE",
+            "zone": "private",
+            "x": 0.0,
+            "y": 0.0,
+            "w": 3.8,
+            "h": 2.28,
+            "area": 8.7,
+            "furniture": [],
+            "layout_evaluation": {
+              "placement_success_rate": 0.0,
+              "space_utilization": 0.0,
+              "circulation_score": 60.0,
+              "functional_coverage": 0.0,
+              "constraint_compliance": 0.0,
+              "furniture_density": 0.0,
+              "estimated_sustainability": 50.0,
+              "collision_count": 0,
+              "runtime_ms": 0.02,
+              "items_placed": 0,
+              "items_considered": 1,
+              "functions_required": [
+                "computing",
+                "storage",
+                "working"
+              ],
+              "functions_covered": [],
+              "material_note": "No items placed.",
+              "layout_score": {
+                "overall": 22.0,
+                "space_utilization": 0.0,
+                "circulation": 12.0,
+                "functional_coverage": 0.0,
+                "constraint_compliance": 0.0,
+                "sustainability": 10.0
+              },
+              "score_breakdown": {
+                "space_utilization": {
+                  "raw": 0.0,
+                  "weight": 0.25,
+                  "contribution": 0.0
+                },
+                "circulation": {
+                  "raw": 60.0,
+                  "weight": 0.2,
+                  "contribution": 12.0
+                },
+                "functional_coverage": {
+                  "raw": 0.0,
+                  "weight": 0.2,
+                  "contribution": 0.0
+                },
+                "constraint_compliance": {
+                  "raw": 0.0,
+                  "weight": 0.15,
+                  "contribution": 0.0
+                },
+                "sustainability": {
+                  "raw": 50.0,
+                  "weight": 0.2,
+                  "contribution": 10.0
+                },
+                "overall": {
+                  "raw": 22.0,
+                  "weight": 1.0,
+                  "contribution": 22.0
+                }
+              },
+              "explanation": {
+                "space_utilization": "Space utilization 0.0% weighted 25% => 0.0",
+                "circulation": "Circulation score 60.0% weighted 20% => 12.0",
+                "functional_coverage": "Functional coverage 0.0% weighted 20% => 0.0",
+                "constraint_compliance": "Constraint compliance 0.0% weighted 15% => 0.0",
+                "sustainability": "Sustainability 50.0% weighted 20% => 10.0",
+                "overall": "Overall design score 22.0 (sum of weighted sub\u2011scores)"
+              },
+              "evaluation_version": "v1.0"
+            }
+          },
+          {
+            "id": "private_office_2_1_1",
+            "label": "Private Office 2",
+            "type": "OFFICE",
+            "zone": "private",
+            "x": 4.0,
+            "y": 0.0,
+            "w": 3.8,
+            "h": 2.28,
+            "area": 8.7,
+            "furniture": [],
+            "layout_evaluation": {
+              "placement_success_rate": 0.0,
+              "space_utilization": 0.0,
+              "circulation_score": 60.0,
+              "functional_coverage": 0.0,
+              "constraint_compliance": 0.0,
+              "furniture_density": 0.0,
+              "estimated_sustainability": 50.0,
+              "collision_count": 0,
+              "runtime_ms": 0.01,
+              "items_placed": 0,
+              "items_considered": 1,
+              "functions_required": [
+                "computing",
+                "storage",
+                "working"
+              ],
+              "functions_covered": [],
+              "material_note": "No items placed.",
+              "layout_score": {
+                "overall": 22.0,
+                "space_utilization": 0.0,
+                "circulation": 12.0,
+                "functional_coverage": 0.0,
+                "constraint_compliance": 0.0,
+                "sustainability": 10.0
+              },
+              "score_breakdown": {
+                "space_utilization": {
+                  "raw": 0.0,
+                  "weight": 0.25,
+                  "contribution": 0.0
+                },
+                "circulation": {
+                  "raw": 60.0,
+                  "weight": 0.2,
+                  "contribution": 12.0
+                },
+                "functional_coverage": {
+                  "raw": 0.0,
+                  "weight": 0.2,
+                  "contribution": 0.0
+                },
+                "constraint_compliance": {
+                  "raw": 0.0,
+                  "weight": 0.15,
+                  "contribution": 0.0
+                },
+                "sustainability": {
+                  "raw": 50.0,
+                  "weight": 0.2,
+                  "contribution": 10.0
+                },
+                "overall": {
+                  "raw": 22.0,
+                  "weight": 1.0,
+                  "contribution": 22.0
+                }
+              },
+              "explanation": {
+                "space_utilization": "Space utilization 0.0% weighted 25% => 0.0",
+                "circulation": "Circulation score 60.0% weighted 20% => 12.0",
+                "functional_coverage": "Functional coverage 0.0% weighted 20% => 0.0",
+                "constraint_compliance": "Constraint compliance 0.0% weighted 15% => 0.0",
+                "sustainability": "Sustainability 50.0% weighted 20% => 10.0",
+                "overall": "Overall design score 22.0 (sum of weighted sub\u2011scores)"
+              },
+              "evaluation_version": "v1.0"
+            }
+          },
+          {
+            "id": "private_office_3_1_2",
+            "label": "Private Office 3",
+            "type": "OFFICE",
+            "zone": "private",
+            "x": 8.0,
+            "y": 0.0,
+            "w": 3.8,
+            "h": 2.28,
+            "area": 8.7,
+            "furniture": [],
+            "layout_evaluation": {
+              "placement_success_rate": 0.0,
+              "space_utilization": 0.0,
+              "circulation_score": 60.0,
+              "functional_coverage": 0.0,
+              "constraint_compliance": 0.0,
+              "furniture_density": 0.0,
+              "estimated_sustainability": 50.0,
+              "collision_count": 0,
+              "runtime_ms": 0.01,
+              "items_placed": 0,
+              "items_considered": 1,
+              "functions_required": [
+                "computing",
+                "storage",
+                "working"
+              ],
+              "functions_covered": [],
+              "material_note": "No items placed.",
+              "layout_score": {
+                "overall": 22.0,
+                "space_utilization": 0.0,
+                "circulation": 12.0,
+                "functional_coverage": 0.0,
+                "constraint_compliance": 0.0,
+                "sustainability": 10.0
+              },
+              "score_breakdown": {
+                "space_utilization": {
+                  "raw": 0.0,
+                  "weight": 0.25,
+                  "contribution": 0.0
+                },
+                "circulation": {
+                  "raw": 60.0,
+                  "weight": 0.2,
+                  "contribution": 12.0
+                },
+                "functional_coverage": {
+                  "raw": 0.0,
+                  "weight": 0.2,
+                  "contribution": 0.0
+                },
+                "constraint_compliance": {
+                  "raw": 0.0,
+                  "weight": 0.15,
+                  "contribution": 0.0
+                },
+                "sustainability": {
+                  "raw": 50.0,
+                  "weight": 0.2,
+                  "contribution": 10.0
+                },
+                "overall": {
+                  "raw": 22.0,
+                  "weight": 1.0,
+                  "contribution": 22.0
+                }
+              },
+              "explanation": {
+                "space_utilization": "Space utilization 0.0% weighted 25% => 0.0",
+                "circulation": "Circulation score 60.0% weighted 20% => 12.0",
+                "functional_coverage": "Functional coverage 0.0% weighted 20% => 0.0",
+                "constraint_compliance": "Constraint compliance 0.0% weighted 15% => 0.0",
+                "sustainability": "Sustainability 50.0% weighted 20% => 10.0",
+                "overall": "Overall design score 22.0 (sum of weighted sub\u2011scores)"
+              },
+              "evaluation_version": "v1.0"
+            }
+          },
+          {
+            "id": "private_office_4_1_3",
+            "label": "Private Office 4",
+            "type": "OFFICE",
+            "zone": "private",
+            "x": 12.0,
+            "y": 0.0,
+            "w": 3.8,
+            "h": 2.28,
+            "area": 8.7,
+            "furniture": [],
+            "layout_evaluation": {
+              "placement_success_rate": 0.0,
+              "space_utilization": 0.0,
+              "circulation_score": 60.0,
+              "functional_coverage": 0.0,
+              "constraint_compliance": 0.0,
+              "furniture_density": 0.0,
+              "estimated_sustainability": 50.0,
+              "collision_count": 0,
+              "runtime_ms": 0.01,
+              "items_placed": 0,
+              "items_considered": 1,
+              "functions_required": [
+                "computing",
+                "storage",
+                "working"
+              ],
+              "functions_covered": [],
+              "material_note": "No items placed.",
+              "layout_score": {
+                "overall": 22.0,
+                "space_utilization": 0.0,
+                "circulation": 12.0,
+                "functional_coverage": 0.0,
+                "constraint_compliance": 0.0,
+                "sustainability": 10.0
+              },
+              "score_breakdown": {
+                "space_utilization": {
+                  "raw": 0.0,
+                  "weight": 0.25,
+                  "contribution": 0.0
+                },
+                "circulation": {
+                  "raw": 60.0,
+                  "weight": 0.2,
+                  "contribution": 12.0
+                },
+                "functional_coverage": {
+                  "raw": 0.0,
+                  "weight": 0.2,
+                  "contribution": 0.0
+                },
+                "constraint_compliance": {
+                  "raw": 0.0,
+                  "weight": 0.15,
+                  "contribution": 0.0
+                },
+                "sustainability": {
+                  "raw": 50.0,
+                  "weight": 0.2,
+                  "contribution": 10.0
+                },
+                "overall": {
+                  "raw": 22.0,
+                  "weight": 1.0,
+                  "contribution": 22.0
+                }
+              },
+              "explanation": {
+                "space_utilization": "Space utilization 0.0% weighted 25% => 0.0",
+                "circulation": "Circulation score 60.0% weighted 20% => 12.0",
+                "functional_coverage": "Functional coverage 0.0% weighted 20% => 0.0",
+                "constraint_compliance": "Constraint compliance 0.0% weighted 15% => 0.0",
+                "sustainability": "Sustainability 50.0% weighted 20% => 10.0",
+                "overall": "Overall design score 22.0 (sum of weighted sub\u2011scores)"
+              },
+              "evaluation_version": "v1.0"
+            }
+          },
+          {
+            "id": "private_office_5_1_4",
+            "label": "Private Office 5",
+            "type": "OFFICE",
+            "zone": "private",
+            "x": 0.0,
+            "y": 2.4,
+            "w": 3.8,
+            "h": 2.28,
+            "area": 8.7,
+            "furniture": [],
+            "layout_evaluation": {
+              "placement_success_rate": 0.0,
+              "space_utilization": 0.0,
+              "circulation_score": 60.0,
+              "functional_coverage": 0.0,
+              "constraint_compliance": 0.0,
+              "furniture_density": 0.0,
+              "estimated_sustainability": 50.0,
+              "collision_count": 0,
+              "runtime_ms": 0.01,
+              "items_placed": 0,
+              "items_considered": 1,
+              "functions_required": [
+                "computing",
+                "storage",
+                "working"
+              ],
+              "functions_covered": [],
+              "material_note": "No items placed.",
+              "layout_score": {
+                "overall": 22.0,
+                "space_utilization": 0.0,
+                "circulation": 12.0,
+                "functional_coverage": 0.0,
+                "constraint_compliance": 0.0,
+                "sustainability": 10.0
+              },
+              "score_breakdown": {
+                "space_utilization": {
+                  "raw": 0.0,
+                  "weight": 0.25,
+                  "contribution": 0.0
+                },
+                "circulation": {
+                  "raw": 60.0,
+                  "weight": 0.2,
+                  "contribution": 12.0
+                },
+                "functional_coverage": {
+                  "raw": 0.0,
+                  "weight": 0.2,
+                  "contribution": 0.0
+                },
+                "constraint_compliance": {
+                  "raw": 0.0,
+                  "weight": 0.15,
+                  "contribution": 0.0
+                },
+                "sustainability": {
+                  "raw": 50.0,
+                  "weight": 0.2,
+                  "contribution": 10.0
+                },
+                "overall": {
+                  "raw": 22.0,
+                  "weight": 1.0,
+                  "contribution": 22.0
+                }
+              },
+              "explanation": {
+                "space_utilization": "Space utilization 0.0% weighted 25% => 0.0",
+                "circulation": "Circulation score 60.0% weighted 20% => 12.0",
+                "functional_coverage": "Functional coverage 0.0% weighted 20% => 0.0",
+                "constraint_compliance": "Constraint compliance 0.0% weighted 15% => 0.0",
+                "sustainability": "Sustainability 50.0% weighted 20% => 10.0",
+                "overall": "Overall design score 22.0 (sum of weighted sub\u2011scores)"
+              },
+              "evaluation_version": "v1.0"
+            }
+          },
+          {
+            "id": "private_office_6_1_5",
+            "label": "Private Office 6",
+            "type": "OFFICE",
+            "zone": "private",
+            "x": 4.0,
+            "y": 2.4,
+            "w": 3.8,
+            "h": 2.28,
+            "area": 8.7,
+            "furniture": [],
+            "layout_evaluation": {
+              "placement_success_rate": 0.0,
+              "space_utilization": 0.0,
+              "circulation_score": 60.0,
+              "functional_coverage": 0.0,
+              "constraint_compliance": 0.0,
+              "furniture_density": 0.0,
+              "estimated_sustainability": 50.0,
+              "collision_count": 0,
+              "runtime_ms": 0.01,
+              "items_placed": 0,
+              "items_considered": 1,
+              "functions_required": [
+                "computing",
+                "storage",
+                "working"
+              ],
+              "functions_covered": [],
+              "material_note": "No items placed.",
+              "layout_score": {
+                "overall": 22.0,
+                "space_utilization": 0.0,
+                "circulation": 12.0,
+                "functional_coverage": 0.0,
+                "constraint_compliance": 0.0,
+                "sustainability": 10.0
+              },
+              "score_breakdown": {
+                "space_utilization": {
+                  "raw": 0.0,
+                  "weight": 0.25,
+                  "contribution": 0.0
+                },
+                "circulation": {
+                  "raw": 60.0,
+                  "weight": 0.2,
+                  "contribution": 12.0
+                },
+                "functional_coverage": {
+                  "raw": 0.0,
+                  "weight": 0.2,
+                  "contribution": 0.0
+                },
+                "constraint_compliance": {
+                  "raw": 0.0,
+                  "weight": 0.15,
+                  "contribution": 0.0
+                },
+                "sustainability": {
+                  "raw": 50.0,
+                  "weight": 0.2,
+                  "contribution": 10.0
+                },
+                "overall": {
+                  "raw": 22.0,
+                  "weight": 1.0,
+                  "contribution": 22.0
+                }
+              },
+              "explanation": {
+                "space_utilization": "Space utilization 0.0% weighted 25% => 0.0",
+                "circulation": "Circulation score 60.0% weighted 20% => 12.0",
+                "functional_coverage": "Functional coverage 0.0% weighted 20% => 0.0",
+                "constraint_compliance": "Constraint compliance 0.0% weighted 15% => 0.0",
+                "sustainability": "Sustainability 50.0% weighted 20% => 10.0",
+                "overall": "Overall design score 22.0 (sum of weighted sub\u2011scores)"
+              },
+              "evaluation_version": "v1.0"
+            }
+          },
+          {
+            "id": "private_office_7_1_6",
+            "label": "Private Office 7",
+            "type": "OFFICE",
+            "zone": "private",
+            "x": 8.0,
+            "y": 2.4,
+            "w": 3.8,
+            "h": 2.28,
+            "area": 8.7,
+            "furniture": [],
+            "layout_evaluation": {
+              "placement_success_rate": 0.0,
+              "space_utilization": 0.0,
+              "circulation_score": 60.0,
+              "functional_coverage": 0.0,
+              "constraint_compliance": 0.0,
+              "furniture_density": 0.0,
+              "estimated_sustainability": 50.0,
+              "collision_count": 0,
+              "runtime_ms": 0.01,
+              "items_placed": 0,
+              "items_considered": 1,
+              "functions_required": [
+                "computing",
+                "storage",
+                "working"
+              ],
+              "functions_covered": [],
+              "material_note": "No items placed.",
+              "layout_score": {
+                "overall": 22.0,
+                "space_utilization": 0.0,
+                "circulation": 12.0,
+                "functional_coverage": 0.0,
+                "constraint_compliance": 0.0,
+                "sustainability": 10.0
+              },
+              "score_breakdown": {
+                "space_utilization": {
+                  "raw": 0.0,
+                  "weight": 0.25,
+                  "contribution": 0.0
+                },
+                "circulation": {
+                  "raw": 60.0,
+                  "weight": 0.2,
+                  "contribution": 12.0
+                },
+                "functional_coverage": {
+                  "raw": 0.0,
+                  "weight": 0.2,
+                  "contribution": 0.0
+                },
+                "constraint_compliance": {
+                  "raw": 0.0,
+                  "weight": 0.15,
+                  "contribution": 0.0
+                },
+                "sustainability": {
+                  "raw": 50.0,
+                  "weight": 0.2,
+                  "contribution": 10.0
+                },
+                "overall": {
+                  "raw": 22.0,
+                  "weight": 1.0,
+                  "contribution": 22.0
+                }
+              },
+              "explanation": {
+                "space_utilization": "Space utilization 0.0% weighted 25% => 0.0",
+                "circulation": "Circulation score 60.0% weighted 20% => 12.0",
+                "functional_coverage": "Functional coverage 0.0% weighted 20% => 0.0",
+                "constraint_compliance": "Constraint compliance 0.0% weighted 15% => 0.0",
+                "sustainability": "Sustainability 50.0% weighted 20% => 10.0",
+                "overall": "Overall design score 22.0 (sum of weighted sub\u2011scores)"
+              },
+              "evaluation_version": "v1.0"
+            }
+          },
+          {
+            "id": "private_office_8_1_7",
+            "label": "Private Office 8",
+            "type": "OFFICE",
+            "zone": "private",
+            "x": 12.0,
+            "y": 2.4,
+            "w": 3.8,
+            "h": 2.28,
+            "area": 8.7,
+            "furniture": [],
+            "layout_evaluation": {
+              "placement_success_rate": 0.0,
+              "space_utilization": 0.0,
+              "circulation_score": 60.0,
+              "functional_coverage": 0.0,
+              "constraint_compliance": 0.0,
+              "furniture_density": 0.0,
+              "estimated_sustainability": 50.0,
+              "collision_count": 0,
+              "runtime_ms": 0.01,
+              "items_placed": 0,
+              "items_considered": 1,
+              "functions_required": [
+                "computing",
+                "storage",
+                "working"
+              ],
+              "functions_covered": [],
+              "material_note": "No items placed.",
+              "layout_score": {
+                "overall": 22.0,
+                "space_utilization": 0.0,
+                "circulation": 12.0,
+                "functional_coverage": 0.0,
+                "constraint_compliance": 0.0,
+                "sustainability": 10.0
+              },
+              "score_breakdown": {
+                "space_utilization": {
+                  "raw": 0.0,
+                  "weight": 0.25,
+                  "contribution": 0.0
+                },
+                "circulation": {
+                  "raw": 60.0,
+                  "weight": 0.2,
+                  "contribution": 12.0
+                },
+                "functional_coverage": {
+                  "raw": 0.0,
+                  "weight": 0.2,
+                  "contribution": 0.0
+                },
+                "constraint_compliance": {
+                  "raw": 0.0,
+                  "weight": 0.15,
+                  "contribution": 0.0
+                },
+                "sustainability": {
+                  "raw": 50.0,
+                  "weight": 0.2,
+                  "contribution": 10.0
+                },
+                "overall": {
+                  "raw": 22.0,
+                  "weight": 1.0,
+                  "contribution": 22.0
+                }
+              },
+              "explanation": {
+                "space_utilization": "Space utilization 0.0% weighted 25% => 0.0",
+                "circulation": "Circulation score 60.0% weighted 20% => 12.0",
+                "functional_coverage": "Functional coverage 0.0% weighted 20% => 0.0",
+                "constraint_compliance": "Constraint compliance 0.0% weighted 15% => 0.0",
+                "sustainability": "Sustainability 50.0% weighted 20% => 10.0",
+                "overall": "Overall design score 22.0 (sum of weighted sub\u2011scores)"
+              },
+              "evaluation_version": "v1.0"
+            }
+          },
+          {
+            "id": "private_office_9_1_8",
+            "label": "Private Office 9",
+            "type": "OFFICE",
+            "zone": "private",
+            "x": 0.0,
+            "y": 4.8,
+            "w": 3.8,
+            "h": 2.28,
+            "area": 8.7,
+            "furniture": [],
+            "layout_evaluation": {
+              "placement_success_rate": 0.0,
+              "space_utilization": 0.0,
+              "circulation_score": 60.0,
+              "functional_coverage": 0.0,
+              "constraint_compliance": 0.0,
+              "furniture_density": 0.0,
+              "estimated_sustainability": 50.0,
+              "collision_count": 0,
+              "runtime_ms": 0.01,
+              "items_placed": 0,
+              "items_considered": 1,
+              "functions_required": [
+                "computing",
+                "storage",
+                "working"
+              ],
+              "functions_covered": [],
+              "material_note": "No items placed.",
+              "layout_score": {
+                "overall": 22.0,
+                "space_utilization": 0.0,
+                "circulation": 12.0,
+                "functional_coverage": 0.0,
+                "constraint_compliance": 0.0,
+                "sustainability": 10.0
+              },
+              "score_breakdown": {
+                "space_utilization": {
+                  "raw": 0.0,
+                  "weight": 0.25,
+                  "contribution": 0.0
+                },
+                "circulation": {
+                  "raw": 60.0,
+                  "weight": 0.2,
+                  "contribution": 12.0
+                },
+                "functional_coverage": {
+                  "raw": 0.0,
+                  "weight": 0.2,
+                  "contribution": 0.0
+                },
+                "constraint_compliance": {
+                  "raw": 0.0,
+                  "weight": 0.15,
+                  "contribution": 0.0
+                },
+                "sustainability": {
+                  "raw": 50.0,
+                  "weight": 0.2,
+                  "contribution": 10.0
+                },
+                "overall": {
+                  "raw": 22.0,
+                  "weight": 1.0,
+                  "contribution": 22.0
+                }
+              },
+              "explanation": {
+                "space_utilization": "Space utilization 0.0% weighted 25% => 0.0",
+                "circulation": "Circulation score 60.0% weighted 20% => 12.0",
+                "functional_coverage": "Functional coverage 0.0% weighted 20% => 0.0",
+                "constraint_compliance": "Constraint compliance 0.0% weighted 15% => 0.0",
+                "sustainability": "Sustainability 50.0% weighted 20% => 10.0",
+                "overall": "Overall design score 22.0 (sum of weighted sub\u2011scores)"
+              },
+              "evaluation_version": "v1.0"
+            }
+          },
+          {
+            "id": "private_office_10_1_9",
+            "label": "Private Office 10",
+            "type": "OFFICE",
+            "zone": "private",
+            "x": 4.0,
+            "y": 4.8,
+            "w": 3.8,
+            "h": 2.28,
+            "area": 8.7,
+            "furniture": [],
+            "layout_evaluation": {
+              "placement_success_rate": 0.0,
+              "space_utilization": 0.0,
+              "circulation_score": 60.0,
+              "functional_coverage": 0.0,
+              "constraint_compliance": 0.0,
+              "furniture_density": 0.0,
+              "estimated_sustainability": 50.0,
+              "collision_count": 0,
+              "runtime_ms": 0.01,
+              "items_placed": 0,
+              "items_considered": 1,
+              "functions_required": [
+                "computing",
+                "storage",
+                "working"
+              ],
+              "functions_covered": [],
+              "material_note": "No items placed.",
+              "layout_score": {
+                "overall": 22.0,
+                "space_utilization": 0.0,
+                "circulation": 12.0,
+                "functional_coverage": 0.0,
+                "constraint_compliance": 0.0,
+                "sustainability": 10.0
+              },
+              "score_breakdown": {
+                "space_utilization": {
+                  "raw": 0.0,
+                  "weight": 0.25,
+                  "contribution": 0.0
+                },
+                "circulation": {
+                  "raw": 60.0,
+                  "weight": 0.2,
+                  "contribution": 12.0
+                },
+                "functional_coverage": {
+                  "raw": 0.0,
+                  "weight": 0.2,
+                  "contribution": 0.0
+                },
+                "constraint_compliance": {
+                  "raw": 0.0,
+                  "weight": 0.15,
+                  "contribution": 0.0
+                },
+                "sustainability": {
+                  "raw": 50.0,
+                  "weight": 0.2,
+                  "contribution": 10.0
+                },
+                "overall": {
+                  "raw": 22.0,
+                  "weight": 1.0,
+                  "contribution": 22.0
+                }
+              },
+              "explanation": {
+                "space_utilization": "Space utilization 0.0% weighted 25% => 0.0",
+                "circulation": "Circulation score 60.0% weighted 20% => 12.0",
+                "functional_coverage": "Functional coverage 0.0% weighted 20% => 0.0",
+                "constraint_compliance": "Constraint compliance 0.0% weighted 15% => 0.0",
+                "sustainability": "Sustainability 50.0% weighted 20% => 10.0",
+                "overall": "Overall design score 22.0 (sum of weighted sub\u2011scores)"
+              },
+              "evaluation_version": "v1.0"
+            }
+          },
+          {
+            "id": "private_office_11_1_10",
+            "label": "Private Office 11",
+            "type": "OFFICE",
+            "zone": "private",
+            "x": 8.0,
+            "y": 4.8,
+            "w": 3.8,
+            "h": 2.28,
+            "area": 8.7,
+            "furniture": [],
+            "layout_evaluation": {
+              "placement_success_rate": 0.0,
+              "space_utilization": 0.0,
+              "circulation_score": 60.0,
+              "functional_coverage": 0.0,
+              "constraint_compliance": 0.0,
+              "furniture_density": 0.0,
+              "estimated_sustainability": 50.0,
+              "collision_count": 0,
+              "runtime_ms": 0.01,
+              "items_placed": 0,
+              "items_considered": 1,
+              "functions_required": [
+                "computing",
+                "storage",
+                "working"
+              ],
+              "functions_covered": [],
+              "material_note": "No items placed.",
+              "layout_score": {
+                "overall": 22.0,
+                "space_utilization": 0.0,
+                "circulation": 12.0,
+                "functional_coverage": 0.0,
+                "constraint_compliance": 0.0,
+                "sustainability": 10.0
+              },
+              "score_breakdown": {
+                "space_utilization": {
+                  "raw": 0.0,
+                  "weight": 0.25,
+                  "contribution": 0.0
+                },
+                "circulation": {
+                  "raw": 60.0,
+                  "weight": 0.2,
+                  "contribution": 12.0
+                },
+                "functional_coverage": {
+                  "raw": 0.0,
+                  "weight": 0.2,
+                  "contribution": 0.0
+                },
+                "constraint_compliance": {
+                  "raw": 0.0,
+                  "weight": 0.15,
+                  "contribution": 0.0
+                },
+                "sustainability": {
+                  "raw": 50.0,
+                  "weight": 0.2,
+                  "contribution": 10.0
+                },
+                "overall": {
+                  "raw": 22.0,
+                  "weight": 1.0,
+                  "contribution": 22.0
+                }
+              },
+              "explanation": {
+                "space_utilization": "Space utilization 0.0% weighted 25% => 0.0",
+                "circulation": "Circulation score 60.0% weighted 20% => 12.0",
+                "functional_coverage": "Functional coverage 0.0% weighted 20% => 0.0",
+                "constraint_compliance": "Constraint compliance 0.0% weighted 15% => 0.0",
+                "sustainability": "Sustainability 50.0% weighted 20% => 10.0",
+                "overall": "Overall design score 22.0 (sum of weighted sub\u2011scores)"
+              },
+              "evaluation_version": "v1.0"
+            }
+          },
+          {
+            "id": "private_office_12_1_11",
+            "label": "Private Office 12",
+            "type": "OFFICE",
+            "zone": "private",
+            "x": 12.0,
+            "y": 4.8,
+            "w": 3.8,
+            "h": 2.28,
+            "area": 8.7,
+            "furniture": [],
+            "layout_evaluation": {
+              "placement_success_rate": 0.0,
+              "space_utilization": 0.0,
+              "circulation_score": 60.0,
+              "functional_coverage": 0.0,
+              "constraint_compliance": 0.0,
+              "furniture_density": 0.0,
+              "estimated_sustainability": 50.0,
+              "collision_count": 0,
+              "runtime_ms": 0.01,
+              "items_placed": 0,
+              "items_considered": 1,
+              "functions_required": [
+                "computing",
+                "storage",
+                "working"
+              ],
+              "functions_covered": [],
+              "material_note": "No items placed.",
+              "layout_score": {
+                "overall": 22.0,
+                "space_utilization": 0.0,
+                "circulation": 12.0,
+                "functional_coverage": 0.0,
+                "constraint_compliance": 0.0,
+                "sustainability": 10.0
+              },
+              "score_breakdown": {
+                "space_utilization": {
+                  "raw": 0.0,
+                  "weight": 0.25,
+                  "contribution": 0.0
+                },
+                "circulation": {
+                  "raw": 60.0,
+                  "weight": 0.2,
+                  "contribution": 12.0
+                },
+                "functional_coverage": {
+                  "raw": 0.0,
+                  "weight": 0.2,
+                  "contribution": 0.0
+                },
+                "constraint_compliance": {
+                  "raw": 0.0,
+                  "weight": 0.15,
+                  "contribution": 0.0
+                },
+                "sustainability": {
+                  "raw": 50.0,
+                  "weight": 0.2,
+                  "contribution": 10.0
+                },
+                "overall": {
+                  "raw": 22.0,
+                  "weight": 1.0,
+                  "contribution": 22.0
+                }
+              },
+              "explanation": {
+                "space_utilization": "Space utilization 0.0% weighted 25% => 0.0",
+                "circulation": "Circulation score 60.0% weighted 20% => 12.0",
+                "functional_coverage": "Functional coverage 0.0% weighted 20% => 0.0",
+                "constraint_compliance": "Constraint compliance 0.0% weighted 15% => 0.0",
+                "sustainability": "Sustainability 50.0% weighted 20% => 10.0",
+                "overall": "Overall design score 22.0 (sum of weighted sub\u2011scores)"
+              },
+              "evaluation_version": "v1.0"
+            }
+          },
+          {
+            "id": "private_office_13_1_12",
+            "label": "Private Office 13",
+            "type": "OFFICE",
+            "zone": "private",
+            "x": 0.0,
+            "y": 7.2,
+            "w": 3.8,
+            "h": 2.28,
+            "area": 8.7,
+            "furniture": [],
+            "layout_evaluation": {
+              "placement_success_rate": 0.0,
+              "space_utilization": 0.0,
+              "circulation_score": 60.0,
+              "functional_coverage": 0.0,
+              "constraint_compliance": 0.0,
+              "furniture_density": 0.0,
+              "estimated_sustainability": 50.0,
+              "collision_count": 0,
+              "runtime_ms": 0.01,
+              "items_placed": 0,
+              "items_considered": 1,
+              "functions_required": [
+                "computing",
+                "storage",
+                "working"
+              ],
+              "functions_covered": [],
+              "material_note": "No items placed.",
+              "layout_score": {
+                "overall": 22.0,
+                "space_utilization": 0.0,
+                "circulation": 12.0,
+                "functional_coverage": 0.0,
+                "constraint_compliance": 0.0,
+                "sustainability": 10.0
+              },
+              "score_breakdown": {
+                "space_utilization": {
+                  "raw": 0.0,
+                  "weight": 0.25,
+                  "contribution": 0.0
+                },
+                "circulation": {
+                  "raw": 60.0,
+                  "weight": 0.2,
+                  "contribution": 12.0
+                },
+                "functional_coverage": {
+                  "raw": 0.0,
+                  "weight": 0.2,
+                  "contribution": 0.0
+                },
+                "constraint_compliance": {
+                  "raw": 0.0,
+                  "weight": 0.15,
+                  "contribution": 0.0
+                },
+                "sustainability": {
+                  "raw": 50.0,
+                  "weight": 0.2,
+                  "contribution": 10.0
+                },
+                "overall": {
+                  "raw": 22.0,
+                  "weight": 1.0,
+                  "contribution": 22.0
+                }
+              },
+              "explanation": {
+                "space_utilization": "Space utilization 0.0% weighted 25% => 0.0",
+                "circulation": "Circulation score 60.0% weighted 20% => 12.0",
+                "functional_coverage": "Functional coverage 0.0% weighted 20% => 0.0",
+                "constraint_compliance": "Constraint compliance 0.0% weighted 15% => 0.0",
+                "sustainability": "Sustainability 50.0% weighted 20% => 10.0",
+                "overall": "Overall design score 22.0 (sum of weighted sub\u2011scores)"
+              },
+              "evaluation_version": "v1.0"
+            }
+          },
+          {
+            "id": "private_office_14_1_13",
+            "label": "Private Office 14",
+            "type": "OFFICE",
+            "zone": "private",
+            "x": 4.0,
+            "y": 7.2,
+            "w": 3.8,
+            "h": 2.28,
+            "area": 8.7,
+            "furniture": [],
+            "layout_evaluation": {
+              "placement_success_rate": 0.0,
+              "space_utilization": 0.0,
+              "circulation_score": 60.0,
+              "functional_coverage": 0.0,
+              "constraint_compliance": 0.0,
+              "furniture_density": 0.0,
+              "estimated_sustainability": 50.0,
+              "collision_count": 0,
+              "runtime_ms": 0.01,
+              "items_placed": 0,
+              "items_considered": 1,
+              "functions_required": [
+                "computing",
+                "storage",
+                "working"
+              ],
+              "functions_covered": [],
+              "material_note": "No items placed.",
+              "layout_score": {
+                "overall": 22.0,
+                "space_utilization": 0.0,
+                "circulation": 12.0,
+                "functional_coverage": 0.0,
+                "constraint_compliance": 0.0,
+                "sustainability": 10.0
+              },
+              "score_breakdown": {
+                "space_utilization": {
+                  "raw": 0.0,
+                  "weight": 0.25,
+                  "contribution": 0.0
+                },
+                "circulation": {
+                  "raw": 60.0,
+                  "weight": 0.2,
+                  "contribution": 12.0
+                },
+                "functional_coverage": {
+                  "raw": 0.0,
+                  "weight": 0.2,
+                  "contribution": 0.0
+                },
+                "constraint_compliance": {
+                  "raw": 0.0,
+                  "weight": 0.15,
+                  "contribution": 0.0
+                },
+                "sustainability": {
+                  "raw": 50.0,
+                  "weight": 0.2,
+                  "contribution": 10.0
+                },
+                "overall": {
+                  "raw": 22.0,
+                  "weight": 1.0,
+                  "contribution": 22.0
+                }
+              },
+              "explanation": {
+                "space_utilization": "Space utilization 0.0% weighted 25% => 0.0",
+                "circulation": "Circulation score 60.0% weighted 20% => 12.0",
+                "functional_coverage": "Functional coverage 0.0% weighted 20% => 0.0",
+                "constraint_compliance": "Constraint compliance 0.0% weighted 15% => 0.0",
+                "sustainability": "Sustainability 50.0% weighted 20% => 10.0",
+                "overall": "Overall design score 22.0 (sum of weighted sub\u2011scores)"
+              },
+              "evaluation_version": "v1.0"
+            }
+          },
+          {
+            "id": "meeting_room_1_1_14",
+            "label": "Meeting Room 1",
+            "type": "MEETING_ROOM",
+            "zone": "private",
+            "x": 8.0,
+            "y": 7.2,
+            "w": 3.8,
+            "h": 2.28,
+            "area": 8.7,
+            "furniture": [],
+            "layout_evaluation": {
+              "placement_success_rate": 0.0,
+              "space_utilization": 0.0,
+              "circulation_score": 60.0,
+              "functional_coverage": 0.0,
+              "constraint_compliance": 0.0,
+              "furniture_density": 0.0,
+              "estimated_sustainability": 50.0,
+              "collision_count": 0,
+              "runtime_ms": 0.01,
+              "items_placed": 0,
+              "items_considered": 1,
+              "functions_required": [
+                "computing",
+                "storage",
+                "working"
+              ],
+              "functions_covered": [],
+              "material_note": "No items placed.",
+              "layout_score": {
+                "overall": 22.0,
+                "space_utilization": 0.0,
+                "circulation": 12.0,
+                "functional_coverage": 0.0,
+                "constraint_compliance": 0.0,
+                "sustainability": 10.0
+              },
+              "score_breakdown": {
+                "space_utilization": {
+                  "raw": 0.0,
+                  "weight": 0.25,
+                  "contribution": 0.0
+                },
+                "circulation": {
+                  "raw": 60.0,
+                  "weight": 0.2,
+                  "contribution": 12.0
+                },
+                "functional_coverage": {
+                  "raw": 0.0,
+                  "weight": 0.2,
+                  "contribution": 0.0
+                },
+                "constraint_compliance": {
+                  "raw": 0.0,
+                  "weight": 0.15,
+                  "contribution": 0.0
+                },
+                "sustainability": {
+                  "raw": 50.0,
+                  "weight": 0.2,
+                  "contribution": 10.0
+                },
+                "overall": {
+                  "raw": 22.0,
+                  "weight": 1.0,
+                  "contribution": 22.0
+                }
+              },
+              "explanation": {
+                "space_utilization": "Space utilization 0.0% weighted 25% => 0.0",
+                "circulation": "Circulation score 60.0% weighted 20% => 12.0",
+                "functional_coverage": "Functional coverage 0.0% weighted 20% => 0.0",
+                "constraint_compliance": "Constraint compliance 0.0% weighted 15% => 0.0",
+                "sustainability": "Sustainability 50.0% weighted 20% => 10.0",
+                "overall": "Overall design score 22.0 (sum of weighted sub\u2011scores)"
+              },
+              "evaluation_version": "v1.0"
+            }
+          },
+          {
+            "id": "meeting_room_2_1_15",
+            "label": "Meeting Room 2",
+            "type": "MEETING_ROOM",
+            "zone": "private",
+            "x": 12.0,
+            "y": 7.2,
+            "w": 3.8,
+            "h": 2.28,
+            "area": 8.7,
+            "furniture": [],
+            "layout_evaluation": {
+              "placement_success_rate": 0.0,
+              "space_utilization": 0.0,
+              "circulation_score": 60.0,
+              "functional_coverage": 0.0,
+              "constraint_compliance": 0.0,
+              "furniture_density": 0.0,
+              "estimated_sustainability": 50.0,
+              "collision_count": 0,
+              "runtime_ms": 0.01,
+              "items_placed": 0,
+              "items_considered": 1,
+              "functions_required": [
+                "computing",
+                "storage",
+                "working"
+              ],
+              "functions_covered": [],
+              "material_note": "No items placed.",
+              "layout_score": {
+                "overall": 22.0,
+                "space_utilization": 0.0,
+                "circulation": 12.0,
+                "functional_coverage": 0.0,
+                "constraint_compliance": 0.0,
+                "sustainability": 10.0
+              },
+              "score_breakdown": {
+                "space_utilization": {
+                  "raw": 0.0,
+                  "weight": 0.25,
+                  "contribution": 0.0
+                },
+                "circulation": {
+                  "raw": 60.0,
+                  "weight": 0.2,
+                  "contribution": 12.0
+                },
+                "functional_coverage": {
+                  "raw": 0.0,
+                  "weight": 0.2,
+                  "contribution": 0.0
+                },
+                "constraint_compliance": {
+                  "raw": 0.0,
+                  "weight": 0.15,
+                  "contribution": 0.0
+                },
+                "sustainability": {
+                  "raw": 50.0,
+                  "weight": 0.2,
+                  "contribution": 10.0
+                },
+                "overall": {
+                  "raw": 22.0,
+                  "weight": 1.0,
+                  "contribution": 22.0
+                }
+              },
+              "explanation": {
+                "space_utilization": "Space utilization 0.0% weighted 25% => 0.0",
+                "circulation": "Circulation score 60.0% weighted 20% => 12.0",
+                "functional_coverage": "Functional coverage 0.0% weighted 20% => 0.0",
+                "constraint_compliance": "Constraint compliance 0.0% weighted 15% => 0.0",
+                "sustainability": "Sustainability 50.0% weighted 20% => 10.0",
+                "overall": "Overall design score 22.0 (sum of weighted sub\u2011scores)"
+              },
+              "evaluation_version": "v1.0"
+            }
+          },
+          {
+            "id": "main_circulation_core_1_16",
+            "label": "Main Circulation Core",
+            "type": "CIRCULATION",
+            "zone": "circulation",
+            "x": 0.0,
+            "y": 9.6,
+            "w": 3.8,
+            "h": 2.28,
+            "area": 8.7,
+            "furniture": [
+              {
+                "name": "Storage Unit",
+                "w": 1.2,
+                "d": 0.5,
+                "h": 1.85,
+                "px": 0.5,
+                "pz": 0.5,
+                "rotY": 0.0,
+                "color": "#7A7A7A",
+                "shape": "box",
+                "functions": [
+                  "storage"
+                ],
+                "material": "Steel",
+                "carbon_score": 0.42,
+                "upper": false,
+                "parts": [
+                  {
+                    "dx": 0,
+                    "dy": 0,
+                    "dz": 0,
+                    "w": 1.2,
+                    "h": 1.85,
+                    "d": 0.5,
+                    "color": "#7A7A7A",
+                    "shape": "box"
+                  },
+                  {
+                    "dx": 0,
+                    "dy": 0.45,
+                    "dz": -0.22,
+                    "w": 1.16,
+                    "h": 0.03,
+                    "d": 0.48,
+                    "color": "#9A9A9A",
+                    "shape": "box"
+                  },
+                  {
+                    "dx": 0,
+                    "dy": 0.78,
+                    "dz": -0.22,
+                    "w": 1.16,
+                    "h": 0.03,
+                    "d": 0.48,
+                    "color": "#9A9A9A",
+                    "shape": "box"
+                  },
+                  {
+                    "dx": 0,
+                    "dy": 1.1,
+                    "dz": -0.22,
+                    "w": 1.16,
+                    "h": 0.03,
+                    "d": 0.48,
+                    "color": "#9A9A9A",
+                    "shape": "box"
+                  }
+                ]
+              }
+            ],
+            "layout_evaluation": {
+              "placement_success_rate": 100.0,
+              "space_utilization": 6.9,
+              "circulation_score": 66.9,
+              "functional_coverage": 50.0,
+              "constraint_compliance": 100.0,
+              "furniture_density": 1.15,
+              "estimated_sustainability": 58.0,
+              "collision_count": 0,
+              "runtime_ms": 0.02,
+              "items_placed": 1,
+              "items_considered": 1,
+              "functions_required": [
+                "laundry",
+                "storage"
+              ],
+              "functions_covered": [
+                "storage"
+              ],
+              "material_note": "Lowest embodied carbon item: 'Storage Unit' (Steel, carbon_score=0.42)",
+              "layout_score": {
+                "overall": 51.7,
+                "space_utilization": 1.7,
+                "circulation": 13.4,
+                "functional_coverage": 10.0,
+                "constraint_compliance": 15.0,
+                "sustainability": 11.6
+              },
+              "score_breakdown": {
+                "space_utilization": {
+                  "raw": 6.9,
+                  "weight": 0.25,
+                  "contribution": 1.7
+                },
+                "circulation": {
+                  "raw": 66.9,
+                  "weight": 0.2,
+                  "contribution": 13.4
+                },
+                "functional_coverage": {
+                  "raw": 50.0,
+                  "weight": 0.2,
+                  "contribution": 10.0
+                },
+                "constraint_compliance": {
+                  "raw": 100.0,
+                  "weight": 0.15,
+                  "contribution": 15.0
+                },
+                "sustainability": {
+                  "raw": 58.0,
+                  "weight": 0.2,
+                  "contribution": 11.6
+                },
+                "overall": {
+                  "raw": 51.7,
+                  "weight": 1.0,
+                  "contribution": 51.7
+                }
+              },
+              "explanation": {
+                "space_utilization": "Space utilization 6.9% weighted 25% => 1.7",
+                "circulation": "Circulation score 66.9% weighted 20% => 13.4",
+                "functional_coverage": "Functional coverage 50.0% weighted 20% => 10.0",
+                "constraint_compliance": "Constraint compliance 100.0% weighted 15% => 15.0",
+                "sustainability": "Sustainability 58.0% weighted 20% => 11.6",
+                "overall": "Overall design score 51.7 (sum of weighted sub\u2011scores)"
+              },
+              "evaluation_version": "v1.0"
+            }
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      "Lobby connects to public zones.",
+      "Restrooms are centrally accessible."
+    ],
+    "blueprint_summary": {
+      "relationships": [
+        "Lobby connects to public zones.",
+        "Restrooms are centrally accessible."
+      ]
+    },
+    "style_pref": "Modern",
+    "rooms": [
+      {
+        "name": "Private Office 1",
+        "type": "OFFICE",
+        "zone": "private",
+        "area": 12.0
+      },
+      {
+        "name": "Private Office 2",
+        "type": "OFFICE",
+        "zone": "private",
+        "area": 12.0
+      },
+      {
+        "name": "Private Office 3",
+        "type": "OFFICE",
+        "zone": "private",
+        "area": 12.0
+      },
+      {
+        "name": "Private Office 4",
+        "type": "OFFICE",
+        "zone": "private",
+        "area": 12.0
+      },
+      {
+        "name": "Private Office 5",
+        "type": "OFFICE",
+        "zone": "private",
+        "area": 12.0
+      },
+      {
+        "name": "Private Office 6",
+        "type": "OFFICE",
+        "zone": "private",
+        "area": 12.0
+      },
+      {
+        "name": "Private Office 7",
+        "type": "OFFICE",
+        "zone": "private",
+        "area": 12.0
+      },
+      {
+        "name": "Private Office 8",
+        "type": "OFFICE",
+        "zone": "private",
+        "area": 12.0
+      },
+      {
+        "name": "Private Office 9",
+        "type": "OFFICE",
+        "zone": "private",
+        "area": 12.0
+      },
+      {
+        "name": "Private Office 10",
+        "type": "OFFICE",
+        "zone": "private",
+        "area": 12.0
+      },
+      {
+        "name": "Private Office 11",
+        "type": "OFFICE",
+        "zone": "private",
+        "area": 12.0
+      },
+      {
+        "name": "Private Office 12",
+        "type": "OFFICE",
+        "zone": "private",
+        "area": 12.0
+      },
+      {
+        "name": "Private Office 13",
+        "type": "OFFICE",
+        "zone": "private",
+        "area": 12.0
+      },
+      {
+        "name": "Private Office 14",
+        "type": "OFFICE",
+        "zone": "private",
+        "area": 12.0
+      },
+      {
+        "name": "Meeting Room 1",
+        "type": "MEETING_ROOM",
+        "zone": "private",
+        "area": 20.0
+      },
+      {
+        "name": "Meeting Room 2",
+        "type": "MEETING_ROOM",
+        "zone": "private",
+        "area": 20.0
+      },
+      {
+        "name": "Reception",
+        "type": "RECEPTION",
+        "zone": "public",
+        "area": 30.0
+      },
+      {
+        "name": "Main Circulation Core",
+        "type": "CIRCULATION",
+        "zone": "circulation",
+        "area": 78.25
+      }
+    ],
+    "circulation": 63.25,
+    "walls": [],
+    "doors": [],
+    "windows": [],
+    "layout_metrics": {
+      "rooms_evaluated": 18,
+      "avg_placement_success": 11.1,
+      "avg_space_utilization": 0.6,
+      "avg_circulation_score": 60.6,
+      "avg_functional_coverage": 6.5,
+      "avg_constraint_compliance": 11.1,
+      "avg_sustainability": 51.4,
+      "total_items_placed": 3,
+      "avg_design_score": 25.5
+    },
+    "structural_system": "Concrete Frame"
+  },
+  "room_layouts": [
+    {
+      "room_id": "reception_0_0",
+      "label": "Reception",
+      "dimensions": {
+        "w": 7.6,
+        "h": 11.4
+      },
+      "furniture": [
+        {
+          "name": "Sofa",
+          "w": 2.4,
+          "d": 0.95,
+          "h": 0.42,
+          "px": 0.5,
+          "pz": 0.28,
+          "rotY": 0.0,
+          "color": "#7C5C4E",
+          "shape": "box",
+          "functions": [
+            "seating",
+            "lounging"
+          ],
+          "material": "Fabric + Foam + Wood Frame",
+          "carbon_score": 0.44,
+          "upper": false,
+          "parts": [
+            {
+              "dx": 0,
+              "dy": 0,
+              "dz": 0,
+              "w": 2.4,
+              "h": 0.42,
+              "d": 0.95,
+              "color": "#7C5C4E",
+              "shape": "box"
+            },
+            {
+              "dx": 0,
+              "dy": 0.45,
+              "dz": -0.38,
+              "w": 2.4,
+              "h": 0.48,
+              "d": 0.18,
+              "color": "#6B4C42",
+              "shape": "box"
+            },
+            {
+              "dx": -1.11,
+              "dy": 0.3,
+              "dz": 0,
+              "w": 0.18,
+              "h": 0.3,
+              "d": 0.95,
+              "color": "#6B4C42",
+              "shape": "box"
+            },
+            {
+              "dx": 1.11,
+              "dy": 0.3,
+              "dz": 0,
+              "w": 0.18,
+              "h": 0.3,
+              "d": 0.95,
+              "color": "#6B4C42",
+              "shape": "box"
+            },
+            {
+              "dx": -0.6,
+              "dy": 0.22,
+              "dz": 0.1,
+              "w": 0.75,
+              "h": 0.08,
+              "d": 0.65,
+              "color": "#9A7060",
+              "shape": "box"
+            },
+            {
+              "dx": 0.6,
+              "dy": 0.22,
+              "dz": 0.1,
+              "w": 0.75,
+              "h": 0.08,
+              "d": 0.65,
+              "color": "#9A7060",
+              "shape": "box"
+            }
+          ]
+        },
+        {
+          "name": "Coffee Table",
+          "w": 1.1,
+          "d": 0.6,
+          "h": 0.42,
+          "px": 0.5,
+          "pz": 0.4050000000000001,
+          "rotY": 0.0,
+          "color": "#A0855B",
+          "shape": "box",
+          "functions": [
+            "surface",
+            "display"
+          ],
+          "material": "Wood",
+          "carbon_score": 0.2,
+          "upper": false,
+          "parts": [
+            {
+              "dx": 0,
+              "dy": 0,
+              "dz": 0,
+              "w": 1.1,
+              "h": 0.05,
+              "d": 0.6,
+              "color": "#8B6914",
+              "shape": "box"
+            },
+            {
+              "dx": -0.45,
+              "dy": -0.18,
+              "dz": -0.22,
+              "w": 0.06,
+              "h": 0.35,
+              "d": 0.06,
+              "color": "#7A5C2E",
+              "shape": "box"
+            },
+            {
+              "dx": 0.45,
+              "dy": -0.18,
+              "dz": -0.22,
+              "w": 0.06,
+              "h": 0.35,
+              "d": 0.06,
+              "color": "#7A5C2E",
+              "shape": "box"
+            },
+            {
+              "dx": -0.45,
+              "dy": -0.18,
+              "dz": 0.22,
+              "w": 0.06,
+              "h": 0.35,
+              "d": 0.06,
+              "color": "#7A5C2E",
+              "shape": "box"
+            },
+            {
+              "dx": 0.45,
+              "dy": -0.18,
+              "dz": 0.22,
+              "w": 0.06,
+              "h": 0.35,
+              "d": 0.06,
+              "color": "#7A5C2E",
+              "shape": "box"
+            }
+          ]
+        }
+      ],
+      "evaluation": {
+        "placement_success_rate": 100.0,
+        "space_utilization": 3.4,
+        "circulation_score": 63.4,
+        "functional_coverage": 66.7,
+        "constraint_compliance": 100.0,
+        "furniture_density": 0.23,
+        "estimated_sustainability": 68.0,
+        "collision_count": 0,
+        "runtime_ms": 0.04,
+        "items_placed": 2,
+        "items_considered": 2,
+        "functions_required": [
+          "entertainment",
+          "lounging",
+          "seating"
+        ],
+        "functions_covered": [
+          "lounging",
+          "seating"
+        ],
+        "material_note": "Lowest embodied carbon item: 'Coffee Table' (Wood, carbon_score=0.20)",
+        "layout_score": {
+          "overall": 55.4,
+          "space_utilization": 0.8,
+          "circulation": 12.7,
+          "functional_coverage": 13.3,
+          "constraint_compliance": 15.0,
+          "sustainability": 13.6
+        },
+        "score_breakdown": {
+          "space_utilization": {
+            "raw": 3.4,
+            "weight": 0.25,
+            "contribution": 0.8
+          },
+          "circulation": {
+            "raw": 63.4,
+            "weight": 0.2,
+            "contribution": 12.7
+          },
+          "functional_coverage": {
+            "raw": 66.7,
+            "weight": 0.2,
+            "contribution": 13.3
+          },
+          "constraint_compliance": {
+            "raw": 100.0,
+            "weight": 0.15,
+            "contribution": 15.0
+          },
+          "sustainability": {
+            "raw": 68.0,
+            "weight": 0.2,
+            "contribution": 13.6
+          },
+          "overall": {
+            "raw": 55.4,
+            "weight": 1.0,
+            "contribution": 55.4
+          }
+        },
+        "explanation": {
+          "space_utilization": "Space utilization 3.4% weighted 25% => 0.8",
+          "circulation": "Circulation score 63.4% weighted 20% => 12.7",
+          "functional_coverage": "Functional coverage 66.7% weighted 20% => 13.3",
+          "constraint_compliance": "Constraint compliance 100.0% weighted 15% => 15.0",
+          "sustainability": "Sustainability 68.0% weighted 20% => 13.6",
+          "overall": "Overall design score 55.4 (sum of weighted sub\u2011scores)"
+        },
+        "evaluation_version": "v1.0"
+      }
+    },
+    {
+      "room_id": "private_office_1_1_0",
+      "label": "Private Office 1",
+      "dimensions": {
+        "w": 3.8,
+        "h": 2.28
+      },
+      "furniture": [],
+      "evaluation": {
+        "placement_success_rate": 0.0,
+        "space_utilization": 0.0,
+        "circulation_score": 60.0,
+        "functional_coverage": 0.0,
+        "constraint_compliance": 0.0,
+        "furniture_density": 0.0,
+        "estimated_sustainability": 50.0,
+        "collision_count": 0,
+        "runtime_ms": 0.02,
+        "items_placed": 0,
+        "items_considered": 1,
+        "functions_required": [
+          "computing",
+          "storage",
+          "working"
+        ],
+        "functions_covered": [],
+        "material_note": "No items placed.",
+        "layout_score": {
+          "overall": 22.0,
+          "space_utilization": 0.0,
+          "circulation": 12.0,
+          "functional_coverage": 0.0,
+          "constraint_compliance": 0.0,
+          "sustainability": 10.0
+        },
+        "score_breakdown": {
+          "space_utilization": {
+            "raw": 0.0,
+            "weight": 0.25,
+            "contribution": 0.0
+          },
+          "circulation": {
+            "raw": 60.0,
+            "weight": 0.2,
+            "contribution": 12.0
+          },
+          "functional_coverage": {
+            "raw": 0.0,
+            "weight": 0.2,
+            "contribution": 0.0
+          },
+          "constraint_compliance": {
+            "raw": 0.0,
+            "weight": 0.15,
+            "contribution": 0.0
+          },
+          "sustainability": {
+            "raw": 50.0,
+            "weight": 0.2,
+            "contribution": 10.0
+          },
+          "overall": {
+            "raw": 22.0,
+            "weight": 1.0,
+            "contribution": 22.0
+          }
+        },
+        "explanation": {
+          "space_utilization": "Space utilization 0.0% weighted 25% => 0.0",
+          "circulation": "Circulation score 60.0% weighted 20% => 12.0",
+          "functional_coverage": "Functional coverage 0.0% weighted 20% => 0.0",
+          "constraint_compliance": "Constraint compliance 0.0% weighted 15% => 0.0",
+          "sustainability": "Sustainability 50.0% weighted 20% => 10.0",
+          "overall": "Overall design score 22.0 (sum of weighted sub\u2011scores)"
+        },
+        "evaluation_version": "v1.0"
+      }
+    },
+    {
+      "room_id": "private_office_2_1_1",
+      "label": "Private Office 2",
+      "dimensions": {
+        "w": 3.8,
+        "h": 2.28
+      },
+      "furniture": [],
+      "evaluation": {
+        "placement_success_rate": 0.0,
+        "space_utilization": 0.0,
+        "circulation_score": 60.0,
+        "functional_coverage": 0.0,
+        "constraint_compliance": 0.0,
+        "furniture_density": 0.0,
+        "estimated_sustainability": 50.0,
+        "collision_count": 0,
+        "runtime_ms": 0.01,
+        "items_placed": 0,
+        "items_considered": 1,
+        "functions_required": [
+          "computing",
+          "storage",
+          "working"
+        ],
+        "functions_covered": [],
+        "material_note": "No items placed.",
+        "layout_score": {
+          "overall": 22.0,
+          "space_utilization": 0.0,
+          "circulation": 12.0,
+          "functional_coverage": 0.0,
+          "constraint_compliance": 0.0,
+          "sustainability": 10.0
+        },
+        "score_breakdown": {
+          "space_utilization": {
+            "raw": 0.0,
+            "weight": 0.25,
+            "contribution": 0.0
+          },
+          "circulation": {
+            "raw": 60.0,
+            "weight": 0.2,
+            "contribution": 12.0
+          },
+          "functional_coverage": {
+            "raw": 0.0,
+            "weight": 0.2,
+            "contribution": 0.0
+          },
+          "constraint_compliance": {
+            "raw": 0.0,
+            "weight": 0.15,
+            "contribution": 0.0
+          },
+          "sustainability": {
+            "raw": 50.0,
+            "weight": 0.2,
+            "contribution": 10.0
+          },
+          "overall": {
+            "raw": 22.0,
+            "weight": 1.0,
+            "contribution": 22.0
+          }
+        },
+        "explanation": {
+          "space_utilization": "Space utilization 0.0% weighted 25% => 0.0",
+          "circulation": "Circulation score 60.0% weighted 20% => 12.0",
+          "functional_coverage": "Functional coverage 0.0% weighted 20% => 0.0",
+          "constraint_compliance": "Constraint compliance 0.0% weighted 15% => 0.0",
+          "sustainability": "Sustainability 50.0% weighted 20% => 10.0",
+          "overall": "Overall design score 22.0 (sum of weighted sub\u2011scores)"
+        },
+        "evaluation_version": "v1.0"
+      }
+    },
+    {
+      "room_id": "private_office_3_1_2",
+      "label": "Private Office 3",
+      "dimensions": {
+        "w": 3.8,
+        "h": 2.28
+      },
+      "furniture": [],
+      "evaluation": {
+        "placement_success_rate": 0.0,
+        "space_utilization": 0.0,
+        "circulation_score": 60.0,
+        "functional_coverage": 0.0,
+        "constraint_compliance": 0.0,
+        "furniture_density": 0.0,
+        "estimated_sustainability": 50.0,
+        "collision_count": 0,
+        "runtime_ms": 0.01,
+        "items_placed": 0,
+        "items_considered": 1,
+        "functions_required": [
+          "computing",
+          "storage",
+          "working"
+        ],
+        "functions_covered": [],
+        "material_note": "No items placed.",
+        "layout_score": {
+          "overall": 22.0,
+          "space_utilization": 0.0,
+          "circulation": 12.0,
+          "functional_coverage": 0.0,
+          "constraint_compliance": 0.0,
+          "sustainability": 10.0
+        },
+        "score_breakdown": {
+          "space_utilization": {
+            "raw": 0.0,
+            "weight": 0.25,
+            "contribution": 0.0
+          },
+          "circulation": {
+            "raw": 60.0,
+            "weight": 0.2,
+            "contribution": 12.0
+          },
+          "functional_coverage": {
+            "raw": 0.0,
+            "weight": 0.2,
+            "contribution": 0.0
+          },
+          "constraint_compliance": {
+            "raw": 0.0,
+            "weight": 0.15,
+            "contribution": 0.0
+          },
+          "sustainability": {
+            "raw": 50.0,
+            "weight": 0.2,
+            "contribution": 10.0
+          },
+          "overall": {
+            "raw": 22.0,
+            "weight": 1.0,
+            "contribution": 22.0
+          }
+        },
+        "explanation": {
+          "space_utilization": "Space utilization 0.0% weighted 25% => 0.0",
+          "circulation": "Circulation score 60.0% weighted 20% => 12.0",
+          "functional_coverage": "Functional coverage 0.0% weighted 20% => 0.0",
+          "constraint_compliance": "Constraint compliance 0.0% weighted 15% => 0.0",
+          "sustainability": "Sustainability 50.0% weighted 20% => 10.0",
+          "overall": "Overall design score 22.0 (sum of weighted sub\u2011scores)"
+        },
+        "evaluation_version": "v1.0"
+      }
+    },
+    {
+      "room_id": "private_office_4_1_3",
+      "label": "Private Office 4",
+      "dimensions": {
+        "w": 3.8,
+        "h": 2.28
+      },
+      "furniture": [],
+      "evaluation": {
+        "placement_success_rate": 0.0,
+        "space_utilization": 0.0,
+        "circulation_score": 60.0,
+        "functional_coverage": 0.0,
+        "constraint_compliance": 0.0,
+        "furniture_density": 0.0,
+        "estimated_sustainability": 50.0,
+        "collision_count": 0,
+        "runtime_ms": 0.01,
+        "items_placed": 0,
+        "items_considered": 1,
+        "functions_required": [
+          "computing",
+          "storage",
+          "working"
+        ],
+        "functions_covered": [],
+        "material_note": "No items placed.",
+        "layout_score": {
+          "overall": 22.0,
+          "space_utilization": 0.0,
+          "circulation": 12.0,
+          "functional_coverage": 0.0,
+          "constraint_compliance": 0.0,
+          "sustainability": 10.0
+        },
+        "score_breakdown": {
+          "space_utilization": {
+            "raw": 0.0,
+            "weight": 0.25,
+            "contribution": 0.0
+          },
+          "circulation": {
+            "raw": 60.0,
+            "weight": 0.2,
+            "contribution": 12.0
+          },
+          "functional_coverage": {
+            "raw": 0.0,
+            "weight": 0.2,
+            "contribution": 0.0
+          },
+          "constraint_compliance": {
+            "raw": 0.0,
+            "weight": 0.15,
+            "contribution": 0.0
+          },
+          "sustainability": {
+            "raw": 50.0,
+            "weight": 0.2,
+            "contribution": 10.0
+          },
+          "overall": {
+            "raw": 22.0,
+            "weight": 1.0,
+            "contribution": 22.0
+          }
+        },
+        "explanation": {
+          "space_utilization": "Space utilization 0.0% weighted 25% => 0.0",
+          "circulation": "Circulation score 60.0% weighted 20% => 12.0",
+          "functional_coverage": "Functional coverage 0.0% weighted 20% => 0.0",
+          "constraint_compliance": "Constraint compliance 0.0% weighted 15% => 0.0",
+          "sustainability": "Sustainability 50.0% weighted 20% => 10.0",
+          "overall": "Overall design score 22.0 (sum of weighted sub\u2011scores)"
+        },
+        "evaluation_version": "v1.0"
+      }
+    },
+    {
+      "room_id": "private_office_5_1_4",
+      "label": "Private Office 5",
+      "dimensions": {
+        "w": 3.8,
+        "h": 2.28
+      },
+      "furniture": [],
+      "evaluation": {
+        "placement_success_rate": 0.0,
+        "space_utilization": 0.0,
+        "circulation_score": 60.0,
+        "functional_coverage": 0.0,
+        "constraint_compliance": 0.0,
+        "furniture_density": 0.0,
+        "estimated_sustainability": 50.0,
+        "collision_count": 0,
+        "runtime_ms": 0.01,
+        "items_placed": 0,
+        "items_considered": 1,
+        "functions_required": [
+          "computing",
+          "storage",
+          "working"
+        ],
+        "functions_covered": [],
+        "material_note": "No items placed.",
+        "layout_score": {
+          "overall": 22.0,
+          "space_utilization": 0.0,
+          "circulation": 12.0,
+          "functional_coverage": 0.0,
+          "constraint_compliance": 0.0,
+          "sustainability": 10.0
+        },
+        "score_breakdown": {
+          "space_utilization": {
+            "raw": 0.0,
+            "weight": 0.25,
+            "contribution": 0.0
+          },
+          "circulation": {
+            "raw": 60.0,
+            "weight": 0.2,
+            "contribution": 12.0
+          },
+          "functional_coverage": {
+            "raw": 0.0,
+            "weight": 0.2,
+            "contribution": 0.0
+          },
+          "constraint_compliance": {
+            "raw": 0.0,
+            "weight": 0.15,
+            "contribution": 0.0
+          },
+          "sustainability": {
+            "raw": 50.0,
+            "weight": 0.2,
+            "contribution": 10.0
+          },
+          "overall": {
+            "raw": 22.0,
+            "weight": 1.0,
+            "contribution": 22.0
+          }
+        },
+        "explanation": {
+          "space_utilization": "Space utilization 0.0% weighted 25% => 0.0",
+          "circulation": "Circulation score 60.0% weighted 20% => 12.0",
+          "functional_coverage": "Functional coverage 0.0% weighted 20% => 0.0",
+          "constraint_compliance": "Constraint compliance 0.0% weighted 15% => 0.0",
+          "sustainability": "Sustainability 50.0% weighted 20% => 10.0",
+          "overall": "Overall design score 22.0 (sum of weighted sub\u2011scores)"
+        },
+        "evaluation_version": "v1.0"
+      }
+    },
+    {
+      "room_id": "private_office_6_1_5",
+      "label": "Private Office 6",
+      "dimensions": {
+        "w": 3.8,
+        "h": 2.28
+      },
+      "furniture": [],
+      "evaluation": {
+        "placement_success_rate": 0.0,
+        "space_utilization": 0.0,
+        "circulation_score": 60.0,
+        "functional_coverage": 0.0,
+        "constraint_compliance": 0.0,
+        "furniture_density": 0.0,
+        "estimated_sustainability": 50.0,
+        "collision_count": 0,
+        "runtime_ms": 0.01,
+        "items_placed": 0,
+        "items_considered": 1,
+        "functions_required": [
+          "computing",
+          "storage",
+          "working"
+        ],
+        "functions_covered": [],
+        "material_note": "No items placed.",
+        "layout_score": {
+          "overall": 22.0,
+          "space_utilization": 0.0,
+          "circulation": 12.0,
+          "functional_coverage": 0.0,
+          "constraint_compliance": 0.0,
+          "sustainability": 10.0
+        },
+        "score_breakdown": {
+          "space_utilization": {
+            "raw": 0.0,
+            "weight": 0.25,
+            "contribution": 0.0
+          },
+          "circulation": {
+            "raw": 60.0,
+            "weight": 0.2,
+            "contribution": 12.0
+          },
+          "functional_coverage": {
+            "raw": 0.0,
+            "weight": 0.2,
+            "contribution": 0.0
+          },
+          "constraint_compliance": {
+            "raw": 0.0,
+            "weight": 0.15,
+            "contribution": 0.0
+          },
+          "sustainability": {
+            "raw": 50.0,
+            "weight": 0.2,
+            "contribution": 10.0
+          },
+          "overall": {
+            "raw": 22.0,
+            "weight": 1.0,
+            "contribution": 22.0
+          }
+        },
+        "explanation": {
+          "space_utilization": "Space utilization 0.0% weighted 25% => 0.0",
+          "circulation": "Circulation score 60.0% weighted 20% => 12.0",
+          "functional_coverage": "Functional coverage 0.0% weighted 20% => 0.0",
+          "constraint_compliance": "Constraint compliance 0.0% weighted 15% => 0.0",
+          "sustainability": "Sustainability 50.0% weighted 20% => 10.0",
+          "overall": "Overall design score 22.0 (sum of weighted sub\u2011scores)"
+        },
+        "evaluation_version": "v1.0"
+      }
+    },
+    {
+      "room_id": "private_office_7_1_6",
+      "label": "Private Office 7",
+      "dimensions": {
+        "w": 3.8,
+        "h": 2.28
+      },
+      "furniture": [],
+      "evaluation": {
+        "placement_success_rate": 0.0,
+        "space_utilization": 0.0,
+        "circulation_score": 60.0,
+        "functional_coverage": 0.0,
+        "constraint_compliance": 0.0,
+        "furniture_density": 0.0,
+        "estimated_sustainability": 50.0,
+        "collision_count": 0,
+        "runtime_ms": 0.01,
+        "items_placed": 0,
+        "items_considered": 1,
+        "functions_required": [
+          "computing",
+          "storage",
+          "working"
+        ],
+        "functions_covered": [],
+        "material_note": "No items placed.",
+        "layout_score": {
+          "overall": 22.0,
+          "space_utilization": 0.0,
+          "circulation": 12.0,
+          "functional_coverage": 0.0,
+          "constraint_compliance": 0.0,
+          "sustainability": 10.0
+        },
+        "score_breakdown": {
+          "space_utilization": {
+            "raw": 0.0,
+            "weight": 0.25,
+            "contribution": 0.0
+          },
+          "circulation": {
+            "raw": 60.0,
+            "weight": 0.2,
+            "contribution": 12.0
+          },
+          "functional_coverage": {
+            "raw": 0.0,
+            "weight": 0.2,
+            "contribution": 0.0
+          },
+          "constraint_compliance": {
+            "raw": 0.0,
+            "weight": 0.15,
+            "contribution": 0.0
+          },
+          "sustainability": {
+            "raw": 50.0,
+            "weight": 0.2,
+            "contribution": 10.0
+          },
+          "overall": {
+            "raw": 22.0,
+            "weight": 1.0,
+            "contribution": 22.0
+          }
+        },
+        "explanation": {
+          "space_utilization": "Space utilization 0.0% weighted 25% => 0.0",
+          "circulation": "Circulation score 60.0% weighted 20% => 12.0",
+          "functional_coverage": "Functional coverage 0.0% weighted 20% => 0.0",
+          "constraint_compliance": "Constraint compliance 0.0% weighted 15% => 0.0",
+          "sustainability": "Sustainability 50.0% weighted 20% => 10.0",
+          "overall": "Overall design score 22.0 (sum of weighted sub\u2011scores)"
+        },
+        "evaluation_version": "v1.0"
+      }
+    },
+    {
+      "room_id": "private_office_8_1_7",
+      "label": "Private Office 8",
+      "dimensions": {
+        "w": 3.8,
+        "h": 2.28
+      },
+      "furniture": [],
+      "evaluation": {
+        "placement_success_rate": 0.0,
+        "space_utilization": 0.0,
+        "circulation_score": 60.0,
+        "functional_coverage": 0.0,
+        "constraint_compliance": 0.0,
+        "furniture_density": 0.0,
+        "estimated_sustainability": 50.0,
+        "collision_count": 0,
+        "runtime_ms": 0.01,
+        "items_placed": 0,
+        "items_considered": 1,
+        "functions_required": [
+          "computing",
+          "storage",
+          "working"
+        ],
+        "functions_covered": [],
+        "material_note": "No items placed.",
+        "layout_score": {
+          "overall": 22.0,
+          "space_utilization": 0.0,
+          "circulation": 12.0,
+          "functional_coverage": 0.0,
+          "constraint_compliance": 0.0,
+          "sustainability": 10.0
+        },
+        "score_breakdown": {
+          "space_utilization": {
+            "raw": 0.0,
+            "weight": 0.25,
+            "contribution": 0.0
+          },
+          "circulation": {
+            "raw": 60.0,
+            "weight": 0.2,
+            "contribution": 12.0
+          },
+          "functional_coverage": {
+            "raw": 0.0,
+            "weight": 0.2,
+            "contribution": 0.0
+          },
+          "constraint_compliance": {
+            "raw": 0.0,
+            "weight": 0.15,
+            "contribution": 0.0
+          },
+          "sustainability": {
+            "raw": 50.0,
+            "weight": 0.2,
+            "contribution": 10.0
+          },
+          "overall": {
+            "raw": 22.0,
+            "weight": 1.0,
+            "contribution": 22.0
+          }
+        },
+        "explanation": {
+          "space_utilization": "Space utilization 0.0% weighted 25% => 0.0",
+          "circulation": "Circulation score 60.0% weighted 20% => 12.0",
+          "functional_coverage": "Functional coverage 0.0% weighted 20% => 0.0",
+          "constraint_compliance": "Constraint compliance 0.0% weighted 15% => 0.0",
+          "sustainability": "Sustainability 50.0% weighted 20% => 10.0",
+          "overall": "Overall design score 22.0 (sum of weighted sub\u2011scores)"
+        },
+        "evaluation_version": "v1.0"
+      }
+    },
+    {
+      "room_id": "private_office_9_1_8",
+      "label": "Private Office 9",
+      "dimensions": {
+        "w": 3.8,
+        "h": 2.28
+      },
+      "furniture": [],
+      "evaluation": {
+        "placement_success_rate": 0.0,
+        "space_utilization": 0.0,
+        "circulation_score": 60.0,
+        "functional_coverage": 0.0,
+        "constraint_compliance": 0.0,
+        "furniture_density": 0.0,
+        "estimated_sustainability": 50.0,
+        "collision_count": 0,
+        "runtime_ms": 0.01,
+        "items_placed": 0,
+        "items_considered": 1,
+        "functions_required": [
+          "computing",
+          "storage",
+          "working"
+        ],
+        "functions_covered": [],
+        "material_note": "No items placed.",
+        "layout_score": {
+          "overall": 22.0,
+          "space_utilization": 0.0,
+          "circulation": 12.0,
+          "functional_coverage": 0.0,
+          "constraint_compliance": 0.0,
+          "sustainability": 10.0
+        },
+        "score_breakdown": {
+          "space_utilization": {
+            "raw": 0.0,
+            "weight": 0.25,
+            "contribution": 0.0
+          },
+          "circulation": {
+            "raw": 60.0,
+            "weight": 0.2,
+            "contribution": 12.0
+          },
+          "functional_coverage": {
+            "raw": 0.0,
+            "weight": 0.2,
+            "contribution": 0.0
+          },
+          "constraint_compliance": {
+            "raw": 0.0,
+            "weight": 0.15,
+            "contribution": 0.0
+          },
+          "sustainability": {
+            "raw": 50.0,
+            "weight": 0.2,
+            "contribution": 10.0
+          },
+          "overall": {
+            "raw": 22.0,
+            "weight": 1.0,
+            "contribution": 22.0
+          }
+        },
+        "explanation": {
+          "space_utilization": "Space utilization 0.0% weighted 25% => 0.0",
+          "circulation": "Circulation score 60.0% weighted 20% => 12.0",
+          "functional_coverage": "Functional coverage 0.0% weighted 20% => 0.0",
+          "constraint_compliance": "Constraint compliance 0.0% weighted 15% => 0.0",
+          "sustainability": "Sustainability 50.0% weighted 20% => 10.0",
+          "overall": "Overall design score 22.0 (sum of weighted sub\u2011scores)"
+        },
+        "evaluation_version": "v1.0"
+      }
+    },
+    {
+      "room_id": "private_office_10_1_9",
+      "label": "Private Office 10",
+      "dimensions": {
+        "w": 3.8,
+        "h": 2.28
+      },
+      "furniture": [],
+      "evaluation": {
+        "placement_success_rate": 0.0,
+        "space_utilization": 0.0,
+        "circulation_score": 60.0,
+        "functional_coverage": 0.0,
+        "constraint_compliance": 0.0,
+        "furniture_density": 0.0,
+        "estimated_sustainability": 50.0,
+        "collision_count": 0,
+        "runtime_ms": 0.01,
+        "items_placed": 0,
+        "items_considered": 1,
+        "functions_required": [
+          "computing",
+          "storage",
+          "working"
+        ],
+        "functions_covered": [],
+        "material_note": "No items placed.",
+        "layout_score": {
+          "overall": 22.0,
+          "space_utilization": 0.0,
+          "circulation": 12.0,
+          "functional_coverage": 0.0,
+          "constraint_compliance": 0.0,
+          "sustainability": 10.0
+        },
+        "score_breakdown": {
+          "space_utilization": {
+            "raw": 0.0,
+            "weight": 0.25,
+            "contribution": 0.0
+          },
+          "circulation": {
+            "raw": 60.0,
+            "weight": 0.2,
+            "contribution": 12.0
+          },
+          "functional_coverage": {
+            "raw": 0.0,
+            "weight": 0.2,
+            "contribution": 0.0
+          },
+          "constraint_compliance": {
+            "raw": 0.0,
+            "weight": 0.15,
+            "contribution": 0.0
+          },
+          "sustainability": {
+            "raw": 50.0,
+            "weight": 0.2,
+            "contribution": 10.0
+          },
+          "overall": {
+            "raw": 22.0,
+            "weight": 1.0,
+            "contribution": 22.0
+          }
+        },
+        "explanation": {
+          "space_utilization": "Space utilization 0.0% weighted 25% => 0.0",
+          "circulation": "Circulation score 60.0% weighted 20% => 12.0",
+          "functional_coverage": "Functional coverage 0.0% weighted 20% => 0.0",
+          "constraint_compliance": "Constraint compliance 0.0% weighted 15% => 0.0",
+          "sustainability": "Sustainability 50.0% weighted 20% => 10.0",
+          "overall": "Overall design score 22.0 (sum of weighted sub\u2011scores)"
+        },
+        "evaluation_version": "v1.0"
+      }
+    },
+    {
+      "room_id": "private_office_11_1_10",
+      "label": "Private Office 11",
+      "dimensions": {
+        "w": 3.8,
+        "h": 2.28
+      },
+      "furniture": [],
+      "evaluation": {
+        "placement_success_rate": 0.0,
+        "space_utilization": 0.0,
+        "circulation_score": 60.0,
+        "functional_coverage": 0.0,
+        "constraint_compliance": 0.0,
+        "furniture_density": 0.0,
+        "estimated_sustainability": 50.0,
+        "collision_count": 0,
+        "runtime_ms": 0.01,
+        "items_placed": 0,
+        "items_considered": 1,
+        "functions_required": [
+          "computing",
+          "storage",
+          "working"
+        ],
+        "functions_covered": [],
+        "material_note": "No items placed.",
+        "layout_score": {
+          "overall": 22.0,
+          "space_utilization": 0.0,
+          "circulation": 12.0,
+          "functional_coverage": 0.0,
+          "constraint_compliance": 0.0,
+          "sustainability": 10.0
+        },
+        "score_breakdown": {
+          "space_utilization": {
+            "raw": 0.0,
+            "weight": 0.25,
+            "contribution": 0.0
+          },
+          "circulation": {
+            "raw": 60.0,
+            "weight": 0.2,
+            "contribution": 12.0
+          },
+          "functional_coverage": {
+            "raw": 0.0,
+            "weight": 0.2,
+            "contribution": 0.0
+          },
+          "constraint_compliance": {
+            "raw": 0.0,
+            "weight": 0.15,
+            "contribution": 0.0
+          },
+          "sustainability": {
+            "raw": 50.0,
+            "weight": 0.2,
+            "contribution": 10.0
+          },
+          "overall": {
+            "raw": 22.0,
+            "weight": 1.0,
+            "contribution": 22.0
+          }
+        },
+        "explanation": {
+          "space_utilization": "Space utilization 0.0% weighted 25% => 0.0",
+          "circulation": "Circulation score 60.0% weighted 20% => 12.0",
+          "functional_coverage": "Functional coverage 0.0% weighted 20% => 0.0",
+          "constraint_compliance": "Constraint compliance 0.0% weighted 15% => 0.0",
+          "sustainability": "Sustainability 50.0% weighted 20% => 10.0",
+          "overall": "Overall design score 22.0 (sum of weighted sub\u2011scores)"
+        },
+        "evaluation_version": "v1.0"
+      }
+    },
+    {
+      "room_id": "private_office_12_1_11",
+      "label": "Private Office 12",
+      "dimensions": {
+        "w": 3.8,
+        "h": 2.28
+      },
+      "furniture": [],
+      "evaluation": {
+        "placement_success_rate": 0.0,
+        "space_utilization": 0.0,
+        "circulation_score": 60.0,
+        "functional_coverage": 0.0,
+        "constraint_compliance": 0.0,
+        "furniture_density": 0.0,
+        "estimated_sustainability": 50.0,
+        "collision_count": 0,
+        "runtime_ms": 0.01,
+        "items_placed": 0,
+        "items_considered": 1,
+        "functions_required": [
+          "computing",
+          "storage",
+          "working"
+        ],
+        "functions_covered": [],
+        "material_note": "No items placed.",
+        "layout_score": {
+          "overall": 22.0,
+          "space_utilization": 0.0,
+          "circulation": 12.0,
+          "functional_coverage": 0.0,
+          "constraint_compliance": 0.0,
+          "sustainability": 10.0
+        },
+        "score_breakdown": {
+          "space_utilization": {
+            "raw": 0.0,
+            "weight": 0.25,
+            "contribution": 0.0
+          },
+          "circulation": {
+            "raw": 60.0,
+            "weight": 0.2,
+            "contribution": 12.0
+          },
+          "functional_coverage": {
+            "raw": 0.0,
+            "weight": 0.2,
+            "contribution": 0.0
+          },
+          "constraint_compliance": {
+            "raw": 0.0,
+            "weight": 0.15,
+            "contribution": 0.0
+          },
+          "sustainability": {
+            "raw": 50.0,
+            "weight": 0.2,
+            "contribution": 10.0
+          },
+          "overall": {
+            "raw": 22.0,
+            "weight": 1.0,
+            "contribution": 22.0
+          }
+        },
+        "explanation": {
+          "space_utilization": "Space utilization 0.0% weighted 25% => 0.0",
+          "circulation": "Circulation score 60.0% weighted 20% => 12.0",
+          "functional_coverage": "Functional coverage 0.0% weighted 20% => 0.0",
+          "constraint_compliance": "Constraint compliance 0.0% weighted 15% => 0.0",
+          "sustainability": "Sustainability 50.0% weighted 20% => 10.0",
+          "overall": "Overall design score 22.0 (sum of weighted sub\u2011scores)"
+        },
+        "evaluation_version": "v1.0"
+      }
+    },
+    {
+      "room_id": "private_office_13_1_12",
+      "label": "Private Office 13",
+      "dimensions": {
+        "w": 3.8,
+        "h": 2.28
+      },
+      "furniture": [],
+      "evaluation": {
+        "placement_success_rate": 0.0,
+        "space_utilization": 0.0,
+        "circulation_score": 60.0,
+        "functional_coverage": 0.0,
+        "constraint_compliance": 0.0,
+        "furniture_density": 0.0,
+        "estimated_sustainability": 50.0,
+        "collision_count": 0,
+        "runtime_ms": 0.01,
+        "items_placed": 0,
+        "items_considered": 1,
+        "functions_required": [
+          "computing",
+          "storage",
+          "working"
+        ],
+        "functions_covered": [],
+        "material_note": "No items placed.",
+        "layout_score": {
+          "overall": 22.0,
+          "space_utilization": 0.0,
+          "circulation": 12.0,
+          "functional_coverage": 0.0,
+          "constraint_compliance": 0.0,
+          "sustainability": 10.0
+        },
+        "score_breakdown": {
+          "space_utilization": {
+            "raw": 0.0,
+            "weight": 0.25,
+            "contribution": 0.0
+          },
+          "circulation": {
+            "raw": 60.0,
+            "weight": 0.2,
+            "contribution": 12.0
+          },
+          "functional_coverage": {
+            "raw": 0.0,
+            "weight": 0.2,
+            "contribution": 0.0
+          },
+          "constraint_compliance": {
+            "raw": 0.0,
+            "weight": 0.15,
+            "contribution": 0.0
+          },
+          "sustainability": {
+            "raw": 50.0,
+            "weight": 0.2,
+            "contribution": 10.0
+          },
+          "overall": {
+            "raw": 22.0,
+            "weight": 1.0,
+            "contribution": 22.0
+          }
+        },
+        "explanation": {
+          "space_utilization": "Space utilization 0.0% weighted 25% => 0.0",
+          "circulation": "Circulation score 60.0% weighted 20% => 12.0",
+          "functional_coverage": "Functional coverage 0.0% weighted 20% => 0.0",
+          "constraint_compliance": "Constraint compliance 0.0% weighted 15% => 0.0",
+          "sustainability": "Sustainability 50.0% weighted 20% => 10.0",
+          "overall": "Overall design score 22.0 (sum of weighted sub\u2011scores)"
+        },
+        "evaluation_version": "v1.0"
+      }
+    },
+    {
+      "room_id": "private_office_14_1_13",
+      "label": "Private Office 14",
+      "dimensions": {
+        "w": 3.8,
+        "h": 2.28
+      },
+      "furniture": [],
+      "evaluation": {
+        "placement_success_rate": 0.0,
+        "space_utilization": 0.0,
+        "circulation_score": 60.0,
+        "functional_coverage": 0.0,
+        "constraint_compliance": 0.0,
+        "furniture_density": 0.0,
+        "estimated_sustainability": 50.0,
+        "collision_count": 0,
+        "runtime_ms": 0.01,
+        "items_placed": 0,
+        "items_considered": 1,
+        "functions_required": [
+          "computing",
+          "storage",
+          "working"
+        ],
+        "functions_covered": [],
+        "material_note": "No items placed.",
+        "layout_score": {
+          "overall": 22.0,
+          "space_utilization": 0.0,
+          "circulation": 12.0,
+          "functional_coverage": 0.0,
+          "constraint_compliance": 0.0,
+          "sustainability": 10.0
+        },
+        "score_breakdown": {
+          "space_utilization": {
+            "raw": 0.0,
+            "weight": 0.25,
+            "contribution": 0.0
+          },
+          "circulation": {
+            "raw": 60.0,
+            "weight": 0.2,
+            "contribution": 12.0
+          },
+          "functional_coverage": {
+            "raw": 0.0,
+            "weight": 0.2,
+            "contribution": 0.0
+          },
+          "constraint_compliance": {
+            "raw": 0.0,
+            "weight": 0.15,
+            "contribution": 0.0
+          },
+          "sustainability": {
+            "raw": 50.0,
+            "weight": 0.2,
+            "contribution": 10.0
+          },
+          "overall": {
+            "raw": 22.0,
+            "weight": 1.0,
+            "contribution": 22.0
+          }
+        },
+        "explanation": {
+          "space_utilization": "Space utilization 0.0% weighted 25% => 0.0",
+          "circulation": "Circulation score 60.0% weighted 20% => 12.0",
+          "functional_coverage": "Functional coverage 0.0% weighted 20% => 0.0",
+          "constraint_compliance": "Constraint compliance 0.0% weighted 15% => 0.0",
+          "sustainability": "Sustainability 50.0% weighted 20% => 10.0",
+          "overall": "Overall design score 22.0 (sum of weighted sub\u2011scores)"
+        },
+        "evaluation_version": "v1.0"
+      }
+    },
+    {
+      "room_id": "meeting_room_1_1_14",
+      "label": "Meeting Room 1",
+      "dimensions": {
+        "w": 3.8,
+        "h": 2.28
+      },
+      "furniture": [],
+      "evaluation": {
+        "placement_success_rate": 0.0,
+        "space_utilization": 0.0,
+        "circulation_score": 60.0,
+        "functional_coverage": 0.0,
+        "constraint_compliance": 0.0,
+        "furniture_density": 0.0,
+        "estimated_sustainability": 50.0,
+        "collision_count": 0,
+        "runtime_ms": 0.01,
+        "items_placed": 0,
+        "items_considered": 1,
+        "functions_required": [
+          "computing",
+          "storage",
+          "working"
+        ],
+        "functions_covered": [],
+        "material_note": "No items placed.",
+        "layout_score": {
+          "overall": 22.0,
+          "space_utilization": 0.0,
+          "circulation": 12.0,
+          "functional_coverage": 0.0,
+          "constraint_compliance": 0.0,
+          "sustainability": 10.0
+        },
+        "score_breakdown": {
+          "space_utilization": {
+            "raw": 0.0,
+            "weight": 0.25,
+            "contribution": 0.0
+          },
+          "circulation": {
+            "raw": 60.0,
+            "weight": 0.2,
+            "contribution": 12.0
+          },
+          "functional_coverage": {
+            "raw": 0.0,
+            "weight": 0.2,
+            "contribution": 0.0
+          },
+          "constraint_compliance": {
+            "raw": 0.0,
+            "weight": 0.15,
+            "contribution": 0.0
+          },
+          "sustainability": {
+            "raw": 50.0,
+            "weight": 0.2,
+            "contribution": 10.0
+          },
+          "overall": {
+            "raw": 22.0,
+            "weight": 1.0,
+            "contribution": 22.0
+          }
+        },
+        "explanation": {
+          "space_utilization": "Space utilization 0.0% weighted 25% => 0.0",
+          "circulation": "Circulation score 60.0% weighted 20% => 12.0",
+          "functional_coverage": "Functional coverage 0.0% weighted 20% => 0.0",
+          "constraint_compliance": "Constraint compliance 0.0% weighted 15% => 0.0",
+          "sustainability": "Sustainability 50.0% weighted 20% => 10.0",
+          "overall": "Overall design score 22.0 (sum of weighted sub\u2011scores)"
+        },
+        "evaluation_version": "v1.0"
+      }
+    },
+    {
+      "room_id": "meeting_room_2_1_15",
+      "label": "Meeting Room 2",
+      "dimensions": {
+        "w": 3.8,
+        "h": 2.28
+      },
+      "furniture": [],
+      "evaluation": {
+        "placement_success_rate": 0.0,
+        "space_utilization": 0.0,
+        "circulation_score": 60.0,
+        "functional_coverage": 0.0,
+        "constraint_compliance": 0.0,
+        "furniture_density": 0.0,
+        "estimated_sustainability": 50.0,
+        "collision_count": 0,
+        "runtime_ms": 0.01,
+        "items_placed": 0,
+        "items_considered": 1,
+        "functions_required": [
+          "computing",
+          "storage",
+          "working"
+        ],
+        "functions_covered": [],
+        "material_note": "No items placed.",
+        "layout_score": {
+          "overall": 22.0,
+          "space_utilization": 0.0,
+          "circulation": 12.0,
+          "functional_coverage": 0.0,
+          "constraint_compliance": 0.0,
+          "sustainability": 10.0
+        },
+        "score_breakdown": {
+          "space_utilization": {
+            "raw": 0.0,
+            "weight": 0.25,
+            "contribution": 0.0
+          },
+          "circulation": {
+            "raw": 60.0,
+            "weight": 0.2,
+            "contribution": 12.0
+          },
+          "functional_coverage": {
+            "raw": 0.0,
+            "weight": 0.2,
+            "contribution": 0.0
+          },
+          "constraint_compliance": {
+            "raw": 0.0,
+            "weight": 0.15,
+            "contribution": 0.0
+          },
+          "sustainability": {
+            "raw": 50.0,
+            "weight": 0.2,
+            "contribution": 10.0
+          },
+          "overall": {
+            "raw": 22.0,
+            "weight": 1.0,
+            "contribution": 22.0
+          }
+        },
+        "explanation": {
+          "space_utilization": "Space utilization 0.0% weighted 25% => 0.0",
+          "circulation": "Circulation score 60.0% weighted 20% => 12.0",
+          "functional_coverage": "Functional coverage 0.0% weighted 20% => 0.0",
+          "constraint_compliance": "Constraint compliance 0.0% weighted 15% => 0.0",
+          "sustainability": "Sustainability 50.0% weighted 20% => 10.0",
+          "overall": "Overall design score 22.0 (sum of weighted sub\u2011scores)"
+        },
+        "evaluation_version": "v1.0"
+      }
+    },
+    {
+      "room_id": "main_circulation_core_1_16",
+      "label": "Main Circulation Core",
+      "dimensions": {
+        "w": 3.8,
+        "h": 2.28
+      },
+      "furniture": [
+        {
+          "name": "Storage Unit",
+          "w": 1.2,
+          "d": 0.5,
+          "h": 1.85,
+          "px": 0.5,
+          "pz": 0.5,
+          "rotY": 0.0,
+          "color": "#7A7A7A",
+          "shape": "box",
+          "functions": [
+            "storage"
+          ],
+          "material": "Steel",
+          "carbon_score": 0.42,
+          "upper": false,
+          "parts": [
+            {
+              "dx": 0,
+              "dy": 0,
+              "dz": 0,
+              "w": 1.2,
+              "h": 1.85,
+              "d": 0.5,
+              "color": "#7A7A7A",
+              "shape": "box"
+            },
+            {
+              "dx": 0,
+              "dy": 0.45,
+              "dz": -0.22,
+              "w": 1.16,
+              "h": 0.03,
+              "d": 0.48,
+              "color": "#9A9A9A",
+              "shape": "box"
+            },
+            {
+              "dx": 0,
+              "dy": 0.78,
+              "dz": -0.22,
+              "w": 1.16,
+              "h": 0.03,
+              "d": 0.48,
+              "color": "#9A9A9A",
+              "shape": "box"
+            },
+            {
+              "dx": 0,
+              "dy": 1.1,
+              "dz": -0.22,
+              "w": 1.16,
+              "h": 0.03,
+              "d": 0.48,
+              "color": "#9A9A9A",
+              "shape": "box"
+            }
+          ]
+        }
+      ],
+      "evaluation": {
+        "placement_success_rate": 100.0,
+        "space_utilization": 6.9,
+        "circulation_score": 66.9,
+        "functional_coverage": 50.0,
+        "constraint_compliance": 100.0,
+        "furniture_density": 1.15,
+        "estimated_sustainability": 58.0,
+        "collision_count": 0,
+        "runtime_ms": 0.02,
+        "items_placed": 1,
+        "items_considered": 1,
+        "functions_required": [
+          "laundry",
+          "storage"
+        ],
+        "functions_covered": [
+          "storage"
+        ],
+        "material_note": "Lowest embodied carbon item: 'Storage Unit' (Steel, carbon_score=0.42)",
+        "layout_score": {
+          "overall": 51.7,
+          "space_utilization": 1.7,
+          "circulation": 13.4,
+          "functional_coverage": 10.0,
+          "constraint_compliance": 15.0,
+          "sustainability": 11.6
+        },
+        "score_breakdown": {
+          "space_utilization": {
+            "raw": 6.9,
+            "weight": 0.25,
+            "contribution": 1.7
+          },
+          "circulation": {
+            "raw": 66.9,
+            "weight": 0.2,
+            "contribution": 13.4
+          },
+          "functional_coverage": {
+            "raw": 50.0,
+            "weight": 0.2,
+            "contribution": 10.0
+          },
+          "constraint_compliance": {
+            "raw": 100.0,
+            "weight": 0.15,
+            "contribution": 15.0
+          },
+          "sustainability": {
+            "raw": 58.0,
+            "weight": 0.2,
+            "contribution": 11.6
+          },
+          "overall": {
+            "raw": 51.7,
+            "weight": 1.0,
+            "contribution": 51.7
+          }
+        },
+        "explanation": {
+          "space_utilization": "Space utilization 6.9% weighted 25% => 1.7",
+          "circulation": "Circulation score 66.9% weighted 20% => 13.4",
+          "functional_coverage": "Functional coverage 50.0% weighted 20% => 10.0",
+          "constraint_compliance": "Constraint compliance 100.0% weighted 15% => 15.0",
+          "sustainability": "Sustainability 58.0% weighted 20% => 11.6",
+          "overall": "Overall design score 51.7 (sum of weighted sub\u2011scores)"
+        },
+        "evaluation_version": "v1.0"
+      }
+    }
+  ],
+  "material_recommendations": {
+    "foundation": {
+      "name": "Raft Foundation Assembly (RC Heavy)",
+      "score": 64.86,
+      "cost_guidance": "LKR 8,735,025",
+      "rationale": "Selected via Hybrid AI (Eng Rank: #2, ML Rank: #2). Climate: Optimized for Intermediate Tropical climate soil conditions. Sustainability: Maintains balanced environmental footprint with an embodied carbon of 0.8 kgCO2/kg.",
+      "sustainability_rating": 42,
+      "service_life": 120,
+      "embodied_carbon": 0.8,
+      "eng_score": 84.85,
+      "ml_score": 4.8992070181313006,
+      "prediction_source": "ML_MODEL",
+      "selection_reason": {
+        "engineering_rank": "#2",
+        "ml_rank": "#2",
+        "hybrid_rank": "#1",
+        "climate": "Optimized for Intermediate Tropical climate soil conditions.",
+        "durability": "Offers structural capacity rating of 98/100 and service life of 120 years.",
+        "sustainability": "Maintains balanced environmental footprint with an embodied carbon of 0.8 kgCO2/kg.",
+        "cost": "Cost-optimized solution for standard construction project requirements."
+      },
+      "engineering_metadata": {
+        "engineering_score": 84.85,
+        "criterion_breakdown": {
+          "structural": {
+            "score": 25.0,
+            "max": 25
+          },
+          "climate": {
+            "score": 20.0,
+            "max": 20
+          },
+          "durability": {
+            "score": 14.85,
+            "max": 15
+          },
+          "service_life": {
+            "score": 10.0,
+            "max": 10
+          },
+          "fire": {
+            "score": 5.0,
+            "max": 10
+          },
+          "thermal": {
+            "score": 3.5,
+            "max": 10
+          },
+          "maintenance": {
+            "score": 4.4,
+            "max": 5
+          },
+          "sustainability": {
+            "score": 2.1,
+            "max": 5
+          }
+        },
+        "engineering_confidence": 66.7,
+        "climate_confidence": 0.0,
+        "recommendation_quality": "Good"
+      }
+    },
+    "structural": {
+      "name": "GFRP Rebar (Glass Fibre Reinforced Polymer)",
+      "score": 62.83,
+      "cost_guidance": "LKR 23,240,700",
+      "rationale": "Selected via Hybrid AI (Eng Rank: #1, ML Rank: #1). Climate: Selected for general compatibility with regional tropical environmental parameters. Sustainability: Maintains balanced environmental footprint with an embodied carbon of 0.55 kgCO2/kg.",
+      "sustainability_rating": 80,
+      "service_life": 100,
+      "embodied_carbon": 0.55,
+      "eng_score": 83.25,
+      "ml_score": 1.5542877569331701,
+      "prediction_source": "ML_MODEL",
+      "selection_reason": {
+        "engineering_rank": "#1",
+        "ml_rank": "#1",
+        "hybrid_rank": "#1",
+        "climate": "Selected for general compatibility with regional tropical environmental parameters.",
+        "durability": "Standard durability profile providing adequate resistance for typical residential application.",
+        "sustainability": "Maintains balanced environmental footprint with an embodied carbon of 0.55 kgCO2/kg.",
+        "cost": "Cost-optimized solution for standard construction project requirements."
+      },
+      "engineering_metadata": {
+        "engineering_score": 83.25,
+        "criterion_breakdown": {
+          "structural": {
+            "score": 25.0,
+            "max": 25
+          },
+          "climate": {
+            "score": 20.0,
+            "max": 20
+          },
+          "durability": {
+            "score": 13.5,
+            "max": 15
+          },
+          "service_life": {
+            "score": 10.0,
+            "max": 10
+          },
+          "fire": {
+            "score": 5.0,
+            "max": 10
+          },
+          "thermal": {
+            "score": 1.0,
+            "max": 10
+          },
+          "maintenance": {
+            "score": 4.75,
+            "max": 5
+          },
+          "sustainability": {
+            "score": 4.0,
+            "max": 5
+          }
+        },
+        "engineering_confidence": 33.3,
+        "climate_confidence": 0.0,
+        "recommendation_quality": "Good"
+      }
+    },
+    "concrete": {
+      "name": "Self-Compacting Concrete (SCC)",
+      "score": 75.87,
+      "cost_guidance": "LKR 42,000",
+      "rationale": "Selected via Hybrid AI (Eng Rank: #2, ML Rank: #1). Climate: Selected for general compatibility with regional tropical environmental parameters. Sustainability: Maintains balanced environmental footprint with an embodied carbon of 0.55 kgCO2/kg.",
+      "sustainability_rating": 50,
+      "service_life": 65,
+      "embodied_carbon": 0.55,
+      "eng_score": 81.1875,
+      "ml_score": 59.9001948183887,
+      "prediction_source": "ML_MODEL",
+      "selection_reason": {
+        "engineering_rank": "#2",
+        "ml_rank": "#1",
+        "hybrid_rank": "#1",
+        "climate": "Selected for general compatibility with regional tropical environmental parameters.",
+        "durability": "Standard durability profile providing adequate resistance for typical residential application.",
+        "sustainability": "Maintains balanced environmental footprint with an embodied carbon of 0.55 kgCO2/kg.",
+        "cost": "Cost-optimized solution for standard construction project requirements."
+      },
+      "engineering_metadata": {
+        "engineering_score": 81.1875,
+        "criterion_breakdown": {
+          "structural": {
+            "score": 21.25,
+            "max": 25
+          },
+          "climate": {
+            "score": 20.0,
+            "max": 20
+          },
+          "durability": {
+            "score": 13.69,
+            "max": 15
+          },
+          "service_life": {
+            "score": 10.0,
+            "max": 10
+          },
+          "fire": {
+            "score": 5.0,
+            "max": 10
+          },
+          "thermal": {
+            "score": 4.5,
+            "max": 10
+          },
+          "maintenance": {
+            "score": 4.25,
+            "max": 5
+          },
+          "sustainability": {
+            "score": 2.5,
+            "max": 5
+          }
+        },
+        "engineering_confidence": 66.7,
+        "climate_confidence": 0.0,
+        "recommendation_quality": "Good"
+      }
+    },
+    "walls": {
+      "name": "Hollow Clay Block (Perforated)",
+      "score": 59.83,
+      "cost_guidance": "LKR 875,538",
+      "rationale": "Selected via Hybrid AI (Eng Rank: #1, ML Rank: #3). Climate: Traditional thermal mass properties suitable for dry and intermediate climates. Sustainability: Made from local natural clay, though requiring high firing energy.",
+      "sustainability_rating": 78,
+      "service_life": 65,
+      "embodied_carbon": 0.18,
+      "eng_score": 75.5875,
+      "ml_score": 12.550921924234046,
+      "prediction_source": "ML_MODEL",
+      "selection_reason": {
+        "engineering_rank": "#1",
+        "ml_rank": "#3",
+        "hybrid_rank": "#1",
+        "climate": "Traditional thermal mass properties suitable for dry and intermediate climates.",
+        "durability": "Standard durability profile providing adequate resistance for typical residential application.",
+        "sustainability": "Made from local natural clay, though requiring high firing energy.",
+        "cost": "Cost-optimized solution for standard construction project requirements."
+      },
+      "engineering_metadata": {
+        "engineering_score": 75.5875,
+        "criterion_breakdown": {
+          "structural": {
+            "score": 13.75,
+            "max": 25
+          },
+          "climate": {
+            "score": 20.0,
+            "max": 20
+          },
+          "durability": {
+            "score": 11.44,
+            "max": 15
+          },
+          "service_life": {
+            "score": 10.0,
+            "max": 10
+          },
+          "fire": {
+            "score": 5.0,
+            "max": 10
+          },
+          "thermal": {
+            "score": 7.5,
+            "max": 10
+          },
+          "maintenance": {
+            "score": 4.0,
+            "max": 5
+          },
+          "sustainability": {
+            "score": 3.9,
+            "max": 5
+          }
+        },
+        "engineering_confidence": 66.7,
+        "climate_confidence": 0.0,
+        "recommendation_quality": "Good"
+      }
+    },
+    "roofing": {
+      "name": "Green Intensive Roof System (Growing Medium)",
+      "score": 55.04,
+      "cost_guidance": "LKR 4,932,720",
+      "rationale": "Selected via Hybrid AI (Eng Rank: #1, ML Rank: #1). Climate: Standard climate compatibility with enhanced resilience to moisture variability. Sustainability: Features low embodied carbon (0.1 kgCO2/kg) and high recyclability (95/100).",
+      "sustainability_rating": 98,
+      "service_life": 50,
+      "embodied_carbon": 0.1,
+      "eng_score": 63.8,
+      "ml_score": 28.742771858116694,
+      "prediction_source": "ML_MODEL",
+      "selection_reason": {
+        "engineering_rank": "#1",
+        "ml_rank": "#1",
+        "hybrid_rank": "#1",
+        "climate": "Standard climate compatibility with enhanced resilience to moisture variability.",
+        "durability": "Meets target durability with high moisture resistance and structural stability under typical tropical loads.",
+        "sustainability": "Features low embodied carbon (0.1 kgCO2/kg) and high recyclability (95/100).",
+        "cost": "Optimizes lifecycle costs by reducing thermal load and maintenance overheads."
+      },
+      "engineering_metadata": {
+        "engineering_score": 63.8,
+        "criterion_breakdown": {
+          "structural": {
+            "score": 3.75,
+            "max": 25
+          },
+          "climate": {
+            "score": 20.0,
+            "max": 20
+          },
+          "durability": {
+            "score": 6.75,
+            "max": 15
+          },
+          "service_life": {
+            "score": 10.0,
+            "max": 10
+          },
+          "fire": {
+            "score": 5.0,
+            "max": 10
+          },
+          "thermal": {
+            "score": 9.8,
+            "max": 10
+          },
+          "maintenance": {
+            "score": 3.6,
+            "max": 5
+          },
+          "sustainability": {
+            "score": 4.9,
+            "max": 5
+          }
+        },
+        "engineering_confidence": 33.3,
+        "climate_confidence": 0.0,
+        "recommendation_quality": "Acceptable"
+      }
+    },
+    "windows": {
+      "name": "Commercial Double-Glazed Unit (DGU Low-E)",
+      "score": 60.56,
+      "cost_guidance": "LKR 95,000",
+      "rationale": "Selected via Hybrid AI (Eng Rank: #2, ML Rank: #1). Climate: Improves energy efficiency by reducing heat gain and solar transmission in high solar exposure areas. Sustainability: Supports sustainability objectives by lowering heating/cooling energy consumption throughout the building lifecycle.",
+      "sustainability_rating": 72,
+      "service_life": 40,
+      "embodied_carbon": 0.58,
+      "eng_score": 60.9,
+      "ml_score": 59.53718547717873,
+      "prediction_source": "ML_MODEL",
+      "selection_reason": {
+        "engineering_rank": "#2",
+        "ml_rank": "#1",
+        "hybrid_rank": "#1",
+        "climate": "Improves energy efficiency by reducing heat gain and solar transmission in high solar exposure areas.",
+        "durability": "High structural wind-load resistance and robust sealing suitable for multistory environments.",
+        "sustainability": "Supports sustainability objectives by lowering heating/cooling energy consumption throughout the building lifecycle.",
+        "cost": "Higher initial capital cost (LKR 0) is balanced by long-term operational energy savings."
+      },
+      "engineering_metadata": {
+        "engineering_score": 60.9,
+        "criterion_breakdown": {
+          "structural": {
+            "score": 5.0,
+            "max": 25
+          },
+          "climate": {
+            "score": 20.0,
+            "max": 20
+          },
+          "durability": {
+            "score": 6.0,
+            "max": 15
+          },
+          "service_life": {
+            "score": 8.0,
+            "max": 10
+          },
+          "fire": {
+            "score": 5.0,
+            "max": 10
+          },
+          "thermal": {
+            "score": 9.2,
+            "max": 10
+          },
+          "maintenance": {
+            "score": 4.1,
+            "max": 5
+          },
+          "sustainability": {
+            "score": 3.6,
+            "max": 5
+          }
+        },
+        "engineering_confidence": 66.7,
+        "climate_confidence": 0.0,
+        "recommendation_quality": "Acceptable"
+      }
+    },
+    "doors": {
+      "name": "Steel Security Door (Powder-Coated)",
+      "score": 55.96,
+      "cost_guidance": "LKR 65,000",
+      "rationale": "Selected via Hybrid AI (Eng Rank: #1, ML Rank: #2). Climate: Engineered to minimize air infiltration and resist corrosion under saline/humid drafts. Sustainability: Maintains balanced environmental footprint with an embodied carbon of 0.72 kgCO2/kg.",
+      "sustainability_rating": 40,
+      "service_life": 40,
+      "embodied_carbon": 0.72,
+      "eng_score": 74.375,
+      "ml_score": 0.7104464659298865,
+      "prediction_source": "ML_MODEL",
+      "selection_reason": {
+        "engineering_rank": "#1",
+        "ml_rank": "#2",
+        "hybrid_rank": "#1",
+        "climate": "Engineered to minimize air infiltration and resist corrosion under saline/humid drafts.",
+        "durability": "Standard durability profile providing adequate resistance for typical residential application.",
+        "sustainability": "Maintains balanced environmental footprint with an embodied carbon of 0.72 kgCO2/kg.",
+        "cost": "Cost-optimized solution for standard construction project requirements."
+      },
+      "engineering_metadata": {
+        "engineering_score": 74.375,
+        "criterion_breakdown": {
+          "structural": {
+            "score": 21.25,
+            "max": 25
+          },
+          "climate": {
+            "score": 20.0,
+            "max": 20
+          },
+          "durability": {
+            "score": 10.88,
+            "max": 15
+          },
+          "service_life": {
+            "score": 8.0,
+            "max": 10
+          },
+          "fire": {
+            "score": 5.0,
+            "max": 10
+          },
+          "thermal": {
+            "score": 3.5,
+            "max": 10
+          },
+          "maintenance": {
+            "score": 3.75,
+            "max": 5
+          },
+          "sustainability": {
+            "score": 2.0,
+            "max": 5
+          }
+        },
+        "engineering_confidence": 66.7,
+        "climate_confidence": 0.0,
+        "recommendation_quality": "Acceptable"
+      }
+    },
+    "flooring": {
+      "name": "Polished Terrazzo Flooring (Marble Aggregate)",
+      "score": 69.86,
+      "cost_guidance": "LKR 2,276,640",
+      "rationale": "Selected via Hybrid AI (Eng Rank: #1, ML Rank: #1). Climate: Selected for general compatibility with regional tropical environmental parameters. Sustainability: Maintains balanced environmental footprint with an embodied carbon of 0.22 kgCO2/kg.",
+      "sustainability_rating": 75,
+      "service_life": 65,
+      "embodied_carbon": 0.22,
+      "eng_score": 73.1625,
+      "ml_score": 59.95573281956772,
+      "prediction_source": "ML_MODEL",
+      "selection_reason": {
+        "engineering_rank": "#1",
+        "ml_rank": "#1",
+        "hybrid_rank": "#1",
+        "climate": "Selected for general compatibility with regional tropical environmental parameters.",
+        "durability": "Standard durability profile providing adequate resistance for typical residential application.",
+        "sustainability": "Maintains balanced environmental footprint with an embodied carbon of 0.22 kgCO2/kg.",
+        "cost": "Cost-optimized solution for standard construction project requirements."
+      },
+      "engineering_metadata": {
+        "engineering_score": 73.1625,
+        "criterion_breakdown": {
+          "structural": {
+            "score": 13.0,
+            "max": 25
+          },
+          "climate": {
+            "score": 20.0,
+            "max": 20
+          },
+          "durability": {
+            "score": 11.21,
+            "max": 15
+          },
+          "service_life": {
+            "score": 10.0,
+            "max": 10
+          },
+          "fire": {
+            "score": 5.0,
+            "max": 10
+          },
+          "thermal": {
+            "score": 5.8,
+            "max": 10
+          },
+          "maintenance": {
+            "score": 4.4,
+            "max": 5
+          },
+          "sustainability": {
+            "score": 3.75,
+            "max": 5
+          }
+        },
+        "engineering_confidence": 66.7,
+        "climate_confidence": 0.0,
+        "recommendation_quality": "Acceptable"
+      }
+    },
+    "ceiling": {
+      "name": "Bamboo-Fibre Acoustic Ceiling Panel",
+      "score": 46.46,
+      "cost_guidance": "LKR 1,195,236",
+      "rationale": "Selected via Hybrid AI (Eng Rank: #3, ML Rank: #1). Climate: Selected for general compatibility with regional tropical environmental parameters. Sustainability: Maintains balanced environmental footprint with an embodied carbon of 0.05 kgCO2/kg.",
+      "sustainability_rating": 95,
+      "service_life": 25,
+      "embodied_carbon": 0.05,
+      "eng_score": 51.7125,
+      "ml_score": 30.70351219574628,
+      "prediction_source": "ML_MODEL",
+      "selection_reason": {
+        "engineering_rank": "#3",
+        "ml_rank": "#1",
+        "hybrid_rank": "#1",
+        "climate": "Selected for general compatibility with regional tropical environmental parameters.",
+        "durability": "Standard durability profile providing adequate resistance for typical residential application.",
+        "sustainability": "Maintains balanced environmental footprint with an embodied carbon of 0.05 kgCO2/kg.",
+        "cost": "Cost-optimized solution for standard construction project requirements."
+      },
+      "engineering_metadata": {
+        "engineering_score": 51.7125,
+        "criterion_breakdown": {
+          "structural": {
+            "score": 2.5,
+            "max": 25
+          },
+          "climate": {
+            "score": 20.0,
+            "max": 20
+          },
+          "durability": {
+            "score": 3.56,
+            "max": 15
+          },
+          "service_life": {
+            "score": 5.0,
+            "max": 10
+          },
+          "fire": {
+            "score": 5.0,
+            "max": 10
+          },
+          "thermal": {
+            "score": 6.8,
+            "max": 10
+          },
+          "maintenance": {
+            "score": 4.1,
+            "max": 5
+          },
+          "sustainability": {
+            "score": 4.75,
+            "max": 5
+          }
+        },
+        "engineering_confidence": 66.7,
+        "climate_confidence": 0.0,
+        "recommendation_quality": "Acceptable"
+      }
+    },
+    "finishes": {
+      "name": "Advanced Nano-Exterior Paint",
+      "score": 32.53,
+      "cost_guidance": "LKR 1,351,933",
+      "rationale": "Selected via Hybrid AI (Eng Rank: #1, ML Rank: #1). Climate: Selected for general compatibility with regional tropical environmental parameters. Sustainability: Maintains balanced environmental footprint with an embodied carbon of 0.25 kgCO2/kg.",
+      "sustainability_rating": 65,
+      "service_life": 12,
+      "embodied_carbon": 0.25,
+      "eng_score": 38.875,
+      "ml_score": 13.491552430264402,
+      "prediction_source": "ML_MODEL",
+      "selection_reason": {
+        "engineering_rank": "#1",
+        "ml_rank": "#1",
+        "hybrid_rank": "#1",
+        "climate": "Selected for general compatibility with regional tropical environmental parameters.",
+        "durability": "Standard durability profile providing adequate resistance for typical residential application.",
+        "sustainability": "Maintains balanced environmental footprint with an embodied carbon of 0.25 kgCO2/kg.",
+        "cost": "Cost-optimized solution for standard construction project requirements."
+      },
+      "engineering_metadata": {
+        "engineering_score": 38.875,
+        "criterion_breakdown": {
+          "structural": {
+            "score": 1.25,
+            "max": 25
+          },
+          "climate": {
+            "score": 20.0,
+            "max": 20
+          },
+          "durability": {
+            "score": 1.73,
+            "max": 15
+          },
+          "service_life": {
+            "score": 2.4,
+            "max": 10
+          },
+          "fire": {
+            "score": 5.0,
+            "max": 10
+          },
+          "thermal": {
+            "score": 1.0,
+            "max": 10
+          },
+          "maintenance": {
+            "score": 4.25,
+            "max": 5
+          },
+          "sustainability": {
+            "score": 3.25,
+            "max": 5
+          }
+        },
+        "engineering_confidence": 33.3,
+        "climate_confidence": 0.0,
+        "recommendation_quality": "Acceptable"
+      }
+    },
+    "waterproofing": {
+      "name": "Crystalline Slurry Waterproofing (Penetrating)",
+      "score": 41.53,
+      "cost_guidance": "LKR 676,780",
+      "rationale": "Selected via Hybrid AI (Eng Rank: #1, ML Rank: #2). Climate: Designed to prevent moisture ingress under 1800mm annual rainfall. Sustainability: Maintains balanced environmental footprint with an embodied carbon of 0.05 kgCO2/kg.",
+      "sustainability_rating": 58,
+      "service_life": 60,
+      "embodied_carbon": 0.05,
+      "eng_score": 55.275,
+      "ml_score": 0.27586814034833074,
+      "prediction_source": "ML_MODEL",
+      "selection_reason": {
+        "engineering_rank": "#1",
+        "ml_rank": "#2",
+        "hybrid_rank": "#1",
+        "climate": "Designed to prevent moisture ingress under 1800mm annual rainfall.",
+        "durability": "High moisture resistance (100/100) ensuring structural protection.",
+        "sustainability": "Maintains balanced environmental footprint with an embodied carbon of 0.05 kgCO2/kg.",
+        "cost": "Cost-optimized solution for standard construction project requirements."
+      },
+      "engineering_metadata": {
+        "engineering_score": 55.275,
+        "criterion_breakdown": {
+          "structural": {
+            "score": 3.75,
+            "max": 25
+          },
+          "climate": {
+            "score": 20.0,
+            "max": 20
+          },
+          "durability": {
+            "score": 7.88,
+            "max": 15
+          },
+          "service_life": {
+            "score": 10.0,
+            "max": 10
+          },
+          "fire": {
+            "score": 5.0,
+            "max": 10
+          },
+          "thermal": {
+            "score": 1.0,
+            "max": 10
+          },
+          "maintenance": {
+            "score": 4.75,
+            "max": 5
+          },
+          "sustainability": {
+            "score": 2.9,
+            "max": 5
+          }
+        },
+        "engineering_confidence": 33.3,
+        "climate_confidence": 0.0,
+        "recommendation_quality": "Acceptable"
+      }
+    }
+  },
+  "recommendation_explanation": [
+    "durability score is low (3.15/15)",
+    "structural score is low (11.25/25)",
+    "sustainability score is low (2.3/5)",
+    "sustainability score is low (1.9/5)",
+    "durability score is low (2.62/15)"
+  ],
+  "layout_evaluation": {
+    "rooms_evaluated": 18,
+    "avg_placement_success": 11.1,
+    "avg_space_utilization": 0.6,
+    "avg_circulation_score": 60.6,
+    "avg_functional_coverage": 6.5,
+    "avg_constraint_compliance": 11.1,
+    "avg_sustainability": 51.4,
+    "total_items_placed": 3,
+    "avg_design_score": 25.5
+  },
+  "score_breakdown": {
+    "layout_score": 25.5,
+    "engineering_score": 66.2,
+    "ml_score": 21.2,
+    "hybrid_score": 54.9
+  },
+  "execution_time_ms": 4054,
+  "artifacts": {
+    "floorplan_image": "validation_dataset/images/scenario_072_floorplan.png",
+    "viewer_image": null
+  }
+}

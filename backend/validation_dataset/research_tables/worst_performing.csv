@@ -1,0 +1,6 @@
+scenario_id,building_type,budget,climate,hybrid_score
+scenario_050,Hospital,Budget,Intermediate Tropical,6.0
+scenario_053,Hospital,Budget,Intermediate Tropical,6.0
+scenario_058,Hospital,Balanced,Intermediate Tropical,6.1
+scenario_041,Hospital,Budget,Intermediate Tropical,6.7
+scenario_049,Hospital,Balanced,Intermediate Tropical,6.7

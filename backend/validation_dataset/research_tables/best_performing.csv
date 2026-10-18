@@ -1,0 +1,6 @@
+scenario_id,building_type,budget,climate,hybrid_score
+scenario_008,Residential,Balanced,Moderate Coastal Humid,58.0
+scenario_016,Residential,Premium,Moderate Coastal Humid,57.8
+scenario_007,Residential,Premium,Extreme Coastal Saline,57.6
+scenario_019,Residential,Premium,Extreme Coastal Saline,57.5
+scenario_003,Residential,Budget,Extreme Coastal Saline,57.3

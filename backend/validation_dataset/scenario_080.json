@@ -1,0 +1,5093 @@
+{
+  "scenario_id": "scenario_080",
+  "status": "success",
+  "failed_stage": null,
+  "failure_reason": null,
+  "timestamp": "2026-07-06T03:27:59.508109Z",
+  "system_version": "1.0.0",
+  "evaluation_version": "v1.1",
+  "dataset_version": "v1.0-research",
+  "generation_timestamp": "2026-07-06T03:27:59.508133Z",
+  "random_seed": 12345,
+  "scenario_definition": {
+    "building_type": "Office",
+    "location": "Hambantota",
+    "budget": "Balanced",
+    "climate_zone": "Intermediate Tropical",
+    "floors": 2,
+    "area": 1080.7,
+    "occupancy": 29,
+    "sustainability_priority": "Medium",
+    "structural_system": "Concrete Frame",
+    "office_count": 7,
+    "meeting_rooms": 2,
+    "reception_required": true,
+    "commercial_parking_capacity": 20
+  },
+  "building_context": {
+    "building_type": "Commercial",
+    "sustainability_pref": "Medium",
+    "budget_tier": "Balanced",
+    "location": "Hambantota",
+    "style_pref": "Modern",
+    "future_expansion": "None",
+    "office_count": 7,
+    "meeting_rooms": 2,
+    "reception_required": true,
+    "commercial_parking_capacity": 20
+  },
+  "blueprint": {
+    "building_type": "Commercial",
+    "num_floors": 2,
+    "total_area": 211.2,
+    "net_area": 169.0,
+    "footprint": {
+      "w": 16.0,
+      "h": 12.0
+    },
+    "floors_data": [
+      {
+        "level": 0,
+        "label": "GROUND FLOOR",
+        "rooms": [
+          {
+            "id": "reception_0_0",
+            "label": "Reception",
+            "type": "RECEPTION",
+            "zone": "public",
+            "x": 0.0,
+            "y": 0.0,
+            "w": 7.6,
+            "h": 11.4,
+            "area": 86.6,
+            "furniture": [
+              {
+                "name": "Sofa",
+                "w": 2.4,
+                "d": 0.95,
+                "h": 0.42,
+                "px": 0.5,
+                "pz": 0.28,
+                "rotY": 0.0,
+                "color": "#7C5C4E",
+                "shape": "box",
+                "functions": [
+                  "seating",
+                  "lounging"
+                ],
+                "material": "Fabric + Foam + Wood Frame",
+                "carbon_score": 0.44,
+                "upper": false,
+                "parts": [
+                  {
+                    "dx": 0,
+                    "dy": 0,
+                    "dz": 0,
+                    "w": 2.4,
+                    "h": 0.42,
+                    "d": 0.95,
+                    "color": "#7C5C4E",
+                    "shape": "box"
+                  },
+                  {
+                    "dx": 0,
+                    "dy": 0.45,
+                    "dz": -0.38,
+                    "w": 2.4,
+                    "h": 0.48,
+                    "d": 0.18,
+                    "color": "#6B4C42",
+                    "shape": "box"
+                  },
+                  {
+                    "dx": -1.11,
+                    "dy": 0.3,
+                    "dz": 0,
+                    "w": 0.18,
+                    "h": 0.3,
+                    "d": 0.95,
+                    "color": "#6B4C42",
+                    "shape": "box"
+                  },
+                  {
+                    "dx": 1.11,
+                    "dy": 0.3,
+                    "dz": 0,
+                    "w": 0.18,
+                    "h": 0.3,
+                    "d": 0.95,
+                    "color": "#6B4C42",
+                    "shape": "box"
+                  },
+                  {
+                    "dx": -0.6,
+                    "dy": 0.22,
+                    "dz": 0.1,
+                    "w": 0.75,
+                    "h": 0.08,
+                    "d": 0.65,
+                    "color": "#9A7060",
+                    "shape": "box"
+                  },
+                  {
+                    "dx": 0.6,
+                    "dy": 0.22,
+                    "dz": 0.1,
+                    "w": 0.75,
+                    "h": 0.08,
+                    "d": 0.65,
+                    "color": "#9A7060",
+                    "shape": "box"
+                  }
+                ]
+              },
+              {
+                "name": "Coffee Table",
+                "w": 1.1,
+                "d": 0.6,
+                "h": 0.42,
+                "px": 0.5,
+                "pz": 0.4050000000000001,
+                "rotY": 0.0,
+                "color": "#A0855B",
+                "shape": "box",
+                "functions": [
+                  "surface",
+                  "display"
+                ],
+                "material": "Wood",
+                "carbon_score": 0.2,
+                "upper": false,
+                "parts": [
+                  {
+                    "dx": 0,
+                    "dy": 0,
+                    "dz": 0,
+                    "w": 1.1,
+                    "h": 0.05,
+                    "d": 0.6,
+                    "color": "#8B6914",
+                    "shape": "box"
+                  },
+                  {
+                    "dx": -0.45,
+                    "dy": -0.18,
+                    "dz": -0.22,
+                    "w": 0.06,
+                    "h": 0.35,
+                    "d": 0.06,
+                    "color": "#7A5C2E",
+                    "shape": "box"
+                  },
+                  {
+                    "dx": 0.45,
+                    "dy": -0.18,
+                    "dz": -0.22,
+                    "w": 0.06,
+                    "h": 0.35,
+                    "d": 0.06,
+                    "color": "#7A5C2E",
+                    "shape": "box"
+                  },
+                  {
+                    "dx": -0.45,
+                    "dy": -0.18,
+                    "dz": 0.22,
+                    "w": 0.06,
+                    "h": 0.35,
+                    "d": 0.06,
+                    "color": "#7A5C2E",
+                    "shape": "box"
+                  },
+                  {
+                    "dx": 0.45,
+                    "dy": -0.18,
+                    "dz": 0.22,
+                    "w": 0.06,
+                    "h": 0.35,
+                    "d": 0.06,
+                    "color": "#7A5C2E",
+                    "shape": "box"
+                  }
+                ]
+              }
+            ],
+            "layout_evaluation": {
+              "placement_success_rate": 100.0,
+              "space_utilization": 3.4,
+              "circulation_score": 63.4,
+              "functional_coverage": 66.7,
+              "constraint_compliance": 100.0,
+              "furniture_density": 0.23,
+              "estimated_sustainability": 68.0,
+              "collision_count": 0,
+              "runtime_ms": 0.15,
+              "items_placed": 2,
+              "items_considered": 2,
+              "functions_required": [
+                "entertainment",
+                "lounging",
+                "seating"
+              ],
+              "functions_covered": [
+                "lounging",
+                "seating"
+              ],
+              "material_note": "Lowest embodied carbon item: 'Coffee Table' (Wood, carbon_score=0.20)",
+              "layout_score": {
+                "overall": 55.4,
+                "space_utilization": 0.8,
+                "circulation": 12.7,
+                "functional_coverage": 13.3,
+                "constraint_compliance": 15.0,
+                "sustainability": 13.6
+              },
+              "score_breakdown": {
+                "space_utilization": {
+                  "raw": 3.4,
+                  "weight": 0.25,
+                  "contribution": 0.8
+                },
+                "circulation": {
+                  "raw": 63.4,
+                  "weight": 0.2,
+                  "contribution": 12.7
+                },
+                "functional_coverage": {
+                  "raw": 66.7,
+                  "weight": 0.2,
+                  "contribution": 13.3
+                },
+                "constraint_compliance": {
+                  "raw": 100.0,
+                  "weight": 0.15,
+                  "contribution": 15.0
+                },
+                "sustainability": {
+                  "raw": 68.0,
+                  "weight": 0.2,
+                  "contribution": 13.6
+                },
+                "overall": {
+                  "raw": 55.4,
+                  "weight": 1.0,
+                  "contribution": 55.4
+                }
+              },
+              "explanation": {
+                "space_utilization": "Space utilization 3.4% weighted 25% => 0.8",
+                "circulation": "Circulation score 63.4% weighted 20% => 12.7",
+                "functional_coverage": "Functional coverage 66.7% weighted 20% => 13.3",
+                "constraint_compliance": "Constraint compliance 100.0% weighted 15% => 15.0",
+                "sustainability": "Sustainability 68.0% weighted 20% => 13.6",
+                "overall": "Overall design score 55.4 (sum of weighted sub\u2011scores)"
+              },
+              "evaluation_version": "v1.0"
+            }
+          }
+        ]
+      },
+      {
+        "level": 1,
+        "label": "MEZZANINE",
+        "rooms": [
+          {
+            "id": "private_office_1_1_0",
+            "label": "Private Office 1",
+            "type": "OFFICE",
+            "zone": "private",
+            "x": 0.0,
+            "y": 0.0,
+            "w": 3.8,
+            "h": 3.8,
+            "area": 14.4,
+            "furniture": [
+              {
+                "name": "Ergonomic Chair",
+                "w": 0.62,
+                "d": 0.62,
+                "h": 1.1,
+                "px": 0.5,
+                "pz": 0.4894736842105263,
+                "rotY": 3.14159,
+                "color": "#2A2A3E",
+                "shape": "cylinder",
+                "functions": [
+                  "seating",
+                  "working"
+                ],
+                "material": "Recycled Mesh + Aluminium",
+                "carbon_score": 0.39,
+                "upper": false,
+                "parts": [
+                  {
+                    "dx": 0,
+                    "dy": 0,
+                    "dz": 0,
+                    "w": 0.55,
+                    "h": 0.08,
+                    "d": 0.52,
+                    "color": "#2A2A3E",
+                    "shape": "cylinder"
+                  },
+                  {
+                    "dx": 0,
+                    "dy": 0.38,
+                    "dz": -0.24,
+                    "w": 0.48,
+                    "h": 0.5,
+                    "d": 0.06,
+                    "color": "#1A1A2E",
+                    "shape": "box"
+                  },
+                  {
+                    "dx": 0,
+                    "dy": -0.26,
+                    "dz": 0,
+                    "w": 0.08,
+                    "h": 0.44,
+                    "d": 0.08,
+                    "color": "#4A4A5E",
+                    "shape": "cylinder"
+                  }
+                ]
+              },
+              {
+                "name": "Filing Cabinet",
+                "w": 0.5,
+                "d": 0.6,
+                "h": 1.3,
+                "px": 0.8947368421052632,
+                "pz": 0.5,
+                "rotY": -1.5708,
+                "color": "#6A6A6A",
+                "shape": "box",
+                "functions": [
+                  "storage",
+                  "filing"
+                ],
+                "material": "Steel",
+                "carbon_score": 0.45,
+                "upper": false,
+                "parts": [
+                  {
+                    "dx": 0,
+                    "dy": 0,
+                    "dz": 0,
+                    "w": 0.5,
+                    "h": 1.3,
+                    "d": 0.6,
+                    "color": "#6A6A6A",
+                    "shape": "box"
+                  },
+                  {
+                    "dx": 0,
+                    "dy": 0.32,
+                    "dz": -0.29,
+                    "w": 0.44,
+                    "h": 0.02,
+                    "d": 0.04,
+                    "color": "#888888",
+                    "shape": "box"
+                  },
+                  {
+                    "dx": 0,
+                    "dy": -0.05,
+                    "dz": -0.29,
+                    "w": 0.44,
+                    "h": 0.02,
+                    "d": 0.04,
+                    "color": "#888888",
+                    "shape": "box"
+                  },
+                  {
+                    "dx": 0,
+                    "dy": -0.42,
+                    "dz": -0.29,
+                    "w": 0.44,
+                    "h": 0.02,
+                    "d": 0.04,
+                    "color": "#888888",
+                    "shape": "box"
+                  }
+                ]
+              }
+            ],
+            "layout_evaluation": {
+              "placement_success_rate": 66.7,
+              "space_utilization": 4.7,
+              "circulation_score": 64.7,
+              "functional_coverage": 66.7,
+              "constraint_compliance": 66.7,
+              "furniture_density": 1.39,
+              "estimated_sustainability": 58.0,
+              "collision_count": 1,
+              "runtime_ms": 0.1,
+              "items_placed": 2,
+              "items_considered": 3,
+              "functions_required": [
+                "computing",
+                "storage",
+                "working"
+              ],
+              "functions_covered": [
+                "storage",
+                "working"
+              ],
+              "material_note": "Lowest embodied carbon item: 'Ergonomic Chair' (Recycled Mesh + Aluminium, carbon_score=0.39)",
+              "layout_score": {
+                "overall": 49.0,
+                "space_utilization": 1.2,
+                "circulation": 12.9,
+                "functional_coverage": 13.3,
+                "constraint_compliance": 10.0,
+                "sustainability": 11.6
+              },
+              "score_breakdown": {
+                "space_utilization": {
+                  "raw": 4.7,
+                  "weight": 0.25,
+                  "contribution": 1.2
+                },
+                "circulation": {
+                  "raw": 64.7,
+                  "weight": 0.2,
+                  "contribution": 12.9
+                },
+                "functional_coverage": {
+                  "raw": 66.7,
+                  "weight": 0.2,
+                  "contribution": 13.3
+                },
+                "constraint_compliance": {
+                  "raw": 66.7,
+                  "weight": 0.15,
+                  "contribution": 10.0
+                },
+                "sustainability": {
+                  "raw": 58.0,
+                  "weight": 0.2,
+                  "contribution": 11.6
+                },
+                "overall": {
+                  "raw": 49.0,
+                  "weight": 1.0,
+                  "contribution": 49.0
+                }
+              },
+              "explanation": {
+                "space_utilization": "Space utilization 4.7% weighted 25% => 1.2",
+                "circulation": "Circulation score 64.7% weighted 20% => 12.9",
+                "functional_coverage": "Functional coverage 66.7% weighted 20% => 13.3",
+                "constraint_compliance": "Constraint compliance 66.7% weighted 15% => 10.0",
+                "sustainability": "Sustainability 58.0% weighted 20% => 11.6",
+                "overall": "Overall design score 49.0 (sum of weighted sub\u2011scores)"
+              },
+              "evaluation_version": "v1.0"
+            }
+          },
+          {
+            "id": "private_office_2_1_1",
+            "label": "Private Office 2",
+            "type": "OFFICE",
+            "zone": "private",
+            "x": 4.0,
+            "y": 0.0,
+            "w": 3.8,
+            "h": 3.8,
+            "area": 14.4,
+            "furniture": [
+              {
+                "name": "Ergonomic Chair",
+                "w": 0.62,
+                "d": 0.62,
+                "h": 1.1,
+                "px": 0.5,
+                "pz": 0.4894736842105263,
+                "rotY": 3.14159,
+                "color": "#2A2A3E",
+                "shape": "cylinder",
+                "functions": [
+                  "seating",
+                  "working"
+                ],
+                "material": "Recycled Mesh + Aluminium",
+                "carbon_score": 0.39,
+                "upper": false,
+                "parts": [
+                  {
+                    "dx": 0,
+                    "dy": 0,
+                    "dz": 0,
+                    "w": 0.55,
+                    "h": 0.08,
+                    "d": 0.52,
+                    "color": "#2A2A3E",
+                    "shape": "cylinder"
+                  },
+                  {
+                    "dx": 0,
+                    "dy": 0.38,
+                    "dz": -0.24,
+                    "w": 0.48,
+                    "h": 0.5,
+                    "d": 0.06,
+                    "color": "#1A1A2E",
+                    "shape": "box"
+                  },
+                  {
+                    "dx": 0,
+                    "dy": -0.26,
+                    "dz": 0,
+                    "w": 0.08,
+                    "h": 0.44,
+                    "d": 0.08,
+                    "color": "#4A4A5E",
+                    "shape": "cylinder"
+                  }
+                ]
+              },
+              {
+                "name": "Filing Cabinet",
+                "w": 0.5,
+                "d": 0.6,
+                "h": 1.3,
+                "px": 0.8947368421052632,
+                "pz": 0.5,
+                "rotY": -1.5708,
+                "color": "#6A6A6A",
+                "shape": "box",
+                "functions": [
+                  "storage",
+                  "filing"
+                ],
+                "material": "Steel",
+                "carbon_score": 0.45,
+                "upper": false,
+                "parts": [
+                  {
+                    "dx": 0,
+                    "dy": 0,
+                    "dz": 0,
+                    "w": 0.5,
+                    "h": 1.3,
+                    "d": 0.6,
+                    "color": "#6A6A6A",
+                    "shape": "box"
+                  },
+                  {
+                    "dx": 0,
+                    "dy": 0.32,
+                    "dz": -0.29,
+                    "w": 0.44,
+                    "h": 0.02,
+                    "d": 0.04,
+                    "color": "#888888",
+                    "shape": "box"
+                  },
+                  {
+                    "dx": 0,
+                    "dy": -0.05,
+                    "dz": -0.29,
+                    "w": 0.44,
+                    "h": 0.02,
+                    "d": 0.04,
+                    "color": "#888888",
+                    "shape": "box"
+                  },
+                  {
+                    "dx": 0,
+                    "dy": -0.42,
+                    "dz": -0.29,
+                    "w": 0.44,
+                    "h": 0.02,
+                    "d": 0.04,
+                    "color": "#888888",
+                    "shape": "box"
+                  }
+                ]
+              }
+            ],
+            "layout_evaluation": {
+              "placement_success_rate": 66.7,
+              "space_utilization": 4.7,
+              "circulation_score": 64.7,
+              "functional_coverage": 66.7,
+              "constraint_compliance": 66.7,
+              "furniture_density": 1.39,
+              "estimated_sustainability": 58.0,
+              "collision_count": 1,
+              "runtime_ms": 0.09,
+              "items_placed": 2,
+              "items_considered": 3,
+              "functions_required": [
+                "computing",
+                "storage",
+                "working"
+              ],
+              "functions_covered": [
+                "storage",
+                "working"
+              ],
+              "material_note": "Lowest embodied carbon item: 'Ergonomic Chair' (Recycled Mesh + Aluminium, carbon_score=0.39)",
+              "layout_score": {
+                "overall": 49.0,
+                "space_utilization": 1.2,
+                "circulation": 12.9,
+                "functional_coverage": 13.3,
+                "constraint_compliance": 10.0,
+                "sustainability": 11.6
+              },
+              "score_breakdown": {
+                "space_utilization": {
+                  "raw": 4.7,
+                  "weight": 0.25,
+                  "contribution": 1.2
+                },
+                "circulation": {
+                  "raw": 64.7,
+                  "weight": 0.2,
+                  "contribution": 12.9
+                },
+                "functional_coverage": {
+                  "raw": 66.7,
+                  "weight": 0.2,
+                  "contribution": 13.3
+                },
+                "constraint_compliance": {
+                  "raw": 66.7,
+                  "weight": 0.15,
+                  "contribution": 10.0
+                },
+                "sustainability": {
+                  "raw": 58.0,
+                  "weight": 0.2,
+                  "contribution": 11.6
+                },
+                "overall": {
+                  "raw": 49.0,
+                  "weight": 1.0,
+                  "contribution": 49.0
+                }
+              },
+              "explanation": {
+                "space_utilization": "Space utilization 4.7% weighted 25% => 1.2",
+                "circulation": "Circulation score 64.7% weighted 20% => 12.9",
+                "functional_coverage": "Functional coverage 66.7% weighted 20% => 13.3",
+                "constraint_compliance": "Constraint compliance 66.7% weighted 15% => 10.0",
+                "sustainability": "Sustainability 58.0% weighted 20% => 11.6",
+                "overall": "Overall design score 49.0 (sum of weighted sub\u2011scores)"
+              },
+              "evaluation_version": "v1.0"
+            }
+          },
+          {
+            "id": "private_office_3_1_2",
+            "label": "Private Office 3",
+            "type": "OFFICE",
+            "zone": "private",
+            "x": 8.0,
+            "y": 0.0,
+            "w": 3.8,
+            "h": 3.8,
+            "area": 14.4,
+            "furniture": [
+              {
+                "name": "Ergonomic Chair",
+                "w": 0.62,
+                "d": 0.62,
+                "h": 1.1,
+                "px": 0.5,
+                "pz": 0.4894736842105263,
+                "rotY": 3.14159,
+                "color": "#2A2A3E",
+                "shape": "cylinder",
+                "functions": [
+                  "seating",
+                  "working"
+                ],
+                "material": "Recycled Mesh + Aluminium",
+                "carbon_score": 0.39,
+                "upper": false,
+                "parts": [
+                  {
+                    "dx": 0,
+                    "dy": 0,
+                    "dz": 0,
+                    "w": 0.55,
+                    "h": 0.08,
+                    "d": 0.52,
+                    "color": "#2A2A3E",
+                    "shape": "cylinder"
+                  },
+                  {
+                    "dx": 0,
+                    "dy": 0.38,
+                    "dz": -0.24,
+                    "w": 0.48,
+                    "h": 0.5,
+                    "d": 0.06,
+                    "color": "#1A1A2E",
+                    "shape": "box"
+                  },
+                  {
+                    "dx": 0,
+                    "dy": -0.26,
+                    "dz": 0,
+                    "w": 0.08,
+                    "h": 0.44,
+                    "d": 0.08,
+                    "color": "#4A4A5E",
+                    "shape": "cylinder"
+                  }
+                ]
+              },
+              {
+                "name": "Filing Cabinet",
+                "w": 0.5,
+                "d": 0.6,
+                "h": 1.3,
+                "px": 0.8947368421052632,
+                "pz": 0.5,
+                "rotY": -1.5708,
+                "color": "#6A6A6A",
+                "shape": "box",
+                "functions": [
+                  "storage",
+                  "filing"
+                ],
+                "material": "Steel",
+                "carbon_score": 0.45,
+                "upper": false,
+                "parts": [
+                  {
+                    "dx": 0,
+                    "dy": 0,
+                    "dz": 0,
+                    "w": 0.5,
+                    "h": 1.3,
+                    "d": 0.6,
+                    "color": "#6A6A6A",
+                    "shape": "box"
+                  },
+                  {
+                    "dx": 0,
+                    "dy": 0.32,
+                    "dz": -0.29,
+                    "w": 0.44,
+                    "h": 0.02,
+                    "d": 0.04,
+                    "color": "#888888",
+                    "shape": "box"
+                  },
+                  {
+                    "dx": 0,
+                    "dy": -0.05,
+                    "dz": -0.29,
+                    "w": 0.44,
+                    "h": 0.02,
+                    "d": 0.04,
+                    "color": "#888888",
+                    "shape": "box"
+                  },
+                  {
+                    "dx": 0,
+                    "dy": -0.42,
+                    "dz": -0.29,
+                    "w": 0.44,
+                    "h": 0.02,
+                    "d": 0.04,
+                    "color": "#888888",
+                    "shape": "box"
+                  }
+                ]
+              }
+            ],
+            "layout_evaluation": {
+              "placement_success_rate": 66.7,
+              "space_utilization": 4.7,
+              "circulation_score": 64.7,
+              "functional_coverage": 66.7,
+              "constraint_compliance": 66.7,
+              "furniture_density": 1.39,
+              "estimated_sustainability": 58.0,
+              "collision_count": 1,
+              "runtime_ms": 0.08,
+              "items_placed": 2,
+              "items_considered": 3,
+              "functions_required": [
+                "computing",
+                "storage",
+                "working"
+              ],
+              "functions_covered": [
+                "storage",
+                "working"
+              ],
+              "material_note": "Lowest embodied carbon item: 'Ergonomic Chair' (Recycled Mesh + Aluminium, carbon_score=0.39)",
+              "layout_score": {
+                "overall": 49.0,
+                "space_utilization": 1.2,
+                "circulation": 12.9,
+                "functional_coverage": 13.3,
+                "constraint_compliance": 10.0,
+                "sustainability": 11.6
+              },
+              "score_breakdown": {
+                "space_utilization": {
+                  "raw": 4.7,
+                  "weight": 0.25,
+                  "contribution": 1.2
+                },
+                "circulation": {
+                  "raw": 64.7,
+                  "weight": 0.2,
+                  "contribution": 12.9
+                },
+                "functional_coverage": {
+                  "raw": 66.7,
+                  "weight": 0.2,
+                  "contribution": 13.3
+                },
+                "constraint_compliance": {
+                  "raw": 66.7,
+                  "weight": 0.15,
+                  "contribution": 10.0
+                },
+                "sustainability": {
+                  "raw": 58.0,
+                  "weight": 0.2,
+                  "contribution": 11.6
+                },
+                "overall": {
+                  "raw": 49.0,
+                  "weight": 1.0,
+                  "contribution": 49.0
+                }
+              },
+              "explanation": {
+                "space_utilization": "Space utilization 4.7% weighted 25% => 1.2",
+                "circulation": "Circulation score 64.7% weighted 20% => 12.9",
+                "functional_coverage": "Functional coverage 66.7% weighted 20% => 13.3",
+                "constraint_compliance": "Constraint compliance 66.7% weighted 15% => 10.0",
+                "sustainability": "Sustainability 58.0% weighted 20% => 11.6",
+                "overall": "Overall design score 49.0 (sum of weighted sub\u2011scores)"
+              },
+              "evaluation_version": "v1.0"
+            }
+          },
+          {
+            "id": "private_office_4_1_3",
+            "label": "Private Office 4",
+            "type": "OFFICE",
+            "zone": "private",
+            "x": 12.0,
+            "y": 0.0,
+            "w": 3.8,
+            "h": 3.8,
+            "area": 14.4,
+            "furniture": [
+              {
+                "name": "Ergonomic Chair",
+                "w": 0.62,
+                "d": 0.62,
+                "h": 1.1,
+                "px": 0.5,
+                "pz": 0.4894736842105263,
+                "rotY": 3.14159,
+                "color": "#2A2A3E",
+                "shape": "cylinder",
+                "functions": [
+                  "seating",
+                  "working"
+                ],
+                "material": "Recycled Mesh + Aluminium",
+                "carbon_score": 0.39,
+                "upper": false,
+                "parts": [
+                  {
+                    "dx": 0,
+                    "dy": 0,
+                    "dz": 0,
+                    "w": 0.55,
+                    "h": 0.08,
+                    "d": 0.52,
+                    "color": "#2A2A3E",
+                    "shape": "cylinder"
+                  },
+                  {
+                    "dx": 0,
+                    "dy": 0.38,
+                    "dz": -0.24,
+                    "w": 0.48,
+                    "h": 0.5,
+                    "d": 0.06,
+                    "color": "#1A1A2E",
+                    "shape": "box"
+                  },
+                  {
+                    "dx": 0,
+                    "dy": -0.26,
+                    "dz": 0,
+                    "w": 0.08,
+                    "h": 0.44,
+                    "d": 0.08,
+                    "color": "#4A4A5E",
+                    "shape": "cylinder"
+                  }
+                ]
+              },
+              {
+                "name": "Filing Cabinet",
+                "w": 0.5,
+                "d": 0.6,
+                "h": 1.3,
+                "px": 0.8947368421052632,
+                "pz": 0.5,
+                "rotY": -1.5708,
+                "color": "#6A6A6A",
+                "shape": "box",
+                "functions": [
+                  "storage",
+                  "filing"
+                ],
+                "material": "Steel",
+                "carbon_score": 0.45,
+                "upper": false,
+                "parts": [
+                  {
+                    "dx": 0,
+                    "dy": 0,
+                    "dz": 0,
+                    "w": 0.5,
+                    "h": 1.3,
+                    "d": 0.6,
+                    "color": "#6A6A6A",
+                    "shape": "box"
+                  },
+                  {
+                    "dx": 0,
+                    "dy": 0.32,
+                    "dz": -0.29,
+                    "w": 0.44,
+                    "h": 0.02,
+                    "d": 0.04,
+                    "color": "#888888",
+                    "shape": "box"
+                  },
+                  {
+                    "dx": 0,
+                    "dy": -0.05,
+                    "dz": -0.29,
+                    "w": 0.44,
+                    "h": 0.02,
+                    "d": 0.04,
+                    "color": "#888888",
+                    "shape": "box"
+                  },
+                  {
+                    "dx": 0,
+                    "dy": -0.42,
+                    "dz": -0.29,
+                    "w": 0.44,
+                    "h": 0.02,
+                    "d": 0.04,
+                    "color": "#888888",
+                    "shape": "box"
+                  }
+                ]
+              }
+            ],
+            "layout_evaluation": {
+              "placement_success_rate": 66.7,
+              "space_utilization": 4.7,
+              "circulation_score": 64.7,
+              "functional_coverage": 66.7,
+              "constraint_compliance": 66.7,
+              "furniture_density": 1.39,
+              "estimated_sustainability": 58.0,
+              "collision_count": 1,
+              "runtime_ms": 0.08,
+              "items_placed": 2,
+              "items_considered": 3,
+              "functions_required": [
+                "computing",
+                "storage",
+                "working"
+              ],
+              "functions_covered": [
+                "storage",
+                "working"
+              ],
+              "material_note": "Lowest embodied carbon item: 'Ergonomic Chair' (Recycled Mesh + Aluminium, carbon_score=0.39)",
+              "layout_score": {
+                "overall": 49.0,
+                "space_utilization": 1.2,
+                "circulation": 12.9,
+                "functional_coverage": 13.3,
+                "constraint_compliance": 10.0,
+                "sustainability": 11.6
+              },
+              "score_breakdown": {
+                "space_utilization": {
+                  "raw": 4.7,
+                  "weight": 0.25,
+                  "contribution": 1.2
+                },
+                "circulation": {
+                  "raw": 64.7,
+                  "weight": 0.2,
+                  "contribution": 12.9
+                },
+                "functional_coverage": {
+                  "raw": 66.7,
+                  "weight": 0.2,
+                  "contribution": 13.3
+                },
+                "constraint_compliance": {
+                  "raw": 66.7,
+                  "weight": 0.15,
+                  "contribution": 10.0
+                },
+                "sustainability": {
+                  "raw": 58.0,
+                  "weight": 0.2,
+                  "contribution": 11.6
+                },
+                "overall": {
+                  "raw": 49.0,
+                  "weight": 1.0,
+                  "contribution": 49.0
+                }
+              },
+              "explanation": {
+                "space_utilization": "Space utilization 4.7% weighted 25% => 1.2",
+                "circulation": "Circulation score 64.7% weighted 20% => 12.9",
+                "functional_coverage": "Functional coverage 66.7% weighted 20% => 13.3",
+                "constraint_compliance": "Constraint compliance 66.7% weighted 15% => 10.0",
+                "sustainability": "Sustainability 58.0% weighted 20% => 11.6",
+                "overall": "Overall design score 49.0 (sum of weighted sub\u2011scores)"
+              },
+              "evaluation_version": "v1.0"
+            }
+          },
+          {
+            "id": "private_office_5_1_4",
+            "label": "Private Office 5",
+            "type": "OFFICE",
+            "zone": "private",
+            "x": 0.0,
+            "y": 4.0,
+            "w": 3.8,
+            "h": 3.8,
+            "area": 14.4,
+            "furniture": [
+              {
+                "name": "Ergonomic Chair",
+                "w": 0.62,
+                "d": 0.62,
+                "h": 1.1,
+                "px": 0.5,
+                "pz": 0.4894736842105263,
+                "rotY": 3.14159,
+                "color": "#2A2A3E",
+                "shape": "cylinder",
+                "functions": [
+                  "seating",
+                  "working"
+                ],
+                "material": "Recycled Mesh + Aluminium",
+                "carbon_score": 0.39,
+                "upper": false,
+                "parts": [
+                  {
+                    "dx": 0,
+                    "dy": 0,
+                    "dz": 0,
+                    "w": 0.55,
+                    "h": 0.08,
+                    "d": 0.52,
+                    "color": "#2A2A3E",
+                    "shape": "cylinder"
+                  },
+                  {
+                    "dx": 0,
+                    "dy": 0.38,
+                    "dz": -0.24,
+                    "w": 0.48,
+                    "h": 0.5,
+                    "d": 0.06,
+                    "color": "#1A1A2E",
+                    "shape": "box"
+                  },
+                  {
+                    "dx": 0,
+                    "dy": -0.26,
+                    "dz": 0,
+                    "w": 0.08,
+                    "h": 0.44,
+                    "d": 0.08,
+                    "color": "#4A4A5E",
+                    "shape": "cylinder"
+                  }
+                ]
+              },
+              {
+                "name": "Filing Cabinet",
+                "w": 0.5,
+                "d": 0.6,
+                "h": 1.3,
+                "px": 0.8947368421052632,
+                "pz": 0.5,
+                "rotY": -1.5708,
+                "color": "#6A6A6A",
+                "shape": "box",
+                "functions": [
+                  "storage",
+                  "filing"
+                ],
+                "material": "Steel",
+                "carbon_score": 0.45,
+                "upper": false,
+                "parts": [
+                  {
+                    "dx": 0,
+                    "dy": 0,
+                    "dz": 0,
+                    "w": 0.5,
+                    "h": 1.3,
+                    "d": 0.6,
+                    "color": "#6A6A6A",
+                    "shape": "box"
+                  },
+                  {
+                    "dx": 0,
+                    "dy": 0.32,
+                    "dz": -0.29,
+                    "w": 0.44,
+                    "h": 0.02,
+                    "d": 0.04,
+                    "color": "#888888",
+                    "shape": "box"
+                  },
+                  {
+                    "dx": 0,
+                    "dy": -0.05,
+                    "dz": -0.29,
+                    "w": 0.44,
+                    "h": 0.02,
+                    "d": 0.04,
+                    "color": "#888888",
+                    "shape": "box"
+                  },
+                  {
+                    "dx": 0,
+                    "dy": -0.42,
+                    "dz": -0.29,
+                    "w": 0.44,
+                    "h": 0.02,
+                    "d": 0.04,
+                    "color": "#888888",
+                    "shape": "box"
+                  }
+                ]
+              }
+            ],
+            "layout_evaluation": {
+              "placement_success_rate": 66.7,
+              "space_utilization": 4.7,
+              "circulation_score": 64.7,
+              "functional_coverage": 66.7,
+              "constraint_compliance": 66.7,
+              "furniture_density": 1.39,
+              "estimated_sustainability": 58.0,
+              "collision_count": 1,
+              "runtime_ms": 0.07,
+              "items_placed": 2,
+              "items_considered": 3,
+              "functions_required": [
+                "computing",
+                "storage",
+                "working"
+              ],
+              "functions_covered": [
+                "storage",
+                "working"
+              ],
+              "material_note": "Lowest embodied carbon item: 'Ergonomic Chair' (Recycled Mesh + Aluminium, carbon_score=0.39)",
+              "layout_score": {
+                "overall": 49.0,
+                "space_utilization": 1.2,
+                "circulation": 12.9,
+                "functional_coverage": 13.3,
+                "constraint_compliance": 10.0,
+                "sustainability": 11.6
+              },
+              "score_breakdown": {
+                "space_utilization": {
+                  "raw": 4.7,
+                  "weight": 0.25,
+                  "contribution": 1.2
+                },
+                "circulation": {
+                  "raw": 64.7,
+                  "weight": 0.2,
+                  "contribution": 12.9
+                },
+                "functional_coverage": {
+                  "raw": 66.7,
+                  "weight": 0.2,
+                  "contribution": 13.3
+                },
+                "constraint_compliance": {
+                  "raw": 66.7,
+                  "weight": 0.15,
+                  "contribution": 10.0
+                },
+                "sustainability": {
+                  "raw": 58.0,
+                  "weight": 0.2,
+                  "contribution": 11.6
+                },
+                "overall": {
+                  "raw": 49.0,
+                  "weight": 1.0,
+                  "contribution": 49.0
+                }
+              },
+              "explanation": {
+                "space_utilization": "Space utilization 4.7% weighted 25% => 1.2",
+                "circulation": "Circulation score 64.7% weighted 20% => 12.9",
+                "functional_coverage": "Functional coverage 66.7% weighted 20% => 13.3",
+                "constraint_compliance": "Constraint compliance 66.7% weighted 15% => 10.0",
+                "sustainability": "Sustainability 58.0% weighted 20% => 11.6",
+                "overall": "Overall design score 49.0 (sum of weighted sub\u2011scores)"
+              },
+              "evaluation_version": "v1.0"
+            }
+          },
+          {
+            "id": "private_office_6_1_5",
+            "label": "Private Office 6",
+            "type": "OFFICE",
+            "zone": "private",
+            "x": 4.0,
+            "y": 4.0,
+            "w": 3.8,
+            "h": 3.8,
+            "area": 14.4,
+            "furniture": [
+              {
+                "name": "Ergonomic Chair",
+                "w": 0.62,
+                "d": 0.62,
+                "h": 1.1,
+                "px": 0.5,
+                "pz": 0.4894736842105263,
+                "rotY": 3.14159,
+                "color": "#2A2A3E",
+                "shape": "cylinder",
+                "functions": [
+                  "seating",
+                  "working"
+                ],
+                "material": "Recycled Mesh + Aluminium",
+                "carbon_score": 0.39,
+                "upper": false,
+                "parts": [
+                  {
+                    "dx": 0,
+                    "dy": 0,
+                    "dz": 0,
+                    "w": 0.55,
+                    "h": 0.08,
+                    "d": 0.52,
+                    "color": "#2A2A3E",
+                    "shape": "cylinder"
+                  },
+                  {
+                    "dx": 0,
+                    "dy": 0.38,
+                    "dz": -0.24,
+                    "w": 0.48,
+                    "h": 0.5,
+                    "d": 0.06,
+                    "color": "#1A1A2E",
+                    "shape": "box"
+                  },
+                  {
+                    "dx": 0,
+                    "dy": -0.26,
+                    "dz": 0,
+                    "w": 0.08,
+                    "h": 0.44,
+                    "d": 0.08,
+                    "color": "#4A4A5E",
+                    "shape": "cylinder"
+                  }
+                ]
+              },
+              {
+                "name": "Filing Cabinet",
+                "w": 0.5,
+                "d": 0.6,
+                "h": 1.3,
+                "px": 0.8947368421052632,
+                "pz": 0.5,
+                "rotY": -1.5708,
+                "color": "#6A6A6A",
+                "shape": "box",
+                "functions": [
+                  "storage",
+                  "filing"
+                ],
+                "material": "Steel",
+                "carbon_score": 0.45,
+                "upper": false,
+                "parts": [
+                  {
+                    "dx": 0,
+                    "dy": 0,
+                    "dz": 0,
+                    "w": 0.5,
+                    "h": 1.3,
+                    "d": 0.6,
+                    "color": "#6A6A6A",
+                    "shape": "box"
+                  },
+                  {
+                    "dx": 0,
+                    "dy": 0.32,
+                    "dz": -0.29,
+                    "w": 0.44,
+                    "h": 0.02,
+                    "d": 0.04,
+                    "color": "#888888",
+                    "shape": "box"
+                  },
+                  {
+                    "dx": 0,
+                    "dy": -0.05,
+                    "dz": -0.29,
+                    "w": 0.44,
+                    "h": 0.02,
+                    "d": 0.04,
+                    "color": "#888888",
+                    "shape": "box"
+                  },
+                  {
+                    "dx": 0,
+                    "dy": -0.42,
+                    "dz": -0.29,
+                    "w": 0.44,
+                    "h": 0.02,
+                    "d": 0.04,
+                    "color": "#888888",
+                    "shape": "box"
+                  }
+                ]
+              }
+            ],
+            "layout_evaluation": {
+              "placement_success_rate": 66.7,
+              "space_utilization": 4.7,
+              "circulation_score": 64.7,
+              "functional_coverage": 66.7,
+              "constraint_compliance": 66.7,
+              "furniture_density": 1.39,
+              "estimated_sustainability": 58.0,
+              "collision_count": 1,
+              "runtime_ms": 0.07,
+              "items_placed": 2,
+              "items_considered": 3,
+              "functions_required": [
+                "computing",
+                "storage",
+                "working"
+              ],
+              "functions_covered": [
+                "storage",
+                "working"
+              ],
+              "material_note": "Lowest embodied carbon item: 'Ergonomic Chair' (Recycled Mesh + Aluminium, carbon_score=0.39)",
+              "layout_score": {
+                "overall": 49.0,
+                "space_utilization": 1.2,
+                "circulation": 12.9,
+                "functional_coverage": 13.3,
+                "constraint_compliance": 10.0,
+                "sustainability": 11.6
+              },
+              "score_breakdown": {
+                "space_utilization": {
+                  "raw": 4.7,
+                  "weight": 0.25,
+                  "contribution": 1.2
+                },
+                "circulation": {
+                  "raw": 64.7,
+                  "weight": 0.2,
+                  "contribution": 12.9
+                },
+                "functional_coverage": {
+                  "raw": 66.7,
+                  "weight": 0.2,
+                  "contribution": 13.3
+                },
+                "constraint_compliance": {
+                  "raw": 66.7,
+                  "weight": 0.15,
+                  "contribution": 10.0
+                },
+                "sustainability": {
+                  "raw": 58.0,
+                  "weight": 0.2,
+                  "contribution": 11.6
+                },
+                "overall": {
+                  "raw": 49.0,
+                  "weight": 1.0,
+                  "contribution": 49.0
+                }
+              },
+              "explanation": {
+                "space_utilization": "Space utilization 4.7% weighted 25% => 1.2",
+                "circulation": "Circulation score 64.7% weighted 20% => 12.9",
+                "functional_coverage": "Functional coverage 66.7% weighted 20% => 13.3",
+                "constraint_compliance": "Constraint compliance 66.7% weighted 15% => 10.0",
+                "sustainability": "Sustainability 58.0% weighted 20% => 11.6",
+                "overall": "Overall design score 49.0 (sum of weighted sub\u2011scores)"
+              },
+              "evaluation_version": "v1.0"
+            }
+          },
+          {
+            "id": "private_office_7_1_6",
+            "label": "Private Office 7",
+            "type": "OFFICE",
+            "zone": "private",
+            "x": 8.0,
+            "y": 4.0,
+            "w": 3.8,
+            "h": 3.8,
+            "area": 14.4,
+            "furniture": [
+              {
+                "name": "Ergonomic Chair",
+                "w": 0.62,
+                "d": 0.62,
+                "h": 1.1,
+                "px": 0.5,
+                "pz": 0.4894736842105263,
+                "rotY": 3.14159,
+                "color": "#2A2A3E",
+                "shape": "cylinder",
+                "functions": [
+                  "seating",
+                  "working"
+                ],
+                "material": "Recycled Mesh + Aluminium",
+                "carbon_score": 0.39,
+                "upper": false,
+                "parts": [
+                  {
+                    "dx": 0,
+                    "dy": 0,
+                    "dz": 0,
+                    "w": 0.55,
+                    "h": 0.08,
+                    "d": 0.52,
+                    "color": "#2A2A3E",
+                    "shape": "cylinder"
+                  },
+                  {
+                    "dx": 0,
+                    "dy": 0.38,
+                    "dz": -0.24,
+                    "w": 0.48,
+                    "h": 0.5,
+                    "d": 0.06,
+                    "color": "#1A1A2E",
+                    "shape": "box"
+                  },
+                  {
+                    "dx": 0,
+                    "dy": -0.26,
+                    "dz": 0,
+                    "w": 0.08,
+                    "h": 0.44,
+                    "d": 0.08,
+                    "color": "#4A4A5E",
+                    "shape": "cylinder"
+                  }
+                ]
+              },
+              {
+                "name": "Filing Cabinet",
+                "w": 0.5,
+                "d": 0.6,
+                "h": 1.3,
+                "px": 0.8947368421052632,
+                "pz": 0.5,
+                "rotY": -1.5708,
+                "color": "#6A6A6A",
+                "shape": "box",
+                "functions": [
+                  "storage",
+                  "filing"
+                ],
+                "material": "Steel",
+                "carbon_score": 0.45,
+                "upper": false,
+                "parts": [
+                  {
+                    "dx": 0,
+                    "dy": 0,
+                    "dz": 0,
+                    "w": 0.5,
+                    "h": 1.3,
+                    "d": 0.6,
+                    "color": "#6A6A6A",
+                    "shape": "box"
+                  },
+                  {
+                    "dx": 0,
+                    "dy": 0.32,
+                    "dz": -0.29,
+                    "w": 0.44,
+                    "h": 0.02,
+                    "d": 0.04,
+                    "color": "#888888",
+                    "shape": "box"
+                  },
+                  {
+                    "dx": 0,
+                    "dy": -0.05,
+                    "dz": -0.29,
+                    "w": 0.44,
+                    "h": 0.02,
+                    "d": 0.04,
+                    "color": "#888888",
+                    "shape": "box"
+                  },
+                  {
+                    "dx": 0,
+                    "dy": -0.42,
+                    "dz": -0.29,
+                    "w": 0.44,
+                    "h": 0.02,
+                    "d": 0.04,
+                    "color": "#888888",
+                    "shape": "box"
+                  }
+                ]
+              }
+            ],
+            "layout_evaluation": {
+              "placement_success_rate": 66.7,
+              "space_utilization": 4.7,
+              "circulation_score": 64.7,
+              "functional_coverage": 66.7,
+              "constraint_compliance": 66.7,
+              "furniture_density": 1.39,
+              "estimated_sustainability": 58.0,
+              "collision_count": 1,
+              "runtime_ms": 0.08,
+              "items_placed": 2,
+              "items_considered": 3,
+              "functions_required": [
+                "computing",
+                "storage",
+                "working"
+              ],
+              "functions_covered": [
+                "storage",
+                "working"
+              ],
+              "material_note": "Lowest embodied carbon item: 'Ergonomic Chair' (Recycled Mesh + Aluminium, carbon_score=0.39)",
+              "layout_score": {
+                "overall": 49.0,
+                "space_utilization": 1.2,
+                "circulation": 12.9,
+                "functional_coverage": 13.3,
+                "constraint_compliance": 10.0,
+                "sustainability": 11.6
+              },
+              "score_breakdown": {
+                "space_utilization": {
+                  "raw": 4.7,
+                  "weight": 0.25,
+                  "contribution": 1.2
+                },
+                "circulation": {
+                  "raw": 64.7,
+                  "weight": 0.2,
+                  "contribution": 12.9
+                },
+                "functional_coverage": {
+                  "raw": 66.7,
+                  "weight": 0.2,
+                  "contribution": 13.3
+                },
+                "constraint_compliance": {
+                  "raw": 66.7,
+                  "weight": 0.15,
+                  "contribution": 10.0
+                },
+                "sustainability": {
+                  "raw": 58.0,
+                  "weight": 0.2,
+                  "contribution": 11.6
+                },
+                "overall": {
+                  "raw": 49.0,
+                  "weight": 1.0,
+                  "contribution": 49.0
+                }
+              },
+              "explanation": {
+                "space_utilization": "Space utilization 4.7% weighted 25% => 1.2",
+                "circulation": "Circulation score 64.7% weighted 20% => 12.9",
+                "functional_coverage": "Functional coverage 66.7% weighted 20% => 13.3",
+                "constraint_compliance": "Constraint compliance 66.7% weighted 15% => 10.0",
+                "sustainability": "Sustainability 58.0% weighted 20% => 11.6",
+                "overall": "Overall design score 49.0 (sum of weighted sub\u2011scores)"
+              },
+              "evaluation_version": "v1.0"
+            }
+          },
+          {
+            "id": "meeting_room_1_1_7",
+            "label": "Meeting Room 1",
+            "type": "MEETING_ROOM",
+            "zone": "private",
+            "x": 12.0,
+            "y": 4.0,
+            "w": 3.8,
+            "h": 3.8,
+            "area": 14.4,
+            "furniture": [
+              {
+                "name": "Ergonomic Chair",
+                "w": 0.62,
+                "d": 0.62,
+                "h": 1.1,
+                "px": 0.5,
+                "pz": 0.4894736842105263,
+                "rotY": 3.14159,
+                "color": "#2A2A3E",
+                "shape": "cylinder",
+                "functions": [
+                  "seating",
+                  "working"
+                ],
+                "material": "Recycled Mesh + Aluminium",
+                "carbon_score": 0.39,
+                "upper": false,
+                "parts": [
+                  {
+                    "dx": 0,
+                    "dy": 0,
+                    "dz": 0,
+                    "w": 0.55,
+                    "h": 0.08,
+                    "d": 0.52,
+                    "color": "#2A2A3E",
+                    "shape": "cylinder"
+                  },
+                  {
+                    "dx": 0,
+                    "dy": 0.38,
+                    "dz": -0.24,
+                    "w": 0.48,
+                    "h": 0.5,
+                    "d": 0.06,
+                    "color": "#1A1A2E",
+                    "shape": "box"
+                  },
+                  {
+                    "dx": 0,
+                    "dy": -0.26,
+                    "dz": 0,
+                    "w": 0.08,
+                    "h": 0.44,
+                    "d": 0.08,
+                    "color": "#4A4A5E",
+                    "shape": "cylinder"
+                  }
+                ]
+              },
+              {
+                "name": "Filing Cabinet",
+                "w": 0.5,
+                "d": 0.6,
+                "h": 1.3,
+                "px": 0.8947368421052632,
+                "pz": 0.5,
+                "rotY": -1.5708,
+                "color": "#6A6A6A",
+                "shape": "box",
+                "functions": [
+                  "storage",
+                  "filing"
+                ],
+                "material": "Steel",
+                "carbon_score": 0.45,
+                "upper": false,
+                "parts": [
+                  {
+                    "dx": 0,
+                    "dy": 0,
+                    "dz": 0,
+                    "w": 0.5,
+                    "h": 1.3,
+                    "d": 0.6,
+                    "color": "#6A6A6A",
+                    "shape": "box"
+                  },
+                  {
+                    "dx": 0,
+                    "dy": 0.32,
+                    "dz": -0.29,
+                    "w": 0.44,
+                    "h": 0.02,
+                    "d": 0.04,
+                    "color": "#888888",
+                    "shape": "box"
+                  },
+                  {
+                    "dx": 0,
+                    "dy": -0.05,
+                    "dz": -0.29,
+                    "w": 0.44,
+                    "h": 0.02,
+                    "d": 0.04,
+                    "color": "#888888",
+                    "shape": "box"
+                  },
+                  {
+                    "dx": 0,
+                    "dy": -0.42,
+                    "dz": -0.29,
+                    "w": 0.44,
+                    "h": 0.02,
+                    "d": 0.04,
+                    "color": "#888888",
+                    "shape": "box"
+                  }
+                ]
+              }
+            ],
+            "layout_evaluation": {
+              "placement_success_rate": 66.7,
+              "space_utilization": 4.7,
+              "circulation_score": 64.7,
+              "functional_coverage": 66.7,
+              "constraint_compliance": 66.7,
+              "furniture_density": 1.39,
+              "estimated_sustainability": 58.0,
+              "collision_count": 1,
+              "runtime_ms": 0.07,
+              "items_placed": 2,
+              "items_considered": 3,
+              "functions_required": [
+                "computing",
+                "storage",
+                "working"
+              ],
+              "functions_covered": [
+                "storage",
+                "working"
+              ],
+              "material_note": "Lowest embodied carbon item: 'Ergonomic Chair' (Recycled Mesh + Aluminium, carbon_score=0.39)",
+              "layout_score": {
+                "overall": 49.0,
+                "space_utilization": 1.2,
+                "circulation": 12.9,
+                "functional_coverage": 13.3,
+                "constraint_compliance": 10.0,
+                "sustainability": 11.6
+              },
+              "score_breakdown": {
+                "space_utilization": {
+                  "raw": 4.7,
+                  "weight": 0.25,
+                  "contribution": 1.2
+                },
+                "circulation": {
+                  "raw": 64.7,
+                  "weight": 0.2,
+                  "contribution": 12.9
+                },
+                "functional_coverage": {
+                  "raw": 66.7,
+                  "weight": 0.2,
+                  "contribution": 13.3
+                },
+                "constraint_compliance": {
+                  "raw": 66.7,
+                  "weight": 0.15,
+                  "contribution": 10.0
+                },
+                "sustainability": {
+                  "raw": 58.0,
+                  "weight": 0.2,
+                  "contribution": 11.6
+                },
+                "overall": {
+                  "raw": 49.0,
+                  "weight": 1.0,
+                  "contribution": 49.0
+                }
+              },
+              "explanation": {
+                "space_utilization": "Space utilization 4.7% weighted 25% => 1.2",
+                "circulation": "Circulation score 64.7% weighted 20% => 12.9",
+                "functional_coverage": "Functional coverage 66.7% weighted 20% => 13.3",
+                "constraint_compliance": "Constraint compliance 66.7% weighted 15% => 10.0",
+                "sustainability": "Sustainability 58.0% weighted 20% => 11.6",
+                "overall": "Overall design score 49.0 (sum of weighted sub\u2011scores)"
+              },
+              "evaluation_version": "v1.0"
+            }
+          },
+          {
+            "id": "meeting_room_2_1_8",
+            "label": "Meeting Room 2",
+            "type": "MEETING_ROOM",
+            "zone": "private",
+            "x": 0.0,
+            "y": 8.0,
+            "w": 3.8,
+            "h": 3.8,
+            "area": 14.4,
+            "furniture": [
+              {
+                "name": "Ergonomic Chair",
+                "w": 0.62,
+                "d": 0.62,
+                "h": 1.1,
+                "px": 0.5,
+                "pz": 0.4894736842105263,
+                "rotY": 3.14159,
+                "color": "#2A2A3E",
+                "shape": "cylinder",
+                "functions": [
+                  "seating",
+                  "working"
+                ],
+                "material": "Recycled Mesh + Aluminium",
+                "carbon_score": 0.39,
+                "upper": false,
+                "parts": [
+                  {
+                    "dx": 0,
+                    "dy": 0,
+                    "dz": 0,
+                    "w": 0.55,
+                    "h": 0.08,
+                    "d": 0.52,
+                    "color": "#2A2A3E",
+                    "shape": "cylinder"
+                  },
+                  {
+                    "dx": 0,
+                    "dy": 0.38,
+                    "dz": -0.24,
+                    "w": 0.48,
+                    "h": 0.5,
+                    "d": 0.06,
+                    "color": "#1A1A2E",
+                    "shape": "box"
+                  },
+                  {
+                    "dx": 0,
+                    "dy": -0.26,
+                    "dz": 0,
+                    "w": 0.08,
+                    "h": 0.44,
+                    "d": 0.08,
+                    "color": "#4A4A5E",
+                    "shape": "cylinder"
+                  }
+                ]
+              },
+              {
+                "name": "Filing Cabinet",
+                "w": 0.5,
+                "d": 0.6,
+                "h": 1.3,
+                "px": 0.8947368421052632,
+                "pz": 0.5,
+                "rotY": -1.5708,
+                "color": "#6A6A6A",
+                "shape": "box",
+                "functions": [
+                  "storage",
+                  "filing"
+                ],
+                "material": "Steel",
+                "carbon_score": 0.45,
+                "upper": false,
+                "parts": [
+                  {
+                    "dx": 0,
+                    "dy": 0,
+                    "dz": 0,
+                    "w": 0.5,
+                    "h": 1.3,
+                    "d": 0.6,
+                    "color": "#6A6A6A",
+                    "shape": "box"
+                  },
+                  {
+                    "dx": 0,
+                    "dy": 0.32,
+                    "dz": -0.29,
+                    "w": 0.44,
+                    "h": 0.02,
+                    "d": 0.04,
+                    "color": "#888888",
+                    "shape": "box"
+                  },
+                  {
+                    "dx": 0,
+                    "dy": -0.05,
+                    "dz": -0.29,
+                    "w": 0.44,
+                    "h": 0.02,
+                    "d": 0.04,
+                    "color": "#888888",
+                    "shape": "box"
+                  },
+                  {
+                    "dx": 0,
+                    "dy": -0.42,
+                    "dz": -0.29,
+                    "w": 0.44,
+                    "h": 0.02,
+                    "d": 0.04,
+                    "color": "#888888",
+                    "shape": "box"
+                  }
+                ]
+              }
+            ],
+            "layout_evaluation": {
+              "placement_success_rate": 66.7,
+              "space_utilization": 4.7,
+              "circulation_score": 64.7,
+              "functional_coverage": 66.7,
+              "constraint_compliance": 66.7,
+              "furniture_density": 1.39,
+              "estimated_sustainability": 58.0,
+              "collision_count": 1,
+              "runtime_ms": 0.07,
+              "items_placed": 2,
+              "items_considered": 3,
+              "functions_required": [
+                "computing",
+                "storage",
+                "working"
+              ],
+              "functions_covered": [
+                "storage",
+                "working"
+              ],
+              "material_note": "Lowest embodied carbon item: 'Ergonomic Chair' (Recycled Mesh + Aluminium, carbon_score=0.39)",
+              "layout_score": {
+                "overall": 49.0,
+                "space_utilization": 1.2,
+                "circulation": 12.9,
+                "functional_coverage": 13.3,
+                "constraint_compliance": 10.0,
+                "sustainability": 11.6
+              },
+              "score_breakdown": {
+                "space_utilization": {
+                  "raw": 4.7,
+                  "weight": 0.25,
+                  "contribution": 1.2
+                },
+                "circulation": {
+                  "raw": 64.7,
+                  "weight": 0.2,
+                  "contribution": 12.9
+                },
+                "functional_coverage": {
+                  "raw": 66.7,
+                  "weight": 0.2,
+                  "contribution": 13.3
+                },
+                "constraint_compliance": {
+                  "raw": 66.7,
+                  "weight": 0.15,
+                  "contribution": 10.0
+                },
+                "sustainability": {
+                  "raw": 58.0,
+                  "weight": 0.2,
+                  "contribution": 11.6
+                },
+                "overall": {
+                  "raw": 49.0,
+                  "weight": 1.0,
+                  "contribution": 49.0
+                }
+              },
+              "explanation": {
+                "space_utilization": "Space utilization 4.7% weighted 25% => 1.2",
+                "circulation": "Circulation score 64.7% weighted 20% => 12.9",
+                "functional_coverage": "Functional coverage 66.7% weighted 20% => 13.3",
+                "constraint_compliance": "Constraint compliance 66.7% weighted 15% => 10.0",
+                "sustainability": "Sustainability 58.0% weighted 20% => 11.6",
+                "overall": "Overall design score 49.0 (sum of weighted sub\u2011scores)"
+              },
+              "evaluation_version": "v1.0"
+            }
+          },
+          {
+            "id": "main_circulation_core_1_9",
+            "label": "Main Circulation Core",
+            "type": "CIRCULATION",
+            "zone": "circulation",
+            "x": 4.0,
+            "y": 8.0,
+            "w": 3.8,
+            "h": 3.8,
+            "area": 14.4,
+            "furniture": [
+              {
+                "name": "Storage Unit",
+                "w": 1.2,
+                "d": 0.5,
+                "h": 1.85,
+                "px": 0.5,
+                "pz": 0.5,
+                "rotY": 0.0,
+                "color": "#7A7A7A",
+                "shape": "box",
+                "functions": [
+                  "storage"
+                ],
+                "material": "Steel",
+                "carbon_score": 0.42,
+                "upper": false,
+                "parts": [
+                  {
+                    "dx": 0,
+                    "dy": 0,
+                    "dz": 0,
+                    "w": 1.2,
+                    "h": 1.85,
+                    "d": 0.5,
+                    "color": "#7A7A7A",
+                    "shape": "box"
+                  },
+                  {
+                    "dx": 0,
+                    "dy": 0.45,
+                    "dz": -0.22,
+                    "w": 1.16,
+                    "h": 0.03,
+                    "d": 0.48,
+                    "color": "#9A9A9A",
+                    "shape": "box"
+                  },
+                  {
+                    "dx": 0,
+                    "dy": 0.78,
+                    "dz": -0.22,
+                    "w": 1.16,
+                    "h": 0.03,
+                    "d": 0.48,
+                    "color": "#9A9A9A",
+                    "shape": "box"
+                  },
+                  {
+                    "dx": 0,
+                    "dy": 1.1,
+                    "dz": -0.22,
+                    "w": 1.16,
+                    "h": 0.03,
+                    "d": 0.48,
+                    "color": "#9A9A9A",
+                    "shape": "box"
+                  }
+                ]
+              }
+            ],
+            "layout_evaluation": {
+              "placement_success_rate": 100.0,
+              "space_utilization": 4.2,
+              "circulation_score": 64.2,
+              "functional_coverage": 50.0,
+              "constraint_compliance": 100.0,
+              "furniture_density": 0.69,
+              "estimated_sustainability": 58.0,
+              "collision_count": 0,
+              "runtime_ms": 0.06,
+              "items_placed": 1,
+              "items_considered": 1,
+              "functions_required": [
+                "laundry",
+                "storage"
+              ],
+              "functions_covered": [
+                "storage"
+              ],
+              "material_note": "Lowest embodied carbon item: 'Storage Unit' (Steel, carbon_score=0.42)",
+              "layout_score": {
+                "overall": 50.5,
+                "space_utilization": 1.1,
+                "circulation": 12.8,
+                "functional_coverage": 10.0,
+                "constraint_compliance": 15.0,
+                "sustainability": 11.6
+              },
+              "score_breakdown": {
+                "space_utilization": {
+                  "raw": 4.2,
+                  "weight": 0.25,
+                  "contribution": 1.1
+                },
+                "circulation": {
+                  "raw": 64.2,
+                  "weight": 0.2,
+                  "contribution": 12.8
+                },
+                "functional_coverage": {
+                  "raw": 50.0,
+                  "weight": 0.2,
+                  "contribution": 10.0
+                },
+                "constraint_compliance": {
+                  "raw": 100.0,
+                  "weight": 0.15,
+                  "contribution": 15.0
+                },
+                "sustainability": {
+                  "raw": 58.0,
+                  "weight": 0.2,
+                  "contribution": 11.6
+                },
+                "overall": {
+                  "raw": 50.5,
+                  "weight": 1.0,
+                  "contribution": 50.5
+                }
+              },
+              "explanation": {
+                "space_utilization": "Space utilization 4.2% weighted 25% => 1.1",
+                "circulation": "Circulation score 64.2% weighted 20% => 12.8",
+                "functional_coverage": "Functional coverage 50.0% weighted 20% => 10.0",
+                "constraint_compliance": "Constraint compliance 100.0% weighted 15% => 15.0",
+                "sustainability": "Sustainability 58.0% weighted 20% => 11.6",
+                "overall": "Overall design score 50.5 (sum of weighted sub\u2011scores)"
+              },
+              "evaluation_version": "v1.0"
+            }
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      "Lobby connects to public zones.",
+      "Restrooms are centrally accessible."
+    ],
+    "blueprint_summary": {
+      "relationships": [
+        "Lobby connects to public zones.",
+        "Restrooms are centrally accessible."
+      ]
+    },
+    "style_pref": "Modern",
+    "rooms": [
+      {
+        "name": "Private Office 1",
+        "type": "OFFICE",
+        "zone": "private",
+        "area": 12.0
+      },
+      {
+        "name": "Private Office 2",
+        "type": "OFFICE",
+        "zone": "private",
+        "area": 12.0
+      },
+      {
+        "name": "Private Office 3",
+        "type": "OFFICE",
+        "zone": "private",
+        "area": 12.0
+      },
+      {
+        "name": "Private Office 4",
+        "type": "OFFICE",
+        "zone": "private",
+        "area": 12.0
+      },
+      {
+        "name": "Private Office 5",
+        "type": "OFFICE",
+        "zone": "private",
+        "area": 12.0
+      },
+      {
+        "name": "Private Office 6",
+        "type": "OFFICE",
+        "zone": "private",
+        "area": 12.0
+      },
+      {
+        "name": "Private Office 7",
+        "type": "OFFICE",
+        "zone": "private",
+        "area": 12.0
+      },
+      {
+        "name": "Meeting Room 1",
+        "type": "MEETING_ROOM",
+        "zone": "private",
+        "area": 20.0
+      },
+      {
+        "name": "Meeting Room 2",
+        "type": "MEETING_ROOM",
+        "zone": "private",
+        "area": 20.0
+      },
+      {
+        "name": "Reception",
+        "type": "RECEPTION",
+        "zone": "public",
+        "area": 30.0
+      },
+      {
+        "name": "Main Circulation Core",
+        "type": "CIRCULATION",
+        "zone": "circulation",
+        "area": 57.25
+      }
+    ],
+    "circulation": 42.25,
+    "walls": [],
+    "doors": [],
+    "windows": [],
+    "layout_metrics": {
+      "rooms_evaluated": 11,
+      "avg_placement_success": 72.8,
+      "avg_space_utilization": 4.5,
+      "avg_circulation_score": 64.5,
+      "avg_functional_coverage": 65.2,
+      "avg_constraint_compliance": 72.8,
+      "avg_sustainability": 58.9,
+      "total_items_placed": 21,
+      "avg_design_score": 49.7
+    },
+    "structural_system": "Concrete Frame"
+  },
+  "room_layouts": [
+    {
+      "room_id": "reception_0_0",
+      "label": "Reception",
+      "dimensions": {
+        "w": 7.6,
+        "h": 11.4
+      },
+      "furniture": [
+        {
+          "name": "Sofa",
+          "w": 2.4,
+          "d": 0.95,
+          "h": 0.42,
+          "px": 0.5,
+          "pz": 0.28,
+          "rotY": 0.0,
+          "color": "#7C5C4E",
+          "shape": "box",
+          "functions": [
+            "seating",
+            "lounging"
+          ],
+          "material": "Fabric + Foam + Wood Frame",
+          "carbon_score": 0.44,
+          "upper": false,
+          "parts": [
+            {
+              "dx": 0,
+              "dy": 0,
+              "dz": 0,
+              "w": 2.4,
+              "h": 0.42,
+              "d": 0.95,
+              "color": "#7C5C4E",
+              "shape": "box"
+            },
+            {
+              "dx": 0,
+              "dy": 0.45,
+              "dz": -0.38,
+              "w": 2.4,
+              "h": 0.48,
+              "d": 0.18,
+              "color": "#6B4C42",
+              "shape": "box"
+            },
+            {
+              "dx": -1.11,
+              "dy": 0.3,
+              "dz": 0,
+              "w": 0.18,
+              "h": 0.3,
+              "d": 0.95,
+              "color": "#6B4C42",
+              "shape": "box"
+            },
+            {
+              "dx": 1.11,
+              "dy": 0.3,
+              "dz": 0,
+              "w": 0.18,
+              "h": 0.3,
+              "d": 0.95,
+              "color": "#6B4C42",
+              "shape": "box"
+            },
+            {
+              "dx": -0.6,
+              "dy": 0.22,
+              "dz": 0.1,
+              "w": 0.75,
+              "h": 0.08,
+              "d": 0.65,
+              "color": "#9A7060",
+              "shape": "box"
+            },
+            {
+              "dx": 0.6,
+              "dy": 0.22,
+              "dz": 0.1,
+              "w": 0.75,
+              "h": 0.08,
+              "d": 0.65,
+              "color": "#9A7060",
+              "shape": "box"
+            }
+          ]
+        },
+        {
+          "name": "Coffee Table",
+          "w": 1.1,
+          "d": 0.6,
+          "h": 0.42,
+          "px": 0.5,
+          "pz": 0.4050000000000001,
+          "rotY": 0.0,
+          "color": "#A0855B",
+          "shape": "box",
+          "functions": [
+            "surface",
+            "display"
+          ],
+          "material": "Wood",
+          "carbon_score": 0.2,
+          "upper": false,
+          "parts": [
+            {
+              "dx": 0,
+              "dy": 0,
+              "dz": 0,
+              "w": 1.1,
+              "h": 0.05,
+              "d": 0.6,
+              "color": "#8B6914",
+              "shape": "box"
+            },
+            {
+              "dx": -0.45,
+              "dy": -0.18,
+              "dz": -0.22,
+              "w": 0.06,
+              "h": 0.35,
+              "d": 0.06,
+              "color": "#7A5C2E",
+              "shape": "box"
+            },
+            {
+              "dx": 0.45,
+              "dy": -0.18,
+              "dz": -0.22,
+              "w": 0.06,
+              "h": 0.35,
+              "d": 0.06,
+              "color": "#7A5C2E",
+              "shape": "box"
+            },
+            {
+              "dx": -0.45,
+              "dy": -0.18,
+              "dz": 0.22,
+              "w": 0.06,
+              "h": 0.35,
+              "d": 0.06,
+              "color": "#7A5C2E",
+              "shape": "box"
+            },
+            {
+              "dx": 0.45,
+              "dy": -0.18,
+              "dz": 0.22,
+              "w": 0.06,
+              "h": 0.35,
+              "d": 0.06,
+              "color": "#7A5C2E",
+              "shape": "box"
+            }
+          ]
+        }
+      ],
+      "evaluation": {
+        "placement_success_rate": 100.0,
+        "space_utilization": 3.4,
+        "circulation_score": 63.4,
+        "functional_coverage": 66.7,
+        "constraint_compliance": 100.0,
+        "furniture_density": 0.23,
+        "estimated_sustainability": 68.0,
+        "collision_count": 0,
+        "runtime_ms": 0.15,
+        "items_placed": 2,
+        "items_considered": 2,
+        "functions_required": [
+          "entertainment",
+          "lounging",
+          "seating"
+        ],
+        "functions_covered": [
+          "lounging",
+          "seating"
+        ],
+        "material_note": "Lowest embodied carbon item: 'Coffee Table' (Wood, carbon_score=0.20)",
+        "layout_score": {
+          "overall": 55.4,
+          "space_utilization": 0.8,
+          "circulation": 12.7,
+          "functional_coverage": 13.3,
+          "constraint_compliance": 15.0,
+          "sustainability": 13.6
+        },
+        "score_breakdown": {
+          "space_utilization": {
+            "raw": 3.4,
+            "weight": 0.25,
+            "contribution": 0.8
+          },
+          "circulation": {
+            "raw": 63.4,
+            "weight": 0.2,
+            "contribution": 12.7
+          },
+          "functional_coverage": {
+            "raw": 66.7,
+            "weight": 0.2,
+            "contribution": 13.3
+          },
+          "constraint_compliance": {
+            "raw": 100.0,
+            "weight": 0.15,
+            "contribution": 15.0
+          },
+          "sustainability": {
+            "raw": 68.0,
+            "weight": 0.2,
+            "contribution": 13.6
+          },
+          "overall": {
+            "raw": 55.4,
+            "weight": 1.0,
+            "contribution": 55.4
+          }
+        },
+        "explanation": {
+          "space_utilization": "Space utilization 3.4% weighted 25% => 0.8",
+          "circulation": "Circulation score 63.4% weighted 20% => 12.7",
+          "functional_coverage": "Functional coverage 66.7% weighted 20% => 13.3",
+          "constraint_compliance": "Constraint compliance 100.0% weighted 15% => 15.0",
+          "sustainability": "Sustainability 68.0% weighted 20% => 13.6",
+          "overall": "Overall design score 55.4 (sum of weighted sub\u2011scores)"
+        },
+        "evaluation_version": "v1.0"
+      }
+    },
+    {
+      "room_id": "private_office_1_1_0",
+      "label": "Private Office 1",
+      "dimensions": {
+        "w": 3.8,
+        "h": 3.8
+      },
+      "furniture": [
+        {
+          "name": "Ergonomic Chair",
+          "w": 0.62,
+          "d": 0.62,
+          "h": 1.1,
+          "px": 0.5,
+          "pz": 0.4894736842105263,
+          "rotY": 3.14159,
+          "color": "#2A2A3E",
+          "shape": "cylinder",
+          "functions": [
+            "seating",
+            "working"
+          ],
+          "material": "Recycled Mesh + Aluminium",
+          "carbon_score": 0.39,
+          "upper": false,
+          "parts": [
+            {
+              "dx": 0,
+              "dy": 0,
+              "dz": 0,
+              "w": 0.55,
+              "h": 0.08,
+              "d": 0.52,
+              "color": "#2A2A3E",
+              "shape": "cylinder"
+            },
+            {
+              "dx": 0,
+              "dy": 0.38,
+              "dz": -0.24,
+              "w": 0.48,
+              "h": 0.5,
+              "d": 0.06,
+              "color": "#1A1A2E",
+              "shape": "box"
+            },
+            {
+              "dx": 0,
+              "dy": -0.26,
+              "dz": 0,
+              "w": 0.08,
+              "h": 0.44,
+              "d": 0.08,
+              "color": "#4A4A5E",
+              "shape": "cylinder"
+            }
+          ]
+        },
+        {
+          "name": "Filing Cabinet",
+          "w": 0.5,
+          "d": 0.6,
+          "h": 1.3,
+          "px": 0.8947368421052632,
+          "pz": 0.5,
+          "rotY": -1.5708,
+          "color": "#6A6A6A",
+          "shape": "box",
+          "functions": [
+            "storage",
+            "filing"
+          ],
+          "material": "Steel",
+          "carbon_score": 0.45,
+          "upper": false,
+          "parts": [
+            {
+              "dx": 0,
+              "dy": 0,
+              "dz": 0,
+              "w": 0.5,
+              "h": 1.3,
+              "d": 0.6,
+              "color": "#6A6A6A",
+              "shape": "box"
+            },
+            {
+              "dx": 0,
+              "dy": 0.32,
+              "dz": -0.29,
+              "w": 0.44,
+              "h": 0.02,
+              "d": 0.04,
+              "color": "#888888",
+              "shape": "box"
+            },
+            {
+              "dx": 0,
+              "dy": -0.05,
+              "dz": -0.29,
+              "w": 0.44,
+              "h": 0.02,
+              "d": 0.04,
+              "color": "#888888",
+              "shape": "box"
+            },
+            {
+              "dx": 0,
+              "dy": -0.42,
+              "dz": -0.29,
+              "w": 0.44,
+              "h": 0.02,
+              "d": 0.04,
+              "color": "#888888",
+              "shape": "box"
+            }
+          ]
+        }
+      ],
+      "evaluation": {
+        "placement_success_rate": 66.7,
+        "space_utilization": 4.7,
+        "circulation_score": 64.7,
+        "functional_coverage": 66.7,
+        "constraint_compliance": 66.7,
+        "furniture_density": 1.39,
+        "estimated_sustainability": 58.0,
+        "collision_count": 1,
+        "runtime_ms": 0.1,
+        "items_placed": 2,
+        "items_considered": 3,
+        "functions_required": [
+          "computing",
+          "storage",
+          "working"
+        ],
+        "functions_covered": [
+          "storage",
+          "working"
+        ],
+        "material_note": "Lowest embodied carbon item: 'Ergonomic Chair' (Recycled Mesh + Aluminium, carbon_score=0.39)",
+        "layout_score": {
+          "overall": 49.0,
+          "space_utilization": 1.2,
+          "circulation": 12.9,
+          "functional_coverage": 13.3,
+          "constraint_compliance": 10.0,
+          "sustainability": 11.6
+        },
+        "score_breakdown": {
+          "space_utilization": {
+            "raw": 4.7,
+            "weight": 0.25,
+            "contribution": 1.2
+          },
+          "circulation": {
+            "raw": 64.7,
+            "weight": 0.2,
+            "contribution": 12.9
+          },
+          "functional_coverage": {
+            "raw": 66.7,
+            "weight": 0.2,
+            "contribution": 13.3
+          },
+          "constraint_compliance": {
+            "raw": 66.7,
+            "weight": 0.15,
+            "contribution": 10.0
+          },
+          "sustainability": {
+            "raw": 58.0,
+            "weight": 0.2,
+            "contribution": 11.6
+          },
+          "overall": {
+            "raw": 49.0,
+            "weight": 1.0,
+            "contribution": 49.0
+          }
+        },
+        "explanation": {
+          "space_utilization": "Space utilization 4.7% weighted 25% => 1.2",
+          "circulation": "Circulation score 64.7% weighted 20% => 12.9",
+          "functional_coverage": "Functional coverage 66.7% weighted 20% => 13.3",
+          "constraint_compliance": "Constraint compliance 66.7% weighted 15% => 10.0",
+          "sustainability": "Sustainability 58.0% weighted 20% => 11.6",
+          "overall": "Overall design score 49.0 (sum of weighted sub\u2011scores)"
+        },
+        "evaluation_version": "v1.0"
+      }
+    },
+    {
+      "room_id": "private_office_2_1_1",
+      "label": "Private Office 2",
+      "dimensions": {
+        "w": 3.8,
+        "h": 3.8
+      },
+      "furniture": [
+        {
+          "name": "Ergonomic Chair",
+          "w": 0.62,
+          "d": 0.62,
+          "h": 1.1,
+          "px": 0.5,
+          "pz": 0.4894736842105263,
+          "rotY": 3.14159,
+          "color": "#2A2A3E",
+          "shape": "cylinder",
+          "functions": [
+            "seating",
+            "working"
+          ],
+          "material": "Recycled Mesh + Aluminium",
+          "carbon_score": 0.39,
+          "upper": false,
+          "parts": [
+            {
+              "dx": 0,
+              "dy": 0,
+              "dz": 0,
+              "w": 0.55,
+              "h": 0.08,
+              "d": 0.52,
+              "color": "#2A2A3E",
+              "shape": "cylinder"
+            },
+            {
+              "dx": 0,
+              "dy": 0.38,
+              "dz": -0.24,
+              "w": 0.48,
+              "h": 0.5,
+              "d": 0.06,
+              "color": "#1A1A2E",
+              "shape": "box"
+            },
+            {
+              "dx": 0,
+              "dy": -0.26,
+              "dz": 0,
+              "w": 0.08,
+              "h": 0.44,
+              "d": 0.08,
+              "color": "#4A4A5E",
+              "shape": "cylinder"
+            }
+          ]
+        },
+        {
+          "name": "Filing Cabinet",
+          "w": 0.5,
+          "d": 0.6,
+          "h": 1.3,
+          "px": 0.8947368421052632,
+          "pz": 0.5,
+          "rotY": -1.5708,
+          "color": "#6A6A6A",
+          "shape": "box",
+          "functions": [
+            "storage",
+            "filing"
+          ],
+          "material": "Steel",
+          "carbon_score": 0.45,
+          "upper": false,
+          "parts": [
+            {
+              "dx": 0,
+              "dy": 0,
+              "dz": 0,
+              "w": 0.5,
+              "h": 1.3,
+              "d": 0.6,
+              "color": "#6A6A6A",
+              "shape": "box"
+            },
+            {
+              "dx": 0,
+              "dy": 0.32,
+              "dz": -0.29,
+              "w": 0.44,
+              "h": 0.02,
+              "d": 0.04,
+              "color": "#888888",
+              "shape": "box"
+            },
+            {
+              "dx": 0,
+              "dy": -0.05,
+              "dz": -0.29,
+              "w": 0.44,
+              "h": 0.02,
+              "d": 0.04,
+              "color": "#888888",
+              "shape": "box"
+            },
+            {
+              "dx": 0,
+              "dy": -0.42,
+              "dz": -0.29,
+              "w": 0.44,
+              "h": 0.02,
+              "d": 0.04,
+              "color": "#888888",
+              "shape": "box"
+            }
+          ]
+        }
+      ],
+      "evaluation": {
+        "placement_success_rate": 66.7,
+        "space_utilization": 4.7,
+        "circulation_score": 64.7,
+        "functional_coverage": 66.7,
+        "constraint_compliance": 66.7,
+        "furniture_density": 1.39,
+        "estimated_sustainability": 58.0,
+        "collision_count": 1,
+        "runtime_ms": 0.09,
+        "items_placed": 2,
+        "items_considered": 3,
+        "functions_required": [
+          "computing",
+          "storage",
+          "working"
+        ],
+        "functions_covered": [
+          "storage",
+          "working"
+        ],
+        "material_note": "Lowest embodied carbon item: 'Ergonomic Chair' (Recycled Mesh + Aluminium, carbon_score=0.39)",
+        "layout_score": {
+          "overall": 49.0,
+          "space_utilization": 1.2,
+          "circulation": 12.9,
+          "functional_coverage": 13.3,
+          "constraint_compliance": 10.0,
+          "sustainability": 11.6
+        },
+        "score_breakdown": {
+          "space_utilization": {
+            "raw": 4.7,
+            "weight": 0.25,
+            "contribution": 1.2
+          },
+          "circulation": {
+            "raw": 64.7,
+            "weight": 0.2,
+            "contribution": 12.9
+          },
+          "functional_coverage": {
+            "raw": 66.7,
+            "weight": 0.2,
+            "contribution": 13.3
+          },
+          "constraint_compliance": {
+            "raw": 66.7,
+            "weight": 0.15,
+            "contribution": 10.0
+          },
+          "sustainability": {
+            "raw": 58.0,
+            "weight": 0.2,
+            "contribution": 11.6
+          },
+          "overall": {
+            "raw": 49.0,
+            "weight": 1.0,
+            "contribution": 49.0
+          }
+        },
+        "explanation": {
+          "space_utilization": "Space utilization 4.7% weighted 25% => 1.2",
+          "circulation": "Circulation score 64.7% weighted 20% => 12.9",
+          "functional_coverage": "Functional coverage 66.7% weighted 20% => 13.3",
+          "constraint_compliance": "Constraint compliance 66.7% weighted 15% => 10.0",
+          "sustainability": "Sustainability 58.0% weighted 20% => 11.6",
+          "overall": "Overall design score 49.0 (sum of weighted sub\u2011scores)"
+        },
+        "evaluation_version": "v1.0"
+      }
+    },
+    {
+      "room_id": "private_office_3_1_2",
+      "label": "Private Office 3",
+      "dimensions": {
+        "w": 3.8,
+        "h": 3.8
+      },
+      "furniture": [
+        {
+          "name": "Ergonomic Chair",
+          "w": 0.62,
+          "d": 0.62,
+          "h": 1.1,
+          "px": 0.5,
+          "pz": 0.4894736842105263,
+          "rotY": 3.14159,
+          "color": "#2A2A3E",
+          "shape": "cylinder",
+          "functions": [
+            "seating",
+            "working"
+          ],
+          "material": "Recycled Mesh + Aluminium",
+          "carbon_score": 0.39,
+          "upper": false,
+          "parts": [
+            {
+              "dx": 0,
+              "dy": 0,
+              "dz": 0,
+              "w": 0.55,
+              "h": 0.08,
+              "d": 0.52,
+              "color": "#2A2A3E",
+              "shape": "cylinder"
+            },
+            {
+              "dx": 0,
+              "dy": 0.38,
+              "dz": -0.24,
+              "w": 0.48,
+              "h": 0.5,
+              "d": 0.06,
+              "color": "#1A1A2E",
+              "shape": "box"
+            },
+            {
+              "dx": 0,
+              "dy": -0.26,
+              "dz": 0,
+              "w": 0.08,
+              "h": 0.44,
+              "d": 0.08,
+              "color": "#4A4A5E",
+              "shape": "cylinder"
+            }
+          ]
+        },
+        {
+          "name": "Filing Cabinet",
+          "w": 0.5,
+          "d": 0.6,
+          "h": 1.3,
+          "px": 0.8947368421052632,
+          "pz": 0.5,
+          "rotY": -1.5708,
+          "color": "#6A6A6A",
+          "shape": "box",
+          "functions": [
+            "storage",
+            "filing"
+          ],
+          "material": "Steel",
+          "carbon_score": 0.45,
+          "upper": false,
+          "parts": [
+            {
+              "dx": 0,
+              "dy": 0,
+              "dz": 0,
+              "w": 0.5,
+              "h": 1.3,
+              "d": 0.6,
+              "color": "#6A6A6A",
+              "shape": "box"
+            },
+            {
+              "dx": 0,
+              "dy": 0.32,
+              "dz": -0.29,
+              "w": 0.44,
+              "h": 0.02,
+              "d": 0.04,
+              "color": "#888888",
+              "shape": "box"
+            },
+            {
+              "dx": 0,
+              "dy": -0.05,
+              "dz": -0.29,
+              "w": 0.44,
+              "h": 0.02,
+              "d": 0.04,
+              "color": "#888888",
+              "shape": "box"
+            },
+            {
+              "dx": 0,
+              "dy": -0.42,
+              "dz": -0.29,
+              "w": 0.44,
+              "h": 0.02,
+              "d": 0.04,
+              "color": "#888888",
+              "shape": "box"
+            }
+          ]
+        }
+      ],
+      "evaluation": {
+        "placement_success_rate": 66.7,
+        "space_utilization": 4.7,
+        "circulation_score": 64.7,
+        "functional_coverage": 66.7,
+        "constraint_compliance": 66.7,
+        "furniture_density": 1.39,
+        "estimated_sustainability": 58.0,
+        "collision_count": 1,
+        "runtime_ms": 0.08,
+        "items_placed": 2,
+        "items_considered": 3,
+        "functions_required": [
+          "computing",
+          "storage",
+          "working"
+        ],
+        "functions_covered": [
+          "storage",
+          "working"
+        ],
+        "material_note": "Lowest embodied carbon item: 'Ergonomic Chair' (Recycled Mesh + Aluminium, carbon_score=0.39)",
+        "layout_score": {
+          "overall": 49.0,
+          "space_utilization": 1.2,
+          "circulation": 12.9,
+          "functional_coverage": 13.3,
+          "constraint_compliance": 10.0,
+          "sustainability": 11.6
+        },
+        "score_breakdown": {
+          "space_utilization": {
+            "raw": 4.7,
+            "weight": 0.25,
+            "contribution": 1.2
+          },
+          "circulation": {
+            "raw": 64.7,
+            "weight": 0.2,
+            "contribution": 12.9
+          },
+          "functional_coverage": {
+            "raw": 66.7,
+            "weight": 0.2,
+            "contribution": 13.3
+          },
+          "constraint_compliance": {
+            "raw": 66.7,
+            "weight": 0.15,
+            "contribution": 10.0
+          },
+          "sustainability": {
+            "raw": 58.0,
+            "weight": 0.2,
+            "contribution": 11.6
+          },
+          "overall": {
+            "raw": 49.0,
+            "weight": 1.0,
+            "contribution": 49.0
+          }
+        },
+        "explanation": {
+          "space_utilization": "Space utilization 4.7% weighted 25% => 1.2",
+          "circulation": "Circulation score 64.7% weighted 20% => 12.9",
+          "functional_coverage": "Functional coverage 66.7% weighted 20% => 13.3",
+          "constraint_compliance": "Constraint compliance 66.7% weighted 15% => 10.0",
+          "sustainability": "Sustainability 58.0% weighted 20% => 11.6",
+          "overall": "Overall design score 49.0 (sum of weighted sub\u2011scores)"
+        },
+        "evaluation_version": "v1.0"
+      }
+    },
+    {
+      "room_id": "private_office_4_1_3",
+      "label": "Private Office 4",
+      "dimensions": {
+        "w": 3.8,
+        "h": 3.8
+      },
+      "furniture": [
+        {
+          "name": "Ergonomic Chair",
+          "w": 0.62,
+          "d": 0.62,
+          "h": 1.1,
+          "px": 0.5,
+          "pz": 0.4894736842105263,
+          "rotY": 3.14159,
+          "color": "#2A2A3E",
+          "shape": "cylinder",
+          "functions": [
+            "seating",
+            "working"
+          ],
+          "material": "Recycled Mesh + Aluminium",
+          "carbon_score": 0.39,
+          "upper": false,
+          "parts": [
+            {
+              "dx": 0,
+              "dy": 0,
+              "dz": 0,
+              "w": 0.55,
+              "h": 0.08,
+              "d": 0.52,
+              "color": "#2A2A3E",
+              "shape": "cylinder"
+            },
+            {
+              "dx": 0,
+              "dy": 0.38,
+              "dz": -0.24,
+              "w": 0.48,
+              "h": 0.5,
+              "d": 0.06,
+              "color": "#1A1A2E",
+              "shape": "box"
+            },
+            {
+              "dx": 0,
+              "dy": -0.26,
+              "dz": 0,
+              "w": 0.08,
+              "h": 0.44,
+              "d": 0.08,
+              "color": "#4A4A5E",
+              "shape": "cylinder"
+            }
+          ]
+        },
+        {
+          "name": "Filing Cabinet",
+          "w": 0.5,
+          "d": 0.6,
+          "h": 1.3,
+          "px": 0.8947368421052632,
+          "pz": 0.5,
+          "rotY": -1.5708,
+          "color": "#6A6A6A",
+          "shape": "box",
+          "functions": [
+            "storage",
+            "filing"
+          ],
+          "material": "Steel",
+          "carbon_score": 0.45,
+          "upper": false,
+          "parts": [
+            {
+              "dx": 0,
+              "dy": 0,
+              "dz": 0,
+              "w": 0.5,
+              "h": 1.3,
+              "d": 0.6,
+              "color": "#6A6A6A",
+              "shape": "box"
+            },
+            {
+              "dx": 0,
+              "dy": 0.32,
+              "dz": -0.29,
+              "w": 0.44,
+              "h": 0.02,
+              "d": 0.04,
+              "color": "#888888",
+              "shape": "box"
+            },
+            {
+              "dx": 0,
+              "dy": -0.05,
+              "dz": -0.29,
+              "w": 0.44,
+              "h": 0.02,
+              "d": 0.04,
+              "color": "#888888",
+              "shape": "box"
+            },
+            {
+              "dx": 0,
+              "dy": -0.42,
+              "dz": -0.29,
+              "w": 0.44,
+              "h": 0.02,
+              "d": 0.04,
+              "color": "#888888",
+              "shape": "box"
+            }
+          ]
+        }
+      ],
+      "evaluation": {
+        "placement_success_rate": 66.7,
+        "space_utilization": 4.7,
+        "circulation_score": 64.7,
+        "functional_coverage": 66.7,
+        "constraint_compliance": 66.7,
+        "furniture_density": 1.39,
+        "estimated_sustainability": 58.0,
+        "collision_count": 1,
+        "runtime_ms": 0.08,
+        "items_placed": 2,
+        "items_considered": 3,
+        "functions_required": [
+          "computing",
+          "storage",
+          "working"
+        ],
+        "functions_covered": [
+          "storage",
+          "working"
+        ],
+        "material_note": "Lowest embodied carbon item: 'Ergonomic Chair' (Recycled Mesh + Aluminium, carbon_score=0.39)",
+        "layout_score": {
+          "overall": 49.0,
+          "space_utilization": 1.2,
+          "circulation": 12.9,
+          "functional_coverage": 13.3,
+          "constraint_compliance": 10.0,
+          "sustainability": 11.6
+        },
+        "score_breakdown": {
+          "space_utilization": {
+            "raw": 4.7,
+            "weight": 0.25,
+            "contribution": 1.2
+          },
+          "circulation": {
+            "raw": 64.7,
+            "weight": 0.2,
+            "contribution": 12.9
+          },
+          "functional_coverage": {
+            "raw": 66.7,
+            "weight": 0.2,
+            "contribution": 13.3
+          },
+          "constraint_compliance": {
+            "raw": 66.7,
+            "weight": 0.15,
+            "contribution": 10.0
+          },
+          "sustainability": {
+            "raw": 58.0,
+            "weight": 0.2,
+            "contribution": 11.6
+          },
+          "overall": {
+            "raw": 49.0,
+            "weight": 1.0,
+            "contribution": 49.0
+          }
+        },
+        "explanation": {
+          "space_utilization": "Space utilization 4.7% weighted 25% => 1.2",
+          "circulation": "Circulation score 64.7% weighted 20% => 12.9",
+          "functional_coverage": "Functional coverage 66.7% weighted 20% => 13.3",
+          "constraint_compliance": "Constraint compliance 66.7% weighted 15% => 10.0",
+          "sustainability": "Sustainability 58.0% weighted 20% => 11.6",
+          "overall": "Overall design score 49.0 (sum of weighted sub\u2011scores)"
+        },
+        "evaluation_version": "v1.0"
+      }
+    },
+    {
+      "room_id": "private_office_5_1_4",
+      "label": "Private Office 5",
+      "dimensions": {
+        "w": 3.8,
+        "h": 3.8
+      },
+      "furniture": [
+        {
+          "name": "Ergonomic Chair",
+          "w": 0.62,
+          "d": 0.62,
+          "h": 1.1,
+          "px": 0.5,
+          "pz": 0.4894736842105263,
+          "rotY": 3.14159,
+          "color": "#2A2A3E",
+          "shape": "cylinder",
+          "functions": [
+            "seating",
+            "working"
+          ],
+          "material": "Recycled Mesh + Aluminium",
+          "carbon_score": 0.39,
+          "upper": false,
+          "parts": [
+            {
+              "dx": 0,
+              "dy": 0,
+              "dz": 0,
+              "w": 0.55,
+              "h": 0.08,
+              "d": 0.52,
+              "color": "#2A2A3E",
+              "shape": "cylinder"
+            },
+            {
+              "dx": 0,
+              "dy": 0.38,
+              "dz": -0.24,
+              "w": 0.48,
+              "h": 0.5,
+              "d": 0.06,
+              "color": "#1A1A2E",
+              "shape": "box"
+            },
+            {
+              "dx": 0,
+              "dy": -0.26,
+              "dz": 0,
+              "w": 0.08,
+              "h": 0.44,
+              "d": 0.08,
+              "color": "#4A4A5E",
+              "shape": "cylinder"
+            }
+          ]
+        },
+        {
+          "name": "Filing Cabinet",
+          "w": 0.5,
+          "d": 0.6,
+          "h": 1.3,
+          "px": 0.8947368421052632,
+          "pz": 0.5,
+          "rotY": -1.5708,
+          "color": "#6A6A6A",
+          "shape": "box",
+          "functions": [
+            "storage",
+            "filing"
+          ],
+          "material": "Steel",
+          "carbon_score": 0.45,
+          "upper": false,
+          "parts": [
+            {
+              "dx": 0,
+              "dy": 0,
+              "dz": 0,
+              "w": 0.5,
+              "h": 1.3,
+              "d": 0.6,
+              "color": "#6A6A6A",
+              "shape": "box"
+            },
+            {
+              "dx": 0,
+              "dy": 0.32,
+              "dz": -0.29,
+              "w": 0.44,
+              "h": 0.02,
+              "d": 0.04,
+              "color": "#888888",
+              "shape": "box"
+            },
+            {
+              "dx": 0,
+              "dy": -0.05,
+              "dz": -0.29,
+              "w": 0.44,
+              "h": 0.02,
+              "d": 0.04,
+              "color": "#888888",
+              "shape": "box"
+            },
+            {
+              "dx": 0,
+              "dy": -0.42,
+              "dz": -0.29,
+              "w": 0.44,
+              "h": 0.02,
+              "d": 0.04,
+              "color": "#888888",
+              "shape": "box"
+            }
+          ]
+        }
+      ],
+      "evaluation": {
+        "placement_success_rate": 66.7,
+        "space_utilization": 4.7,
+        "circulation_score": 64.7,
+        "functional_coverage": 66.7,
+        "constraint_compliance": 66.7,
+        "furniture_density": 1.39,
+        "estimated_sustainability": 58.0,
+        "collision_count": 1,
+        "runtime_ms": 0.07,
+        "items_placed": 2,
+        "items_considered": 3,
+        "functions_required": [
+          "computing",
+          "storage",
+          "working"
+        ],
+        "functions_covered": [
+          "storage",
+          "working"
+        ],
+        "material_note": "Lowest embodied carbon item: 'Ergonomic Chair' (Recycled Mesh + Aluminium, carbon_score=0.39)",
+        "layout_score": {
+          "overall": 49.0,
+          "space_utilization": 1.2,
+          "circulation": 12.9,
+          "functional_coverage": 13.3,
+          "constraint_compliance": 10.0,
+          "sustainability": 11.6
+        },
+        "score_breakdown": {
+          "space_utilization": {
+            "raw": 4.7,
+            "weight": 0.25,
+            "contribution": 1.2
+          },
+          "circulation": {
+            "raw": 64.7,
+            "weight": 0.2,
+            "contribution": 12.9
+          },
+          "functional_coverage": {
+            "raw": 66.7,
+            "weight": 0.2,
+            "contribution": 13.3
+          },
+          "constraint_compliance": {
+            "raw": 66.7,
+            "weight": 0.15,
+            "contribution": 10.0
+          },
+          "sustainability": {
+            "raw": 58.0,
+            "weight": 0.2,
+            "contribution": 11.6
+          },
+          "overall": {
+            "raw": 49.0,
+            "weight": 1.0,
+            "contribution": 49.0
+          }
+        },
+        "explanation": {
+          "space_utilization": "Space utilization 4.7% weighted 25% => 1.2",
+          "circulation": "Circulation score 64.7% weighted 20% => 12.9",
+          "functional_coverage": "Functional coverage 66.7% weighted 20% => 13.3",
+          "constraint_compliance": "Constraint compliance 66.7% weighted 15% => 10.0",
+          "sustainability": "Sustainability 58.0% weighted 20% => 11.6",
+          "overall": "Overall design score 49.0 (sum of weighted sub\u2011scores)"
+        },
+        "evaluation_version": "v1.0"
+      }
+    },
+    {
+      "room_id": "private_office_6_1_5",
+      "label": "Private Office 6",
+      "dimensions": {
+        "w": 3.8,
+        "h": 3.8
+      },
+      "furniture": [
+        {
+          "name": "Ergonomic Chair",
+          "w": 0.62,
+          "d": 0.62,
+          "h": 1.1,
+          "px": 0.5,
+          "pz": 0.4894736842105263,
+          "rotY": 3.14159,
+          "color": "#2A2A3E",
+          "shape": "cylinder",
+          "functions": [
+            "seating",
+            "working"
+          ],
+          "material": "Recycled Mesh + Aluminium",
+          "carbon_score": 0.39,
+          "upper": false,
+          "parts": [
+            {
+              "dx": 0,
+              "dy": 0,
+              "dz": 0,
+              "w": 0.55,
+              "h": 0.08,
+              "d": 0.52,
+              "color": "#2A2A3E",
+              "shape": "cylinder"
+            },
+            {
+              "dx": 0,
+              "dy": 0.38,
+              "dz": -0.24,
+              "w": 0.48,
+              "h": 0.5,
+              "d": 0.06,
+              "color": "#1A1A2E",
+              "shape": "box"
+            },
+            {
+              "dx": 0,
+              "dy": -0.26,
+              "dz": 0,
+              "w": 0.08,
+              "h": 0.44,
+              "d": 0.08,
+              "color": "#4A4A5E",
+              "shape": "cylinder"
+            }
+          ]
+        },
+        {
+          "name": "Filing Cabinet",
+          "w": 0.5,
+          "d": 0.6,
+          "h": 1.3,
+          "px": 0.8947368421052632,
+          "pz": 0.5,
+          "rotY": -1.5708,
+          "color": "#6A6A6A",
+          "shape": "box",
+          "functions": [
+            "storage",
+            "filing"
+          ],
+          "material": "Steel",
+          "carbon_score": 0.45,
+          "upper": false,
+          "parts": [
+            {
+              "dx": 0,
+              "dy": 0,
+              "dz": 0,
+              "w": 0.5,
+              "h": 1.3,
+              "d": 0.6,
+              "color": "#6A6A6A",
+              "shape": "box"
+            },
+            {
+              "dx": 0,
+              "dy": 0.32,
+              "dz": -0.29,
+              "w": 0.44,
+              "h": 0.02,
+              "d": 0.04,
+              "color": "#888888",
+              "shape": "box"
+            },
+            {
+              "dx": 0,
+              "dy": -0.05,
+              "dz": -0.29,
+              "w": 0.44,
+              "h": 0.02,
+              "d": 0.04,
+              "color": "#888888",
+              "shape": "box"
+            },
+            {
+              "dx": 0,
+              "dy": -0.42,
+              "dz": -0.29,
+              "w": 0.44,
+              "h": 0.02,
+              "d": 0.04,
+              "color": "#888888",
+              "shape": "box"
+            }
+          ]
+        }
+      ],
+      "evaluation": {
+        "placement_success_rate": 66.7,
+        "space_utilization": 4.7,
+        "circulation_score": 64.7,
+        "functional_coverage": 66.7,
+        "constraint_compliance": 66.7,
+        "furniture_density": 1.39,
+        "estimated_sustainability": 58.0,
+        "collision_count": 1,
+        "runtime_ms": 0.07,
+        "items_placed": 2,
+        "items_considered": 3,
+        "functions_required": [
+          "computing",
+          "storage",
+          "working"
+        ],
+        "functions_covered": [
+          "storage",
+          "working"
+        ],
+        "material_note": "Lowest embodied carbon item: 'Ergonomic Chair' (Recycled Mesh + Aluminium, carbon_score=0.39)",
+        "layout_score": {
+          "overall": 49.0,
+          "space_utilization": 1.2,
+          "circulation": 12.9,
+          "functional_coverage": 13.3,
+          "constraint_compliance": 10.0,
+          "sustainability": 11.6
+        },
+        "score_breakdown": {
+          "space_utilization": {
+            "raw": 4.7,
+            "weight": 0.25,
+            "contribution": 1.2
+          },
+          "circulation": {
+            "raw": 64.7,
+            "weight": 0.2,
+            "contribution": 12.9
+          },
+          "functional_coverage": {
+            "raw": 66.7,
+            "weight": 0.2,
+            "contribution": 13.3
+          },
+          "constraint_compliance": {
+            "raw": 66.7,
+            "weight": 0.15,
+            "contribution": 10.0
+          },
+          "sustainability": {
+            "raw": 58.0,
+            "weight": 0.2,
+            "contribution": 11.6
+          },
+          "overall": {
+            "raw": 49.0,
+            "weight": 1.0,
+            "contribution": 49.0
+          }
+        },
+        "explanation": {
+          "space_utilization": "Space utilization 4.7% weighted 25% => 1.2",
+          "circulation": "Circulation score 64.7% weighted 20% => 12.9",
+          "functional_coverage": "Functional coverage 66.7% weighted 20% => 13.3",
+          "constraint_compliance": "Constraint compliance 66.7% weighted 15% => 10.0",
+          "sustainability": "Sustainability 58.0% weighted 20% => 11.6",
+          "overall": "Overall design score 49.0 (sum of weighted sub\u2011scores)"
+        },
+        "evaluation_version": "v1.0"
+      }
+    },
+    {
+      "room_id": "private_office_7_1_6",
+      "label": "Private Office 7",
+      "dimensions": {
+        "w": 3.8,
+        "h": 3.8
+      },
+      "furniture": [
+        {
+          "name": "Ergonomic Chair",
+          "w": 0.62,
+          "d": 0.62,
+          "h": 1.1,
+          "px": 0.5,
+          "pz": 0.4894736842105263,
+          "rotY": 3.14159,
+          "color": "#2A2A3E",
+          "shape": "cylinder",
+          "functions": [
+            "seating",
+            "working"
+          ],
+          "material": "Recycled Mesh + Aluminium",
+          "carbon_score": 0.39,
+          "upper": false,
+          "parts": [
+            {
+              "dx": 0,
+              "dy": 0,
+              "dz": 0,
+              "w": 0.55,
+              "h": 0.08,
+              "d": 0.52,
+              "color": "#2A2A3E",
+              "shape": "cylinder"
+            },
+            {
+              "dx": 0,
+              "dy": 0.38,
+              "dz": -0.24,
+              "w": 0.48,
+              "h": 0.5,
+              "d": 0.06,
+              "color": "#1A1A2E",
+              "shape": "box"
+            },
+            {
+              "dx": 0,
+              "dy": -0.26,
+              "dz": 0,
+              "w": 0.08,
+              "h": 0.44,
+              "d": 0.08,
+              "color": "#4A4A5E",
+              "shape": "cylinder"
+            }
+          ]
+        },
+        {
+          "name": "Filing Cabinet",
+          "w": 0.5,
+          "d": 0.6,
+          "h": 1.3,
+          "px": 0.8947368421052632,
+          "pz": 0.5,
+          "rotY": -1.5708,
+          "color": "#6A6A6A",
+          "shape": "box",
+          "functions": [
+            "storage",
+            "filing"
+          ],
+          "material": "Steel",
+          "carbon_score": 0.45,
+          "upper": false,
+          "parts": [
+            {
+              "dx": 0,
+              "dy": 0,
+              "dz": 0,
+              "w": 0.5,
+              "h": 1.3,
+              "d": 0.6,
+              "color": "#6A6A6A",
+              "shape": "box"
+            },
+            {
+              "dx": 0,
+              "dy": 0.32,
+              "dz": -0.29,
+              "w": 0.44,
+              "h": 0.02,
+              "d": 0.04,
+              "color": "#888888",
+              "shape": "box"
+            },
+            {
+              "dx": 0,
+              "dy": -0.05,
+              "dz": -0.29,
+              "w": 0.44,
+              "h": 0.02,
+              "d": 0.04,
+              "color": "#888888",
+              "shape": "box"
+            },
+            {
+              "dx": 0,
+              "dy": -0.42,
+              "dz": -0.29,
+              "w": 0.44,
+              "h": 0.02,
+              "d": 0.04,
+              "color": "#888888",
+              "shape": "box"
+            }
+          ]
+        }
+      ],
+      "evaluation": {
+        "placement_success_rate": 66.7,
+        "space_utilization": 4.7,
+        "circulation_score": 64.7,
+        "functional_coverage": 66.7,
+        "constraint_compliance": 66.7,
+        "furniture_density": 1.39,
+        "estimated_sustainability": 58.0,
+        "collision_count": 1,
+        "runtime_ms": 0.08,
+        "items_placed": 2,
+        "items_considered": 3,
+        "functions_required": [
+          "computing",
+          "storage",
+          "working"
+        ],
+        "functions_covered": [
+          "storage",
+          "working"
+        ],
+        "material_note": "Lowest embodied carbon item: 'Ergonomic Chair' (Recycled Mesh + Aluminium, carbon_score=0.39)",
+        "layout_score": {
+          "overall": 49.0,
+          "space_utilization": 1.2,
+          "circulation": 12.9,
+          "functional_coverage": 13.3,
+          "constraint_compliance": 10.0,
+          "sustainability": 11.6
+        },
+        "score_breakdown": {
+          "space_utilization": {
+            "raw": 4.7,
+            "weight": 0.25,
+            "contribution": 1.2
+          },
+          "circulation": {
+            "raw": 64.7,
+            "weight": 0.2,
+            "contribution": 12.9
+          },
+          "functional_coverage": {
+            "raw": 66.7,
+            "weight": 0.2,
+            "contribution": 13.3
+          },
+          "constraint_compliance": {
+            "raw": 66.7,
+            "weight": 0.15,
+            "contribution": 10.0
+          },
+          "sustainability": {
+            "raw": 58.0,
+            "weight": 0.2,
+            "contribution": 11.6
+          },
+          "overall": {
+            "raw": 49.0,
+            "weight": 1.0,
+            "contribution": 49.0
+          }
+        },
+        "explanation": {
+          "space_utilization": "Space utilization 4.7% weighted 25% => 1.2",
+          "circulation": "Circulation score 64.7% weighted 20% => 12.9",
+          "functional_coverage": "Functional coverage 66.7% weighted 20% => 13.3",
+          "constraint_compliance": "Constraint compliance 66.7% weighted 15% => 10.0",
+          "sustainability": "Sustainability 58.0% weighted 20% => 11.6",
+          "overall": "Overall design score 49.0 (sum of weighted sub\u2011scores)"
+        },
+        "evaluation_version": "v1.0"
+      }
+    },
+    {
+      "room_id": "meeting_room_1_1_7",
+      "label": "Meeting Room 1",
+      "dimensions": {
+        "w": 3.8,
+        "h": 3.8
+      },
+      "furniture": [
+        {
+          "name": "Ergonomic Chair",
+          "w": 0.62,
+          "d": 0.62,
+          "h": 1.1,
+          "px": 0.5,
+          "pz": 0.4894736842105263,
+          "rotY": 3.14159,
+          "color": "#2A2A3E",
+          "shape": "cylinder",
+          "functions": [
+            "seating",
+            "working"
+          ],
+          "material": "Recycled Mesh + Aluminium",
+          "carbon_score": 0.39,
+          "upper": false,
+          "parts": [
+            {
+              "dx": 0,
+              "dy": 0,
+              "dz": 0,
+              "w": 0.55,
+              "h": 0.08,
+              "d": 0.52,
+              "color": "#2A2A3E",
+              "shape": "cylinder"
+            },
+            {
+              "dx": 0,
+              "dy": 0.38,
+              "dz": -0.24,
+              "w": 0.48,
+              "h": 0.5,
+              "d": 0.06,
+              "color": "#1A1A2E",
+              "shape": "box"
+            },
+            {
+              "dx": 0,
+              "dy": -0.26,
+              "dz": 0,
+              "w": 0.08,
+              "h": 0.44,
+              "d": 0.08,
+              "color": "#4A4A5E",
+              "shape": "cylinder"
+            }
+          ]
+        },
+        {
+          "name": "Filing Cabinet",
+          "w": 0.5,
+          "d": 0.6,
+          "h": 1.3,
+          "px": 0.8947368421052632,
+          "pz": 0.5,
+          "rotY": -1.5708,
+          "color": "#6A6A6A",
+          "shape": "box",
+          "functions": [
+            "storage",
+            "filing"
+          ],
+          "material": "Steel",
+          "carbon_score": 0.45,
+          "upper": false,
+          "parts": [
+            {
+              "dx": 0,
+              "dy": 0,
+              "dz": 0,
+              "w": 0.5,
+              "h": 1.3,
+              "d": 0.6,
+              "color": "#6A6A6A",
+              "shape": "box"
+            },
+            {
+              "dx": 0,
+              "dy": 0.32,
+              "dz": -0.29,
+              "w": 0.44,
+              "h": 0.02,
+              "d": 0.04,
+              "color": "#888888",
+              "shape": "box"
+            },
+            {
+              "dx": 0,
+              "dy": -0.05,
+              "dz": -0.29,
+              "w": 0.44,
+              "h": 0.02,
+              "d": 0.04,
+              "color": "#888888",
+              "shape": "box"
+            },
+            {
+              "dx": 0,
+              "dy": -0.42,
+              "dz": -0.29,
+              "w": 0.44,
+              "h": 0.02,
+              "d": 0.04,
+              "color": "#888888",
+              "shape": "box"
+            }
+          ]
+        }
+      ],
+      "evaluation": {
+        "placement_success_rate": 66.7,
+        "space_utilization": 4.7,
+        "circulation_score": 64.7,
+        "functional_coverage": 66.7,
+        "constraint_compliance": 66.7,
+        "furniture_density": 1.39,
+        "estimated_sustainability": 58.0,
+        "collision_count": 1,
+        "runtime_ms": 0.07,
+        "items_placed": 2,
+        "items_considered": 3,
+        "functions_required": [
+          "computing",
+          "storage",
+          "working"
+        ],
+        "functions_covered": [
+          "storage",
+          "working"
+        ],
+        "material_note": "Lowest embodied carbon item: 'Ergonomic Chair' (Recycled Mesh + Aluminium, carbon_score=0.39)",
+        "layout_score": {
+          "overall": 49.0,
+          "space_utilization": 1.2,
+          "circulation": 12.9,
+          "functional_coverage": 13.3,
+          "constraint_compliance": 10.0,
+          "sustainability": 11.6
+        },
+        "score_breakdown": {
+          "space_utilization": {
+            "raw": 4.7,
+            "weight": 0.25,
+            "contribution": 1.2
+          },
+          "circulation": {
+            "raw": 64.7,
+            "weight": 0.2,
+            "contribution": 12.9
+          },
+          "functional_coverage": {
+            "raw": 66.7,
+            "weight": 0.2,
+            "contribution": 13.3
+          },
+          "constraint_compliance": {
+            "raw": 66.7,
+            "weight": 0.15,
+            "contribution": 10.0
+          },
+          "sustainability": {
+            "raw": 58.0,
+            "weight": 0.2,
+            "contribution": 11.6
+          },
+          "overall": {
+            "raw": 49.0,
+            "weight": 1.0,
+            "contribution": 49.0
+          }
+        },
+        "explanation": {
+          "space_utilization": "Space utilization 4.7% weighted 25% => 1.2",
+          "circulation": "Circulation score 64.7% weighted 20% => 12.9",
+          "functional_coverage": "Functional coverage 66.7% weighted 20% => 13.3",
+          "constraint_compliance": "Constraint compliance 66.7% weighted 15% => 10.0",
+          "sustainability": "Sustainability 58.0% weighted 20% => 11.6",
+          "overall": "Overall design score 49.0 (sum of weighted sub\u2011scores)"
+        },
+        "evaluation_version": "v1.0"
+      }
+    },
+    {
+      "room_id": "meeting_room_2_1_8",
+      "label": "Meeting Room 2",
+      "dimensions": {
+        "w": 3.8,
+        "h": 3.8
+      },
+      "furniture": [
+        {
+          "name": "Ergonomic Chair",
+          "w": 0.62,
+          "d": 0.62,
+          "h": 1.1,
+          "px": 0.5,
+          "pz": 0.4894736842105263,
+          "rotY": 3.14159,
+          "color": "#2A2A3E",
+          "shape": "cylinder",
+          "functions": [
+            "seating",
+            "working"
+          ],
+          "material": "Recycled Mesh + Aluminium",
+          "carbon_score": 0.39,
+          "upper": false,
+          "parts": [
+            {
+              "dx": 0,
+              "dy": 0,
+              "dz": 0,
+              "w": 0.55,
+              "h": 0.08,
+              "d": 0.52,
+              "color": "#2A2A3E",
+              "shape": "cylinder"
+            },
+            {
+              "dx": 0,
+              "dy": 0.38,
+              "dz": -0.24,
+              "w": 0.48,
+              "h": 0.5,
+              "d": 0.06,
+              "color": "#1A1A2E",
+              "shape": "box"
+            },
+            {
+              "dx": 0,
+              "dy": -0.26,
+              "dz": 0,
+              "w": 0.08,
+              "h": 0.44,
+              "d": 0.08,
+              "color": "#4A4A5E",
+              "shape": "cylinder"
+            }
+          ]
+        },
+        {
+          "name": "Filing Cabinet",
+          "w": 0.5,
+          "d": 0.6,
+          "h": 1.3,
+          "px": 0.8947368421052632,
+          "pz": 0.5,
+          "rotY": -1.5708,
+          "color": "#6A6A6A",
+          "shape": "box",
+          "functions": [
+            "storage",
+            "filing"
+          ],
+          "material": "Steel",
+          "carbon_score": 0.45,
+          "upper": false,
+          "parts": [
+            {
+              "dx": 0,
+              "dy": 0,
+              "dz": 0,
+              "w": 0.5,
+              "h": 1.3,
+              "d": 0.6,
+              "color": "#6A6A6A",
+              "shape": "box"
+            },
+            {
+              "dx": 0,
+              "dy": 0.32,
+              "dz": -0.29,
+              "w": 0.44,
+              "h": 0.02,
+              "d": 0.04,
+              "color": "#888888",
+              "shape": "box"
+            },
+            {
+              "dx": 0,
+              "dy": -0.05,
+              "dz": -0.29,
+              "w": 0.44,
+              "h": 0.02,
+              "d": 0.04,
+              "color": "#888888",
+              "shape": "box"
+            },
+            {
+              "dx": 0,
+              "dy": -0.42,
+              "dz": -0.29,
+              "w": 0.44,
+              "h": 0.02,
+              "d": 0.04,
+              "color": "#888888",
+              "shape": "box"
+            }
+          ]
+        }
+      ],
+      "evaluation": {
+        "placement_success_rate": 66.7,
+        "space_utilization": 4.7,
+        "circulation_score": 64.7,
+        "functional_coverage": 66.7,
+        "constraint_compliance": 66.7,
+        "furniture_density": 1.39,
+        "estimated_sustainability": 58.0,
+        "collision_count": 1,
+        "runtime_ms": 0.07,
+        "items_placed": 2,
+        "items_considered": 3,
+        "functions_required": [
+          "computing",
+          "storage",
+          "working"
+        ],
+        "functions_covered": [
+          "storage",
+          "working"
+        ],
+        "material_note": "Lowest embodied carbon item: 'Ergonomic Chair' (Recycled Mesh + Aluminium, carbon_score=0.39)",
+        "layout_score": {
+          "overall": 49.0,
+          "space_utilization": 1.2,
+          "circulation": 12.9,
+          "functional_coverage": 13.3,
+          "constraint_compliance": 10.0,
+          "sustainability": 11.6
+        },
+        "score_breakdown": {
+          "space_utilization": {
+            "raw": 4.7,
+            "weight": 0.25,
+            "contribution": 1.2
+          },
+          "circulation": {
+            "raw": 64.7,
+            "weight": 0.2,
+            "contribution": 12.9
+          },
+          "functional_coverage": {
+            "raw": 66.7,
+            "weight": 0.2,
+            "contribution": 13.3
+          },
+          "constraint_compliance": {
+            "raw": 66.7,
+            "weight": 0.15,
+            "contribution": 10.0
+          },
+          "sustainability": {
+            "raw": 58.0,
+            "weight": 0.2,
+            "contribution": 11.6
+          },
+          "overall": {
+            "raw": 49.0,
+            "weight": 1.0,
+            "contribution": 49.0
+          }
+        },
+        "explanation": {
+          "space_utilization": "Space utilization 4.7% weighted 25% => 1.2",
+          "circulation": "Circulation score 64.7% weighted 20% => 12.9",
+          "functional_coverage": "Functional coverage 66.7% weighted 20% => 13.3",
+          "constraint_compliance": "Constraint compliance 66.7% weighted 15% => 10.0",
+          "sustainability": "Sustainability 58.0% weighted 20% => 11.6",
+          "overall": "Overall design score 49.0 (sum of weighted sub\u2011scores)"
+        },
+        "evaluation_version": "v1.0"
+      }
+    },
+    {
+      "room_id": "main_circulation_core_1_9",
+      "label": "Main Circulation Core",
+      "dimensions": {
+        "w": 3.8,
+        "h": 3.8
+      },
+      "furniture": [
+        {
+          "name": "Storage Unit",
+          "w": 1.2,
+          "d": 0.5,
+          "h": 1.85,
+          "px": 0.5,
+          "pz": 0.5,
+          "rotY": 0.0,
+          "color": "#7A7A7A",
+          "shape": "box",
+          "functions": [
+            "storage"
+          ],
+          "material": "Steel",
+          "carbon_score": 0.42,
+          "upper": false,
+          "parts": [
+            {
+              "dx": 0,
+              "dy": 0,
+              "dz": 0,
+              "w": 1.2,
+              "h": 1.85,
+              "d": 0.5,
+              "color": "#7A7A7A",
+              "shape": "box"
+            },
+            {
+              "dx": 0,
+              "dy": 0.45,
+              "dz": -0.22,
+              "w": 1.16,
+              "h": 0.03,
+              "d": 0.48,
+              "color": "#9A9A9A",
+              "shape": "box"
+            },
+            {
+              "dx": 0,
+              "dy": 0.78,
+              "dz": -0.22,
+              "w": 1.16,
+              "h": 0.03,
+              "d": 0.48,
+              "color": "#9A9A9A",
+              "shape": "box"
+            },
+            {
+              "dx": 0,
+              "dy": 1.1,
+              "dz": -0.22,
+              "w": 1.16,
+              "h": 0.03,
+              "d": 0.48,
+              "color": "#9A9A9A",
+              "shape": "box"
+            }
+          ]
+        }
+      ],
+      "evaluation": {
+        "placement_success_rate": 100.0,
+        "space_utilization": 4.2,
+        "circulation_score": 64.2,
+        "functional_coverage": 50.0,
+        "constraint_compliance": 100.0,
+        "furniture_density": 0.69,
+        "estimated_sustainability": 58.0,
+        "collision_count": 0,
+        "runtime_ms": 0.06,
+        "items_placed": 1,
+        "items_considered": 1,
+        "functions_required": [
+          "laundry",
+          "storage"
+        ],
+        "functions_covered": [
+          "storage"
+        ],
+        "material_note": "Lowest embodied carbon item: 'Storage Unit' (Steel, carbon_score=0.42)",
+        "layout_score": {
+          "overall": 50.5,
+          "space_utilization": 1.1,
+          "circulation": 12.8,
+          "functional_coverage": 10.0,
+          "constraint_compliance": 15.0,
+          "sustainability": 11.6
+        },
+        "score_breakdown": {
+          "space_utilization": {
+            "raw": 4.2,
+            "weight": 0.25,
+            "contribution": 1.1
+          },
+          "circulation": {
+            "raw": 64.2,
+            "weight": 0.2,
+            "contribution": 12.8
+          },
+          "functional_coverage": {
+            "raw": 50.0,
+            "weight": 0.2,
+            "contribution": 10.0
+          },
+          "constraint_compliance": {
+            "raw": 100.0,
+            "weight": 0.15,
+            "contribution": 15.0
+          },
+          "sustainability": {
+            "raw": 58.0,
+            "weight": 0.2,
+            "contribution": 11.6
+          },
+          "overall": {
+            "raw": 50.5,
+            "weight": 1.0,
+            "contribution": 50.5
+          }
+        },
+        "explanation": {
+          "space_utilization": "Space utilization 4.2% weighted 25% => 1.1",
+          "circulation": "Circulation score 64.2% weighted 20% => 12.8",
+          "functional_coverage": "Functional coverage 50.0% weighted 20% => 10.0",
+          "constraint_compliance": "Constraint compliance 100.0% weighted 15% => 15.0",
+          "sustainability": "Sustainability 58.0% weighted 20% => 11.6",
+          "overall": "Overall design score 50.5 (sum of weighted sub\u2011scores)"
+        },
+        "evaluation_version": "v1.0"
+      }
+    }
+  ],
+  "material_recommendations": {
+    "foundation": {
+      "name": "Raft Foundation Assembly (RC Heavy)",
+      "score": 64.36,
+      "cost_guidance": "LKR 5,834,400",
+      "rationale": "Selected via Hybrid AI (Eng Rank: #2, ML Rank: #2). Climate: Optimized for Intermediate Tropical climate soil conditions. Sustainability: Maintains balanced environmental footprint with an embodied carbon of 0.8 kgCO2/kg.",
+      "sustainability_rating": 42,
+      "service_life": 120,
+      "embodied_carbon": 0.8,
+      "eng_score": 84.85,
+      "ml_score": 2.9048505634549557,
+      "prediction_source": "ML_MODEL",
+      "selection_reason": {
+        "engineering_rank": "#2",
+        "ml_rank": "#2",
+        "hybrid_rank": "#1",
+        "climate": "Optimized for Intermediate Tropical climate soil conditions.",
+        "durability": "Offers structural capacity rating of 98/100 and service life of 120 years.",
+        "sustainability": "Maintains balanced environmental footprint with an embodied carbon of 0.8 kgCO2/kg.",
+        "cost": "Cost-optimized solution for standard construction project requirements."
+      },
+      "engineering_metadata": {
+        "engineering_score": 84.85,
+        "criterion_breakdown": {
+          "structural": {
+            "score": 25.0,
+            "max": 25
+          },
+          "climate": {
+            "score": 20.0,
+            "max": 20
+          },
+          "durability": {
+            "score": 14.85,
+            "max": 15
+          },
+          "service_life": {
+            "score": 10.0,
+            "max": 10
+          },
+          "fire": {
+            "score": 5.0,
+            "max": 10
+          },
+          "thermal": {
+            "score": 3.5,
+            "max": 10
+          },
+          "maintenance": {
+            "score": 4.4,
+            "max": 5
+          },
+          "sustainability": {
+            "score": 2.1,
+            "max": 5
+          }
+        },
+        "engineering_confidence": 66.7,
+        "climate_confidence": 0.0,
+        "recommendation_quality": "Good"
+      }
+    },
+    "structural": {
+      "name": "GFRP Rebar (Glass Fibre Reinforced Polymer)",
+      "score": 62.98,
+      "cost_guidance": "LKR 15,523,200",
+      "rationale": "Selected via Hybrid AI (Eng Rank: #1, ML Rank: #1). Climate: Selected for general compatibility with regional tropical environmental parameters. Sustainability: Maintains balanced environmental footprint with an embodied carbon of 0.55 kgCO2/kg.",
+      "sustainability_rating": 80,
+      "service_life": 100,
+      "embodied_carbon": 0.55,
+      "eng_score": 83.25,
+      "ml_score": 2.1800617606561383,
+      "prediction_source": "ML_MODEL",
+      "selection_reason": {
+        "engineering_rank": "#1",
+        "ml_rank": "#1",
+        "hybrid_rank": "#1",
+        "climate": "Selected for general compatibility with regional tropical environmental parameters.",
+        "durability": "Standard durability profile providing adequate resistance for typical residential application.",
+        "sustainability": "Maintains balanced environmental footprint with an embodied carbon of 0.55 kgCO2/kg.",
+        "cost": "Cost-optimized solution for standard construction project requirements."
+      },
+      "engineering_metadata": {
+        "engineering_score": 83.25,
+        "criterion_breakdown": {
+          "structural": {
+            "score": 25.0,
+            "max": 25
+          },
+          "climate": {
+            "score": 20.0,
+            "max": 20
+          },
+          "durability": {
+            "score": 13.5,
+            "max": 15
+          },
+          "service_life": {
+            "score": 10.0,
+            "max": 10
+          },
+          "fire": {
+            "score": 5.0,
+            "max": 10
+          },
+          "thermal": {
+            "score": 1.0,
+            "max": 10
+          },
+          "maintenance": {
+            "score": 4.75,
+            "max": 5
+          },
+          "sustainability": {
+            "score": 4.0,
+            "max": 5
+          }
+        },
+        "engineering_confidence": 33.3,
+        "climate_confidence": 0.0,
+        "recommendation_quality": "Good"
+      }
+    },
+    "concrete": {
+      "name": "Self-Compacting Concrete (SCC)",
+      "score": 72.91,
+      "cost_guidance": "LKR 42,000",
+      "rationale": "Selected via Hybrid AI (Eng Rank: #2, ML Rank: #1). Climate: Selected for general compatibility with regional tropical environmental parameters. Sustainability: Maintains balanced environmental footprint with an embodied carbon of 0.55 kgCO2/kg.",
+      "sustainability_rating": 50,
+      "service_life": 65,
+      "embodied_carbon": 0.55,
+      "eng_score": 81.1875,
+      "ml_score": 48.08834781418339,
+      "prediction_source": "ML_MODEL",
+      "selection_reason": {
+        "engineering_rank": "#2",
+        "ml_rank": "#1",
+        "hybrid_rank": "#1",
+        "climate": "Selected for general compatibility with regional tropical environmental parameters.",
+        "durability": "Standard durability profile providing adequate resistance for typical residential application.",
+        "sustainability": "Maintains balanced environmental footprint with an embodied carbon of 0.55 kgCO2/kg.",
+        "cost": "Cost-optimized solution for standard construction project requirements."
+      },
+      "engineering_metadata": {
+        "engineering_score": 81.1875,
+        "criterion_breakdown": {
+          "structural": {
+            "score": 21.25,
+            "max": 25
+          },
+          "climate": {
+            "score": 20.0,
+            "max": 20
+          },
+          "durability": {
+            "score": 13.69,
+            "max": 15
+          },
+          "service_life": {
+            "score": 10.0,
+            "max": 10
+          },
+          "fire": {
+            "score": 5.0,
+            "max": 10
+          },
+          "thermal": {
+            "score": 4.5,
+            "max": 10
+          },
+          "maintenance": {
+            "score": 4.25,
+            "max": 5
+          },
+          "sustainability": {
+            "score": 2.5,
+            "max": 5
+          }
+        },
+        "engineering_confidence": 66.7,
+        "climate_confidence": 0.0,
+        "recommendation_quality": "Good"
+      }
+    },
+    "walls": {
+      "name": "Hollow Clay Block (Perforated)",
+      "score": 58.91,
+      "cost_guidance": "LKR 715,551",
+      "rationale": "Selected via Hybrid AI (Eng Rank: #1, ML Rank: #2). Climate: Traditional thermal mass properties suitable for dry and intermediate climates. Sustainability: Made from local natural clay, though requiring high firing energy.",
+      "sustainability_rating": 78,
+      "service_life": 65,
+      "embodied_carbon": 0.18,
+      "eng_score": 75.5875,
+      "ml_score": 8.887678406679065,
+      "prediction_source": "ML_MODEL",
+      "selection_reason": {
+        "engineering_rank": "#1",
+        "ml_rank": "#2",
+        "hybrid_rank": "#1",
+        "climate": "Traditional thermal mass properties suitable for dry and intermediate climates.",
+        "durability": "Standard durability profile providing adequate resistance for typical residential application.",
+        "sustainability": "Made from local natural clay, though requiring high firing energy.",
+        "cost": "Cost-optimized solution for standard construction project requirements."
+      },
+      "engineering_metadata": {
+        "engineering_score": 75.5875,
+        "criterion_breakdown": {
+          "structural": {
+            "score": 13.75,
+            "max": 25
+          },
+          "climate": {
+            "score": 20.0,
+            "max": 20
+          },
+          "durability": {
+            "score": 11.44,
+            "max": 15
+          },
+          "service_life": {
+            "score": 10.0,
+            "max": 10
+          },
+          "fire": {
+            "score": 5.0,
+            "max": 10
+          },
+          "thermal": {
+            "score": 7.5,
+            "max": 10
+          },
+          "maintenance": {
+            "score": 4.0,
+            "max": 5
+          },
+          "sustainability": {
+            "score": 3.9,
+            "max": 5
+          }
+        },
+        "engineering_confidence": 66.7,
+        "climate_confidence": 0.0,
+        "recommendation_quality": "Good"
+      }
+    },
+    "roofing": {
+      "name": "Green Intensive Roof System (Growing Medium)",
+      "score": 57.55,
+      "cost_guidance": "LKR 3,294,720",
+      "rationale": "Selected via Hybrid AI (Eng Rank: #1, ML Rank: #1). Climate: Standard climate compatibility with enhanced resilience to moisture variability. Sustainability: Features low embodied carbon (0.1 kgCO2/kg) and high recyclability (95/100).",
+      "sustainability_rating": 98,
+      "service_life": 50,
+      "embodied_carbon": 0.1,
+      "eng_score": 63.8,
+      "ml_score": 38.81144526634447,
+      "prediction_source": "ML_MODEL",
+      "selection_reason": {
+        "engineering_rank": "#1",
+        "ml_rank": "#1",
+        "hybrid_rank": "#1",
+        "climate": "Standard climate compatibility with enhanced resilience to moisture variability.",
+        "durability": "Meets target durability with high moisture resistance and structural stability under typical tropical loads.",
+        "sustainability": "Features low embodied carbon (0.1 kgCO2/kg) and high recyclability (95/100).",
+        "cost": "Optimizes lifecycle costs by reducing thermal load and maintenance overheads."
+      },
+      "engineering_metadata": {
+        "engineering_score": 63.8,
+        "criterion_breakdown": {
+          "structural": {
+            "score": 3.75,
+            "max": 25
+          },
+          "climate": {
+            "score": 20.0,
+            "max": 20
+          },
+          "durability": {
+            "score": 6.75,
+            "max": 15
+          },
+          "service_life": {
+            "score": 10.0,
+            "max": 10
+          },
+          "fire": {
+            "score": 5.0,
+            "max": 10
+          },
+          "thermal": {
+            "score": 9.8,
+            "max": 10
+          },
+          "maintenance": {
+            "score": 3.6,
+            "max": 5
+          },
+          "sustainability": {
+            "score": 4.9,
+            "max": 5
+          }
+        },
+        "engineering_confidence": 33.3,
+        "climate_confidence": 0.0,
+        "recommendation_quality": "Acceptable"
+      }
+    },
+    "windows": {
+      "name": "Commercial Double-Glazed Unit (DGU Low-E)",
+      "score": 57.93,
+      "cost_guidance": "LKR 95,000",
+      "rationale": "Selected via Hybrid AI (Eng Rank: #2, ML Rank: #1). Climate: Improves energy efficiency by reducing heat gain and solar transmission in high solar exposure areas. Sustainability: Supports sustainability objectives by lowering heating/cooling energy consumption throughout the building lifecycle.",
+      "sustainability_rating": 72,
+      "service_life": 40,
+      "embodied_carbon": 0.58,
+      "eng_score": 60.9,
+      "ml_score": 49.036475508560876,
+      "prediction_source": "ML_MODEL",
+      "selection_reason": {
+        "engineering_rank": "#2",
+        "ml_rank": "#1",
+        "hybrid_rank": "#1",
+        "climate": "Improves energy efficiency by reducing heat gain and solar transmission in high solar exposure areas.",
+        "durability": "High structural wind-load resistance and robust sealing suitable for multistory environments.",
+        "sustainability": "Supports sustainability objectives by lowering heating/cooling energy consumption throughout the building lifecycle.",
+        "cost": "Higher initial capital cost (LKR 0) is balanced by long-term operational energy savings."
+      },
+      "engineering_metadata": {
+        "engineering_score": 60.9,
+        "criterion_breakdown": {
+          "structural": {
+            "score": 5.0,
+            "max": 25
+          },
+          "climate": {
+            "score": 20.0,
+            "max": 20
+          },
+          "durability": {
+            "score": 6.0,
+            "max": 15
+          },
+          "service_life": {
+            "score": 8.0,
+            "max": 10
+          },
+          "fire": {
+            "score": 5.0,
+            "max": 10
+          },
+          "thermal": {
+            "score": 9.2,
+            "max": 10
+          },
+          "maintenance": {
+            "score": 4.1,
+            "max": 5
+          },
+          "sustainability": {
+            "score": 3.6,
+            "max": 5
+          }
+        },
+        "engineering_confidence": 66.7,
+        "climate_confidence": 0.0,
+        "recommendation_quality": "Acceptable"
+      }
+    },
+    "doors": {
+      "name": "Steel Security Door (Powder-Coated)",
+      "score": 56.11,
+      "cost_guidance": "LKR 65,000",
+      "rationale": "Selected via Hybrid AI (Eng Rank: #1, ML Rank: #1). Climate: Engineered to minimize air infiltration and resist corrosion under saline/humid drafts. Sustainability: Maintains balanced environmental footprint with an embodied carbon of 0.72 kgCO2/kg.",
+      "sustainability_rating": 40,
+      "service_life": 40,
+      "embodied_carbon": 0.72,
+      "eng_score": 74.375,
+      "ml_score": 1.3213177669031866,
+      "prediction_source": "ML_MODEL",
+      "selection_reason": {
+        "engineering_rank": "#1",
+        "ml_rank": "#1",
+        "hybrid_rank": "#1",
+        "climate": "Engineered to minimize air infiltration and resist corrosion under saline/humid drafts.",
+        "durability": "Standard durability profile providing adequate resistance for typical residential application.",
+        "sustainability": "Maintains balanced environmental footprint with an embodied carbon of 0.72 kgCO2/kg.",
+        "cost": "Cost-optimized solution for standard construction project requirements."
+      },
+      "engineering_metadata": {
+        "engineering_score": 74.375,
+        "criterion_breakdown": {
+          "structural": {
+            "score": 21.25,
+            "max": 25
+          },
+          "climate": {
+            "score": 20.0,
+            "max": 20
+          },
+          "durability": {
+            "score": 10.88,
+            "max": 15
+          },
+          "service_life": {
+            "score": 8.0,
+            "max": 10
+          },
+          "fire": {
+            "score": 5.0,
+            "max": 10
+          },
+          "thermal": {
+            "score": 3.5,
+            "max": 10
+          },
+          "maintenance": {
+            "score": 3.75,
+            "max": 5
+          },
+          "sustainability": {
+            "score": 2.0,
+            "max": 5
+          }
+        },
+        "engineering_confidence": 66.7,
+        "climate_confidence": 0.0,
+        "recommendation_quality": "Acceptable"
+      }
+    },
+    "flooring": {
+      "name": "Polished Terrazzo Flooring (Marble Aggregate)",
+      "score": 66.72,
+      "cost_guidance": "LKR 1,520,640",
+      "rationale": "Selected via Hybrid AI (Eng Rank: #1, ML Rank: #1). Climate: Selected for general compatibility with regional tropical environmental parameters. Sustainability: Maintains balanced environmental footprint with an embodied carbon of 0.22 kgCO2/kg.",
+      "sustainability_rating": 75,
+      "service_life": 65,
+      "embodied_carbon": 0.22,
+      "eng_score": 73.1625,
+      "ml_score": 47.40918281465295,
+      "prediction_source": "ML_MODEL",
+      "selection_reason": {
+        "engineering_rank": "#1",
+        "ml_rank": "#1",
+        "hybrid_rank": "#1",
+        "climate": "Selected for general compatibility with regional tropical environmental parameters.",
+        "durability": "Standard durability profile providing adequate resistance for typical residential application.",
+        "sustainability": "Maintains balanced environmental footprint with an embodied carbon of 0.22 kgCO2/kg.",
+        "cost": "Cost-optimized solution for standard construction project requirements."
+      },
+      "engineering_metadata": {
+        "engineering_score": 73.1625,
+        "criterion_breakdown": {
+          "structural": {
+            "score": 13.0,
+            "max": 25
+          },
+          "climate": {
+            "score": 20.0,
+            "max": 20
+          },
+          "durability": {
+            "score": 11.21,
+            "max": 15
+          },
+          "service_life": {
+            "score": 10.0,
+            "max": 10
+          },
+          "fire": {
+            "score": 5.0,
+            "max": 10
+          },
+          "thermal": {
+            "score": 5.8,
+            "max": 10
+          },
+          "maintenance": {
+            "score": 4.4,
+            "max": 5
+          },
+          "sustainability": {
+            "score": 3.75,
+            "max": 5
+          }
+        },
+        "engineering_confidence": 66.7,
+        "climate_confidence": 0.0,
+        "recommendation_quality": "Acceptable"
+      }
+    },
+    "ceiling": {
+      "name": "Bamboo-Fibre Acoustic Ceiling Panel",
+      "score": 49.23,
+      "cost_guidance": "LKR 798,336",
+      "rationale": "Selected via Hybrid AI (Eng Rank: #3, ML Rank: #1). Climate: Selected for general compatibility with regional tropical environmental parameters. Sustainability: Maintains balanced environmental footprint with an embodied carbon of 0.05 kgCO2/kg.",
+      "sustainability_rating": 95,
+      "service_life": 25,
+      "embodied_carbon": 0.05,
+      "eng_score": 51.7125,
+      "ml_score": 41.76659737250102,
+      "prediction_source": "ML_MODEL",
+      "selection_reason": {
+        "engineering_rank": "#3",
+        "ml_rank": "#1",
+        "hybrid_rank": "#1",
+        "climate": "Selected for general compatibility with regional tropical environmental parameters.",
+        "durability": "Standard durability profile providing adequate resistance for typical residential application.",
+        "sustainability": "Maintains balanced environmental footprint with an embodied carbon of 0.05 kgCO2/kg.",
+        "cost": "Cost-optimized solution for standard construction project requirements."
+      },
+      "engineering_metadata": {
+        "engineering_score": 51.7125,
+        "criterion_breakdown": {
+          "structural": {
+            "score": 2.5,
+            "max": 25
+          },
+          "climate": {
+            "score": 20.0,
+            "max": 20
+          },
+          "durability": {
+            "score": 3.56,
+            "max": 15
+          },
+          "service_life": {
+            "score": 5.0,
+            "max": 10
+          },
+          "fire": {
+            "score": 5.0,
+            "max": 10
+          },
+          "thermal": {
+            "score": 6.8,
+            "max": 10
+          },
+          "maintenance": {
+            "score": 4.1,
+            "max": 5
+          },
+          "sustainability": {
+            "score": 4.75,
+            "max": 5
+          }
+        },
+        "engineering_confidence": 66.7,
+        "climate_confidence": 0.0,
+        "recommendation_quality": "Acceptable"
+      }
+    },
+    "finishes": {
+      "name": "Advanced Nano-Exterior Paint",
+      "score": 30.99,
+      "cost_guidance": "LKR 1,104,896",
+      "rationale": "Selected via Hybrid AI (Eng Rank: #1, ML Rank: #2). Climate: Selected for general compatibility with regional tropical environmental parameters. Sustainability: Maintains balanced environmental footprint with an embodied carbon of 0.25 kgCO2/kg.",
+      "sustainability_rating": 65,
+      "service_life": 12,
+      "embodied_carbon": 0.25,
+      "eng_score": 38.875,
+      "ml_score": 7.316154841657687,
+      "prediction_source": "ML_MODEL",
+      "selection_reason": {
+        "engineering_rank": "#1",
+        "ml_rank": "#2",
+        "hybrid_rank": "#1",
+        "climate": "Selected for general compatibility with regional tropical environmental parameters.",
+        "durability": "Standard durability profile providing adequate resistance for typical residential application.",
+        "sustainability": "Maintains balanced environmental footprint with an embodied carbon of 0.25 kgCO2/kg.",
+        "cost": "Cost-optimized solution for standard construction project requirements."
+      },
+      "engineering_metadata": {
+        "engineering_score": 38.875,
+        "criterion_breakdown": {
+          "structural": {
+            "score": 1.25,
+            "max": 25
+          },
+          "climate": {
+            "score": 20.0,
+            "max": 20
+          },
+          "durability": {
+            "score": 1.73,
+            "max": 15
+          },
+          "service_life": {
+            "score": 2.4,
+            "max": 10
+          },
+          "fire": {
+            "score": 5.0,
+            "max": 10
+          },
+          "thermal": {
+            "score": 1.0,
+            "max": 10
+          },
+          "maintenance": {
+            "score": 4.25,
+            "max": 5
+          },
+          "sustainability": {
+            "score": 3.25,
+            "max": 5
+          }
+        },
+        "engineering_confidence": 33.3,
+        "climate_confidence": 0.0,
+        "recommendation_quality": "Acceptable"
+      }
+    },
+    "waterproofing": {
+      "name": "Crystalline Slurry Waterproofing (Penetrating)",
+      "score": 41.54,
+      "cost_guidance": "LKR 477,280",
+      "rationale": "Selected via Hybrid AI (Eng Rank: #1, ML Rank: #3). Climate: Designed to prevent moisture ingress under 1800mm annual rainfall. Sustainability: Maintains balanced environmental footprint with an embodied carbon of 0.05 kgCO2/kg.",
+      "sustainability_rating": 58,
+      "service_life": 60,
+      "embodied_carbon": 0.05,
+      "eng_score": 55.275,
+      "ml_score": 0.3472476987774489,
+      "prediction_source": "ML_MODEL",
+      "selection_reason": {
+        "engineering_rank": "#1",
+        "ml_rank": "#3",
+        "hybrid_rank": "#1",
+        "climate": "Designed to prevent moisture ingress under 1800mm annual rainfall.",
+        "durability": "High moisture resistance (100/100) ensuring structural protection.",
+        "sustainability": "Maintains balanced environmental footprint with an embodied carbon of 0.05 kgCO2/kg.",
+        "cost": "Cost-optimized solution for standard construction project requirements."
+      },
+      "engineering_metadata": {
+        "engineering_score": 55.275,
+        "criterion_breakdown": {
+          "structural": {
+            "score": 3.75,
+            "max": 25
+          },
+          "climate": {
+            "score": 20.0,
+            "max": 20
+          },
+          "durability": {
+            "score": 7.88,
+            "max": 15
+          },
+          "service_life": {
+            "score": 10.0,
+            "max": 10
+          },
+          "fire": {
+            "score": 5.0,
+            "max": 10
+          },
+          "thermal": {
+            "score": 1.0,
+            "max": 10
+          },
+          "maintenance": {
+            "score": 4.75,
+            "max": 5
+          },
+          "sustainability": {
+            "score": 2.9,
+            "max": 5
+          }
+        },
+        "engineering_confidence": 33.3,
+        "climate_confidence": 0.0,
+        "recommendation_quality": "Acceptable"
+      }
+    }
+  },
+  "recommendation_explanation": [
+    "durability score is low (3.15/15)",
+    "structural score is low (11.25/25)",
+    "sustainability score is low (2.3/5)",
+    "sustainability score is low (1.9/5)",
+    "durability score is low (2.62/15)"
+  ],
+  "layout_evaluation": {
+    "rooms_evaluated": 11,
+    "avg_placement_success": 72.8,
+    "avg_space_utilization": 4.5,
+    "avg_circulation_score": 64.5,
+    "avg_functional_coverage": 65.2,
+    "avg_constraint_compliance": 72.8,
+    "avg_sustainability": 58.9,
+    "total_items_placed": 21,
+    "avg_design_score": 49.7
+  },
+  "score_breakdown": {
+    "layout_score": 49.7,
+    "engineering_score": 66.2,
+    "ml_score": 20.0,
+    "hybrid_score": 54.6
+  },
+  "execution_time_ms": 4507,
+  "artifacts": {
+    "floorplan_image": "validation_dataset/images/scenario_080_floorplan.png",
+    "viewer_image": null
+  }
+}

@@ -1,0 +1,3492 @@
+[
+  {
+    "scenario": "1. Residential - Colombo",
+    "weights": {
+      "70/30 Baseline": {
+        "package": {
+          "Windows": {
+            "name": "uPVC Multi-Chamber Window System",
+            "eng_score": 100.0,
+            "ml_score": 78.0,
+            "hybrid_score": 93.4,
+            "sustainability": 82
+          },
+          "Doors": {
+            "name": "UPVC Sliding Door (Weather-Sealed)",
+            "eng_score": 100.0,
+            "ml_score": 75.19999999999999,
+            "hybrid_score": 92.56,
+            "sustainability": 80
+          },
+          "Finishing": {
+            "name": "Advanced Nano-Exterior Paint",
+            "eng_score": 100.0,
+            "ml_score": 69.0,
+            "hybrid_score": 90.7,
+            "sustainability": 65
+          },
+          "Walling": {
+            "name": "CSEB Compressed Stabilized Earth Block",
+            "eng_score": 85.0,
+            "ml_score": 66.36624198932802,
+            "hybrid_score": 79.4098725967984,
+            "sustainability": 98
+          },
+          "Ceiling": {
+            "name": "Bamboo-Fibre Acoustic Ceiling Panel",
+            "eng_score": 85.0,
+            "ml_score": 59.81985773645384,
+            "hybrid_score": 77.44595732093615,
+            "sustainability": 95
+          },
+          "Foundation": {
+            "name": "Lime-Pozzolan Natural Foundation",
+            "eng_score": 85.0,
+            "ml_score": 52.78415327756777,
+            "hybrid_score": 75.33524598327033,
+            "sustainability": 92
+          },
+          "Flooring": {
+            "name": "Recycled Composite Decking (WPC)",
+            "eng_score": 100.0,
+            "ml_score": 16.21434751012162,
+            "hybrid_score": 74.86430425303648,
+            "sustainability": 90
+          },
+          "Structural": {
+            "name": "GFRP Rebar (Glass Fibre Reinforced Polymer)",
+            "eng_score": 100.0,
+            "ml_score": 7.796710634136487,
+            "hybrid_score": 72.33901319024095,
+            "sustainability": 80
+          },
+          "Roofing": {
+            "name": "Marine-Grade Aluminium Roofing (0.55mm)",
+            "eng_score": 100.0,
+            "ml_score": 7.480853249124599,
+            "hybrid_score": 72.24425597473738,
+            "sustainability": 65
+          },
+          "Waterproofing": {
+            "name": "Crystalline Slurry Waterproofing (Penetrating)",
+            "eng_score": 100.0,
+            "ml_score": 2.2176939296763765,
+            "hybrid_score": 70.66530817890292,
+            "sustainability": 58
+          },
+          "Concrete": {
+            "name": "Gr. 30 Marine-Grade Concrete Mix",
+            "eng_score": 100.0,
+            "ml_score": 0.33821991315539696,
+            "hybrid_score": 70.10146597394662,
+            "sustainability": 46
+          }
+        },
+        "project_eng_score": 95.9090909090909,
+        "project_ml_score": 39.56527983996037,
+        "project_hybrid_score": 79.00594758835176,
+        "average_sustainability": 77.36363636363636,
+        "changes": 0
+      },
+      "60/40": {
+        "package": {
+          "Windows": {
+            "name": "uPVC Multi-Chamber Window System",
+            "eng_score": 100.0,
+            "ml_score": 78.0,
+            "hybrid_score": 91.2,
+            "sustainability": 82
+          },
+          "Doors": {
+            "name": "UPVC Sliding Door (Weather-Sealed)",
+            "eng_score": 100.0,
+            "ml_score": 75.19999999999999,
+            "hybrid_score": 90.08,
+            "sustainability": 80
+          },
+          "Finishing": {
+            "name": "Eco-Friendly Low VOC Emulsion",
+            "eng_score": 85.0,
+            "ml_score": 92.2,
+            "hybrid_score": 87.88,
+            "sustainability": 95
+          },
+          "Walling": {
+            "name": "CSEB Compressed Stabilized Earth Block",
+            "eng_score": 85.0,
+            "ml_score": 66.36624198932802,
+            "hybrid_score": 77.5464967957312,
+            "sustainability": 98
+          },
+          "Ceiling": {
+            "name": "Bamboo-Fibre Acoustic Ceiling Panel",
+            "eng_score": 85.0,
+            "ml_score": 59.81985773645384,
+            "hybrid_score": 74.92794309458154,
+            "sustainability": 95
+          },
+          "Foundation": {
+            "name": "Lime-Pozzolan Natural Foundation",
+            "eng_score": 85.0,
+            "ml_score": 52.78415327756777,
+            "hybrid_score": 72.1136613110271,
+            "sustainability": 92
+          },
+          "Flooring": {
+            "name": "Recycled Composite Decking (WPC)",
+            "eng_score": 100.0,
+            "ml_score": 16.21434751012162,
+            "hybrid_score": 66.48573900404865,
+            "sustainability": 90
+          },
+          "Structural": {
+            "name": "GFRP Rebar (Glass Fibre Reinforced Polymer)",
+            "eng_score": 100.0,
+            "ml_score": 7.796710634136487,
+            "hybrid_score": 63.11868425365459,
+            "sustainability": 80
+          },
+          "Roofing": {
+            "name": "Marine-Grade Aluminium Roofing (0.55mm)",
+            "eng_score": 100.0,
+            "ml_score": 7.480853249124599,
+            "hybrid_score": 62.99234129964984,
+            "sustainability": 65
+          },
+          "Waterproofing": {
+            "name": "Crystalline Slurry Waterproofing (Penetrating)",
+            "eng_score": 100.0,
+            "ml_score": 2.2176939296763765,
+            "hybrid_score": 60.88707757187055,
+            "sustainability": 58
+          },
+          "Concrete": {
+            "name": "Gr. 30 Marine-Grade Concrete Mix",
+            "eng_score": 100.0,
+            "ml_score": 0.33821991315539696,
+            "hybrid_score": 60.13528796526216,
+            "sustainability": 46
+          }
+        },
+        "project_eng_score": 94.54545454545455,
+        "project_ml_score": 41.674370749051285,
+        "project_hybrid_score": 73.39702102689324,
+        "average_sustainability": 80.0909090909091,
+        "changes": 1
+      },
+      "50/50": {
+        "package": {
+          "Windows": {
+            "name": "uPVC Multi-Chamber Window System",
+            "eng_score": 100.0,
+            "ml_score": 78.0,
+            "hybrid_score": 89.0,
+            "sustainability": 82
+          },
+          "Doors": {
+            "name": "UPVC Sliding Door (Weather-Sealed)",
+            "eng_score": 100.0,
+            "ml_score": 75.19999999999999,
+            "hybrid_score": 87.6,
+            "sustainability": 80
+          },
+          "Finishing": {
+            "name": "Eco-Friendly Low VOC Emulsion",
+            "eng_score": 85.0,
+            "ml_score": 92.2,
+            "hybrid_score": 88.6,
+            "sustainability": 95
+          },
+          "Walling": {
+            "name": "CSEB Compressed Stabilized Earth Block",
+            "eng_score": 85.0,
+            "ml_score": 66.36624198932802,
+            "hybrid_score": 75.68312099466401,
+            "sustainability": 98
+          },
+          "Ceiling": {
+            "name": "Bamboo-Fibre Acoustic Ceiling Panel",
+            "eng_score": 85.0,
+            "ml_score": 59.81985773645384,
+            "hybrid_score": 72.40992886822693,
+            "sustainability": 95
+          },
+          "Foundation": {
+            "name": "Lime-Pozzolan Natural Foundation",
+            "eng_score": 85.0,
+            "ml_score": 52.78415327756777,
+            "hybrid_score": 68.89207663878389,
+            "sustainability": 92
+          },
+          "Flooring": {
+            "name": "Recycled Composite Decking (WPC)",
+            "eng_score": 100.0,
+            "ml_score": 16.21434751012162,
+            "hybrid_score": 58.10717375506081,
+            "sustainability": 90
+          },
+          "Structural": {
+            "name": "GFRP Rebar (Glass Fibre Reinforced Polymer)",
+            "eng_score": 100.0,
+            "ml_score": 7.796710634136487,
+            "hybrid_score": 53.898355317068244,
+            "sustainability": 80
+          },
+          "Roofing": {
+            "name": "Green Intensive Roof System (Growing Medium)",
+            "eng_score": 55.0,
+            "ml_score": 60.35600759152126,
+            "hybrid_score": 57.67800379576063,
+            "sustainability": 98
+          },
+          "Waterproofing": {
+            "name": "Crystalline Slurry Waterproofing (Penetrating)",
+            "eng_score": 100.0,
+            "ml_score": 2.2176939296763765,
+            "hybrid_score": 51.108846964838186,
+            "sustainability": 58
+          },
+          "Concrete": {
+            "name": "Gr. 30 Marine-Grade Concrete Mix",
+            "eng_score": 100.0,
+            "ml_score": 0.33821991315539696,
+            "hybrid_score": 50.1691099565777,
+            "sustainability": 46
+          }
+        },
+        "project_eng_score": 90.45454545454545,
+        "project_ml_score": 46.48120296199643,
+        "project_hybrid_score": 68.46787420827094,
+        "average_sustainability": 83.0909090909091,
+        "changes": 2
+      },
+      "40/60": {
+        "package": {
+          "Windows": {
+            "name": "uPVC Multi-Chamber Window System",
+            "eng_score": 100.0,
+            "ml_score": 78.0,
+            "hybrid_score": 86.8,
+            "sustainability": 82
+          },
+          "Doors": {
+            "name": "UPVC Sliding Door (Weather-Sealed)",
+            "eng_score": 100.0,
+            "ml_score": 75.19999999999999,
+            "hybrid_score": 85.11999999999999,
+            "sustainability": 80
+          },
+          "Finishing": {
+            "name": "Eco-Friendly Low VOC Emulsion",
+            "eng_score": 85.0,
+            "ml_score": 92.2,
+            "hybrid_score": 89.32,
+            "sustainability": 95
+          },
+          "Walling": {
+            "name": "CSEB Compressed Stabilized Earth Block",
+            "eng_score": 85.0,
+            "ml_score": 66.36624198932802,
+            "hybrid_score": 73.81974519359682,
+            "sustainability": 98
+          },
+          "Ceiling": {
+            "name": "Bamboo-Fibre Acoustic Ceiling Panel",
+            "eng_score": 85.0,
+            "ml_score": 59.81985773645384,
+            "hybrid_score": 69.8919146418723,
+            "sustainability": 95
+          },
+          "Foundation": {
+            "name": "Lime-Pozzolan Natural Foundation",
+            "eng_score": 85.0,
+            "ml_score": 52.78415327756777,
+            "hybrid_score": 65.67049196654065,
+            "sustainability": 92
+          },
+          "Flooring": {
+            "name": "Recycled Composite Decking (WPC)",
+            "eng_score": 100.0,
+            "ml_score": 16.21434751012162,
+            "hybrid_score": 49.72860850607297,
+            "sustainability": 90
+          },
+          "Structural": {
+            "name": "GFRP Rebar (Glass Fibre Reinforced Polymer)",
+            "eng_score": 100.0,
+            "ml_score": 7.796710634136487,
+            "hybrid_score": 44.678026380481896,
+            "sustainability": 80
+          },
+          "Roofing": {
+            "name": "Green Intensive Roof System (Growing Medium)",
+            "eng_score": 55.0,
+            "ml_score": 60.35600759152126,
+            "hybrid_score": 58.213604554912756,
+            "sustainability": 98
+          },
+          "Waterproofing": {
+            "name": "Crystalline Slurry Waterproofing (Penetrating)",
+            "eng_score": 100.0,
+            "ml_score": 2.2176939296763765,
+            "hybrid_score": 41.33061635780582,
+            "sustainability": 58
+          },
+          "Concrete": {
+            "name": "Self-Compacting Concrete (SCC)",
+            "eng_score": 75.0,
+            "ml_score": 23.760759504079427,
+            "hybrid_score": 44.25645570244765,
+            "sustainability": 50
+          }
+        },
+        "project_eng_score": 88.18181818181819,
+        "project_ml_score": 48.61052474298953,
+        "project_hybrid_score": 64.43904211852099,
+        "average_sustainability": 83.45454545454545,
+        "changes": 3
+      }
+    }
+  },
+  {
+    "scenario": "2. Residential - Kandy",
+    "weights": {
+      "70/30 Baseline": {
+        "package": {
+          "Finishing": {
+            "name": "Eco-Friendly Low VOC Emulsion",
+            "eng_score": 85.0,
+            "ml_score": 92.2,
+            "hybrid_score": 87.16,
+            "sustainability": 95
+          },
+          "Doors": {
+            "name": "Solid Teak Timber Door (Premium)",
+            "eng_score": 85.0,
+            "ml_score": 76.2,
+            "hybrid_score": 82.35999999999999,
+            "sustainability": 75
+          },
+          "Windows": {
+            "name": "Timber Louvre Window (Treated Hardwood)",
+            "eng_score": 85.0,
+            "ml_score": 75.0,
+            "hybrid_score": 82.0,
+            "sustainability": 75
+          },
+          "Walling": {
+            "name": "CSEB Compressed Stabilized Earth Block",
+            "eng_score": 85.0,
+            "ml_score": 61.68463982570933,
+            "hybrid_score": 78.0053919477128,
+            "sustainability": 98
+          },
+          "Ceiling": {
+            "name": "Bamboo-Fibre Acoustic Ceiling Panel",
+            "eng_score": 85.0,
+            "ml_score": 53.86238036687192,
+            "hybrid_score": 75.65871411006157,
+            "sustainability": 95
+          },
+          "Foundation": {
+            "name": "Lime-Pozzolan Natural Foundation",
+            "eng_score": 85.0,
+            "ml_score": 42.38016339599183,
+            "hybrid_score": 72.21404901879754,
+            "sustainability": 92
+          },
+          "Flooring": {
+            "name": "Porcelain GVT Slab (Full-Body Vitrified)",
+            "eng_score": 95.0,
+            "ml_score": 9.919522704538556,
+            "hybrid_score": 69.47585681136157,
+            "sustainability": 65
+          },
+          "Roofing": {
+            "name": "Standard Cement Tile (Concrete Interlocking)",
+            "eng_score": 85.0,
+            "ml_score": 8.125579041134534,
+            "hybrid_score": 61.937673712340356,
+            "sustainability": 42
+          },
+          "Waterproofing": {
+            "name": "Bituminous Modified Membrane (Torch-Applied)",
+            "eng_score": 85.0,
+            "ml_score": 1.5674672047677454,
+            "hybrid_score": 59.97024016143032,
+            "sustainability": 38
+          },
+          "Concrete": {
+            "name": "Eco-Concrete (Recycled Aggregate + Fly-Ash)",
+            "eng_score": 85.0,
+            "ml_score": 1.0454816768452218,
+            "hybrid_score": 59.81364450305356,
+            "sustainability": 92
+          },
+          "Structural": {
+            "name": "TMT High-Yield Rebar (SLS 375)",
+            "eng_score": 85.0,
+            "ml_score": 1.0110970020137193,
+            "hybrid_score": 59.80332910060411,
+            "sustainability": 55
+          }
+        },
+        "project_eng_score": 85.9090909090909,
+        "project_ml_score": 38.454211928897536,
+        "project_hybrid_score": 71.67262721503289,
+        "average_sustainability": 74.72727272727273,
+        "changes": 0
+      },
+      "60/40": {
+        "package": {
+          "Finishing": {
+            "name": "Eco-Friendly Low VOC Emulsion",
+            "eng_score": 85.0,
+            "ml_score": 92.2,
+            "hybrid_score": 87.88,
+            "sustainability": 95
+          },
+          "Doors": {
+            "name": "Solid Teak Timber Door (Premium)",
+            "eng_score": 85.0,
+            "ml_score": 76.2,
+            "hybrid_score": 81.48,
+            "sustainability": 75
+          },
+          "Windows": {
+            "name": "Timber Louvre Window (Treated Hardwood)",
+            "eng_score": 85.0,
+            "ml_score": 75.0,
+            "hybrid_score": 81.0,
+            "sustainability": 75
+          },
+          "Walling": {
+            "name": "CSEB Compressed Stabilized Earth Block",
+            "eng_score": 85.0,
+            "ml_score": 61.68463982570933,
+            "hybrid_score": 75.67385593028374,
+            "sustainability": 98
+          },
+          "Ceiling": {
+            "name": "Bamboo-Fibre Acoustic Ceiling Panel",
+            "eng_score": 85.0,
+            "ml_score": 53.86238036687192,
+            "hybrid_score": 72.54495214674877,
+            "sustainability": 95
+          },
+          "Foundation": {
+            "name": "Lime-Pozzolan Natural Foundation",
+            "eng_score": 85.0,
+            "ml_score": 42.38016339599183,
+            "hybrid_score": 67.95206535839674,
+            "sustainability": 92
+          },
+          "Flooring": {
+            "name": "Porcelain GVT Slab (Full-Body Vitrified)",
+            "eng_score": 95.0,
+            "ml_score": 9.919522704538556,
+            "hybrid_score": 60.967809081815425,
+            "sustainability": 65
+          },
+          "Roofing": {
+            "name": "Standard Cement Tile (Concrete Interlocking)",
+            "eng_score": 85.0,
+            "ml_score": 8.125579041134534,
+            "hybrid_score": 54.25023161645382,
+            "sustainability": 42
+          },
+          "Waterproofing": {
+            "name": "Bituminous Modified Membrane (Torch-Applied)",
+            "eng_score": 85.0,
+            "ml_score": 1.5674672047677454,
+            "hybrid_score": 51.6269868819071,
+            "sustainability": 38
+          },
+          "Concrete": {
+            "name": "Eco-Concrete (Recycled Aggregate + Fly-Ash)",
+            "eng_score": 85.0,
+            "ml_score": 1.0454816768452218,
+            "hybrid_score": 51.41819267073809,
+            "sustainability": 92
+          },
+          "Structural": {
+            "name": "TMT High-Yield Rebar (SLS 375)",
+            "eng_score": 85.0,
+            "ml_score": 1.0110970020137193,
+            "hybrid_score": 51.40443880080549,
+            "sustainability": 55
+          }
+        },
+        "project_eng_score": 85.9090909090909,
+        "project_ml_score": 38.454211928897536,
+        "project_hybrid_score": 66.92713931701356,
+        "average_sustainability": 74.72727272727273,
+        "changes": 0
+      },
+      "50/50": {
+        "package": {
+          "Finishing": {
+            "name": "Eco-Friendly Low VOC Emulsion",
+            "eng_score": 85.0,
+            "ml_score": 92.2,
+            "hybrid_score": 88.6,
+            "sustainability": 95
+          },
+          "Doors": {
+            "name": "Solid Teak Timber Door (Premium)",
+            "eng_score": 85.0,
+            "ml_score": 76.2,
+            "hybrid_score": 80.6,
+            "sustainability": 75
+          },
+          "Windows": {
+            "name": "Timber Louvre Window (Treated Hardwood)",
+            "eng_score": 85.0,
+            "ml_score": 75.0,
+            "hybrid_score": 80.0,
+            "sustainability": 75
+          },
+          "Walling": {
+            "name": "CSEB Compressed Stabilized Earth Block",
+            "eng_score": 85.0,
+            "ml_score": 61.68463982570933,
+            "hybrid_score": 73.34231991285466,
+            "sustainability": 98
+          },
+          "Ceiling": {
+            "name": "Bamboo-Fibre Acoustic Ceiling Panel",
+            "eng_score": 85.0,
+            "ml_score": 53.86238036687192,
+            "hybrid_score": 69.43119018343596,
+            "sustainability": 95
+          },
+          "Foundation": {
+            "name": "Lime-Pozzolan Natural Foundation",
+            "eng_score": 85.0,
+            "ml_score": 42.38016339599183,
+            "hybrid_score": 63.690081697995915,
+            "sustainability": 92
+          },
+          "Flooring": {
+            "name": "Porcelain GVT Slab (Full-Body Vitrified)",
+            "eng_score": 95.0,
+            "ml_score": 9.919522704538556,
+            "hybrid_score": 52.459761352269275,
+            "sustainability": 65
+          },
+          "Roofing": {
+            "name": "Standard Cement Tile (Concrete Interlocking)",
+            "eng_score": 85.0,
+            "ml_score": 8.125579041134534,
+            "hybrid_score": 46.562789520567264,
+            "sustainability": 42
+          },
+          "Waterproofing": {
+            "name": "Bituminous Modified Membrane (Torch-Applied)",
+            "eng_score": 85.0,
+            "ml_score": 1.5674672047677454,
+            "hybrid_score": 43.283733602383876,
+            "sustainability": 38
+          },
+          "Concrete": {
+            "name": "Self-Compacting Concrete (SCC)",
+            "eng_score": 55.0,
+            "ml_score": 41.56462761441568,
+            "hybrid_score": 48.28231380720784,
+            "sustainability": 50
+          },
+          "Structural": {
+            "name": "TMT High-Yield Rebar (SLS 375)",
+            "eng_score": 85.0,
+            "ml_score": 1.0110970020137193,
+            "hybrid_score": 43.00554850100686,
+            "sustainability": 55
+          }
+        },
+        "project_eng_score": 83.18181818181819,
+        "project_ml_score": 42.13777065049484,
+        "project_hybrid_score": 62.65979441615651,
+        "average_sustainability": 70.9090909090909,
+        "changes": 1
+      },
+      "40/60": {
+        "package": {
+          "Finishing": {
+            "name": "Eco-Friendly Low VOC Emulsion",
+            "eng_score": 85.0,
+            "ml_score": 92.2,
+            "hybrid_score": 89.32,
+            "sustainability": 95
+          },
+          "Doors": {
+            "name": "Solid Teak Timber Door (Premium)",
+            "eng_score": 85.0,
+            "ml_score": 76.2,
+            "hybrid_score": 79.72,
+            "sustainability": 75
+          },
+          "Windows": {
+            "name": "Timber Louvre Window (Treated Hardwood)",
+            "eng_score": 85.0,
+            "ml_score": 75.0,
+            "hybrid_score": 79.0,
+            "sustainability": 75
+          },
+          "Walling": {
+            "name": "CSEB Compressed Stabilized Earth Block",
+            "eng_score": 85.0,
+            "ml_score": 61.68463982570933,
+            "hybrid_score": 71.01078389542559,
+            "sustainability": 98
+          },
+          "Ceiling": {
+            "name": "Bamboo-Fibre Acoustic Ceiling Panel",
+            "eng_score": 85.0,
+            "ml_score": 53.86238036687192,
+            "hybrid_score": 66.31742822012315,
+            "sustainability": 95
+          },
+          "Foundation": {
+            "name": "Lime-Pozzolan Natural Foundation",
+            "eng_score": 85.0,
+            "ml_score": 42.38016339599183,
+            "hybrid_score": 59.42809803759509,
+            "sustainability": 92
+          },
+          "Flooring": {
+            "name": "Porcelain GVT Slab (Full-Body Vitrified)",
+            "eng_score": 95.0,
+            "ml_score": 9.919522704538556,
+            "hybrid_score": 43.95171362272313,
+            "sustainability": 65
+          },
+          "Roofing": {
+            "name": "Standard Cement Tile (Concrete Interlocking)",
+            "eng_score": 85.0,
+            "ml_score": 8.125579041134534,
+            "hybrid_score": 38.87534742468072,
+            "sustainability": 42
+          },
+          "Waterproofing": {
+            "name": "Bituminous Modified Membrane (Torch-Applied)",
+            "eng_score": 85.0,
+            "ml_score": 1.5674672047677454,
+            "hybrid_score": 34.940480322860644,
+            "sustainability": 38
+          },
+          "Concrete": {
+            "name": "Self-Compacting Concrete (SCC)",
+            "eng_score": 55.0,
+            "ml_score": 41.56462761441568,
+            "hybrid_score": 46.9387765686494,
+            "sustainability": 50
+          },
+          "Structural": {
+            "name": "TMT High-Yield Rebar (SLS 375)",
+            "eng_score": 85.0,
+            "ml_score": 1.0110970020137193,
+            "hybrid_score": 34.60665820120823,
+            "sustainability": 55
+          }
+        },
+        "project_eng_score": 83.18181818181819,
+        "project_ml_score": 42.13777065049484,
+        "project_hybrid_score": 58.55538966302418,
+        "average_sustainability": 70.9090909090909,
+        "changes": 1
+      }
+    }
+  },
+  {
+    "scenario": "3. Residential - Jaffna",
+    "weights": {
+      "70/30 Baseline": {
+        "package": {
+          "Windows": {
+            "name": "uPVC Multi-Chamber Window System",
+            "eng_score": 100.0,
+            "ml_score": 78.0,
+            "hybrid_score": 93.4,
+            "sustainability": 82
+          },
+          "Doors": {
+            "name": "UPVC Sliding Door (Weather-Sealed)",
+            "eng_score": 100.0,
+            "ml_score": 75.19999999999999,
+            "hybrid_score": 92.56,
+            "sustainability": 80
+          },
+          "Finishing": {
+            "name": "Advanced Nano-Exterior Paint",
+            "eng_score": 100.0,
+            "ml_score": 69.0,
+            "hybrid_score": 90.7,
+            "sustainability": 65
+          },
+          "Walling": {
+            "name": "CSEB Compressed Stabilized Earth Block",
+            "eng_score": 85.0,
+            "ml_score": 72.15695752466277,
+            "hybrid_score": 81.14708725739882,
+            "sustainability": 98
+          },
+          "Ceiling": {
+            "name": "Bamboo-Fibre Acoustic Ceiling Panel",
+            "eng_score": 85.0,
+            "ml_score": 54.2729080194671,
+            "hybrid_score": 75.78187240584012,
+            "sustainability": 95
+          },
+          "Foundation": {
+            "name": "Lime-Pozzolan Natural Foundation",
+            "eng_score": 85.0,
+            "ml_score": 50.80108396926689,
+            "hybrid_score": 74.74032519078006,
+            "sustainability": 92
+          },
+          "Roofing": {
+            "name": "Marine-Grade Aluminium Roofing (0.55mm)",
+            "eng_score": 100.0,
+            "ml_score": 15.778219279509608,
+            "hybrid_score": 74.73346578385288,
+            "sustainability": 65
+          },
+          "Flooring": {
+            "name": "Recycled Composite Decking (WPC)",
+            "eng_score": 100.0,
+            "ml_score": 13.851573476394199,
+            "hybrid_score": 74.15547204291826,
+            "sustainability": 90
+          },
+          "Structural": {
+            "name": "GFRP Rebar (Glass Fibre Reinforced Polymer)",
+            "eng_score": 100.0,
+            "ml_score": 11.554449756715341,
+            "hybrid_score": 73.4663349270146,
+            "sustainability": 80
+          },
+          "Waterproofing": {
+            "name": "Crystalline Slurry Waterproofing (Penetrating)",
+            "eng_score": 100.0,
+            "ml_score": 2.985013577809459,
+            "hybrid_score": 70.89550407334283,
+            "sustainability": 58
+          },
+          "Concrete": {
+            "name": "Gr. 30 Marine-Grade Concrete Mix",
+            "eng_score": 100.0,
+            "ml_score": 0.608804045435209,
+            "hybrid_score": 70.18264121363056,
+            "sustainability": 46
+          }
+        },
+        "project_eng_score": 95.9090909090909,
+        "project_ml_score": 40.382637240841866,
+        "project_hybrid_score": 79.25115480861619,
+        "average_sustainability": 77.36363636363636,
+        "changes": 0
+      },
+      "60/40": {
+        "package": {
+          "Windows": {
+            "name": "uPVC Multi-Chamber Window System",
+            "eng_score": 100.0,
+            "ml_score": 78.0,
+            "hybrid_score": 91.2,
+            "sustainability": 82
+          },
+          "Doors": {
+            "name": "UPVC Sliding Door (Weather-Sealed)",
+            "eng_score": 100.0,
+            "ml_score": 75.19999999999999,
+            "hybrid_score": 90.08,
+            "sustainability": 80
+          },
+          "Finishing": {
+            "name": "Eco-Friendly Low VOC Emulsion",
+            "eng_score": 85.0,
+            "ml_score": 92.2,
+            "hybrid_score": 87.88,
+            "sustainability": 95
+          },
+          "Walling": {
+            "name": "CSEB Compressed Stabilized Earth Block",
+            "eng_score": 85.0,
+            "ml_score": 72.15695752466277,
+            "hybrid_score": 79.86278300986511,
+            "sustainability": 98
+          },
+          "Ceiling": {
+            "name": "Bamboo-Fibre Acoustic Ceiling Panel",
+            "eng_score": 85.0,
+            "ml_score": 54.2729080194671,
+            "hybrid_score": 72.70916320778684,
+            "sustainability": 95
+          },
+          "Foundation": {
+            "name": "Lime-Pozzolan Natural Foundation",
+            "eng_score": 85.0,
+            "ml_score": 50.80108396926689,
+            "hybrid_score": 71.32043358770676,
+            "sustainability": 92
+          },
+          "Roofing": {
+            "name": "Marine-Grade Aluminium Roofing (0.55mm)",
+            "eng_score": 100.0,
+            "ml_score": 15.778219279509608,
+            "hybrid_score": 66.31128771180384,
+            "sustainability": 65
+          },
+          "Flooring": {
+            "name": "Recycled Composite Decking (WPC)",
+            "eng_score": 100.0,
+            "ml_score": 13.851573476394199,
+            "hybrid_score": 65.54062939055768,
+            "sustainability": 90
+          },
+          "Structural": {
+            "name": "GFRP Rebar (Glass Fibre Reinforced Polymer)",
+            "eng_score": 100.0,
+            "ml_score": 11.554449756715341,
+            "hybrid_score": 64.62177990268614,
+            "sustainability": 80
+          },
+          "Waterproofing": {
+            "name": "Crystalline Slurry Waterproofing (Penetrating)",
+            "eng_score": 100.0,
+            "ml_score": 2.985013577809459,
+            "hybrid_score": 61.194005431123784,
+            "sustainability": 58
+          },
+          "Concrete": {
+            "name": "Gr. 30 Marine-Grade Concrete Mix",
+            "eng_score": 100.0,
+            "ml_score": 0.608804045435209,
+            "hybrid_score": 60.243521618174086,
+            "sustainability": 46
+          }
+        },
+        "project_eng_score": 94.54545454545455,
+        "project_ml_score": 42.491728149932776,
+        "project_hybrid_score": 73.72396398724584,
+        "average_sustainability": 80.0909090909091,
+        "changes": 1
+      },
+      "50/50": {
+        "package": {
+          "Windows": {
+            "name": "uPVC Multi-Chamber Window System",
+            "eng_score": 100.0,
+            "ml_score": 78.0,
+            "hybrid_score": 89.0,
+            "sustainability": 82
+          },
+          "Doors": {
+            "name": "UPVC Sliding Door (Weather-Sealed)",
+            "eng_score": 100.0,
+            "ml_score": 75.19999999999999,
+            "hybrid_score": 87.6,
+            "sustainability": 80
+          },
+          "Finishing": {
+            "name": "Eco-Friendly Low VOC Emulsion",
+            "eng_score": 85.0,
+            "ml_score": 92.2,
+            "hybrid_score": 88.6,
+            "sustainability": 95
+          },
+          "Walling": {
+            "name": "CSEB Compressed Stabilized Earth Block",
+            "eng_score": 85.0,
+            "ml_score": 72.15695752466277,
+            "hybrid_score": 78.57847876233139,
+            "sustainability": 98
+          },
+          "Ceiling": {
+            "name": "Bamboo-Fibre Acoustic Ceiling Panel",
+            "eng_score": 85.0,
+            "ml_score": 54.2729080194671,
+            "hybrid_score": 69.63645400973355,
+            "sustainability": 95
+          },
+          "Foundation": {
+            "name": "Lime-Pozzolan Natural Foundation",
+            "eng_score": 85.0,
+            "ml_score": 50.80108396926689,
+            "hybrid_score": 67.90054198463345,
+            "sustainability": 92
+          },
+          "Roofing": {
+            "name": "Marine-Grade Aluminium Roofing (0.55mm)",
+            "eng_score": 100.0,
+            "ml_score": 15.778219279509608,
+            "hybrid_score": 57.88910963975481,
+            "sustainability": 65
+          },
+          "Flooring": {
+            "name": "Recycled Composite Decking (WPC)",
+            "eng_score": 100.0,
+            "ml_score": 13.851573476394199,
+            "hybrid_score": 56.9257867381971,
+            "sustainability": 90
+          },
+          "Structural": {
+            "name": "GFRP Rebar (Glass Fibre Reinforced Polymer)",
+            "eng_score": 100.0,
+            "ml_score": 11.554449756715341,
+            "hybrid_score": 55.77722487835767,
+            "sustainability": 80
+          },
+          "Waterproofing": {
+            "name": "Crystalline Slurry Waterproofing (Penetrating)",
+            "eng_score": 100.0,
+            "ml_score": 2.985013577809459,
+            "hybrid_score": 51.49250678890473,
+            "sustainability": 58
+          },
+          "Concrete": {
+            "name": "Gr. 30 Marine-Grade Concrete Mix",
+            "eng_score": 100.0,
+            "ml_score": 0.608804045435209,
+            "hybrid_score": 50.3044020227176,
+            "sustainability": 46
+          }
+        },
+        "project_eng_score": 94.54545454545455,
+        "project_ml_score": 42.491728149932776,
+        "project_hybrid_score": 68.51859134769366,
+        "average_sustainability": 80.0909090909091,
+        "changes": 1
+      },
+      "40/60": {
+        "package": {
+          "Windows": {
+            "name": "uPVC Multi-Chamber Window System",
+            "eng_score": 100.0,
+            "ml_score": 78.0,
+            "hybrid_score": 86.8,
+            "sustainability": 82
+          },
+          "Doors": {
+            "name": "UPVC Sliding Door (Weather-Sealed)",
+            "eng_score": 100.0,
+            "ml_score": 75.19999999999999,
+            "hybrid_score": 85.11999999999999,
+            "sustainability": 80
+          },
+          "Finishing": {
+            "name": "Eco-Friendly Low VOC Emulsion",
+            "eng_score": 85.0,
+            "ml_score": 92.2,
+            "hybrid_score": 89.32,
+            "sustainability": 95
+          },
+          "Walling": {
+            "name": "CSEB Compressed Stabilized Earth Block",
+            "eng_score": 85.0,
+            "ml_score": 72.15695752466277,
+            "hybrid_score": 77.29417451479766,
+            "sustainability": 98
+          },
+          "Ceiling": {
+            "name": "Bamboo-Fibre Acoustic Ceiling Panel",
+            "eng_score": 85.0,
+            "ml_score": 54.2729080194671,
+            "hybrid_score": 66.56374481168027,
+            "sustainability": 95
+          },
+          "Foundation": {
+            "name": "Lime-Pozzolan Natural Foundation",
+            "eng_score": 85.0,
+            "ml_score": 50.80108396926689,
+            "hybrid_score": 64.48065038156014,
+            "sustainability": 92
+          },
+          "Roofing": {
+            "name": "Green Intensive Roof System (Growing Medium)",
+            "eng_score": 55.0,
+            "ml_score": 57.681370503387285,
+            "hybrid_score": 56.60882230203237,
+            "sustainability": 98
+          },
+          "Flooring": {
+            "name": "Recycled Composite Decking (WPC)",
+            "eng_score": 100.0,
+            "ml_score": 13.851573476394199,
+            "hybrid_score": 48.31094408583652,
+            "sustainability": 90
+          },
+          "Structural": {
+            "name": "GFRP Rebar (Glass Fibre Reinforced Polymer)",
+            "eng_score": 100.0,
+            "ml_score": 11.554449756715341,
+            "hybrid_score": 46.93266985402921,
+            "sustainability": 80
+          },
+          "Waterproofing": {
+            "name": "Crystalline Slurry Waterproofing (Penetrating)",
+            "eng_score": 100.0,
+            "ml_score": 2.985013577809459,
+            "hybrid_score": 41.79100814668568,
+            "sustainability": 58
+          },
+          "Concrete": {
+            "name": "Self-Compacting Concrete (SCC)",
+            "eng_score": 75.0,
+            "ml_score": 22.485007300653372,
+            "hybrid_score": 43.49100438039202,
+            "sustainability": 50
+          }
+        },
+        "project_eng_score": 88.18181818181819,
+        "project_ml_score": 48.289851284396036,
+        "project_hybrid_score": 64.2466380433649,
+        "average_sustainability": 83.45454545454545,
+        "changes": 3
+      }
+    }
+  },
+  {
+    "scenario": "4. Commercial - Colombo",
+    "weights": {
+      "70/30 Baseline": {
+        "package": {
+          "Windows": {
+            "name": "uPVC Multi-Chamber Window System",
+            "eng_score": 100.0,
+            "ml_score": 78.0,
+            "hybrid_score": 93.4,
+            "sustainability": 82
+          },
+          "Doors": {
+            "name": "UPVC Sliding Door (Weather-Sealed)",
+            "eng_score": 100.0,
+            "ml_score": 75.19999999999999,
+            "hybrid_score": 92.56,
+            "sustainability": 80
+          },
+          "Finishing": {
+            "name": "Advanced Nano-Exterior Paint",
+            "eng_score": 100.0,
+            "ml_score": 69.0,
+            "hybrid_score": 90.7,
+            "sustainability": 65
+          },
+          "Roofing": {
+            "name": "Green Intensive Roof System (Growing Medium)",
+            "eng_score": 100.0,
+            "ml_score": 66.55015666071424,
+            "hybrid_score": 89.96504699821426,
+            "sustainability": 98
+          },
+          "Ceiling": {
+            "name": "Bamboo-Fibre Acoustic Ceiling Panel",
+            "eng_score": 100.0,
+            "ml_score": 47.9549177285453,
+            "hybrid_score": 84.38647531856358,
+            "sustainability": 95
+          },
+          "Foundation": {
+            "name": "Raft Foundation Assembly (RC Heavy)",
+            "eng_score": 90.0,
+            "ml_score": 40.1414109548267,
+            "hybrid_score": 75.042423286448,
+            "sustainability": 42
+          },
+          "Walling": {
+            "name": "CSEB Compressed Stabilized Earth Block",
+            "eng_score": 75.0,
+            "ml_score": 74.34698142313368,
+            "hybrid_score": 74.80409442694011,
+            "sustainability": 98
+          },
+          "Flooring": {
+            "name": "Rubber Flooring (Recycled Automotive)",
+            "eng_score": 100.0,
+            "ml_score": 10.96802528732963,
+            "hybrid_score": 73.29040758619888,
+            "sustainability": 80
+          },
+          "Waterproofing": {
+            "name": "Bentonite Clay Waterproofing Panel",
+            "eng_score": 100.0,
+            "ml_score": 2.4293109804368576,
+            "hybrid_score": 70.72879329413105,
+            "sustainability": 85
+          },
+          "Structural": {
+            "name": "GFRP Rebar (Glass Fibre Reinforced Polymer)",
+            "eng_score": 100.0,
+            "ml_score": 2.0677497231018016,
+            "hybrid_score": 70.62032491693054,
+            "sustainability": 80
+          },
+          "Concrete": {
+            "name": "Eco-Concrete (Recycled Aggregate + Fly-Ash)",
+            "eng_score": 100.0,
+            "ml_score": 1.2375808916592224,
+            "hybrid_score": 70.37127426749777,
+            "sustainability": 92
+          }
+        },
+        "project_eng_score": 96.81818181818181,
+        "project_ml_score": 42.53601214997704,
+        "project_hybrid_score": 80.53353091772038,
+        "average_sustainability": 81.54545454545455,
+        "changes": 0
+      },
+      "60/40": {
+        "package": {
+          "Windows": {
+            "name": "uPVC Multi-Chamber Window System",
+            "eng_score": 100.0,
+            "ml_score": 78.0,
+            "hybrid_score": 91.2,
+            "sustainability": 82
+          },
+          "Doors": {
+            "name": "UPVC Sliding Door (Weather-Sealed)",
+            "eng_score": 100.0,
+            "ml_score": 75.19999999999999,
+            "hybrid_score": 90.08,
+            "sustainability": 80
+          },
+          "Finishing": {
+            "name": "Advanced Nano-Exterior Paint",
+            "eng_score": 100.0,
+            "ml_score": 69.0,
+            "hybrid_score": 87.6,
+            "sustainability": 65
+          },
+          "Roofing": {
+            "name": "Green Intensive Roof System (Growing Medium)",
+            "eng_score": 100.0,
+            "ml_score": 66.55015666071424,
+            "hybrid_score": 86.6200626642857,
+            "sustainability": 98
+          },
+          "Ceiling": {
+            "name": "Bamboo-Fibre Acoustic Ceiling Panel",
+            "eng_score": 100.0,
+            "ml_score": 47.9549177285453,
+            "hybrid_score": 79.18196709141812,
+            "sustainability": 95
+          },
+          "Foundation": {
+            "name": "Raft Foundation Assembly (RC Heavy)",
+            "eng_score": 90.0,
+            "ml_score": 40.1414109548267,
+            "hybrid_score": 70.05656438193068,
+            "sustainability": 42
+          },
+          "Walling": {
+            "name": "CSEB Compressed Stabilized Earth Block",
+            "eng_score": 75.0,
+            "ml_score": 74.34698142313368,
+            "hybrid_score": 74.73879256925348,
+            "sustainability": 98
+          },
+          "Flooring": {
+            "name": "Rubber Flooring (Recycled Automotive)",
+            "eng_score": 100.0,
+            "ml_score": 10.96802528732963,
+            "hybrid_score": 64.38721011493185,
+            "sustainability": 80
+          },
+          "Waterproofing": {
+            "name": "Bentonite Clay Waterproofing Panel",
+            "eng_score": 100.0,
+            "ml_score": 2.4293109804368576,
+            "hybrid_score": 60.97172439217474,
+            "sustainability": 85
+          },
+          "Structural": {
+            "name": "GFRP Rebar (Glass Fibre Reinforced Polymer)",
+            "eng_score": 100.0,
+            "ml_score": 2.0677497231018016,
+            "hybrid_score": 60.82709988924072,
+            "sustainability": 80
+          },
+          "Concrete": {
+            "name": "Eco-Concrete (Recycled Aggregate + Fly-Ash)",
+            "eng_score": 100.0,
+            "ml_score": 1.2375808916592224,
+            "hybrid_score": 60.495032356663685,
+            "sustainability": 92
+          }
+        },
+        "project_eng_score": 96.81818181818181,
+        "project_ml_score": 42.53601214997704,
+        "project_hybrid_score": 75.10531395089991,
+        "average_sustainability": 81.54545454545455,
+        "changes": 0
+      },
+      "50/50": {
+        "package": {
+          "Windows": {
+            "name": "uPVC Multi-Chamber Window System",
+            "eng_score": 100.0,
+            "ml_score": 78.0,
+            "hybrid_score": 89.0,
+            "sustainability": 82
+          },
+          "Doors": {
+            "name": "UPVC Sliding Door (Weather-Sealed)",
+            "eng_score": 100.0,
+            "ml_score": 75.19999999999999,
+            "hybrid_score": 87.6,
+            "sustainability": 80
+          },
+          "Finishing": {
+            "name": "Advanced Nano-Exterior Paint",
+            "eng_score": 100.0,
+            "ml_score": 69.0,
+            "hybrid_score": 84.5,
+            "sustainability": 65
+          },
+          "Roofing": {
+            "name": "Green Intensive Roof System (Growing Medium)",
+            "eng_score": 100.0,
+            "ml_score": 66.55015666071424,
+            "hybrid_score": 83.27507833035712,
+            "sustainability": 98
+          },
+          "Ceiling": {
+            "name": "Bamboo-Fibre Acoustic Ceiling Panel",
+            "eng_score": 100.0,
+            "ml_score": 47.9549177285453,
+            "hybrid_score": 73.97745886427265,
+            "sustainability": 95
+          },
+          "Foundation": {
+            "name": "Raft Foundation Assembly (RC Heavy)",
+            "eng_score": 90.0,
+            "ml_score": 40.1414109548267,
+            "hybrid_score": 65.07070547741336,
+            "sustainability": 42
+          },
+          "Walling": {
+            "name": "CSEB Compressed Stabilized Earth Block",
+            "eng_score": 75.0,
+            "ml_score": 74.34698142313368,
+            "hybrid_score": 74.67349071156684,
+            "sustainability": 98
+          },
+          "Flooring": {
+            "name": "Rubber Flooring (Recycled Automotive)",
+            "eng_score": 100.0,
+            "ml_score": 10.96802528732963,
+            "hybrid_score": 55.48401264366481,
+            "sustainability": 80
+          },
+          "Waterproofing": {
+            "name": "Bentonite Clay Waterproofing Panel",
+            "eng_score": 100.0,
+            "ml_score": 2.4293109804368576,
+            "hybrid_score": 51.214655490218426,
+            "sustainability": 85
+          },
+          "Structural": {
+            "name": "GFRP Rebar (Glass Fibre Reinforced Polymer)",
+            "eng_score": 100.0,
+            "ml_score": 2.0677497231018016,
+            "hybrid_score": 51.0338748615509,
+            "sustainability": 80
+          },
+          "Concrete": {
+            "name": "Eco-Concrete (Recycled Aggregate + Fly-Ash)",
+            "eng_score": 100.0,
+            "ml_score": 1.2375808916592224,
+            "hybrid_score": 50.61879044582961,
+            "sustainability": 92
+          }
+        },
+        "project_eng_score": 96.81818181818181,
+        "project_ml_score": 42.53601214997704,
+        "project_hybrid_score": 69.67709698407943,
+        "average_sustainability": 81.54545454545455,
+        "changes": 0
+      },
+      "40/60": {
+        "package": {
+          "Windows": {
+            "name": "uPVC Multi-Chamber Window System",
+            "eng_score": 100.0,
+            "ml_score": 78.0,
+            "hybrid_score": 86.8,
+            "sustainability": 82
+          },
+          "Doors": {
+            "name": "UPVC Sliding Door (Weather-Sealed)",
+            "eng_score": 100.0,
+            "ml_score": 75.19999999999999,
+            "hybrid_score": 85.11999999999999,
+            "sustainability": 80
+          },
+          "Finishing": {
+            "name": "Eco-Friendly Low VOC Emulsion",
+            "eng_score": 75.0,
+            "ml_score": 92.2,
+            "hybrid_score": 85.32,
+            "sustainability": 95
+          },
+          "Roofing": {
+            "name": "Green Intensive Roof System (Growing Medium)",
+            "eng_score": 100.0,
+            "ml_score": 66.55015666071424,
+            "hybrid_score": 79.93009399642854,
+            "sustainability": 98
+          },
+          "Ceiling": {
+            "name": "Bamboo-Fibre Acoustic Ceiling Panel",
+            "eng_score": 100.0,
+            "ml_score": 47.9549177285453,
+            "hybrid_score": 68.77295063712718,
+            "sustainability": 95
+          },
+          "Foundation": {
+            "name": "Raft Foundation Assembly (RC Heavy)",
+            "eng_score": 90.0,
+            "ml_score": 40.1414109548267,
+            "hybrid_score": 60.084846572896026,
+            "sustainability": 42
+          },
+          "Walling": {
+            "name": "CSEB Compressed Stabilized Earth Block",
+            "eng_score": 75.0,
+            "ml_score": 74.34698142313368,
+            "hybrid_score": 74.60818885388021,
+            "sustainability": 98
+          },
+          "Flooring": {
+            "name": "Polished Terrazzo Flooring (Marble Aggregate)",
+            "eng_score": 85.0,
+            "ml_score": 23.359220213092392,
+            "hybrid_score": 48.01553212785544,
+            "sustainability": 75
+          },
+          "Waterproofing": {
+            "name": "Bentonite Clay Waterproofing Panel",
+            "eng_score": 100.0,
+            "ml_score": 2.4293109804368576,
+            "hybrid_score": 41.45758658826212,
+            "sustainability": 85
+          },
+          "Structural": {
+            "name": "GFRP Rebar (Glass Fibre Reinforced Polymer)",
+            "eng_score": 100.0,
+            "ml_score": 2.0677497231018016,
+            "hybrid_score": 41.240649833861085,
+            "sustainability": 80
+          },
+          "Concrete": {
+            "name": "Eco-Concrete (Recycled Aggregate + Fly-Ash)",
+            "eng_score": 100.0,
+            "ml_score": 1.2375808916592224,
+            "hybrid_score": 40.742548534995535,
+            "sustainability": 92
+          }
+        },
+        "project_eng_score": 93.18181818181819,
+        "project_ml_score": 45.77157532504638,
+        "project_hybrid_score": 64.7356724677551,
+        "average_sustainability": 83.81818181818181,
+        "changes": 2
+      }
+    }
+  },
+  {
+    "scenario": "5. Commercial - Galle",
+    "weights": {
+      "70/30 Baseline": {
+        "package": {
+          "Windows": {
+            "name": "uPVC Multi-Chamber Window System",
+            "eng_score": 100.0,
+            "ml_score": 78.0,
+            "hybrid_score": 93.4,
+            "sustainability": 82
+          },
+          "Doors": {
+            "name": "UPVC Sliding Door (Weather-Sealed)",
+            "eng_score": 100.0,
+            "ml_score": 75.19999999999999,
+            "hybrid_score": 92.56,
+            "sustainability": 80
+          },
+          "Finishing": {
+            "name": "Advanced Nano-Exterior Paint",
+            "eng_score": 100.0,
+            "ml_score": 69.0,
+            "hybrid_score": 90.7,
+            "sustainability": 65
+          },
+          "Foundation": {
+            "name": "Raft Foundation Assembly (RC Heavy)",
+            "eng_score": 100.0,
+            "ml_score": 53.649372863272134,
+            "hybrid_score": 86.09481185898164,
+            "sustainability": 42
+          },
+          "Flooring": {
+            "name": "Polished Terrazzo Flooring (Marble Aggregate)",
+            "eng_score": 85.0,
+            "ml_score": 49.548318023716156,
+            "hybrid_score": 74.36449540711484,
+            "sustainability": 75
+          },
+          "Roofing": {
+            "name": "Zinc-Aluminium Corrugated Sheet (55% Al-Zn)",
+            "eng_score": 100.0,
+            "ml_score": 10.052703469847597,
+            "hybrid_score": 73.01581104095428,
+            "sustainability": 60
+          },
+          "Ceiling": {
+            "name": "Bamboo-Fibre Acoustic Ceiling Panel",
+            "eng_score": 85.0,
+            "ml_score": 40.27922011082033,
+            "hybrid_score": 71.58376603324609,
+            "sustainability": 95
+          },
+          "Waterproofing": {
+            "name": "Liquid Polyurethane Membrane (Seamless)",
+            "eng_score": 100.0,
+            "ml_score": 0.918023306815943,
+            "hybrid_score": 70.27540699204478,
+            "sustainability": 42
+          },
+          "Structural": {
+            "name": "GFRP Rebar (Glass Fibre Reinforced Polymer)",
+            "eng_score": 100.0,
+            "ml_score": 0.9090921926923978,
+            "hybrid_score": 70.27272765780772,
+            "sustainability": 80
+          },
+          "Concrete": {
+            "name": "Gr. 30 Marine-Grade Concrete Mix",
+            "eng_score": 100.0,
+            "ml_score": 0.8689009739328584,
+            "hybrid_score": 70.26067029217985,
+            "sustainability": 46
+          },
+          "Walling": {
+            "name": "High-Density Cement Block",
+            "eng_score": 85.0,
+            "ml_score": 13.15903843142615,
+            "hybrid_score": 63.447711529427835,
+            "sustainability": 46
+          }
+        },
+        "project_eng_score": 95.9090909090909,
+        "project_ml_score": 35.59860630659305,
+        "project_hybrid_score": 77.81594552834154,
+        "average_sustainability": 64.81818181818181,
+        "changes": 0
+      },
+      "60/40": {
+        "package": {
+          "Windows": {
+            "name": "uPVC Multi-Chamber Window System",
+            "eng_score": 100.0,
+            "ml_score": 78.0,
+            "hybrid_score": 91.2,
+            "sustainability": 82
+          },
+          "Doors": {
+            "name": "UPVC Sliding Door (Weather-Sealed)",
+            "eng_score": 100.0,
+            "ml_score": 75.19999999999999,
+            "hybrid_score": 90.08,
+            "sustainability": 80
+          },
+          "Finishing": {
+            "name": "Advanced Nano-Exterior Paint",
+            "eng_score": 100.0,
+            "ml_score": 69.0,
+            "hybrid_score": 87.6,
+            "sustainability": 65
+          },
+          "Foundation": {
+            "name": "Raft Foundation Assembly (RC Heavy)",
+            "eng_score": 100.0,
+            "ml_score": 53.649372863272134,
+            "hybrid_score": 81.45974914530885,
+            "sustainability": 42
+          },
+          "Flooring": {
+            "name": "Polished Terrazzo Flooring (Marble Aggregate)",
+            "eng_score": 85.0,
+            "ml_score": 49.548318023716156,
+            "hybrid_score": 70.81932720948646,
+            "sustainability": 75
+          },
+          "Roofing": {
+            "name": "Green Intensive Roof System (Growing Medium)",
+            "eng_score": 85.0,
+            "ml_score": 43.26696232487592,
+            "hybrid_score": 68.30678492995037,
+            "sustainability": 98
+          },
+          "Ceiling": {
+            "name": "Bamboo-Fibre Acoustic Ceiling Panel",
+            "eng_score": 85.0,
+            "ml_score": 40.27922011082033,
+            "hybrid_score": 67.11168804432813,
+            "sustainability": 95
+          },
+          "Waterproofing": {
+            "name": "Liquid Polyurethane Membrane (Seamless)",
+            "eng_score": 100.0,
+            "ml_score": 0.918023306815943,
+            "hybrid_score": 60.367209322726374,
+            "sustainability": 42
+          },
+          "Structural": {
+            "name": "GFRP Rebar (Glass Fibre Reinforced Polymer)",
+            "eng_score": 100.0,
+            "ml_score": 0.9090921926923978,
+            "hybrid_score": 60.36363687707696,
+            "sustainability": 80
+          },
+          "Concrete": {
+            "name": "Gr. 30 Marine-Grade Concrete Mix",
+            "eng_score": 100.0,
+            "ml_score": 0.8689009739328584,
+            "hybrid_score": 60.34756038957315,
+            "sustainability": 46
+          },
+          "Walling": {
+            "name": "High-Density Cement Block",
+            "eng_score": 85.0,
+            "ml_score": 13.15903843142615,
+            "hybrid_score": 56.26361537257046,
+            "sustainability": 46
+          }
+        },
+        "project_eng_score": 94.54545454545455,
+        "project_ml_score": 38.6180843843229,
+        "project_hybrid_score": 72.17450648100188,
+        "average_sustainability": 68.27272727272727,
+        "changes": 1
+      },
+      "50/50": {
+        "package": {
+          "Windows": {
+            "name": "uPVC Multi-Chamber Window System",
+            "eng_score": 100.0,
+            "ml_score": 78.0,
+            "hybrid_score": 89.0,
+            "sustainability": 82
+          },
+          "Doors": {
+            "name": "UPVC Sliding Door (Weather-Sealed)",
+            "eng_score": 100.0,
+            "ml_score": 75.19999999999999,
+            "hybrid_score": 87.6,
+            "sustainability": 80
+          },
+          "Finishing": {
+            "name": "Advanced Nano-Exterior Paint",
+            "eng_score": 100.0,
+            "ml_score": 69.0,
+            "hybrid_score": 84.5,
+            "sustainability": 65
+          },
+          "Foundation": {
+            "name": "Raft Foundation Assembly (RC Heavy)",
+            "eng_score": 100.0,
+            "ml_score": 53.649372863272134,
+            "hybrid_score": 76.82468643163607,
+            "sustainability": 42
+          },
+          "Flooring": {
+            "name": "Polished Terrazzo Flooring (Marble Aggregate)",
+            "eng_score": 85.0,
+            "ml_score": 49.548318023716156,
+            "hybrid_score": 67.27415901185807,
+            "sustainability": 75
+          },
+          "Roofing": {
+            "name": "Green Intensive Roof System (Growing Medium)",
+            "eng_score": 85.0,
+            "ml_score": 43.26696232487592,
+            "hybrid_score": 64.13348116243796,
+            "sustainability": 98
+          },
+          "Ceiling": {
+            "name": "Bamboo-Fibre Acoustic Ceiling Panel",
+            "eng_score": 85.0,
+            "ml_score": 40.27922011082033,
+            "hybrid_score": 62.63961005541017,
+            "sustainability": 95
+          },
+          "Waterproofing": {
+            "name": "Liquid Polyurethane Membrane (Seamless)",
+            "eng_score": 100.0,
+            "ml_score": 0.918023306815943,
+            "hybrid_score": 50.45901165340797,
+            "sustainability": 42
+          },
+          "Structural": {
+            "name": "GFRP Rebar (Glass Fibre Reinforced Polymer)",
+            "eng_score": 100.0,
+            "ml_score": 0.9090921926923978,
+            "hybrid_score": 50.4545460963462,
+            "sustainability": 80
+          },
+          "Concrete": {
+            "name": "Gr. 30 Marine-Grade Concrete Mix",
+            "eng_score": 100.0,
+            "ml_score": 0.8689009739328584,
+            "hybrid_score": 50.434450486966426,
+            "sustainability": 46
+          },
+          "Walling": {
+            "name": "CSEB Compressed Stabilized Earth Block",
+            "eng_score": 55.0,
+            "ml_score": 44.68531239265405,
+            "hybrid_score": 49.84265619632703,
+            "sustainability": 98
+          }
+        },
+        "project_eng_score": 91.81818181818181,
+        "project_ml_score": 41.48410928988907,
+        "project_hybrid_score": 66.65114555403544,
+        "average_sustainability": 73.0,
+        "changes": 2
+      },
+      "40/60": {
+        "package": {
+          "Windows": {
+            "name": "uPVC Multi-Chamber Window System",
+            "eng_score": 100.0,
+            "ml_score": 78.0,
+            "hybrid_score": 86.8,
+            "sustainability": 82
+          },
+          "Doors": {
+            "name": "UPVC Sliding Door (Weather-Sealed)",
+            "eng_score": 100.0,
+            "ml_score": 75.19999999999999,
+            "hybrid_score": 85.11999999999999,
+            "sustainability": 80
+          },
+          "Finishing": {
+            "name": "Advanced Nano-Exterior Paint",
+            "eng_score": 100.0,
+            "ml_score": 69.0,
+            "hybrid_score": 81.4,
+            "sustainability": 65
+          },
+          "Foundation": {
+            "name": "Raft Foundation Assembly (RC Heavy)",
+            "eng_score": 100.0,
+            "ml_score": 53.649372863272134,
+            "hybrid_score": 72.18962371796329,
+            "sustainability": 42
+          },
+          "Flooring": {
+            "name": "Polished Terrazzo Flooring (Marble Aggregate)",
+            "eng_score": 85.0,
+            "ml_score": 49.548318023716156,
+            "hybrid_score": 63.72899081422969,
+            "sustainability": 75
+          },
+          "Roofing": {
+            "name": "Green Intensive Roof System (Growing Medium)",
+            "eng_score": 85.0,
+            "ml_score": 43.26696232487592,
+            "hybrid_score": 59.96017739492555,
+            "sustainability": 98
+          },
+          "Ceiling": {
+            "name": "Bamboo-Fibre Acoustic Ceiling Panel",
+            "eng_score": 85.0,
+            "ml_score": 40.27922011082033,
+            "hybrid_score": 58.1675320664922,
+            "sustainability": 95
+          },
+          "Waterproofing": {
+            "name": "Liquid Polyurethane Membrane (Seamless)",
+            "eng_score": 100.0,
+            "ml_score": 0.918023306815943,
+            "hybrid_score": 40.550813984089565,
+            "sustainability": 42
+          },
+          "Structural": {
+            "name": "GFRP Rebar (Glass Fibre Reinforced Polymer)",
+            "eng_score": 100.0,
+            "ml_score": 0.9090921926923978,
+            "hybrid_score": 40.54545531561544,
+            "sustainability": 80
+          },
+          "Concrete": {
+            "name": "Gr. 30 Marine-Grade Concrete Mix",
+            "eng_score": 100.0,
+            "ml_score": 0.8689009739328584,
+            "hybrid_score": 40.52134058435971,
+            "sustainability": 46
+          },
+          "Walling": {
+            "name": "CSEB Compressed Stabilized Earth Block",
+            "eng_score": 55.0,
+            "ml_score": 44.68531239265405,
+            "hybrid_score": 48.81118743559243,
+            "sustainability": 98
+          }
+        },
+        "project_eng_score": 91.81818181818181,
+        "project_ml_score": 41.48410928988907,
+        "project_hybrid_score": 61.61773830120617,
+        "average_sustainability": 73.0,
+        "changes": 2
+      }
+    }
+  },
+  {
+    "scenario": "6. Educational - Kandy",
+    "weights": {
+      "70/30 Baseline": {
+        "package": {
+          "Finishing": {
+            "name": "Eco-Friendly Low VOC Emulsion",
+            "eng_score": 75.0,
+            "ml_score": 92.2,
+            "hybrid_score": 80.16,
+            "sustainability": 95
+          },
+          "Walling": {
+            "name": "CSEB Compressed Stabilized Earth Block",
+            "eng_score": 75.0,
+            "ml_score": 73.86740944465518,
+            "hybrid_score": 74.66022283339655,
+            "sustainability": 98
+          },
+          "Ceiling": {
+            "name": "Bamboo-Fibre Acoustic Ceiling Panel",
+            "eng_score": 75.0,
+            "ml_score": 62.947305346711666,
+            "hybrid_score": 71.3841916040135,
+            "sustainability": 95
+          },
+          "Foundation": {
+            "name": "Lime-Pozzolan Natural Foundation",
+            "eng_score": 75.0,
+            "ml_score": 57.62297613236789,
+            "hybrid_score": 69.78689283971036,
+            "sustainability": 92
+          },
+          "Doors": {
+            "name": "Solid Teak Timber Door (Premium)",
+            "eng_score": 55.0,
+            "ml_score": 76.2,
+            "hybrid_score": 61.36,
+            "sustainability": 75
+          },
+          "Windows": {
+            "name": "Timber Louvre Window (Treated Hardwood)",
+            "eng_score": 55.0,
+            "ml_score": 75.0,
+            "hybrid_score": 61.0,
+            "sustainability": 75
+          },
+          "Flooring": {
+            "name": "Rubber Flooring (Recycled Automotive)",
+            "eng_score": 75.0,
+            "ml_score": 2.278416693767332,
+            "hybrid_score": 53.1835250081302,
+            "sustainability": 80
+          },
+          "Roofing": {
+            "name": "Recycled Rubber Flat Roof Membrane",
+            "eng_score": 75.0,
+            "ml_score": 2.0622260914314907,
+            "hybrid_score": 53.11866782742945,
+            "sustainability": 75
+          },
+          "Concrete": {
+            "name": "Eco-Concrete (Recycled Aggregate + Fly-Ash)",
+            "eng_score": 75.0,
+            "ml_score": 1.1525465192071878,
+            "hybrid_score": 52.84576395576216,
+            "sustainability": 92
+          },
+          "Waterproofing": {
+            "name": "Bentonite Clay Waterproofing Panel",
+            "eng_score": 75.0,
+            "ml_score": 0.8799541366144704,
+            "hybrid_score": 52.763986240984345,
+            "sustainability": 85
+          },
+          "Structural": {
+            "name": "TMT High-Yield Rebar (SLS 375)",
+            "eng_score": 55.0,
+            "ml_score": 1.2831570046408605,
+            "hybrid_score": 38.88494710139226,
+            "sustainability": 55
+          }
+        },
+        "project_eng_score": 69.54545454545455,
+        "project_ml_score": 40.49945376085419,
+        "project_hybrid_score": 60.83165431007444,
+        "average_sustainability": 83.36363636363636,
+        "changes": 0
+      },
+      "60/40": {
+        "package": {
+          "Finishing": {
+            "name": "Eco-Friendly Low VOC Emulsion",
+            "eng_score": 75.0,
+            "ml_score": 92.2,
+            "hybrid_score": 81.88,
+            "sustainability": 95
+          },
+          "Walling": {
+            "name": "CSEB Compressed Stabilized Earth Block",
+            "eng_score": 75.0,
+            "ml_score": 73.86740944465518,
+            "hybrid_score": 74.54696377786208,
+            "sustainability": 98
+          },
+          "Ceiling": {
+            "name": "Bamboo-Fibre Acoustic Ceiling Panel",
+            "eng_score": 75.0,
+            "ml_score": 62.947305346711666,
+            "hybrid_score": 70.17892213868467,
+            "sustainability": 95
+          },
+          "Foundation": {
+            "name": "Lime-Pozzolan Natural Foundation",
+            "eng_score": 75.0,
+            "ml_score": 57.62297613236789,
+            "hybrid_score": 68.04919045294716,
+            "sustainability": 92
+          },
+          "Doors": {
+            "name": "Solid Teak Timber Door (Premium)",
+            "eng_score": 55.0,
+            "ml_score": 76.2,
+            "hybrid_score": 63.480000000000004,
+            "sustainability": 75
+          },
+          "Windows": {
+            "name": "Timber Louvre Window (Treated Hardwood)",
+            "eng_score": 55.0,
+            "ml_score": 75.0,
+            "hybrid_score": 63.0,
+            "sustainability": 75
+          },
+          "Flooring": {
+            "name": "Rubber Flooring (Recycled Automotive)",
+            "eng_score": 75.0,
+            "ml_score": 2.278416693767332,
+            "hybrid_score": 45.91136667750693,
+            "sustainability": 80
+          },
+          "Roofing": {
+            "name": "Recycled Rubber Flat Roof Membrane",
+            "eng_score": 75.0,
+            "ml_score": 2.0622260914314907,
+            "hybrid_score": 45.824890436572595,
+            "sustainability": 75
+          },
+          "Concrete": {
+            "name": "Eco-Concrete (Recycled Aggregate + Fly-Ash)",
+            "eng_score": 75.0,
+            "ml_score": 1.1525465192071878,
+            "hybrid_score": 45.461018607682874,
+            "sustainability": 92
+          },
+          "Waterproofing": {
+            "name": "Bentonite Clay Waterproofing Panel",
+            "eng_score": 75.0,
+            "ml_score": 0.8799541366144704,
+            "hybrid_score": 45.35198165464579,
+            "sustainability": 85
+          },
+          "Structural": {
+            "name": "TMT High-Yield Rebar (SLS 375)",
+            "eng_score": 55.0,
+            "ml_score": 1.2831570046408605,
+            "hybrid_score": 33.51326280185634,
+            "sustainability": 55
+          }
+        },
+        "project_eng_score": 69.54545454545455,
+        "project_ml_score": 40.49945376085419,
+        "project_hybrid_score": 57.9270542316144,
+        "average_sustainability": 83.36363636363636,
+        "changes": 0
+      },
+      "50/50": {
+        "package": {
+          "Finishing": {
+            "name": "Eco-Friendly Low VOC Emulsion",
+            "eng_score": 75.0,
+            "ml_score": 92.2,
+            "hybrid_score": 83.6,
+            "sustainability": 95
+          },
+          "Walling": {
+            "name": "CSEB Compressed Stabilized Earth Block",
+            "eng_score": 75.0,
+            "ml_score": 73.86740944465518,
+            "hybrid_score": 74.43370472232759,
+            "sustainability": 98
+          },
+          "Ceiling": {
+            "name": "Bamboo-Fibre Acoustic Ceiling Panel",
+            "eng_score": 75.0,
+            "ml_score": 62.947305346711666,
+            "hybrid_score": 68.97365267335583,
+            "sustainability": 95
+          },
+          "Foundation": {
+            "name": "Lime-Pozzolan Natural Foundation",
+            "eng_score": 75.0,
+            "ml_score": 57.62297613236789,
+            "hybrid_score": 66.31148806618394,
+            "sustainability": 92
+          },
+          "Doors": {
+            "name": "Solid Teak Timber Door (Premium)",
+            "eng_score": 55.0,
+            "ml_score": 76.2,
+            "hybrid_score": 65.6,
+            "sustainability": 75
+          },
+          "Windows": {
+            "name": "Timber Louvre Window (Treated Hardwood)",
+            "eng_score": 55.0,
+            "ml_score": 75.0,
+            "hybrid_score": 65.0,
+            "sustainability": 75
+          },
+          "Flooring": {
+            "name": "Rubber Flooring (Recycled Automotive)",
+            "eng_score": 75.0,
+            "ml_score": 2.278416693767332,
+            "hybrid_score": 38.63920834688366,
+            "sustainability": 80
+          },
+          "Roofing": {
+            "name": "Recycled Rubber Flat Roof Membrane",
+            "eng_score": 75.0,
+            "ml_score": 2.0622260914314907,
+            "hybrid_score": 38.53111304571574,
+            "sustainability": 75
+          },
+          "Concrete": {
+            "name": "Self-Compacting Concrete (SCC)",
+            "eng_score": 55.0,
+            "ml_score": 21.581605409919565,
+            "hybrid_score": 38.29080270495978,
+            "sustainability": 50
+          },
+          "Waterproofing": {
+            "name": "Bentonite Clay Waterproofing Panel",
+            "eng_score": 75.0,
+            "ml_score": 0.8799541366144704,
+            "hybrid_score": 37.939977068307236,
+            "sustainability": 85
+          },
+          "Structural": {
+            "name": "TMT High-Yield Rebar (SLS 375)",
+            "eng_score": 55.0,
+            "ml_score": 1.2831570046408605,
+            "hybrid_score": 28.14157850232043,
+            "sustainability": 55
+          }
+        },
+        "project_eng_score": 67.72727272727273,
+        "project_ml_score": 42.356640932737136,
+        "project_hybrid_score": 55.04195683000492,
+        "average_sustainability": 79.54545454545455,
+        "changes": 1
+      },
+      "40/60": {
+        "package": {
+          "Finishing": {
+            "name": "Eco-Friendly Low VOC Emulsion",
+            "eng_score": 75.0,
+            "ml_score": 92.2,
+            "hybrid_score": 85.32,
+            "sustainability": 95
+          },
+          "Walling": {
+            "name": "CSEB Compressed Stabilized Earth Block",
+            "eng_score": 75.0,
+            "ml_score": 73.86740944465518,
+            "hybrid_score": 74.3204456667931,
+            "sustainability": 98
+          },
+          "Ceiling": {
+            "name": "Bamboo-Fibre Acoustic Ceiling Panel",
+            "eng_score": 75.0,
+            "ml_score": 62.947305346711666,
+            "hybrid_score": 67.76838320802699,
+            "sustainability": 95
+          },
+          "Foundation": {
+            "name": "Lime-Pozzolan Natural Foundation",
+            "eng_score": 75.0,
+            "ml_score": 57.62297613236789,
+            "hybrid_score": 64.57378567942072,
+            "sustainability": 92
+          },
+          "Doors": {
+            "name": "Solid Teak Timber Door (Premium)",
+            "eng_score": 55.0,
+            "ml_score": 76.2,
+            "hybrid_score": 67.72,
+            "sustainability": 75
+          },
+          "Windows": {
+            "name": "Timber Louvre Window (Treated Hardwood)",
+            "eng_score": 55.0,
+            "ml_score": 75.0,
+            "hybrid_score": 67.0,
+            "sustainability": 75
+          },
+          "Flooring": {
+            "name": "Rubber Flooring (Recycled Automotive)",
+            "eng_score": 75.0,
+            "ml_score": 2.278416693767332,
+            "hybrid_score": 31.3670500162604,
+            "sustainability": 80
+          },
+          "Roofing": {
+            "name": "Recycled Rubber Flat Roof Membrane",
+            "eng_score": 75.0,
+            "ml_score": 2.0622260914314907,
+            "hybrid_score": 31.237335654858896,
+            "sustainability": 75
+          },
+          "Concrete": {
+            "name": "Self-Compacting Concrete (SCC)",
+            "eng_score": 55.0,
+            "ml_score": 21.581605409919565,
+            "hybrid_score": 34.94896324595174,
+            "sustainability": 50
+          },
+          "Waterproofing": {
+            "name": "Bentonite Clay Waterproofing Panel",
+            "eng_score": 75.0,
+            "ml_score": 0.8799541366144704,
+            "hybrid_score": 30.527972481968682,
+            "sustainability": 85
+          },
+          "Structural": {
+            "name": "TMT High-Yield Rebar (SLS 375)",
+            "eng_score": 55.0,
+            "ml_score": 1.2831570046408605,
+            "hybrid_score": 22.769894202784517,
+            "sustainability": 55
+          }
+        },
+        "project_eng_score": 67.72727272727273,
+        "project_ml_score": 42.356640932737136,
+        "project_hybrid_score": 52.50489365055137,
+        "average_sustainability": 79.54545454545455,
+        "changes": 1
+      }
+    }
+  },
+  {
+    "scenario": "7. Industrial - Colombo",
+    "weights": {
+      "70/30 Baseline": {
+        "package": {
+          "Finishing": {
+            "name": "Advanced Nano-Exterior Paint",
+            "eng_score": 100.0,
+            "ml_score": 69.0,
+            "hybrid_score": 90.7,
+            "sustainability": 65
+          },
+          "Doors": {
+            "name": "FRP Fiberglass Reinforced Door",
+            "eng_score": 100.0,
+            "ml_score": 59.8,
+            "hybrid_score": 87.94,
+            "sustainability": 65
+          },
+          "Windows": {
+            "name": "uPVC Multi-Chamber Window System",
+            "eng_score": 85.0,
+            "ml_score": 78.0,
+            "hybrid_score": 82.89999999999999,
+            "sustainability": 82
+          },
+          "Foundation": {
+            "name": "Raft Foundation Assembly (RC Heavy)",
+            "eng_score": 100.0,
+            "ml_score": 21.437732097657182,
+            "hybrid_score": 76.43131962929715,
+            "sustainability": 42
+          },
+          "Roofing": {
+            "name": "Marine-Grade Aluminium Roofing (0.55mm)",
+            "eng_score": 100.0,
+            "ml_score": 20.73289457687246,
+            "hybrid_score": 76.21986837306174,
+            "sustainability": 65
+          },
+          "Flooring": {
+            "name": "Rubber Flooring (Recycled Automotive)",
+            "eng_score": 100.0,
+            "ml_score": 19.82131002305203,
+            "hybrid_score": 75.94639300691561,
+            "sustainability": 80
+          },
+          "Concrete": {
+            "name": "Gr. 30 Marine-Grade Concrete Mix",
+            "eng_score": 100.0,
+            "ml_score": 3.0105357646243913,
+            "hybrid_score": 70.90316072938732,
+            "sustainability": 46
+          },
+          "Structural": {
+            "name": "Stainless Steel Rebar (Grade 316L)",
+            "eng_score": 100.0,
+            "ml_score": 1.1393602890967331,
+            "hybrid_score": 70.34180808672902,
+            "sustainability": 35
+          },
+          "Waterproofing": {
+            "name": "Crystalline Slurry Waterproofing (Penetrating)",
+            "eng_score": 100.0,
+            "ml_score": 0.6373242622703246,
+            "hybrid_score": 70.1911972786811,
+            "sustainability": 58
+          },
+          "Ceiling": {
+            "name": "Calcium Silicate Board Ceiling",
+            "eng_score": 100.0,
+            "ml_score": 0.3621722826692413,
+            "hybrid_score": 70.10865168480078,
+            "sustainability": 62
+          },
+          "Walling": {
+            "name": "CSEB Compressed Stabilized Earth Block",
+            "eng_score": 55.0,
+            "ml_score": 90.62943687158922,
+            "hybrid_score": 65.68883106147676,
+            "sustainability": 98
+          }
+        },
+        "project_eng_score": 94.54545454545455,
+        "project_ml_score": 33.142796924348325,
+        "project_hybrid_score": 76.12465725912267,
+        "average_sustainability": 63.45454545454545,
+        "changes": 0
+      },
+      "60/40": {
+        "package": {
+          "Finishing": {
+            "name": "Advanced Nano-Exterior Paint",
+            "eng_score": 100.0,
+            "ml_score": 69.0,
+            "hybrid_score": 87.6,
+            "sustainability": 65
+          },
+          "Doors": {
+            "name": "FRP Fiberglass Reinforced Door",
+            "eng_score": 100.0,
+            "ml_score": 59.8,
+            "hybrid_score": 83.92,
+            "sustainability": 65
+          },
+          "Windows": {
+            "name": "uPVC Multi-Chamber Window System",
+            "eng_score": 85.0,
+            "ml_score": 78.0,
+            "hybrid_score": 82.2,
+            "sustainability": 82
+          },
+          "Foundation": {
+            "name": "Raft Foundation Assembly (RC Heavy)",
+            "eng_score": 100.0,
+            "ml_score": 21.437732097657182,
+            "hybrid_score": 68.57509283906288,
+            "sustainability": 42
+          },
+          "Roofing": {
+            "name": "Marine-Grade Aluminium Roofing (0.55mm)",
+            "eng_score": 100.0,
+            "ml_score": 20.73289457687246,
+            "hybrid_score": 68.29315783074898,
+            "sustainability": 65
+          },
+          "Flooring": {
+            "name": "Rubber Flooring (Recycled Automotive)",
+            "eng_score": 100.0,
+            "ml_score": 19.82131002305203,
+            "hybrid_score": 67.92852400922081,
+            "sustainability": 80
+          },
+          "Concrete": {
+            "name": "Gr. 30 Marine-Grade Concrete Mix",
+            "eng_score": 100.0,
+            "ml_score": 3.0105357646243913,
+            "hybrid_score": 61.20421430584976,
+            "sustainability": 46
+          },
+          "Structural": {
+            "name": "Stainless Steel Rebar (Grade 316L)",
+            "eng_score": 100.0,
+            "ml_score": 1.1393602890967331,
+            "hybrid_score": 60.455744115638694,
+            "sustainability": 35
+          },
+          "Waterproofing": {
+            "name": "Crystalline Slurry Waterproofing (Penetrating)",
+            "eng_score": 100.0,
+            "ml_score": 0.6373242622703246,
+            "hybrid_score": 60.25492970490813,
+            "sustainability": 58
+          },
+          "Ceiling": {
+            "name": "Calcium Silicate Board Ceiling",
+            "eng_score": 100.0,
+            "ml_score": 0.3621722826692413,
+            "hybrid_score": 60.1448689130677,
+            "sustainability": 62
+          },
+          "Walling": {
+            "name": "CSEB Compressed Stabilized Earth Block",
+            "eng_score": 55.0,
+            "ml_score": 90.62943687158922,
+            "hybrid_score": 69.25177474863568,
+            "sustainability": 98
+          }
+        },
+        "project_eng_score": 94.54545454545455,
+        "project_ml_score": 33.142796924348325,
+        "project_hybrid_score": 69.98439149701206,
+        "average_sustainability": 63.45454545454545,
+        "changes": 0
+      },
+      "50/50": {
+        "package": {
+          "Finishing": {
+            "name": "Advanced Nano-Exterior Paint",
+            "eng_score": 100.0,
+            "ml_score": 69.0,
+            "hybrid_score": 84.5,
+            "sustainability": 65
+          },
+          "Doors": {
+            "name": "UPVC Sliding Door (Weather-Sealed)",
+            "eng_score": 85.0,
+            "ml_score": 75.19999999999999,
+            "hybrid_score": 80.1,
+            "sustainability": 80
+          },
+          "Windows": {
+            "name": "uPVC Multi-Chamber Window System",
+            "eng_score": 85.0,
+            "ml_score": 78.0,
+            "hybrid_score": 81.5,
+            "sustainability": 82
+          },
+          "Foundation": {
+            "name": "Raft Foundation Assembly (RC Heavy)",
+            "eng_score": 100.0,
+            "ml_score": 21.437732097657182,
+            "hybrid_score": 60.71886604882859,
+            "sustainability": 42
+          },
+          "Roofing": {
+            "name": "Marine-Grade Aluminium Roofing (0.55mm)",
+            "eng_score": 100.0,
+            "ml_score": 20.73289457687246,
+            "hybrid_score": 60.366447288436234,
+            "sustainability": 65
+          },
+          "Flooring": {
+            "name": "Rubber Flooring (Recycled Automotive)",
+            "eng_score": 100.0,
+            "ml_score": 19.82131002305203,
+            "hybrid_score": 59.91065501152602,
+            "sustainability": 80
+          },
+          "Concrete": {
+            "name": "Gr. 30 Marine-Grade Concrete Mix",
+            "eng_score": 100.0,
+            "ml_score": 3.0105357646243913,
+            "hybrid_score": 51.5052678823122,
+            "sustainability": 46
+          },
+          "Structural": {
+            "name": "Stainless Steel Rebar (Grade 316L)",
+            "eng_score": 100.0,
+            "ml_score": 1.1393602890967331,
+            "hybrid_score": 50.569680144548364,
+            "sustainability": 35
+          },
+          "Waterproofing": {
+            "name": "Crystalline Slurry Waterproofing (Penetrating)",
+            "eng_score": 100.0,
+            "ml_score": 0.6373242622703246,
+            "hybrid_score": 50.31866213113516,
+            "sustainability": 58
+          },
+          "Ceiling": {
+            "name": "Bamboo-Fibre Acoustic Ceiling Panel",
+            "eng_score": 55.0,
+            "ml_score": 50.0303713180119,
+            "hybrid_score": 52.51518565900595,
+            "sustainability": 95
+          },
+          "Walling": {
+            "name": "CSEB Compressed Stabilized Earth Block",
+            "eng_score": 55.0,
+            "ml_score": 90.62943687158922,
+            "hybrid_score": 72.81471843579462,
+            "sustainability": 98
+          }
+        },
+        "project_eng_score": 89.0909090909091,
+        "project_ml_score": 39.05808774574311,
+        "project_hybrid_score": 64.0744984183261,
+        "average_sustainability": 67.81818181818181,
+        "changes": 2
+      },
+      "40/60": {
+        "package": {
+          "Finishing": {
+            "name": "Advanced Nano-Exterior Paint",
+            "eng_score": 100.0,
+            "ml_score": 69.0,
+            "hybrid_score": 81.4,
+            "sustainability": 65
+          },
+          "Doors": {
+            "name": "UPVC Sliding Door (Weather-Sealed)",
+            "eng_score": 85.0,
+            "ml_score": 75.19999999999999,
+            "hybrid_score": 79.11999999999999,
+            "sustainability": 80
+          },
+          "Windows": {
+            "name": "uPVC Multi-Chamber Window System",
+            "eng_score": 85.0,
+            "ml_score": 78.0,
+            "hybrid_score": 80.8,
+            "sustainability": 82
+          },
+          "Foundation": {
+            "name": "Lime-Pozzolan Natural Foundation",
+            "eng_score": 55.0,
+            "ml_score": 52.827067637342815,
+            "hybrid_score": 53.696240582405686,
+            "sustainability": 92
+          },
+          "Roofing": {
+            "name": "Green Intensive Roof System (Growing Medium)",
+            "eng_score": 55.0,
+            "ml_score": 65.25870558199536,
+            "hybrid_score": 61.155223349197215,
+            "sustainability": 98
+          },
+          "Flooring": {
+            "name": "Rubber Flooring (Recycled Automotive)",
+            "eng_score": 100.0,
+            "ml_score": 19.82131002305203,
+            "hybrid_score": 51.89278601383121,
+            "sustainability": 80
+          },
+          "Concrete": {
+            "name": "Gr. 30 Marine-Grade Concrete Mix",
+            "eng_score": 100.0,
+            "ml_score": 3.0105357646243913,
+            "hybrid_score": 41.80632145877463,
+            "sustainability": 46
+          },
+          "Structural": {
+            "name": "Stainless Steel Rebar (Grade 316L)",
+            "eng_score": 100.0,
+            "ml_score": 1.1393602890967331,
+            "hybrid_score": 40.68361617345804,
+            "sustainability": 35
+          },
+          "Waterproofing": {
+            "name": "Crystalline Slurry Waterproofing (Penetrating)",
+            "eng_score": 100.0,
+            "ml_score": 0.6373242622703246,
+            "hybrid_score": 40.3823945573622,
+            "sustainability": 58
+          },
+          "Ceiling": {
+            "name": "Bamboo-Fibre Acoustic Ceiling Panel",
+            "eng_score": 55.0,
+            "ml_score": 50.0303713180119,
+            "hybrid_score": 52.018222790807144,
+            "sustainability": 95
+          },
+          "Walling": {
+            "name": "CSEB Compressed Stabilized Earth Block",
+            "eng_score": 55.0,
+            "ml_score": 90.62943687158922,
+            "hybrid_score": 76.37766212295352,
+            "sustainability": 98
+          }
+        },
+        "project_eng_score": 80.9090909090909,
+        "project_ml_score": 45.95946470436207,
+        "project_hybrid_score": 59.93931518625361,
+        "average_sustainability": 75.36363636363636,
+        "changes": 4
+      }
+    }
+  },
+  {
+    "scenario": "8. Hospitality - Galle",
+    "weights": {
+      "70/30 Baseline": {
+        "package": {
+          "Windows": {
+            "name": "uPVC Multi-Chamber Window System",
+            "eng_score": 100.0,
+            "ml_score": 78.0,
+            "hybrid_score": 93.4,
+            "sustainability": 82
+          },
+          "Doors": {
+            "name": "UPVC Sliding Door (Weather-Sealed)",
+            "eng_score": 100.0,
+            "ml_score": 75.19999999999999,
+            "hybrid_score": 92.56,
+            "sustainability": 80
+          },
+          "Finishing": {
+            "name": "Advanced Nano-Exterior Paint",
+            "eng_score": 85.0,
+            "ml_score": 69.0,
+            "hybrid_score": 80.19999999999999,
+            "sustainability": 65
+          },
+          "Roofing": {
+            "name": "Green Intensive Roof System (Growing Medium)",
+            "eng_score": 75.0,
+            "ml_score": 78.6718371923207,
+            "hybrid_score": 76.1015511576962,
+            "sustainability": 98
+          },
+          "Walling": {
+            "name": "CSEB Compressed Stabilized Earth Block",
+            "eng_score": 75.0,
+            "ml_score": 76.58577314385099,
+            "hybrid_score": 75.4757319431553,
+            "sustainability": 98
+          },
+          "Ceiling": {
+            "name": "Bamboo-Fibre Acoustic Ceiling Panel",
+            "eng_score": 75.0,
+            "ml_score": 62.112852251754326,
+            "hybrid_score": 71.13385567552629,
+            "sustainability": 95
+          },
+          "Structural": {
+            "name": "GFRP Rebar (Glass Fibre Reinforced Polymer)",
+            "eng_score": 100.0,
+            "ml_score": 1.6460613082601865,
+            "hybrid_score": 70.49381839247806,
+            "sustainability": 80
+          },
+          "Foundation": {
+            "name": "Lime-Pozzolan Natural Foundation",
+            "eng_score": 75.0,
+            "ml_score": 59.3978798603053,
+            "hybrid_score": 70.31936395809159,
+            "sustainability": 92
+          },
+          "Flooring": {
+            "name": "Recycled Composite Decking (WPC)",
+            "eng_score": 95.0,
+            "ml_score": 6.725703306378403,
+            "hybrid_score": 68.51771099191352,
+            "sustainability": 90
+          },
+          "Concrete": {
+            "name": "Self-Compacting Concrete (SCC)",
+            "eng_score": 75.0,
+            "ml_score": 14.947235589819039,
+            "hybrid_score": 56.98417067694571,
+            "sustainability": 50
+          },
+          "Waterproofing": {
+            "name": "Crystalline Slurry Waterproofing (Penetrating)",
+            "eng_score": 75.0,
+            "ml_score": 1.724138430143838,
+            "hybrid_score": 53.017241529043154,
+            "sustainability": 58
+          }
+        },
+        "project_eng_score": 84.54545454545455,
+        "project_ml_score": 47.63740737116662,
+        "project_hybrid_score": 73.47304039316816,
+        "average_sustainability": 80.72727272727273,
+        "changes": 0
+      },
+      "60/40": {
+        "package": {
+          "Windows": {
+            "name": "uPVC Multi-Chamber Window System",
+            "eng_score": 100.0,
+            "ml_score": 78.0,
+            "hybrid_score": 91.2,
+            "sustainability": 82
+          },
+          "Doors": {
+            "name": "UPVC Sliding Door (Weather-Sealed)",
+            "eng_score": 100.0,
+            "ml_score": 75.19999999999999,
+            "hybrid_score": 90.08,
+            "sustainability": 80
+          },
+          "Finishing": {
+            "name": "Eco-Friendly Low VOC Emulsion",
+            "eng_score": 75.0,
+            "ml_score": 92.2,
+            "hybrid_score": 81.88,
+            "sustainability": 95
+          },
+          "Roofing": {
+            "name": "Green Intensive Roof System (Growing Medium)",
+            "eng_score": 75.0,
+            "ml_score": 78.6718371923207,
+            "hybrid_score": 76.46873487692828,
+            "sustainability": 98
+          },
+          "Walling": {
+            "name": "CSEB Compressed Stabilized Earth Block",
+            "eng_score": 75.0,
+            "ml_score": 76.58577314385099,
+            "hybrid_score": 75.6343092575404,
+            "sustainability": 98
+          },
+          "Ceiling": {
+            "name": "Bamboo-Fibre Acoustic Ceiling Panel",
+            "eng_score": 75.0,
+            "ml_score": 62.112852251754326,
+            "hybrid_score": 69.84514090070174,
+            "sustainability": 95
+          },
+          "Structural": {
+            "name": "GFRP Rebar (Glass Fibre Reinforced Polymer)",
+            "eng_score": 100.0,
+            "ml_score": 1.6460613082601865,
+            "hybrid_score": 60.65842452330408,
+            "sustainability": 80
+          },
+          "Foundation": {
+            "name": "Lime-Pozzolan Natural Foundation",
+            "eng_score": 75.0,
+            "ml_score": 59.3978798603053,
+            "hybrid_score": 68.75915194412212,
+            "sustainability": 92
+          },
+          "Flooring": {
+            "name": "Recycled Composite Decking (WPC)",
+            "eng_score": 95.0,
+            "ml_score": 6.725703306378403,
+            "hybrid_score": 59.690281322551364,
+            "sustainability": 90
+          },
+          "Concrete": {
+            "name": "Self-Compacting Concrete (SCC)",
+            "eng_score": 75.0,
+            "ml_score": 14.947235589819039,
+            "hybrid_score": 50.97889423592761,
+            "sustainability": 50
+          },
+          "Waterproofing": {
+            "name": "Crystalline Slurry Waterproofing (Penetrating)",
+            "eng_score": 75.0,
+            "ml_score": 1.724138430143838,
+            "hybrid_score": 45.68965537205754,
+            "sustainability": 58
+          }
+        },
+        "project_eng_score": 83.63636363636364,
+        "project_ml_score": 49.74649828025752,
+        "project_hybrid_score": 70.08041749392119,
+        "average_sustainability": 83.45454545454545,
+        "changes": 1
+      },
+      "50/50": {
+        "package": {
+          "Windows": {
+            "name": "uPVC Multi-Chamber Window System",
+            "eng_score": 100.0,
+            "ml_score": 78.0,
+            "hybrid_score": 89.0,
+            "sustainability": 82
+          },
+          "Doors": {
+            "name": "UPVC Sliding Door (Weather-Sealed)",
+            "eng_score": 100.0,
+            "ml_score": 75.19999999999999,
+            "hybrid_score": 87.6,
+            "sustainability": 80
+          },
+          "Finishing": {
+            "name": "Eco-Friendly Low VOC Emulsion",
+            "eng_score": 75.0,
+            "ml_score": 92.2,
+            "hybrid_score": 83.6,
+            "sustainability": 95
+          },
+          "Roofing": {
+            "name": "Green Intensive Roof System (Growing Medium)",
+            "eng_score": 75.0,
+            "ml_score": 78.6718371923207,
+            "hybrid_score": 76.83591859616035,
+            "sustainability": 98
+          },
+          "Walling": {
+            "name": "CSEB Compressed Stabilized Earth Block",
+            "eng_score": 75.0,
+            "ml_score": 76.58577314385099,
+            "hybrid_score": 75.7928865719255,
+            "sustainability": 98
+          },
+          "Ceiling": {
+            "name": "Bamboo-Fibre Acoustic Ceiling Panel",
+            "eng_score": 75.0,
+            "ml_score": 62.112852251754326,
+            "hybrid_score": 68.55642612587717,
+            "sustainability": 95
+          },
+          "Structural": {
+            "name": "GFRP Rebar (Glass Fibre Reinforced Polymer)",
+            "eng_score": 100.0,
+            "ml_score": 1.6460613082601865,
+            "hybrid_score": 50.82303065413009,
+            "sustainability": 80
+          },
+          "Foundation": {
+            "name": "Lime-Pozzolan Natural Foundation",
+            "eng_score": 75.0,
+            "ml_score": 59.3978798603053,
+            "hybrid_score": 67.19893993015265,
+            "sustainability": 92
+          },
+          "Flooring": {
+            "name": "Recycled Composite Decking (WPC)",
+            "eng_score": 95.0,
+            "ml_score": 6.725703306378403,
+            "hybrid_score": 50.8628516531892,
+            "sustainability": 90
+          },
+          "Concrete": {
+            "name": "Self-Compacting Concrete (SCC)",
+            "eng_score": 75.0,
+            "ml_score": 14.947235589819039,
+            "hybrid_score": 44.97361779490952,
+            "sustainability": 50
+          },
+          "Waterproofing": {
+            "name": "Crystalline Slurry Waterproofing (Penetrating)",
+            "eng_score": 75.0,
+            "ml_score": 1.724138430143838,
+            "hybrid_score": 38.36206921507192,
+            "sustainability": 58
+          }
+        },
+        "project_eng_score": 83.63636363636364,
+        "project_ml_score": 49.74649828025752,
+        "project_hybrid_score": 66.69143095831058,
+        "average_sustainability": 83.45454545454545,
+        "changes": 1
+      },
+      "40/60": {
+        "package": {
+          "Windows": {
+            "name": "uPVC Multi-Chamber Window System",
+            "eng_score": 100.0,
+            "ml_score": 78.0,
+            "hybrid_score": 86.8,
+            "sustainability": 82
+          },
+          "Doors": {
+            "name": "UPVC Sliding Door (Weather-Sealed)",
+            "eng_score": 100.0,
+            "ml_score": 75.19999999999999,
+            "hybrid_score": 85.11999999999999,
+            "sustainability": 80
+          },
+          "Finishing": {
+            "name": "Eco-Friendly Low VOC Emulsion",
+            "eng_score": 75.0,
+            "ml_score": 92.2,
+            "hybrid_score": 85.32,
+            "sustainability": 95
+          },
+          "Roofing": {
+            "name": "Green Intensive Roof System (Growing Medium)",
+            "eng_score": 75.0,
+            "ml_score": 78.6718371923207,
+            "hybrid_score": 77.20310231539241,
+            "sustainability": 98
+          },
+          "Walling": {
+            "name": "CSEB Compressed Stabilized Earth Block",
+            "eng_score": 75.0,
+            "ml_score": 76.58577314385099,
+            "hybrid_score": 75.95146388631059,
+            "sustainability": 98
+          },
+          "Ceiling": {
+            "name": "Bamboo-Fibre Acoustic Ceiling Panel",
+            "eng_score": 75.0,
+            "ml_score": 62.112852251754326,
+            "hybrid_score": 67.2677113510526,
+            "sustainability": 95
+          },
+          "Structural": {
+            "name": "GFRP Rebar (Glass Fibre Reinforced Polymer)",
+            "eng_score": 100.0,
+            "ml_score": 1.6460613082601865,
+            "hybrid_score": 40.98763678495611,
+            "sustainability": 80
+          },
+          "Foundation": {
+            "name": "Lime-Pozzolan Natural Foundation",
+            "eng_score": 75.0,
+            "ml_score": 59.3978798603053,
+            "hybrid_score": 65.63872791618317,
+            "sustainability": 92
+          },
+          "Flooring": {
+            "name": "Recycled Composite Decking (WPC)",
+            "eng_score": 95.0,
+            "ml_score": 6.725703306378403,
+            "hybrid_score": 42.03542198382704,
+            "sustainability": 90
+          },
+          "Concrete": {
+            "name": "Self-Compacting Concrete (SCC)",
+            "eng_score": 75.0,
+            "ml_score": 14.947235589819039,
+            "hybrid_score": 38.968341353891425,
+            "sustainability": 50
+          },
+          "Waterproofing": {
+            "name": "Crystalline Slurry Waterproofing (Penetrating)",
+            "eng_score": 75.0,
+            "ml_score": 1.724138430143838,
+            "hybrid_score": 31.034483058086302,
+            "sustainability": 58
+          }
+        },
+        "project_eng_score": 83.63636363636364,
+        "project_ml_score": 49.74649828025752,
+        "project_hybrid_score": 63.30244442269997,
+        "average_sustainability": 83.45454545454545,
+        "changes": 1
+      }
+    }
+  },
+  {
+    "scenario": "9. Office - Colombo",
+    "weights": {
+      "70/30 Baseline": {
+        "package": {
+          "Windows": {
+            "name": "uPVC Multi-Chamber Window System",
+            "eng_score": 85.0,
+            "ml_score": 78.0,
+            "hybrid_score": 82.89999999999999,
+            "sustainability": 82
+          },
+          "Doors": {
+            "name": "UPVC Sliding Door (Weather-Sealed)",
+            "eng_score": 85.0,
+            "ml_score": 75.19999999999999,
+            "hybrid_score": 82.05999999999999,
+            "sustainability": 80
+          },
+          "Finishing": {
+            "name": "Advanced Nano-Exterior Paint",
+            "eng_score": 85.0,
+            "ml_score": 69.0,
+            "hybrid_score": 80.19999999999999,
+            "sustainability": 65
+          },
+          "Foundation": {
+            "name": "Raft Foundation Assembly (RC Heavy)",
+            "eng_score": 75.0,
+            "ml_score": 42.88795178001063,
+            "hybrid_score": 65.36638553400319,
+            "sustainability": 42
+          },
+          "Structural": {
+            "name": "Epoxy-Coated Rebar (ASTM A775)",
+            "eng_score": 85.0,
+            "ml_score": 2.2622023137632006,
+            "hybrid_score": 60.17866069412895,
+            "sustainability": 42
+          },
+          "Flooring": {
+            "name": "Porcelain GVT Slab (Full-Body Vitrified)",
+            "eng_score": 85.0,
+            "ml_score": 1.6248465722065695,
+            "hybrid_score": 59.987453971661964,
+            "sustainability": 65
+          },
+          "Roofing": {
+            "name": "Zinc-Aluminium Corrugated Sheet (55% Al-Zn)",
+            "eng_score": 75.0,
+            "ml_score": 17.265743252143967,
+            "hybrid_score": 57.67972297564319,
+            "sustainability": 60
+          },
+          "Walling": {
+            "name": "CSEB Compressed Stabilized Earth Block",
+            "eng_score": 55.0,
+            "ml_score": 56.19216222321791,
+            "hybrid_score": 55.357648666965375,
+            "sustainability": 98
+          },
+          "Ceiling": {
+            "name": "Calcium Silicate Board Ceiling",
+            "eng_score": 75.0,
+            "ml_score": 4.279891073313827,
+            "hybrid_score": 53.78396732199415,
+            "sustainability": 62
+          },
+          "Waterproofing": {
+            "name": "Liquid Polyurethane Membrane (Seamless)",
+            "eng_score": 75.0,
+            "ml_score": 2.3221349841497094,
+            "hybrid_score": 53.196640495244914,
+            "sustainability": 42
+          },
+          "Concrete": {
+            "name": "Self-Compacting Concrete (SCC)",
+            "eng_score": 75.0,
+            "ml_score": 1.461147472434045,
+            "hybrid_score": 52.93834424173021,
+            "sustainability": 50
+          }
+        },
+        "project_eng_score": 77.72727272727273,
+        "project_ml_score": 31.863279970112714,
+        "project_hybrid_score": 63.96807490012472,
+        "average_sustainability": 62.54545454545455,
+        "changes": 0
+      },
+      "60/40": {
+        "package": {
+          "Windows": {
+            "name": "uPVC Multi-Chamber Window System",
+            "eng_score": 85.0,
+            "ml_score": 78.0,
+            "hybrid_score": 82.2,
+            "sustainability": 82
+          },
+          "Doors": {
+            "name": "UPVC Sliding Door (Weather-Sealed)",
+            "eng_score": 85.0,
+            "ml_score": 75.19999999999999,
+            "hybrid_score": 81.08,
+            "sustainability": 80
+          },
+          "Finishing": {
+            "name": "Advanced Nano-Exterior Paint",
+            "eng_score": 85.0,
+            "ml_score": 69.0,
+            "hybrid_score": 78.6,
+            "sustainability": 65
+          },
+          "Foundation": {
+            "name": "Raft Foundation Assembly (RC Heavy)",
+            "eng_score": 75.0,
+            "ml_score": 42.88795178001063,
+            "hybrid_score": 62.15518071200425,
+            "sustainability": 42
+          },
+          "Structural": {
+            "name": "Epoxy-Coated Rebar (ASTM A775)",
+            "eng_score": 85.0,
+            "ml_score": 2.2622023137632006,
+            "hybrid_score": 51.90488092550528,
+            "sustainability": 42
+          },
+          "Flooring": {
+            "name": "Porcelain GVT Slab (Full-Body Vitrified)",
+            "eng_score": 85.0,
+            "ml_score": 1.6248465722065695,
+            "hybrid_score": 51.64993862888263,
+            "sustainability": 65
+          },
+          "Roofing": {
+            "name": "Green Intensive Roof System (Growing Medium)",
+            "eng_score": 55.0,
+            "ml_score": 55.977908603080316,
+            "hybrid_score": 55.39116344123212,
+            "sustainability": 98
+          },
+          "Walling": {
+            "name": "CSEB Compressed Stabilized Earth Block",
+            "eng_score": 55.0,
+            "ml_score": 56.19216222321791,
+            "hybrid_score": 55.47686488928717,
+            "sustainability": 98
+          },
+          "Ceiling": {
+            "name": "Bamboo-Fibre Acoustic Ceiling Panel",
+            "eng_score": 55.0,
+            "ml_score": 46.71474657739411,
+            "hybrid_score": 51.685898630957645,
+            "sustainability": 95
+          },
+          "Waterproofing": {
+            "name": "Liquid Polyurethane Membrane (Seamless)",
+            "eng_score": 75.0,
+            "ml_score": 2.3221349841497094,
+            "hybrid_score": 45.928853993659885,
+            "sustainability": 42
+          },
+          "Concrete": {
+            "name": "Self-Compacting Concrete (SCC)",
+            "eng_score": 75.0,
+            "ml_score": 1.461147472434045,
+            "hybrid_score": 45.584458988973616,
+            "sustainability": 50
+          }
+        },
+        "project_eng_score": 74.0909090909091,
+        "project_ml_score": 39.24028186602332,
+        "project_hybrid_score": 60.15065820095478,
+        "average_sustainability": 69.0,
+        "changes": 2
+      },
+      "50/50": {
+        "package": {
+          "Windows": {
+            "name": "uPVC Multi-Chamber Window System",
+            "eng_score": 85.0,
+            "ml_score": 78.0,
+            "hybrid_score": 81.5,
+            "sustainability": 82
+          },
+          "Doors": {
+            "name": "UPVC Sliding Door (Weather-Sealed)",
+            "eng_score": 85.0,
+            "ml_score": 75.19999999999999,
+            "hybrid_score": 80.1,
+            "sustainability": 80
+          },
+          "Finishing": {
+            "name": "Advanced Nano-Exterior Paint",
+            "eng_score": 85.0,
+            "ml_score": 69.0,
+            "hybrid_score": 77.0,
+            "sustainability": 65
+          },
+          "Foundation": {
+            "name": "Raft Foundation Assembly (RC Heavy)",
+            "eng_score": 75.0,
+            "ml_score": 42.88795178001063,
+            "hybrid_score": 58.94397589000532,
+            "sustainability": 42
+          },
+          "Structural": {
+            "name": "Epoxy-Coated Rebar (ASTM A775)",
+            "eng_score": 85.0,
+            "ml_score": 2.2622023137632006,
+            "hybrid_score": 43.6311011568816,
+            "sustainability": 42
+          },
+          "Flooring": {
+            "name": "Recycled Composite Decking (WPC)",
+            "eng_score": 75.0,
+            "ml_score": 14.78668343186991,
+            "hybrid_score": 44.89334171593495,
+            "sustainability": 90
+          },
+          "Roofing": {
+            "name": "Green Intensive Roof System (Growing Medium)",
+            "eng_score": 55.0,
+            "ml_score": 55.977908603080316,
+            "hybrid_score": 55.48895430154016,
+            "sustainability": 98
+          },
+          "Walling": {
+            "name": "CSEB Compressed Stabilized Earth Block",
+            "eng_score": 55.0,
+            "ml_score": 56.19216222321791,
+            "hybrid_score": 55.59608111160895,
+            "sustainability": 98
+          },
+          "Ceiling": {
+            "name": "Bamboo-Fibre Acoustic Ceiling Panel",
+            "eng_score": 55.0,
+            "ml_score": 46.71474657739411,
+            "hybrid_score": 50.857373288697055,
+            "sustainability": 95
+          },
+          "Waterproofing": {
+            "name": "Liquid Polyurethane Membrane (Seamless)",
+            "eng_score": 75.0,
+            "ml_score": 2.3221349841497094,
+            "hybrid_score": 38.66106749207486,
+            "sustainability": 42
+          },
+          "Concrete": {
+            "name": "Self-Compacting Concrete (SCC)",
+            "eng_score": 75.0,
+            "ml_score": 1.461147472434045,
+            "hybrid_score": 38.230573736217025,
+            "sustainability": 50
+          }
+        },
+        "project_eng_score": 73.18181818181819,
+        "project_ml_score": 40.43681248962907,
+        "project_hybrid_score": 56.80931533572363,
+        "average_sustainability": 71.27272727272727,
+        "changes": 3
+      },
+      "40/60": {
+        "package": {
+          "Windows": {
+            "name": "uPVC Multi-Chamber Window System",
+            "eng_score": 85.0,
+            "ml_score": 78.0,
+            "hybrid_score": 80.8,
+            "sustainability": 82
+          },
+          "Doors": {
+            "name": "UPVC Sliding Door (Weather-Sealed)",
+            "eng_score": 85.0,
+            "ml_score": 75.19999999999999,
+            "hybrid_score": 79.11999999999999,
+            "sustainability": 80
+          },
+          "Finishing": {
+            "name": "Eco-Friendly Low VOC Emulsion",
+            "eng_score": 55.0,
+            "ml_score": 92.2,
+            "hybrid_score": 77.32,
+            "sustainability": 95
+          },
+          "Foundation": {
+            "name": "Raft Foundation Assembly (RC Heavy)",
+            "eng_score": 75.0,
+            "ml_score": 42.88795178001063,
+            "hybrid_score": 55.73277106800638,
+            "sustainability": 42
+          },
+          "Structural": {
+            "name": "Epoxy-Coated Rebar (ASTM A775)",
+            "eng_score": 85.0,
+            "ml_score": 2.2622023137632006,
+            "hybrid_score": 35.35732138825792,
+            "sustainability": 42
+          },
+          "Flooring": {
+            "name": "Recycled Composite Decking (WPC)",
+            "eng_score": 75.0,
+            "ml_score": 14.78668343186991,
+            "hybrid_score": 38.87201005912195,
+            "sustainability": 90
+          },
+          "Roofing": {
+            "name": "Green Intensive Roof System (Growing Medium)",
+            "eng_score": 55.0,
+            "ml_score": 55.977908603080316,
+            "hybrid_score": 55.586745161848185,
+            "sustainability": 98
+          },
+          "Walling": {
+            "name": "CSEB Compressed Stabilized Earth Block",
+            "eng_score": 55.0,
+            "ml_score": 56.19216222321791,
+            "hybrid_score": 55.71529733393075,
+            "sustainability": 98
+          },
+          "Ceiling": {
+            "name": "Bamboo-Fibre Acoustic Ceiling Panel",
+            "eng_score": 55.0,
+            "ml_score": 46.71474657739411,
+            "hybrid_score": 50.028847946436464,
+            "sustainability": 95
+          },
+          "Waterproofing": {
+            "name": "Liquid Polyurethane Membrane (Seamless)",
+            "eng_score": 75.0,
+            "ml_score": 2.3221349841497094,
+            "hybrid_score": 31.393280990489824,
+            "sustainability": 42
+          },
+          "Concrete": {
+            "name": "Self-Compacting Concrete (SCC)",
+            "eng_score": 75.0,
+            "ml_score": 1.461147472434045,
+            "hybrid_score": 30.876688483460427,
+            "sustainability": 50
+          }
+        },
+        "project_eng_score": 70.45454545454545,
+        "project_ml_score": 42.545903398719986,
+        "project_hybrid_score": 53.709360221050176,
+        "average_sustainability": 74.0,
+        "changes": 4
+      }
+    }
+  },
+  {
+    "scenario": "10. Mixed Use - Kandy",
+    "weights": {
+      "70/30 Baseline": {
+        "package": {
+          "Finishing": {
+            "name": "Eco-Friendly Low VOC Emulsion",
+            "eng_score": 75.0,
+            "ml_score": 92.2,
+            "hybrid_score": 80.16,
+            "sustainability": 95
+          },
+          "Walling": {
+            "name": "CSEB Compressed Stabilized Earth Block",
+            "eng_score": 75.0,
+            "ml_score": 54.085363613455975,
+            "hybrid_score": 68.72560908403679,
+            "sustainability": 98
+          },
+          "Ceiling": {
+            "name": "Bamboo-Fibre Acoustic Ceiling Panel",
+            "eng_score": 75.0,
+            "ml_score": 50.42288295936259,
+            "hybrid_score": 67.62686488780878,
+            "sustainability": 95
+          },
+          "Foundation": {
+            "name": "Lime-Pozzolan Natural Foundation",
+            "eng_score": 75.0,
+            "ml_score": 48.00426650370099,
+            "hybrid_score": 66.9012799511103,
+            "sustainability": 92
+          },
+          "Windows": {
+            "name": "Commercial Double-Glazed Unit (DGU Low-E)",
+            "eng_score": 55.0,
+            "ml_score": 60.0,
+            "hybrid_score": 56.5,
+            "sustainability": 72
+          },
+          "Roofing": {
+            "name": "Recycled Rubber Flat Roof Membrane",
+            "eng_score": 75.0,
+            "ml_score": 9.14876052477335,
+            "hybrid_score": 55.244628157432004,
+            "sustainability": 75
+          },
+          "Flooring": {
+            "name": "Rubber Flooring (Recycled Automotive)",
+            "eng_score": 75.0,
+            "ml_score": 4.023605915013329,
+            "hybrid_score": 53.707081774504,
+            "sustainability": 80
+          },
+          "Waterproofing": {
+            "name": "Bentonite Clay Waterproofing Panel",
+            "eng_score": 75.0,
+            "ml_score": 2.2299739153834053,
+            "hybrid_score": 53.16899217461502,
+            "sustainability": 85
+          },
+          "Concrete": {
+            "name": "Eco-Concrete (Recycled Aggregate + Fly-Ash)",
+            "eng_score": 75.0,
+            "ml_score": 1.1224739458562898,
+            "hybrid_score": 52.83674218375689,
+            "sustainability": 92
+          },
+          "Doors": {
+            "name": "Standard Hollow-Core Flush Door (HDF Faced)",
+            "eng_score": 40.0,
+            "ml_score": 50.0,
+            "hybrid_score": 43.0,
+            "sustainability": 42
+          },
+          "Structural": {
+            "name": "Galvanized Steel Rebar (Hot-Dip)",
+            "eng_score": 55.0,
+            "ml_score": 1.769018768481196,
+            "hybrid_score": 39.03070563054436,
+            "sustainability": 50
+          }
+        },
+        "project_eng_score": 68.18181818181819,
+        "project_ml_score": 33.90966783145701,
+        "project_hybrid_score": 57.90017307670983,
+        "average_sustainability": 79.63636363636364,
+        "changes": 0
+      },
+      "60/40": {
+        "package": {
+          "Finishing": {
+            "name": "Eco-Friendly Low VOC Emulsion",
+            "eng_score": 75.0,
+            "ml_score": 92.2,
+            "hybrid_score": 81.88,
+            "sustainability": 95
+          },
+          "Walling": {
+            "name": "CSEB Compressed Stabilized Earth Block",
+            "eng_score": 75.0,
+            "ml_score": 54.085363613455975,
+            "hybrid_score": 66.63414544538239,
+            "sustainability": 98
+          },
+          "Ceiling": {
+            "name": "Bamboo-Fibre Acoustic Ceiling Panel",
+            "eng_score": 75.0,
+            "ml_score": 50.42288295936259,
+            "hybrid_score": 65.16915318374504,
+            "sustainability": 95
+          },
+          "Foundation": {
+            "name": "Lime-Pozzolan Natural Foundation",
+            "eng_score": 75.0,
+            "ml_score": 48.00426650370099,
+            "hybrid_score": 64.2017066014804,
+            "sustainability": 92
+          },
+          "Windows": {
+            "name": "Commercial Double-Glazed Unit (DGU Low-E)",
+            "eng_score": 55.0,
+            "ml_score": 60.0,
+            "hybrid_score": 57.0,
+            "sustainability": 72
+          },
+          "Roofing": {
+            "name": "Recycled Rubber Flat Roof Membrane",
+            "eng_score": 75.0,
+            "ml_score": 9.14876052477335,
+            "hybrid_score": 48.65950420990934,
+            "sustainability": 75
+          },
+          "Flooring": {
+            "name": "Rubber Flooring (Recycled Automotive)",
+            "eng_score": 75.0,
+            "ml_score": 4.023605915013329,
+            "hybrid_score": 46.60944236600533,
+            "sustainability": 80
+          },
+          "Waterproofing": {
+            "name": "Bentonite Clay Waterproofing Panel",
+            "eng_score": 75.0,
+            "ml_score": 2.2299739153834053,
+            "hybrid_score": 45.89198956615336,
+            "sustainability": 85
+          },
+          "Concrete": {
+            "name": "Eco-Concrete (Recycled Aggregate + Fly-Ash)",
+            "eng_score": 75.0,
+            "ml_score": 1.1224739458562898,
+            "hybrid_score": 45.44898957834251,
+            "sustainability": 92
+          },
+          "Doors": {
+            "name": "Standard Hollow-Core Flush Door (HDF Faced)",
+            "eng_score": 40.0,
+            "ml_score": 50.0,
+            "hybrid_score": 44.0,
+            "sustainability": 42
+          },
+          "Structural": {
+            "name": "Galvanized Steel Rebar (Hot-Dip)",
+            "eng_score": 55.0,
+            "ml_score": 1.769018768481196,
+            "hybrid_score": 33.70760750739248,
+            "sustainability": 50
+          }
+        },
+        "project_eng_score": 68.18181818181819,
+        "project_ml_score": 33.90966783145701,
+        "project_hybrid_score": 54.47295804167371,
+        "average_sustainability": 79.63636363636364,
+        "changes": 0
+      },
+      "50/50": {
+        "package": {
+          "Finishing": {
+            "name": "Eco-Friendly Low VOC Emulsion",
+            "eng_score": 75.0,
+            "ml_score": 92.2,
+            "hybrid_score": 83.6,
+            "sustainability": 95
+          },
+          "Walling": {
+            "name": "CSEB Compressed Stabilized Earth Block",
+            "eng_score": 75.0,
+            "ml_score": 54.085363613455975,
+            "hybrid_score": 64.54268180672798,
+            "sustainability": 98
+          },
+          "Ceiling": {
+            "name": "Bamboo-Fibre Acoustic Ceiling Panel",
+            "eng_score": 75.0,
+            "ml_score": 50.42288295936259,
+            "hybrid_score": 62.7114414796813,
+            "sustainability": 95
+          },
+          "Foundation": {
+            "name": "Lime-Pozzolan Natural Foundation",
+            "eng_score": 75.0,
+            "ml_score": 48.00426650370099,
+            "hybrid_score": 61.502133251850495,
+            "sustainability": 92
+          },
+          "Windows": {
+            "name": "Commercial Double-Glazed Unit (DGU Low-E)",
+            "eng_score": 55.0,
+            "ml_score": 60.0,
+            "hybrid_score": 57.5,
+            "sustainability": 72
+          },
+          "Roofing": {
+            "name": "Recycled Rubber Flat Roof Membrane",
+            "eng_score": 75.0,
+            "ml_score": 9.14876052477335,
+            "hybrid_score": 42.074380262386676,
+            "sustainability": 75
+          },
+          "Flooring": {
+            "name": "Rubber Flooring (Recycled Automotive)",
+            "eng_score": 75.0,
+            "ml_score": 4.023605915013329,
+            "hybrid_score": 39.51180295750667,
+            "sustainability": 80
+          },
+          "Waterproofing": {
+            "name": "Bentonite Clay Waterproofing Panel",
+            "eng_score": 75.0,
+            "ml_score": 2.2299739153834053,
+            "hybrid_score": 38.614986957691706,
+            "sustainability": 85
+          },
+          "Concrete": {
+            "name": "Eco-Concrete (Recycled Aggregate + Fly-Ash)",
+            "eng_score": 75.0,
+            "ml_score": 1.1224739458562898,
+            "hybrid_score": 38.06123697292814,
+            "sustainability": 92
+          },
+          "Doors": {
+            "name": "Standard Hollow-Core Flush Door (HDF Faced)",
+            "eng_score": 40.0,
+            "ml_score": 50.0,
+            "hybrid_score": 45.0,
+            "sustainability": 42
+          },
+          "Structural": {
+            "name": "Galvanized Steel Rebar (Hot-Dip)",
+            "eng_score": 55.0,
+            "ml_score": 1.769018768481196,
+            "hybrid_score": 28.384509384240598,
+            "sustainability": 50
+          }
+        },
+        "project_eng_score": 68.18181818181819,
+        "project_ml_score": 33.90966783145701,
+        "project_hybrid_score": 51.0457430066376,
+        "average_sustainability": 79.63636363636364,
+        "changes": 0
+      },
+      "40/60": {
+        "package": {
+          "Finishing": {
+            "name": "Eco-Friendly Low VOC Emulsion",
+            "eng_score": 75.0,
+            "ml_score": 92.2,
+            "hybrid_score": 85.32,
+            "sustainability": 95
+          },
+          "Walling": {
+            "name": "CSEB Compressed Stabilized Earth Block",
+            "eng_score": 75.0,
+            "ml_score": 54.085363613455975,
+            "hybrid_score": 62.45121816807358,
+            "sustainability": 98
+          },
+          "Ceiling": {
+            "name": "Bamboo-Fibre Acoustic Ceiling Panel",
+            "eng_score": 75.0,
+            "ml_score": 50.42288295936259,
+            "hybrid_score": 60.25372977561755,
+            "sustainability": 95
+          },
+          "Foundation": {
+            "name": "Lime-Pozzolan Natural Foundation",
+            "eng_score": 75.0,
+            "ml_score": 48.00426650370099,
+            "hybrid_score": 58.802559902220594,
+            "sustainability": 92
+          },
+          "Windows": {
+            "name": "Commercial Double-Glazed Unit (DGU Low-E)",
+            "eng_score": 55.0,
+            "ml_score": 60.0,
+            "hybrid_score": 58.0,
+            "sustainability": 72
+          },
+          "Roofing": {
+            "name": "Recycled Rubber Flat Roof Membrane",
+            "eng_score": 75.0,
+            "ml_score": 9.14876052477335,
+            "hybrid_score": 35.48925631486401,
+            "sustainability": 75
+          },
+          "Flooring": {
+            "name": "Rubber Flooring (Recycled Automotive)",
+            "eng_score": 75.0,
+            "ml_score": 4.023605915013329,
+            "hybrid_score": 32.414163549007995,
+            "sustainability": 80
+          },
+          "Waterproofing": {
+            "name": "Bentonite Clay Waterproofing Panel",
+            "eng_score": 75.0,
+            "ml_score": 2.2299739153834053,
+            "hybrid_score": 31.337984349230045,
+            "sustainability": 85
+          },
+          "Concrete": {
+            "name": "Eco-Concrete (Recycled Aggregate + Fly-Ash)",
+            "eng_score": 75.0,
+            "ml_score": 1.1224739458562898,
+            "hybrid_score": 30.673484367513772,
+            "sustainability": 92
+          },
+          "Doors": {
+            "name": "Standard Hollow-Core Flush Door (HDF Faced)",
+            "eng_score": 40.0,
+            "ml_score": 50.0,
+            "hybrid_score": 46.0,
+            "sustainability": 42
+          },
+          "Structural": {
+            "name": "Galvanized Steel Rebar (Hot-Dip)",
+            "eng_score": 55.0,
+            "ml_score": 1.769018768481196,
+            "hybrid_score": 23.06141126108872,
+            "sustainability": 50
+          }
+        },
+        "project_eng_score": 68.18181818181819,
+        "project_ml_score": 33.90966783145701,
+        "project_hybrid_score": 47.61852797160147,
+        "average_sustainability": 79.63636363636364,
+        "changes": 0
+      }
+    }
+  }
+]

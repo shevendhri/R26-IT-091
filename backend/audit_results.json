@@ -1,0 +1,922 @@
+[
+  {
+    "scenario": "1. Residential - Colombo",
+    "inputs": {
+      "blueprint": {
+        "building_type": "Residential",
+        "num_floors": 2,
+        "total_area": 250.0,
+        "structural_system": "Concrete Frame"
+      },
+      "profile": {
+        "location": "Colombo",
+        "sustainability_pref": "Medium",
+        "budget_pref": "Medium"
+      }
+    },
+    "components": {
+      "foundation": {
+        "name": "Lime-Pozzolan Natural Foundation",
+        "ml_score": 52.78415327756776,
+        "eng_score": 85.0,
+        "hybrid_score": 75.34
+      },
+      "structural": {
+        "name": "GFRP Rebar (Glass Fibre Reinforced Polymer)",
+        "ml_score": 7.796710634136489,
+        "eng_score": 100.0,
+        "hybrid_score": 72.34
+      },
+      "concrete": {
+        "name": "Gr. 30 Marine-Grade Concrete Mix",
+        "ml_score": 0.3382199131553969,
+        "eng_score": 100.0,
+        "hybrid_score": 70.1
+      },
+      "walls": {
+        "name": "CSEB Compressed Stabilized Earth Block",
+        "ml_score": 66.36624198932802,
+        "eng_score": 85.0,
+        "hybrid_score": 79.41
+      },
+      "roofing": {
+        "name": "Marine-Grade Aluminium Roofing (0.55mm)",
+        "ml_score": 7.4808532491246,
+        "eng_score": 100.0,
+        "hybrid_score": 72.24
+      },
+      "windows": {
+        "name": "uPVC Multi-Chamber Window System",
+        "ml_score": 78.0,
+        "eng_score": 100.0,
+        "hybrid_score": 93.4
+      },
+      "doors": {
+        "name": "UPVC Sliding Door (Weather-Sealed)",
+        "ml_score": 75.19999999999999,
+        "eng_score": 100.0,
+        "hybrid_score": 92.56
+      },
+      "flooring": {
+        "name": "Recycled Composite Decking (WPC)",
+        "ml_score": 16.21434751012162,
+        "eng_score": 100.0,
+        "hybrid_score": 74.86
+      },
+      "ceiling": {
+        "name": "Bamboo-Fibre Acoustic Ceiling Panel",
+        "ml_score": 59.81985773645383,
+        "eng_score": 85.0,
+        "hybrid_score": 77.45
+      },
+      "finishes": {
+        "name": "Advanced Nano-Exterior Paint",
+        "ml_score": 69.0,
+        "eng_score": 100.0,
+        "hybrid_score": 90.7
+      },
+      "waterproofing": {
+        "name": "Crystalline Slurry Waterproofing (Penetrating)",
+        "ml_score": 2.2176939296763765,
+        "eng_score": 100.0,
+        "hybrid_score": 70.67
+      }
+    },
+    "metrics": {
+      "project_ml_score": 39.6,
+      "project_eng_score": 95.9,
+      "project_hybrid_score": 79.0,
+      "total_project_cost": null,
+      "average_sustainability": 77.4,
+      "carbon_footprint": null
+    }
+  },
+  {
+    "scenario": "2. Residential - Kandy",
+    "inputs": {
+      "blueprint": {
+        "building_type": "Residential",
+        "num_floors": 2,
+        "total_area": 250.0,
+        "structural_system": "Concrete Frame"
+      },
+      "profile": {
+        "location": "Kandy",
+        "sustainability_pref": "Medium",
+        "budget_pref": "Medium"
+      }
+    },
+    "components": {
+      "foundation": {
+        "name": "Lime-Pozzolan Natural Foundation",
+        "ml_score": 42.38016339599183,
+        "eng_score": 85.0,
+        "hybrid_score": 72.21
+      },
+      "structural": {
+        "name": "TMT High-Yield Rebar (SLS 375)",
+        "ml_score": 1.0110970020137193,
+        "eng_score": 85.0,
+        "hybrid_score": 59.8
+      },
+      "concrete": {
+        "name": "Eco-Concrete (Recycled Aggregate + Fly-Ash)",
+        "ml_score": 1.0454816768452213,
+        "eng_score": 85.0,
+        "hybrid_score": 59.81
+      },
+      "walls": {
+        "name": "CSEB Compressed Stabilized Earth Block",
+        "ml_score": 61.68463982570931,
+        "eng_score": 85.0,
+        "hybrid_score": 78.01
+      },
+      "roofing": {
+        "name": "Standard Cement Tile (Concrete Interlocking)",
+        "ml_score": 8.125579041134534,
+        "eng_score": 85.0,
+        "hybrid_score": 61.94
+      },
+      "windows": {
+        "name": "Timber Louvre Window (Treated Hardwood)",
+        "ml_score": 75.0,
+        "eng_score": 85.0,
+        "hybrid_score": 82.0
+      },
+      "doors": {
+        "name": "Solid Teak Timber Door (Premium)",
+        "ml_score": 76.2,
+        "eng_score": 85.0,
+        "hybrid_score": 82.36
+      },
+      "flooring": {
+        "name": "Porcelain GVT Slab (Full-Body Vitrified)",
+        "ml_score": 9.919522704538558,
+        "eng_score": 95.0,
+        "hybrid_score": 69.48
+      },
+      "ceiling": {
+        "name": "Bamboo-Fibre Acoustic Ceiling Panel",
+        "ml_score": 53.86238036687193,
+        "eng_score": 85.0,
+        "hybrid_score": 75.66
+      },
+      "finishes": {
+        "name": "Eco-Friendly Low VOC Emulsion",
+        "ml_score": 92.2,
+        "eng_score": 85.0,
+        "hybrid_score": 87.16
+      },
+      "waterproofing": {
+        "name": "Bituminous Modified Membrane (Torch-Applied)",
+        "ml_score": 1.5674672047677454,
+        "eng_score": 85.0,
+        "hybrid_score": 59.97
+      }
+    },
+    "metrics": {
+      "project_ml_score": 38.5,
+      "project_eng_score": 85.9,
+      "project_hybrid_score": 71.7,
+      "total_project_cost": null,
+      "average_sustainability": 74.7,
+      "carbon_footprint": null
+    }
+  },
+  {
+    "scenario": "3. Residential - Jaffna",
+    "inputs": {
+      "blueprint": {
+        "building_type": "Residential",
+        "num_floors": 2,
+        "total_area": 250.0,
+        "structural_system": "Concrete Frame"
+      },
+      "profile": {
+        "location": "Jaffna",
+        "sustainability_pref": "Medium",
+        "budget_pref": "Medium"
+      }
+    },
+    "components": {
+      "foundation": {
+        "name": "Lime-Pozzolan Natural Foundation",
+        "ml_score": 50.80108396926689,
+        "eng_score": 85.0,
+        "hybrid_score": 74.74
+      },
+      "structural": {
+        "name": "GFRP Rebar (Glass Fibre Reinforced Polymer)",
+        "ml_score": 11.554449756715345,
+        "eng_score": 100.0,
+        "hybrid_score": 73.47
+      },
+      "concrete": {
+        "name": "Gr. 30 Marine-Grade Concrete Mix",
+        "ml_score": 0.6088040454352089,
+        "eng_score": 100.0,
+        "hybrid_score": 70.18
+      },
+      "walls": {
+        "name": "CSEB Compressed Stabilized Earth Block",
+        "ml_score": 72.15695752466277,
+        "eng_score": 85.0,
+        "hybrid_score": 81.15
+      },
+      "roofing": {
+        "name": "Marine-Grade Aluminium Roofing (0.55mm)",
+        "ml_score": 15.778219279509607,
+        "eng_score": 100.0,
+        "hybrid_score": 74.73
+      },
+      "windows": {
+        "name": "uPVC Multi-Chamber Window System",
+        "ml_score": 78.0,
+        "eng_score": 100.0,
+        "hybrid_score": 93.4
+      },
+      "doors": {
+        "name": "UPVC Sliding Door (Weather-Sealed)",
+        "ml_score": 75.19999999999999,
+        "eng_score": 100.0,
+        "hybrid_score": 92.56
+      },
+      "flooring": {
+        "name": "Recycled Composite Decking (WPC)",
+        "ml_score": 13.851573476394199,
+        "eng_score": 100.0,
+        "hybrid_score": 74.16
+      },
+      "ceiling": {
+        "name": "Bamboo-Fibre Acoustic Ceiling Panel",
+        "ml_score": 54.27290801946712,
+        "eng_score": 85.0,
+        "hybrid_score": 75.78
+      },
+      "finishes": {
+        "name": "Advanced Nano-Exterior Paint",
+        "ml_score": 69.0,
+        "eng_score": 100.0,
+        "hybrid_score": 90.7
+      },
+      "waterproofing": {
+        "name": "Crystalline Slurry Waterproofing (Penetrating)",
+        "ml_score": 2.985013577809459,
+        "eng_score": 100.0,
+        "hybrid_score": 70.9
+      }
+    },
+    "metrics": {
+      "project_ml_score": 40.4,
+      "project_eng_score": 95.9,
+      "project_hybrid_score": 79.3,
+      "total_project_cost": null,
+      "average_sustainability": 77.4,
+      "carbon_footprint": null
+    }
+  },
+  {
+    "scenario": "4. Commercial - Colombo",
+    "inputs": {
+      "blueprint": {
+        "building_type": "Commercial",
+        "num_floors": 10,
+        "total_area": 2000.0,
+        "structural_system": "Steel Frame"
+      },
+      "profile": {
+        "location": "Colombo",
+        "sustainability_pref": "High",
+        "budget_pref": "High"
+      }
+    },
+    "components": {
+      "foundation": {
+        "name": "Raft Foundation Assembly (RC Heavy)",
+        "ml_score": 40.1414109548267,
+        "eng_score": 90.0,
+        "hybrid_score": 75.04
+      },
+      "structural": {
+        "name": "GFRP Rebar (Glass Fibre Reinforced Polymer)",
+        "ml_score": 2.0677497231018016,
+        "eng_score": 100.0,
+        "hybrid_score": 70.62
+      },
+      "concrete": {
+        "name": "Eco-Concrete (Recycled Aggregate + Fly-Ash)",
+        "ml_score": 1.2375808916592224,
+        "eng_score": 100.0,
+        "hybrid_score": 70.37
+      },
+      "walls": {
+        "name": "CSEB Compressed Stabilized Earth Block",
+        "ml_score": 74.3469814231337,
+        "eng_score": 75.0,
+        "hybrid_score": 74.8
+      },
+      "roofing": {
+        "name": "Green Intensive Roof System (Growing Medium)",
+        "ml_score": 66.55015666071421,
+        "eng_score": 100.0,
+        "hybrid_score": 89.97
+      },
+      "windows": {
+        "name": "uPVC Multi-Chamber Window System",
+        "ml_score": 78.0,
+        "eng_score": 100.0,
+        "hybrid_score": 93.4
+      },
+      "doors": {
+        "name": "UPVC Sliding Door (Weather-Sealed)",
+        "ml_score": 75.19999999999999,
+        "eng_score": 100.0,
+        "hybrid_score": 92.56
+      },
+      "flooring": {
+        "name": "Rubber Flooring (Recycled Automotive)",
+        "ml_score": 10.968025287329626,
+        "eng_score": 100.0,
+        "hybrid_score": 73.29
+      },
+      "ceiling": {
+        "name": "Bamboo-Fibre Acoustic Ceiling Panel",
+        "ml_score": 47.954917728545304,
+        "eng_score": 100.0,
+        "hybrid_score": 84.39
+      },
+      "finishes": {
+        "name": "Advanced Nano-Exterior Paint",
+        "ml_score": 69.0,
+        "eng_score": 100.0,
+        "hybrid_score": 90.7
+      },
+      "waterproofing": {
+        "name": "Bentonite Clay Waterproofing Panel",
+        "ml_score": 2.4293109804368576,
+        "eng_score": 100.0,
+        "hybrid_score": 70.73
+      }
+    },
+    "metrics": {
+      "project_ml_score": 42.5,
+      "project_eng_score": 96.8,
+      "project_hybrid_score": 80.5,
+      "total_project_cost": null,
+      "average_sustainability": 81.5,
+      "carbon_footprint": null
+    }
+  },
+  {
+    "scenario": "5. Commercial - Galle",
+    "inputs": {
+      "blueprint": {
+        "building_type": "Commercial",
+        "num_floors": 5,
+        "total_area": 1000.0,
+        "structural_system": "Concrete Frame"
+      },
+      "profile": {
+        "location": "Galle",
+        "sustainability_pref": "Medium",
+        "budget_pref": "Medium"
+      }
+    },
+    "components": {
+      "foundation": {
+        "name": "Raft Foundation Assembly (RC Heavy)",
+        "ml_score": 53.64937286327215,
+        "eng_score": 100.0,
+        "hybrid_score": 86.09
+      },
+      "structural": {
+        "name": "GFRP Rebar (Glass Fibre Reinforced Polymer)",
+        "ml_score": 0.909092192692398,
+        "eng_score": 100.0,
+        "hybrid_score": 70.27
+      },
+      "concrete": {
+        "name": "Gr. 30 Marine-Grade Concrete Mix",
+        "ml_score": 0.8689009739328586,
+        "eng_score": 100.0,
+        "hybrid_score": 70.26
+      },
+      "walls": {
+        "name": "High-Density Cement Block",
+        "ml_score": 13.15903843142615,
+        "eng_score": 85.0,
+        "hybrid_score": 63.45
+      },
+      "roofing": {
+        "name": "Zinc-Aluminium Corrugated Sheet (55% Al-Zn)",
+        "ml_score": 10.052703469847597,
+        "eng_score": 100.0,
+        "hybrid_score": 73.02
+      },
+      "windows": {
+        "name": "uPVC Multi-Chamber Window System",
+        "ml_score": 78.0,
+        "eng_score": 100.0,
+        "hybrid_score": 93.4
+      },
+      "doors": {
+        "name": "UPVC Sliding Door (Weather-Sealed)",
+        "ml_score": 75.19999999999999,
+        "eng_score": 100.0,
+        "hybrid_score": 92.56
+      },
+      "flooring": {
+        "name": "Polished Terrazzo Flooring (Marble Aggregate)",
+        "ml_score": 49.54831802371615,
+        "eng_score": 85.0,
+        "hybrid_score": 74.36
+      },
+      "ceiling": {
+        "name": "Bamboo-Fibre Acoustic Ceiling Panel",
+        "ml_score": 40.27922011082032,
+        "eng_score": 85.0,
+        "hybrid_score": 71.58
+      },
+      "finishes": {
+        "name": "Advanced Nano-Exterior Paint",
+        "ml_score": 69.0,
+        "eng_score": 100.0,
+        "hybrid_score": 90.7
+      },
+      "waterproofing": {
+        "name": "Liquid Polyurethane Membrane (Seamless)",
+        "ml_score": 0.9180233068159432,
+        "eng_score": 100.0,
+        "hybrid_score": 70.28
+      }
+    },
+    "metrics": {
+      "project_ml_score": 35.6,
+      "project_eng_score": 95.9,
+      "project_hybrid_score": 77.8,
+      "total_project_cost": null,
+      "average_sustainability": 64.8,
+      "carbon_footprint": null
+    }
+  },
+  {
+    "scenario": "6. Educational - Kandy",
+    "inputs": {
+      "blueprint": {
+        "building_type": "Educational",
+        "num_floors": 3,
+        "total_area": 1500.0,
+        "structural_system": "Concrete Frame"
+      },
+      "profile": {
+        "location": "Kandy",
+        "sustainability_pref": "High",
+        "budget_pref": "Medium"
+      }
+    },
+    "components": {
+      "foundation": {
+        "name": "Lime-Pozzolan Natural Foundation",
+        "ml_score": 57.62297613236789,
+        "eng_score": 75.0,
+        "hybrid_score": 69.79
+      },
+      "structural": {
+        "name": "TMT High-Yield Rebar (SLS 375)",
+        "ml_score": 1.283157004640861,
+        "eng_score": 55.0,
+        "hybrid_score": 38.88
+      },
+      "concrete": {
+        "name": "Eco-Concrete (Recycled Aggregate + Fly-Ash)",
+        "ml_score": 1.1525465192071878,
+        "eng_score": 75.0,
+        "hybrid_score": 52.85
+      },
+      "walls": {
+        "name": "CSEB Compressed Stabilized Earth Block",
+        "ml_score": 73.86740944465515,
+        "eng_score": 75.0,
+        "hybrid_score": 74.66
+      },
+      "roofing": {
+        "name": "Recycled Rubber Flat Roof Membrane",
+        "ml_score": 2.0622260914314907,
+        "eng_score": 75.0,
+        "hybrid_score": 53.12
+      },
+      "windows": {
+        "name": "Timber Louvre Window (Treated Hardwood)",
+        "ml_score": 75.0,
+        "eng_score": 55.0,
+        "hybrid_score": 61.0
+      },
+      "doors": {
+        "name": "Solid Teak Timber Door (Premium)",
+        "ml_score": 76.2,
+        "eng_score": 55.0,
+        "hybrid_score": 61.36
+      },
+      "flooring": {
+        "name": "Rubber Flooring (Recycled Automotive)",
+        "ml_score": 2.278416693767332,
+        "eng_score": 75.0,
+        "hybrid_score": 53.18
+      },
+      "ceiling": {
+        "name": "Bamboo-Fibre Acoustic Ceiling Panel",
+        "ml_score": 62.94730534671166,
+        "eng_score": 75.0,
+        "hybrid_score": 71.38
+      },
+      "finishes": {
+        "name": "Eco-Friendly Low VOC Emulsion",
+        "ml_score": 92.2,
+        "eng_score": 75.0,
+        "hybrid_score": 80.16
+      },
+      "waterproofing": {
+        "name": "Bentonite Clay Waterproofing Panel",
+        "ml_score": 0.8799541366144705,
+        "eng_score": 75.0,
+        "hybrid_score": 52.76
+      }
+    },
+    "metrics": {
+      "project_ml_score": 40.5,
+      "project_eng_score": 69.5,
+      "project_hybrid_score": 60.8,
+      "total_project_cost": null,
+      "average_sustainability": 83.4,
+      "carbon_footprint": null
+    }
+  },
+  {
+    "scenario": "7. Industrial - Colombo",
+    "inputs": {
+      "blueprint": {
+        "building_type": "Industrial",
+        "num_floors": 1,
+        "total_area": 5000.0,
+        "structural_system": "Steel Frame"
+      },
+      "profile": {
+        "location": "Colombo",
+        "sustainability_pref": "Low",
+        "budget_pref": "Low"
+      }
+    },
+    "components": {
+      "foundation": {
+        "name": "Raft Foundation Assembly (RC Heavy)",
+        "ml_score": 21.437732097657182,
+        "eng_score": 100.0,
+        "hybrid_score": 76.43
+      },
+      "structural": {
+        "name": "Stainless Steel Rebar (Grade 316L)",
+        "ml_score": 1.139360289096733,
+        "eng_score": 100.0,
+        "hybrid_score": 70.34
+      },
+      "concrete": {
+        "name": "Gr. 30 Marine-Grade Concrete Mix",
+        "ml_score": 3.0105357646243918,
+        "eng_score": 100.0,
+        "hybrid_score": 70.9
+      },
+      "walls": {
+        "name": "CSEB Compressed Stabilized Earth Block",
+        "ml_score": 90.62943687158923,
+        "eng_score": 55.0,
+        "hybrid_score": 65.69
+      },
+      "roofing": {
+        "name": "Marine-Grade Aluminium Roofing (0.55mm)",
+        "ml_score": 20.73289457687246,
+        "eng_score": 100.0,
+        "hybrid_score": 76.22
+      },
+      "windows": {
+        "name": "uPVC Multi-Chamber Window System",
+        "ml_score": 78.0,
+        "eng_score": 85.0,
+        "hybrid_score": 82.9
+      },
+      "doors": {
+        "name": "FRP Fiberglass Reinforced Door",
+        "ml_score": 59.8,
+        "eng_score": 100.0,
+        "hybrid_score": 87.94
+      },
+      "flooring": {
+        "name": "Rubber Flooring (Recycled Automotive)",
+        "ml_score": 19.82131002305203,
+        "eng_score": 100.0,
+        "hybrid_score": 75.95
+      },
+      "ceiling": {
+        "name": "Calcium Silicate Board Ceiling",
+        "ml_score": 0.3621722826692413,
+        "eng_score": 100.0,
+        "hybrid_score": 70.11
+      },
+      "finishes": {
+        "name": "Advanced Nano-Exterior Paint",
+        "ml_score": 69.0,
+        "eng_score": 100.0,
+        "hybrid_score": 90.7
+      },
+      "waterproofing": {
+        "name": "Crystalline Slurry Waterproofing (Penetrating)",
+        "ml_score": 0.6373242622703246,
+        "eng_score": 100.0,
+        "hybrid_score": 70.19
+      }
+    },
+    "metrics": {
+      "project_ml_score": 33.1,
+      "project_eng_score": 94.5,
+      "project_hybrid_score": 76.1,
+      "total_project_cost": null,
+      "average_sustainability": 63.5,
+      "carbon_footprint": null
+    }
+  },
+  {
+    "scenario": "8. Hospitality - Galle",
+    "inputs": {
+      "blueprint": {
+        "building_type": "Hospitality",
+        "num_floors": 4,
+        "total_area": 3000.0,
+        "structural_system": "Concrete Frame"
+      },
+      "profile": {
+        "location": "Galle",
+        "sustainability_pref": "High",
+        "budget_pref": "High"
+      }
+    },
+    "components": {
+      "foundation": {
+        "name": "Lime-Pozzolan Natural Foundation",
+        "ml_score": 59.3978798603053,
+        "eng_score": 75.0,
+        "hybrid_score": 70.32
+      },
+      "structural": {
+        "name": "GFRP Rebar (Glass Fibre Reinforced Polymer)",
+        "ml_score": 1.6460613082601865,
+        "eng_score": 100.0,
+        "hybrid_score": 70.49
+      },
+      "concrete": {
+        "name": "Self-Compacting Concrete (SCC)",
+        "ml_score": 14.947235589819039,
+        "eng_score": 75.0,
+        "hybrid_score": 56.98
+      },
+      "walls": {
+        "name": "CSEB Compressed Stabilized Earth Block",
+        "ml_score": 76.585773143851,
+        "eng_score": 75.0,
+        "hybrid_score": 75.48
+      },
+      "roofing": {
+        "name": "Green Intensive Roof System (Growing Medium)",
+        "ml_score": 78.67183719232071,
+        "eng_score": 75.0,
+        "hybrid_score": 76.1
+      },
+      "windows": {
+        "name": "uPVC Multi-Chamber Window System",
+        "ml_score": 78.0,
+        "eng_score": 100.0,
+        "hybrid_score": 93.4
+      },
+      "doors": {
+        "name": "UPVC Sliding Door (Weather-Sealed)",
+        "ml_score": 75.19999999999999,
+        "eng_score": 100.0,
+        "hybrid_score": 92.56
+      },
+      "flooring": {
+        "name": "Recycled Composite Decking (WPC)",
+        "ml_score": 6.725703306378403,
+        "eng_score": 95.0,
+        "hybrid_score": 68.52
+      },
+      "ceiling": {
+        "name": "Bamboo-Fibre Acoustic Ceiling Panel",
+        "ml_score": 62.112852251754326,
+        "eng_score": 75.0,
+        "hybrid_score": 71.13
+      },
+      "finishes": {
+        "name": "Advanced Nano-Exterior Paint",
+        "ml_score": 69.0,
+        "eng_score": 85.0,
+        "hybrid_score": 80.2
+      },
+      "waterproofing": {
+        "name": "Crystalline Slurry Waterproofing (Penetrating)",
+        "ml_score": 1.724138430143838,
+        "eng_score": 75.0,
+        "hybrid_score": 53.02
+      }
+    },
+    "metrics": {
+      "project_ml_score": 47.6,
+      "project_eng_score": 84.5,
+      "project_hybrid_score": 73.5,
+      "total_project_cost": null,
+      "average_sustainability": 80.7,
+      "carbon_footprint": null
+    }
+  },
+  {
+    "scenario": "9. Office - Colombo",
+    "inputs": {
+      "blueprint": {
+        "building_type": "Office",
+        "num_floors": 15,
+        "total_area": 5000.0,
+        "structural_system": "Steel Frame"
+      },
+      "profile": {
+        "location": "Colombo",
+        "sustainability_pref": "Medium",
+        "budget_pref": "Medium"
+      }
+    },
+    "components": {
+      "foundation": {
+        "name": "Raft Foundation Assembly (RC Heavy)",
+        "ml_score": 36.84244044824171,
+        "eng_score": 75.0,
+        "hybrid_score": 63.55
+      },
+      "structural": {
+        "name": "Epoxy-Coated Rebar (ASTM A775)",
+        "ml_score": 4.144325749523366,
+        "eng_score": 85.0,
+        "hybrid_score": 60.74
+      },
+      "concrete": {
+        "name": "Gr. 30 Marine-Grade Concrete Mix",
+        "ml_score": 1.948894713261047,
+        "eng_score": 75.0,
+        "hybrid_score": 53.08
+      },
+      "walls": {
+        "name": "CSEB Compressed Stabilized Earth Block",
+        "ml_score": 56.84807304518312,
+        "eng_score": 55.0,
+        "hybrid_score": 55.55
+      },
+      "roofing": {
+        "name": "Green Intensive Roof System (Growing Medium)",
+        "ml_score": 60.72833146604001,
+        "eng_score": 55.0,
+        "hybrid_score": 56.72
+      },
+      "windows": {
+        "name": "uPVC Multi-Chamber Window System",
+        "ml_score": 78.0,
+        "eng_score": 85.0,
+        "hybrid_score": 82.9
+      },
+      "doors": {
+        "name": "UPVC Sliding Door (Weather-Sealed)",
+        "ml_score": 75.19999999999999,
+        "eng_score": 85.0,
+        "hybrid_score": 82.06
+      },
+      "flooring": {
+        "name": "Porcelain GVT Slab (Full-Body Vitrified)",
+        "ml_score": 0.9947268073535221,
+        "eng_score": 85.0,
+        "hybrid_score": 59.8
+      },
+      "ceiling": {
+        "name": "Bamboo-Fibre Acoustic Ceiling Panel",
+        "ml_score": 54.5490278577211,
+        "eng_score": 55.0,
+        "hybrid_score": 54.86
+      },
+      "finishes": {
+        "name": "Advanced Nano-Exterior Paint",
+        "ml_score": 69.0,
+        "eng_score": 85.0,
+        "hybrid_score": 80.2
+      },
+      "waterproofing": {
+        "name": "Liquid Polyurethane Membrane (Seamless)",
+        "ml_score": 1.5911817589917756,
+        "eng_score": 75.0,
+        "hybrid_score": 52.98
+      }
+    },
+    "metrics": {
+      "project_ml_score": 40.0,
+      "project_eng_score": 74.1,
+      "project_hybrid_score": 63.9,
+      "total_project_cost": null,
+      "average_sustainability": 68.6,
+      "carbon_footprint": null
+    }
+  },
+  {
+    "scenario": "10. Mixed Use - Kandy",
+    "inputs": {
+      "blueprint": {
+        "building_type": "Mixed Use",
+        "num_floors": 6,
+        "total_area": 2500.0,
+        "structural_system": "Concrete Frame"
+      },
+      "profile": {
+        "location": "Kandy",
+        "sustainability_pref": "High",
+        "budget_pref": "Medium"
+      }
+    },
+    "components": {
+      "foundation": {
+        "name": "Lime-Pozzolan Natural Foundation",
+        "ml_score": 53.9032316151286,
+        "eng_score": 75.0,
+        "hybrid_score": 68.67
+      },
+      "structural": {
+        "name": "Galvanized Steel Rebar (Hot-Dip)",
+        "ml_score": 0.9952670351521743,
+        "eng_score": 55.0,
+        "hybrid_score": 38.8
+      },
+      "concrete": {
+        "name": "Eco-Concrete (Recycled Aggregate + Fly-Ash)",
+        "ml_score": 1.2475225945789994,
+        "eng_score": 75.0,
+        "hybrid_score": 52.87
+      },
+      "walls": {
+        "name": "CSEB Compressed Stabilized Earth Block",
+        "ml_score": 64.5063753768171,
+        "eng_score": 75.0,
+        "hybrid_score": 71.85
+      },
+      "roofing": {
+        "name": "Recycled Rubber Flat Roof Membrane",
+        "ml_score": 5.595900743856162,
+        "eng_score": 75.0,
+        "hybrid_score": 54.18
+      },
+      "windows": {
+        "name": "Commercial Double-Glazed Unit (DGU Low-E)",
+        "ml_score": 60.0,
+        "eng_score": 55.0,
+        "hybrid_score": 56.5
+      },
+      "doors": {
+        "name": "Standard Hollow-Core Flush Door (HDF Faced)",
+        "ml_score": 50.0,
+        "eng_score": 40.0,
+        "hybrid_score": 43.0
+      },
+      "flooring": {
+        "name": "Rubber Flooring (Recycled Automotive)",
+        "ml_score": 2.4993355416602805,
+        "eng_score": 75.0,
+        "hybrid_score": 53.25
+      },
+      "ceiling": {
+        "name": "Bamboo-Fibre Acoustic Ceiling Panel",
+        "ml_score": 55.51096883523753,
+        "eng_score": 75.0,
+        "hybrid_score": 69.15
+      },
+      "finishes": {
+        "name": "Eco-Friendly Low VOC Emulsion",
+        "ml_score": 92.2,
+        "eng_score": 75.0,
+        "hybrid_score": 80.16
+      },
+      "waterproofing": {
+        "name": "Bentonite Clay Waterproofing Panel",
+        "ml_score": 1.6108717325880473,
+        "eng_score": 75.0,
+        "hybrid_score": 52.98
+      }
+    },
+    "metrics": {
+      "project_ml_score": 35.3,
+      "project_eng_score": 68.2,
+      "project_hybrid_score": 58.3,
+      "total_project_cost": null,
+      "average_sustainability": 79.6,
+      "carbon_footprint": null
+    }
+  }
+]

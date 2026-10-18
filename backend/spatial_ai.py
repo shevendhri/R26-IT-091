@@ -16,82 +16,97 @@ class SpatialIntelligence:
 
     def generate_layout(self, rooms, total_area, floors, b_type, query=""):
         """
-        Synthesizes a 2D spatial arrangement based on room program and engineering constraints.
+        Synthesizes a realistic multi-floor architectural layout.
         """
         config = self.sectors.get(b_type, self.sectors["Residential"])
         area_per_floor = total_area / floors
-        
-        # Determine footprint dimensions
         width = math.sqrt(area_per_floor * config["aspect"])
         height = area_per_floor / width
         
         layout = {
             "footprint": {"w": round(width, 2), "h": round(height, 2)},
-            "rooms": [],
-            "overlays": [],
+            "floors_data": [],
             "engineering_rationale": ""
         }
         
-        # 1. Zoned Room Placement v18.1
-        # Group rooms by zone type
-        zones = {"HABITABLE": [], "WET": [], "SERVICE": []}
-        for room_name, count in rooms.items():
-            if not isinstance(count, int): continue
+        refined_rooms = rooms.copy()
+        if b_type == "Residential":
+            if "Bathrooms" not in refined_rooms: refined_rooms["Bathrooms"] = max(1, refined_rooms.get("Bedrooms", 1) - 1)
+            if "Living" not in refined_rooms: refined_rooms["Living"] = 1
+            if "Kitchen" not in refined_rooms: refined_rooms["Kitchen"] = 1
+            if "Dining" not in refined_rooms: refined_rooms["Dining"] = 1
+
+        # ── MULTI-FLOOR DISTRIBUTION LOGIC ──
+        floor_programs = [{} for _ in range(floors)]
+        for name, count in refined_rooms.items():
+            z_type = self._get_zone_type(name)
             for i in range(count):
-                zones[self._get_zone_type(room_name)].append(room_name)
+                target_floor = 0
+                if (z_type == "PRIVATE" or "Bedroom" in name) and floors > 1:
+                    target_floor = random.randint(1, floors - 1)
+                elif z_type == "WET" and "Bath" in name and floors > 1:
+                    target_floor = random.randint(0, floors - 1)
+                floor_programs[target_floor][name] = floor_programs[target_floor].get(name, 0) + 1
 
-        # Placement Logic: Habitable rooms on one side, Wet/Service in a core/spine
-        current_y = 0.0
-        
-        # Habitable Zone (Primary)
-        hab_width = width * 0.65
-        hab_y = 0.0
-        for name in zones["HABITABLE"]:
-            base_size = config["min_room_size"] * (2.0 if "Living" in name or "Workshop" in name else 1.2)
-            r_w = hab_width * 0.9
-            r_h = base_size / r_w
-            if hab_y + r_h > height: break # Safety break
-            layout["rooms"].append(self._create_room(name, 0.0, hab_y, r_w, r_h, "HABITABLE"))
-            hab_y += r_h
+        for f_idx in range(floors):
+            floor_rooms, current_cells = [], []
+            cell_w, cell_h = width / 4, height / 4
+            p_list = []
+            for r_name, count in floor_programs[f_idx].items():
+                for _ in range(count): p_list.append(r_name)
 
-        # Wet/Service Spine
-        spine_width = width - hab_width
-        spine_y = 0.0
-        for name in zones["WET"] + zones["SERVICE"]:
-            base_size = config["min_room_size"] * 0.8
-            r_w = spine_width * 0.8
-            r_h = base_size / r_w
-            if spine_y + r_h > height: break
-            layout["rooms"].append(self._create_room(name, hab_width, spine_y, r_w, r_h, self._get_zone_type(name)))
-            spine_y += r_h
+            for name in p_list:
+                z_type = self._get_zone_type(name)
+                w_c, h_c = (2, 2) if "Living" in name else ((2, 1) if "Bedroom" in name else (1, 1))
+                c, r = self._find_free_grid_space(w_c, h_c, current_cells, z_type)
+                if c is not None:
+                    current_cells.append((c, r, w_c, h_c))
+                    floor_rooms.append(self._create_room(name, c * cell_w, r * cell_h, w_c * cell_w * 0.95, h_c * cell_h * 0.95, z_type))
 
-        # 2. Query-Aware Intelligence (The "Spatial Planner" part)
+            layout["floors_data"].append({
+                "level": f_idx,
+                "label": "GROUND FLOOR" if f_idx == 0 else f"FLOOR {f_idx}",
+                "rooms": floor_rooms
+            })
+
+        layout["rooms"] = layout["floors_data"][0]["rooms"]
+
         if query:
             overlay = self._analyze_query_impact(query, layout, b_type)
             if overlay:
-                layout["overlays"].append(overlay)
-                layout["engineering_rationale"] = f"Spatial adjustment triggered by: '{query}'. {overlay['logic']}"
+                layout["overlays"] = [overlay]
+                layout["engineering_rationale"] = f"Spatial adjustment: {overlay['logic']}"
         
-        # 3. Generate Blueprint Summary (Architectural Adjacency Logic)
-        layout["blueprint_summary"] = self._synthesize_blueprint(layout["rooms"], floors, b_type)
-        
+        layout["blueprint_summary"] = self._synthesize_blueprint(layout["floors_data"], floors, b_type)
         return layout
 
-    def _synthesize_blueprint(self, rooms, floors, b_type):
-        summary = []
-        rooms_labels = [r["label"] for r in rooms]
+    def _find_free_grid_space(self, w_c, h_c, occupied, z_type):
+        s_c, s_r = 0, 0
+        if z_type == "PRIVATE": s_c, s_r = 2, 0
+        elif z_type == "WET": s_c, s_r = 1, 2
         
-        if b_type == "Residential":
-            summary.append(f"GROUND FLOOR: Open-plan zoning with {', '.join(rooms_labels[:4])} centered around a central circulation spine.")
-            if floors > 1:
-                summary.append(f"UPPER FLOORS (1-{floors}): Private dormitory zoning with {', '.join(rooms_labels[4:8])} and vertical service shaft alignment.")
-        elif b_type == "Commercial":
-            summary.append(f"LEVEL 1: Public-facing lobby and retail suites. Central MEP service core integrated for vertical efficiency.")
-            summary.append(f"PROFESSIONAL ZONES: Modular office arrangements with fire-rated corridors and dedicated service hubs.")
-        else:
-            summary.append(f"MAIN BAY: Clear-span industrial hall logic with {rooms_labels[0]} prioritized for clear heights.")
-            summary.append(f"LOGISTICS: Perimeter positioning for loading docks and administrative blocks to optimize circulation flow.")
-            
+        for r in range(s_r, 4 - h_c + 1):
+            for c in range(s_c, 4 - w_c + 1):
+                collision = False
+                for ox, oy, ow, oh in occupied:
+                    if not (c + w_c <= ox or c >= ox + ow or r + h_c <= oy or r >= oy + oh):
+                        collision = True; break
+                if not collision: return c, r
+        
+        for r in range(4 - h_c + 1):
+            for c in range(4 - w_c + 1):
+                collision = False
+                for ox, oy, ow, oh in occupied:
+                    if not (c + w_c <= ox or c >= ox + ow or r + h_c <= oy or r >= oy + oh):
+                        collision = True; break
+                if not collision: return c, r
+        return None, None
+
+    def _synthesize_blueprint(self, floors_data, floors, b_type):
+        summary = []
+        for floor in floors_data:
+            rooms_labels = [r["label"] for r in floor["rooms"]]
+            summary.append(f"{floor['label']}: Program consists of {', '.join(rooms_labels[:5])} with optimized structural spacing.")
         return summary
 
     def _create_room(self, name, x, y, w, h, z_type):

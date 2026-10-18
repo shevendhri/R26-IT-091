@@ -1,0 +1,16 @@
+path: ../../datasets/fireguard
+train: images/train
+val: images/val
+names:
+  0: fire_exit
+  1: emergency_exit_sign
+  2: fire_extinguisher
+  3: smoke_detector
+  4: sprinkler
+  5: fire_alarm
+  6: fire_door
+  7: staircase
+  8: hydrant
+  9: hose_reel
+  10: assembly_point
+  11: emergency_telephone

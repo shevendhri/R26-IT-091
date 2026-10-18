@@ -1,0 +1,5 @@
+building_type,layout_score,engineering_score,ml_score,hybrid_score,runtime_ms,sustainability,placement_success,functional_coverage,space_utilization
+Hospital,43.23,0.0,30.72,7.68,5547.75,51.54,53.89,64.82,7.56
+Hotel,30.51,66.2,20.44,54.76,5926.5,61.3,18.58,18.78,2.02
+Office,44.0,66.18,23.59,55.54,5206.1,55.36,53.81,51.18,5.86
+Residential,46.34,66.96,25.69,56.61,4957.05,62.72,71.61,68.25,8.0

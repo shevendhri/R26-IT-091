@@ -1,0 +1,16 @@
+{
+  "project_name": "FireGuard Office Complex — Compliant Test",
+  "building_use": "Office Building",
+  "purpose_group": "3",
+  "storey_count": 4,
+  "highest_habitable_floor_level_m": 12,
+  "building_height_m": 15,
+  "total_floor_area_m2": 1200,
+  "independent_exit_count": 2,
+  "escape_arrangement": "TWO_WAY",
+  "travel_distance_m": 35,
+  "corridor_width_m": 1.2,
+  "staircase_count": 2,
+  "stair_width_m": 1.2,
+  "protected_stair": true
+}

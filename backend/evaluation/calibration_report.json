@@ -1,0 +1,23 @@
+{
+  "timestamp": "2026-08-06T03:40:15.632326+00:00",
+  "selected_calibration": "Isotonic",
+  "uncalibrated": {
+    "brier_score": 0.01602292601771165,
+    "ece": 0.010555304246814914,
+    "mce": 0.2837041448956773,
+    "roc_auc": 0.9980251218435957,
+    "accuracy": 0.9795454545454545
+  },
+  "isotonic": {
+    "brier_score": 0.01624293889313138,
+    "ece": 0.007575339890677296,
+    "mce": 0.2136061633976555
+  },
+  "sigmoid": {
+    "brier_score": 0.016147170035736666,
+    "ece": 0.01147639820266051,
+    "mce": 0.18353062053883573
+  },
+  "calibration_improvement_ece": 0.0029799643561376175,
+  "model_checksum_sha256": "588cb0b635c4a98dd4f5266d98bd6f466ae52912af36e60bbe068df186b683b3"
+}

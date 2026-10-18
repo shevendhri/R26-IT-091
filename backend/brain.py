@@ -52,8 +52,8 @@ async def run_ai_audit(project_data, top_materials):
             )
             return {
                 "text": response.text,
-                "status": "Engineering Verified",
-                "verification": "Technical Review Complete"
+                "status": "Preliminary Engineering Validation",
+                "verification": "Preliminary Review Complete"
             }
         except Exception as e:
             print(f"Engineering Audit API Error: {e}")
@@ -83,8 +83,8 @@ async def run_ai_audit(project_data, top_materials):
     
     return {
         "text": audit_text,
-        "status": "Verified (Professional)",
-        "verification": "Technical Logic Confirmed"
+        "status": "Preliminary Engineering Validation",
+        "verification": "Preliminary Feasibility Confirmed"
     }
 
 async def analyze_blueprint_vision(image_data: bytes, metadata: dict):

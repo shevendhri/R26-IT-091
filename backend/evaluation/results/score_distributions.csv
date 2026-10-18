@@ -1,0 +1,51 @@
+index,scenario_id,building_type,location,structural_system,climate_zone,budget_level,overall_hybrid_score,engineering_score,ml_confidence,average_sustainability,decision_confidence_score,runtime_ms
+1,S01,Residential,Colombo,Reinforced Concrete Frame,Moderate Coastal Humid,Balanced,84.2,92.9,57.9,70.9,90.4,4059.4
+2,S02,Residential,Galle,Reinforced Concrete Frame,Moderate Coastal Humid,Budget,84.9,92.9,60.8,70.9,90.4,3958.4
+3,S03,Residential,Jaffna,Load-Bearing Masonry,Extreme Coastal Saline,Balanced,83.2,91.3,59.0,69.7,88.4,4140.4
+4,S04,Residential,Kandy,Reinforced Concrete Frame,Intermediate Tropical,Premium,75.6,80.2,61.9,80.0,88.6,4384.9
+5,S05,Residential,Batticaloa,Reinforced Concrete Frame,Extreme Coastal Saline,Budget,84.7,92.8,60.2,71.5,90.4,4045.0
+6,S06,Residential,Negombo,Steel Frame,Moderate Coastal Humid,Balanced,83.4,91.4,59.3,73.0,86.9,2052.8
+7,S07,Residential,Trincomalee,Reinforced Concrete Frame,Extreme Coastal Saline,Premium,84.1,92.8,57.8,71.5,90.4,1876.1
+8,S08,Residential,Matara,Load-Bearing Masonry,Moderate Coastal Humid,Budget,83.4,91.3,59.8,69.1,88.4,2195.1
+9,S09,Residential,Anuradhapura,Reinforced Concrete Frame,Dry Zone Tropical Arid,Balanced,86.6,95.0,61.3,72.2,92.5,3858.6
+10,S10,Residential,Ampara,Load-Bearing Masonry,Intermediate Tropical,Budget,75.8,80.4,61.9,77.8,88.6,4011.4
+11,S11,Residential,Kurunegala,Reinforced Concrete Frame,Intermediate Tropical,Premium,75.6,80.2,61.9,80.0,88.6,2186.0
+12,S12,Residential,Hambantota,Reinforced Concrete Frame,Dry Zone Tropical Arid,Balanced,83.2,90.8,60.2,65.6,86.7,2170.0
+13,S13,Office,Colombo,Reinforced Concrete Frame,Moderate Coastal Humid,Premium,72.0,81.5,43.5,70.4,87.0,9472.7
+14,S14,Office,Galle,Steel Frame,Moderate Coastal Humid,Balanced,73.3,80.3,52.4,72.6,83.6,4316.8
+15,S15,Office,Jaffna,Reinforced Concrete Frame,Extreme Coastal Saline,Budget,75.0,82.1,53.7,71.0,87.1,9366.4
+16,S16,Office,Kandy,Reinforced Concrete Frame,Intermediate Tropical,Premium,62.8,68.5,45.4,80.0,84.6,11694.7
+17,S17,Office,Negombo,Steel Frame,Moderate Coastal Humid,Balanced,74.0,81.1,52.7,72.6,83.8,12965.4
+18,S18,Office,Matara,Reinforced Concrete Frame,Moderate Coastal Humid,Balanced,74.3,81.5,52.8,70.4,87.0,4871.7
+19,S19,Office,Trincomalee,Steel Frame,Extreme Coastal Saline,Premium,70.9,80.2,42.8,72.0,83.6,5204.1
+20,S20,Office,Anuradhapura,Reinforced Concrete Frame,Dry Zone Tropical Arid,Budget,76.3,83.4,54.9,72.2,89.0,12303.4
+21,S21,Office,Kurunegala,Reinforced Concrete Frame,Intermediate Tropical,Premium,62.8,68.5,45.4,80.0,84.6,4492.0
+22,S22,Office,Batticaloa,Reinforced Concrete Frame,Extreme Coastal Saline,Balanced,74.1,81.4,52.3,69.8,86.9,4932.7
+23,S23,Commercial,Colombo,Reinforced Concrete Frame,Moderate Coastal Humid,Premium,78.8,87.3,53.3,66.4,88.7,13525.6
+24,S24,Commercial,Galle,Steel Frame,Moderate Coastal Humid,Balanced,80.2,86.8,60.5,64.7,85.5,12312.7
+25,S25,Commercial,Negombo,Reinforced Concrete Frame,Moderate Coastal Humid,Premium,80.1,88.2,55.8,66.4,88.9,11983.7
+26,S26,Commercial,Jaffna,Reinforced Concrete Frame,Extreme Coastal Saline,Budget,81.3,87.9,61.5,59.2,88.9,12060.0
+27,S27,Commercial,Kandy,Reinforced Concrete Frame,Intermediate Tropical,Premium,70.3,75.8,53.9,66.6,86.7,12602.1
+28,S28,Commercial,Matara,Steel Frame,Moderate Coastal Humid,Balanced,80.2,86.8,60.5,64.7,85.5,5002.7
+29,S29,Commercial,Hambantota,Reinforced Concrete Frame,Dry Zone Tropical Arid,Budget,80.1,86.3,61.6,55.5,86.9,4816.5
+30,S30,Commercial,Trincomalee,Reinforced Concrete Frame,Extreme Coastal Saline,Balanced,80.8,87.9,59.5,59.2,88.9,12812.2
+31,S31,School,Colombo,Reinforced Concrete Frame,Moderate Coastal Humid,Balanced,75.3,83.6,50.4,66.2,87.6,12484.3
+32,S32,School,Kandy,Reinforced Concrete Frame,Intermediate Tropical,Budget,70.4,76.1,53.3,65.6,86.8,12377.0
+33,S33,School,Jaffna,Reinforced Concrete Frame,Extreme Coastal Saline,Budget,76.8,84.8,53.0,66.9,87.9,4754.8
+34,S34,School,Galle,Reinforced Concrete Frame,Moderate Coastal Humid,Balanced,75.3,83.6,50.4,66.2,87.6,4680.7
+35,S35,School,Anuradhapura,Reinforced Concrete Frame,Dry Zone Tropical Arid,Budget,79.7,88.3,53.9,64.4,90.5,4669.0
+36,S36,School,Batticaloa,Reinforced Concrete Frame,Extreme Coastal Saline,Balanced,76.6,84.8,52.2,66.9,87.9,4832.3
+37,S37,Warehouse,Colombo,Steel Frame,Moderate Coastal Humid,Balanced,74.3,81.1,54.0,72.6,83.8,12901.0
+38,S38,Warehouse,Galle,Steel Frame,Moderate Coastal Humid,Budget,74.3,81.1,54.0,72.6,83.8,4866.4
+39,S39,Warehouse,Hambantota,Steel Frame,Dry Zone Tropical Arid,Balanced,73.3,79.7,54.0,64.2,81.9,4817.5
+40,S40,Warehouse,Trincomalee,Reinforced Concrete Frame,Extreme Coastal Saline,Premium,74.9,82.1,53.5,71.0,87.1,12747.4
+41,S41,Warehouse,Jaffna,Steel Frame,Extreme Coastal Saline,Budget,74.0,80.8,53.8,73.1,83.7,9760.7
+42,S42,Warehouse,Kurunegala,Reinforced Concrete Frame,Intermediate Tropical,Balanced,65.4,68.9,54.9,80.6,86.5,12751.0
+43,S43,Hotel,Colombo,Reinforced Concrete Frame,Moderate Coastal Humid,Premium,75.1,87.6,37.5,67.6,88.8,12481.0
+44,S44,Hotel,Galle,Reinforced Concrete Frame,Moderate Coastal Humid,Premium,76.7,88.1,42.7,67.6,88.9,12886.7
+45,S45,Hotel,Negombo,Reinforced Concrete Frame,Moderate Coastal Humid,Premium,75.4,87.6,38.9,67.6,88.8,12456.5
+46,S46,Hotel,Kandy,Reinforced Concrete Frame,Intermediate Tropical,Balanced,68.1,75.8,45.1,73.8,86.7,14899.8
+47,S47,Hotel,Trincomalee,Reinforced Concrete Frame,Extreme Coastal Saline,Premium,76.0,87.3,42.1,64.5,88.7,13899.9
+48,S48,Hospital,Colombo,Reinforced Concrete Frame,Moderate Coastal Humid,Premium,71.5,81.0,43.0,70.4,86.8,5014.8
+49,S49,Hospital,Kandy,Reinforced Concrete Frame,Intermediate Tropical,Balanced,63.0,68.5,46.4,79.4,84.6,17498.8
+50,S50,Hospital,Jaffna,Reinforced Concrete Frame,Extreme Coastal Saline,Budget,74.1,81.4,52.3,69.8,86.9,5232.9

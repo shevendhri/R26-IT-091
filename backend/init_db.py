@@ -5,7 +5,7 @@ Run this any time you want to wipe and reload the data:
 """
 import csv
 import os
-from database import get_connection, ensure_table
+from .database import get_connection, ensure_table
 
 def init_database():
     conn = get_connection()

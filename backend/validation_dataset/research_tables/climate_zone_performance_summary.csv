@@ -1,0 +1,4 @@
+Climate Zone,Count,Avg Layout Score,Avg Engineering Score,Avg Hybrid Score,Avg Sustainability,Avg Runtime (ms)
+Intermediate Tropical,40,41.01,49.82,43.16,58.02,5061.38
+Extreme Coastal Saline,20,41.57,49.86,44.11,57.66,5376.95
+Moderate Coastal Humid,20,40.50,49.85,44.16,57.23,6137.70

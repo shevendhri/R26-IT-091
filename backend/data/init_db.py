@@ -7,7 +7,7 @@ import csv
 import sys
 import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from database import get_connection, ensure_table
+from ..database import get_connection, ensure_table
 
 def init_database():
     conn = get_connection()

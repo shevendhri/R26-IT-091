@@ -1,0 +1,81 @@
+scenario_id,building_type,climate,budget,area,floors,rooms,layout_score,engineering_score,ml_score,hybrid_score,placement_success_rate,functional_coverage,space_utilization,constraint_compliance,circulation_score,estimated_sustainability,runtime_ms
+scenario_001,Residential,Intermediate Tropical,Premium,241.2,2,8,45.4,67.0,24.0,56.2,70.8,70.8,6.1,27.0,66.2,80.0,3587
+scenario_002,Residential,Intermediate Tropical,Balanced,139.5,1,10,43.4,67.0,24.0,56.2,61.6,56.6,6.2,22.4,66.2,80.0,3243
+scenario_003,Residential,Extreme Coastal Saline,Budget,107.3,2,9,45.5,67.0,28.3,57.3,66.7,66.7,8.5,26.3,68.5,80.0,7744
+scenario_004,Residential,Moderate Coastal Humid,Premium,218.0,3,12,45.8,67.0,28.0,57.2,69.4,66.7,7.2,31.0,67.2,80.0,4164
+scenario_005,Residential,Intermediate Tropical,Balanced,242.4,2,5,46.7,67.0,23.5,56.1,80.0,80.0,4.6,31.0,64.6,80.0,3900
+scenario_006,Residential,Intermediate Tropical,Budget,190.9,3,7,46.2,67.0,20.5,55.3,76.2,71.4,4.2,39.3,64.2,80.0,3935
+scenario_007,Residential,Extreme Coastal Saline,Premium,97.1,3,8,44.6,67.0,29.4,57.6,70.8,70.8,4.4,27.0,64.4,80.0,4371
+scenario_008,Residential,Moderate Coastal Humid,Balanced,180.9,1,5,48.3,67.0,31.0,58.0,80.0,80.0,8.6,29.9,68.6,80.0,5411
+scenario_009,Residential,Intermediate Tropical,Budget,81.5,1,7,47.0,66.3,23.4,55.6,71.4,61.9,11.5,32.7,71.5,83.5,5384
+scenario_010,Residential,Intermediate Tropical,Premium,101.9,2,10,46.5,67.0,24.5,56.3,70.0,66.7,8.2,33.6,68.2,80.0,4865
+scenario_011,Residential,Extreme Coastal Saline,Balanced,207.2,3,10,45.6,67.0,28.0,57.2,70.0,66.7,6.2,33.6,66.2,80.0,5036
+scenario_012,Residential,Moderate Coastal Humid,Budget,211.1,3,9,46.3,67.0,27.2,57.0,74.1,70.4,5.5,35.1,65.5,80.0,5267
+scenario_013,Residential,Intermediate Tropical,Premium,106.4,1,10,43.4,67.0,22.4,55.8,61.6,56.6,6.2,22.4,66.2,80.0,4611
+scenario_014,Residential,Intermediate Tropical,Balanced,256.4,3,12,45.8,67.0,22.3,55.8,69.4,66.7,7.2,31.0,67.2,80.0,4719
+scenario_015,Residential,Extreme Coastal Saline,Budget,209.5,2,12,48.1,67.0,28.3,57.3,69.4,66.7,12.3,30.7,72.3,80.0,4921
+scenario_016,Residential,Moderate Coastal Humid,Premium,295.6,1,9,47.2,67.0,30.4,57.8,70.4,63.0,12.0,29.8,72.0,80.0,4962
+scenario_017,Residential,Intermediate Tropical,Balanced,292.3,1,8,45.9,67.0,21.1,55.5,66.7,62.5,12.4,21.0,72.4,80.0,4713
+scenario_018,Residential,Intermediate Tropical,Budget,164.9,1,6,49.6,67.0,22.5,55.8,83.3,77.8,8.1,41.6,68.1,80.0,4664
+scenario_019,Residential,Extreme Coastal Saline,Premium,236.6,1,5,48.3,67.0,29.0,57.5,80.0,80.0,8.6,29.9,68.6,80.0,4564
+scenario_020,Residential,Moderate Coastal Humid,Balanced,253.5,1,9,47.2,67.0,26.0,56.7,70.4,63.0,12.0,29.8,72.0,80.0,9080
+scenario_021,Hotel,Extreme Coastal Saline,Balanced,1221.2,3,23,28.8,66.1,18.0,54.1,15.9,15.9,1.7,8.3,61.7,70.7,9777
+scenario_022,Hotel,Moderate Coastal Humid,Budget,988.6,12,104,31.8,66.2,23.1,55.4,20.8,20.8,1.1,12.2,61.2,69.4,5949
+scenario_023,Hotel,Intermediate Tropical,Premium,1046.4,5,41,30.4,66.2,22.0,55.1,18.7,18.7,1.1,10.5,61.1,71.7,4693
+scenario_024,Hotel,Intermediate Tropical,Balanced,620.1,5,41,30.6,66.2,20.3,54.7,18.7,18.7,1.5,10.5,61.7,71.7,5365
+scenario_025,Hotel,Extreme Coastal Saline,Budget,804.9,5,41,30.6,66.2,21.8,55.1,18.7,18.7,1.5,10.5,61.7,69.4,4927
+scenario_026,Hotel,Moderate Coastal Humid,Premium,1305.7,5,41,30.4,66.2,22.8,55.4,18.7,18.7,1.2,10.5,61.2,69.4,9772
+scenario_027,Hotel,Intermediate Tropical,Balanced,504.8,5,41,30.5,66.2,19.8,54.6,18.7,18.7,1.3,10.5,61.3,71.7,5207
+scenario_028,Hotel,Intermediate Tropical,Budget,896.4,3,23,29.7,66.2,16.6,53.8,17.4,18.8,3.6,10.1,63.6,70.0,4742
+scenario_029,Hotel,Extreme Coastal Saline,Premium,1685.7,3,23,30.1,66.2,20.9,54.9,17.4,18.8,4.5,9.7,64.5,70.0,4672
+scenario_030,Hotel,Moderate Coastal Humid,Balanced,864.9,5,41,31.5,66.2,24.4,55.8,18.7,18.7,6.7,10.5,66.7,69.4,5423
+scenario_031,Hotel,Intermediate Tropical,Budget,1059.4,3,23,28.7,66.2,13.6,53.1,15.9,15.9,1.5,8.3,61.5,72.3,9608
+scenario_032,Hotel,Intermediate Tropical,Premium,767.0,5,41,30.4,66.2,23.1,55.4,18.7,18.7,1.1,10.5,61.1,69.4,5311
+scenario_033,Hotel,Extreme Coastal Saline,Balanced,1269.8,12,104,31.8,66.2,21.8,55.1,20.8,20.8,1.1,12.2,61.2,71.7,5832
+scenario_034,Hotel,Moderate Coastal Humid,Budget,601.6,3,23,30.1,66.2,20.1,54.7,17.4,18.8,4.5,9.7,64.5,72.3,4966
+scenario_035,Hotel,Intermediate Tropical,Premium,1623.7,5,41,30.4,66.2,21.7,55.1,18.7,18.7,1.2,10.5,61.2,69.4,5293
+scenario_036,Hotel,Intermediate Tropical,Balanced,1351.8,8,68,31.4,66.2,19.1,54.4,20.1,20.1,1.3,11.6,61.4,69.4,5495
+scenario_037,Hotel,Extreme Coastal Saline,Budget,1665.8,8,68,31.4,66.2,21.2,55.0,20.1,20.1,1.3,11.6,61.4,69.4,5727
+scenario_038,Hotel,Moderate Coastal Humid,Premium,1443.9,3,23,28.8,66.2,21.9,55.1,15.9,15.9,1.7,8.3,61.7,70.0,5097
+scenario_039,Hotel,Intermediate Tropical,Balanced,1820.5,8,68,31.4,66.2,18.0,54.1,20.1,20.1,1.3,11.6,61.4,71.7,5295
+scenario_040,Hotel,Intermediate Tropical,Budget,1619.4,8,68,31.4,66.2,18.6,54.3,20.1,20.1,1.3,11.6,61.4,69.4,5379
+scenario_041,Hospital,Intermediate Tropical,Budget,968.7,4,35,41.2,0.0,26.8,6.7,48.1,60.2,5.2,32.0,65.2,78.2,9663
+scenario_042,Hospital,Intermediate Tropical,Premium,974.2,4,32,40.8,0.0,31.2,7.8,47.9,58.9,5.5,30.4,65.5,76.7,5287
+scenario_043,Hospital,Extreme Coastal Saline,Balanced,660.4,4,31,40.6,0.0,35.1,8.8,47.9,58.3,5.1,30.3,65.1,78.5,5144
+scenario_044,Hospital,Moderate Coastal Humid,Budget,863.6,2,18,44.4,0.0,32.5,8.1,58.3,68.1,9.1,27.1,69.1,83.2,5058
+scenario_045,Hospital,Intermediate Tropical,Premium,1411.4,2,28,45.8,0.0,29.1,7.3,55.4,70.5,9.4,35.3,69.4,75.7,5350
+scenario_046,Hospital,Intermediate Tropical,Balanced,636.7,2,28,45.8,0.0,30.1,7.5,55.4,70.5,9.4,35.3,69.4,77.4,4871
+scenario_047,Hospital,Extreme Coastal Saline,Budget,1635.5,2,25,45.2,0.0,34.5,8.6,56.0,70.0,8.8,33.5,68.8,80.5,5130
+scenario_048,Hospital,Moderate Coastal Humid,Premium,927.1,2,19,44.5,0.0,34.1,8.5,57.9,68.4,8.8,28.3,68.8,73.0,9385
+scenario_049,Hospital,Intermediate Tropical,Balanced,1470.5,4,30,40.6,0.0,26.6,6.7,47.8,57.8,5.8,29.0,65.8,84.7,4962
+scenario_050,Hospital,Intermediate Tropical,Budget,1340.2,2,23,45.2,0.0,23.8,6.0,56.5,69.6,9.3,32.1,69.3,77.7,5020
+scenario_051,Hospital,Extreme Coastal Saline,Premium,1103.1,2,18,44.4,0.0,36.6,9.2,58.3,68.1,9.1,27.1,69.1,78.5,5162
+scenario_052,Hospital,Moderate Coastal Humid,Balanced,771.4,2,21,44.5,0.0,34.9,8.7,57.1,69.0,8.3,30.4,68.3,75.5,5311
+scenario_053,Hospital,Intermediate Tropical,Budget,999.4,2,19,44.5,0.0,23.9,6.0,57.9,68.4,8.8,28.3,68.8,80.9,4999
+scenario_054,Hospital,Intermediate Tropical,Premium,779.9,2,26,45.8,0.0,29.0,7.2,55.8,70.2,9.9,34.1,69.9,79.2,4939
+scenario_055,Hospital,Extreme Coastal Saline,Balanced,1549.6,2,22,45.2,0.0,35.1,8.8,56.8,69.3,9.5,31.3,69.5,81.0,5023
+scenario_056,Hospital,Moderate Coastal Humid,Budget,983.2,4,23,38.3,0.0,31.5,7.9,47.1,52.5,4.2,23.5,64.2,87.0,5295
+scenario_057,Hospital,Intermediate Tropical,Premium,719.5,2,18,44.4,0.0,27.3,6.8,58.3,68.1,9.1,27.1,69.1,86.0,4792
+scenario_058,Hospital,Intermediate Tropical,Balanced,847.5,6,38,39.1,0.0,24.3,6.1,43.0,53.5,4.7,28.7,64.7,69.3,5237
+scenario_059,Hospital,Extreme Coastal Saline,Budget,1030.7,6,32,37.2,0.0,32.8,8.2,41.7,49.5,3.3,24.7,63.3,78.3,5229
+scenario_060,Hospital,Moderate Coastal Humid,Premium,1627.5,2,17,47.1,0.0,35.2,8.8,70.6,75.5,8.0,37.5,68.0,72.7,5098
+scenario_061,Office,Extreme Coastal Saline,Premium,933.1,2,26,24.4,66.3,21.9,55.2,7.7,4.5,0.4,7.7,60.4,71.9,5011
+scenario_062,Office,Moderate Coastal Humid,Balanced,1476.9,15,59,41.8,66.3,23.8,55.7,49.2,48.6,4.2,49.2,64.2,71.3,5668
+scenario_063,Office,Intermediate Tropical,Budget,1006.1,5,28,49.3,66.0,27.5,56.4,64.3,63.1,8.6,64.3,68.6,71.3,5374
+scenario_064,Office,Intermediate Tropical,Premium,849.0,5,32,51.4,66.2,26.2,56.2,68.8,67.7,9.5,68.8,69.5,70.3,4709
+scenario_065,Office,Extreme Coastal Saline,Balanced,746.1,2,9,61.4,66.2,23.9,55.7,100.0,90.7,8.7,100.0,68.7,67.5,4399
+scenario_066,Office,Moderate Coastal Humid,Budget,724.2,15,61,41.9,66.0,25.6,55.9,50.8,50.3,3.0,50.8,63.0,71.3,6329
+scenario_067,Office,Intermediate Tropical,Premium,683.1,2,23,24.8,66.2,21.4,55.0,8.7,5.1,0.5,8.7,60.5,66.8,4394
+scenario_068,Office,Intermediate Tropical,Balanced,682.8,2,21,37.8,66.0,21.5,54.9,39.7,35.7,3.4,39.7,63.4,71.3,5239
+scenario_069,Office,Extreme Coastal Saline,Budget,450.6,10,46,45.1,66.3,22.5,55.4,56.5,55.8,5.5,56.5,65.5,71.3,5223
+scenario_070,Office,Moderate Coastal Humid,Premium,984.3,2,24,24.6,66.3,21.1,55.0,8.3,4.9,0.4,8.3,60.4,71.3,9516
+scenario_071,Office,Intermediate Tropical,Balanced,415.7,2,14,50.3,66.1,20.9,54.8,71.5,65.5,6.0,71.5,66.0,68.8,4159
+scenario_072,Office,Intermediate Tropical,Budget,1428.1,2,18,25.5,66.2,21.2,54.9,11.1,6.5,0.6,11.1,60.6,70.3,4054
+scenario_073,Office,Extreme Coastal Saline,Premium,930.1,5,32,51.4,66.3,23.6,55.6,68.8,67.7,9.5,68.8,69.5,71.3,5162
+scenario_074,Office,Moderate Coastal Humid,Balanced,862.9,15,63,42.7,66.2,24.7,55.8,52.4,51.9,3.6,52.4,63.6,70.3,5889
+scenario_075,Office,Intermediate Tropical,Budget,1383.6,5,28,49.3,66.0,27.5,56.4,64.3,63.1,8.6,64.3,68.6,71.3,5076
+scenario_076,Office,Intermediate Tropical,Premium,759.8,5,35,52.8,66.2,25.8,56.1,71.4,70.5,10.5,71.4,70.5,70.3,4644
+scenario_077,Office,Extreme Coastal Saline,Balanced,1499.1,5,33,51.7,66.3,23.4,55.6,69.7,68.7,9.6,69.7,69.6,71.3,4485
+scenario_078,Office,Moderate Coastal Humid,Budget,1380.1,5,35,52.8,66.2,24.8,55.8,71.4,70.5,10.5,71.4,70.5,70.3,5114
+scenario_079,Office,Intermediate Tropical,Premium,491.3,5,32,51.4,66.2,24.5,55.7,68.8,67.7,9.5,68.8,69.5,70.3,5170
+scenario_080,Office,Intermediate Tropical,Balanced,1080.7,2,11,49.7,66.2,20.0,54.6,72.8,65.2,4.5,72.8,64.5,70.3,4507

@@ -5,23 +5,23 @@ import React, { createContext, useContext, useEffect, useState } from 'react';
 const ThemeContext = createContext();
 
 export function ThemeProvider({ children }) {
-  const [theme, setTheme] = useState('dark');
+  const [theme, setTheme] = useState(() => {
+    const stored = typeof window !== 'undefined' ? localStorage.getItem('theme') : null;
+    return stored || 'dark';
+  });
   const [mounted, setMounted] = useState(false);
 
+  // Sync theme attribute and mount flag
   useEffect(() => {
-    const stored = localStorage.getItem('theme') || 'dark';
-    setTheme(stored);
-    document.documentElement.setAttribute('data-theme', stored);
-    // Delay setMounted to avoid synchronous cascading renders warning
+    document.documentElement.setAttribute('data-theme', theme);
     const timer = setTimeout(() => setMounted(true), 0);
     return () => clearTimeout(timer);
-  }, []);
+  }, [theme]);
 
   const toggleTheme = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light';
     setTheme(newTheme);
     localStorage.setItem('theme', newTheme);
-    document.documentElement.setAttribute('data-theme', newTheme);
   };
 
   if (!mounted) {
