@@ -133,6 +133,7 @@ def build_project(
             project.fire_features_detected.append({
                 "feature_type":EQUIPMENT_FEATURE_TYPES.get(item.type,item.type.upper()),
                 "feature":item.type,
+                "floor":item.floor,
                 "presence":"CONFIRMED_PRESENT",
                 "quantity":item.count,
                 "quantity_status":"KNOWN" if item.count is not None else "UNKNOWN",

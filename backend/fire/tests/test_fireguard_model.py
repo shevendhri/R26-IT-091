@@ -32,6 +32,16 @@ def test_detector_normalizes_confidence_bbox_and_counts():
     assert FireGuardDetector.aggregate_counts(detections) == {"fire_extinguisher": 1}
 
 
+def test_detector_deduplicates_overlapping_same_class_symbols():
+    boxes = [
+        SimpleNamespace(cls=Scalar(2), conf=Scalar(0.91), xyxy=Coordinates([1, 2, 30, 40])),
+        SimpleNamespace(cls=Scalar(2), conf=Scalar(0.72), xyxy=Coordinates([2, 3, 30, 40])),
+    ]
+    detections = FireGuardDetector().normalize_results([SimpleNamespace(names={2: "fire_extinguisher"}, boxes=boxes)])
+    assert len(detections) == 1
+    assert detections[0].confidence == 0.91
+
+
 def test_validated_replay_is_never_live():
     result = load_validated_replay(FireGuardModelConfig().replay_path)
     assert result.inference_mode == "VALIDATED_REPLAY"
@@ -47,6 +57,8 @@ def test_merge_preserves_unknown_and_stair_candidate_safety():
     assert project.project["travel_distance_m"] is None
     assert project.extraction["model_detected_evidence"]["stair_candidate_count"]["source"] == "MODEL_DETECTED"
     assert not any("status" in item for item in project.fire_features_detected if item.get("status") in {"PASS", "VIOLATION"})
+    assert project.fire_features_detected[0]["presence"] == "INDICATED_ON_PLAN"
+    assert project.doors == []
 
 
 def test_model_evidence_keeps_average_confidence():

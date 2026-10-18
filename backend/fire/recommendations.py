@@ -31,7 +31,8 @@ def build_recommendations(results: list[RuleResult]) -> tuple[list[dict],list[di
         rule=RULE_BY_ID.get(result.rule_id)
         if rule and rule.feature and result.status!=RuleStatus.NOT_APPLICABLE:
             required = True if result.applicable is True else None
-            presence = "CONFIRMED_PRESENT" if result.status==RuleStatus.PASS else "CONFIRMED_NONCOMPLIANT" if result.status==RuleStatus.VIOLATION and result.actual is False else "UNKNOWN"
+            indicated = any(item.get("evidence_state") == "INDICATED_ON_PLAN" for item in (result.source_evidence or []))
+            presence = "CONFIRMED_PRESENT" if result.status==RuleStatus.PASS else "CONFIRMED_NONCOMPLIANT" if result.status==RuleStatus.VIOLATION and result.actual is False else "INDICATED_ON_PLAN" if indicated else "UNKNOWN"
             features.append(_feature_record(result,required,presence))
         if result.status==RuleStatus.VIOLATION:
             recommendations.append({"rule_id":result.rule_id,"problem":result.description,"regulation":result.regulation,"actual":result.actual,"required":result.required,"location":result.location,"reason":result.decision_reason,"corrective_recommendation":result.recommendation})

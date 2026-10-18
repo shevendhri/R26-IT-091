@@ -67,7 +67,27 @@ class FireGuardDetector:
                     confidence=float(box.conf.item()),
                     bbox=BoundingBox(x1=x1, y1=y1, x2=x2, y2=y2),
                 ))
-        return normalized
+        # YOLO applies NMS per inference, but tiled/replayed inputs can still
+        # return overlapping copies of a symbol.  Retain the highest-confidence
+        # instance for materially overlapping boxes of the same class.
+        deduplicated: list[DetectionEvidence] = []
+        for detection in sorted(normalized, key=lambda item: item.confidence, reverse=True):
+            if any(existing.class_name == detection.class_name and self._iou(existing.bbox, detection.bbox) >= self.config.iou_threshold for existing in deduplicated):
+                continue
+            deduplicated.append(detection)
+        return deduplicated
+
+    @staticmethod
+    def _iou(first: BoundingBox | None, second: BoundingBox | None) -> float:
+        if first is None or second is None:
+            return 0.0
+        left=max(first.x1,second.x1); top=max(first.y1,second.y1)
+        right=min(first.x2,second.x2); bottom=min(first.y2,second.y2)
+        intersection=max(0.0,right-left)*max(0.0,bottom-top)
+        if not intersection: return 0.0
+        first_area=max(0.0,first.x2-first.x1)*max(0.0,first.y2-first.y1)
+        second_area=max(0.0,second.x2-second.x1)*max(0.0,second.y2-second.y1)
+        return intersection/(first_area+second_area-intersection) if first_area+second_area-intersection else 0.0
 
     @staticmethod
     def aggregate_counts(detections: list[DetectionEvidence]) -> dict[str, int]:

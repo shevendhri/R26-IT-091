@@ -137,6 +137,22 @@ def test_low_rise_integration_not_applicable_for_height_features():
  assert by_id(results,"CH4-FIRE-LIFT")[0].status==RuleStatus.NOT_APPLICABLE
  assert by_id(results,"CH4-SPRINKLER-HEIGHT")[0].status==RuleStatus.NOT_APPLICABLE
 
+def test_two_storey_school_library_uses_table14_school_row_and_low_rise_exclusions():
+ p=project(building_use_text="School Library",purpose_group="2(a)",storey_count=2,building_height_m=8,highest_habitable_floor_level_m=8,max_floor_area_per_storey_m2=375)
+ results=evaluate_project(p)
+ assert by_id(results,"CH4-FIRE-ALARM-TABLE14")[0].status==RuleStatus.NOT_APPLICABLE
+ assert by_id(results,"CH4-WET-RISING-MAIN")[0].status==RuleStatus.NOT_APPLICABLE
+ assert by_id(results,"CH4-FIRE-LIFT")[0].status==RuleStatus.NOT_APPLICABLE
+ assert by_id(results,"CH4-SPRINKLER-HEIGHT")[0].status==RuleStatus.NOT_APPLICABLE
+
+def test_school_library_area_and_sprinkler_variations_keep_travel_evidence_safe():
+ p=project(building_use_text="Educational School Library",purpose_group="2(a)",storey_count=2,building_height_m=8,highest_habitable_floor_level_m=8,max_floor_area_per_storey_m2=375.1)
+ assert by_id(evaluate_project(p),"CH4-FIRE-ALARM-TABLE14")[0].status==RuleStatus.MANUAL_REVIEW
+ p.project.update({"travel_distance_m":20,"escape_arrangement":"two_way"})
+ assert by_id(evaluate_project(p),"CH2-TRAVEL-DISTANCE-TABLE5")[0].status==RuleStatus.MANUAL_REVIEW
+ p.sprinkler_system=False
+ assert by_id(evaluate_project(p),"CH2-TRAVEL-DISTANCE-TABLE5")[0].status==RuleStatus.PASS
+
 def test_medium_rise_integration_requires_features_without_false_absence():
  p=project(building_use_text="office",storey_count=8,building_height_m=24,highest_habitable_floor_level_m=24,max_floor_area_per_storey_m2=500)
  results=evaluate_project(p)
