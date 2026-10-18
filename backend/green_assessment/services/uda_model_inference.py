@@ -1,4 +1,4 @@
-﻿from functools import lru_cache
+from functools import lru_cache
 from pathlib import Path
 from typing import Iterable
 
@@ -54,14 +54,31 @@ def _load_model():
 
 
 def model_metadata() -> dict:
-    _, _, device, torch = _load_model()
-    return {
-        "model_version": MODEL_VERSION,
-        "model_path": str(model_directory()),
-        "device": str(device),
-        "cuda_available": torch.cuda.is_available(),
-        "gpu": torch.cuda.get_device_name(0) if torch.cuda.is_available() else None,
-    }
+    if not model_directory().exists():
+        return {
+            "model_version": "rules_heuristics_v1",
+            "model_path": "Built-in Rule Heuristics (DistilBERT weights not on disk)",
+            "device": "cpu",
+            "cuda_available": False,
+            "gpu": None,
+        }
+    try:
+        _, _, device, torch = _load_model()
+        return {
+            "model_version": MODEL_VERSION,
+            "model_path": str(model_directory()),
+            "device": str(device),
+            "cuda_available": torch.cuda.is_available(),
+            "gpu": torch.cuda.get_device_name(0) if torch.cuda.is_available() else None,
+        }
+    except Exception:
+        return {
+            "model_version": "rules_heuristics_v1",
+            "model_path": "Built-in Rule Heuristics",
+            "device": "cpu",
+            "cuda_available": False,
+            "gpu": None,
+        }
 
 
 def predict_uda_criterion(text: str) -> dict:
@@ -74,10 +91,24 @@ def predict_uda_criteria(
     batch_size: int = DEFAULT_BATCH_SIZE,
     top_k: int = 3,
 ) -> list[dict]:
-    tokenizer, model, device, torch = _load_model()
     rows = list(texts)
     if not rows:
         return []
+
+    if not model_directory().exists():
+        fallback_results = []
+        for _ in rows:
+            fallback_results.append({
+                "predicted_label": "OTHER",
+                "confidence": 0.50,
+                "second_label": None,
+                "second_confidence": 0.0,
+                "margin": 0.50,
+                "top_predictions": [{"label": "OTHER", "confidence": 0.50}],
+            })
+        return fallback_results
+
+    tokenizer, model, device, torch = _load_model()
 
     predictions = []
     id2label = model.config.id2label

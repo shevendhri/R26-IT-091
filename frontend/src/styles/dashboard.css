@@ -1,12 +1,20 @@
 :root {
-  /* Architectural sage green theme */
-  --bg-dark: #E1E9E2;
-  --card-bg: rgba(255, 255, 255, 0.95);
-  --card-border: #BDCEBF;
-  --accent-eco: #1E5438;
-  --text-primary: #14221B;
-  --text-dim: #506458;
-  --bg-light: #DCE8DF;
+  /* Architectural research board & studio theme */
+  --bg-dark: #F7F5F0;
+  --card-bg: #FFFFFF;
+  --card-border: rgba(25, 30, 27, 0.12);
+  --accent-eco: #1A382B;
+  --accent-timber: #7A583A;
+  --accent-amber: #C88A32;
+  --text-primary: #181B1A;
+  --text-dim: #555E59;
+  --bg-light: #FAF8F5;
+  --bg-card: #FFFFFF;
+  --border-card: 1px solid rgba(25, 30, 27, 0.12);
+  --bg-inner: #EFECE4;
+  --border-inner: 1px solid rgba(25, 30, 27, 0.10);
+  --eco-glow: #1B8058;
+  --blueprint-blue: #245D8C;
   
   /* Layout Spacing */
   --dashboard-gap: 24px;
@@ -76,7 +84,7 @@ body {
   margin: 0;
   font-size: 1.2rem;
   font-family: 'Space Grotesk', sans-serif;
-  color: #fff;
+  color: var(--text-primary);
 }
 
 .section-dot {
@@ -147,17 +155,22 @@ body {
 }
 
 .kpi-card {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.04);
-  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(74, 222, 128, 0.12);
+  border-radius: 16px;
   padding: 1.5rem;
   text-align: center;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .kpi-card.hoverable:hover {
-  border-color: rgba(0, 245, 212, 0.2);
-  background: rgba(0, 245, 212, 0.03);
+  border-color: rgba(74, 222, 128, 0.35);
+  background: rgba(74, 222, 128, 0.06);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.25), 0 0 20px rgba(74, 222, 128, 0.15);
 }
 
 .body-text {
@@ -279,6 +292,12 @@ body {
 ══════════════════════════════════════════════════════════════ */
 
 /* ── Keyframes ── */
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 @keyframes viewer-glow-pulse {
   0%, 100% { box-shadow: 0 0 80px rgba(0,0,0,0.7), 0 0 40px rgba(0,255,157,0.04), 0 0 1px rgba(0,255,157,0.3); }
   50%       { box-shadow: 0 0 80px rgba(0,0,0,0.7), 0 0 60px rgba(0,255,157,0.1), 0 0 2px rgba(0,255,157,0.5); }

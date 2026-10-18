@@ -4,7 +4,7 @@ import React from 'react';
 /**
  * ProjectValidationStrip – Displays formal project validation status,
  * data quality level, geometry sanity state, and human review gates.
- * Updated for high-contrast warm sustainable architecture theme.
+ * Styled with crisp modern cards and high contrast.
  */
 export default function ProjectValidationStrip({ data }) {
   if (!data) return null;
@@ -26,108 +26,111 @@ export default function ProjectValidationStrip({ data }) {
 
   return (
     <section style={{
-      background: isReviewRequired ? 'rgba(199, 122, 61, 0.08)' : '#FFFFFF',
-      border: isReviewRequired ? '1px solid rgba(199, 122, 61, 0.35)' : '1px solid #C8D3CA',
-      borderLeft: isReviewRequired ? '4px solid #C77A3D' : '4px solid #245C43',
-      borderRadius: '16px',
-      padding: '1.4rem 1.6rem',
+      background: '#FFFFFF',
+      border: isReviewRequired ? '1px solid #FECACA' : '1px solid #E2E8F0',
+      borderLeft: isReviewRequired ? '5px solid #DC2626' : '5px solid #064E3B',
+      borderRadius: '10px',
+      padding: '1.25rem 1.6rem',
       display: 'flex',
       flexDirection: 'column',
       gap: '1rem',
-      boxShadow: '0 4px 12px rgba(24, 37, 31, 0.06), 0 18px 50px rgba(24, 37, 31, 0.08)'
+      boxShadow: '0 2px 10px rgba(15, 23, 42, 0.04)'
     }}>
       {/* Top Strip */}
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.75rem', borderBottom: '1px solid #C8D3CA', paddingBottom: '0.75rem' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.75rem', borderBottom: '1px solid #E2E8F0', paddingBottom: '0.85rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-          <span style={{ fontSize: '0.72rem', fontWeight: 800, color: isReviewRequired ? '#C77A3D' : '#245C43', letterSpacing: '0.1em', textTransform: 'uppercase', fontFamily: 'Space Grotesk' }}>
-            Project Validation
+          <span style={{ fontSize: '0.76rem', fontWeight: 800, color: isReviewRequired ? '#DC2626' : '#0F172A', letterSpacing: '0.08em', textTransform: 'uppercase', fontFamily: 'Space Grotesk, sans-serif' }}>
+            Preliminary Engineering Validation
           </span>
           <span style={{
-            fontSize: '0.7rem',
-            fontWeight: 700,
-            padding: '3px 10px',
-            borderRadius: '20px',
-            background: isReviewRequired ? 'rgba(199, 122, 61, 0.15)' : '#DDE8DE',
-            border: isReviewRequired ? '1px solid rgba(199, 122, 61, 0.4)' : '1px solid rgba(36, 92, 67, 0.25)',
-            color: isReviewRequired ? '#C77A3D' : '#245C43',
-            textTransform: 'uppercase'
+            fontSize: '0.72rem',
+            fontWeight: 800,
+            padding: '3px 9px',
+            borderRadius: '6px',
+            background: isReviewRequired ? '#FEF2F2' : '#ECFDF5',
+            border: isReviewRequired ? '1px solid #FECACA' : '1px solid #A7F3D0',
+            color: isReviewRequired ? '#DC2626' : '#065F46',
+            textTransform: 'uppercase',
+            letterSpacing: '0.04em',
+            fontFamily: 'Space Grotesk, sans-serif'
           }}>
             {status}
           </span>
         </div>
-        <span style={{ fontSize: '0.75rem', color: '#526158', fontWeight: 600 }}>
-          Academic Engineering Decision-Support
+        <span style={{ fontSize: '0.74rem', color: '#64748B', fontWeight: 600, fontFamily: 'Space Grotesk, sans-serif' }}>
+          Academic Decision-Support Gate · SLS 614 / SLS 107
         </span>
       </div>
 
       {/* Grid of 4 Status Cards */}
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '0.85rem' }}>
-        <div style={{ background: '#F7F9F6', border: '1px solid #C8D3CA', borderRadius: '12px', padding: '0.75rem 1rem' }}>
-          <div style={{ fontSize: '0.65rem', color: '#526158', fontWeight: 700, textTransform: 'uppercase', marginBottom: '0.2rem' }}>Geometry Status</div>
-          <div style={{ fontSize: '0.98rem', fontWeight: 800, color: isReviewRequired ? '#C77A3D' : '#245C43', fontFamily: 'Space Grotesk' }}>
+        <div style={{ background: '#F8FAFC', border: '1px solid #E2E8F0', borderRadius: '8px', padding: '0.85rem 1.1rem' }}>
+          <div style={{ fontSize: '0.68rem', color: '#64748B', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '0.3rem', fontFamily: 'Space Grotesk, sans-serif' }}>
+            Geometry State
+          </div>
+          <div style={{ fontSize: '1rem', fontWeight: 800, color: isReviewRequired ? '#DC2626' : '#065F46', fontFamily: 'Space Grotesk, sans-serif' }}>
             {status}
           </div>
-          <div style={{ fontSize: '0.72rem', color: '#748078', marginTop: '0.2rem', fontWeight: 500 }}>
-            {isReviewRequired ? 'Geometric review gate flagged' : 'Sanity heuristics verified'}
+          <div style={{ fontSize: '0.74rem', color: '#64748B', marginTop: '0.25rem', fontWeight: 500 }}>
+            {isReviewRequired ? 'Geometric review flagged' : 'Sanity heuristics verified'}
           </div>
         </div>
 
-        <div style={{ background: '#F7F9F6', border: '1px solid #C8D3CA', borderRadius: '12px', padding: '0.75rem 1rem' }}>
-          <div style={{ fontSize: '0.65rem', color: '#526158', fontWeight: 700, textTransform: 'uppercase', marginBottom: '0.2rem' }}>Blueprint Data</div>
-          <div style={{ fontSize: '0.98rem', fontWeight: 800, color: '#3E6F8E', fontFamily: 'Space Grotesk' }}>
+        <div style={{ background: '#F8FAFC', border: '1px solid #E2E8F0', borderRadius: '8px', padding: '0.85rem 1.1rem' }}>
+          <div style={{ fontSize: '0.68rem', color: '#64748B', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '0.3rem', fontFamily: 'Space Grotesk, sans-serif' }}>
+            Blueprint Provenance
+          </div>
+          <div style={{ fontSize: '1rem', fontWeight: 800, color: '#0F172A', fontFamily: 'Space Grotesk, sans-serif' }}>
             {blueprintData}
           </div>
-          <div style={{ fontSize: '0.72rem', color: '#748078', marginTop: '0.2rem', fontWeight: 500 }}>
-            {blueprintData === 'Blueprint-extracted' ? 'Extracted from floorplan image' : 'Parametric preliminary baseline'}
+          <div style={{ fontSize: '0.74rem', color: '#64748B', marginTop: '0.25rem', fontWeight: 500 }}>
+            Spatial coordinate vectors
           </div>
         </div>
 
-        <div style={{ background: '#F7F9F6', border: '1px solid #C8D3CA', borderRadius: '12px', padding: '0.75rem 1rem' }}>
-          <div style={{ fontSize: '0.65rem', color: '#526158', fontWeight: 700, textTransform: 'uppercase', marginBottom: '0.2rem' }}>Data Quality</div>
-          <div style={{ fontSize: '0.98rem', fontWeight: 800, color: '#18251F', fontFamily: 'Space Grotesk' }}>
+        <div style={{ background: '#F8FAFC', border: '1px solid #E2E8F0', borderRadius: '8px', padding: '0.85rem 1.1rem' }}>
+          <div style={{ fontSize: '0.68rem', color: '#64748B', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '0.3rem', fontFamily: 'Space Grotesk, sans-serif' }}>
+            Data Integrity
+          </div>
+          <div style={{ fontSize: '1rem', fontWeight: 800, color: '#0F172A', fontFamily: 'Space Grotesk, sans-serif' }}>
             {dataQuality}
           </div>
-          <div style={{ fontSize: '0.72rem', color: '#748078', marginTop: '0.2rem', fontWeight: 500 }}>
-            Sri Lanka materials catalog
+          <div style={{ fontSize: '0.74rem', color: '#64748B', marginTop: '0.25rem', fontWeight: 500 }}>
+            Curated Sri Lankan dataset
           </div>
         </div>
 
-        <div style={{ background: '#F7F9F6', border: '1px solid #C8D3CA', borderRadius: '12px', padding: '0.75rem 1rem' }}>
-          <div style={{ fontSize: '0.65rem', color: '#526158', fontWeight: 700, textTransform: 'uppercase', marginBottom: '0.2rem' }}>Assessment Layer</div>
-          <div style={{ fontSize: '0.98rem', fontWeight: 800, color: '#18251F', fontFamily: 'Space Grotesk' }}>
+        <div style={{ background: '#F8FAFC', border: '1px solid #E2E8F0', borderRadius: '8px', padding: '0.85rem 1.1rem' }}>
+          <div style={{ fontSize: '0.68rem', color: '#64748B', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '0.3rem', fontFamily: 'Space Grotesk, sans-serif' }}>
+            Engineered Inference
+          </div>
+          <div style={{ fontSize: '1rem', fontWeight: 800, color: '#0F172A', fontFamily: 'Space Grotesk, sans-serif' }}>
             {engineeringAssessment}
           </div>
-          <div style={{ fontSize: '0.72rem', color: '#748078', marginTop: '0.2rem', fontWeight: 500 }}>
+          <div style={{ fontSize: '0.74rem', color: '#64748B', marginTop: '0.25rem', fontWeight: 500 }}>
             {mlAssessment}
           </div>
         </div>
       </div>
 
-      {/* Review Required Warning Banner */}
-      {isReviewRequired && (
+      {/* Review Gate Notice if flagged */}
+      {isReviewRequired && issues.length > 0 && (
         <div style={{
-          background: 'rgba(199, 122, 61, 0.08)',
-          border: '1px solid rgba(199, 122, 61, 0.3)',
-          borderRadius: '10px',
+          background: '#FEF2F2',
+          border: '1px solid #FECACA',
+          borderRadius: '8px',
           padding: '0.85rem 1.1rem',
-          fontSize: '0.82rem',
-          color: '#18251F',
-          lineHeight: 1.5
+          fontSize: '0.80rem',
+          color: '#991B1B'
         }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.35rem', color: '#C77A3D', fontWeight: 700 }}>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
-            <span>Potential geometry inconsistency — extracted geometry should be reviewed before material quantities are treated as reliable.</span>
-          </div>
-          {issues.length > 0 && (
-            <ul style={{ margin: '0.35rem 0 0 0', paddingLeft: '1.25rem', color: '#C77A3D', fontSize: '0.78rem' }}>
-              {issues.map((iss, i) => (
-                <li key={i}>{iss}</li>
-              ))}
-            </ul>
-          )}
+          <strong>Attention — Spatial Geometry Discrepancies:</strong>
+          <ul style={{ margin: '0.45rem 0 0', paddingLeft: '1.25rem' }}>
+            {issues.map((iss, i) => (
+              <li key={i}>{iss}</li>
+            ))}
+          </ul>
         </div>
       )}
-
     </section>
   );
 }

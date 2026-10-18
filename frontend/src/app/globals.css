@@ -1,176 +1,248 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
 
 :root {
-  /* ── Base Architectural Sage Backgrounds ──────────────────── */
-  --background-primary:   #E1E9E2;
-  --background-secondary: #D4E1D6;
-  --background-tertiary:  #C7D7CA;
-  --background-blueprint: #DFE8EE;
-  --background-alt:       #D8E5DA;
+  /* ════ GREENCONSTRUCTAI UNIFIED DESIGN SYSTEM ════ */
+  --arch-bg:              #FAF7F0; /* Primary background */
+  --arch-bg-secondary:    #EBE6DC; /* Secondary background */
+  --arch-surface:         #FFFFFF; /* Surface */
+  --arch-forest:          #143825; /* Forest */
+  --arch-forest-deep:     #0D2619; /* Deep Forest */
+  --arch-sage:            #718C77; /* Sage */
+  --arch-sage-muted:      #9AAA9B; /* Muted Sage */
+  --arch-terracotta:      #B85C43; /* Terracotta */
+  --arch-clay:            #C98468; /* Clay */
+  --arch-earth:           #8D6A4F; /* Earth */
+  --arch-stone:           #D5CEC1; /* Stone */
+  --arch-charcoal:        #252823; /* Charcoal */
+  --arch-text-muted:      #697068; /* Muted Text */
+  --arch-border:          #E2DCD0; /* Border */
+  --arch-border-subtle:   #D5CCBC;
 
-  /* ── Surface Layers (Crisp Frosted Sage & White) ──────────── */
+  /* Legacy & Semantic Mapping */
+  --arch-paper:           #FAF7F0;
+  --arch-paper-light:     #FFFFFF;
+  --arch-paper-card:      #FFFFFF;
+  --arch-paper-subtle:    #EBE6DC;
+  --arch-paper-dark:      #D5CEC1;
+  --arch-paper-border:    #E2DCD0;
+  --arch-paper-border-strong: #8D6A4F;
+
+  --arch-forest:          #143825;
+  --arch-forest-deep:     #11261D;
+  --arch-forest-light:    #244C3B;
+  --arch-forest-subtle:   rgba(26, 56, 43, 0.08);
+
+  --arch-charcoal:        #181B1A;
+  --arch-charcoal-light:  #262B28;
+  --arch-charcoal-muted:  #555E59;
+  --arch-charcoal-soft:   #7C8681;
+
+  --arch-moss:            #4A604F;
+  --arch-olive:           #60684E;
+  --arch-clay:            #C47A5A;
+  --arch-terracotta:      #B8583B;
+  --arch-sandstone:       #D6C7B2;
+  --arch-timber:          #7A583A;
+  --arch-timber-dark:     #4A3320;
+
+  --arch-emerald:         #1B8058;
+  --arch-amber:           #C88A32;
+
+  /* ── Biophilic Woody & Limestone Architecture System ───────────── */
+  --background-primary:   #FAF7F0;
+  --background-secondary: #EFECE4;
+  --background-tertiary:  #E6E1D5;
+  --background-blueprint: #EBF1F5;
+  --background-alt:       #FAF8F5;
+  --background-conservatory: #1A382B;
+
+  /* ── Limestone Plaster & Natural Timber Surfaces ─────────────── */
   --surface:           #FFFFFF;
-  --surface-secondary: #E8F1E9;
-  --surface-muted:     #DCE8DE;
-  --surface-tinted:    #E4EEE6;
+  --surface-secondary: #F7F4EE;
+  --surface-muted:     rgba(30, 22, 16, 0.04);
+  --surface-tinted:    rgba(181, 126, 68, 0.08);
+  --limestone-plaster: #F7F4EE;
+  --limestone-card:    #FFFFFF;
 
-  /* ── Brand & Sage Green ───────────────────────────────────── */
-  --primary-green:      #1E5438;
-  --primary-green-dark: #123824;
-  --secondary-green:    #3A7255;
-  --sage-green:         #6F9E7B;
-  --sage-light:         #CDE2D2;
-  --sage-dark:          #2A593D;
-  --accent-green:       #5C8E6C;
-  --soft-green:         #CCE3D2;
-  --pale-green:         #E3EFE5;
-  --light-green:        #CCE3D2;
+  /* ── Teak, Cedar, Dark Walnut & Botanical Sage ─────────────── */
+  --timber-teak:        #B57E44;
+  --timber-cedar:       #C8975D;
+  --timber-walnut:      #3B291D;
+  --timber-espresso:    #1E1610;
+  --timber-warm:        #B57E44;
+  --timber-deep:        #2D1E14;
+  --timber-light:       #E8C695;
+  --timber-border:      rgba(181, 126, 68, 0.35);
+
+  /* ── Conservatory Sage & Botanical Emerald (Earthy Biophilic) ─── */
+  --sage-conservatory:  #748A6D;
+  --sage-pill:          #586F52;
+  --sage-green:         #677E60;
+  --sage-light:         rgba(116, 138, 109, 0.16);
+  --primary-green:      #586F52;
+  --primary-green-dark: #3E5139;
+  --secondary-green:    #748A6D;
+  --botanical-leaf:     #234D36;
+
+  /* ── Warm Amber Cove Backlight ───────────────────────────────── */
+  --amber-lantern:      #F6CD7A;
+  --amber-glow:         rgba(246, 205, 122, 0.45);
+  --cove-light:         rgba(246, 205, 122, 0.35);
 
   /* ── Per-Module Accent Colours ───────────────────────────── */
-  /* Plan Analyzer — Blueprint Blue */
-  --module-plan-brand:  #245D8C;
-  --module-plan-mid:    #3E7CAE;
-  --module-plan-soft:   #C8DDF0;
-  --module-plan-pale:   #E2EEF8;
-  --module-plan-border: rgba(36, 93, 140, 0.30);
+  /* Plan Analyzer — Blueprint Cyan */
+  --module-plan-brand:  #38bdf8;
+  --module-plan-mid:    #0ea5e9;
+  --module-plan-soft:   rgba(56, 189, 248, 0.16);
+  --module-plan-pale:   rgba(56, 189, 248, 0.08);
+  --module-plan-border: rgba(56, 189, 248, 0.30);
 
-  /* Material Recommendations — Forest Sage */
-  --module-mat-brand:  #1E5438;
-  --module-mat-mid:    #366E50;
-  --module-mat-soft:   #C6E2CD;
-  --module-mat-pale:   #DEEFE2;
-  --module-mat-border: rgba(30, 84, 56, 0.28);
+  /* Material Recommendations — Forest Emerald */
+  --module-mat-brand:  #4ADE80;
+  --module-mat-mid:    #22c55e;
+  --module-mat-soft:   rgba(74, 222, 128, 0.16);
+  --module-mat-pale:   rgba(74, 222, 128, 0.08);
+  --module-mat-border: rgba(74, 222, 128, 0.30);
 
   /* Green Assessment — Sage Green */
-  --module-green-brand:  #3E7452;
-  --module-green-mid:    #5C9672;
-  --module-green-soft:   #C6E5CF;
-  --module-green-pale:   #E0F2E5;
-  --module-green-border: rgba(62, 116, 82, 0.28);
+  --module-green-brand:  #34d399;
+  --module-green-mid:    #10b981;
+  --module-green-soft:   rgba(52, 211, 153, 0.16);
+  --module-green-pale:   rgba(52, 211, 153, 0.08);
+  --module-green-border: rgba(52, 211, 153, 0.30);
 
-  /* Fire Safety — Terracotta */
-  --module-fire-brand:  #C0542C;
-  --module-fire-mid:    #D56F49;
-  --module-fire-soft:   #F2D4C7;
-  --module-fire-pale:   #F9E7E0;
-  --module-fire-border: rgba(192, 84, 44, 0.28);
+  /* Fire Safety — Terracotta Flame */
+  --module-fire-brand:  #f97316;
+  --module-fire-mid:    #ea580c;
+  --module-fire-soft:   rgba(249, 115, 22, 0.16);
+  --module-fire-pale:   rgba(249, 115, 22, 0.08);
+  --module-fire-border: rgba(249, 115, 22, 0.30);
 
   /* ── Blueprint & Specialty ───────────────────────────────── */
-  --blueprint-blue:    #245D8C;
-  --blueprint-light:   #E2EEF8;
-  --amber:             #BC8116;
-  --amber-light:       #F9F0DB;
-  --safety-terracotta: #C0542C;
-  --safety-light:      #F9E7E0;
+  --blueprint-blue:    #38bdf8;
+  --blueprint-light:   rgba(56, 189, 248, 0.15);
+  --amber:             #fbbf24;
+  --amber-light:       rgba(251, 191, 36, 0.15);
+  --safety-terracotta: #f97316;
+  --safety-light:      rgba(249, 115, 22, 0.15);
 
-  /* ── Typography ──────────────────────────────────────────── */
-  --text-primary:   #14221B;
-  --text-secondary: #42554A;
-  --text-muted:     #6D8174;
-  --text-accent:    #1E5438;
+  /* ── Typography (Dark Architectural Walnut on Limestone Canvas) ── */
+  --text-primary:   #1E1610;
+  --text-secondary: #5C4D40;
+  --text-muted:     #8C7A6B;
+  --text-accent:    #B57E44;
+  --text-timber:    #B57E44;
+  --text-amber:     #D49B45;
+  --text-sage:      #2E6343;
 
-  /* ── Architectural Borders ───────────────────────────────── */
-  --border-light:  #BDCEBF;
-  --border-medium: #9EB5A1;
-  --border-mid:    #9EB5A1;
-  --border-green:  rgba(30, 84, 56, 0.24);
-  --border-strong: rgba(30, 84, 56, 0.36);
+  /* ── Architectural Timber & Limestone Borders ────────────── */
+  --border-light:   rgba(181, 126, 68, 0.20);
+  --border-medium:  rgba(181, 126, 68, 0.35);
+  --border-mid:     rgba(181, 126, 68, 0.35);
+  --border-green:   rgba(61, 107, 79, 0.35);
+  --border-strong:  rgba(181, 126, 68, 0.50);
+  --border-sage:    rgba(61, 107, 79, 0.35);
+  --border-timber:  rgba(181, 126, 68, 0.45);
+  --border-mullion: rgba(181, 126, 68, 0.25);
 
   /* ── Status / Semantic ───────────────────────────────────── */
-  --warning-amber: #BC8116;
-  --error-red:     #B02016;
-  --info-blue:     #245D8C;
-  --success-green: #1E5438;
+  --warning-amber: #FBBF24;
+  --error-red:     #F87171;
+  --info-blue:     #38BDF8;
+  --success-green: #4ADE80;
 
-  /* ── Shadows ─────────────────────────────────────────────── */
-  --shadow-sm:   0 2px 8px rgba(20, 34, 27, 0.06);
-  --shadow-soft: 0 4px 14px rgba(20, 34, 27, 0.06), 0 12px 32px rgba(20, 34, 27, 0.08);
-  --shadow-card: 0 4px 16px rgba(20, 34, 27, 0.08), 0 1px 4px rgba(20, 34, 27, 0.06);
-  --shadow-raised: 0 8px 28px rgba(20, 34, 27, 0.11), 0 2px 8px rgba(30, 84, 56, 0.10);
-  --shadow-hover: 0 8px 24px rgba(20, 34, 27, 0.10), 0 20px 48px rgba(30, 84, 56, 0.14);
+  /* ── Shadows & Ambient Glows (Warm Cove + Forest Rim) ────── */
+  --shadow-sm:       0 2px 8px rgba(0, 0, 0, 0.35);
+  --shadow-soft:     0 6px 20px rgba(0, 0, 0, 0.45), 0 16px 40px rgba(0, 0, 0, 0.35);
+  --shadow-card:     0 12px 36px rgba(0, 0, 0, 0.50), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  --shadow-raised:   0 16px 48px rgba(0, 0, 0, 0.60), 0 0 24px rgba(74, 222, 128, 0.14);
+  --shadow-hover:    0 20px 56px rgba(0, 0, 0, 0.65), 0 0 35px rgba(74, 222, 128, 0.24);
+  --shadow-alcove:   0 18px 40px rgba(0, 0, 0, 0.55), 0 8px 24px rgba(246, 205, 122, 0.15);
+  --shadow-lantern:  0 0 30px rgba(246, 205, 122, 0.35), 0 0 60px rgba(246, 205, 122, 0.15);
 
-  /* ── Radius ──────────────────────────────────────────────── */
-  --radius-card:  20px;
-  --radius-inner: 12px;
-  --radius-sm:    8px;
+  /* ── Organic & Sculptural Radii ───────────────────────────── */
+  --radius-card:  24px;
+  --radius-inner: 14px;
+  --radius-sm:    10px;
+  --radius-pill:  9999px;
 
-  /* ── Compatibility Aliases ───────────────────────────────── */
-  --eco-black:         #E1E9E2;
-  --eco-deep:          #D4E1D6;
+  /* ── Compatibility Aliases (Warm Ivory & Forest Palette) ──────── */
+  --eco-black:         #F5F1E8;
+  --eco-deep:          #EFECE4;
   --eco-card:          #FFFFFF;
-  --eco-card-raised:   #FFFFFF;
-  --eco-mid:           #E8F1E9;
-  --eco-slate:         #CCE3D2;
-  --eco-border:        #BDCEBF;
-  --eco-border-subtle: #D0E4D5;
-  --eco-border-strong: rgba(30, 84, 56, 0.32);
-  --eco-glow:          #1E5438;
-  --eco-glow-soft:     rgba(30, 84, 56, 0.10);
-  --eco-emerald:       #1E5438;
-  --green:             #1E5438;
-  --green-dim:         rgba(30, 84, 56, 0.10);
-  --green-border:      rgba(30, 84, 56, 0.25);
-  --green-glow:        rgba(30, 84, 56, 0.08);
+  --eco-card-raised:   #FBF9F4;
+  --eco-mid:           #FBF9F4;
+  --eco-slate:         rgba(23, 58, 43, 0.05);
+  --eco-border:        #E2DCD0;
+  --eco-border-subtle: rgba(216, 209, 197, 0.6);
+  --eco-border-strong: #173A2B;
+  --eco-glow:          #173A2B;
+  --eco-glow-soft:     rgba(23, 58, 43, 0.10);
+  --eco-emerald:       #173A2B;
+  --green:             #173A2B;
+  --green-dim:         rgba(23, 58, 43, 0.08);
+  --green-border:      #718C77;
+  --green-glow:        rgba(23, 58, 43, 0.15);
   --blue:              #245D8C;
-  --blue-dim:          rgba(36, 93, 140, 0.10);
+  --blue-dim:          rgba(36, 93, 140, 0.08);
   --blue-border:       rgba(36, 93, 140, 0.25);
-  --amber-dim:         rgba(188, 129, 22, 0.10);
-  --amber-border:      rgba(188, 129, 22, 0.25);
-  --red:               #B02016;
-  --red-dim:           rgba(176, 32, 22, 0.10);
-  --red-border:        rgba(176, 32, 22, 0.25);
-  --blueprint-blue:    #245D8C;
-  --blueprint-glow:    rgba(36, 93, 140, 0.10);
-  --warn-amber:        #BC8116;
-  --concrete-gray:     #42554A;
-  --graphite:          #14221B;
+  --amber-dim:         rgba(184, 92, 67, 0.08);
+  --amber-border:      rgba(184, 92, 67, 0.25);
+  --red:               #B85C43;
+  --red-dim:           rgba(184, 92, 67, 0.08);
+  --red-border:        rgba(184, 92, 67, 0.25);
+  --blueprint-blue:    #173A2B;
+  --blueprint-glow:    rgba(23, 58, 43, 0.08);
+  --warn-amber:        #8D6A4F;
+  --concrete-gray:     #697068;
+  --graphite:          #252823;
   --glass-bg:          #FFFFFF;
-  --glass-border:      rgba(30, 84, 56, 0.22);
-  --text-dim:          #42554A;
-  --eco-accent-green:        #1E5438;
-  --eco-accent-green-subtle: rgba(30, 84, 56, 0.10);
-  --card-background: rgba(255, 255, 255, 0.96);
+  --glass-border:      #E2DCD0;
+  --text-dim:          #697068;
+  --eco-accent-green:        #173A2B;
+  --eco-accent-green-subtle: rgba(23, 58, 43, 0.08);
+  --card-background: #FFFFFF;
   --bg-card:       #FFFFFF;
-  --bg-card-hover: #F0F7F2;
-  --bg-inner:      #E8F1E9;
-  --border-card:       1px solid #BDCEBF;
-  --border-card-hover: 1px solid rgba(30, 84, 56, 0.35);
-  --border-inner:      1px solid #BDCEBF;
+  --bg-card-hover: #FBF9F4;
+  --bg-inner:      #F5F1E8;
+  --border-card:       1px solid #E2DCD0;
+  --border-card-hover: 1px solid #173A2B;
+  --border-inner:      1px solid #E2DCD0;
   --padding-card:  24px;
   --padding-inner: 14px;
-  --shadow-card-legacy: var(--shadow-card);
-  --shadow-raised-legacy: var(--shadow-raised);
+  --shadow-card-legacy: 0 4px 20px rgba(23, 58, 43, 0.04);
+  --shadow-raised-legacy: 0 8px 30px rgba(23, 58, 43, 0.08);
   --shadow-inset: none;
 
-  /* FireGuard Tailwind compatibility tokens */
-  --background: #E1E9E2;
-  --foreground: #14221B;
+  /* FireGuard & Unified Tailwind compatibility tokens */
+  --background: #FAF7F0;
+  --foreground: #143825;
   --card: #FFFFFF;
-  --card-foreground: #14221B;
+  --card-foreground: #143825;
   --popover: #FFFFFF;
-  --popover-foreground: #14221B;
-  --primary: #1E5438;
-  --primary-foreground: #FFFFFF;
-  --secondary: #D4E1D6;
-  --secondary-foreground: #14221B;
-  --muted: #E8F1E9;
-  --muted-foreground: #4F6658;
-  --accent: #C0542C;
-  --accent-foreground: #FFFFFF;
-  --destructive: #B02016;
-  --destructive-foreground: #FFFFFF;
-  --border: #BDCEBF;
-  --input: #E8F1EA;
-  --ring: #1E5438;
-  --sidebar: #0F2D1E;
-  --sidebar-foreground: #EFF5F0;
-  --sidebar-primary: #65D28A;
-  --sidebar-primary-foreground: #0F2D1E;
-  --sidebar-accent: #153F2B;
-  --sidebar-accent-foreground: #EFF5F0;
-  --sidebar-border: #3A7255;
-  --sidebar-ring: #65D28A;
+  --popover-foreground: #143825;
+  --primary: #143825;
+  --primary-foreground: #FCFAF6;
+  --secondary: #FAF7F0;
+  --secondary-foreground: #143825;
+  --muted: #F5F1E8;
+  --muted-foreground: #697068;
+  --accent: #B85C43;
+  --accent-foreground: #FCFAF6;
+  --destructive: #B85C43;
+  --destructive-foreground: #FCFAF6;
+  --border: #E2DCD0;
+  --input: #FFFFFF;
+  --ring: #143825;
+  --sidebar: #FBF9F4;
+  --sidebar-foreground: #173A2B;
+  --sidebar-primary: #173A2B;
+  --sidebar-primary-foreground: #FCFAF6;
+  --sidebar-accent: #F5F1E8;
+  --sidebar-accent-foreground: #173A2B;
+  --sidebar-border: #D8D1C5;
+  --sidebar-ring: #173A2B;
   --font-orbitron: 'Space Grotesk', sans-serif;
   --font-inter: 'Inter', sans-serif;
 }
@@ -234,29 +306,47 @@ body {
 /*  TYPOGRAPHY                                                 */
 /* ─────────────────────────────────────────────────────────── */
 h1, h2, h3, h4, h5, .font-heading {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Outfit', 'Space Grotesk', sans-serif;
   letter-spacing: -0.02em;
   font-weight: 700;
   color: var(--text-primary);
-  line-height: 1.2;
+  line-height: 1.25;
 }
 
-h1 { font-weight: 800; }
-h2 { font-weight: 700; }
+h1 { font-weight: 800; letter-spacing: -0.03em; }
+h2 { font-weight: 750; letter-spacing: -0.025em; }
 
 .page-title {
   color: var(--text-primary);
   font-weight: 800;
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Outfit', 'Space Grotesk', sans-serif;
 }
 
 .section-label {
-  color: var(--primary-green);
-  letter-spacing: 0.18em;
-  font-weight: 700;
+  color: var(--sage-green);
+  letter-spacing: 0.16em;
+  font-weight: 800;
   font-size: 0.72rem;
   text-transform: uppercase;
   font-family: 'Space Grotesk', sans-serif;
+}
+
+/* ── Biophilic Eyebrow & Badges ── */
+.biophilic-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 14px;
+  border-radius: 9999px;
+  background: rgba(126, 184, 146, 0.12);
+  border: 1px solid rgba(126, 184, 146, 0.28);
+  color: var(--amber-lantern);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.25), 0 0 16px rgba(246, 205, 122, 0.12);
 }
 
 /* ─────────────────────────────────────────────────────────── */
@@ -266,18 +356,33 @@ h2 { font-weight: 700; }
   position: fixed;
   inset: 0;
   z-index: -2;
-  background: var(--background-primary);
+  background: radial-gradient(circle at 50% 0%, #163624 0%, #0E2218 45%, #081710 100%);
   overflow: hidden;
 }
 
-/* Architectural grid overlay with sage accent */
-.blueprint-grid {
+/* Conservatory greenhouse glass mullion grid */
+.blueprint-grid,
+.conservatory-mullion-grid {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(30, 84, 56, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(30, 84, 56, 0.05) 1px, transparent 1px);
-  background-size: 56px 56px;
+    linear-gradient(rgba(126, 184, 146, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(126, 184, 146, 0.06) 1px, transparent 1px);
+  background-size: 64px 64px;
+  pointer-events: none;
+}
+
+/* Biophilic vertical timber slats texture overlay */
+.timber-slats-bg {
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    90deg,
+    rgba(200, 151, 93, 0.04) 0px,
+    rgba(200, 151, 93, 0.04) 2px,
+    transparent 2px,
+    transparent 24px
+  );
   pointer-events: none;
 }
 
@@ -286,8 +391,8 @@ h2 { font-weight: 700; }
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(36, 93, 140, 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(36, 93, 140, 0.06) 1px, transparent 1px);
+    linear-gradient(rgba(56, 189, 248, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56, 189, 248, 0.07) 1px, transparent 1px);
   background-size: 48px 48px;
   pointer-events: none;
 }
@@ -323,83 +428,127 @@ h2 { font-weight: 700; }
 }
 
 /* ─────────────────────────────────────────────────────────── */
-/*  SURFACE CARDS                                              */
+/*  SURFACE CARDS (Warm Limestone Plaster & Natural Teak Rim)   */
 /* ─────────────────────────────────────────────────────────── */
 .glass-panel,
 .glass-card,
 .eng-panel {
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(235, 244, 237, 0.94));
-  border: 1px solid var(--border-light);
+  background: #FFFFFF;
+  border: 1.5px solid rgba(181, 126, 68, 0.28);
   border-radius: var(--radius-card);
   padding: var(--padding-card);
-  box-shadow: var(--shadow-card);
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  box-shadow: 
+    0 10px 30px rgba(45, 30, 20, 0.07),
+    0 4px 14px rgba(246, 205, 122, 0.10),
+    inset 0 1px 0 #FFFFFF;
+  transition: transform 0.30s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.30s ease, border-color 0.30s ease;
   position: relative;
+  color: #1E1610;
 }
 
 .glass-panel:hover,
 .glass-card:hover,
 .eng-panel:hover {
   transform: translateY(-4px);
-  box-shadow: var(--shadow-hover);
-  border-color: rgba(30, 84, 56, 0.32);
+  box-shadow: 
+    0 18px 44px rgba(45, 30, 20, 0.12), 
+    0 8px 24px rgba(246, 205, 122, 0.22);
+  border-color: rgba(181, 126, 68, 0.55);
+}
+
+/* ── Biophilic Sculptural Alcove Shelf Card (Image 3 Inspiration) ── */
+.alcove-shelf-card {
+  background: linear-gradient(170deg, rgba(19, 44, 32, 0.92) 0%, rgba(12, 30, 21, 0.96) 100%);
+  border: 1px solid rgba(126, 184, 146, 0.26);
+  border-radius: 26px;
+  position: relative;
+  overflow: hidden;
+  box-shadow:
+    0 16px 44px rgba(0, 0, 0, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.10);
+  transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.alcove-shelf-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  background: radial-gradient(ellipse at center, rgba(246, 205, 122, 0.65) 0%, rgba(200, 151, 93, 0.3) 60%, transparent 100%);
+  filter: blur(1px);
+  pointer-events: none;
+}
+
+.alcove-shelf-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(246, 205, 122, 0.45);
+  box-shadow:
+    0 22px 60px rgba(0, 0, 0, 0.68),
+    0 10px 35px rgba(246, 205, 122, 0.16),
+    0 0 24px rgba(74, 222, 128, 0.18);
 }
 
 /* ── Module-tinted cards ───────────────────────── */
 .card-plan {
-  background: linear-gradient(135deg, #FFFFFF 50%, #DDECF8 100%);
+  background: linear-gradient(135deg, rgba(10, 28, 44, 0.90) 50%, rgba(14, 40, 64, 0.80) 100%);
   border-top: 4px solid var(--module-plan-brand) !important;
+  border-color: rgba(56, 189, 248, 0.25) !important;
 }
 .card-plan:hover {
   border-color: var(--module-plan-brand) !important;
-  box-shadow: 0 8px 24px rgba(36, 93, 140, 0.15), 0 20px 48px rgba(36, 93, 140, 0.10) !important;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6), 0 0 30px rgba(56, 189, 248, 0.25) !important;
 }
 
 .card-mat {
-  background: linear-gradient(135deg, #FFFFFF 50%, #DCEFE2 100%);
+  background: linear-gradient(135deg, rgba(8, 26, 16, 0.90) 50%, rgba(14, 44, 28, 0.80) 100%);
   border-top: 4px solid var(--module-mat-brand) !important;
+  border-color: rgba(74, 222, 128, 0.25) !important;
 }
 .card-mat:hover {
   border-color: var(--module-mat-brand) !important;
-  box-shadow: 0 8px 24px rgba(30, 84, 56, 0.15), 0 20px 48px rgba(30, 84, 56, 0.10) !important;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6), 0 0 30px rgba(74, 222, 128, 0.25) !important;
 }
 
 .card-green {
-  background: linear-gradient(135deg, #FFFFFF 50%, #DCF2E2 100%);
+  background: linear-gradient(135deg, rgba(8, 28, 18, 0.90) 50%, rgba(16, 48, 30, 0.80) 100%);
   border-top: 4px solid var(--module-green-brand) !important;
+  border-color: rgba(52, 211, 153, 0.25) !important;
 }
 .card-green:hover {
   border-color: var(--module-green-brand) !important;
-  box-shadow: 0 8px 24px rgba(62, 116, 82, 0.15), 0 20px 48px rgba(62, 116, 82, 0.10) !important;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6), 0 0 30px rgba(52, 211, 153, 0.25) !important;
 }
 
 .card-fire {
-  background: linear-gradient(135deg, #FFFFFF 50%, #F9E7E0 100%);
+  background: linear-gradient(135deg, rgba(32, 14, 8, 0.90) 50%, rgba(56, 22, 12, 0.80) 100%);
   border-top: 4px solid var(--module-fire-brand) !important;
+  border-color: rgba(249, 115, 22, 0.25) !important;
 }
 .card-fire:hover {
   border-color: var(--module-fire-brand) !important;
-  box-shadow: 0 8px 24px rgba(192, 84, 44, 0.15), 0 20px 48px rgba(192, 84, 44, 0.10) !important;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6), 0 0 30px rgba(249, 115, 22, 0.25) !important;
 }
 
 /* ── Tinted form section containers ─────────────────────── */
 .form-section-blueprint {
-  background: #DEE9EF;
-  border: 1px solid rgba(36, 93, 140, 0.22);
+  background: rgba(10, 28, 44, 0.75);
+  border: 1px solid rgba(56, 189, 248, 0.25);
   border-radius: var(--radius-card);
   padding: var(--padding-card);
 }
 
 .form-section-green {
-  background: #DCE9DF;
-  border: 1px solid rgba(30, 84, 56, 0.20);
+  background: rgba(8, 26, 16, 0.75);
+  border: 1px solid rgba(74, 222, 128, 0.25);
   border-radius: var(--radius-card);
   padding: var(--padding-card);
 }
 
 .form-section-amber {
-  background: #F4ECE0;
-  border: 1px solid rgba(188, 129, 22, 0.22);
+  background: rgba(30, 22, 8, 0.75);
+  border: 1px solid rgba(251, 191, 36, 0.25);
   border-radius: var(--radius-card);
   padding: var(--padding-card);
 }
@@ -411,11 +560,12 @@ input,
 select,
 textarea,
 .premium-input,
-.premium-select {
-  background: #E8F1EA;
-  border: 1.5px solid #BACBBD;
-  color: var(--text-primary);
-  border-radius: var(--radius-sm);
+.premium-select,
+.tech-input {
+  background: #FFFFFF;
+  border: 1.5px solid #D8D1C5;
+  color: #173A2B;
+  border-radius: 4px;
   padding: 0.72rem 1rem;
   font-family: 'Inter', sans-serif;
   font-size: 0.875rem;
@@ -425,38 +575,41 @@ textarea,
 
 input::placeholder,
 textarea::placeholder {
-  color: var(--text-muted);
+  color: #697068;
 }
 
-.premium-select {
+.premium-select,
+select.tech-input {
   appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2342554A'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23173A2B'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 1rem center;
   background-size: 1rem;
   cursor: pointer;
   padding-right: 2.5rem;
-  background-color: #E8F1EA;
+  background-color: #FFFFFF;
 }
 
-.premium-select option {
+.premium-select option,
+select.tech-input option {
   background: #FFFFFF;
-  color: var(--text-primary);
+  color: #173A2B;
 }
 
 input:focus,
 select:focus,
 textarea:focus,
 .premium-input:focus,
-.premium-select:focus {
+.premium-select:focus,
+.tech-input:focus {
   background: #FFFFFF;
   outline: none;
-  border-color: var(--primary-green);
-  box-shadow: 0 0 0 3px rgba(30, 84, 56, 0.15);
+  border-color: #173A2B;
+  box-shadow: 0 0 0 3px rgba(23, 58, 43, 0.12);
 }
 
 label, .tech-label {
-  color: #1F382B;
+  color: #173A2B;
   font-weight: 700;
   font-size: 0.73rem;
   text-transform: uppercase;
@@ -469,62 +622,96 @@ label, .tech-label {
 /* Plan-analyzer variant — blue focus */
 .input-plan:focus,
 .select-plan:focus {
-  border-color: var(--module-plan-brand);
-  box-shadow: 0 0 0 3px rgba(36, 93, 140, 0.15);
+  border-color: #173A2B;
+  box-shadow: 0 0 0 3px rgba(23, 58, 43, 0.12);
 }
 
 /* ─────────────────────────────────────────────────────────── */
 /*  PROGRESS STEPPER                                           */
 /* ─────────────────────────────────────────────────────────── */
 .step-complete {
-  background: var(--primary-green);
-  color: white;
+  background: #173A2B;
+  color: #FCFAF6;
 }
 .step-active {
-  background: var(--secondary-green);
-  color: white;
-  box-shadow: 0 0 0 5px rgba(58, 114, 85, 0.22);
+  background: #173A2B;
+  color: #FCFAF6;
+  box-shadow: 0 0 0 4px rgba(23, 58, 43, 0.15);
 }
 .step-pending {
-  background: #BFD2C3;
-  color: var(--text-secondary);
+  background: #EFECE4;
+  color: #697068;
 }
 
 /* ─────────────────────────────────────────────────────────── */
 /*  BUTTONS                                                    */
 /* ─────────────────────────────────────────────────────────── */
-.btn-premium {
-  background: #1E5438;
-  color: white;
-  border: 1px solid #1E5438;
-  border-radius: 10px;
+.btn-premium,
+.btn-biophilic {
+  background: #173A2B;
+  color: #FCFAF6;
+  border: 1px solid #173A2B;
+  border-radius: 4px;
   padding: 0.85rem 1.75rem;
   font-family: 'Space Grotesk', sans-serif;
   font-weight: 700;
-  font-size: 0.85rem;
+  font-size: 0.80rem;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   cursor: pointer;
-  transition: all 0.2s ease;
-  box-shadow: 0 4px 14px rgba(30, 84, 56, 0.26);
+  transition: all 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+  box-shadow: 0 2px 8px rgba(23, 58, 43, 0.18);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 }
-.btn-premium:hover {
-  background: #143C28;
-  box-shadow: 0 6px 22px rgba(30, 84, 56, 0.36);
+.btn-premium:hover,
+.btn-biophilic:hover {
+  background: #204C39;
+  border-color: #204C39;
+  box-shadow: 0 4px 14px rgba(23, 58, 43, 0.25);
   transform: translateY(-1px);
 }
-.btn-premium:disabled {
-  opacity: 0.45;
+.btn-premium:disabled,
+.btn-biophilic:disabled {
+  opacity: 0.5;
   cursor: not-allowed;
   transform: none;
 }
 
+/* Warm timber / terracotta accent CTA button */
+.btn-timber {
+  background: #B85C43;
+  color: #FCFAF6;
+  border: 1px solid #B85C43;
+  border-radius: 4px;
+  padding: 0.85rem 1.75rem;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 0.80rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+  box-shadow: 0 2px 8px rgba(184, 92, 67, 0.20);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.btn-timber:hover {
+  background: #A04E38;
+  border-color: #A04E38;
+  transform: translateY(-1px);
+}
+
 /* Blueprint-blue CTA for Plan Analyzer */
 .btn-plan {
-  background: var(--module-plan-brand);
+  background: linear-gradient(135deg, #26699C 0%, #164870 100%);
   color: white;
-  border: 1px solid var(--module-plan-brand);
-  border-radius: 10px;
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  border-radius: 14px;
   padding: 0.85rem 1.75rem;
   font-family: 'Space Grotesk', sans-serif;
   font-weight: 700;
@@ -533,12 +720,12 @@ label, .tech-label {
   letter-spacing: 0.06em;
   cursor: pointer;
   transition: all 0.2s ease;
-  box-shadow: 0 4px 14px rgba(36, 93, 140, 0.25);
+  box-shadow: 0 4px 14px rgba(36, 93, 140, 0.30);
 }
 .btn-plan:hover {
-  background: #1A466B;
-  box-shadow: 0 6px 22px rgba(36, 93, 140, 0.35);
-  transform: translateY(-1px);
+  background: linear-gradient(135deg, #317CB4 0%, #1E5582 100%);
+  box-shadow: 0 6px 22px rgba(56, 189, 248, 0.35);
+  transform: translateY(-2px);
 }
 .btn-plan:disabled {
   opacity: 0.45;
@@ -694,7 +881,7 @@ label, .tech-label {
 .data-table tbody tr:hover { background: var(--surface-secondary); }
 
 /* ─────────────────────────────────────────────────────────── */
-/*  LOADING SPINNER                                            */
+/*  PREMIUM ANIMATION KEYFRAMES                               */
 /* ─────────────────────────────────────────────────────────── */
 @keyframes spin { to { transform: rotate(360deg); } }
 @keyframes pulse-slow { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
@@ -710,6 +897,48 @@ label, .tech-label {
   0%, 100% { opacity: 0.05; }
   50% { opacity: 0.09; }
 }
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 18px rgba(74, 222, 128, 0.25), 0 0 40px rgba(74, 222, 128, 0.08); }
+  50%       { box-shadow: 0 0 32px rgba(74, 222, 128, 0.45), 0 0 70px rgba(74, 222, 128, 0.18); }
+}
+@keyframes shimmerSlide {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+@keyframes borderGlow {
+  0%, 100% { border-color: rgba(74, 222, 128, 0.25); }
+  50%       { border-color: rgba(74, 222, 128, 0.55); }
+}
+@keyframes floatY {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-6px); }
+}
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ─────────────────────────────────────────────────────────── */
+/*  PREMIUM GLASS & GLOW UTILITY CLASSES                      */
+/* ─────────────────────────────────────────────────────────── */
+.premium-glass-dark {
+  background: rgba(8, 20, 14, 0.75);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(74, 222, 128, 0.18);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.05);
+}
+.glow-green-sm  { box-shadow: 0 0 12px rgba(74, 222, 128, 0.30); }
+.glow-green-md  { box-shadow: 0 0 24px rgba(74, 222, 128, 0.35); }
+.glow-green-lg  { box-shadow: 0 0 40px rgba(74, 222, 128, 0.40); }
+.animate-fade-slide-up { animation: fadeSlideUp 0.55s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.animate-glow-pulse    { animation: glowPulse 2.8s ease-in-out infinite; }
+.animate-float         { animation: floatY 4s ease-in-out infinite; }
 
 .spinner {
   width: 44px;
@@ -755,3 +984,171 @@ label, .tech-label {
   background-size: 24px 24px;
   opacity: 0.7;
 }
+
+/* ─────────────────────────────────────────────────────────── */
+/*  BIOPHILIC CONSERVATORY & AMBIENT COVE UTILITIES            */
+/* ─────────────────────────────────────────────────────────── */
+.warm-cove-glow {
+  position: relative;
+}
+.warm-cove-glow::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 15%;
+  right: 15%;
+  height: 3px;
+  background: radial-gradient(ellipse at center, rgba(246, 205, 122, 0.75) 0%, rgba(200, 151, 93, 0.35) 60%, transparent 100%);
+  filter: blur(2px);
+  pointer-events: none;
+}
+
+.lantern-pendant-glow {
+  position: absolute;
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(circle, rgba(246, 205, 122, 0.22) 0%, rgba(200, 151, 93, 0.10) 45%, transparent 70%);
+  filter: blur(30px);
+  pointer-events: none;
+}
+
+.timber-ribbon-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  border-radius: 9999px;
+  background: rgba(200, 151, 93, 0.14);
+  border: 1px solid rgba(200, 151, 93, 0.35);
+  color: var(--amber-lantern);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.conservatory-mullion-border {
+  border: 1px solid rgba(126, 184, 146, 0.28);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   ARCHITECTURAL COMPETITION BOARD & EDITORIAL STYLING
+═══════════════════════════════════════════════════════════════ */
+.arch-page-canvas {
+  min-height: 100vh;
+  background-color: var(--arch-paper);
+  background-image: 
+    linear-gradient(to right, rgba(25, 30, 27, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(25, 30, 27, 0.035) 1px, transparent 1px);
+  background-size: 32px 32px;
+  color: var(--arch-charcoal);
+  font-family: 'Inter', -apple-system, sans-serif;
+}
+
+.arch-board-card {
+  background: var(--arch-paper-card);
+  border: 1px solid var(--arch-paper-border);
+  box-shadow: 0 4px 20px rgba(24, 27, 26, 0.04), 0 1px 3px rgba(24, 27, 26, 0.02);
+  transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+  position: relative;
+}
+
+.arch-board-card:hover {
+  border-color: rgba(26, 56, 43, 0.3);
+  box-shadow: 0 10px 30px rgba(24, 27, 26, 0.07);
+}
+
+.arch-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  border-radius: 4px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  border: 1px solid var(--arch-paper-border);
+  background: var(--arch-paper-subtle);
+  color: var(--arch-charcoal);
+}
+
+.arch-tag-forest {
+  background: rgba(26, 56, 43, 0.08);
+  border-color: rgba(26, 56, 43, 0.25);
+  color: var(--arch-forest);
+}
+
+.arch-tag-terracotta {
+  background: rgba(184, 88, 59, 0.08);
+  border-color: rgba(184, 88, 59, 0.25);
+  color: var(--arch-terracotta);
+}
+
+.arch-tag-moss {
+  background: rgba(78, 99, 81, 0.08);
+  border-color: rgba(78, 99, 81, 0.25);
+  color: var(--arch-moss);
+}
+
+.arch-provenance-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--arch-charcoal-muted);
+  font-weight: 600;
+}
+
+.arch-provenance-tag::before {
+  content: '';
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--arch-forest);
+}
+
+.arch-num {
+  font-family: 'Space Grotesk', sans-serif;
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  color: var(--arch-forest);
+}
+
+/* Material Swatches Visual Generator */
+.swatch-concrete {
+  background: linear-gradient(135deg, #CFD2CD 0%, #B8BAB5 50%, #A2A59F 100%);
+  background-image: radial-gradient(rgba(0,0,0,0.08) 1px, transparent 1px);
+  background-size: 6px 6px;
+}
+
+.swatch-timber {
+  background: linear-gradient(90deg, #9E744A 0%, #8A6038 35%, #9E744A 70%, #7A532C 100%);
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.15);
+}
+
+.swatch-brick {
+  background: linear-gradient(135deg, #B5563D 0%, #A6462D 50%, #8E3620 100%);
+}
+
+.swatch-stone {
+  background: linear-gradient(135deg, #D6C8B4 0%, #C7B7A0 60%, #B3A28B 100%);
+}
+
+.swatch-glass {
+  background: linear-gradient(135deg, rgba(165, 214, 235, 0.35) 0%, rgba(200, 230, 240, 0.65) 100%);
+  border: 1px solid rgba(130, 190, 215, 0.5);
+}
+
+.swatch-earth {
+  background: linear-gradient(135deg, #B8926A 0%, #A8815A 50%, #946E47 100%);
+}
+
+

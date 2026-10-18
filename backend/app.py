@@ -67,7 +67,12 @@ from material_specification_engine import material_specification_engine as spec_
 from spatial_program_engine import generate_spatial_program
 from building_program_engine import generate_building_program
 
-from green_assessment.api import init_green_assessment, router as green_assessment_router
+try:
+    from green_assessment.api import init_green_assessment, router as green_assessment_router
+    has_green_assessment = True
+except Exception as e:
+    has_green_assessment = False
+    print(f"[app] WARNING: Green Assessment module unavailable: {e}")
 
 # ── Auto-train ML models on first deploy (if .pkl files are missing) ─────────
 try:
@@ -93,26 +98,19 @@ app.add_middleware(
 )
 
 # Green Assessment is mounted under an API prefix to avoid collisions with team modules.
-init_green_assessment()
-app.include_router(green_assessment_router, prefix="/api/green-assessment")
+if has_green_assessment:
+    try:
+        init_green_assessment()
+        app.include_router(green_assessment_router, prefix="/api/green-assessment")
+    except Exception as e:
+        print(f"[app] WARNING: Green Assessment initialization failed: {e}")
 
-# FireGuard is maintained as its own backend module. Reuse its existing
-# route handlers without changing the deterministic ICTAD rule engine.
-try:
-    from backend.fire.main import app as fireguard_app
+# FireGuard integration – expose its routes under the same API prefix.
+# Import the full FireGuard FastAPI application from the repository.
+from backend.fire.main import app as fireguard_app
 
-    existing_routes = {
-        (route.path, tuple(sorted(getattr(route, "methods", []) or [])))
-        for route in app.router.routes
-    }
-    for route in fireguard_app.router.routes:
-        route_key = (route.path, tuple(sorted(getattr(route, "methods", []) or [])))
-        if route.path.startswith("/api/fireguard") or route.path == "/health":
-            if route_key not in existing_routes:
-                app.router.routes.append(route)
-                existing_routes.add(route_key)
-except Exception as e:
-    print(f"[app] WARNING: FireGuard routes were not registered: {e}")
+# Mount all FireGuard routes (fireguard_app routes are already prefixed with /api/fireguard)
+app.include_router(fireguard_app.router)
 
 # CSV Material List Endpoint
 @app.get("/api/materials")
@@ -237,6 +235,7 @@ class ArchitecturalStyleRequest(BaseModel):
     location: str
     total_area: float
     num_floors: int
+    building_type: str = "Residential"
 
 class LandscapeRequest(BaseModel):
     style_name: str
@@ -852,7 +851,8 @@ def api_architectural_style(data: ArchitecturalStyleRequest):
         climate = get_climate_profile(data.location)
         
         style_profile = style_engine.select_style(profile_obj, climate)
-        building_form = building_form_engine.generate_building_form(style_profile, data.total_area, data.num_floors, data.building_type)
+        b_type = getattr(data, 'building_type', None) or data.profile.get('building_type') or 'Residential'
+        building_form = building_form_engine.generate_building_form(style_profile, data.total_area, data.num_floors, b_type)
         audit = generate_audit_trail(profile_obj)
         
         return {

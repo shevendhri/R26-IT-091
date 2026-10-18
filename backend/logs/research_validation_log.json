@@ -50,5 +50,61 @@
       "recommendations": [],
       "rule_results": []
     }
+  },
+  {
+    "timestamp": "2026-10-15T11:44:20.392773Z",
+    "questionnaire": {
+      "building_type": "Residential",
+      "family_size": 4,
+      "adults": 2,
+      "children_count": 2,
+      "elderly_occupants": 0,
+      "bedrooms_needed": 3,
+      "num_bathrooms": 2,
+      "living_rooms": 1,
+      "dining_rooms": 1,
+      "kitchen_type": "Open Plan",
+      "home_office": "No",
+      "study_room": "No",
+      "guest_room": "No",
+      "maid_room": "No",
+      "laundry_room": "Yes",
+      "store_room": "Yes",
+      "balcony_required": "No",
+      "parking_spaces": 2,
+      "garage_type": "Covered",
+      "outdoor_living_pref": "Moderate",
+      "future_expansion": "None",
+      "sustainability_pref": "Medium",
+      "style_pref": "Modern",
+      "maintenance_pref": "Medium",
+      "climate_concerns": "None",
+      "budget_tier": "Balanced",
+      "expected_occupancy": 0,
+      "peak_occupancy": 0,
+      "operating_hours_per_day": 8,
+      "traffic_intensity": "Medium",
+      "accessibility_required": "No",
+      "elderly_access_required": "No",
+      "energy_usage_priority": "Standard",
+      "coastal_environment": "No",
+      "flood_risk": "Low",
+      "high_wind_zone": "No",
+      "heavy_rainfall_exposure": "No",
+      "seismic_requirement": "Standard"
+    },
+    "validation_result": {
+      "validation_score": 100,
+      "severity": "low",
+      "warnings": [],
+      "recommendations": [],
+      "rule_results": [
+        {
+          "rule": "bathroom adequacy",
+          "score": 100,
+          "severity": "low"
+        }
+      ]
+    }
   }
 ]

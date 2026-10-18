@@ -146,7 +146,8 @@ class DoorRecommendationEngine:
                 if category == "bathroom" and item["id"] == "flush_mdf":
                     hybrid_score = 0.0
 
-                explanation = f"Matches {style_profile['style']} style and fits {budget_tier} budget. "
+                style_display = style_profile.get('style') or style_profile.get('style_name') or 'Modern'
+                explanation = f"Matches {style_display} style and fits {budget_tier} budget. "
                 if category == "bathroom" and item["id"] == "upvc_waterproof":
                     explanation += "uPVC selected due to 100% moisture resistance."
                 elif humidity > 78 and item["climate_suitability"] >= 0.88:

@@ -1,12 +1,16 @@
 "use client";
+
+import Link from 'next/link';
 import { useMaterial } from '@/context/MaterialContext';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { useState, useEffect } from 'react';
 
 import CompactSummaryStrip from '@/components/Report/CompactSummaryStrip';
+
 import ProjectValidationStrip from '@/components/Report/ProjectValidationStrip';
 import Accordion from '@/components/ui/Accordion';
+import DisclaimerBanner from '@/components/ui/DisclaimerBanner';
 import BlueprintPanel from '@/components/Dashboard/BlueprintPanel';
 import ProjectOverview from '@/components/Dashboard/ProjectOverview';
 import SustainabilityDashboard from '@/components/Dashboard/SustainabilityDashboard';
@@ -17,18 +21,23 @@ import AuditLogPanel from '@/components/Dashboard/AuditLogPanel';
 import HybridScorePanel from '@/components/Dashboard/HybridScorePanel';
 import DecisionFactorsPanel from '@/components/Dashboard/DecisionFactorsPanel';
 import QuantityEstimationPanel from '@/components/Dashboard/QuantityEstimationPanel';
+import Report3DStudio from '@/components/Report/Report3DStudio';
+import FireSafetySection from '@/components/Report/FireSafetySection';
+import GreenAssessmentSection from '@/components/Report/GreenAssessmentSection';
+import MaterialSubNav from '@/components/Materials/MaterialSubNav';
 
-// AI Decision Timeline stages — no emojis, use status indicators
+// AI Decision Timeline stages (10 Stages representing the complete pipeline)
 const TIMELINE_STAGES = [
-  { id: 1, label: 'Questionnaire Completed', desc: 'User profile and requirements captured' },
-  { id: 2, label: 'Blueprint Generated', desc: 'Automated floor plan layout produced' },
-  { id: 3, label: 'Geometry Extracted', desc: '11 structural and geometric parameters computed' },
-  { id: 4, label: 'Climate Analysis', desc: 'Climate zone, humidity, salinity and rainfall profiled' },
-  { id: 5, label: 'Engineering Rules Applied', desc: 'SLS structural load constraints validated' },
-  { id: 6, label: 'ML Prediction Computed', desc: 'Machine learning model scored all candidates' },
-  { id: 7, label: 'Hybrid Ranking Generated', desc: '75% Engineering + 25% ML scores combined' },
-  { id: 8, label: 'Top Materials Selected', desc: 'Ranked material package built per component' },
-  { id: 9, label: '3D Visualization Ready', desc: 'Conceptual 3D model prepared for launch' },
+  { id: 1, label: '01 / User Brief & Intake', desc: 'Project profile, structural preferences and climate context captured', source: 'Questionnaire' },
+  { id: 2, label: '02 / Blueprint Geometry', desc: 'Automated CAD floor plan layout & spatial boundary vectors produced', source: 'Blueprint Analysis' },
+  { id: 3, label: '03 / Geometry Extraction', desc: '11 structural parameters (envelope, walls, openings, roof) extracted', source: 'Geometry Engine' },
+  { id: 4, label: '04 / Sri Lankan Climate Profiling', desc: 'Agro-climatic zone, salinity zone, rainfall & humidity profiled', source: 'Climate Database' },
+  { id: 5, label: '05 / SLS Structural Rule Check', desc: 'SLS 107 & SLS 614 structural constraints & load resistance evaluated', source: 'SLS Rules Engine' },
+  { id: 6, label: '06 / ML Candidate Scoring', desc: 'Random Forest model inference scored all regional candidates', source: 'ML Model' },
+  { id: 7, label: '07 / Hybrid Decision Optimization', desc: '75% Engineering Feasibility + 25% ML Prediction combined via MCDM', source: 'TOPSIS Engine' },
+  { id: 8, label: '08 / Fire Safety Compliance', desc: 'SLS 139 / BS 476 structural fire resistance hours verified', source: 'Fire Safety Engine' },
+  { id: 9, label: '09 / GREENSL Pre-Assessment', desc: 'Green Building Council of Sri Lanka environmental credits computed', source: 'GREENSL Engine' },
+  { id: 10, label: '10 / 3D BIM Model Launch', desc: 'Parametric cutaway & finishes viewer prepared for spatial inspection', source: 'Three.js Pipeline' },
 ];
 
 function DecisionTimeline() {
@@ -36,17 +45,17 @@ function DecisionTimeline() {
 
   useEffect(() => {
     if (active < TIMELINE_STAGES.length - 1) {
-      const t = setTimeout(() => setActive(prev => prev + 1), 200);
+      const t = setTimeout(() => setActive(prev => prev + 1), 120);
       return () => clearTimeout(t);
     }
   }, [active]);
 
   return (
-    <section>
-      <div style={{ fontSize: '0.72rem', fontWeight: 800, color: '#245C43', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '0.65rem', fontFamily: 'Space Grotesk' }}>
-        AI Execution Trace — Decision Stages
+    <section id="research-trace">
+      <div style={{ fontSize: '0.68rem', fontWeight: 800, color: '#173A2B', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '0.65rem', fontFamily: 'Space Grotesk' }}>
+        RESEARCH METHODOLOGY TRACE — VIVA AUDIT TRAIL
       </div>
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.45rem' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.35rem' }}>
         {TIMELINE_STAGES.map((stage, i) => {
           const isDone = i <= active;
           return (
@@ -54,33 +63,40 @@ function DecisionTimeline() {
               display: 'flex',
               gap: '0.75rem',
               alignItems: 'center',
-              background: isDone ? '#DDE8DE' : '#F7F9F6',
-              padding: '0.5rem 0.85rem',
-              borderRadius: '8px',
-              border: isDone ? '1px solid rgba(36, 92, 67, 0.3)' : '1px solid #C8D3CA'
+              background: isDone ? '#FBF9F4' : '#FFFFFF',
+              padding: '0.50rem 0.85rem',
+              borderRadius: '3px',
+              border: isDone ? '1px solid #173A2B' : '1px solid #D8D2C8',
+              transition: 'all 0.2s ease',
             }}>
               <div style={{
                 width: '22px',
                 height: '22px',
-                borderRadius: '50%',
-                background: isDone ? '#245C43' : '#DCE5DC',
-                color: isDone ? '#FFFFFF' : '#526158',
+                borderRadius: '3px',
+                background: isDone ? '#173A2B' : '#EFECE4',
+                color: isDone ? '#FCFAF6' : '#687068',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                fontSize: '0.68rem',
+                fontSize: '0.65rem',
                 fontWeight: 800,
-                flexShrink: 0
+                flexShrink: 0,
+                fontFamily: 'Space Grotesk'
               }}>
                 {isDone ? '✓' : stage.id}
               </div>
               <div style={{ flex: 1, display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.25rem' }}>
-                <span style={{ fontSize: '0.82rem', fontWeight: 700, color: isDone ? '#18251F' : '#526158' }}>
+                <span style={{ fontSize: '0.76rem', fontWeight: 700, color: isDone ? '#173A2B' : '#687068', fontFamily: 'Space Grotesk' }}>
                   {stage.label}
                 </span>
-                <span style={{ fontSize: '0.72rem', color: '#526158', fontWeight: 500 }}>
-                  {stage.desc}
-                </span>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <span style={{ fontSize: '0.68rem', color: '#687068' }}>
+                    {stage.desc}
+                  </span>
+                  <span style={{ fontSize: '0.60rem', color: '#9A7557', fontFamily: 'Space Grotesk', textTransform: 'uppercase', fontWeight: 600 }}>
+                    [{stage.source}]
+                  </span>
+                </div>
               </div>
             </div>
           );
@@ -90,52 +106,7 @@ function DecisionTimeline() {
   );
 }
 
-function ProjectProfileCard({ data }) {
-  const bp = data?.blueprint || {};
-  const climate = data?.climate_profile || {};
-  const conf = data?.confidence || {};
 
-  const rows = [
-    { label: 'Location', value: climate.city || 'N/A' },
-    { label: 'Building Type', value: bp.building_type || 'N/A' },
-    { label: 'Floors', value: bp.num_floors ? `${bp.num_floors} Floors` : 'N/A' },
-    { label: 'Total Area', value: bp.total_area ? `${bp.total_area} m²` : 'N/A' },
-    { label: 'Climate Zone', value: climate.type || 'N/A' },
-    { label: 'Humidity', value: climate.humidity || 'N/A' },
-    { label: 'Salinity', value: climate.salinity || 'N/A' },
-    { label: 'Structural System', value: bp.structural_system || 'N/A' },
-    { label: 'Decision Confidence', value: conf.confidence_level || 'N/A' },
-  ];
-
-  return (
-    <div style={{
-      background: '#F7F9F6',
-      border: '1px solid #C8D3CA',
-      borderRadius: '12px',
-      padding: '1rem 1.2rem',
-    }}>
-      <div style={{ fontSize: '0.72rem', fontWeight: 800, color: '#245C43', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '0.75rem', fontFamily: 'Space Grotesk' }}>
-        Personalized Specification Profile
-      </div>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '0.5rem' }}>
-        {rows.map((row, i) => (
-          <div key={i} style={{
-            display: 'flex',
-            justify: 'space-between',
-            alignItems: 'center',
-            padding: '0.45rem 0.75rem',
-            background: '#FFFFFF',
-            borderRadius: '6px',
-            border: '1px solid #C8D3CA'
-          }}>
-            <span style={{ fontSize: '0.74rem', color: '#526158', fontWeight: 600 }}>{row.label}</span>
-            <span style={{ fontSize: '0.8rem', fontWeight: 700, color: '#18251F', fontFamily: 'Space Grotesk' }}>{row.value}</span>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
 
 export default function ReportPage() {
   const { reportData } = useMaterial();
@@ -144,14 +115,10 @@ export default function ReportPage() {
 
   if (!mounted) {
     return (
-      <div style={{
-        minHeight: '100vh',
-        background: 'radial-gradient(circle at 15% 10%, rgba(47, 107, 79, 0.10), transparent 30%), radial-gradient(circle at 85% 20%, rgba(120, 184, 147, 0.12), transparent 25%), #EEF1EC',
-        color: '#18251F'
-      }}>
+      <div className="arch-page-canvas" style={{ background: '#F5F1E8', minHeight: '100vh' }}>
         <Header />
-        <div style={{ padding: '3rem', color: '#526158', textAlign: 'center', marginTop: '10vh' }}>
-          <div style={{ fontFamily: 'Space Grotesk', fontSize: '1.1rem', fontWeight: 700 }}>Initializing Engineering Decision Support System...</div>
+        <div style={{ padding: '5rem 2rem', textAlign: 'center', color: '#687068', fontFamily: 'Space Grotesk' }}>
+          Loading Research Monograph…
         </div>
         <Footer />
       </div>
@@ -159,167 +126,382 @@ export default function ReportPage() {
   }
 
   return (
-    <div style={{
-      minHeight: '100vh',
-      background: 'linear-gradient(160deg, #DCE7DF 0%, #E7EFE9 45%, #DCE6ED 100%)',
-      color: '#14221B',
-      fontFamily: 'Inter, sans-serif'
-    }}>
+    <div className="arch-page-canvas" style={{ background: '#FAF7F0', minHeight: '100vh' }}>
       <Header />
-      {!reportData ? (
-        <div style={{ padding: '3rem', color: '#526158', textAlign: 'center', marginTop: '10vh', minHeight: '60vh' }}>
-          <div style={{ fontFamily: 'Space Grotesk', fontSize: '1.2rem', fontWeight: 800, marginBottom: '0.5rem', color: '#18251F' }}>
-            No Report Data Available
+      <MaterialSubNav />
+
+      <main style={{ maxWidth: '1600px', margin: '0 auto', padding: '1rem 2.5rem 5rem' }}>
+
+
+        {/* Monograph Top Architectural Header */}
+        <div style={{
+          border: '1px solid #E2DCD0',
+          background: '#FFFFFF',
+          padding: '2rem 2.5rem',
+          borderRadius: '4px',
+          boxShadow: '0 4px 20px rgba(20, 56, 37, 0.03)',
+          marginBottom: '2rem',
+        }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '1rem', borderBottom: '1px solid #E2DCD0', paddingBottom: '1.25rem', marginBottom: '1.25rem' }}>
+            <div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '0.5rem' }}>
+                <span style={{
+                  background: '#143825',
+                  color: '#FAF7F0',
+                  fontFamily: 'Space Grotesk',
+                  fontSize: '0.62rem',
+                  fontWeight: 800,
+                  padding: '3px 8px',
+                  borderRadius: '3px',
+                  letterSpacing: '0.08em',
+                  textTransform: 'uppercase',
+                }}>
+                  07 / RESEARCH SPECIFICATION MONOGRAPH
+                </span>
+                <span style={{ fontSize: '0.68rem', fontFamily: 'Space Grotesk', color: '#697068', fontWeight: 600 }}>
+                  VIVA DISSERTATION AUDIT REPORT · R26-IT-091
+                </span>
+              </div>
+              <h1 style={{
+                fontFamily: 'Outfit, Space Grotesk, sans-serif',
+                fontSize: 'clamp(2rem, 3.5vw, 2.8rem)',
+                fontWeight: 800,
+                color: '#143825',
+                margin: 0,
+                letterSpacing: '-0.02em',
+                textTransform: 'uppercase',
+              }}>
+                Material Specification &amp; Decision Report
+              </h1>
+            </div>
+
+            <div style={{ textAlign: 'right', fontFamily: 'Space Grotesk' }}>
+              <div style={{ fontSize: '0.62rem', color: '#697068', textTransform: 'uppercase', letterSpacing: '0.1em' }}>REPORT ID</div>
+              <div style={{ fontSize: '0.92rem', fontWeight: 800, color: '#143825' }}>GC-2026-SPEC-091</div>
+              <div style={{ fontSize: '0.68rem', color: '#8D6A4F', marginTop: '2px', fontWeight: 600 }}>SLS 107 · SLS 614 · SLS 139 REFERENCED</div>
+            </div>
           </div>
-          <div style={{ fontSize: '0.9rem', color: '#526158', fontWeight: 500 }}>
-            Please complete the material recommendation questionnaire to generate a report.
-          </div>
+
+          <p style={{ margin: 0, fontSize: '0.86rem', color: '#526158', lineHeight: 1.6, maxWidth: '1020px' }}>
+            Comprehensive architectural material decision-support report synthesized via Multi-Criteria Decision Making (MCDM TOPSIS &amp; PROMETHEE-II), machine learning recommendation models, and Urban Development Authority (UDA) regulatory rules for Sri Lanka.
+          </p>
         </div>
-      ) : (
-        <main style={{ maxWidth: '1400px', margin: '0 auto', padding: '2rem 1.5rem', display: 'flex', flexDirection: 'column', gap: '1.25rem', position: 'relative', zIndex: 10 }}>
 
-          {/* 1. Compact Project Context Telemetry Strip */}
-          <CompactSummaryStrip data={reportData} />
-
-          {/* 1b. Project Validation Status Strip & Review Gate */}
-          <ProjectValidationStrip data={reportData} />
-
-          {/* 2. Primary Recommendation — the main visual focus */}
-          <div className="glass-card" style={{
-            background: 'linear-gradient(145deg, #FFFFFF 60%, #F6F8F5 100%)',
-            borderTop: '4px solid #1E5438',
-            borderRight: '1px solid #BDCEBF',
-            borderBottom: '1px solid #BDCEBF',
-            borderLeft: '1px solid #BDCEBF',
-            borderRadius: '20px',
-            padding: '1.6rem',
-            boxShadow: '0 4px 16px rgba(24, 37, 31, 0.07), 0 18px 48px rgba(24, 37, 31, 0.08)',
+        {!reportData ? (
+          <div style={{
+            background: '#FFFFFF',
+            border: '1px dashed #E2DCD0',
+            borderRadius: '4px',
+            padding: '4rem 2rem',
+            textAlign: 'center',
+            color: '#697068',
           }}>
-            <MaterialBreakdown data={reportData} />
+            <h2 style={{ fontFamily: 'Space Grotesk', fontSize: '1.2rem', fontWeight: 800, color: '#143825', margin: '0 0 0.5rem' }}>
+              No Active Report Data Generated
+            </h2>
+            <p style={{ margin: '0 0 1.5rem', fontSize: '0.84rem' }}>
+              Please configure project parameters in the Material Intake Worksheet or run the Plan Analyzer.
+            </p>
+            <a
+              href="/materials/form"
+              style={{
+                display: 'inline-block',
+                background: '#143825',
+                color: '#FAF7F0',
+                padding: '0.8rem 1.6rem',
+                borderRadius: '4px',
+                fontFamily: 'Space Grotesk',
+                fontSize: '0.78rem',
+                fontWeight: 700,
+                textDecoration: 'none',
+                textTransform: 'uppercase',
+                letterSpacing: '0.08em',
+              }}
+            >
+              Start Intake Workflow →
+            </a>
           </div>
+        ) : (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem' }}>
 
-          {/* 3. Supporting Analysis — All Collapsed by Default */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+            {/* ── 01 / PROJECT OVERVIEW ── */}
+            <section id="project-overview">
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '0.85rem' }}>
+                <span style={{ fontSize: '1.1rem', fontWeight: 800, color: '#8D6A4F', fontFamily: 'Space Grotesk' }}>01</span>
+                <span style={{ fontFamily: 'Space Grotesk', fontSize: '0.82rem', fontWeight: 800, letterSpacing: '0.10em', textTransform: 'uppercase', color: '#143825' }}>
+                  Project Overview &amp; Climatic Context
+                </span>
+              </div>
+              <div>
+                <CompactSummaryStrip data={reportData} />
+              </div>
+            </section>
 
-            <Accordion title="Hybrid Score Breakdown & Decision Factors" subtitle="Engineering Rules + ML Weighting Methodology">
+            {/* ── 02 / RECOMMENDATION SUMMARY ── */}
+            <section id="recommendation-summary">
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '0.85rem' }}>
+                <span style={{ fontSize: '1.1rem', fontWeight: 800, color: '#8D6A4F', fontFamily: 'Space Grotesk' }}>02</span>
+                <span style={{ fontFamily: 'Space Grotesk', fontSize: '0.82rem', fontWeight: 800, letterSpacing: '0.10em', textTransform: 'uppercase', color: '#143825' }}>
+                  Recommendation Summary &amp; Scoring Interpretation
+                </span>
+              </div>
+              <div style={{
+                background: '#FFFFFF',
+                border: '1px solid #E2DCD0',
+                borderRadius: '6px',
+                padding: '1.25rem 1.5rem',
+                boxShadow: '0 2px 8px rgba(20, 56, 37, 0.03)',
+              }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.25rem', alignItems: 'center' }}>
+                  <div>
+                    <span style={{ fontSize: '0.66rem', fontWeight: 800, color: '#143825', letterSpacing: '0.08em', textTransform: 'uppercase', fontFamily: 'Space Grotesk' }}>
+                      HYBRID DECISION MODEL FORMULATION
+                    </span>
+                    <h3 style={{ margin: '0.3rem 0 0.4rem', fontSize: '1.1rem', fontWeight: 800, color: '#143825', fontFamily: 'Outfit, Space Grotesk' }}>
+                      75% Deterministic SLS Code Rules + 25% Random Forest ML Inference
+                    </h3>
+                    <p style={{ margin: 0, fontSize: '0.82rem', color: '#526158', lineHeight: 1.6 }}>
+                      The Hybrid Score combines strict deterministic constraints from Sri Lankan Standards (SLS 107 for blocks, SLS 614 for concrete, SLS 139 for fire) with regional machine learning inference. Deterministic structural feasibility holds 75% decision authority to guarantee safety compliance.
+                    </p>
+                  </div>
+                  <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
+                    <div style={{ flex: 1, minWidth: '130px', padding: '0.85rem 1rem', background: '#FAF7F0', border: '1px solid #E2DCD0', borderRadius: '4px' }}>
+                      <span style={{ fontSize: '0.64rem', color: '#697068', textTransform: 'uppercase', fontWeight: 700, fontFamily: 'Space Grotesk' }}>Primary Rank Basis</span>
+                      <div style={{ fontSize: '1.2rem', fontWeight: 900, color: '#143825', fontFamily: 'Space Grotesk', marginTop: '2px' }}>MCDM TOPSIS</div>
+                      <span style={{ fontSize: '0.64rem', color: '#5E836E' }}>Multi-Criteria Weighted</span>
+                    </div>
+                    <div style={{ flex: 1, minWidth: '130px', padding: '0.85rem 1rem', background: '#FAF7F0', border: '1px solid #E2DCD0', borderRadius: '4px' }}>
+                      <span style={{ fontSize: '0.64rem', color: '#697068', textTransform: 'uppercase', fontWeight: 700, fontFamily: 'Space Grotesk' }}>Regulatory Baseline</span>
+                      <div style={{ fontSize: '1.2rem', fontWeight: 900, color: '#8D6A4F', fontFamily: 'Space Grotesk', marginTop: '2px' }}>SLS &amp; UDA</div>
+                      <span style={{ fontSize: '0.64rem', color: '#697068' }}>Sri Lankan Statutory Codes</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* ── 03 / RECOMMENDED MATERIAL PACKAGE (BY BUILDING COMPONENT) ── */}
+            <section id="recommended-package" style={{ scrollMarginTop: '120px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '1rem' }}>
+                <span style={{
+                  background: '#143825',
+                  color: '#FAF7F0',
+                  fontFamily: 'Space Grotesk, sans-serif',
+                  fontSize: '0.72rem',
+                  fontWeight: 800,
+                  padding: '3px 8px',
+                  borderRadius: '3px',
+                  letterSpacing: '0.06em'
+                }}>
+                  03
+                </span>
+                <span style={{ fontFamily: 'Space Grotesk, sans-serif', fontSize: '0.90rem', fontWeight: 800, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#143825' }}>
+                  Recommended Material Package (Component Breakdown)
+                </span>
+              </div>
+              <div style={{ background: '#FFFFFF', border: '1px solid #E2DCD0', borderRadius: '6px', padding: '2rem', boxShadow: '0 4px 20px rgba(20, 56, 37, 0.03)' }}>
+                <MaterialBreakdown data={reportData} />
+              </div>
+            </section>
+
+            {/* ── 04 / INTERACTIVE 3D BIM MODEL STUDIO ── */}
+            <section id="bim-studio">
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '0.85rem' }}>
+                <span style={{ fontSize: '1.1rem', fontWeight: 800, color: '#8D6A4F', fontFamily: 'Space Grotesk' }}>04</span>
+                <span style={{ fontFamily: 'Space Grotesk', fontSize: '0.82rem', fontWeight: 800, letterSpacing: '0.10em', textTransform: 'uppercase', color: '#143825' }}>
+                  Interactive 3D Cutaway BIM Model &amp; Material Finishes Viewer
+                </span>
+              </div>
+              <Report3DStudio data={reportData} />
+            </section>
+
+            {/* ── 05 / ENGINEERING & ML ASSESSMENT (DISTINCT MEASURES) ── */}
+            <section id="engineering-ml-assessment">
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '0.85rem' }}>
+                <span style={{ fontSize: '1.1rem', fontWeight: 800, color: '#8D6A4F', fontFamily: 'Space Grotesk' }}>05</span>
+                <span style={{ fontFamily: 'Space Grotesk', fontSize: '0.82rem', fontWeight: 800, letterSpacing: '0.10em', textTransform: 'uppercase', color: '#143825' }}>
+                  Engineering vs. Machine Learning Assessments &amp; Feature Attribution
+                </span>
+              </div>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '1.25rem' }}>
                 <HybridScorePanel data={reportData} />
                 <DecisionFactorsPanel data={reportData} />
               </div>
-            </Accordion>
+              <div style={{ marginTop: '1.25rem' }}>
+                <FeatureImportance data={reportData} />
+              </div>
+            </section>
 
-            <Accordion title="Alternative Material Evaluation Matrix" subtitle="Ranked Candidate Comparison by Component">
-              <AlternativesTable data={reportData} />
-            </Accordion>
-
-            <Accordion title="Blueprint Geometry & Floorplan Parameters" subtitle="11 Structural Dimensions & Schematic Layout">
-              <BlueprintPanel data={reportData} />
-            </Accordion>
-
-            <Accordion title="Quantity Takeoff & Material Estimates" subtitle="Structural Unit Volumes from Geometry Computation">
-              <QuantityEstimationPanel data={reportData} />
-            </Accordion>
-
-            <Accordion title="Project Specification & Sri Lankan Climate Profile" subtitle="Environmental Constraints & Sustainability Context">
+            {/* ── 06 / SUSTAINABILITY & EMBODIED CARBON ── */}
+            <section id="sustainability-information">
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '0.85rem' }}>
+                <span style={{ fontSize: '1.1rem', fontWeight: 800, color: '#8D6A4F', fontFamily: 'Space Grotesk' }}>06</span>
+                <span style={{ fontFamily: 'Space Grotesk', fontSize: '0.82rem', fontWeight: 800, letterSpacing: '0.10em', textTransform: 'uppercase', color: '#143825' }}>
+                  Sustainability Information &amp; GREENSL Environmental Scorecard
+                </span>
+              </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-                <ProjectProfileCard data={reportData} />
-                <ProjectOverview data={reportData} />
                 <SustainabilityDashboard data={reportData} />
+                <GreenAssessmentSection data={reportData} />
               </div>
-            </Accordion>
+            </section>
 
-            <Accordion title="Explainable AI — Feature Importance (XAI)" subtitle="ML Model Feature Weights & Contribution Profile">
-              <FeatureImportance data={reportData} />
-            </Accordion>
-
-            <Accordion title="AI Execution Trace & System Audit Log" subtitle="Decision Stage Timeline & Full Evaluation Stream">
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '1.25rem' }}>
-                <DecisionTimeline />
-                <AuditLogPanel data={reportData} />
-              </div>
-            </Accordion>
-
-          </div>
-
-          {/* ══════════════════════════════════════════════════════════════
-              MODULE 02: MATERIAL SPECIFICATION USER EVALUATION CARD
-          ══════════════════════════════════════════════════════════════ */}
-          <div style={{
-            marginTop: '1.5rem',
-            background: 'linear-gradient(135deg, #FFFFFF 50%, #DEEFE2 100%)',
-            borderTop: '4px solid #1E5438',
-            borderRight: '1px solid #BDCEBF',
-            borderBottom: '1px solid #BDCEBF',
-            borderLeft: '1px solid #BDCEBF',
-            borderRadius: '20px',
-            padding: '1.8rem 2.2rem',
-            boxShadow: '0 4px 18px rgba(30, 84, 56, 0.08)',
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            flexWrap: 'wrap',
-            gap: '1.25rem'
-          }}>
-            <div style={{ maxWidth: '720px' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '0.4rem' }}>
-                <span style={{
-                  background: '#C6E2CD',
-                  color: '#1E5438',
-                  borderRadius: '20px',
-                  padding: '2px 10px',
-                  fontSize: '0.68rem',
-                  fontWeight: 800,
-                  fontFamily: 'Space Grotesk'
-                }}>
-                  ● MODULE 02 EVALUATION
+            {/* ── 07 / PRELIMINARY SAFETY & CODE VALIDATION ── */}
+            <section id="safety-validation">
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '0.85rem' }}>
+                <span style={{ fontSize: '1.1rem', fontWeight: 800, color: '#8D6A4F', fontFamily: 'Space Grotesk' }}>07</span>
+                <span style={{ fontFamily: 'Space Grotesk', fontSize: '0.82rem', fontWeight: 800, letterSpacing: '0.10em', textTransform: 'uppercase', color: '#143825' }}>
+                  Warnings, Limitations &amp; Fire Resistance Verification
                 </span>
-                <span style={{ fontSize: '0.72rem', color: '#42554A', fontWeight: 700, fontFamily: 'Space Grotesk' }}>
-                  USER FEEDBACK
+              </div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+                <ProjectValidationStrip data={reportData} />
+                <FireSafetySection data={reportData} />
+              </div>
+            </section>
+
+            {/* ── 08 / METHODOLOGY, SPATIAL GEOMETRY & DATA PROVENANCE ── */}
+            <section id="methodology-provenance">
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '0.85rem' }}>
+                <span style={{ fontSize: '1.1rem', fontWeight: 800, color: '#8D6A4F', fontFamily: 'Space Grotesk' }}>08</span>
+                <span style={{ fontFamily: 'Space Grotesk', fontSize: '0.82rem', fontWeight: 800, letterSpacing: '0.10em', textTransform: 'uppercase', color: '#143825' }}>
+                  Methodology, Spatial Geometry &amp; 10-Stage Execution Trace
                 </span>
               </div>
 
-              <h3 style={{
-                fontFamily: 'Space Grotesk, sans-serif',
-                fontSize: '1.2rem',
-                fontWeight: 800,
-                color: '#14221B',
-                margin: '0 0 0.35rem'
-              }}>
-                Evaluate Material Recommendations
-              </h3>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
+                <Accordion title="08.1 / Ranked Alternative Candidates Matrix" subtitle="Component-by-Component Multi-Criteria Evaluation Comparison">
+                  <AlternativesTable data={reportData} />
+                </Accordion>
 
-              <p style={{ fontSize: '0.84rem', color: '#42554A', margin: 0, lineHeight: 1.5, fontWeight: 500 }}>
-                How accurate and feasible were these material recommendations? Share your feedback to help us refine the hybrid MCDM and machine learning models.
-              </p>
-            </div>
+                <Accordion title="08.2 / Blueprint Geometry & Spatial Parameters" subtitle="11 Structural Dimensions & Spatial Boundary Vectors">
+                  <BlueprintPanel data={reportData} />
+                </Accordion>
 
-            <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLSdDr5VrYMSK1rY-kMCD5LRCFD6NDlJXLA5nRAGruQrSihD5Rw/viewform?usp=publish-editor"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                background: '#1E5438',
-                color: '#FFFFFF',
-                borderRadius: '10px',
-                padding: '0.8rem 1.5rem',
-                fontFamily: 'Space Grotesk',
-                fontWeight: 700,
-                fontSize: '0.82rem',
-                textDecoration: 'none',
-                display: 'inline-flex',
+                <Accordion title="08.3 / Quantity Takeoff & Structural Estimations" subtitle="Estimated Material Volumes, Floor Plinth & Wall Area Computations">
+                  <QuantityEstimationPanel data={reportData} />
+                </Accordion>
+
+                <Accordion title="08.4 / Research Decision Trace & System Audit Log" subtitle="Formal 10-Stage Execution Audit Trail for Academic Viva Evaluation">
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '1.25rem' }}>
+                    <DecisionTimeline />
+                    <AuditLogPanel data={reportData} />
+                  </div>
+                </Accordion>
+              </div>
+            </section>
+
+            {/* ── 09 / STATUTORY DISCLAIMER & VIVA FEEDBACK ── */}
+            <section id="disclaimer-feedback">
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '0.85rem' }}>
+                <span style={{ fontSize: '1.1rem', fontWeight: 800, color: '#8D6A4F', fontFamily: 'Space Grotesk' }}>09</span>
+                <span style={{ fontFamily: 'Space Grotesk', fontSize: '0.82rem', fontWeight: 800, letterSpacing: '0.10em', textTransform: 'uppercase', color: '#143825' }}>
+                  Academic Decision-Support Disclaimer &amp; Viva Evaluation
+                </span>
+              </div>
+
+              <DisclaimerBanner />
+
+              <div style={{
+                background: '#FFFFFF',
+                border: '1px solid #E2DCD0',
+                borderRadius: '6px',
+                padding: '2rem 2.5rem',
+                display: 'flex',
+                justifyContent: 'space-between',
                 alignItems: 'center',
-                gap: '6px',
-                boxShadow: '0 4px 14px rgba(30, 84, 56, 0.25)',
-                transition: 'all 0.2s ease'
-              }}
-            >
-              Provide Material Feedback
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            </a>
-          </div>
+                flexWrap: 'wrap',
+                gap: '1.5rem',
+                boxShadow: '0 2px 10px rgba(20, 56, 37, 0.03)',
+                marginTop: '1rem',
+              }}>
+                <div style={{ maxWidth: '800px' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '0.4rem' }}>
+                    <span style={{
+                      background: '#143825',
+                      color: '#FAF7F0',
+                      fontFamily: 'Space Grotesk',
+                      fontSize: '0.62rem',
+                      fontWeight: 800,
+                      padding: '2px 8px',
+                      borderRadius: '2px',
+                      textTransform: 'uppercase',
+                    }}>
+                      RESEARCH FEEDBACK
+                    </span>
+                    <span style={{ fontSize: '0.68rem', color: '#697068', fontWeight: 700, fontFamily: 'Space Grotesk' }}>
+                      UNDERGRADUATE VIVA EVALUATION AUDIT
+                    </span>
+                  </div>
 
-        </main>
-      )}
+                  <h3 style={{
+                    fontFamily: 'Outfit, Space Grotesk, sans-serif',
+                    fontSize: '1.25rem',
+                    fontWeight: 800,
+                    color: '#143825',
+                    margin: '0 0 0.35rem',
+                    textTransform: 'uppercase',
+                  }}>
+                    Provide Research Feedback on Material Recommendations
+                  </h3>
+
+                  <p style={{ fontSize: '0.82rem', color: '#526158', margin: 0, lineHeight: 1.5 }}>
+                    Did the recommendations appear reasonable for Sri Lankan climatic conditions? Was the multi-criteria decision reasoning understandable?
+                  </p>
+                </div>
+
+                <div style={{ display: 'flex', gap: '10px' }}>
+                  <Link
+                    href="/feedback"
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '8px',
+                      padding: '0.85rem 1.6rem',
+                      textDecoration: 'none',
+                      fontSize: '0.78rem',
+                      background: '#143825',
+                      color: '#FAF7F0',
+                      borderRadius: '4px',
+                      fontWeight: 700,
+                      fontFamily: 'Space Grotesk',
+                      letterSpacing: '0.08em',
+                      textTransform: 'uppercase',
+                    }}
+                  >
+                    Feedback Worksheet →
+                  </Link>
+                  <a
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSdDr5VrYMSK1rY-kMCD5LRCFD6NDlJXLA5nRAGruQrSihD5Rw/viewform?usp=publish-editor"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '8px',
+                      padding: '0.85rem 1.6rem',
+                      textDecoration: 'none',
+                      fontSize: '0.78rem',
+                      background: '#FFFFFF',
+                      border: '1px solid #E2DCD0',
+                      color: '#143825',
+                      borderRadius: '4px',
+                      fontWeight: 700,
+                      fontFamily: 'Space Grotesk',
+                      letterSpacing: '0.08em',
+                      textTransform: 'uppercase',
+                    }}
+                  >
+                    Google Form ↗
+                  </a>
+                </div>
+              </div>
+            </section>
+
+          </div>
+        )}
+      </main>
+
       <Footer />
     </div>
   );

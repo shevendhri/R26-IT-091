@@ -191,19 +191,33 @@ def _yolo_predict(png_bytes: bytes, conf: float = 0.25):
         from PIL import Image as PILImage
         img = PILImage.open(io.BytesIO(png_bytes)).convert('RGB')
 
-    results = _yolo_model(img, conf=conf, verbose=False)[0]
+    # Class-adaptive thresholds tuned for CubiCasa floorplan features:
+    # Rooms have large surface area; walls, doors, and windows are thin geometric features.
+    class_thresholds = {
+        'room': 0.12,
+        'wall': 0.035,
+        'door': 0.010,
+        'window': 0.015,
+    }
+    min_conf = min(class_thresholds.values())
+
+    results = _yolo_model(img, conf=min_conf, verbose=False)[0]
     counts = {'room': 0, 'wall': 0, 'door': 0, 'window': 0}
     boxes = []
 
     for box in results.boxes:
         cls_id = int(box.cls.item())
         cls_name = _YOLO_CLASSES[cls_id] if cls_id < len(_YOLO_CLASSES) else 'other'
+        c = float(box.conf.item())
+        threshold = class_thresholds.get(cls_name, conf)
+        if c < threshold:
+            continue
         if cls_name in counts:
             counts[cls_name] += 1
         x1, y1, x2, y2 = box.xyxy[0].tolist()
         boxes.append({
             'cls': cls_name,
-            'conf': round(float(box.conf.item()), 3),
+            'conf': round(c, 3),
             'x1': x1, 'y1': y1, 'x2': x2, 'y2': y2,
         })
 
@@ -306,24 +320,35 @@ def _gemini_analyze(png_bytes: bytes, room_count_hint: int | None = None):
             f"and disregard this number if your own count differs."
         )
 
-    try:
-        response = _gemini_client.models.generate_content(
-            model=_gemini_model_name,
-            contents=[
-                _genai_types.Part.from_bytes(data=png_bytes, mime_type="image/png"),
-                prompt,
-            ],
-            config=_genai_types.GenerateContentConfig(
-                response_mime_type="application/json",
-                response_schema=_GeminiAnalysis,
-            ),
-        )
-        result = response.parsed.model_dump() if response.parsed is not None else json.loads(response.text)
-        print(f"[INFO] Gemini ({_gemini_model_name}) counts: {result.get('counts')}")
-        return result
-    except Exception as e:
-        print(f"[WARN] Gemini analysis failed, falling back to YOLO: {e}")
-        return None
+    models_to_try = [_gemini_model_name, 'gemini-3.1-flash-lite', 'gemini-3.8-flash', 'gemini-3.5-flash']
+    candidate_models = []
+    seen = set()
+    for m in models_to_try:
+        if m and m not in seen:
+            candidate_models.append(m)
+            seen.add(m)
+
+    for model_name in candidate_models:
+        try:
+            response = _gemini_client.models.generate_content(
+                model=model_name,
+                contents=[
+                    _genai_types.Part.from_bytes(data=png_bytes, mime_type="image/png"),
+                    prompt,
+                ],
+                config=_genai_types.GenerateContentConfig(
+                    response_mime_type="application/json",
+                    response_schema=_GeminiAnalysis,
+                ),
+            )
+            result = response.parsed.model_dump() if response.parsed is not None else json.loads(response.text)
+            print(f"[INFO] Gemini ({model_name}) counts: {result.get('counts')}")
+            return result
+        except Exception as e:
+            print(f"[WARN] Gemini ({model_name}) analysis failed: {e}")
+
+    print("[WARN] All Gemini models failed or unavailable, using YOLO adaptive detection")
+    return None
 
 
 def _bboxes_overlap(a, b):

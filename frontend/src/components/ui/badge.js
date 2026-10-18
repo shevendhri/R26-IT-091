@@ -1,16 +1,64 @@
 /**
- * shadcn/ui-style Badge component
- * Built on the existing CSS variable system — no Tailwind required.
+ * GreenConstructAI Unified Badge Component
+ * Standardized across regulatory, material, and status indicators
  */
 
 const variants = {
-  default:     { background: 'var(--primary)',    color: '#000' },
-  secondary:   { background: 'rgba(255,255,255,0.08)', color: 'var(--text-muted)' },
-  destructive: { background: '#e74c3c',           color: '#fff' },
-  outline:     { background: 'transparent',       color: 'var(--text-main)', border: '1px solid var(--border)' },
-  success:     { background: 'rgba(39,174,96,0.15)', color: 'var(--primary)', border: '1px solid rgba(39,174,96,0.3)' },
-  warning:     { background: 'rgba(243,156,18,0.15)', color: '#f39c12',      border: '1px solid rgba(243,156,18,0.3)' },
-  danger:      { background: 'rgba(231,76,60,0.15)',  color: '#e74c3c',      border: '1px solid rgba(231,76,60,0.3)' },
+  default: {
+    background: '#D2E4D6',
+    color: '#153E28',
+    border: '1px solid rgba(21, 62, 40, 0.22)',
+  },
+  forest: {
+    background: '#143825',
+    color: '#FCFAF6',
+    border: '1px solid #143825',
+  },
+  sage: {
+    background: '#E8EFE9',
+    color: '#2A4E39',
+    border: '1px solid rgba(42, 78, 57, 0.25)',
+  },
+  warning: {
+    background: 'rgba(200, 138, 50, 0.12)',
+    color: '#8D6A4F',
+    border: '1px solid rgba(200, 138, 50, 0.28)',
+  },
+  amber: {
+    background: 'rgba(200, 138, 50, 0.12)',
+    color: '#8D6A4F',
+    border: '1px solid rgba(200, 138, 50, 0.28)',
+  },
+  destructive: {
+    background: 'rgba(184, 92, 67, 0.12)',
+    color: '#B85C43',
+    border: '1px solid rgba(184, 92, 67, 0.28)',
+  },
+  danger: {
+    background: 'rgba(184, 92, 67, 0.12)',
+    color: '#B85C43',
+    border: '1px solid rgba(184, 92, 67, 0.28)',
+  },
+  terracotta: {
+    background: 'rgba(184, 92, 67, 0.12)',
+    color: '#B85C43',
+    border: '1px solid rgba(184, 92, 67, 0.28)',
+  },
+  outline: {
+    background: 'transparent',
+    color: '#173A2B',
+    border: '1px solid #D5CCBC',
+  },
+  secondary: {
+    background: '#FAF8F4',
+    color: '#4B5A50',
+    border: '1px solid #D5CCBC',
+  },
+  success: {
+    background: '#D2E4D6',
+    color: '#153E28',
+    border: '1px solid rgba(21, 62, 40, 0.22)',
+  },
 };
 
 export function Badge({
@@ -24,17 +72,18 @@ export function Badge({
 
   return (
     <span
-      className={className}
+      className={`arch-badge-unified ${className}`}
       style={{
         display: 'inline-flex',
         alignItems: 'center',
-        gap: '0.25rem',
-        padding: '0.2rem 0.65rem',
-        borderRadius: '100px',
-        fontSize: '0.72rem',
-        fontWeight: 700,
-        letterSpacing: '0.5px',
-        fontFamily: 'var(--font-main)',
+        gap: '0.35rem',
+        padding: '3px 10px',
+        borderRadius: '9999px',
+        fontSize: '0.66rem',
+        fontWeight: 750,
+        letterSpacing: '0.04em',
+        fontFamily: "'Space Grotesk', -apple-system, sans-serif",
+        textTransform: 'uppercase',
         whiteSpace: 'nowrap',
         ...variantStyle,
         ...style,
@@ -46,27 +95,20 @@ export function Badge({
   );
 }
 
-/**
- * Convenience: risk-level badge. Pass level = 'HIGH' | 'MEDIUM' | 'LOW'.
- */
 export function RiskBadge({ level = 'LOW', label, ...props }) {
   const levelLower = (level || 'low').toLowerCase();
   const map = {
-    high:   'success',   // HIGH sustainability = good (green)
+    high:   'success',
     medium: 'warning',
-    low:    'danger',    // LOW sustainability = bad (red)
+    low:    'destructive',
   };
-  const lifecycleMap = {
-    low:    'success',   // Low lifecycle risk = good
-    medium: 'warning',
-    high:   'danger',
-  };
-  // Detect if this is a lifecycle risk or sustainability rating
-  const v = label === 'lifecycle' ? lifecycleMap[levelLower] : map[levelLower];
+  const variant = map[levelLower] || 'secondary';
 
   return (
-    <Badge variant={v || 'secondary'} {...props}>
-      {level}
+    <Badge variant={variant} {...props}>
+      {label || `${level} RISK`}
     </Badge>
   );
 }
+
+export default Badge;

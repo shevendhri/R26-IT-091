@@ -6,9 +6,28 @@ import { use, useEffect, useState } from "react";
 import { API_BASE_URL } from "@/lib/green-assessment/api";
 
 const MODES = [
-  { key: "low_cost", label: "Low-Cost Score Improvement" },
-  { key: "maximum_score", label: "Maximum Score Improvement" },
-  { key: "target_score", label: "Target Score" },
+  {
+    key: "low_cost",
+    label: "Low-Cost Optimization",
+    desc: "Prioritize low-investment interventions with the quickest score return.",
+  },
+  {
+    key: "maximum_score",
+    label: "Maximum Score Potential",
+    desc: "Unlock the highest attainable certification points across all categories.",
+  },
+  {
+    key: "target_score",
+    label: "Target Certification Band",
+    desc: "Calculate required point thresholds to achieve a specific UDA rating.",
+  },
+];
+
+const TARGET_PRESETS = [
+  { label: "Certified", value: "40", tier: "Bronze" },
+  { label: "Silver", value: "50", tier: "Silver" },
+  { label: "Gold", value: "60", tier: "Gold" },
+  { label: "Platinum", value: "70", tier: "Platinum" },
 ];
 
 export default function ProjectRecommendationsPage({ params }) {
@@ -38,7 +57,6 @@ export default function ProjectRecommendationsPage({ params }) {
           { signal: controller.signal },
         );
         const data = await response.json();
-        console.log("uda recommendations response", data);
 
         if (!response.ok) {
           throw new Error(
@@ -78,248 +96,385 @@ export default function ProjectRecommendationsPage({ params }) {
 
   return (
     <main className="page-shell">
-      <header className="page-header">
-        <Link className="back-link" href={`/green-assessment/projects/${id}`}>
-          Back to Project Details
+      {/* ── UNIFIED PROJECT SUB-NAVIGATION ── */}
+      <nav className="project-subnav-bar" aria-label="Project Sub Navigation">
+        <Link className="project-subnav-link" href={`/green-assessment/projects/${id}`}>
+          01 / Overview
         </Link>
-        <p className="eyebrow">UDA Design Recommendations</p>
+        <Link className="project-subnav-link" href={`/green-assessment/projects/${id}/documents`}>
+          02 / Documents
+        </Link>
+        <Link className="project-subnav-link" href={`/green-assessment/projects/${id}/analysis`}>
+          03 / Evidence Analysis
+        </Link>
+        <Link className="project-subnav-link" href={`/green-assessment/projects/${id}/assessment`}>
+          04 / Manual Assessment
+        </Link>
+        <Link className="project-subnav-link" href={`/green-assessment/projects/${id}/score`}>
+          05 / Score Summary
+        </Link>
+        <Link className="project-subnav-link active" href={`/green-assessment/projects/${id}/recommendations`}>
+          06 / Recommendations ★
+        </Link>
+      </nav>
+
+      {/* ── HEADER PANEL ── */}
+      <header className="page-header hero-panel">
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "0.85rem" }}>
+          <Link className="back-link" href={`/green-assessment/projects/${id}`} style={{ margin: 0 }}>
+            ← Back to Project Details
+          </Link>
+          <span className="eyebrow" style={{ margin: 0 }}>
+            UDA DESIGN RECOMMENDATION ENGINE
+          </span>
+        </div>
+
         <h1>
-          {recommendations
-            ? recommendations.project_name
-            : "Project Recommendations"}
+          {recommendations?.project_name ? `${recommendations.project_name} — Improvement Pathway` : "Design Recommendations"}
         </h1>
         <p className="lede">
-          Compare deterministic improvement paths based on UDA scoring bands,
-          project assessment marks, and DA evidence requirements.
+          Deterministic scoring improvement strategies calculated against Urban Development Authority (UDA)
+          rating thresholds, building evidence analysis, and DA submission compliance documents.
         </p>
-        <div className="notice">
-          This is a preliminary recommendation and does not guarantee official
-          UDA certification.
-        </div>
-        <div className="actions">
-          <Link className="button" href={`/green-assessment/projects/${id}/analysis`}>
-            UDA Document Analysis / Evidence Scoring
-          </Link>
-          <Link className="button" href={`/green-assessment/projects/${id}/assessment`}>
-            View Manual Assessment
-          </Link>
-          <Link className="button" href={`/green-assessment/projects/${id}/score`}>
-            View Score Summary
-          </Link>
+
+        <div className="notice" style={{ marginTop: "1rem" }}>
+          <strong>Notice:</strong> These recommendations reflect preliminary algorithmic assessments to guide design enhancement and do not constitute formal UDA certification.
         </div>
       </header>
 
-      <section className="score-section">
-        <div className="actions compact-actions">
+      {/* ── STRATEGY MODE SELECTOR ── */}
+      <section className="mode-selector-wrap">
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: "0.75rem" }}>
+          <span className="eyebrow" style={{ color: "var(--ga-forest)" }}>
+            OPTIMIZATION STRATEGY
+          </span>
+          <span style={{ fontSize: "0.72rem", color: "var(--ga-text-muted)" }}>
+            Select an algorithmic path to reprioritize score opportunities
+          </span>
+        </div>
+
+        <div className="mode-segmented-row">
           {MODES.map((option) => (
             <button
-              className={`button ${mode === option.key ? "primary" : ""}`}
               key={option.key}
-              onClick={() => setMode(option.key)}
               type="button"
+              className={`mode-tab-btn ${mode === option.key ? "active" : ""}`}
+              onClick={() => setMode(option.key)}
             >
-              {option.label}
+              <span className="mode-tab-title">{option.label}</span>
+              <span className="mode-tab-desc">{option.desc}</span>
             </button>
           ))}
         </div>
-        {mode === "target_score" ? (
-          <>
-            <div className="actions compact-actions">
-              {[
-                ["Certified", "40"],
-                ["Silver", "50"],
-                ["Gold", "60"],
-                ["Platinum", "70"],
-              ].map(([label, value]) => (
+
+        {mode === "target_score" && (
+          <div className="target-presets-container">
+            <span style={{ fontSize: "0.74rem", fontFamily: "'Space Grotesk', sans-serif", fontWeight: 800, textTransform: "uppercase", color: "var(--ga-forest)" }}>
+              Target Bands:
+            </span>
+            <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap" }}>
+              {TARGET_PRESETS.map((p) => (
                 <button
-                  className="button"
-                  key={label}
-                  onClick={() => setTargetScore(value)}
+                  key={p.value}
                   type="button"
+                  className={`target-preset-chip ${targetScore === p.value ? "active" : ""}`}
+                  onClick={() => setTargetScore(p.value)}
                 >
-                  {label} - {value}
+                  {p.label} ({p.value} pts)
                 </button>
               ))}
             </div>
-            <div className="assessment-controls">
-            <label>
-              Target UDA score
+            <div style={{ marginLeft: "auto", display: "flex", alignItems: "center", gap: "0.6rem" }}>
+              <label htmlFor="custom-target-input" style={{ fontSize: "0.74rem", fontWeight: 700, color: "var(--ga-forest)", textTransform: "uppercase" }}>
+                Custom Target:
+              </label>
               <input
-                min="0"
-                step="0.01"
+                id="custom-target-input"
                 type="number"
+                min="0"
+                max="100"
+                step="1"
                 value={targetScore}
-                onChange={(event) => setTargetScore(event.target.value)}
+                onChange={(e) => setTargetScore(e.target.value)}
+                style={{
+                  width: "80px",
+                  padding: "0.4rem 0.6rem",
+                  borderRadius: "4px",
+                  border: "1px solid var(--ga-border)",
+                  fontFamily: "'Space Grotesk', sans-serif",
+                  fontWeight: 700,
+                  fontSize: "0.85rem",
+                }}
               />
-            </label>
             </div>
-          </>
-        ) : null}
+          </div>
+        )}
       </section>
 
-      {isLoading ? (
-        <div className="notice" role="status">
-          Loading recommendations...
+      {/* ── LOADING & ERROR NOTICES ── */}
+      {isLoading && (
+        <div className="notice" role="status" style={{ textAlign: "center", padding: "2rem" }}>
+          Analyzing project scoring bands & extracting recommended design improvements...
         </div>
-      ) : null}
+      )}
 
-      {error ? (
+      {error && (
         <div className="notice error" role="alert">
           {error}
         </div>
-      ) : null}
+      )}
 
-      {!isLoading && !error && !recommendations ? (
-        <div className="empty">No recommendations found.</div>
-      ) : null}
+      {!isLoading && !error && !recommendations && (
+        <div className="empty">No recommendations found for this project.</div>
+      )}
 
-      {!isLoading && !error && recommendations ? (
+      {/* ── MAIN CONTENT ── */}
+      {!isLoading && !error && recommendations && (
         <>
+          {/* Executive KPI Summary */}
           <section className="score-summary-grid">
-            <div className="score-card">
+            <div className="score-card highlight">
               <span>Current Proposed Score</span>
               <strong>
-                {recommendations.current_proposed_score ??
-                  recommendations.current_score}{" "}
-                / {recommendations.total_configured_max_marks}
+                {recommendations.current_proposed_score ?? recommendations.current_score}
+                <span style={{ fontSize: "1rem", color: "var(--ga-text-muted)", fontWeight: 500 }}>
+                  {" "}/ {recommendations.total_configured_max_marks}
+                </span>
               </strong>
+              <div className="subtext">
+                Current Level: <strong>{recommendations.current_preassessment_level || "Unassessed"}</strong>
+              </div>
             </div>
-            <div className="score-card">
-              <span>Current Pre-Assessment Level</span>
-              <strong>{recommendations.current_preassessment_level}</strong>
-            </div>
-            <div className="score-card">
+
+            <div className="score-card gain">
               <span>Potential Score</span>
-              <strong>
-                {recommendations.potential_score} /{" "}
-                {recommendations.total_configured_max_marks}
+              <strong style={{ color: "#065F46" }}>
+                {recommendations.potential_score}
+                <span style={{ fontSize: "1rem", color: "var(--ga-text-muted)", fontWeight: 500 }}>
+                  {" "}/ {recommendations.total_configured_max_marks}
+                </span>
               </strong>
+              <div className="subtext">
+                Attainable Level: <strong>{recommendations.potential_preassessment_level || "Same"}</strong>
+              </div>
             </div>
-            <div className="score-card">
-              <span>Potential Pre-Assessment Level</span>
-              <strong>{recommendations.potential_preassessment_level}</strong>
-            </div>
-            <div className="score-card">
-              <span>Potential Gain</span>
-              <strong>+{recommendations.total_potential_gain}</strong>
-            </div>
-            <div className="score-card">
-              <span>Recommendations Count</span>
-              <strong>
-                {recommendations.recommendations_count ?? items.length}
+
+            <div className="score-card gain">
+              <span>Total Potential Gain</span>
+              <strong style={{ color: "#065F46" }}>
+                +{recommendations.total_potential_gain ?? 0}
+                <span style={{ fontSize: "0.85rem", color: "var(--ga-text-muted)", fontWeight: 600 }}> pts</span>
               </strong>
+              <div className="subtext">
+                Across <strong>{recommendations.recommendations_count ?? items.length}</strong> identified opportunities
+              </div>
             </div>
+
             <div className="score-card">
-              <span>Need Review From Specialist</span>
+              <span>Specialist Review Required</span>
               <strong>{recommendations.need_specialist_review_count ?? 0}</strong>
-            </div>
-            <div className="score-card">
-              <span>Reviewed / Confirmed Score</span>
-              <strong>{recommendations.reviewed_confirmed_score ?? 0}</strong>
+              <div className="subtext">
+                Confirmed Score: <strong>{recommendations.reviewed_confirmed_score ?? 0} pts</strong>
+              </div>
             </div>
           </section>
 
-          {mode === "target_score" ? (
-            <div className="notice">
-              Target Score: {recommendations.target_score}. Target
-              Pre-Assessment Level:{" "}
-              {recommendations.target_preassessment_level}. Current{" "}
-              {recommendations.current_proposed_score ??
-                recommendations.current_score}
-              , required +{recommendations.target_gap}, listed potential +
-              {recommendations.total_potential_gain}.{" "}
-              {recommendations.target_reachable
-                ? "Potential pathway to target identified."
-                : "Available recommendations do not currently provide enough potential marks to reach the selected target."}
+          {/* Target Score Gap Callout */}
+          {mode === "target_score" && (
+            <div
+              className={`notice ${recommendations.target_reachable ? "success" : "error"}`}
+              style={{ marginTop: "0", marginBottom: "2rem" }}
+            >
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "0.5rem" }}>
+                <div>
+                  <strong>Target Level: {recommendations.target_preassessment_level} ({recommendations.target_score} pts)</strong>
+                  <p style={{ margin: "0.25rem 0 0", fontSize: "0.80rem" }}>
+                    Current {recommendations.current_proposed_score ?? recommendations.current_score} pts • Point Gap: +{recommendations.target_gap} pts • Total Potential Available: +{recommendations.total_potential_gain} pts
+                  </p>
+                </div>
+                <span className="status-pill active">
+                  {recommendations.target_reachable ? "Target Reachable" : "Additional Measures Needed"}
+                </span>
+              </div>
             </div>
-          ) : null}
+          )}
 
+          {/* Recommendations List */}
           {items.length === 0 ? (
-            <div className="empty">No recommendations found.</div>
+            <div className="empty">No specific recommendations found for the current configuration.</div>
           ) : (
-            <section className="score-section">
-              <h2>
-                {mode === "low_cost"
-                  ? "Low-Cost Improvement Path"
-                  : mode === "maximum_score"
-                    ? "Maximum-Score Improvement Path"
-                    : "Target-Score Improvement Path"}
-              </h2>
+            <section style={{ marginTop: "1rem" }}>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "1.25rem" }}>
+                <div>
+                  <h2 style={{ margin: 0, textTransform: "uppercase", fontSize: "1.1rem" }}>
+                    {mode === "low_cost"
+                      ? "Low-Cost Optimization Action List"
+                      : mode === "maximum_score"
+                      ? "Maximum Point Improvement Action List"
+                      : "Target Score Feasibility Action List"}
+                  </h2>
+                  <p style={{ margin: "0.25rem 0 0", fontSize: "0.80rem", color: "var(--ga-text-muted)" }}>
+                    Ranked by score return and implementation feasibility under UDA criteria
+                  </p>
+                </div>
+                <span className="eyebrow" style={{ margin: 0 }}>
+                  Showing {items.length} Criteria
+                </span>
+              </div>
+
               <div className="gap-list">
                 {items.map((item) => (
                   <article className="gap-card" key={item.criterion_code}>
+                    {/* Header */}
                     <div className="gap-heading">
                       <div>
-                        <p className="criterion-code">
-                          {item.criterion_code} | {item.category_code}
-                        </p>
+                        <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", flexWrap: "wrap" }}>
+                          <span className="criterion-code" style={{ margin: 0 }}>
+                            {item.criterion_code}
+                          </span>
+                          <span style={{ color: "var(--ga-border)", fontWeight: 700 }}>•</span>
+                          <span className="category-code" style={{ margin: 0 }}>
+                            {item.category_code}
+                          </span>
+                          {item.recommendation_type && (
+                            <span className="status-pill" style={{ textTransform: "uppercase" }}>
+                              {item.recommendation_type.replace(/_/g, " ")}
+                            </span>
+                          )}
+                        </div>
                         <h3>{item.criterion_name}</h3>
                       </div>
-                      <span>+{item.potential_marks_gain} marks</span>
+
+                      <div className="potential-marks-badge">
+                        <span>+{item.potential_marks_gain} MARKS GAIN</span>
+                      </div>
                     </div>
+
+                    {/* Facts / Metrics Strip */}
                     <div className="criterion-facts">
-                      <span>
-                        Current Proposed Score: {item.current_marks} /{" "}
-                        {item.maximum_marks}
-                      </span>
-                      <span>Next Opportunity: {item.next_score ?? item.potential_marks}</span>
-                      <span>Potential: {item.potential_marks}</span>
-                      <span>Maximum Potential Gain: +{item.maximum_gain ?? 0}</span>
-                      <span>Status: {formatStatus(item.current_status)}</span>
-                      <span>Score Source: {formatStatus(item.score_source)}</span>
-                      <span>Cost: {item.cost_level}</span>
-                      <span>Difficulty: {item.implementation_difficulty}</span>
-                      <span>Type: {item.recommendation_type}</span>
+                      <div className="fact-chip">
+                        <span className="chip-label">Current:</span>
+                        <span className="chip-val">{item.current_marks} / {item.maximum_marks} pts</span>
+                      </div>
+                      <div className="fact-chip">
+                        <span className="chip-label">Potential:</span>
+                        <span className="chip-val" style={{ color: "#065F46" }}>{item.potential_marks} pts</span>
+                      </div>
+                      <div className="fact-chip">
+                        <span className="chip-label">Max Gain:</span>
+                        <span className="chip-val">+{item.maximum_gain ?? 0}</span>
+                      </div>
+                      {item.cost_level && (
+                        <div className={`fact-chip ${getCostClass(item.cost_level)}`}>
+                          <span className="chip-label">Cost:</span>
+                          <span className="chip-val">{item.cost_level}</span>
+                        </div>
+                      )}
+                      {item.implementation_difficulty && (
+                        <div className="fact-chip">
+                          <span className="chip-label">Difficulty:</span>
+                          <span className="chip-val">{item.implementation_difficulty}</span>
+                        </div>
+                      )}
+                      <div className="fact-chip">
+                        <span className="chip-label">Status:</span>
+                        <span className="chip-val">{formatStatus(item.current_status)}</span>
+                      </div>
                     </div>
-                    {item.specialist_review_required || item.requires_manual_review ? (
-                      <div className="notice error">
-                        Need Review From Specialist. No guaranteed marks gain is
-                        claimed until the evidence or criterion is verified.
-                        <div className="actions compact-actions">
+
+                    {/* Specialist Alert */}
+                    {(item.specialist_review_required || item.requires_manual_review) && (
+                      <div className="notice error" style={{ marginTop: 0, marginBottom: "1rem" }}>
+                        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "0.75rem" }}>
+                          <span>
+                            <strong>Specialist Review Required:</strong> Point claiming is deferred until verified by an accredited green professional.
+                          </span>
                           <Link
-                            className="button"
+                            className="button danger-button"
                             href={`/green-assessment/projects/${id}/analysis`}
+                            style={{ minHeight: "32px", padding: "0.4rem 0.85rem", fontSize: "0.70rem" }}
                           >
-                            Review Evidence Scoring
+                            Review Evidence
                           </Link>
                         </div>
                       </div>
-                    ) : null}
-                    {item.evidence_summary ? (
-                      <p>Detected Evidence: {item.evidence_summary}</p>
-                    ) : null}
-                    {item.source_document ? (
-                      <p>
-                        Source: {item.source_document} — Page{" "}
-                        {item.source_page ?? "not available"}
-                      </p>
-                    ) : null}
-                    <p>{item.recommendation_text || item.recommendation}</p>
-                    <p>Reason: {item.reason}</p>
-                    {item.matched_rule_text ? (
-                      <p>Scoring threshold: {item.matched_rule_text}</p>
-                    ) : null}
-                    <h3>Required DA Documents</h3>
-                    {item.required_documents.length > 0 ? (
-                      <ul className="requirement-list">
-                        {item.required_documents.map((document, index) => (
-                          <li key={`${item.criterion_code}-${index}`}>
-                            {document}
-                          </li>
-                        ))}
-                      </ul>
-                    ) : (
-                      <p>No DA document list is configured for this criterion.</p>
                     )}
+
+                    {/* Actionable Recommendation Callout */}
+                    <div className="rec-callout-box">
+                      <div className="rec-callout-header">
+                        <span>Actionable Architectural Recommendation</span>
+                      </div>
+                      <p className="rec-callout-text">
+                        {item.recommendation_text || item.recommendation || "Implement required green building measures as per UDA specifications."}
+                      </p>
+                    </div>
+
+                    {/* Technical Reason & Threshold */}
+                    {item.reason && (
+                      <div className="rec-reason-box">
+                        <span className="rec-reason-label">Scoring Rationale:</span>
+                        {item.reason}
+                        {item.matched_rule_text && (
+                          <div style={{ marginTop: "0.4rem", paddingTop: "0.4rem", borderTop: "1px dashed var(--ga-border)", color: "var(--ga-text-muted)", fontSize: "0.76rem" }}>
+                            <strong>Rule Threshold:</strong> {item.matched_rule_text}
+                          </div>
+                        )}
+                      </div>
+                    )}
+
+                    {/* Evidence Snippet */}
+                    {(item.evidence_summary || item.source_document) && (
+                      <div style={{ marginBottom: "0.85rem" }}>
+                        {item.source_document && (
+                          <div className="evidence-source-tag">
+                            <span>Source Doc: {item.source_document}</span>
+                            {item.source_page && <span>(Page {item.source_page})</span>}
+                          </div>
+                        )}
+                        {item.evidence_summary && (
+                          <p style={{ margin: "0 0 0.5rem", fontSize: "0.82rem", color: "var(--ga-text-secondary)", fontStyle: "italic" }}>
+                            "{item.evidence_summary}"
+                          </p>
+                        )}
+                      </div>
+                    )}
+
+                    {/* Required DA Documents */}
+                    <div>
+                      <h4 className="da-docs-title">Required Development Authority (DA) Evidence Documents:</h4>
+                      {item.required_documents && item.required_documents.length > 0 ? (
+                        <ul className="da-docs-grid">
+                          {item.required_documents.map((doc, idx) => (
+                            <li className="da-doc-item" key={`${item.criterion_code}-${idx}`}>
+                              <span className="da-doc-bullet">✓</span>
+                              <span>{doc}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      ) : (
+                        <p style={{ fontSize: "0.78rem", color: "var(--ga-text-muted)", margin: 0, fontStyle: "italic" }}>
+                          No specific DA document mandate configured for this criterion.
+                        </p>
+                      )}
+                    </div>
                   </article>
                 ))}
               </div>
             </section>
           )}
         </>
-      ) : null}
+      )}
     </main>
   );
+}
+
+function getCostClass(cost) {
+  const c = String(cost).toLowerCase();
+  if (c.includes("low")) return "badge-low-cost";
+  if (c.includes("med")) return "badge-med-cost";
+  if (c.includes("high")) return "badge-high-cost";
+  return "";
 }
 
 function formatStatus(status) {
@@ -328,7 +483,7 @@ function formatStatus(status) {
     evidence_confirmed: "Evidence Confirmed",
     manual: "Manual",
     unassessed: "Unassessed",
-    need_specialist_review: "Need Review From Specialist",
+    need_specialist_review: "Review Needed",
     insufficient_evidence: "Insufficient Evidence",
     manual_criterion: "Manual Assessment Required",
     not_assessed: "Not Assessed",

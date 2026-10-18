@@ -41,17 +41,19 @@ export default function ExecutiveHero({ data }) {
   return (
     <section className="glass-card executive-hero" style={{
       padding: '2.5rem',
-      background: 'rgba(6, 12, 16, 0.85)',
-      border: '1px solid rgba(0, 255, 157, 0.15)',
-      boxShadow: '0 10px 40px rgba(0, 0, 0, 0.6), inset 0 0 20px rgba(0, 255, 157, 0.02)',
+      background: 'rgba(4, 12, 8, 0.90)',
+      border: '1px solid rgba(74, 222, 128, 0.18)',
+      boxShadow: '0 10px 48px rgba(0, 0, 0, 0.7), 0 0 80px rgba(74, 222, 128, 0.04), inset 0 0 24px rgba(74, 222, 128, 0.02)',
       borderRadius: '24px',
       position: 'relative',
       overflow: 'hidden'
     }}>
-      {/* Structural Accent Line */}
+      {/* Animated Gradient Top Border */}
       <div style={{
         position: 'absolute', top: 0, left: 0, right: 0, height: '3px',
-        background: 'linear-gradient(90deg, var(--eco-glow), var(--blueprint-blue))'
+        background: 'linear-gradient(90deg, #4ADE80, #22c55e, #0ea5e9, #4ADE80)',
+        backgroundSize: '200% 100%',
+        animation: 'gradientShift 4s ease-in-out infinite'
       }}/>
 
       {/* Main Row */}
@@ -87,11 +89,11 @@ export default function ExecutiveHero({ data }) {
               SLS-REFERENCED RULE CHECK
             </span>
           </div>
-          <h1 style={{ fontSize: '2.5rem', fontWeight: 800, fontFamily: 'Space Grotesk', color: '#fff', margin: 0, lineHeight: 1.1 }}>
+          <h1 style={{ fontSize: '2.8rem', fontWeight: 900, fontFamily: 'Space Grotesk', color: '#fff', margin: 0, lineHeight: 1.1 }}>
             {buildingType}
           </h1>
-          <p style={{ color: 'var(--text-dim)', fontSize: '0.9rem', marginTop: '0.5rem', letterSpacing: '0.5px' }}>
-            Location Profile: <strong style={{ color: '#fff' }}>{location}</strong> ({climateZone} Zone)
+          <p style={{ color: '#5A8F6E', fontSize: '0.88rem', marginTop: '0.5rem', letterSpacing: '0.5px' }}>
+            Location: <strong style={{ color: '#A8C8B4' }}>{location}</strong> &middot; <span style={{ color: '#7DC49A' }}>{climateZone} Zone</span>
           </p>
         </div>
 
@@ -104,14 +106,14 @@ export default function ExecutiveHero({ data }) {
         }}>
           {/* AI Aggregation */}
           <div style={{ textAlign: 'left' }}>
-            <div style={{ fontSize: '0.6rem', color: 'var(--text-dim)', fontWeight: 800, letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '0.25rem' }}>
+            <div style={{ fontSize: '0.58rem', color: '#4ADE80', fontWeight: 900, letterSpacing: '2.5px', textTransform: 'uppercase', marginBottom: '0.25rem' }}>
               HYBRID PERFORMANCE
             </div>
             <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.25rem' }}>
-              <span style={{ fontSize: '2.75rem', fontWeight: 900, color: 'var(--eco-glow)', fontFamily: 'Space Grotesk', lineHeight: 1 }}>
+              <span style={{ fontSize: '3.2rem', fontWeight: 900, color: '#4ADE80', fontFamily: 'Space Grotesk', lineHeight: 1, textShadow: '0 0 24px rgba(74,222,128,0.5)' }}>
                 {aiScore}
               </span>
-              <span style={{ fontSize: '0.9rem', color: 'var(--text-dim)', fontWeight: 700 }}>/100</span>
+              <span style={{ fontSize: '0.9rem', color: '#4A7A5C', fontWeight: 700 }}>/100</span>
             </div>
           </div>
 
@@ -119,14 +121,14 @@ export default function ExecutiveHero({ data }) {
 
           {/* Eco Performance */}
           <div style={{ textAlign: 'left' }}>
-            <div style={{ fontSize: '0.6rem', color: 'var(--text-dim)', fontWeight: 800, letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '0.25rem' }}>
+            <div style={{ fontSize: '0.58rem', color: '#38bdf8', fontWeight: 900, letterSpacing: '2.5px', textTransform: 'uppercase', marginBottom: '0.25rem' }}>
               ECO-EFFICIENCY
             </div>
             <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.25rem' }}>
-              <span style={{ fontSize: '2.75rem', fontWeight: 900, color: 'var(--blueprint-blue)', fontFamily: 'Space Grotesk', lineHeight: 1 }}>
+              <span style={{ fontSize: '3.2rem', fontWeight: 900, color: '#38bdf8', fontFamily: 'Space Grotesk', lineHeight: 1, textShadow: '0 0 24px rgba(56,189,248,0.4)' }}>
                 {sustainability}
               </span>
-              <span style={{ fontSize: '0.9rem', color: 'var(--text-dim)', fontWeight: 700 }}>/100</span>
+              <span style={{ fontSize: '0.9rem', color: '#1a5a7a', fontWeight: 700 }}>/100</span>
             </div>
           </div>
 

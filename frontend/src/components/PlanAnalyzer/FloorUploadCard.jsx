@@ -1,17 +1,19 @@
-﻿import { useRef, useState, useEffect } from 'react';
+import { useRef, useState, useEffect } from "react";
 
 export default function FloorUploadCard({ floor, index, onLabelChange, onResult, onRemove }) {
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
   const [file, setFile] = useState(null);
   const [preview, setPreview] = useState(null);
   const inputRef = useRef();
 
-  // PNG/JPG â†’ object URL preview; PDF â†’ show PDF icon
   useEffect(() => {
-    if (!file) { setPreview(null); return; }
-    if (file.type === 'application/pdf') {
-      setPreview('pdf');
+    if (!file) {
+      setPreview(null);
+      return;
+    }
+    if (file.type === "application/pdf") {
+      setPreview("pdf");
       return;
     }
     const url = URL.createObjectURL(file);
@@ -20,20 +22,18 @@ export default function FloorUploadCard({ floor, index, onLabelChange, onResult,
   }, [file]);
 
   async function handleAnalyze() {
-    if (!file) { setError('Please select a floor plan image or PDF.'); return; }
-    setError('');
+    if (!file) {
+      setError("Please select a floor plan image or PDF drawing.");
+      return;
+    }
+    setError("");
     setLoading(true);
     try {
       const form = new FormData();
-      const isSvg = file.type === 'image/svg+xml' || file.name.toLowerCase().endsWith('.svg');
-      form.append(isSvg ? 'svg' : 'png', file);   // backend accepts 'svg' field for SVG, 'png' for PNG/JPG/PDF
-
-      // Hit the backend directly rather than through Next's dev-server rewrite
-      // proxy â€” the Gemini vision call plus YOLO inference can take well over
-      // Next's proxy timeout, which resets the connection ("socket hang up")
-      // even though the backend and model service both finish successfully.
-      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
-      const res = await fetch(`${apiUrl}/api/analyze`, { method: 'POST', body: form });
+      const isSvg = file.type === "image/svg+xml" || file.name.toLowerCase().endsWith(".svg");
+      form.append(isSvg ? "svg" : "png", file);
+      const apiUrl = process.env.NEXT_PUBLIC_BLUEPRINT_API_URL || "http://localhost:5001";
+      const res = await fetch(`${apiUrl}/api/analyze`, { method: "POST", body: form });
       if (!res.ok) {
         const body = await res.json().catch(() => ({}));
         throw new Error(body.error || `Server error ${res.status}`);
@@ -41,7 +41,7 @@ export default function FloorUploadCard({ floor, index, onLabelChange, onResult,
       const data = await res.json();
       onResult(index, data);
     } catch (err) {
-      setError(err.message || 'Analysis failed. Is the backend running?');
+      setError(err.message || "Analysis failed. Ensure Plan Analyzer gateway is active.");
     } finally {
       setLoading(false);
     }
@@ -50,62 +50,113 @@ export default function FloorUploadCard({ floor, index, onLabelChange, onResult,
   const done = !!floor.result;
 
   return (
-    <div className={`bg-eco-card backdrop-blur rounded-card shadow-card p-5 border transition-all duration-300
-      ${done    ? 'border-brand-green shadow-glow' :
-        loading ? 'border-brand-blue shadow-lg shadow-brand-blue/20 animate-pulse-border' :
-                  'border-eco-border hover:border-eco-border-strong'}`}>
-
-      {/* Header */}
-      <div className="flex items-center justify-between mb-4">
-        <input
-          className="input-premium font-heading text-base font-semibold px-3 py-1.5 w-44 placeholder-ink-muted"
-          value={floor.label}
-          onChange={e => onLabelChange(index, e.target.value)}
-          placeholder="Floor name"
-        />
+    <div className={`plan-level-card ${done ? "is-done" : ""} ${loading ? "is-loading" : ""}`}>
+      {/* Level Header with Name & Remove Button */}
+      <div className="plan-level-header">
+        <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", flex: 1 }}>
+          <span style={{ fontSize: "0.70rem", fontFamily: "'Space Grotesk', sans-serif", fontWeight: 800, color: "#143825" }}>
+            L{index + 1}:
+          </span>
+          <input
+            className="plan-level-input"
+            value={floor.label}
+            onChange={(e) => onLabelChange(index, e.target.value)}
+            placeholder="Level name"
+          />
+        </div>
         {index > 0 && (
-          <button onClick={() => onRemove(index)} className="text-ink-muted hover:text-brand-red text-lg leading-none transition-colors">âœ•</button>
+          <button
+            onClick={() => onRemove(index)}
+            className="plan-remove-btn"
+            title="Remove level"
+            type="button"
+          >
+            ×
+          </button>
         )}
       </div>
 
-      {/* File preview */}
-      {preview && preview !== 'pdf' && (
-        <div className="mb-3 rounded-inner overflow-hidden border border-eco-border bg-eco-black/40 max-h-40 flex items-center justify-center">
-          <img src={preview} alt="preview" className="max-h-40 object-contain" />
+      {/* File Preview */}
+      {preview && preview !== "pdf" && (
+        <div style={{
+          marginBottom: "0.75rem",
+          borderRadius: "3px",
+          overflow: "hidden",
+          border: "1px solid #E2DCD0",
+          background: "#FAF7F0",
+          maxHeight: "140px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}>
+          <img src={preview} alt="preview" style={{ maxHeight: "140px", width: "100%", objectFit: "contain" }} />
         </div>
       )}
-      {preview === 'pdf' && (
-        <div className="mb-3 rounded-inner border border-eco-border bg-eco-mid/30 flex items-center gap-3 px-4 py-3">
-          <span className="text-3xl">ðŸ“„</span>
-          <div>
-            <p className="text-sm font-medium text-ink-secondary truncate max-w-[200px]">{file.name}</p>
-            <p className="text-xs text-ink-muted">PDF â€” page 1 will be analysed</p>
+
+      {preview === "pdf" && (
+        <div style={{
+          marginBottom: "0.75rem",
+          borderRadius: "3px",
+          border: "1px solid #E2DCD0",
+          background: "#FAF7F0",
+          padding: "0.75rem",
+          display: "flex",
+          alignItems: "center",
+          gap: "0.75rem",
+        }}>
+          <span style={{ fontSize: "1.5rem" }}>📄</span>
+          <div style={{ minWidth: 0, flex: 1 }}>
+            <p style={{ margin: 0, fontSize: "0.78rem", fontWeight: 700, color: "#143825", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+              {file.name}
+            </p>
+            <p style={{ margin: "2px 0 0", fontSize: "0.68rem", color: "#697068" }}>
+              PDF Drawing (Page 1 analyzed)
+            </p>
           </div>
         </div>
       )}
 
-      {/* Drop zone */}
+      {/* File Selection Dropzone */}
       <FileDropZone
         file={file}
         inputRef={inputRef}
-        onChange={f => { setFile(f); setError(''); }}
+        onChange={(f) => {
+          setFile(f);
+          setError("");
+        }}
       />
 
+      {/* Error Alert */}
       {error && (
-        <p className="font-heading text-brand-red text-xs mt-3 bg-brand-red-dim border border-brand-red-border rounded-inner px-3 py-2">{error}</p>
+        <div style={{
+          marginTop: "0.75rem",
+          padding: "0.5rem 0.75rem",
+          background: "rgba(184, 92, 67, 0.08)",
+          border: "1px solid rgba(184, 92, 67, 0.35)",
+          borderRadius: "3px",
+          color: "#B85C43",
+          fontSize: "0.74rem",
+          fontFamily: "'Space Grotesk', sans-serif",
+          fontWeight: 600,
+        }}>
+          {error}
+        </div>
       )}
 
+      {/* Action Button */}
       <button
         onClick={handleAnalyze}
         disabled={loading || !file}
-        className={`btn-premium mt-4 w-full ${loading ? 'is-loading' : ''}`}
+        className="plan-action-btn"
+        type="button"
       >
         {loading ? (
-          <span className="flex items-center justify-center gap-2">
-            <span className="w-4 h-4 border-2 border-white/40 border-t-white rounded-full animate-spin" />
-            Analyzingâ€¦
-          </span>
-        ) : done ? 'âœ“ Re-analyze' : 'Analyze Floor Plan'}
+          <span>Analyzing CAD Plan...</span>
+        ) : done ? (
+          <span>✓ Re-Analyze Plan</span>
+        ) : (
+          <span>Analyze Drawing →</span>
+        )}
       </button>
     </div>
   );
@@ -123,12 +174,13 @@ function FileDropZone({ file, inputRef, onChange }) {
 
   return (
     <div>
-      <p className="text-xs font-heading font-medium text-ink-secondary mb-1 uppercase tracking-wide">Floor Plan Image (PNG, JPG, PDF or SVG)</p>
       <div
-        className={`border border-dashed rounded-inner p-4 text-center cursor-pointer transition-all
-          ${dragging ? 'border-brand-green bg-brand-green-dim' : 'border-eco-border bg-eco-mid/20 hover:border-eco-border-strong'}`}
+        className={`plan-dropzone ${dragging ? "is-dragging" : ""}`}
         onClick={() => inputRef.current.click()}
-        onDragOver={e => { e.preventDefault(); setDragging(true); }}
+        onDragOver={(e) => {
+          e.preventDefault();
+          setDragging(true);
+        }}
         onDragLeave={() => setDragging(false)}
         onDrop={handleDrop}
       >
@@ -136,29 +188,33 @@ function FileDropZone({ file, inputRef, onChange }) {
           ref={inputRef}
           type="file"
           accept=".png,.jpg,.jpeg,.pdf,.svg"
-          className="hidden"
-          onChange={e => onChange(e.target.files[0] || null)}
+          style={{ display: "none" }}
+          onChange={(e) => onChange(e.target.files[0] || null)}
         />
         {file ? (
-          <span className="flex items-center justify-center gap-2 text-sm text-ink-secondary">
-            <span className="text-brand-green">âœ“</span>
-            <span className="truncate max-w-xs">{file.name}</span>
+          <div className="plan-file-pill">
+            <span style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", maxWidth: "220px" }}>
+              ✓ {file.name}
+            </span>
             <button
-              className="text-ink-muted hover:text-brand-red text-xs ml-1"
-              onClick={e => { e.stopPropagation(); onChange(null); }}
-            >âœ•</button>
-          </span>
+              style={{ background: "none", border: "none", color: "#B85C43", cursor: "pointer", fontSize: "1rem", lineHeight: 1 }}
+              onClick={(e) => {
+                e.stopPropagation();
+                onChange(null);
+              }}
+              type="button"
+            >
+              ×
+            </button>
+          </div>
         ) : (
           <div>
-            <p className="text-2xl mb-1">ðŸ–¼ï¸</p>
-            <p className="text-sm text-ink-secondary">Click or drag PNG / JPG / PDF / SVG here</p>
+            <div style={{ fontSize: "1.4rem", color: "#143825", marginBottom: "0.25rem" }}>📐</div>
+            <p className="plan-dropzone-label">Click or Drag Blueprint Drawing</p>
+            <p className="plan-dropzone-sub">Supports PNG, JPG, Vector SVG, or PDF</p>
           </div>
         )}
       </div>
     </div>
   );
 }
-
-
-
-

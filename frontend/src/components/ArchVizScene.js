@@ -1,3 +1,5 @@
+'use client';
+
 import React, { Suspense, useMemo } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { ContactShadows, PerspectiveCamera, OrbitControls } from '@react-three/drei';

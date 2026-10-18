@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import ModuleHeroBanner from '@/components/ui/ModuleHeroBanner';
 
 const FEEDBACK_MODULES = [
   {
@@ -12,14 +13,13 @@ const FEEDBACK_MODULES = [
     shortTitle: "Plan Analyzer",
     category: "SPATIAL & REGULATORY AUDIT",
     description: "Floor plan interpretation, room dimensioning, setbacks, and UDA compliance verification.",
-    accent: "#245D8C",
-    accentLight: "#C8DDF0",
-    accentBg: "linear-gradient(135deg, #FFFFFF 45%, #E2EEF8 100%)",
+    accent: "var(--arch-forest, #1A382B)",
+    accentLight: "rgba(20, 56, 37, 0.06)",
     status: "ACTIVE",
     formUrl: "https://docs.google.com/forms/d/e/1FAIpQLSeQE97l7m0IcbBybFpldZGTF8ovvJpwk4XZP9qvBZiNRGXY0g/viewform?usp=header",
     embedUrl: "https://docs.google.com/forms/d/e/1FAIpQLSeQE97l7m0IcbBybFpldZGTF8ovvJpwk4XZP9qvBZiNRGXY0g/viewform?embedded=true",
     icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/>
       </svg>
     )
@@ -31,14 +31,13 @@ const FEEDBACK_MODULES = [
     shortTitle: "Materials",
     category: "MCDM & ML SELECTION",
     description: "Multi-criteria material scoring, climate zone adaptation, and structural package feasibility.",
-    accent: "#1E5438",
-    accentLight: "#C6E2CD",
-    accentBg: "linear-gradient(135deg, #FFFFFF 45%, #DEEFE2 100%)",
+    accent: "var(--arch-terracotta, #B8583B)",
+    accentLight: "rgba(184, 88, 59, 0.08)",
     status: "ACTIVE",
     formUrl: "https://docs.google.com/forms/d/e/1FAIpQLSdDr5VrYMSK1rY-kMCD5LRCFD6NDlJXLA5nRAGruQrSihD5Rw/viewform?usp=publish-editor",
     embedUrl: "https://docs.google.com/forms/d/e/1FAIpQLSdDr5VrYMSK1rY-kMCD5LRCFD6NDlJXLA5nRAGruQrSihD5Rw/viewform?embedded=true",
     icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/>
       </svg>
     )
@@ -50,14 +49,13 @@ const FEEDBACK_MODULES = [
     shortTitle: "Green Assessment",
     category: "GREENSL & SUSTAINABILITY",
     description: "Sustainability benchmarking, carbon footprint analysis, and green rating pre-certification.",
-    accent: "#3E7452",
-    accentLight: "#C6E5CF",
-    accentBg: "linear-gradient(135deg, #FFFFFF 45%, #DCF2E2 100%)",
+    accent: "var(--arch-moss, #4D7C5D)",
+    accentLight: "rgba(77, 124, 93, 0.08)",
     status: "ACTIVE",
     formUrl: "https://docs.google.com/forms/d/e/1FAIpQLSc7QqG-Z1sZGVqL9zpr1HvaUvfoKNi190mfSz2z5Dpchue0Xw/viewform?usp=header",
     embedUrl: "https://docs.google.com/forms/d/e/1FAIpQLSc7QqG-Z1sZGVqL9zpr1HvaUvfoKNi190mfSz2z5Dpchue0Xw/viewform?embedded=true",
     icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 2c2.5 3 4 6.5 4 10"/><path d="M12 2C9.5 5 8 8.5 8 12"/>
       </svg>
     )
@@ -69,14 +67,13 @@ const FEEDBACK_MODULES = [
     shortTitle: "Fire Safety",
     category: "FIRE CODE VALIDATION",
     description: "Fire resistance rating, travel distance checks, egress sizing, and safety regulation validation.",
-    accent: "#C0542C",
-    accentLight: "#F2D4C7",
-    accentBg: "linear-gradient(135deg, #FFFFFF 45%, #F9E7E0 100%)",
+    accent: "#C25E2E",
+    accentLight: "rgba(194, 94, 46, 0.08)",
     status: "ACTIVE",
     formUrl: "https://docs.google.com/forms/d/e/1FAIpQLSdqeQ-Ky_TN2jfipHPoT9Y19rU4DznfM4jEaUEyWnxyXNmXrA/viewform?usp=publish-editor",
     embedUrl: "https://docs.google.com/forms/d/e/1FAIpQLSdqeQ-Ky_TN2jfipHPoT9Y19rU4DznfM4jEaUEyWnxyXNmXrA/viewform?embedded=true",
     icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
       </svg>
     )
@@ -90,67 +87,67 @@ export default function FeedbackPage() {
   const currentModule = FEEDBACK_MODULES.find(m => m.id === selectedModuleId) || FEEDBACK_MODULES[0];
 
   return (
-    <div style={{ minHeight: '100vh', background: '#E1E9E2', color: '#14221B', fontFamily: 'Inter, sans-serif' }}>
+    <div className="arch-page-canvas" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
       <Header />
 
       <main style={{
-        maxWidth: '1280px',
+        flex: 1,
+        maxWidth: '1360px',
         margin: '0 auto',
-        padding: '3.5rem 1.5rem 5rem',
+        width: '100%',
+        padding: '2.5rem 1.5rem 4rem',
         display: 'flex',
         flexDirection: 'column',
         gap: '2.5rem'
       }}>
-        {/* ═════════════════════════════════════ HERO BANNER ════ */}
-        <section style={{
-          background: 'linear-gradient(135deg, #FFFFFF 60%, #E8F1E9 100%)',
-          border: '1px solid #BDCEBF',
-          borderTop: '4px solid #1E5438',
-          borderRadius: '20px',
-          padding: '2.2rem 2.5rem',
-          boxShadow: '0 4px 18px rgba(20, 34, 27, 0.06)',
-          position: 'relative',
-          overflow: 'hidden'
-        }}>
+        <ModuleHeroBanner
+          track="05 / STAKEHOLDER & USER EVALUATION"
+          kicker="RESEARCH EVALUATION BENCHMARK"
+          title="RESEARCH FEEDBACK & ACADEMIC VALIDATION"
+          subtitle="A structured peer and stakeholder evaluation interface. Review AI recommendation quality, engineering rule feasibility, climate adaptation accuracy, and explainable decision provenance across all 4 research tracks."
+          imageSrc="/biophilic_building.jpg"
+          imageAlt="Biophilic Architecture & Evaluation Benchmarks"
+        />
+
+        {/* Research Evaluation Inquiry Pillars */}
+        <section className="arch-board-card" style={{ padding: '1.5rem 1.75rem', borderRadius: '4px', border: '1px solid #E2DCD0', background: '#FFFFFF', marginTop: '-1rem' }}>
           <div style={{
-            position: 'absolute',
-            right: '-40px',
-            top: '-40px',
-            width: '240px',
-            height: '240px',
-            background: 'radial-gradient(circle, rgba(101, 210, 138, 0.15) 0%, transparent 70%)',
-            pointerEvents: 'none'
-          }} />
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+            gap: '1rem',
+          }}>
+            <div style={{ background: '#FFFFFF', padding: '1rem 1.25rem', borderRadius: '4px', border: '1px solid #E2DCD0' }}>
+              <div style={{ fontSize: '0.68rem', letterSpacing: '0.08em', color: '#143825', fontWeight: 700, marginBottom: '4px' }}>EVALUATION CRITERION 01</div>
+              <div style={{ fontWeight: 700, fontSize: '0.92rem', color: '#143825' }}>What worked?</div>
+              <div style={{ fontSize: '0.76rem', color: '#143825', opacity: 0.65, marginTop: '4px', lineHeight: 1.4 }}>
+                Precision of room geometry extraction, setback compliance checks, and climate mapping.
+              </div>
+            </div>
 
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: '#CDE2D2', border: '1px solid rgba(30, 84, 56, 0.25)', borderRadius: '20px', padding: '4px 14px', marginBottom: '1rem' }}>
-            <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#1E5438' }} />
-            <span style={{ fontSize: '0.72rem', fontWeight: 800, color: '#1E5438', letterSpacing: '0.08em', fontFamily: 'Space Grotesk' }}>
-              STAKEHOLDER & USER EVALUATION
-            </span>
+            <div style={{ background: '#FFFFFF', padding: '1rem 1.25rem', borderRadius: '4px', border: '1px solid #E2DCD0' }}>
+              <div style={{ fontSize: '0.68rem', letterSpacing: '0.08em', color: '#143825', fontWeight: 700, marginBottom: '4px' }}>EVALUATION CRITERION 02</div>
+              <div style={{ fontWeight: 700, fontSize: '0.92rem', color: '#143825' }}>What needs improvement?</div>
+              <div style={{ fontSize: '0.76rem', color: '#143825', opacity: 0.65, marginTop: '4px', lineHeight: 1.4 }}>
+                Uncertainty handling, rare structural boundary conditions, or edge-case constraints.
+              </div>
+            </div>
+
+            <div style={{ background: '#FFFFFF', padding: '1rem 1.25rem', borderRadius: '4px', border: '1px solid #E2DCD0' }}>
+              <div style={{ fontSize: '0.68rem', letterSpacing: '0.08em', color: '#143825', fontWeight: 700, marginBottom: '4px' }}>EVALUATION CRITERION 03</div>
+              <div style={{ fontWeight: 700, fontSize: '0.92rem', color: '#143825' }}>Reasonable recommendations?</div>
+              <div style={{ fontSize: '0.76rem', color: '#143825', opacity: 0.65, marginTop: '4px', lineHeight: 1.4 }}>
+                Feasibility under Sri Lankan BSR pricing, local availability, and SLS standards.
+              </div>
+            </div>
+
+            <div style={{ background: '#FFFFFF', padding: '1rem 1.25rem', borderRadius: '4px', border: '1px solid #E2DCD0' }}>
+              <div style={{ fontSize: '0.68rem', letterSpacing: '0.08em', color: '#143825', fontWeight: 700, marginBottom: '4px' }}>EVALUATION CRITERION 04</div>
+              <div style={{ fontWeight: 700, fontSize: '0.92rem', color: '#143825' }}>Understandable reasoning?</div>
+              <div style={{ fontSize: '0.76rem', color: '#143825', opacity: 0.65, marginTop: '4px', lineHeight: 1.4 }}>
+                Clarity of multi-criteria weights, rule justification, and decision trace pipeline.
+              </div>
+            </div>
           </div>
-
-          <h1 style={{
-            fontFamily: 'Space Grotesk, sans-serif',
-            fontSize: 'clamp(1.8rem, 3.2vw, 2.4rem)',
-            fontWeight: 800,
-            color: '#14221B',
-            margin: '0 0 0.6rem',
-            letterSpacing: '-0.02em',
-            lineHeight: 1.2
-          }}>
-            GreenConstructAI User Feedback Hub
-          </h1>
-
-          <p style={{
-            fontSize: '0.92rem',
-            color: '#42554A',
-            maxWidth: '780px',
-            margin: 0,
-            lineHeight: 1.6,
-            fontWeight: 500
-          }}>
-            Select a system module below to provide targeted evaluation feedback. Each feedback form is tailored to assess AI accuracy, code compliance, decision usability, and engineering reliability.
-          </p>
         </section>
 
         {/* ═════════════════════════════════════ 4 MODULE SELECTOR CARDS ════ */}
@@ -159,21 +156,21 @@ export default function FeedbackPage() {
             display: 'flex',
             justifyContent: 'space-between',
             alignItems: 'center',
-            marginBottom: '1.2rem',
+            marginBottom: '1rem',
             flexWrap: 'wrap',
             gap: '0.5rem'
           }}>
-            <div style={{ fontSize: '0.78rem', fontWeight: 800, color: '#1E5438', letterSpacing: '0.1em', textTransform: 'uppercase', fontFamily: 'Space Grotesk' }}>
-              Select System Module to Evaluate
+            <div style={{ fontSize: '0.74rem', fontWeight: 800, color: '#143825', letterSpacing: '0.12em', textTransform: 'uppercase' }}>
+              SELECT EVALUATION TRACK
             </div>
-            <div style={{ fontSize: '0.75rem', color: '#6D8174', fontWeight: 600 }}>
-              Showing 4 Specialized Evaluation Tracks
+            <div style={{ fontSize: '0.75rem', color: '#143825', opacity: 0.6 }}>
+              04 Specialized Academic Research Modules
             </div>
           </div>
 
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
             gap: '1.25rem'
           }}>
             {FEEDBACK_MODULES.map((mod) => {
@@ -185,67 +182,42 @@ export default function FeedbackPage() {
                     setSelectedModuleId(mod.id);
                     setIframeLoading(true);
                   }}
+                  className="arch-board-card"
                   style={{
-                    background: mod.accentBg,
-                    borderTop: `4px solid ${mod.accent}`,
-                    borderRight: isSelected ? `2px solid ${mod.accent}` : '1px solid #BDCEBF',
-                    borderBottom: isSelected ? `2px solid ${mod.accent}` : '1px solid #BDCEBF',
-                    borderLeft: isSelected ? `2px solid ${mod.accent}` : '1px solid #BDCEBF',
-                    borderRadius: '16px',
-                    padding: '1.4rem',
+                    padding: '1.5rem',
                     cursor: 'pointer',
-                    position: 'relative',
-                    boxShadow: isSelected
-                      ? `0 8px 24px rgba(20, 34, 27, 0.12), 0 0 0 3px ${mod.accentLight}`
-                      : '0 3px 12px rgba(20, 34, 27, 0.05)',
-                    transform: isSelected ? 'translateY(-3px)' : 'none',
-                    transition: 'all 0.22s ease',
+                    background: isSelected ? '#FFFFFF' : '#FAF7F0',
+                    borderColor: isSelected ? '#143825' : '#E2DCD0',
+                    boxShadow: isSelected ? '0 8px 24px rgba(20, 56, 37, 0.06)' : '0 2px 8px rgba(0,0,0,0.03)',
+                    transform: isSelected ? 'translateY(-2px)' : 'none',
+                    transition: 'all 0.2s ease',
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'space-between',
-                    minHeight: '220px'
+                    minHeight: '210px'
                   }}
                 >
                   <div>
-                    {/* Header Row */}
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.9rem' }}>
-                      <div style={{
-                        width: '42px',
-                        height: '42px',
-                        borderRadius: '10px',
-                        background: mod.accent,
-                        color: '#FFFFFF',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        boxShadow: `0 3px 10px rgba(0,0,0,0.15)`
-                      }}>
-                        {mod.icon}
-                      </div>
-
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
+                      <span className="arch-tag" style={{ background: isSelected ? 'rgba(20, 56, 37, 0.06)' : 'transparent' }}>
+                        TRACK {mod.num}
+                      </span>
                       <span style={{
-                        fontSize: '0.65rem',
-                        fontWeight: 800,
-                        padding: '3px 10px',
-                        borderRadius: '20px',
-                        background: mod.status === 'ACTIVE' ? mod.accentLight : '#E8F1E9',
-                        color: mod.status === 'ACTIVE' ? mod.accent : '#6D8174',
-                        border: `1px solid ${mod.status === 'ACTIVE' ? mod.accent : '#BDCEBF'}`,
-                        fontFamily: 'Space Grotesk'
+                        fontSize: '0.68rem',
+                        fontWeight: 700,
+                        color: isSelected ? 'var(--arch-forest)' : 'var(--arch-charcoal)',
+                        opacity: isSelected ? 1 : 0.6,
+                        letterSpacing: '0.04em'
                       }}>
-                        ● {mod.status}
+                        {mod.category}
                       </span>
                     </div>
 
-                    <div style={{ fontSize: '0.68rem', fontWeight: 800, color: mod.accent, letterSpacing: '0.08em', fontFamily: 'Space Grotesk', marginBottom: '0.2rem' }}>
-                      MODULE {mod.num}
-                    </div>
-
                     <h3 style={{
-                      fontFamily: 'Space Grotesk, sans-serif',
-                      fontSize: '1rem',
-                      fontWeight: 800,
-                      color: '#14221B',
+                      fontFamily: "'Outfit', 'Space Grotesk', sans-serif",
+                      fontSize: '1.15rem',
+                      fontWeight: 600,
+                      color: '#143825',
                       margin: '0 0 0.5rem',
                       lineHeight: 1.25
                     }}>
@@ -253,30 +225,29 @@ export default function FeedbackPage() {
                     </h3>
 
                     <p style={{
-                      fontSize: '0.78rem',
-                      color: '#42554A',
+                      fontSize: '0.82rem',
+                      color: '#143825',
+                      opacity: 0.72,
                       lineHeight: 1.5,
-                      margin: 0,
-                      fontWeight: 500
+                      margin: 0
                     }}>
                       {mod.description}
                     </p>
                   </div>
 
-                  {/* Select Indicator */}
                   <div style={{
-                    marginTop: '1.2rem',
+                    marginTop: '1.25rem',
                     paddingTop: '0.75rem',
-                    borderTop: '1px solid rgba(0,0,0,0.06)',
+                    borderTop: '1px solid #E2DCD0',
                     display: 'flex',
                     justifyContent: 'space-between',
                     alignItems: 'center',
                     fontSize: '0.75rem',
-                    fontWeight: 800,
-                    color: mod.accent,
-                    fontFamily: 'Space Grotesk'
+                    fontWeight: 700,
+                    color: isSelected ? 'var(--arch-forest)' : 'var(--arch-charcoal)',
+                    letterSpacing: '0.06em'
                   }}>
-                    <span>{isSelected ? '✓ SELECTED MODULE' : 'CLICK TO EVALUATE'}</span>
+                    <span>{isSelected ? '● ACTIVE WORKSHEET' : 'SELECT TRACK'}</span>
                     <span>→</span>
                   </div>
                 </div>
@@ -286,19 +257,12 @@ export default function FeedbackPage() {
         </section>
 
         {/* ═════════════════════════════════════ ACTIVE FORM CONTAINER ════ */}
-        <section style={{
-          background: '#FFFFFF',
-          border: `1px solid #BDCEBF`,
-          borderTop: `4px solid ${currentModule.accent}`,
-          borderRadius: '20px',
-          overflow: 'hidden',
-          boxShadow: '0 6px 24px rgba(20, 34, 27, 0.07)'
-        }}>
+        <section className="arch-board-card" style={{ padding: 0, overflow: 'hidden' }}>
           {/* Header Strip */}
           <div style={{
-            padding: '1.6rem 2rem',
-            background: 'linear-gradient(180deg, #F8FAF9 0%, #EEF4F0 100%)',
-            borderBottom: '1px solid #BDCEBF',
+            padding: '1.4rem 2rem',
+            background: '#FFFFFF',
+            borderBottom: '1px solid #E2DCD0',
             display: 'flex',
             justifyContent: 'space-between',
             alignItems: 'center',
@@ -307,30 +271,20 @@ export default function FeedbackPage() {
           }}>
             <div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '0.35rem' }}>
-                <span style={{
-                  background: currentModule.accentLight,
-                  color: currentModule.accent,
-                  borderRadius: '6px',
-                  padding: '2px 8px',
-                  fontSize: '0.68rem',
-                  fontWeight: 800,
-                  fontFamily: 'Space Grotesk'
-                }}>
-                  MODULE {currentModule.num}
-                </span>
-                <span style={{ fontSize: '0.72rem', color: '#6D8174', fontWeight: 700, textTransform: 'uppercase', fontFamily: 'Space Grotesk' }}>
+                <span className="arch-tag">TRACK {currentModule.num}</span>
+                <span style={{ fontSize: '0.72rem', color: '#143825', opacity: 0.6, letterSpacing: '0.06em' }}>
                   {currentModule.category}
                 </span>
               </div>
 
               <h2 style={{
-                fontFamily: 'Space Grotesk, sans-serif',
-                fontSize: '1.25rem',
-                fontWeight: 800,
-                color: '#14221B',
+                fontFamily: "'Outfit', 'Space Grotesk', sans-serif",
+                fontSize: '1.35rem',
+                fontWeight: 600,
+                color: '#143825',
                 margin: 0
               }}>
-                {currentModule.title} — Evaluation Form
+                {currentModule.title} — Evaluation Worksheet
               </h2>
             </div>
 
@@ -340,32 +294,25 @@ export default function FeedbackPage() {
                 href={currentModule.formUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                className="arch-action-btn"
                 style={{
-                  background: currentModule.accent,
-                  color: '#FFFFFF',
-                  border: 'none',
-                  borderRadius: '10px',
-                  padding: '0.75rem 1.4rem',
-                  fontFamily: 'Space Grotesk',
-                  fontWeight: 700,
+                  padding: '0.65rem 1.25rem',
                   fontSize: '0.82rem',
                   textDecoration: 'none',
                   display: 'inline-flex',
                   alignItems: 'center',
-                  gap: '6px',
-                  boxShadow: '0 4px 14px rgba(0,0,0,0.15)',
-                  transition: 'all 0.2s ease'
+                  gap: '6px'
                 }}
               >
-                Open in Google Forms
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                Open Google Form In New Tab
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
               </a>
             ) : null}
           </div>
 
           {/* Form Viewer Body */}
           {currentModule.embedUrl ? (
-            <div style={{ position: 'relative', minHeight: '820px', background: '#FFFFFF' }}>
+            <div style={{ position: 'relative', minHeight: '840px', background: '#FAF7F0' }}>
               {iframeLoading && (
                 <div style={{
                   position: 'absolute',
@@ -374,13 +321,21 @@ export default function FeedbackPage() {
                   flexDirection: 'column',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  background: '#FFFFFF',
+                  background: '#FAF7F0',
                   zIndex: 5,
                   gap: '1rem'
                 }}>
-                  <div className="spinner" style={{ borderTopColor: currentModule.accent }} />
-                  <div style={{ fontSize: '0.88rem', color: '#42554A', fontWeight: 600, fontFamily: 'Space Grotesk' }}>
-                    Loading {currentModule.title} Feedback Form…
+                  <div style={{
+                    width: '32px',
+                    height: '32px',
+                    border: '3px solid rgba(26, 56, 43, 0.15)',
+                    borderTopColor: '#143825',
+                    borderRadius: '50%',
+                    animation: 'spin 0.8s linear infinite'
+                  }} />
+                  <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
+                  <div style={{ fontSize: '0.85rem', color: '#143825', fontWeight: 600 }}>
+                    Loading {currentModule.title} Form…
                   </div>
                 </div>
               )}
@@ -388,11 +343,11 @@ export default function FeedbackPage() {
               <iframe
                 src={currentModule.embedUrl}
                 width="100%"
-                height="900"
+                height="920"
                 frameBorder="0"
                 marginHeight="0"
                 marginWidth="0"
-                style={{ display: 'block', border: 'none' }}
+                style={{ display: 'block', border: 'none', background: '#FFFFFF' }}
                 title={`${currentModule.title} User Feedback`}
                 onLoad={() => setIframeLoading(false)}
               >
@@ -400,7 +355,6 @@ export default function FeedbackPage() {
               </iframe>
             </div>
           ) : (
-            /* Coming Soon Placeholder for modules 2, 3, 4 */
             <div style={{
               padding: '5rem 2rem',
               display: 'flex',
@@ -408,15 +362,14 @@ export default function FeedbackPage() {
               alignItems: 'center',
               justifyContent: 'center',
               textAlign: 'center',
-              gap: '1.2rem',
-              background: '#FFFFFF'
+              gap: '1rem'
             }}>
               <div style={{
-                width: '64px',
-                height: '64px',
-                borderRadius: '16px',
-                background: currentModule.accentLight,
-                color: currentModule.accent,
+                width: '56px',
+                height: '56px',
+                borderRadius: '8px',
+                background: 'rgba(20, 56, 37, 0.06)',
+                color: '#143825',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center'
@@ -425,11 +378,11 @@ export default function FeedbackPage() {
               </div>
 
               <div style={{ maxWidth: '460px' }}>
-                <h3 style={{ fontFamily: 'Space Grotesk', fontSize: '1.2rem', fontWeight: 800, color: '#14221B', marginBottom: '0.5rem' }}>
-                  {currentModule.title} Form Integration Ready
+                <h3 style={{ fontFamily: "'Outfit', 'Space Grotesk', sans-serif", fontSize: '1.2rem', fontWeight: 600, color: '#143825', marginBottom: '0.5rem' }}>
+                  {currentModule.title} Worksheet Ready
                 </h3>
-                <p style={{ fontSize: '0.86rem', color: '#42554A', lineHeight: 1.6, margin: 0 }}>
-                  The dedicated evaluation form for <strong>Module {currentModule.num}</strong> is ready to be linked. Provide the Google Form URL and it will appear here automatically.
+                <p style={{ fontSize: '0.86rem', color: '#143825', opacity: 0.7, lineHeight: 1.6, margin: 0 }}>
+                  The dedicated research evaluation form for Track {currentModule.num} is configured and ready for responses.
                 </p>
               </div>
             </div>

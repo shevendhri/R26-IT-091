@@ -63,8 +63,10 @@ function MaterialSlot({ component, material }) {
   return (
     <div style={{
       background: "#FFFFFF",
-      border: "1px solid #C4CFC6",
       borderTop: "3px solid #1E5438",
+      borderRight: "1px solid #C4CFC6",
+      borderBottom: "1px solid #C4CFC6",
+      borderLeft: "1px solid #C4CFC6",
       borderRadius: 12, padding: "18px 20px",
       boxShadow: "0 2px 10px rgba(24,37,31,0.04)"
     }}>

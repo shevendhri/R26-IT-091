@@ -104,10 +104,16 @@ export default function BlueprintPanel({ data }) {
           </p>
         </div>
 
-        <Link href="/materials/3d" className="btn-secondary" style={{ padding: '0.55rem 1.1rem', fontSize: '0.78rem', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
-          Launch Interactive 3D Model
-        </Link>
+        <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+          <Link href="/visualization" className="btn-primary" style={{ padding: '0.55rem 1.1rem', fontSize: '0.8rem', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '6px', background: 'linear-gradient(135deg, #245C43, #18251F)', color: '#FFFFFF', borderRadius: '8px', fontWeight: 700, boxShadow: '0 2px 8px rgba(36, 92, 67, 0.25)' }}>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+            Launch Villa 3D Model (Viva Showcase)
+          </Link>
+          <Link href="/materials/3d" className="btn-secondary" style={{ padding: '0.55rem 1rem', fontSize: '0.78rem', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
+            Procedural 3D
+          </Link>
+        </div>
       </div>
 
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '1.25rem' }}>
@@ -262,7 +268,7 @@ export default function BlueprintPanel({ data }) {
       {/* Conceptual Disclaimer Banner */}
       <div style={{ background: '#F7F9F6', border: '1px solid #C8D3CA', borderRadius: '10px', padding: '0.75rem 1rem', fontSize: '0.78rem', color: '#526158', display: 'flex', alignItems: 'center', gap: '0.6rem', fontWeight: 500 }}>
         <span style={{ color: '#245C43', fontSize: '0.95rem', fontWeight: 800 }}>ℹ</span>
-        <span>{bp.disclaimer || "GreenConstructAI Conceptual Planning Engine — Provides preliminary architectural spatial zoning, room program sizing, and environmental layout analysis."}</span>
+        <span>{bp.disclaimer || "GreenConstruct AI Conceptual Planning Engine — Provides preliminary architectural spatial zoning, room program sizing, and environmental layout analysis."}</span>
       </div>
 
       {/* Collapsible Raw Blueprint Payload Viewer */}

@@ -8,9 +8,9 @@ export default function LoadingOverlay({ step }) {
         position: 'fixed',
         inset: 0,
         zIndex: 5000,
-        background: 'rgba(240, 242, 238, 0.96)',
-        backdropFilter: 'blur(24px)',
-        WebkitBackdropFilter: 'blur(24px)',
+        background: 'rgba(245, 241, 232, 0.94)',
+        backdropFilter: 'blur(20px)',
+        WebkitBackdropFilter: 'blur(20px)',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -19,139 +19,149 @@ export default function LoadingOverlay({ step }) {
       }}
     >
       <style>{`
-        @keyframes archPulse {
-          0%, 100% { transform: scale(1); opacity: 0.8; }
-          50% { transform: scale(1.08); opacity: 1; }
-        }
         @keyframes archSpin {
           0% { transform: rotate(0deg); }
           100% { transform: rotate(360deg); }
+        }
+        @keyframes shimmerBar {
+          0% { transform: translateX(-100%); }
+          100% { transform: translateX(200%); }
         }
       `}</style>
 
       {/* Architectural Card Container */}
       <div style={{
         background: '#FFFFFF',
-        border: '1px solid #C4CFC6',
-        borderRadius: '24px',
+        border: '1px solid #D8D1C5',
+        borderTop: '4px solid #173A2B',
+        borderRadius: '16px',
         padding: '3rem 3.5rem',
-        boxShadow: '0 20px 50px rgba(24, 37, 31, 0.08), 0 4px 12px rgba(24, 37, 31, 0.04)',
+        boxShadow: '0 20px 60px rgba(23, 58, 43, 0.08), 0 4px 16px rgba(0, 0, 0, 0.04)',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
         gap: '2rem',
         maxWidth: '520px',
         width: '100%',
-        textAlign: 'center'
+        textAlign: 'center',
+        position: 'relative',
+        overflow: 'hidden',
       }}>
         {/* Animated Architectural Core Indicator */}
         <div style={{
           position: 'relative',
-          width: '90px',
-          height: '90px',
+          width: '88px',
+          height: '88px',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center'
         }}>
+          {/* Outer ring */}
           <div style={{
             position: 'absolute',
             inset: 0,
             borderRadius: '50%',
-            border: '3px solid #E6EBE4',
-            borderTopColor: '#1E5438',
+            border: '3px solid #EFECE4',
+            borderTopColor: '#173A2B',
             animation: 'archSpin 1.4s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite'
           }} />
+          {/* Inner dashed ring */}
           <div style={{
             position: 'absolute',
             inset: '8px',
             borderRadius: '50%',
-            border: '2px dashed #C4CFC6',
-            borderRightColor: '#4A7A5C',
+            border: '2px dashed #D8D1C5',
+            borderRightColor: '#9A7557',
             animation: 'archSpin 3s linear infinite reverse'
           }} />
+          {/* Center icon badge */}
           <div style={{
-            width: '54px',
-            height: '54px',
-            borderRadius: '16px',
-            background: 'linear-gradient(135deg, #1E5438, #132E1F)',
+            width: '50px',
+            height: '50px',
+            borderRadius: '12px',
+            background: '#FBF9F4',
+            border: '1px solid #D8D1C5',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            color: '#FFFFFF',
-            boxShadow: '0 4px 16px rgba(30, 84, 56, 0.28)',
-            animation: 'archPulse 2s ease-in-out infinite'
+            color: '#173A2B',
+            boxShadow: '0 2px 8px rgba(23, 58, 43, 0.06)',
           }}>
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#65D28A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#173A2B" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
             </svg>
           </div>
         </div>
 
         <div>
-          {/* Badge */}
+          {/* Monograph Badge */}
           <div
             style={{
               display: 'inline-flex',
               alignItems: 'center',
               gap: '6px',
-              background: '#DCE9DC',
-              border: '1px solid rgba(30, 84, 56, 0.25)',
+              background: '#ECFDF5',
+              border: '1px solid #A7F3D0',
               borderRadius: '20px',
               padding: '4px 14px',
-              fontSize: '0.65rem',
+              fontSize: '0.70rem',
               fontWeight: 800,
-              color: '#1E5438',
-              letterSpacing: '2px',
+              color: '#065F46',
+              letterSpacing: '0.08em',
               textTransform: 'uppercase',
               marginBottom: '1rem',
               fontFamily: 'Space Grotesk, sans-serif'
             }}
           >
-            <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#1E5438' }} />
-            MCDM Decision Matrix
+            <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#059669' }} />
+            MCDM Decision Matrix Engine
           </div>
 
           {/* Current Step Title */}
           <div
             style={{
-              fontSize: '1.25rem',
+              fontSize: '1.40rem',
               fontWeight: 800,
-              color: '#18251F',
-              fontFamily: 'Space Grotesk, sans-serif',
+              color: '#0F172A',
+              fontFamily: 'Outfit, Space Grotesk, sans-serif',
               letterSpacing: '-0.01em',
               lineHeight: 1.3,
-              marginBottom: '0.6rem'
+              marginBottom: '0.5rem'
             }}
           >
-            {step}...
+            {step}…
           </div>
 
           {/* Subtitle */}
           <div style={{
-            fontSize: '0.78rem',
-            color: '#4A5E52',
+            fontSize: '0.84rem',
+            color: '#64748B',
             fontWeight: 500,
-            fontFamily: 'Inter, sans-serif'
+            fontFamily: 'Inter, sans-serif',
+            lineHeight: 1.5,
           }}>
-            Evaluating multi-objective geoclimatic criteria and ML hybrid rankings
+            Synthesizing Sri Lankan geoclimatic constraints, SLS engineering rules, and Random Forest rankings.
           </div>
         </div>
 
-        {/* Progress Bar Line */}
+        {/* Architectural Progress Bar Line */}
         <div style={{
           width: '100%',
-          height: '5px',
-          background: '#E6EBE4',
+          height: '6px',
+          background: '#E2E8F0',
           borderRadius: '10px',
           overflow: 'hidden',
           position: 'relative'
         }}>
           <div style={{
-            width: '60%',
-            height: '100%',
-            background: 'linear-gradient(90deg, #1E5438, #65D28A)',
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            bottom: 0,
+            width: '50%',
+            background: 'linear-gradient(90deg, transparent, #173A2B, #9A7557, transparent)',
             borderRadius: '10px',
-            animation: 'archPulse 1.5s ease-in-out infinite'
+            animation: 'shimmerBar 1.8s ease-in-out infinite',
           }} />
         </div>
       </div>

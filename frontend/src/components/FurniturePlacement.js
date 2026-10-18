@@ -281,6 +281,68 @@ export function getFurniturePlacement(roomType, w, h, buildingRequirements = {},
       placed.push({ name: "storage_rack", pos: [w / 4, 0, h / 4], rot: [0, 0, 0], scale: [scaleFactor, scaleFactor, scaleFactor] });
       break;
 
+    case "Classroom":
+      // Teaching board at front wall
+      placed.push({
+        name: "whiteboard",
+        pos: [0, 0.9, -h / 2 + 0.08],
+        rot: [0, 0, 0],
+        scale: [scaleFactor * 1.1, scaleFactor, scaleFactor]
+      });
+      // Student / instructor desk layout
+      placed.push({
+        name: "office_desk",
+        pos: [0, 0, 0],
+        rot: [0, 0, 0],
+        scale: [scaleFactor, scaleFactor, scaleFactor]
+      });
+      placed.push({
+        name: "office_chair",
+        pos: [0, 0, 0.45 * scaleFactor],
+        rot: [0, Math.PI, 0],
+        scale: [scaleFactor, scaleFactor, scaleFactor]
+      });
+      break;
+
+    case "Healthcare":
+      // Medical examination bed
+      placed.push({
+        name: "bed",
+        pos: [-w / 3.5, 0, 0],
+        rot: [0, 0, 0],
+        scale: [scaleFactor * 0.9, scaleFactor, scaleFactor * 0.9]
+      });
+      // Consultation station
+      placed.push({
+        name: "office_desk",
+        pos: [w / 3.5, 0, -h / 4],
+        rot: [0, 0, 0],
+        scale: [scaleFactor * 0.85, scaleFactor, scaleFactor * 0.85]
+      });
+      placed.push({
+        name: "office_chair",
+        pos: [w / 3.5, 0, -h / 4 + 0.4 * scaleFactor],
+        rot: [0, Math.PI, 0],
+        scale: [scaleFactor * 0.85, scaleFactor, scaleFactor * 0.85]
+      });
+      break;
+
+    case "ProductionArea":
+      // Workstation desk and storage rack zone
+      placed.push({
+        name: "office_desk",
+        pos: [-w / 4, 0, 0],
+        rot: [0, 0, 0],
+        scale: [scaleFactor, scaleFactor, scaleFactor]
+      });
+      placed.push({
+        name: "storage_rack",
+        pos: [w / 3, 0, 0],
+        rot: [0, Math.PI / 2, 0],
+        scale: [scaleFactor, scaleFactor, scaleFactor]
+      });
+      break;
+
     default:
       // Fallback placement: just place a small desk and chair in center
       if (finalItems.includes("office_desk")) {
