@@ -66,32 +66,53 @@ export default function PlanAnalyzer() {
 
   const analyzedFloors = floors.filter(f => f.result);
 
-  const totals = analyzedFloors.reduce((acc, f) => {
+  // Compute totals. If the model returns per-room `*_ids`, use those to
+  // deduplicate shared features (walls/windows/doors) across rooms; otherwise
+  // fall back to top-level counts or per-room numeric sums.
+  const totals = { rooms: 0, doors: 0, windows: 0, walls: 0 };
+  const doorSet = new Set();
+  const windowSet = new Set();
+  const wallSet = new Set();
+
+  analyzedFloors.forEach((f, fi) => {
     const c = f.result?.data?.counts || {};
     const rooms = f.result?.rooms || f.result?.data?.rooms || [];
-    acc.rooms += c.room ?? rooms.length;
-    acc.doors += c.door ?? 0;
-    acc.windows += c.window ?? 0;
-    acc.walls += c.wall ?? 0;
+    totals.rooms += (c.room ?? rooms.length);
+
+    if (rooms.length > 0 && (rooms[0].door_ids || rooms[0].window_ids || rooms[0].wall_ids)) {
+      // Use id lists and prefix with floor index to keep ids unique across floors
+      rooms.forEach((r) => {
+        (r.door_ids || []).forEach(id => doorSet.add(`${fi}:${id}`));
+        (r.window_ids || []).forEach(id => windowSet.add(`${fi}:${id}`));
+        (r.wall_ids || []).forEach(id => wallSet.add(`${fi}:${id}`));
+      });
+    } else {
+      // Fall back to provided counts or numeric per-room sums
+      const doorCount = (typeof c.door === 'number') ? c.door : rooms.reduce((s, r) => s + (r.doors || 0), 0);
+      const windowCount = (typeof c.window === 'number') ? c.window : rooms.reduce((s, r) => s + (r.windows || 0), 0);
+      const wallCount = (typeof c.wall === 'number') ? c.wall : rooms.reduce((s, r) => s + (r.walls || 0), 0);
+      totals.doors += doorCount;
+      totals.windows += windowCount;
+      totals.walls += wallCount;
+    }
 
     // Aggregate area if provided by backend
     rooms.forEach(r => {
-      if (r.area) acc.totalRoomArea += parseFloat(r.area) || 0;
+      if (r.area) totals.totalRoomArea += parseFloat(r.area) || 0;
     });
 
     const geom = f.result?.geometry || f.result?.data?.geometry || {};
-    if (geom.wall_area) acc.wallArea += parseFloat(geom.wall_area) || 0;
-    if (geom.window_area) acc.windowArea += parseFloat(geom.window_area) || 0;
-    if (geom.door_area) acc.doorArea += parseFloat(geom.door_area) || 0;
-    if (geom.concrete_volume) acc.concreteVolume += parseFloat(geom.concrete_volume) || 0;
-    if (geom.foundation_volume) acc.foundationVolume += parseFloat(geom.foundation_volume) || 0;
-
-    return acc;
-  }, {
-    rooms: 0, doors: 0, windows: 0, walls: 0,
-    totalRoomArea: 0, wallArea: 0, windowArea: 0, doorArea: 0,
-    concreteVolume: 0, foundationVolume: 0
+    if (geom.wall_area) totals.wallArea += parseFloat(geom.wall_area) || 0;
+    if (geom.window_area) totals.windowArea += parseFloat(geom.window_area) || 0;
+    if (geom.door_area) totals.doorArea += parseFloat(geom.door_area) || 0;
+    if (geom.concrete_volume) totals.concreteVolume += parseFloat(geom.concrete_volume) || 0;
+    if (geom.foundation_volume) totals.foundationVolume += parseFloat(geom.foundation_volume) || 0;
   });
+
+  // If sets were populated, use their sizes as the totals
+  if (doorSet.size > 0) totals.doors = doorSet.size;
+  if (windowSet.size > 0) totals.windows = windowSet.size;
+  if (wallSet.size > 0) totals.walls = wallSet.size;
 
   // Calculate opening ratio safely from actual data
   const totalOpeningArea = totals.windowArea + totals.doorArea;
@@ -117,23 +138,51 @@ export default function PlanAnalyzer() {
           imageSrc="/blueprint_desk.png"
           imageAlt="Architectural CAD Blueprint Desk"
           actions={
-            <Link
-              href="/visualization"
-              style={{
-                background: '#143825',
-                color: '#FCFAF6',
-                padding: '0.75rem 1.4rem',
-                fontFamily: 'Space Grotesk, sans-serif',
-                fontSize: '0.74rem',
-                fontWeight: 700,
-                letterSpacing: '0.08em',
-                textTransform: 'uppercase',
-                textDecoration: 'none',
-                borderRadius: '4px',
-              }}
-            >
-              Open 3D Model Room →
-            </Link>
+            <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
+              <Link
+                href="/visualization"
+                style={{
+                  background: '#143825',
+                  color: '#FCFAF6',
+                  padding: '0.75rem 1.4rem',
+                  fontFamily: 'Space Grotesk, sans-serif',
+                  fontSize: '0.74rem',
+                  fontWeight: 700,
+                  letterSpacing: '0.08em',
+                  textTransform: 'uppercase',
+                  textDecoration: 'none',
+                  borderRadius: '4px',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.5rem',
+                }}
+              >
+                <span>Open 3D Model Room</span>
+                <span>→</span>
+              </Link>
+              <Link
+                href="/plan-analyzer/uda-rules"
+                style={{
+                  background: 'transparent',
+                  color: '#143825',
+                  border: '1px solid rgba(20, 56, 37, 0.3)',
+                  padding: '0.75rem 1.4rem',
+                  fontFamily: 'Space Grotesk, sans-serif',
+                  fontSize: '0.74rem',
+                  fontWeight: 700,
+                  letterSpacing: '0.08em',
+                  textTransform: 'uppercase',
+                  textDecoration: 'none',
+                  borderRadius: '4px',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.5rem',
+                }}
+              >
+                <span>UDA Regulations</span>
+                <span>📋</span>
+              </Link>
+            </div>
           }
         />
 

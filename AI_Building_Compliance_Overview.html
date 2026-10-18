@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI-Based Automated Floor Plan Analysis and Building-Regulation Compliance Checking</title>
+  <style>
+    :root {
+      --navy: #0F172A;
+      --blue: #1D4ED8;
+      --teal: #0F766E;
+      --green: #15803D;
+      --amber: #B45309;
+      --gray: #475569;
+      --light: #F8FAFC;
+      --line: #CBD5E1;
+      --card: #FFFFFF;
+      --soft: #E2E8F0;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #eef2f7;
+      color: var(--navy);
+    }
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto;
+      background: white;
+      padding: 14mm 16mm;
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.12);
+    }
+    h1 {
+      margin: 0 0 6px 0;
+      font-size: 24px;
+      color: var(--navy);
+      line-height: 1.2;
+    }
+    h2 {
+      margin: 20px 0 10px 0;
+      font-size: 17px;
+      color: var(--blue);
+      border-bottom: 2px solid var(--soft);
+      padding-bottom: 6px;
+    }
+    h3 { font-size: 13px; margin: 10px 0 7px; color: var(--teal); }
+    p, li {
+      font-size: 11.5px;
+      line-height: 1.5;
+      margin: 5px 0;
+    }
+    .subtitle {
+      font-size: 12px;
+      color: var(--gray);
+      margin-bottom: 14px;
+      font-weight: bold;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 12px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 10px 12px;
+    }
+    ul {
+      margin: 6px 0 0 18px;
+      padding: 0;
+    }
+    .highlight {
+      background: #eaf5ff;
+      border-left: 4px solid var(--blue);
+      padding: 8px 10px;
+      border-radius: 5px;
+      font-weight: bold;
+      font-size: 12px;
+    }
+    .diagram {
+      margin-top: 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 10px;
+      background: #fbfdff;
+    }
+    .diagram svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .legend {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      font-size: 10px;
+      margin-top: 8px;
+      color: var(--gray);
+    }
+    .dot {
+      width: 10px;
+      height: 10px;
+      display: inline-block;
+      border-radius: 3px;
+      margin-right: 5px;
+      vertical-align: middle;
+    }
+    .table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+      font-size: 10.7px;
+    }
+    th, td {
+      border: 1px solid var(--line);
+      padding: 7px 6px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th { background: #f1f5f9; color: var(--navy); }
+    .section { page-break-inside: avoid; }
+    .small { font-size: 10px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="section">
+      <h1>AI-Based Automated Floor Plan Analysis and Building-Regulation Compliance Checking for Sri Lankan Local Government Authorities</h1>
+      <div class="subtitle">Intelligent plan review, rule-checking, and design advisory system for Sri Lankan building approval workflows</div>
+
+      <div class="highlight">
+        This component supports early-stage building-plan review by combining AI-based blueprint analysis, engineering validation, climate-aware recommendations, and regulatory compliance assessment for local authority decision-making.
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Problem Addressed</h3>
+          <p>Manual building-plan review is time-consuming, inconsistent, and vulnerable to oversight in screening and preliminary compliance checks.</p>
+          <ul>
+            <li>Slow approval workflows for local authorities</li>
+            <li>Difficulty in reviewing spatial feasibility and room adequacy</li>
+            <li>Limited standardization in preliminary compliance checks</li>
+            <li>Need for climate- and safety-aware plan assessment</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Proposed Solution</h3>
+          <p>An AI-assisted digital review assistant that interprets uploaded floor plans and evaluates them against structural, occupancy, and engineering logic before senior human review.</p>
+          <ul>
+            <li>Computer vision-based blueprint interpretation</li>
+            <li>Rule-based validation of density and adequacy</li>
+            <li>Climate-sensitive material recommendations</li>
+            <li>Explainable review feedback for authorities</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>1. System Overview</h2>
+      <p>The platform accepts a floor plan image and associated building profile, analyzes the spatial arrangement, and then evaluates the design against engineering constraints and regulatory-oriented heuristics. It provides review warnings, suggested improvements, and material recommendations.</p>
+
+      <div class="diagram">
+        <svg viewBox="0 0 760 260" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+              <path d="M0,0 L0,6 L9,3 z" fill="#475569" />
+            </marker>
+          </defs>
+
+          <rect x="20" y="80" width="120" height="70" rx="10" fill="#DBEAFE" stroke="#1D4ED8" />
+          <text x="80" y="110" font-size="13" text-anchor="middle" fill="#0F172A" font-weight="bold">Floor Plan</text>
+          <text x="80" y="130" font-size="11" text-anchor="middle" fill="#0F172A">Image + Profile</text>
+
+          <line x1="140" y1="115" x2="190" y2="115" stroke="#475569" stroke-width="2" marker-end="url(#arrow)" />
+
+          <rect x="190" y="80" width="140" height="70" rx="10" fill="#D1FAE5" stroke="#15803D" />
+          <text x="260" y="105" font-size="12" text-anchor="middle" fill="#0F172A" font-weight="bold">Vision Analysis</text>
+          <text x="260" y="124" font-size="11" text-anchor="middle" fill="#0F172A">Contours, layout</text>
+          <text x="260" y="139" font-size="11" text-anchor="middle" fill="#0F172A">and room detection</text>
+
+          <line x1="330" y1="115" x2="390" y2="115" stroke="#475569" stroke-width="2" marker-end="url(#arrow)" />
+
+          <rect x="390" y="80" width="150" height="70" rx="10" fill="#E0F2FE" stroke="#0EA5E9" />
+          <text x="465" y="106" font-size="12" text-anchor="middle" fill="#0F172A" font-weight="bold">Validation Engine</text>
+          <text x="465" y="125" font-size="11" text-anchor="middle" fill="#0F172A">Density, adequacy,</text>
+          <text x="465" y="140" font-size="11" text-anchor="middle" fill="#0F172A">safety checks</text>
+
+          <line x1="540" y1="115" x2="600" y2="115" stroke="#475569" stroke-width="2" marker-end="url(#arrow)" />
+
+          <rect x="600" y="80" width="135" height="70" rx="10" fill="#FDE68A" stroke="#B45309" />
+          <text x="667" y="108" font-size="12" text-anchor="middle" fill="#0F172A" font-weight="bold">Review Output</text>
+          <text x="667" y="126" font-size="11" text-anchor="middle" fill="#0F172A">Warnings, scores,</text>
+          <text x="667" y="141" font-size="11" text-anchor="middle" fill="#0F172A">recommendations</text>
+
+          <rect x="110" y="180" width="180" height="52" rx="8" fill="#E2E8F0" stroke="#475569" />
+          <text x="200" y="203" font-size="12" text-anchor="middle" fill="#0F172A" font-weight="bold">Building Type</text>
+          <text x="200" y="219" font-size="11" text-anchor="middle" fill="#0F172A">Residential / Commercial / Industrial</text>
+
+          <rect x="320" y="180" width="150" height="52" rx="8" fill="#E2E8F0" stroke="#475569" />
+          <text x="395" y="203" font-size="12" text-anchor="middle" fill="#0F172A" font-weight="bold">Climate Profile</text>
+          <text x="395" y="219" font-size="11" text-anchor="middle" fill="#0F172A">Coastal / Wet / Highland</text>
+
+          <rect x="500" y="180" width="155" height="52" rx="8" fill="#E2E8F0" stroke="#475569" />
+          <text x="577" y="203" font-size="12" text-anchor="middle" fill="#0F172A" font-weight="bold">Compliance View</text>
+          <text x="577" y="219" font-size="11" text-anchor="middle" fill="#0F172A">Engineer-ready summary</text>
+        </svg>
+      </div>
+
+      <div class="legend">
+        <span><span class="dot" style="background:#DBEAFE"></span>Input</span>
+        <span><span class="dot" style="background:#D1FAE5"></span>AI analysis</span>
+        <span><span class="dot" style="background:#E0F2FE"></span>Validation</span>
+        <span><span class="dot" style="background:#FDE68A"></span>Output</span>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>2. Functional Modules</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Module</th>
+            <th>Purpose</th>
+            <th>Key Functionality</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Blueprint Vision Engine</td>
+            <td>Interprets plan images</td>
+            <td>Contour extraction, room identification, structural and circulation observations</td>
+          </tr>
+          <tr>
+            <td>Validation Engine</td>
+            <td>Checks practical adequacy</td>
+            <td>Bedroom area, occupancy load, bathroom ratio, density and safety warnings</td>
+          </tr>
+          <tr>
+            <td>Constraint Engine</td>
+            <td>Evaluates engineering suitability</td>
+            <td>Structural safety, climate compatibility, SLS-related rule checks, veto logic</td>
+          </tr>
+          <tr>
+            <td>Blueprint Engine</td>
+            <td>Generates layouts and zoning</td>
+            <td>Room placement, circulation mapping, spatial adjacency logic</td>
+          </tr>
+          <tr>
+            <td>Recommendation Engine</td>
+            <td>Suggests design improvements</td>
+            <td>Material recommendations, design improvements, climate-response guidance</td>
+          </tr>
+          <tr>
+            <td>AI Audit Layer</td>
+            <td>Supports interpretive review</td>
+            <td>Preliminary engineering review notes using AI reasoning and deterministic fallback logic</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <h2>3. Core Compliance Logic</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Compliance Checks Included</h3>
+          <ul>
+            <li>Space adequacy by building type</li>
+            <li>Occupancy-to-bathroom ratio checks</li>
+            <li>Area per occupant validation</li>
+            <li>Educational classroom capacity checks</li>
+            <li>Healthcare bed-density and room adequacy</li>
+            <li>Commercial employee density checks</li>
+            <li>Structural safety and engineering veto rules</li>
+            <li>Climate-compatibility and material suitability review</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Typical Output</h3>
+          <ul>
+            <li>Validation score</li>
+            <li>Severity: low / medium / high</li>
+            <li>Warnings and recommendations</li>
+            <li>Structural and occupancy issues flagged</li>
+            <li>Material suitability suggestions</li>
+            <li>Preliminary engineering review summary</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>4. Sri Lankan Context</h2>
+      <p>The platform is aligned with Sri Lankan planning conditions through climate-aware decision support, engineering validation logic, and references to SLS- and BS-related construction standards. It is designed to support local-government review environments where climate, structure, and practical feasibility matter.</p>
+      <ul>
+        <li>Adaptation to coastal, wet, dry, and highland conditions</li>
+        <li>Material suitability based on corrosion, humidity, and environmental exposure</li>
+        <li>Engineering logic aimed at safe preliminary screening</li>
+        <li>Conceptual support for local authority building review workflows</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>5. Benefits to Local Government Authorities</h2>
+      <ul>
+        <li>Reduces review time in initial building-plan screening</li>
+        <li>Standardizes plan assessment across cases and reviewers</li>
+        <li>Identifies likely non-compliance before manual review</li>
+        <li>Improves transparency with explainable warnings and recommendations</li>
+        <li>Supports early decisions on project suitability and engineering risk</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>6. Key Limitations</h2>
+      <p>This is a strong research and decision-support prototype rather than a fully legal municipal compliance engine. For actual deployment, the system needs formal mapping to official Sri Lankan building regulations, municipal bylaws, and approved approval checklists.</p>
+      <ul>
+        <li>Preliminary review, not final legal compliance certification</li>
+        <li>Dependent on quality of uploaded plans and building metadata</li>
+        <li>Requires formal policy mapping for local authority enforcement</li>
+        <li>Requires human expert verification for construction approval decisions</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>7. Final Summary</h2>
+      <p>In summary, the component is an AI-assisted automated floor-plan analysis and building-regulation compliance review platform designed to support Sri Lankan local government authorities. It combines vision-based plan interpretation, rule-driven engineering checks, climate-aware material reasoning, and explainable review outputs to help speed up and improve early approval screening.</p>
+    </div>
+  </div>
+</body>
+</html>

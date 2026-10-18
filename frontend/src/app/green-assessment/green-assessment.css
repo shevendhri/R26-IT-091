@@ -1181,3 +1181,463 @@ h3 {
     font-size: 1.8rem;
   }
 }
+
+/* ══════════════════════════════════════════════════════════════════════════
+   UDA EVIDENCE SCORING & SCORE SUMMARY UI ENHANCEMENTS
+══════════════════════════════════════════════════════════════════════════ */
+
+/* Evidence Scoring Card */
+.evidence-scoring-card {
+  background: var(--ga-card);
+  border: 1px solid var(--ga-border);
+  border-left: 4px solid var(--ga-forest);
+  border-radius: 6px;
+  padding: 1.75rem 2rem;
+  box-shadow: 0 4px 18px rgba(20, 56, 37, 0.04);
+  margin-bottom: 1.5rem;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.evidence-scoring-card:hover {
+  border-color: var(--ga-forest);
+  border-left-color: var(--ga-forest);
+  box-shadow: 0 6px 24px rgba(20, 56, 37, 0.07);
+}
+
+.evidence-scoring-card.review-needed {
+  border-left-color: #D97706;
+}
+
+.evidence-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.85rem;
+  border-radius: 4px;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.evidence-status-badge.scored {
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  color: #065F46;
+}
+
+.evidence-status-badge.review {
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  color: #92400E;
+}
+
+.evidence-status-badge.insufficient {
+  background: rgba(184, 92, 67, 0.12);
+  border: 1px solid rgba(184, 92, 67, 0.4);
+  color: var(--ga-terracotta);
+}
+
+.evidence-status-badge.manual {
+  background: rgba(113, 140, 119, 0.12);
+  border: 1px solid rgba(113, 140, 119, 0.4);
+  color: var(--ga-forest);
+}
+
+/* Metrics Grid Inside Evidence Card */
+.evidence-metrics-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.75rem;
+  margin: 1.25rem 0;
+}
+
+.evidence-metric-box {
+  background: var(--ga-surface);
+  border: 1px solid var(--ga-border);
+  border-radius: 4px;
+  padding: 0.75rem 1rem;
+}
+
+.evidence-metric-box.score-highlight {
+  background: rgba(20, 56, 37, 0.03);
+  border-color: rgba(20, 56, 37, 0.25);
+  border-left: 3px solid var(--ga-forest);
+}
+
+.evidence-metric-box .metric-label {
+  display: block;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ga-text-muted);
+  margin-bottom: 0.25rem;
+}
+
+.evidence-metric-box .metric-value {
+  display: block;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--ga-forest);
+  line-height: 1.2;
+}
+
+.evidence-metric-box.score-highlight .metric-value {
+  color: #065F46;
+  font-size: 1.35rem;
+}
+
+.evidence-metric-box .metric-sub {
+  font-size: 0.74rem;
+  color: var(--ga-text-muted);
+  margin-top: 0.25rem;
+}
+
+/* Document Source Strip */
+.evidence-source-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.85rem;
+  background: var(--ga-surface);
+  border: 1px solid var(--ga-border);
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--ga-forest);
+  flex-wrap: wrap;
+}
+
+.evidence-source-bar .doc-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: #FFFFFF;
+  border: 1px solid var(--ga-border);
+  padding: 0.25rem 0.55rem;
+  border-radius: 3px;
+  font-size: 0.72rem;
+  color: var(--ga-text-secondary);
+}
+
+/* Quote & Matched Text Box */
+.evidence-quote-box {
+  background: #FCFBF9;
+  border: 1px solid #E8E3DA;
+  border-left: 3px solid #718C77;
+  border-radius: 4px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.evidence-quote-box .quote-label {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ga-forest);
+  margin-bottom: 0.45rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.evidence-quote-box .quote-text {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: #1E2922;
+  font-style: italic;
+  margin: 0;
+}
+
+/* Rule Band Box */
+.rule-band-box {
+  background: var(--ga-surface);
+  border: 1px solid var(--ga-border);
+  border-radius: 4px;
+  padding: 0.85rem 1.15rem;
+  margin-bottom: 1rem;
+}
+
+.rule-band-box .rule-band-label {
+  display: block;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ga-sage);
+  margin-bottom: 0.35rem;
+}
+
+.rule-band-box .rule-band-code {
+  display: block;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 0.82rem;
+  color: var(--ga-forest);
+  background: #FFFFFF;
+  border: 1px solid var(--ga-border);
+  border-radius: 3px;
+  padding: 0.55rem 0.85rem;
+  line-height: 1.45;
+  word-break: break-word;
+}
+
+/* Scoring Explanation Box */
+.scoring-explanation-box {
+  background: var(--ga-surface);
+  border: 1px solid var(--ga-border);
+  border-radius: 4px;
+  padding: 0.85rem 1.15rem;
+  margin-bottom: 1.25rem;
+  font-size: 0.84rem;
+  line-height: 1.6;
+  color: var(--ga-text-secondary);
+}
+
+.scoring-explanation-box .explanation-label {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ga-forest);
+  margin-right: 0.45rem;
+}
+
+/* Specialist Action Panel */
+.specialist-action-panel {
+  background: #FFFFFF;
+  border: 1px solid var(--ga-border);
+  border-radius: 4px;
+  padding: 1.25rem 1.5rem;
+  margin-top: 1.25rem;
+}
+
+.specialist-action-header {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ga-forest);
+  margin-bottom: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.specialist-action-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.specialist-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  min-width: 180px;
+}
+
+.specialist-input-group label {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ga-text-muted);
+}
+
+.specialist-btn-group {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.button.subtle-btn {
+  background: var(--ga-surface);
+  border-color: var(--ga-border);
+  color: var(--ga-text-secondary);
+  font-size: 0.72rem;
+}
+
+.button.subtle-btn:hover {
+  background: #FFFFFF;
+  border-color: var(--ga-forest);
+  color: var(--ga-forest);
+}
+
+/* ════ SCORE SUMMARY LEVEL PROGRESS TRACKER ════ */
+.level-tracker-panel {
+  background: var(--ga-card);
+  border: 1px solid var(--ga-border);
+  border-radius: 6px;
+  padding: 1.75rem 2rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--ga-shadow);
+}
+
+.level-tracker-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.level-progress-bar-wrap {
+  height: 14px;
+  background: #EBE6DC;
+  border-radius: 7px;
+  overflow: hidden;
+  position: relative;
+  margin: 1.5rem 0 0.85rem;
+}
+
+.level-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #143825 0%, #10B981 100%);
+  border-radius: 7px;
+  transition: width 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.level-milestones-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.level-milestone-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  padding: 0.5rem 0.25rem;
+  border-radius: 4px;
+  transition: all 0.15s ease;
+}
+
+.level-milestone-step.current {
+  background: rgba(20, 56, 37, 0.06);
+  border: 1px solid rgba(20, 56, 37, 0.2);
+}
+
+.level-milestone-step.reached {
+  color: var(--ga-forest);
+}
+
+.milestone-pts {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: var(--ga-sage);
+}
+
+.milestone-name {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--ga-forest);
+  margin-top: 0.15rem;
+}
+
+.milestone-tag {
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-top: 0.25rem;
+  padding: 0.15rem 0.45rem;
+  border-radius: 3px;
+  background: var(--ga-surface);
+  border: 1px solid var(--ga-border);
+}
+
+.level-milestone-step.current .milestone-tag {
+  background: var(--ga-forest);
+  color: #FCFAF6;
+  border-color: var(--ga-forest);
+}
+
+/* Category Score Card Elevation */
+.category-score-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-top: 4px solid var(--ga-forest);
+  position: relative;
+  overflow: hidden;
+}
+
+.category-score-card .category-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.category-score-card .category-score-display {
+  font-family: "Outfit", "Space Grotesk", sans-serif;
+  font-size: 1.55rem;
+  font-weight: 900;
+  color: var(--ga-forest);
+  line-height: 1.1;
+  margin: 0.35rem 0 0.75rem;
+}
+
+.category-score-card .category-score-display small {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ga-text-muted);
+}
+
+.category-progress-mini {
+  height: 6px;
+  background: var(--ga-border);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 0.85rem;
+}
+
+.category-progress-fill {
+  height: 100%;
+  background: var(--ga-forest);
+  border-radius: 3px;
+  transition: width 0.5s ease;
+}
+
+.category-chips-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: auto;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--ga-border);
+}
+
+.category-chips-row .cat-chip {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 0.25rem 0.55rem;
+  border-radius: 3px;
+  background: var(--ga-surface);
+  border: 1px solid var(--ga-border);
+  color: var(--ga-text-secondary);
+}
+

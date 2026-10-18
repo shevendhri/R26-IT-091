@@ -25,7 +25,7 @@ async def analyze_blueprint(
 ):
     """
     Architectural Vision Entry Point v2.0
-    Executes the Spatial Intelligence Pipeline: Image -> OpenCV -> Gemini -> Annotation
+    Executes the Spatial Intelligence Pipeline: Image -> clean YOLO checkpoint -> Annotation
     """
     try:
         image_bytes = await image.read()
@@ -39,6 +39,7 @@ async def analyze_blueprint(
             return {"status": "error", "message": "AI Spatial Core failed to respond."}
 
         return {
+            **results,
             "status": "success",
             "spatial": results.get("issues", []),
             "suggestions": [
@@ -51,7 +52,7 @@ async def analyze_blueprint(
         }
     except Exception as e:
         print(traceback.format_exc())
-        return {"status": "error", "message": str(e)}
+        raise HTTPException(status_code=422 if isinstance(e, ValueError) else 503, detail="Blueprint detection failed. Check the model service log.") from e
 
 if __name__ == "__main__":
     uvicorn.run(app, host="127.0.0.1", port=5001)

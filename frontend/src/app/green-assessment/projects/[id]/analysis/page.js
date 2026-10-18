@@ -255,29 +255,60 @@ export default function ProjectUdaAnalysisPage({ params }) {
 
   return (
     <main className="page-shell">
-      <header className="page-header">
-        <Link className="back-link" href={`/green-assessment/projects/${id}`}>
-          Back to Project Details
+      {/* ── UNIFIED PROJECT WORKFLOW SUB-NAVIGATION ── */}
+      <nav className="project-subnav-bar" aria-label="Project Sub Navigation">
+        <Link className="project-subnav-link" href={`/green-assessment/projects/${id}`}>
+          01 / Overview
         </Link>
-        <p className="eyebrow">UDA Evidence Identification</p>
-        <h1>UDA Document Analysis</h1>
+        <Link className="project-subnav-link" href={`/green-assessment/projects/${id}/documents`}>
+          02 / Documents
+        </Link>
+        <Link className="project-subnav-link active" href={`/green-assessment/projects/${id}/analysis`}>
+          03 / Evidence Analysis ★
+        </Link>
+        <Link className="project-subnav-link" href={`/green-assessment/projects/${id}/assessment`}>
+          04 / Manual Assessment
+        </Link>
+        <Link className="project-subnav-link" href={`/green-assessment/projects/${id}/score`}>
+          05 / Score Summary
+        </Link>
+        <Link className="project-subnav-link" href={`/green-assessment/projects/${id}/recommendations`}>
+          06 / Recommendations
+        </Link>
+      </nav>
+
+      {/* ── ARCHITECTURAL HERO HEADER ── */}
+      <header className="page-header hero-panel">
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "0.85rem", flexWrap: "wrap", gap: "0.5rem" }}>
+          <Link className="back-link" href={`/green-assessment/projects/${id}`} style={{ margin: 0 }}>
+            ← Back to Project Details
+          </Link>
+          <span className="eyebrow" style={{ margin: 0 }}>
+            UDA EVIDENCE IDENTIFICATION & SCORING PIPELINE
+          </span>
+        </div>
+
+        <h1>
+          {project ? `${project.project_name} — UDA Document Analysis` : "UDA Document Analysis"}
+        </h1>
         <p className="lede">
           AI-assisted identification of UDA criterion evidence from uploaded
-          project documents.
+          project documents coupled with deterministic rule validation.
         </p>
-        <div className="notice">
-          AI-assisted evidence classification is intended for design-stage
-          pre-assessment. Results should be reviewed where specialist
-          verification is indicated.
+
+        <div className="notice" style={{ marginTop: "1rem" }}>
+          <strong>Notice:</strong> AI-assisted evidence classification is intended for design-stage
+          pre-assessment. Results should be reviewed where specialist verification is indicated.
         </div>
-        <div className="actions">
+
+        <div className="actions" style={{ marginTop: "1.25rem" }}>
           <button
-            className="button"
+            className="button primary"
             disabled={isRunning}
             onClick={handleRunAnalysis}
             type="button"
           >
-            {isRunning ? "Refreshing Analysis..." : "Refresh UDA Analysis"}
+            {isRunning ? "Refreshing Analysis..." : "⚡ Refresh UDA Analysis"}
           </button>
           <Link className="button" href={`/green-assessment/projects/${id}/documents`}>
             View Documents
@@ -287,6 +318,9 @@ export default function ProjectUdaAnalysisPage({ params }) {
           </Link>
           <Link className="button" href={`/green-assessment/projects/${id}/score`}>
             View Score Summary
+          </Link>
+          <Link className="button" href={`/green-assessment/projects/${id}/recommendations`}>
+            View Recommendations
           </Link>
         </div>
       </header>
@@ -304,52 +338,66 @@ export default function ProjectUdaAnalysisPage({ params }) {
       ) : null}
       {successMessage ? <div className="notice success">{successMessage}</div> : null}
 
-      {!isLoading && project ? (
-        <section className="project-card details-card">
-          <p className="project-id">Project ID: {project.id}</p>
-          <h2>{project.project_name}</h2>
-        </section>
-      ) : null}
-
       {!isLoading && analysis ? (
         <>
+          {/* ── KPI METRICS GRID ── */}
           <section className="score-summary-grid">
-            <div className="score-card">
+            <div className="score-card highlight">
               <span>Documents Analysed</span>
               <strong>{analysis.documents_analyzed}</strong>
+              <div className="subtext">Uploaded PDF documentation</div>
             </div>
             <div className="score-card">
               <span>Chunks Analysed</span>
               <strong>{analysis.analyzed_chunks}</strong>
+              <div className="subtext">Parsed text passages</div>
             </div>
-            <div className="score-card">
+            <div className="score-card gain">
               <span>Candidate Evidence</span>
-              <strong>{analysis.candidate_evidence}</strong>
+              <strong style={{ color: "#065F46" }}>{analysis.candidate_evidence}</strong>
+              <div className="subtext">High confidence matches</div>
             </div>
             <div className="score-card">
               <span>Need Review From Specialist</span>
-              <strong>{analysis.need_specialist_review}</strong>
-            </div>
-            <div className="score-card">
-              <span>Other</span>
-              <strong>{analysis.other}</strong>
+              <strong style={{ color: analysis.need_specialist_review > 0 ? "#D97706" : "inherit" }}>
+                {analysis.need_specialist_review}
+              </strong>
+              <div className="subtext">Ambiguous / conflict chunks</div>
             </div>
             <div className="score-card">
               <span>Criteria Detected</span>
               <strong>{analysis.criteria_detected}</strong>
+              <div className="subtext">Active UDA categories</div>
             </div>
             <div className="score-card">
               <span>Model Version</span>
-              <strong>{analysis.model_version}</strong>
+              <strong style={{ fontSize: "1.1rem" }}>{analysis.model_version || "DistilBERT UDA"}</strong>
+              <div className="subtext">Transformer fine-tuned</div>
             </div>
             <div className="score-card">
               <span>Inference Device</span>
-              <strong>{analysis.gpu || analysis.device}</strong>
+              <strong style={{ fontSize: "1.1rem" }}>{analysis.gpu || analysis.device || "CPU"}</strong>
+              <div className="subtext">Accelerated processing</div>
+            </div>
+            <div className="score-card">
+              <span>Other / Non-UDA</span>
+              <strong>{analysis.other}</strong>
+              <div className="subtext">General background text</div>
             </div>
           </section>
 
-          <section className="score-section">
-            <h2>Detected Evidence by UDA Criterion</h2>
+          {/* ── SECTION 1: DETECTED EVIDENCE BY UDA CRITERION ── */}
+          <section className="score-section" style={{ marginBottom: "2.5rem" }}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: "0.5rem" }}>
+              <h2>Detected Evidence by UDA Criterion</h2>
+              <span className="eyebrow" style={{ margin: 0 }}>
+                {groups.length} Criteria Identified
+              </span>
+            </div>
+            <p className="section-note" style={{ marginBottom: "1.25rem" }}>
+              Text chunks extracted from project documents and classified via DistilBERT & deterministic rules.
+            </p>
+
             {groups.length === 0 ? (
               <div className="empty">
                 No UDA evidence records found yet. Upload project documents,
@@ -359,47 +407,75 @@ export default function ProjectUdaAnalysisPage({ params }) {
               <div className="category-list">
                 {groups.map((group) => (
                   <details className="category-card" key={group.criterion_code}>
-                    <summary className="category-heading">
+                    <summary className="category-heading" style={{ cursor: "pointer" }}>
                       <div>
-                        <p className="criterion-code">
-                          {group.category_code} | {group.criterion_code}
-                        </p>
-                        <h2>
+                        <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", flexWrap: "wrap", marginBottom: "0.25rem" }}>
+                          <span className="criterion-code" style={{ margin: 0 }}>
+                            {group.category_code} | {group.criterion_code}
+                          </span>
+                        </div>
+                        <h2 style={{ margin: 0, fontSize: "1.1rem" }}>
                           {group.criterion_code} — {group.criterion_name}
                         </h2>
                       </div>
-                      <span>{group.evidence_count} chunks</span>
+                      <div style={{ display: "flex", alignItems: "center", gap: "0.6rem" }}>
+                        <span className="status-pill active">{group.evidence_count} Chunks</span>
+                      </div>
                     </summary>
-                    <div className="criterion-facts">
-                      <span>Candidate Evidence: {group.candidate_evidence}</span>
-                      <span>
-                        Need Review From Specialist: {group.need_specialist_review}
-                      </span>
-                      <span>Other: {group.other}</span>
-                    </div>
-                    <div className="chunk-list">
-                      {group.evidence.map((evidence) => (
-                        <article className="chunk-card" key={evidence.id}>
-                          <div className="chunk-meta">
-                            <span>{statusLabels[evidence.decision_status]}</span>
-                            <span>Document: {evidence.document_name || "Unavailable"}</span>
-                            <span>Page: {evidence.source_page ?? "Not available"}</span>
-                            <span>Chunk ID: {evidence.chunk_id}</span>
-                            <span>Review: {evidence.reviewed_status}</span>
-                          </div>
-                          <p className="chunk-text">{evidence.chunk_text}</p>
-                          <p className="section-note">{evidence.decision_reason}</p>
 
-                          <details className="criterion-detail">
-                            <summary>
+                    <div className="criterion-facts" style={{ marginTop: "0.75rem" }}>
+                      <div className="fact-chip">
+                        <span className="chip-label">Candidate Evidence:</span>
+                        <span className="chip-val" style={{ color: "#065F46" }}>{group.candidate_evidence}</span>
+                      </div>
+                      <div className="fact-chip">
+                        <span className="chip-label">Specialist Review:</span>
+                        <span className="chip-val" style={{ color: group.need_specialist_review > 0 ? "#D97706" : "inherit" }}>
+                          {group.need_specialist_review}
+                        </span>
+                      </div>
+                      <div className="fact-chip">
+                        <span className="chip-label">Other:</span>
+                        <span className="chip-val">{group.other}</span>
+                      </div>
+                    </div>
+
+                    <div className="chunk-list" style={{ marginTop: "1rem", display: "grid", gap: "1rem" }}>
+                      {group.evidence.map((evidence) => (
+                        <article className="chunk-card" key={evidence.id} style={{ background: "var(--ga-surface)", border: "1px solid var(--ga-border)", borderRadius: "4px", padding: "1.25rem 1.5rem" }}>
+                          <div className="evidence-source-bar" style={{ marginBottom: "0.75rem" }}>
+                            <span className={`status-pill ${evidence.decision_status === "candidate_evidence" ? "active" : ""}`} style={{ textTransform: "uppercase" }}>
+                              {statusLabels[evidence.decision_status] || evidence.decision_status}
+                            </span>
+                            <span className="doc-badge">
+                              📄 {evidence.document_name || "Document Unavailable"}
+                            </span>
+                            <span className="doc-badge">
+                              Page: {evidence.source_page ?? "N/A"}
+                            </span>
+                            <span className="doc-badge">
+                              Chunk #{evidence.chunk_id}
+                            </span>
+                            <span className="doc-badge">
+                              Review: <strong>{evidence.reviewed_status}</strong>
+                            </span>
+                          </div>
+
+                          <div className="evidence-quote-box">
+                            <p className="quote-text">"{evidence.chunk_text}"</p>
+                          </div>
+
+                          <p className="section-note" style={{ margin: "0 0 0.85rem" }}>
+                            <strong>Decision Rationale:</strong> {evidence.decision_reason}
+                          </p>
+
+                          <details className="criterion-detail" style={{ marginBottom: "1rem" }}>
+                            <summary style={{ fontSize: "0.78rem" }}>
                               <div>
-                                <p className="criterion-code">Analysis Details</p>
-                                <h3>Model and deterministic rule signals</h3>
+                                <span className="criterion-code" style={{ margin: 0 }}>NLP & Rule Diagnostics</span>
                               </div>
-                              <span>
-                                {evidence.rule_model_agreement
-                                  ? "Agreement"
-                                  : "Review signal"}
+                              <span style={{ fontSize: "0.68rem" }}>
+                                {evidence.rule_model_agreement ? "✓ High Agreement" : "⚠ Review Discrepancy"}
                               </span>
                             </summary>
                             <div className="criterion-detail-body">
@@ -407,15 +483,13 @@ export default function ProjectUdaAnalysisPage({ params }) {
                                 <div>
                                   <dt>DistilBERT Prediction</dt>
                                   <dd>
-                                    {evidence.model_label || "None"} (
-                                    {formatConfidence(evidence.model_confidence)})
+                                    {evidence.model_label || "None"} ({formatConfidence(evidence.model_confidence)})
                                   </dd>
                                 </div>
                                 <div>
                                   <dt>Second Prediction</dt>
                                   <dd>
-                                    {evidence.model_second_label || "None"} (
-                                    {formatConfidence(evidence.model_second_confidence)})
+                                    {evidence.model_second_label || "None"} ({formatConfidence(evidence.model_second_confidence)})
                                   </dd>
                                 </div>
                                 <div>
@@ -435,23 +509,22 @@ export default function ProjectUdaAnalysisPage({ params }) {
                                   <dd>{evidence.rule_runner_up || "None"}</dd>
                                 </div>
                               </dl>
-                              <p>{evidence.rule_reason || "No rule reason available."}</p>
+                              <p style={{ marginTop: "0.75rem", fontSize: "0.82rem" }}>
+                                <strong>Rule Context:</strong> {evidence.rule_reason || "No rule reason available."}
+                              </p>
                             </div>
                           </details>
 
-                          <div className="annotation-controls">
+                          <div className="annotation-controls" style={{ background: "#FFFFFF", padding: "1rem", border: "1px solid var(--ga-border)", borderRadius: "3px" }}>
                             <label>
-                              Choose Different Criterion
+                              Reassign to Different UDA Criterion
                               <select
                                 onChange={(event) =>
-                                  handleCorrectionChange(
-                                    evidence.id,
-                                    event.target.value,
-                                  )
+                                  handleCorrectionChange(evidence.id, event.target.value)
                                 }
                                 value={corrections[evidence.id] || ""}
                               >
-                                <option value="">Select criterion</option>
+                                <option value="">Select criterion...</option>
                                 {criteriaOptions.map((criterion) => (
                                   <option key={criterion.code} value={criterion.code}>
                                     {criterion.code} — {criterion.name}
@@ -459,43 +532,25 @@ export default function ProjectUdaAnalysisPage({ params }) {
                                 ))}
                               </select>
                             </label>
-                            <div className="form-actions">
+                            <div className="form-actions" style={{ marginTop: "0.5rem" }}>
                               <button
-                                className="button"
-                                disabled={
-                                  savingEvidenceId === evidence.id ||
-                                  !suggestedLabel(evidence)
-                                }
-                                onClick={() =>
-                                  handleReview(
-                                    evidence,
-                                    "confirmed",
-                                    suggestedLabel(evidence),
-                                  )
-                                }
+                                className="button primary"
+                                disabled={savingEvidenceId === evidence.id || !suggestedLabel(evidence)}
+                                onClick={() => handleReview(evidence, "confirmed", suggestedLabel(evidence))}
                                 type="button"
                               >
-                                Confirm Suggested Criterion
+                                ✓ Confirm Suggested Criterion
                               </button>
                               <button
                                 className="button"
-                                disabled={
-                                  savingEvidenceId === evidence.id ||
-                                  !corrections[evidence.id]
-                                }
-                                onClick={() =>
-                                  handleReview(
-                                    evidence,
-                                    "corrected",
-                                    corrections[evidence.id],
-                                  )
-                                }
+                                disabled={savingEvidenceId === evidence.id || !corrections[evidence.id]}
+                                onClick={() => handleReview(evidence, "corrected", corrections[evidence.id])}
                                 type="button"
                               >
-                                Save Different Criterion
+                                ✎ Save Different Criterion
                               </button>
                               <button
-                                className="button"
+                                className="button subtle-btn"
                                 disabled={savingEvidenceId === evidence.id}
                                 onClick={() => handleReview(evidence, "excluded", "OTHER")}
                                 type="button"
@@ -503,7 +558,7 @@ export default function ProjectUdaAnalysisPage({ params }) {
                                 Mark as OTHER
                               </button>
                               <button
-                                className="button"
+                                className="button subtle-btn"
                                 disabled={savingEvidenceId === evidence.id}
                                 onClick={() => handleReview(evidence, "excluded", null)}
                                 type="button"
@@ -521,18 +576,23 @@ export default function ProjectUdaAnalysisPage({ params }) {
             )}
           </section>
 
+          {/* ── SECTION 2: UDA EVIDENCE SCORING (ELEVATED UI) ── */}
           <section className="score-section">
-            <div className="project-card-header">
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: "0.5rem" }}>
               <div>
-                <p className="criterion-code">Evidence → Scoring Input</p>
-                <h2>UDA Evidence Scoring</h2>
+                <span className="criterion-code" style={{ margin: 0 }}>
+                  EVIDENCE → SCORING INPUT PIPELINE
+                </span>
+                <h2 style={{ margin: "0.25rem 0 0" }}>UDA Evidence Scoring</h2>
               </div>
+              <span className="eyebrow" style={{ margin: 0 }}>
+                {evidenceScoring?.criteria?.length || 0} Criteria Evaluated
+              </span>
             </div>
-            <p className="section-note">
-              Document evidence may propose scoring inputs, but DistilBERT does
-              not award marks. The deterministic UDA scoring rules remain the
-              authority for proposed marks. Evidence Classification Status and
-              Evidence Scoring Status are separate review stages.
+
+            <p className="section-note" style={{ marginBottom: "1.5rem" }}>
+              Document evidence extracts numerical metrics and specifications. Deterministic UDA rating
+              rules calculate proposed marks based on certified thresholds.
             </p>
 
             {!evidenceScoring || evidenceScoring.criteria.length === 0 ? (
@@ -542,112 +602,201 @@ export default function ProjectUdaAnalysisPage({ params }) {
             ) : (
               <div className="gap-list">
                 {evidenceScoring.criteria.map((item) => (
-                  <article className="gap-card" key={item.criterion_code}>
+                  <article
+                    className={`evidence-scoring-card ${
+                      item.conflict_detected || item.specialist_review_recommended
+                        ? "review-needed"
+                        : ""
+                    }`}
+                    key={item.criterion_code}
+                  >
+                    {/* Header */}
                     <div className="gap-heading">
                       <div>
-                        <p className="criterion-code">
-                          {item.category_code} | {item.criterion_code}
-                        </p>
+                        <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", flexWrap: "wrap", marginBottom: "0.35rem" }}>
+                          <span className="criterion-code" style={{ margin: 0 }}>
+                            {item.criterion_code}
+                          </span>
+                          <span style={{ color: "var(--ga-border)", fontWeight: 700 }}>•</span>
+                          <span className="category-code" style={{ margin: 0 }}>
+                            {item.category_code}
+                          </span>
+                          <span className="status-pill" style={{ textTransform: "uppercase" }}>
+                            {item.category_name || "Energy Efficiency"}
+                          </span>
+                        </div>
                         <h3>
                           {item.criterion_code} — {item.criterion_name}
                         </h3>
                       </div>
-                      <span>{formatScoringStatus(item.scoring_status)}</span>
-                    </div>
-                    <div className="criterion-facts">
-                      <span>Evidence Chunks: {item.evidence_count}</span>
-                      <span>
-                        Detected Input:{" "}
-                        {item.proposed_input_value !== null &&
-                        item.proposed_input_value !== undefined
-                          ? `${item.proposed_input_value}${item.input_unit || ""}`
-                          : "Not available"}
-                      </span>
-                      <span>
-                        Proposed Score:{" "}
-                        {item.proposed_score !== null &&
-                        item.proposed_score !== undefined
-                          ? `${item.proposed_score} / ${item.maximum_marks}`
-                          : "Not available"}
-                      </span>
-                      <span>Review: {formatReviewStatus(item.reviewed_status)}</span>
-                    </div>
-                    {item.source_document_name ? (
-                      <p>
-                        Source: {item.source_document_name}, page{" "}
-                        {item.source_page ?? "not available"}
-                      </p>
-                    ) : null}
-                    {item.matched_text ? <p>Matched text: {item.matched_text}</p> : null}
-                    {item.proposed_rule_text ? (
-                      <p>Applicable scoring band: {item.proposed_rule_text}</p>
-                    ) : null}
-                    {item.conflict_detected ? (
-                      <div className="notice error">
-                        Need Review From Specialist: {item.conflict_notes}
-                      </div>
-                    ) : null}
-                    {item.specialist_review_recommended &&
-                    item.scoring_status === "scored" ? (
-                      <div className="notice">
-                        Specialist review recommended. This proposed score comes
-                        from deterministic document evidence and is not a
-                        confirmed assessment.
-                      </div>
-                    ) : null}
-                    <p>{item.scoring_explanation}</p>
 
-                    <div className="annotation-controls">
-                      <label>
-                        Specialist Value
-                        <input
-                          onChange={(event) =>
-                            handleValueDraftChange(
-                              item.criterion_code,
-                              event.target.value,
-                            )
-                          }
-                          type="number"
-                          value={valueDrafts[item.criterion_code] ?? ""}
-                        />
-                      </label>
-                      <div className="form-actions">
-                        <button
-                          className="button"
-                          disabled={savingCriterionCode === item.criterion_code}
-                          onClick={() => handleScoringReview(item, "confirmed")}
-                          type="button"
-                        >
-                          Confirm Value
-                        </button>
-                        <button
-                          className="button"
-                          disabled={savingCriterionCode === item.criterion_code}
-                          onClick={() => handleScoringReview(item, "corrected")}
-                          type="button"
-                        >
-                          Save Corrected Value
-                        </button>
-                        <button
-                          className="button"
-                          disabled={savingCriterionCode === item.criterion_code}
-                          onClick={() =>
-                            handleScoringReview(item, "insufficient_evidence")
-                          }
-                          type="button"
-                        >
-                          Insufficient Evidence
-                        </button>
-                        <button
-                          className="button"
-                          disabled={savingCriterionCode === item.criterion_code}
-                          onClick={() =>
-                            handleScoringReview(item, "manual_assessment_required")
-                          }
-                          type="button"
-                        >
-                          Need Review From Specialist
-                        </button>
+                      {/* Status Badge */}
+                      <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", flexWrap: "wrap" }}>
+                        <span className={`evidence-status-badge ${getScoringBadgeClass(item.scoring_status)}`}>
+                          {formatScoringStatus(item.scoring_status)}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Highlight Metrics Strip */}
+                    <div className="evidence-metrics-strip">
+                      <div className="evidence-metric-box score-highlight">
+                        <span className="metric-label">Proposed Score</span>
+                        <span className="metric-value">
+                          {item.proposed_score !== null && item.proposed_score !== undefined
+                            ? `${item.proposed_score} `
+                            : "— "}
+                          <small style={{ fontSize: "0.85rem", color: "var(--ga-text-muted)", fontWeight: 600 }}>
+                            / {item.maximum_marks} pts
+                          </small>
+                        </span>
+                        <div className="metric-sub">Deterministic rule output</div>
+                      </div>
+
+                      <div className="evidence-metric-box">
+                        <span className="metric-label">Detected Input Value</span>
+                        <span className="metric-value">
+                          {item.proposed_input_value !== null && item.proposed_input_value !== undefined
+                            ? `${item.proposed_input_value} ${item.input_unit || ""}`
+                            : "Not available"}
+                        </span>
+                        <div className="metric-sub">Metric: {formatMetricName(item.proposed_input_metric)}</div>
+                      </div>
+
+                      <div className="evidence-metric-box">
+                        <span className="metric-label">Evidence Chunks</span>
+                        <span className="metric-value">{item.evidence_count}</span>
+                        <div className="metric-sub">Method: {item.extraction_method || "Regex / NLP"}</div>
+                      </div>
+
+                      <div className="evidence-metric-box">
+                        <span className="metric-label">Review Status</span>
+                        <span className="metric-value" style={{ fontSize: "1rem" }}>
+                          <span className="status-pill" style={{ textTransform: "uppercase" }}>
+                            {formatReviewStatus(item.reviewed_status)}
+                          </span>
+                        </span>
+                        <div className="metric-sub">
+                          Confidence: <strong style={{ color: "var(--ga-forest)" }}>{item.extraction_confidence || "medium"}</strong>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Document Source Strip */}
+                    {item.source_document_name && (
+                      <div className="evidence-source-bar">
+                        <span>📄 Source Document:</span>
+                        <span className="doc-badge">
+                          <strong>{item.source_document_name}</strong>
+                        </span>
+                        {item.source_page && (
+                          <span className="doc-badge">
+                            Page: <strong>{item.source_page}</strong>
+                          </span>
+                        )}
+                        {item.source_evidence_id && (
+                          <span className="doc-badge">
+                            Evidence ID: #{item.source_evidence_id}
+                          </span>
+                        )}
+                      </div>
+                    )}
+
+                    {/* Matched Document Evidence Excerpt */}
+                    {item.matched_text && (
+                      <div className="evidence-quote-box">
+                        <div className="quote-label">
+                          <span>🔍 Matched Document Evidence Excerpt:</span>
+                        </div>
+                        <p className="quote-text">"{item.matched_text}"</p>
+                      </div>
+                    )}
+
+                    {/* Applicable UDA Scoring Rule */}
+                    {item.proposed_rule_text && (
+                      <div className="rule-band-box">
+                        <span className="rule-band-label">Applicable UDA Scoring Threshold:</span>
+                        <code className="rule-band-code">{item.proposed_rule_text}</code>
+                      </div>
+                    )}
+
+                    {/* Conflict Warning */}
+                    {item.conflict_detected && (
+                      <div className="notice error" style={{ marginTop: 0, marginBottom: "1rem" }}>
+                        <strong>⚠️ Conflict Detected / Specialist Review Required:</strong> {item.conflict_notes}
+                      </div>
+                    )}
+
+                    {/* Specialist Review Notice */}
+                    {item.specialist_review_recommended && item.scoring_status === "scored" && (
+                      <div className="notice" style={{ marginTop: 0, marginBottom: "1rem" }}>
+                        <strong>Specialist Review Recommended:</strong> This proposed score comes from deterministic document evidence and is not a confirmed assessment.
+                      </div>
+                    )}
+
+                    {/* Scoring Explanation */}
+                    {item.scoring_explanation && (
+                      <div className="scoring-explanation-box">
+                        <span className="explanation-label">Scoring Rationale:</span>
+                        <span>{item.scoring_explanation}</span>
+                      </div>
+                    )}
+
+                    {/* Specialist Audit & Verification Panel */}
+                    <div className="specialist-action-panel">
+                      <div className="specialist-action-header">
+                        <span>Specialist Audit & Verification</span>
+                      </div>
+                      <div className="specialist-action-row">
+                        <div className="specialist-input-group">
+                          <label htmlFor={`spec-val-${item.criterion_code}`}>
+                            Specialist Value ({item.input_unit || "value"}):
+                          </label>
+                          <input
+                            id={`spec-val-${item.criterion_code}`}
+                            onChange={(event) =>
+                              handleValueDraftChange(item.criterion_code, event.target.value)
+                            }
+                            placeholder={`e.g. ${item.proposed_input_value ?? "0"}`}
+                            type="number"
+                            value={valueDrafts[item.criterion_code] ?? ""}
+                          />
+                        </div>
+
+                        <div className="specialist-btn-group">
+                          <button
+                            className="button primary"
+                            disabled={savingCriterionCode === item.criterion_code}
+                            onClick={() => handleScoringReview(item, "confirmed")}
+                            type="button"
+                          >
+                            {savingCriterionCode === item.criterion_code ? "Saving..." : "✓ Confirm Proposed Value"}
+                          </button>
+                          <button
+                            className="button"
+                            disabled={savingCriterionCode === item.criterion_code}
+                            onClick={() => handleScoringReview(item, "corrected")}
+                            type="button"
+                          >
+                            ✎ Save Corrected Value
+                          </button>
+                          <button
+                            className="button subtle-btn"
+                            disabled={savingCriterionCode === item.criterion_code}
+                            onClick={() => handleScoringReview(item, "insufficient_evidence")}
+                            type="button"
+                          >
+                            Insufficient Evidence
+                          </button>
+                          <button
+                            className="button subtle-btn"
+                            disabled={savingCriterionCode === item.criterion_code}
+                            onClick={() => handleScoringReview(item, "manual_assessment_required")}
+                            type="button"
+                          >
+                            Need Specialist Review
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </article>
@@ -666,6 +815,21 @@ function formatConfidence(value) {
     return "n/a";
   }
   return Number(value).toFixed(3);
+}
+
+function formatMetricName(metric) {
+  if (!metric) return "Standard Metric";
+  return metric
+    .split("_")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+}
+
+function getScoringBadgeClass(status) {
+  if (status === "scored") return "scored";
+  if (status === "need_specialist_review") return "review";
+  if (status === "insufficient_evidence") return "insufficient";
+  return "manual";
 }
 
 function formatScoringStatus(status) {
@@ -689,3 +853,4 @@ function formatReviewStatus(status) {
   };
   return labels[status] || status;
 }
+

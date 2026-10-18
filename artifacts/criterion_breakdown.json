@@ -3,9 +3,9 @@
     "material": "Gr. 25 Standard Concrete Foundation",
     "criterion_breakdown": {
       "structural_safety": {
-        "score": 100.0,
+        "score": 86.25,
         "max": 25.0,
-        "contribution": 25.0,
+        "contribution": 21.56,
         "normalized_weight": 0.25,
         "notes": "Evaluated against preliminary engineering criteria",
         "reason": "Evaluated against preliminary engineering criteria",
@@ -157,9 +157,9 @@
     "material": "Eco-Concrete Foundation (30% Recycled Aggregate)",
     "criterion_breakdown": {
       "structural_safety": {
-        "score": 97.2,
+        "score": 82.8,
         "max": 25.0,
-        "contribution": 24.3,
+        "contribution": 20.7,
         "normalized_weight": 0.25,
         "notes": "Evaluated against preliminary engineering criteria",
         "reason": "Evaluated against preliminary engineering criteria",
@@ -261,9 +261,9 @@
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 20.0,
+        "score": 40.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 6.0,
         "normalized_weight": 0.15,
         "notes": "Marginal preliminary compliance",
         "reason": "Marginal preliminary compliance",
@@ -311,9 +311,9 @@
     "material": "Lime-Pozzolan Natural Foundation",
     "criterion_breakdown": {
       "structural_safety": {
-        "score": 81.0,
+        "score": 60.0,
         "max": 25.0,
-        "contribution": 20.25,
+        "contribution": 15.0,
         "normalized_weight": 0.25,
         "notes": "Evaluated against preliminary engineering criteria",
         "reason": "Evaluated against preliminary engineering criteria",
@@ -338,9 +338,9 @@
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 100.0,
+        "score": 80.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 12.0,
         "normalized_weight": 0.15,
         "notes": "Evaluated against preliminary engineering criteria",
         "reason": "Evaluated against preliminary engineering criteria",
@@ -646,9 +646,9 @@
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 20.0,
+        "score": 40.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 6.0,
         "normalized_weight": 0.2,
         "notes": "Marginal preliminary compliance",
         "reason": "Marginal preliminary compliance",
@@ -954,9 +954,9 @@
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 20.0,
+        "score": 40.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 6.0,
         "normalized_weight": 0.2,
         "notes": "Marginal preliminary compliance",
         "reason": "Marginal preliminary compliance",
@@ -1081,9 +1081,9 @@
     "material": "Wire-Cut Clay Brick (Premium Grade)",
     "criterion_breakdown": {
       "structural_safety": {
-        "score": 91.8,
+        "score": 78.2,
         "max": 25.0,
-        "contribution": 22.95,
+        "contribution": 19.55,
         "normalized_weight": 0.25,
         "notes": "Evaluated against preliminary engineering criteria",
         "reason": "Evaluated against preliminary engineering criteria",
@@ -1108,9 +1108,9 @@
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 100.0,
+        "score": 80.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 12.0,
         "normalized_weight": 0.15,
         "notes": "Evaluated against preliminary engineering criteria",
         "reason": "Evaluated against preliminary engineering criteria",
@@ -1235,12 +1235,12 @@
     "material": "High-Density Cement Block",
     "criterion_breakdown": {
       "structural_safety": {
-        "score": 78.3,
+        "score": 58.0,
         "max": 25.0,
-        "contribution": 19.58,
+        "contribution": 14.5,
         "normalized_weight": 0.25,
-        "notes": "Evaluated against preliminary engineering criteria",
-        "reason": "Evaluated against preliminary engineering criteria",
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
         "is_na": false
       },
       "sls_compliance": {
@@ -1312,9 +1312,9 @@
     "material": "CSEB Compressed Stabilized Earth Block",
     "criterion_breakdown": {
       "structural_safety": {
-        "score": 83.7,
+        "score": 62.0,
         "max": 25.0,
-        "contribution": 20.93,
+        "contribution": 15.5,
         "normalized_weight": 0.25,
         "notes": "Evaluated against preliminary engineering criteria",
         "reason": "Evaluated against preliminary engineering criteria",
@@ -1339,9 +1339,9 @@
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 100.0,
+        "score": 80.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 12.0,
         "normalized_weight": 0.15,
         "notes": "Evaluated against preliminary engineering criteria",
         "reason": "Evaluated against preliminary engineering criteria",
@@ -1389,12 +1389,12 @@
     "material": "Hollow Clay Block (Perforated)",
     "criterion_breakdown": {
       "structural_safety": {
-        "score": 74.25,
+        "score": 55.0,
         "max": 25.0,
-        "contribution": 18.56,
+        "contribution": 13.75,
         "normalized_weight": 0.25,
-        "notes": "Evaluated against preliminary engineering criteria",
-        "reason": "Evaluated against preliminary engineering criteria",
+        "notes": "Marginal preliminary compliance",
+        "reason": "Marginal preliminary compliance",
         "is_na": false
       },
       "sls_compliance": {
@@ -1466,9 +1466,9 @@
     "material": "Fly-Ash Composite Block",
     "criterion_breakdown": {
       "structural_safety": {
-        "score": 81.0,
+        "score": 60.0,
         "max": 25.0,
-        "contribution": 20.25,
+        "contribution": 15.0,
         "normalized_weight": 0.25,
         "notes": "Evaluated against preliminary engineering criteria",
         "reason": "Evaluated against preliminary engineering criteria",
@@ -1647,9 +1647,9 @@
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 100.0,
+        "score": 80.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 12.0,
         "normalized_weight": 0.2,
         "notes": "Evaluated against preliminary engineering criteria",
         "reason": "Evaluated against preliminary engineering criteria",
@@ -1801,9 +1801,9 @@
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 100.0,
+        "score": 80.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 12.0,
         "normalized_weight": 0.2,
         "notes": "Evaluated against preliminary engineering criteria",
         "reason": "Evaluated against preliminary engineering criteria",
@@ -1955,9 +1955,9 @@
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 20.0,
+        "score": 40.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 6.0,
         "normalized_weight": 0.2,
         "notes": "Marginal preliminary compliance",
         "reason": "Marginal preliminary compliance",
@@ -2340,9 +2340,9 @@
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 100.0,
+        "score": 80.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 12.0,
         "normalized_weight": 0.2,
         "notes": "Evaluated against preliminary engineering criteria",
         "reason": "Evaluated against preliminary engineering criteria",
@@ -2417,9 +2417,9 @@
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 20.0,
+        "score": 40.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 6.0,
         "normalized_weight": 0.2,
         "notes": "Marginal preliminary compliance",
         "reason": "Marginal preliminary compliance",
@@ -3033,9 +3033,9 @@
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 100.0,
+        "score": 80.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 12.0,
         "normalized_weight": 0.2,
         "notes": "Evaluated against preliminary engineering criteria",
         "reason": "Evaluated against preliminary engineering criteria",
@@ -3418,9 +3418,9 @@
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 100.0,
+        "score": 80.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 12.0,
         "normalized_weight": 0.2,
         "notes": "Evaluated against preliminary engineering criteria",
         "reason": "Evaluated against preliminary engineering criteria",
@@ -3649,9 +3649,9 @@
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 100.0,
+        "score": 80.0,
         "max": 15.0,
-        "contribution": 15.0,
+        "contribution": 12.0,
         "normalized_weight": 0.2,
         "notes": "Evaluated against preliminary engineering criteria",
         "reason": "Evaluated against preliminary engineering criteria",
@@ -4496,9 +4496,9 @@
         "is_na": false
       },
       "occupancy_requirements": {
-        "score": 20.0,
+        "score": 40.0,
         "max": 15.0,
-        "contribution": 3.0,
+        "contribution": 6.0,
         "normalized_weight": 0.2,
         "notes": "Marginal preliminary compliance",
         "reason": "Marginal preliminary compliance",

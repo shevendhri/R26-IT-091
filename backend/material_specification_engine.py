@@ -1,4 +1,4 @@
-﻿import os
+import os
 import pickle
 import joblib
 import math
@@ -19,9 +19,15 @@ from material_quantity_engine import MaterialQuantityEngine
 # Configure logger for debugging ML model interactions
 logger = logging.getLogger(__name__)
 if not logger.handlers:
-    log_path = Path(__file__).resolve().parent / "scratch" / "ml_debug.log"
-    log_path.parent.mkdir(parents=True, exist_ok=True)
-    handler = logging.FileHandler(log_path)
+    try:
+        project_root = Path(__file__).resolve().parents[1]
+        scratch_dir = project_root / "scratch"
+        scratch_dir.mkdir(parents=True, exist_ok=True)
+        log_file = scratch_dir / "ml_debug.log"
+        handler = logging.FileHandler(str(log_file))
+    except Exception:
+        # Fallback to console logging if file handler can't be created
+        handler = logging.StreamHandler()
     formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
     handler.setFormatter(formatter)
     logger.addHandler(handler)

@@ -91,9 +91,10 @@ async def analyze_blueprint_vision(image_data: bytes, metadata: dict):
     """
     Architectural Vision Engine v3.0
     Analyzes blueprint images with query-awareness and spatial reasoning.
+    If an external generative model is not configured, a deterministic
+    fallback response is returned to ensure downstream callers always
+    receive a valid structure (prevents 500 errors when Gemini is absent).
     """
-    if not model:
-        return None
 
     import io
     from PIL import Image
@@ -143,17 +144,21 @@ async def analyze_blueprint_vision(image_data: bytes, metadata: dict):
     """
 
     try:
-        import asyncio
-        response = await asyncio.wait_for(
-            model.generate_content_async([prompt, img]),
-            timeout=12.0
-        )
-        clean_text = response.text.replace("```json", "").replace("```", "").strip()
-        import json
-        return json.loads(clean_text)
+        if model:
+            import asyncio
+            response = await asyncio.wait_for(
+                model.generate_content_async([prompt, img]),
+                timeout=12.0
+            )
+            clean_text = response.text.replace("```json", "").replace("```", "").strip()
+            import json
+            return json.loads(clean_text)
+        else:
+            # No external model configured; skip remote call and use fallback
+            raise RuntimeError("No external generative model configured; using deterministic fallback.")
     except Exception as e:
-        print(f"Vision Analysis API Error: {e}")
-        
+        print(f"Vision Analysis API Error or no model available: {e}")
+
     # ── CONTEXT-AWARE DETERMINISTIC FALLBACK (VIVA SAFETY NET) ──
     q_lc = user_query.lower()
     mod_type = "HORIZONTAL_EXPANSION"

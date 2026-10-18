@@ -1,4 +1,4 @@
-﻿# ML model files (too large for GitHub)
+# ML model files (too large for GitHub)
 # backend/ml/*.pkl
 # backend/ml/*.h5
 # backend/ml/*.pt
@@ -14,6 +14,7 @@ dist/
 build/
 *.egg
 .venv/
+.venv-training/
 venv/
 env/
 *.pyc
@@ -71,3 +72,40 @@ backend/green_assessment/green_assessment.db
 backend/green_assessment/models/
 *.safetensors
 model/venv/
+
+# Floor-plan source datasets and generated labels (keep preparation code)
+/backend/data/cubicasa5k.zip
+/backend/data/cubicasa5k/
+/backend/data/cubicasa5k_coco*/
+/backend/datasets/
+/model/dataset/
+/model/datasets/
+/blueprint_dataset.zip
+/backend/blueprint_dataset.zip
+
+# Model binaries: distribute separately; preserve metrics/configuration in Git
+*.pt
+*.pth
+*.onnx
+*.h5
+*.pkl
+*.joblib
+
+# Extra local Python environments and downloaded installation packages
+/backend/testgpu/
+/backend/gpucheck/
+/backend/vision/wheelhouse/
+.ipynb_checkpoints/
+.pytest_cache/
+*.cache
+
+# Personal plan predictions and runtime process identifiers
+/backend/runs/**/my_plan_predictions*/
+/backend/runs/**/*process_id.txt
+# Batch previews may contain source or personal floor plans; keep aggregate plots
+/backend/runs/**/train_batch*.jpg
+/backend/runs/**/val_batch*.jpg
+
+# Local service logs/backups
+/app-service-logs/
+/cleanup-backups/

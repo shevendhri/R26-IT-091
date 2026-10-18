@@ -9,7 +9,7 @@
   "cv_mean_accuracy": 0.9757272727272728,
   "cv_mean_roc_auc": 0.997531396351795,
   "cv_mean_f1": 0.9771714653379586,
-  "training_date": "2026-08-05T10:58:30.715882Z",
+  "training_date": "2026-08-31T03:09:33.294643Z",
   "dataset_size": 11000,
   "feature_count": 38,
   "model_version": "3.0",
@@ -33,7 +33,7 @@
           1131
         ]
       ],
-      "pred_time_ms": 348.33,
+      "pred_time_ms": 95.37,
       "cv_mean_accuracy": 0.9578181818181818,
       "cv_std_accuracy": 0.00534279463815093,
       "cv_mean_roc_auc": 0.9923463619119708,
@@ -57,7 +57,7 @@
           1118
         ]
       ],
-      "pred_time_ms": 297.16,
+      "pred_time_ms": 106.15,
       "cv_mean_accuracy": 0.9490909090909092,
       "cv_std_accuracy": 0.0047673129462279485,
       "cv_mean_roc_auc": 0.9892027846381787,
@@ -81,7 +81,7 @@
           1148
         ]
       ],
-      "pred_time_ms": 35.64,
+      "pred_time_ms": 10.07,
       "cv_mean_accuracy": 0.9757272727272728,
       "cv_std_accuracy": 0.0015640591394622929,
       "cv_mean_roc_auc": 0.997531396351795,

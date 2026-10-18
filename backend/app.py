@@ -9,6 +9,13 @@ if str(backend_dir) not in sys.path:
 if str(project_root) not in sys.path:
     sys.path.insert(0, str(project_root))
 
+# Ensure a workspace-local scratch folder exists for debug logs (avoids hardcoded user paths)
+scratch_dir = project_root / "scratch"
+try:
+    scratch_dir.mkdir(parents=True, exist_ok=True)
+except Exception:
+    pass
+
 from fastapi import FastAPI, File, UploadFile, Form, HTTPException, Request, Query, Body
 from backend.database import validate_canonical_component, insert_history, get_all_history, get_history_by_id, delete_history
 from fastapi.middleware.cors import CORSMiddleware
@@ -275,17 +282,23 @@ async def api_questionnaire(request: Request):
     """
     try:
         payload = await request.json()
-        # Log payload to file for debugging
-        with open('C:/Users/ASUS/Desktop/Material specification/scratch/questionnaire_debug.log','a') as f:
-            f.write('Payload received: '+json.dumps(payload)+'\n')
+        # Log payload to workspace-local scratch file for debugging
+        try:
+            with open(scratch_dir / 'questionnaire_debug.log','a', encoding='utf-8') as f:
+                f.write('Payload received: '+json.dumps(payload)+'\n')
+        except Exception:
+            pass
         profile = process_questionnaire(payload)
         # Perform engineering validation
         from validation_engine import validate_project, generate_validation_log
         validation_result = validate_project(payload)
         generate_validation_log(validation_result, payload)
         response = {"status":"success","profile":profile.model_dump(),"validation":validation_result}
-        with open('C:/Users/ASUS/Desktop/Material specification/scratch/questionnaire_debug.log','a') as f:
-            f.write('Response sent: '+json.dumps(response)+'\n')
+        try:
+            with open(scratch_dir / 'questionnaire_debug.log','a', encoding='utf-8') as f:
+                f.write('Response sent: '+json.dumps(response)+'\n')
+        except Exception:
+            pass
         return response
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
@@ -740,45 +753,17 @@ async def analyze_blueprint(
     structural_system: str = Form("Concrete Frame"),
     floor_count: int = Form(2)
 ):
-    """Optional spatial analysis of uploaded blueprint image."""
+    """Return detections without invented geometry or compliance."""
+    from vision.vision_analysis import process_blueprint
     try:
-        image_bytes = await image.read()
-        from vision.vision_analysis import process_blueprint
-        annotated_image_b64, feedback, results = await process_blueprint(image_bytes, userQuery)
-        if not annotated_image_b64:
-            return {"status": "error", "message": "AI Spatial Core failed to respond."}
-            
-        import random
-        # Generate mathematically balanced dimensions based on floor count
-        total_floor_area = round(float(floor_count) * 85.0 + random.uniform(-10.0, 15.0), 1)
-        wall_area = round(total_floor_area * 1.6, 1)
-        roof_area = round((total_floor_area / float(floor_count)) * 1.25, 1)
-        window_area = round(total_floor_area * 0.16, 1)
-        door_count = int(total_floor_area / 22.0) + 2
+        encoded, feedback, results = await process_blueprint(await image.read(), userQuery, building_type)
+        return {**results, "status": "success", "annotated_image": results["overlay"],
+                "spatial": feedback, "suggestions": [], "structured_info": None}
+    except ValueError as exc:
+        raise HTTPException(status_code=422, detail=str(exc)) from exc
+    except Exception as exc:
+        raise HTTPException(status_code=503, detail="Blueprint detection unavailable. Check model configuration.") from exc
 
-        # Return compliance issues + structured building details
-        return {
-            "status": "success",
-            "spatial": results.get("issues", []),
-            "suggestions": [{"label": "IMPROVEMENT", "desc": imp} for imp in results.get("improvements", [])],
-            "detected_layout": results.get("detected_layout", []),
-            "engineering": " | ".join(feedback),
-            "annotated_image": f"data:image/jpeg;base64,{annotated_image_b64}",
-            "system_note": "Spatial Intelligence Review Complete.",
-            "structured_info": {
-                "building_type": building_type,
-                "floor_count": floor_count,
-                "total_floor_area": total_floor_area,
-                "wall_area": wall_area,
-                "roof_area": roof_area,
-                "window_area": window_area,
-                "door_count": door_count,
-                "structural_system": structural_system,
-                "location": location
-            }
-        }
-    except Exception as e:
-        return {"status": "error", "message": str(e)}
 
 # ── MATERIAL SPECIFICATION SCHEMA ──
 class BuildingInfoRequest(BaseModel):
@@ -1006,122 +991,3 @@ def api_model_info():
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
-@app.post("/api/analyze-blueprint")
-async def api_analyze_blueprint(
-    image: UploadFile = File(...),
-    userQuery: str = Form("Perform full structural and regulatory audit."),
-    location: str = Form("Colombo"),
-    building_type: str = Form("Residential"),
-    structural_system: str = Form("Concrete Frame"),
-    floor_count: int = Form(2)
-):
-    """
-    Blueprint Vision Analysis & Structural Geometry Extraction.
-    Extracts floor geometry, checks UDA regulatory setbacks & daylighting,
-    and returns structured building parameters for material recommendations.
-    """
-    try:
-        from backend.material_quantity_engine import MaterialQuantityEngine
-        image_bytes = await image.read()
-        
-        encoded_img = None
-        spatial_notes = []
-        
-        try:
-            from backend.vision.vision_analysis import process_blueprint
-            enc, feedback, recs = await process_blueprint(image_bytes, userQuery, building_type)
-            if enc:
-                encoded_img = enc
-            if feedback:
-                spatial_notes.extend(feedback)
-            if recs and recs.get("issues"):
-                spatial_notes.extend(recs.get("issues", []))
-        except Exception as cv_err:
-            print(f"[Blueprint Vision] CV error: {cv_err}")
-
-        # If CV did not produce base64 image, create a clean preview
-        if not encoded_img:
-            import base64
-            encoded_img = base64.b64encode(image_bytes).decode('utf-8')
-
-        # Preliminary Geometric Extraction
-        floor_count_val = max(1, int(floor_count))
-        # Estimate total area for preliminary analysis based on floor count
-        estimated_floor_area = round(85.0 * floor_count_val, 2)
-        
-        quantities = MaterialQuantityEngine.calculate_quantities(
-            building_type=building_type,
-            floor_count=floor_count_val,
-            total_floor_area=estimated_floor_area,
-            structural_system=structural_system,
-            location=location,
-            is_blueprint_derived=True
-        )
-
-        structured_info = {
-            "building_type": building_type,
-            "floor_count": floor_count_val,
-            "total_floor_area": estimated_floor_area,
-            "footprint_area": quantities.get("footprint_area_m2"),
-            "wall_area": quantities.get("gross_wall_area_m2"),
-            "net_wall_area": quantities.get("net_wall_area_m2"),
-            "roof_area": quantities.get("roof_surface_area_m2"),
-            "window_area": quantities.get("window_area_m2"),
-            "door_count": quantities.get("door_count"),
-            "structural_system": structural_system,
-            "location": location,
-            "is_blueprint_derived": True
-        }
-
-        # Structured Issues
-        structured_issues = [
-            {
-                "issue": "Boundary Setback Clearance Verification",
-                "severity": "Moderate",
-                "confidence": 92.0,
-                "location": "Rear and side boundary perimeter",
-                "reason": "Urban Development Act No. 41 of 1978 requires standard 1.0m setback from property boundary lines.",
-                "suggested_improvement": "Ensure minimum 1.0m clearance is marked along all property boundaries on municipal submission drawings."
-            },
-            {
-                "issue": "Natural Ventilation & Daylight Aperture Ratio",
-                "severity": "Minor",
-                "confidence": 88.5,
-                "location": "Internal habitable rooms",
-                "reason": "Sri Lanka building regulations require window openings to be at least 15% of floor area for habitable spaces.",
-                "suggested_improvement": "Maintain minimum 15% opening-to-floor area ratio for cross-ventilation in tropical humid zones."
-            },
-            {
-                "issue": "Sanitation Buffer Separation",
-                "severity": "Minor",
-                "confidence": 95.0,
-                "location": "Ground floor washrooms / septic tank",
-                "reason": "Municipal regulations require minimum 60ft separation between soakage pits and domestic water wells.",
-                "suggested_improvement": "Confirm 60ft buffer separation between septic absorption fields and potable water sources."
-            }
-        ]
-
-        if not spatial_notes:
-            spatial_notes = [
-                "Urban Development Act No. 41 compliance check passed for preliminary submission.",
-                "Natural ventilation aperture ratio conforms to 15% minimum guideline.",
-                "Structural frame column alignment validated for vertical load continuity."
-            ]
-
-        validation_report = quantities.get("validation_report", {})
-        geometry_report = validation_report.get("geometry", {})
-
-        return {
-            "status": "success",
-            "annotated_image": f"data:image/jpeg;base64,{encoded_img}",
-            "structured_info": structured_info,
-            "geometry": geometry_report,
-            "validation": validation_report,
-            "spatial": spatial_notes,
-            "issues": structured_issues,
-            "quantities": quantities,
-            "disclaimer": "GreenConstructAI provides preliminary decision support and does not replace detailed structural design, architectural approval, quantity surveying, or professional engineering certification."
-        }
-    except Exception as e:
-        traceback.print_exc()
-        raise HTTPException(status_code=500, detail=str(e))
