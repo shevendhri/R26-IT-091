@@ -7,7 +7,7 @@ from io import BytesIO
 from time import perf_counter
 from fastapi import FastAPI,File,HTTPException,UploadFile
 from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, field_validator
 from .config import get_settings
 from .drawing_understanding.ocr.ocr_engine import OCREngine
 from .drawing_understanding.plan_reader import DrawingUnderstandingService
@@ -24,6 +24,7 @@ from .schemas import ProjectSchema
 from .ml.model_schema import ModelInferenceResult
 from .ml.model_service import FireGuardModelService
 from .model_evidence import build_fireguard_project_schema
+from .api_contract import router as fireguard_contract_router
 
 logger=logging.getLogger("fireguard")
 settings=get_settings()
@@ -94,7 +95,10 @@ class UserConfirmationPayload(BaseModel):
 class FireGuardBuildingData(BaseModel):
     project_name: str
     building_use: str
-    purpose_group: str
+    # Legacy model-assessment callers may leave an unambiguous group for the
+    # catalog classifier or explicitly mark it unknown.  Never coerce blank or
+    # unknown values into a regulatory group here.
+    purpose_group: str | None = Field(default=None, min_length=1)
     storey_count: int = Field(ge=1)
     highest_habitable_floor_level_m: float = Field(ge=0)
     building_height_m: float = Field(ge=0)
@@ -105,7 +109,19 @@ class FireGuardBuildingData(BaseModel):
     corridor_width_m: float = Field(gt=0)
     staircase_count: int = Field(ge=0)
     stair_width_m: float = Field(gt=0)
-    protected_stair: bool
+    # Unknown is a real third state, not an absence.  Rule evaluators must
+    # return MANUAL_REVIEW where this evidence is required.
+    protected_stair: bool | None = None
+
+    @field_validator("protected_stair", mode="before")
+    @classmethod
+    def normalize_protected_stair(cls, value):
+        if isinstance(value, str):
+            value=value.strip().lower()
+            if value in {"", "unknown", "null"}: return None
+            if value in {"yes", "true"}: return True
+            if value in {"no", "false"}: return False
+        return value
 
 class FireGuardAssessmentPayload(BaseModel):
     building_data: FireGuardBuildingData
@@ -147,6 +163,7 @@ async def lifespan(app: FastAPI):
 
 app=FastAPI(title="FireGuard API",version="0.1.0",lifespan=lifespan)
 app.add_middleware(CORSMiddleware,allow_origins=settings.origins,allow_credentials=True,allow_methods=["GET","POST"],allow_headers=["*"])
+app.include_router(fireguard_contract_router)
 
 @app.get("/health")
 def health(): return {"status":"ok","app":"FireGuard","build":settings.fireguard_build_id}

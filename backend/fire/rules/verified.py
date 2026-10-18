@@ -45,7 +45,7 @@ def _use_key(project: ProjectSchema) -> str | None:
     if code=="6": return "factory"
     if code=="7(a)": return "storage"
     if code=="2(a)":
-        if "school" in text: return "school"
+        if "school" in text or "educational" in text: return "school"
         if "clinic" in text: return "clinic"
         if "hospital" in text or "aged" in text or "convalescent" in text: return "hospital"
     return None
@@ -76,6 +76,99 @@ def _bool_presence(project: ProjectSchema, field: str, equipment_type: str | Non
         return True
     return None
 
+def _plan_indications(project: ProjectSchema, feature_type: str) -> list[dict]:
+    """Candidate drawing observations: useful context, never confirmation."""
+    return [
+        item for item in project.fire_features_detected
+        if item.get("feature_type") == feature_type
+        and item.get("presence") == "INDICATED_ON_PLAN"
+        # A key/legend describes a symbol; it is not an installation.
+        and "legend" not in str(item.get("evidence_description") or item.get("raw_evidence") or "").lower()
+    ]
+
+def _indication_evidence(items: list[dict]) -> list[dict]:
+    return [{
+        "evidence_state": "INDICATED_ON_PLAN", "feature_type": item.get("feature_type"),
+        "floor": _floor_key(item.get("floor")),
+        "page": item.get("source_page") or item.get("page"),
+        "source_file": item.get("source_file"), "description": item.get("evidence_description") or item.get("raw_evidence"),
+        "count": item.get("count") or item.get("quantity"),
+    } for item in items]
+
+def _reliable_plan_quantity(project: ProjectSchema, feature_type: str) -> tuple[int | None, list[dict]]:
+    """Return a count only when every distinct plan indication has a count.
+
+    A complete-plan confirmation is intentionally handled by the caller; an
+    AI observation alone cannot establish that omitted equipment is absent.
+    """
+    items=_plan_indications(project,feature_type)
+    if not items or any(item.get("count",item.get("quantity")) is None for item in items):
+        return None, items
+    return sum(item.get("count",item.get("quantity")) for item in items), items
+
+def _floor_key(value: str | None) -> str | None:
+    if not value:
+        return None
+    text = " ".join(str(value).upper().replace("-", " ").split())
+    aliases = {"GROUND FLOOR": "Floor 1", "GROUND": "Floor 1", "FIRST FLOOR": "Floor 1", "FLOOR 1": "Floor 1", "SECOND FLOOR": "Floor 2", "FLOOR 2": "Floor 2"}
+    if text in aliases:
+        return aliases[text]
+    import re
+    match = re.search(r"(?:FLOOR|LEVEL)\s*(\d+)", text)
+    return f"Floor {match.group(1)}" if match else str(value).strip()
+
+def _floor_quantity_results(project: ProjectSchema, rule: RuleDefinition) -> list[RuleResult] | None:
+    """Evaluate a floor-tagged quantity without extrapolating it to other floors."""
+    items = _plan_indications(project, "HOSE_REEL")
+    floor_items = [item for item in items if _floor_key(item.get("floor"))]
+    if not floor_items:
+        return None  # Legacy whole-building evidence keeps its established path.
+    floors = [_floor_key(name) for name in project.building_info.floor_names]
+    floors = [floor for floor in floors if floor] or [f"Floor {number}" for number in range(1, (project.building_info.storey_count or 0) + 1)]
+    complete = project.project.get("relevant_plan_set_complete") is True
+    results = []
+    for floor in floors:
+        scoped = [item for item in floor_items if _floor_key(item.get("floor")) == floor]
+        if not scoped:
+            if complete:
+                results.append(_result(rule, RuleStatus.VIOLATION,
+                    "The submitted plan set is confirmed complete, but it shows no hose-reel evidence for this floor.",
+                    applicable=True, location=floor, actual=0, required=1,
+                    source_evidence=[], evidence=[]))
+                continue
+            results.append(_result(rule, RuleStatus.MANUAL_REVIEW,
+                "No drawing evidence is available for this floor. Upload the second-floor fire plan to complete this check.",
+                applicable=True, location=floor, required=1,
+                missing_evidence=[f"{floor} fire plan"]))
+            continue
+        def high_confidence(item: dict) -> bool:
+            value = item.get("confidence") or 0
+            if isinstance(value, str):
+                return value.lower() == "high"
+            return float(value) >= 0.8
+        reliable = all(
+            (item.get("count", item.get("quantity")) is not None)
+            and high_confidence(item)
+            for item in scoped
+        )
+        evidence = _indication_evidence(scoped)
+        if not reliable:
+            results.append(_result(rule, RuleStatus.MANUAL_REVIEW,
+                "Equipment is indicated for this floor, but its quantity is not reliable enough to decide the floor-specific requirement.",
+                applicable=True, location=floor, required=1,
+                missing_evidence=[f"reliable {floor} hose-reel quantity"], source_evidence=evidence, evidence=evidence))
+            continue
+        actual = sum(item.get("count", item.get("quantity")) for item in scoped)
+        if actual >= 1:
+            results.append(_result(rule, RuleStatus.PASS,
+                "Reliable plan evidence satisfies the supported hose-reel quantity requirement for this floor.",
+                applicable=True, location=floor, actual=actual, required=1, source_evidence=evidence, evidence=evidence))
+        else:
+            results.append(_result(rule, RuleStatus.VIOLATION,
+                "Reliable complete floor-plan evidence establishes fewer hose reels than required for this floor.",
+                applicable=True, location=floor, actual=actual, required=1, source_evidence=evidence, evidence=evidence))
+    return results
+
 def _confirmed_exit_doors(project: ProjectSchema):
     return [door for door in project.doors if door.is_exit is True]
 
@@ -97,8 +190,26 @@ def evaluate_storey_exits(project: ProjectSchema) -> RuleResult:
         return _result(rule,RuleStatus.NOT_APPLICABLE,"Detached/Purpose Group 1 residential exception excludes this generic two-exit storey rule.",applicable=False,required=rule.threshold)
     if pg1 is None:
         return _result(rule,RuleStatus.MANUAL_REVIEW,"Building use/purpose group is unknown, so the detached residential exception cannot be evaluated.",applicable=None,missing_evidence=["building_info.purpose_group"],required=rule.threshold)
+    # A partial multi-storey drawing can establish an observation for its own
+    # floor, never a building-wide "each storey" conclusion.  This guard runs
+    # before form values so an accidental UI value cannot convert Floor 1
+    # staircase symbols (or a source-page number) into a whole-building PASS.
+    stairs = [item for item in _plan_indications(project, "STAIRCASE") if _floor_key(item.get("floor"))]
+    observed_floors = {_floor_key(item.get("floor")) for item in stairs}
+    expected_floors = {_floor_key(name) for name in project.building_info.floor_names}
+    if (project.building_info.storey_count or 0) > 1 and observed_floors and expected_floors - observed_floors:
+        floor_one = [item for item in stairs if _floor_key(item.get("floor")) == "Floor 1"]
+        scoped = floor_one or stairs
+        count = sum(item.get("count", item.get("quantity")) or 1 for item in scoped)
+        evidence = _indication_evidence(scoped)
+        return _result(rule,RuleStatus.MANUAL_REVIEW,"Two staircase locations are indicated on the first-floor plan. Upload the second-floor evacuation plan or provide verified exit information to confirm exits serving the other storey.",applicable=True,actual=f"{count} staircase locations indicated on Floor 1",location="Floor 1",missing_evidence=["Floor 2 evacuation plan or verified exit information"],required=rule.threshold,source_evidence=evidence,evidence=evidence)
     actual=_actual_exit_candidates(project)
     if actual is None:
+        stairs = [item for item in stairs if _floor_key(item.get("floor")) == "Floor 1"]
+        if stairs:
+            count = sum(item.get("count", item.get("quantity")) or 1 for item in stairs)
+            evidence = _indication_evidence(stairs)
+            return _result(rule,RuleStatus.MANUAL_REVIEW,"Two staircase locations are indicated on the first-floor plan. Upload the second-floor evacuation plan or provide verified exit information to confirm exits serving the other storey.",applicable=True,actual=f"{count} staircase locations indicated on Floor 1",location="Floor 1",missing_evidence=["Floor 2 evacuation plan or verified exit information"],required=rule.threshold,source_evidence=evidence,evidence=evidence)
         return _result(rule,RuleStatus.MANUAL_REVIEW,"Confirmed independent exits/staircases are unknown; missing evidence is not a violation.",applicable=True,missing_evidence=["confirmed exits or staircases"],required=rule.threshold)
     if actual>=rule.threshold:
         return _result(rule,RuleStatus.PASS,"Confirmed independent exit/stair count satisfies the verified minimum for each applicable storey.",applicable=True,actual=actual,required=rule.threshold)
@@ -170,6 +281,10 @@ def evaluate_boolean_feature(project: ProjectSchema, rule_id: str, trigger: bool
         return _result(rule,RuleStatus.PASS,"Feature evidence is present for the verified applicable requirement.",applicable=True,actual=True,required=True)
     if presence is False:
         return _result(rule,RuleStatus.VIOLATION,"Feature is explicitly recorded as absent despite the verified applicable requirement.",applicable=True,actual=False,required=True)
+    feature_type = {"exit_signage": "EXIT_SIGN", "manual_call_point": "MANUAL_CALL_POINT"}.get(equipment_type or "")
+    indications = _plan_indications(project, feature_type) if feature_type else []
+    if indications:
+        return _result(rule,RuleStatus.MANUAL_REVIEW,"Feature is indicated on the uploaded plan, but installation, placement, count, and regulatory coverage are not confirmed.",applicable=True,missing_evidence=["authoritative installation/coverage confirmation"],required=True,source_evidence=_indication_evidence(indications),evidence=_indication_evidence(indications))
     return _result(rule,RuleStatus.MANUAL_REVIEW,"Feature is required, but presence is unknown from the available architectural-plan evidence.",applicable=True,missing_evidence=[presence_field or equipment_type or "feature presence"],required=True)
 
 def trigger_above_height(project: ProjectSchema, metres: float) -> bool | None:
@@ -177,7 +292,7 @@ def trigger_above_height(project: ProjectSchema, metres: float) -> bool | None:
     if height is None: return None
     return height>metres
 
-def evaluate_hose_reel(project: ProjectSchema) -> RuleResult:
+def evaluate_hose_reel(project: ProjectSchema) -> RuleResult | list[RuleResult]:
     rule=RULE_BY_ID["CH4-HOSE-REEL"]; storeys=project.building_info.storey_count; height=_height(project)
     total_area=project.building_info.total_building_area_m2
     if total_area is not None and total_area < 27.871:
@@ -187,12 +302,25 @@ def evaluate_hose_reel(project: ProjectSchema) -> RuleResult:
         return _result(rule,RuleStatus.NOT_APPLICABLE,"Purpose Group 1 building does not exceed four storeys or 18 m, so the listed exception applies.",applicable=False,required=1)
     if pg1 is True and (storeys is None or height is None):
         return _result(rule,RuleStatus.MANUAL_REVIEW,"Purpose Group 1 exception may apply, but storey count or height is unknown.",applicable=None,missing_evidence=["building_info.storey_count","building_info.building_height_m"],required=1)
+    floor_results = _floor_quantity_results(project, rule)
+    if floor_results is not None:
+        return floor_results
     required_quantity=storeys if storeys is not None else None
     observed=sum((item.count or 1) for item in project.fire_equipment if item.type=="hose_reel") or None
     if observed is not None and required_quantity is not None and observed>=required_quantity:
         return _result(rule,RuleStatus.MANUAL_REVIEW,"Minimum visible hose-reel count is met, but nozzle reach and placement coverage remain unverified.",applicable=True,actual=observed,required=required_quantity,missing_evidence=["hose reel 6 m reach coverage"])
     if observed is not None and required_quantity is not None and observed<required_quantity:
         return _result(rule,RuleStatus.VIOLATION,"Confirmed hose-reel count is below the verified minimum per storey.",applicable=True,actual=observed,required=required_quantity)
+    indications=_plan_indications(project,"HOSE_REEL")
+    plan_quantity, quantity_items=_reliable_plan_quantity(project,"HOSE_REEL")
+    complete=project.project.get("relevant_plan_set_complete")
+    if plan_quantity is not None and required_quantity is not None and complete is True:
+        evidence=_indication_evidence(quantity_items)
+        if plan_quantity >= required_quantity:
+            return _result(rule,RuleStatus.PASS,"The complete submitted plan set indicates a count meeting the codified minimum per storey. Reach, placement, and physical installation still require separate verification.",applicable=True,actual=plan_quantity,required=required_quantity,source_evidence=evidence,evidence=evidence)
+        return _result(rule,RuleStatus.VIOLATION,"The complete submitted plan set indicates fewer hose reels than the codified minimum per storey.",applicable=True,actual=plan_quantity,required=required_quantity,source_evidence=evidence,evidence=evidence)
+    if indications:
+        return _result(rule,RuleStatus.MANUAL_REVIEW,"Hose reel(s) are indicated on the uploaded plan, but installation, count per storey, nozzle reach, and placement coverage are not confirmed.",applicable=True,missing_evidence=["authoritative hose-reel count per storey","hose reel 6 m reach coverage"],required=required_quantity or "at least one per storey",source_evidence=_indication_evidence(indications),evidence=_indication_evidence(indications))
     return _result(rule,RuleStatus.MANUAL_REVIEW,"Hose reels are required unless a listed exception applies, but presence/count is unknown.",applicable=True,missing_evidence=["hose reel evidence"],required=required_quantity or "at least one per storey")
 
 def evaluate_rising_main_quantity(project: ProjectSchema) -> RuleResult:
@@ -242,4 +370,8 @@ def evaluate_alarm_table14(project: ProjectSchema) -> RuleResult:
         return _result(rule,RuleStatus.PASS,"Fire alarm evidence is present for the Table 14 applicable requirement.",applicable=True,actual=True,required=required_type)
     if presence is False:
         return _result(rule,RuleStatus.VIOLATION,"Fire alarm system is explicitly recorded as absent despite Table 14 applicability.",applicable=True,actual=False,required=required_type)
+    indications=_plan_indications(project,"FIRE_ALARM_PANEL")
+    if indications:
+        evidence=_indication_evidence(indications)
+        return _result(rule,RuleStatus.MANUAL_REVIEW,"A fire alarm control-panel symbol is indicated on the uploaded plan, but the alarm system type, installation, audibility, and Table 14 coverage are not confirmed.",applicable=True,missing_evidence=["authoritative alarm-system type and coverage confirmation"],required=required_type,source_evidence=evidence,evidence=evidence)
     return _result(rule,RuleStatus.MANUAL_REVIEW,"Table 14 indicates a fire alarm requirement, but alarm-system presence/type is unknown.",applicable=True,missing_evidence=["alarm_system","alarm type"],required=required_type)

@@ -50,6 +50,14 @@ def _matching_purpose_groups(text: str) -> list[dict]:
 
 def purpose_group_for_project(project: ProjectSchema) -> dict:
     info=project.building_info
+    # A stale form selection must not convert an explicitly declared school
+    # into a dwelling and activate residential exceptions.  This project only
+    # codifies School/Educational under its existing 2(a) rule-data mapping.
+    declared_use=normalize_use_text(" ".join(str(x or "") for x in (info.building_use_text, info.building_type, info.project_title)))
+    if ("school" in declared_use or "educational" in declared_use) and str(info.purpose_group or "").startswith("1"):
+        group=PURPOSE_GROUP_CATALOG["2(a)"]
+        record=asdict(group); record["source_pages"]=list(group.source_pages)
+        return {"status":"CONFIRMED","purpose_group":"2(a)","purpose_groups":[record],"reason":"Declared School/Educational use overrides a conflicting residential form selection in the current codified Table 2 mapping.","source":"Table 2","source_pages":list(group.source_pages)}
     if info.purpose_group:
         code=str(info.purpose_group)
         group=PURPOSE_GROUP_CATALOG.get(code)

@@ -12,6 +12,14 @@ EVIDENCE_FIELD_MAP = {
     "assembly_point": "assembly_point_count", "emergency_telephone": "emergency_telephone_count",
 }
 
+CANONICAL_FEATURE_TYPES = {
+    "fire_exit": "EXIT_ROUTE", "emergency_exit_sign": "EXIT_SIGN",
+    "fire_door": "DOOR_CANDIDATE", "fire_extinguisher": "FIRE_EXTINGUISHER",
+    "smoke_detector": "SMOKE_DETECTOR", "sprinkler": "SPRINKLER",
+    "fire_alarm": "FIRE_ALARM_PANEL", "staircase": "STAIRCASE",
+    "hydrant": "HYDRANT", "hose_reel": "HOSE_REEL",
+}
+
 
 def normalize_model_evidence(result: ModelInferenceResult) -> dict[str, dict[str, Any]]:
     evidence = {}
@@ -48,12 +56,15 @@ def build_fireguard_project_schema(user_building_data: dict[str, Any], model_res
     project.extraction["evidence_provenance"] = {"user": "USER_CONFIRMED", "model": "MODEL_DETECTED"}
     project.fire_plan_present = bool(documents)
     project.fire_annotations_present = bool(model_result.detections) or None
-    project.fire_features_detected = [item.model_dump(mode="json") for item in model_result.detections]
-    equipment_classes = {"fire_extinguisher", "smoke_detector", "sprinkler", "fire_alarm", "hydrant", "hose_reel", "assembly_point", "emergency_telephone", "emergency_exit_sign"}
-    for class_name, count in model_result.class_counts.items():
-        if class_name in equipment_classes:
-            confidence = model_evidence.get(EVIDENCE_FIELD_MAP[class_name], {}).get("confidence") or 0.0
-            project.fire_equipment.append(FireEquipment(type=class_name, count=count, source_file="fireguard_model", source_page=1, evidence="FireGuard YOLOv8 candidate evidence; compliance is evaluated separately.", confidence=confidence))
+    project.fire_features_detected = [{
+        **item.model_dump(mode="json"),
+        "feature_type": CANONICAL_FEATURE_TYPES.get(item.class_name, item.class_name.upper()),
+        "feature": item.class_name,
+        "presence": "INDICATED_ON_PLAN",
+        "verification_state": "UNVERIFIED_PLAN_INDICATION",
+    } for item in model_result.detections]
+    # Candidate detections deliberately do not populate fire_equipment: doing
+    # so would allow an AI symbol to become a confirmed installed feature.
     # A visible staircase remains a candidate and never overwrites confirmed exits.
     project.project["stair_candidate_count"] = model_evidence.get("stair_candidate_count", {}).get("value")
     validated = model_result.validated_plan_evidence if model_result.inference_mode == "VALIDATED_REPLAY" else None

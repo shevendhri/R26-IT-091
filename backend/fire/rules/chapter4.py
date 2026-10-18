@@ -4,10 +4,13 @@ from .rule_catalog import RULE_BY_ID, RULE_CATALOG
 from .verified import evaluate_alarm_table14, evaluate_boolean_feature, evaluate_hose_reel, evaluate_rising_main_quantity, trigger_above_height
 
 def evaluate(project: ProjectSchema):
+    hose_reel_results = evaluate_hose_reel(project)
+    if not isinstance(hose_reel_results, list):
+        hose_reel_results = [hose_reel_results]
     results=[
         evaluate_boolean_feature(project,"CH4-WET-RISING-MAIN",trigger_above_height(project,18),"hydrant_system","wet_riser"),
         evaluate_rising_main_quantity(project),
-        evaluate_hose_reel(project),
+        *hose_reel_results,
         evaluate_boolean_feature(project,"CH4-FIRE-LIFT",trigger_above_height(project,30),"fire_lift_system"),
         evaluate_boolean_feature(project,"CH4-FIREFIGHTING-SHAFT",_high_rise_trigger(project),"project.fire_fighting_shaft"),
         evaluate_alarm_table14(project),
@@ -34,6 +37,14 @@ def _manual_alarm_trigger(project: ProjectSchema) -> bool|None:
     alarm_type=project.project.get("required_alarm_type")
     if alarm_type:
         return alarm_type=="manual"
+    # Table 14 is the verified source that establishes whether a manual alarm
+    # is required.  Previously that conclusion lived only in the alarm result,
+    # leaving the call-point evaluator permanently unresolved.
+    alarm_result = evaluate_alarm_table14(project)
+    if alarm_result.applicable is True and alarm_result.required == "manual":
+        return True
+    if alarm_result.applicable is False:
+        return False
     return None
 
 def _sprinkler_height_trigger(project: ProjectSchema) -> bool|None:
