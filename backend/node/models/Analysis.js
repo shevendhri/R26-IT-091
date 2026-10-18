@@ -21,10 +21,15 @@ const AnalysisSchema = new mongoose.Schema({
         door: { type: Number, default: 0 },
         window: { type: Number, default: 0 }
     },
+    analysisSource: String,
+    modelName: String,
+    notice: String,
     roomNames: [String],
     rooms: [{
         name: { type: String, default: '' },
         type: { type: String, default: 'other' },
+        confidence: Number,
+        walls: Number,
         doors: { type: Number, default: 0 },
         windows: { type: Number, default: 0 },
         wallAreaPx2: { type: Number, default: 0 },

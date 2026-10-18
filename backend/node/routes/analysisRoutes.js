@@ -39,6 +39,7 @@ function handleUpload(req, res, next) {
 }
 
 router.post('/analyze', handleUpload, analysisController.analyzePlan);
+router.post('/check-uda-rules', handleUpload, analysisController.checkUdaRules);
 router.get('/history', analysisController.getHistory);
 
 module.exports = router;

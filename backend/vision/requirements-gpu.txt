@@ -1,0 +1,5 @@
+# Install CUDA wheels first, using the command in GPU_SETUP.md.
+torch==2.5.1+cu124
+torchvision==0.20.1+cu124
+ultralytics==8.4.48
+ipykernel>=6,<7

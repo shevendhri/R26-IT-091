@@ -1,5 +1,3 @@
-import approval_checklist
-import compliance
 from pydantic import BaseModel
 from typing import Optional, List
 import json
@@ -48,47 +46,67 @@ app.add_middleware(
 
 # ── YOLO model (loaded once at startup) ──────────────────────────────────────
 
-_WEIGHTS = os.path.join(os.path.dirname(__file__), 'weights', 'best.pt')
-_yolo_model = None
-
 try:
-    from ultralytics import YOLO as _YOLO
-    if os.path.exists(_WEIGHTS):
-        _yolo_model = _YOLO(_WEIGHTS)
-        print(f"[INFO] Loaded YOLO model from {_WEIGHTS}")
-    else:
-        print(f"[WARN] weights/best.pt not found — will use OpenCV fallback")
+    from .detector import detect, WEIGHTS, IMGSZ, CONF
 except ImportError:
-    print("[WARN] ultralytics not installed — will use OpenCV fallback")
+    from detector import detect, WEIGHTS, IMGSZ, CONF
+_WEIGHTS = str(WEIGHTS)
+_YOLO_IMGSZ = IMGSZ
+_YOLO_CLASS_CONF = dict.fromkeys(['room','wall','door','window'], CONF)
+_YOLO_MIN_CONF = CONF
 
-_YOLO_CLASSES = ['room', 'wall', 'door', 'window']
 
-# ── Gemini vision analysis (primary accuracy path) ───────────────────────────
-# YOLO above stays wired up and still produces the annotated overlay — it's
-# the trained model this project is evaluated on. Gemini does the actual
-# counting/room-breakdown/compliance judgment shown to users, since the
-# custom-trained detector's mAP is currently too low (~0.14-0.22) to trust
-# for that. See doc/MODEL_TRAINING_GUIDE.md for the YOLO training history.
+def _crop_to_floorplan_region(img):
+    """
+    Find the main connected dark wall network and crop around it before YOLO.
+    This keeps sheet text, dimension labels, and blank areas from becoming
+    false detections, while output boxes stay in original image coordinates.
+    """
+    try:
+        import cv2
+        import numpy as np
+    except Exception:
+        return img, 0, 0
+
+    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    h, w = gray.shape
+    dark = cv2.threshold(gray, 100, 255, cv2.THRESH_BINARY_INV)[1]
+    dark = cv2.morphologyEx(dark, cv2.MORPH_CLOSE, np.ones((5, 5), np.uint8), iterations=2)
+
+    labels_count, _labels, stats, _centroids = cv2.connectedComponentsWithStats(dark, connectivity=8)
+    if labels_count <= 1:
+        return img, 0, 0
+
+    image_area = h * w
+    candidates = []
+    for idx in range(1, labels_count):
+        x = int(stats[idx, cv2.CC_STAT_LEFT])
+        y = int(stats[idx, cv2.CC_STAT_TOP])
+        bw = int(stats[idx, cv2.CC_STAT_WIDTH])
+        bh = int(stats[idx, cv2.CC_STAT_HEIGHT])
+        area = int(stats[idx, cv2.CC_STAT_AREA])
+        if area < image_area * 0.002:
+            continue
+        if bw < w * 0.08 or bh < h * 0.08:
+            continue
+        candidates.append((area, x, y, bw, bh))
+
+    if not candidates:
+        return img, 0, 0
+
+    _area, x, y, bw, bh = max(candidates, key=lambda item: item[0])
+    pad = max(16, int(max(bw, bh) * 0.08))
+    left = max(0, x - pad)
+    top = max(0, y - pad)
+    right = min(w, x + bw + pad)
+    bottom = min(h, y + bh + pad)
+
+    if (right - left) * (bottom - top) > image_area * 0.9:
+        return img, 0, 0
+
+    return img[top:bottom, left:right], left, top
 
 _gemini_client = None
-_genai_types = None
-try:
-    from google import genai as _genai
-    from google.genai import types as _genai_types
-    _gemini_api_key = os.environ.get(
-        'GEMINI_API_KEY') or os.environ.get('GOOGLE_API_KEY')
-    # gemini-3.6-pro reasons more carefully about spatial detail (door swing
-    # arcs, thin window lines) than flash, at lower free-tier request limits —
-    # set GEMINI_MODEL=gemini-3.6-pro in model/.env to try it if flash keeps
-    # under-reporting doors/windows.
-    _gemini_model_name = os.environ.get('GEMINI_MODEL', 'gemini-3.6-flash')
-    if _gemini_api_key:
-        _gemini_client = _genai.Client(api_key=_gemini_api_key)
-        print("[INFO] vision analysis enabled")
-    else:
-        print("[WARN] GEMINI_API_KEY not set — falling back to YOLO-derived counts")
-except ImportError:
-    print("[WARN] google-genai package not installed — falling back to YOLO-derived counts")
 
 # ── Room type normalization ───────────────────────────────────────────────────
 
@@ -175,44 +193,8 @@ def _ocr_room_labels(png_bytes: bytes, rooms: list) -> list:
 
 # ── YOLO inference ────────────────────────────────────────────────────────────
 
-def _yolo_predict(png_bytes: bytes, conf: float = 0.25):
-    """
-    Run YOLOv8 inference on a PNG image.
-    Returns (counts dict, boxes list) where boxes = [{cls, x1,y1,x2,y2, conf}].
-    Falls back to OpenCV analysis if YOLO model is not loaded.
-    """
-    if _yolo_model is None:
-        counts = _opencv_analyze(png_bytes)
-        return counts, []
-
-    try:
-        import cv2
-        import numpy as np
-        arr = np.frombuffer(png_bytes, np.uint8)
-        img = cv2.imdecode(arr, cv2.IMREAD_COLOR)
-    except Exception:
-        # PIL fallback if cv2 not available
-        from PIL import Image as PILImage
-        img = PILImage.open(io.BytesIO(png_bytes)).convert('RGB')
-
-    results = _yolo_model(img, conf=conf, verbose=False)[0]
-    counts = {'room': 0, 'wall': 0, 'door': 0, 'window': 0}
-    boxes = []
-
-    for box in results.boxes:
-        cls_id = int(box.cls.item())
-        cls_name = _YOLO_CLASSES[cls_id] if cls_id < len(
-            _YOLO_CLASSES) else 'other'
-        if cls_name in counts:
-            counts[cls_name] += 1
-        x1, y1, x2, y2 = box.xyxy[0].tolist()
-        boxes.append({
-            'cls': cls_name,
-            'conf': round(float(box.conf.item()), 3),
-            'x1': x1, 'y1': y1, 'x2': x2, 'y2': y2,
-        })
-
-    return counts, boxes
+def _yolo_predict(png_bytes: bytes, conf: float = CONF):
+    return detect(png_bytes)
 
 
 class _GeminiCounts(BaseModel):
@@ -300,7 +282,7 @@ def _gemini_analyze(png_bytes: bytes, room_count_hint: int | None = None):
     ignored rather than forced.
     """
     if _gemini_client is None:
-        return None
+        return {"_error": "Gemini client is not configured. Check GEMINI_API_KEY / GOOGLE_API_KEY."}
 
     prompt = _GEMINI_ANALYSIS_PROMPT
     if room_count_hint:
@@ -326,17 +308,34 @@ def _gemini_analyze(png_bytes: bytes, room_count_hint: int | None = None):
         )
         result = response.parsed.model_dump(
         ) if response.parsed is not None else json.loads(response.text)
-
+        print(
+            f"[INFO] Gemini ({_gemini_model_name}) counts: {result.get('counts')}")
         return result
     except Exception as e:
         print(f"[WARN] Gemini analysis failed, falling back to YOLO: {e}")
-        return None
+        return {"_error": str(e)}
 
 
 def _bboxes_overlap(a, b):
     ax1, ay1, ax2, ay2 = a
     bx1, by1, bx2, by2 = b
     return not (ax2 < bx1 or bx2 < ax1 or ay2 < by1 or by2 < ay1)
+
+
+def _box_center(box: dict) -> tuple[float, float]:
+    return ((box['x1'] + box['x2']) / 2, (box['y1'] + box['y2']) / 2)
+
+
+def _feature_belongs_to_room(room_bbox: tuple, feature_box: dict, pad: int = 12) -> bool:
+    rx1, ry1, rx2, ry2 = room_bbox
+    padded = (rx1 - pad, ry1 - pad, rx2 + pad, ry2 + pad)
+    feature_bbox = (feature_box['x1'], feature_box['y1'], feature_box['x2'], feature_box['y2'])
+    cx, cy = _box_center(feature_box)
+
+    return (
+        _bboxes_overlap(padded, feature_bbox)
+        or (rx1 - pad <= cx <= rx2 + pad and ry1 - pad <= cy <= ry2 + pad)
+    )
 
 
 def _assign_rooms_from_boxes(boxes: list) -> list:
@@ -358,23 +357,20 @@ def _assign_rooms_from_boxes(boxes: list) -> list:
         rx1, ry1, rx2, ry2 = rb['x1'], rb['y1'], rb['x2'], rb['y2']
         area_px2 = round((rx2 - rx1) * (ry2 - ry1))
 
-        door_count = sum(
-            1 for d in door_boxes
-            if rx1 <= (d['x1'] + d['x2']) / 2 <= rx2
-            and ry1 <= (d['y1'] + d['y2']) / 2 <= ry2
-        )
-        win_count = sum(
-            1 for w in win_boxes
-            if rx1 <= (w['x1'] + w['x2']) / 2 <= rx2
-            and ry1 <= (w['y1'] + w['y2']) / 2 <= ry2
-        )
+        # Door/window ids (indices into the respective box lists) so callers
+        # can deduplicate shared features across multiple rooms.
+        room_bbox = (rx1, ry1, rx2, ry2)
+        door_ids = [i for i, d in enumerate(door_boxes)
+                    if _feature_belongs_to_room(room_bbox, d)]
+        win_ids = [i for i, w in enumerate(win_boxes)
+                   if _feature_belongs_to_room(room_bbox, w)]
 
         pad = 6  # px tolerance — walls sit exactly on the room boundary
         padded = (rx1 - pad, ry1 - pad, rx2 + pad, ry2 + pad)
-        touching_walls = [w for w in wall_boxes
+        touching_walls = [(i, w) for i, w in enumerate(wall_boxes)
                           if _bboxes_overlap(padded, (w['x1'], w['y1'], w['x2'], w['y2']))]
         wall_thickness_px = None
-        for w in touching_walls:
+        for _idx, w in touching_walls:
             thickness = min(w['x2'] - w['x1'], w['y2'] - w['y1'])
             if wall_thickness_px is None or thickness < wall_thickness_px:
                 wall_thickness_px = thickness
@@ -383,9 +379,12 @@ def _assign_rooms_from_boxes(boxes: list) -> list:
             'name': '',
             'type': 'other',
             'area_px2': area_px2,
-            'doors': door_count,
-            'windows': win_count,
+            'doors': len(door_ids),
+            'windows': len(win_ids),
             'walls': len(touching_walls),
+            'door_ids': door_ids,
+            'window_ids': win_ids,
+            'wall_ids': [i for i, _ in touching_walls],
             'wall_thickness_px': wall_thickness_px,
             '_bbox': (rx1, ry1, rx2, ry2),
         })
@@ -537,121 +536,41 @@ def _opencv_analyze(png_bytes: bytes) -> dict:
 
 @app.get("/")
 async def root():
-    model_status = "YOLO loaded" if _yolo_model else "OpenCV fallback (train and add best.pt)"
-    return {"message": "Plan Analyzer ML Service is running", "model": model_status}
+    return {"message": "Plan Analyzer ML Service", "model": WEIGHTS.name,
+            "checkpoint_available": WEIGHTS.is_file(), "image_size": IMGSZ}
 
 
 @app.post("/predict")
 async def predict(image: UploadFile = File(...)):
-    """
-    Real detection for any floor plan image — PNG, JPG/JPEG, or a rasterized
-    SVG (the caller rasterizes SVGs before uploading; this endpoint only
-    handles raster bytes). Runs the trained YOLO model directly on the pixels
-    — no shortcut of reading pre-existing vector labels — then derives room
-    names (OCR), real-world scale (dimension labels or assumed door width),
-    and the same compliance/approval-checklist data the SVG path used to
-    produce, just from detected geometry instead of ground truth.
-    """
+    from fastapi import HTTPException
+    from starlette.concurrency import run_in_threadpool
     png_bytes = await image.read()
+    try:
+        return await run_in_threadpool(analyze_image, png_bytes)
+    except ValueError as exc:
+        raise HTTPException(status_code=422, detail=str(exc)) from exc
+    except Exception as exc:
+        import logging
+        logging.exception("Blueprint inference failed")
+        raise HTTPException(status_code=503, detail="Blueprint model unavailable or inference failed. Check the model service log.") from exc
+
+
+def analyze_image(png_bytes):
     counts, boxes = _yolo_predict(png_bytes)
-    # Trained-model room counting is noticeably more reliable than its
-    # door/window/wall counting (room mAP50 ~0.44-0.59 vs ~0.04-0.11 for the
-    # other classes) — keep YOLO's room count as the number shown to users,
-    # even though Gemini drives everything else below.
-    yolo_room_count = counts.get('room', 0)
-
-    overlay_b64 = None
-    if boxes:
-        overlay_b64 = _draw_yolo_overlay(png_bytes, boxes)
-
     rooms = _assign_rooms_from_boxes(boxes)
-    door_boxes = [b for b in boxes if b['cls'] == 'door']
-
-    # Unlike the old SVG path, a YOLO room starts with no name at all — OCR is
-    # the only source of one, and might read back a size hint instead of a
-    # real name (e.g. "8'11\" x 9'7\""), same as CubiCasa SVGs sometimes do.
-    rooms = _ocr_room_labels(png_bytes, rooms)
-    for room in rooms:
-        raw_name = room.get('name', '') or ''
-        if _is_dimension_label(raw_name):
-            room['dimension_label'] = raw_name
-            room['name'] = ''
-        else:
-            room['dimension_label'] = None
-
-    px2_per_sqft, scale_source = _estimate_scale(rooms, door_boxes)
-
     for i, room in enumerate(rooms):
-        if not room.get('name'):
-            # Bedrooms in this dataset are frequently unlabeled except for a size hint.
-            room['type'] = 'bedroom' if room.get(
-                'dimension_label') else 'other'
-            room['name'] = f"Bedroom {i + 1}" if room['type'] == 'bedroom' else f"Room {i + 1}"
-        else:
-            room['type'] = _normalize_room_type(room['name'])
-        room['area_sqft'] = round(
-            room['area_px2'] / px2_per_sqft, 1) if px2_per_sqft else None
-        room['compliance'] = compliance.check_room(room, room['type'])
+        room.update(name=f"Room {i+1}", type="other", area_sqft=None,
+                    confidence=[b for b in boxes if b['cls']=='room'][i]['conf'])
         room.pop('_bbox', None)
-        room.pop('dimension_label', None)
         room.pop('wall_thickness_px', None)
-
-    counts['scale_source'] = scale_source
-
-    # The YOLO pipeline above still runs in full — it produces the overlay
-    # image (genuine trained-model output) and is the fallback path. Gemini
-    # takes over the counts/rooms/compliance actually shown to the user when
-    # it's available, since it's currently far more reliable than the trained
-    # detector's ~0.14-0.22 mAP50.
-    analysis_source = 'yolo'
-    checklist_scale_source = scale_source
-    building_compliance = compliance.check_building(rooms, scale_source)
-
-    # Room count was previously forced to YOLO's number on the theory that its
-    # room-class mAP50 (~0.44-0.59 on the CubiCasa validation set) made it the
-    # more trustworthy source. In practice it doesn't generalize well to
-    # plans outside that dataset, so Gemini's own room count is now
-    # authoritative too — YOLO's count is passed along only as an advisory
-    # cross-check inside the prompt, not force-applied afterward.
-    gemini_result = _gemini_analyze(
-        png_bytes, room_count_hint=yolo_room_count or None)
-    if gemini_result:
-        analysis_source = 'gemini'
-        counts = dict(gemini_result['counts'])
-        checklist_scale_source = 'gemini_estimate' if gemini_result.get(
-            'scale_established') else 'none'
-        counts['scale_source'] = checklist_scale_source
-
-        rooms = []
-        for i, r in enumerate(gemini_result['rooms']):
-            rooms.append({
-                'name': r.get('name') or f"Room {i + 1}",
-                'type': r.get('type') or 'other',
-                'doors': r.get('doors', 0),
-                'windows': r.get('windows', 0),
-                'walls': r.get('walls', 0),
-                'area_sqft': r.get('area_sqft'),
-                'area_px2': 0,
-                'compliance': {
-                    'ventilation': bool(r.get('ventilation_ok')),
-                    'wall_thickness': bool(r.get('wall_thickness_ok')),
-                },
-            })
-
-        building_compliance = {
-            'has_toilet': bool(gemini_result.get('has_toilet')),
-            'scale_established': bool(gemini_result.get('scale_established')),
-        }
-
     return {
-        "counts": counts,
-        "rooms": rooms,
-        "room_names": [r['name'] for r in rooms],
-        "low_confidence": _yolo_model is None,
-        "overlay": f"data:image/jpeg;base64,{overlay_b64}" if overlay_b64 else None,
-        "compliance": building_compliance,
-        "approval_checklist": approval_checklist.build_checklist(rooms, checklist_scale_source),
-        "analysis_source": analysis_source,
+        "counts": counts, "rooms": rooms, "room_names": [r['name'] for r in rooms],
+        "detections": boxes, "low_confidence": not bool(boxes),
+        "overlay": "data:image/jpeg;base64," + _draw_yolo_overlay(png_bytes, boxes),
+        "compliance": None, "approval_checklist": [], "analysis_source": "yolo",
+        "model_confidence_thresholds": _YOLO_CLASS_CONF, "model_image_size": IMGSZ,
+        "model_name": "blueprint_clean_gpu", "gemini_error": None,
+        "notice": "Detected objects need review. Room associations are approximate. Dimensions and regulatory compliance are not established by object detection.",
     }
 
 

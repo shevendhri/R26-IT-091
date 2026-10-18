@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
+import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import FloorUploadCard from '@/components/PlanAnalyzer/FloorUploadCard';
@@ -76,15 +77,42 @@ export default function PlanAnalyzer() {
 
   const analyzedFloors = floors.filter(f => f.result);
 
-  const totals = analyzedFloors.reduce((acc, f) => {
+  // Compute totals. If the model returns per-room `*_ids`, use those to
+  // deduplicate shared features (walls/windows/doors) across rooms; otherwise
+  // fall back to top-level counts or per-room numeric sums.
+  const totals = { rooms: 0, doors: 0, windows: 0, walls: 0 };
+  const doorSet = new Set();
+  const windowSet = new Set();
+  const wallSet = new Set();
+
+  analyzedFloors.forEach((f, fi) => {
     const c = f.result?.data?.counts || {};
     const rooms = f.result?.rooms || f.result?.data?.rooms || [];
-    acc.rooms  += c.room   ?? rooms.length;
-    acc.doors  += c.door   ?? 0;
-    acc.windows += c.window ?? 0;
-    acc.walls  += c.wall   ?? 0;
-    return acc;
-  }, { rooms: 0, doors: 0, windows: 0, walls: 0 });
+    totals.rooms += (c.room ?? rooms.length);
+
+    if (rooms.length > 0 && (rooms[0].door_ids || rooms[0].window_ids || rooms[0].wall_ids)) {
+      // Use id lists and prefix with floor index to keep ids unique across floors
+      rooms.forEach((r, ri) => {
+        (r.door_ids || []).forEach(id => doorSet.add(`${fi}:${id}`));
+        (r.window_ids || []).forEach(id => windowSet.add(`${fi}:${id}`));
+        (r.wall_ids || []).forEach(id => wallSet.add(`${fi}:${id}`));
+      });
+    } else {
+      // Fall back to provided counts or numeric per-room sums
+      const doorCount = (typeof c.door === 'number') ? c.door : rooms.reduce((s, r) => s + (r.doors || 0), 0);
+      const windowCount = (typeof c.window === 'number') ? c.window : rooms.reduce((s, r) => s + (r.windows || 0), 0);
+      const wallCount = (typeof c.wall === 'number') ? c.wall : rooms.reduce((s, r) => s + (r.walls || 0), 0);
+      // Add to totals directly
+      totals.doors += doorCount;
+      totals.windows += windowCount;
+      totals.walls += wallCount;
+    }
+  });
+
+  // If sets were populated, use their sizes as the totals
+  if (doorSet.size > 0) totals.doors = doorSet.size;
+  if (windowSet.size > 0) totals.windows = windowSet.size;
+  if (wallSet.size > 0) totals.walls = wallSet.size;
 
   return (
     <div className="plan-analyzer-scope" style={{ minHeight: '100vh', background: 'var(--eco-black)', color: 'var(--text-primary)', position: 'relative' }}>
@@ -108,6 +136,15 @@ export default function PlanAnalyzer() {
             <span key={i} className="bg-eco-mid/70 border border-eco-border rounded-full px-3 py-1">{s}</span>
           ))}
         </div>
+        <div className="mt-6">
+          <Link
+            href="/plan-analyzer/uda-rules"
+            className="btn-premium inline-flex items-center justify-center"
+            style={{ textDecoration: 'none', width: 'auto', padding: '0.8rem 1.35rem' }}
+          >
+            Check the UDA Rulles
+          </Link>
+        </div>
       </div>
 
       <div className="max-w-6xl mx-auto px-4 mb-8 relative" style={{ zIndex: 1 }}>
@@ -118,10 +155,10 @@ export default function PlanAnalyzer() {
               : `Total across ${analyzedFloors.length} floor${analyzedFloors.length > 1 ? 's' : ''}`}
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
-            <StatCard icon="🏠" value={totals.rooms}   label="Rooms"   color="bg-brand-green-dim text-brand-green" />
-            <StatCard icon="🚪" value={totals.doors}   label="Doors"   color="bg-brand-amber-dim text-brand-amber" />
+            <StatCard icon="🏠" value={totals.rooms} label="Rooms" color="bg-brand-green-dim text-brand-green" />
+            <StatCard icon="🚪" value={totals.doors} label="Doors" color="bg-brand-amber-dim text-brand-amber" />
             <StatCard icon="🪟" value={totals.windows} label="Windows" color="bg-brand-blue-dim text-brand-blue" />
-            <StatCard icon="🧱" value={totals.walls}   label="Walls"   color="bg-brand-red-dim text-brand-red" />
+            <StatCard icon="🧱" value={totals.walls} label="Walls" color="bg-brand-red-dim text-brand-red" />
           </div>
         </div>
       </div>

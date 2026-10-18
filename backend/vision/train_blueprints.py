@@ -1,47 +1,45 @@
+"""Train a fresh YOLO baseline on verified CubiCasa annotations."""
+import argparse
+from pathlib import Path
+import torch
 from ultralytics import YOLO
-import os
 
-def train_blueprint_model(data_yaml_path=r"datasets/blueprints/data.yaml", epochs=5):
-    """
-    Trains a YOLO model on a custom blueprint dataset.
-    
-    Before running this, ensure your dataset is structured like this:
-    backend/
-      datasets/
-        blueprints/
-          data.yaml  (Defines paths and class names like 'wall', 'door', 'window')
-          train/
-            images/ (your .jpg/.png blueprints)
-            labels/ (your .txt YOLO annotation files)
-          val/
-            images/
-            labels/
-    """
-    print(f"Initializing training using dataset configuration at: {data_yaml_path}")
-    
-    if not os.path.exists(data_yaml_path):
-        print(f"Error: Could not find {data_yaml_path}. Please check your dataset folder structure.")
-        return
+BASE = Path(__file__).resolve().parents[1]
 
-    # Load a pre-trained YOLO model (using nano version for speed locally)
-    model = YOLO('yolov8n.pt')
 
-    # Train the model
-    # Note: If you don't have a GPU, setting device='cpu' ensures it runs (though slower).
-    results = model.train(
-        data=data_yaml_path,
-        epochs=epochs,
-        imgsz=640,          # Resize images to 640x640 for training
-        batch=8,            # Batch size (reduce if memory errors occur)
-        device='cpu',       # Remove or set to '0' if you have an NVIDIA GPU (CUDA)
-        project='runs',     # Where to save the output weights
-        name='blueprint_model',
-        exist_ok=True       # Overwrite runs if they already exist
+def train_blueprint_model(data_yaml_path=None, epochs=80, sanity=False, imgsz=960, batch=1):
+    data = Path(data_yaml_path) if data_yaml_path else BASE / "datasets/blueprints_clean_v2" / ("sanity.yaml" if sanity else "data.yaml")
+    if not data.is_file():
+        raise FileNotFoundError(f"Prepare the clean dataset first: {data}")
+    if not torch.cuda.is_available():
+        raise RuntimeError("CUDA unavailable. Use backend/.venv-training/Scripts/python.exe")
+    print(f"GPU: {torch.cuda.get_device_name(0)}; dataset: {data}", flush=True)
+    # Fresh pretrained weights, not the checkpoint trained on incorrect labels.
+    model = YOLO(str(BASE / "vision/yolov8n.pt"))
+    model.train(
+        data=str(data), epochs=epochs, imgsz=imgsz, batch=batch,
+        device=0, workers=0, cache=False, amp=True,
+        project=str(BASE / "runs"),
+        name="blueprint_clean_sanity" if sanity else "blueprint_clean_gpu",
+        exist_ok=False, seed=42, deterministic=True,
+        patience=epochs if sanity else 25, cos_lr=True,
+        mosaic=0.0, mixup=0.0, degrees=0.0,
+        translate=0.0 if sanity else 0.05,
+        scale=0.0 if sanity else 0.15,
+        fliplr=0.0 if sanity else 0.5, flipud=0.0,
+        hsv_h=0.0, hsv_s=0.0, hsv_v=0.0 if sanity else 0.1,
+        plots=True, max_det=600,
     )
-    
-    print("\nTraining Complete!")
-    print("Your trained model weights are saved at: backend/runs/blueprint_model/weights/best.pt")
-    
+    print(f"Best weights: {model.trainer.best}", flush=True)
+    return model
+
+
 if __name__ == "__main__":
-    # Change epochs to a small number for quicker prototyping
-    train_blueprint_model(epochs=5)
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--data", type=Path)
+    parser.add_argument("--epochs", type=int, default=80)
+    parser.add_argument("--sanity", action="store_true")
+    parser.add_argument("--imgsz", type=int, default=960)
+    parser.add_argument("--batch", type=int, default=1)
+    args = parser.parse_args()
+    train_blueprint_model(args.data, args.epochs, args.sanity, args.imgsz, args.batch)

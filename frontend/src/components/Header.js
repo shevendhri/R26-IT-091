@@ -9,7 +9,7 @@ export default function Header() {
 
   const navItems = [
     { href: '/', label: 'HOME', active: pathname === '/' },
-    { href: '/plan-analyzer', label: 'PLAN ANALYZER', active: pathname === '/plan-analyzer' },
+    { href: '/plan-analyzer', label: 'PLAN ANALYZER', active: pathname.startsWith('/plan-analyzer') },
     { href: '/materials', label: 'MATERIAL RECOMMENDATIONS', active: pathname.startsWith('/materials') },
     { href: '/green-assessment', label: 'GREEN ASSESSMENT', active: pathname.startsWith('/green-assessment') },
     { href: '/fire-safety', label: 'FIRE SAFETY', active: pathname.startsWith('/fire-safety') },

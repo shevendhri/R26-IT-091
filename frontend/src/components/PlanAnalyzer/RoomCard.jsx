@@ -34,7 +34,7 @@ export default function RoomCard({ room, index, totalArea = 0 }) {
   // fall back to relative percent-of-floor for the ML/YOLO path.
   const areaLabel = room.areaSqft != null
     ? `${room.areaSqft} sqft`
-    : (areaPercent > 0 ? `${areaPercent}% of floor` : '—');
+    : (areaPercent > 0 ? `${Math.round(areaPx).toLocaleString()} pixels squared` : '—');
 
   return (
     <div className={`group bg-gradient-to-br ${gradientClass} border rounded-2xl p-4
@@ -49,6 +49,8 @@ export default function RoomCard({ room, index, totalArea = 0 }) {
         </div>
       </div>
 
+      {typeof room.confidence === "number" && <p className="text-xs mb-3">Detection confidence: {Math.round(room.confidence * 100)}%</p>}
+
       {/* Per-room stats — doors, windows, walls, area */}
       <div className="grid grid-cols-4 gap-2 mb-3">
         <StatBox icon="🚪" label="Doors" value={room.doors ?? 0} />
@@ -61,7 +63,7 @@ export default function RoomCard({ room, index, totalArea = 0 }) {
       {areaPercent > 0 && (
         <div>
           <div className="flex justify-between text-xs font-heading opacity-80 mb-1">
-            <span>Relative size</span>
+            <span>Box size relative to largest detected room</span>
             <span>{areaPercent}%</span>
           </div>
           <div className="h-1.5 rounded-full bg-white/10 overflow-hidden">
@@ -74,7 +76,7 @@ export default function RoomCard({ room, index, totalArea = 0 }) {
       )}
 
       {/* Compliance badges — only present on SVG-parsed plans */}
-      {room.compliance && (
+      {room.compliance && typeof room.compliance.ventilation === 'boolean' && (
         <div className="flex flex-wrap gap-1.5 mt-3">
           <ComplianceBadge ok={room.compliance.ventilation} label="Ventilation" />
           <ComplianceBadge ok={room.compliance.wall_thickness} label="Wall thickness" />
